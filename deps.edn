@@ -1,3 +1,2 @@
 {:paths      ["src"]
- :deps       {org.clojure/clojurescript {:mvn/version "1.11.4"}}
- :npm-deps   {:enquirer "2.3.6"}}
+ :deps       {org.clojure/clojurescript {:mvn/version "1.11.4"}}}

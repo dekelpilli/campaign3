@@ -1,0 +1,5156 @@
+{0
+ [{:name "Awakened Shrub", :source "MM", :page 317, :type "plant"}
+  {:name "Baboon", :source "MM", :page 318, :type "beast"}
+  {:name "Badger", :source "MM", :page 318, :type "beast"}
+  {:name "Bat", :source "MM", :page 318, :type "beast"}
+  {:name "Cat", :source "MM", :page 320, :type "beast"}
+  {:name   "Commoner",
+   :source "MM",
+   :page   345,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Crab", :source "MM", :page 320, :type "beast"}
+  {:name "Crawling Claw", :source "MM", :page 44, :type "undead"}
+  {:name "Deer", :source "MM", :page 321, :type "beast"}
+  {:name "Eagle", :source "MM", :page 322, :type "beast"}
+  {:name "Frog", :source "MM", :page 322, :type "beast"}
+  {:name "Giant Fire Beetle", :source "MM", :page 325, :type "beast"}
+  {:name "Goat", :source "MM", :page 330, :type "beast"}
+  {:name "Hawk", :source "MM", :page 330, :type "beast"}
+  {:name "Homunculus", :source "MM", :page 188, :type "construct"}
+  {:name "Hyena", :source "MM", :page 331, :type "beast"}
+  {:name "Jackal", :source "MM", :page 331, :type "beast"}
+  {:name   "Lemure",
+   :source "MM",
+   :page   76,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Lizard", :source "MM", :page 332, :type "beast"}
+  {:name "Myconid Sprout", :source "MM", :page 230, :type "plant"}
+  {:name "Octopus", :source "MM", :page 333, :type "beast"}
+  {:name "Owl", :source "MM", :page 333, :type "beast"}
+  {:name "Quipper", :source "MM", :page 335, :type "beast"}
+  {:name "Rat", :source "MM", :page 335, :type "beast"}
+  {:name "Raven", :source "MM", :page 335, :type "beast"}
+  {:name "Scorpion", :source "MM", :page 337, :type "beast"}
+  {:name "Sea Horse", :source "MM", :page 337, :type "beast"}
+  {:name "Shrieker", :source "MM", :page 138, :type "plant"}
+  {:name "Spider", :source "MM", :page 337, :type "beast"}
+  {:name "Vulture", :source "MM", :page 339, :type "beast"}
+  {:name "Weasel", :source "MM", :page 340, :type "beast"}
+  {:name   "Magewright",
+   :source "ERLW",
+   :page   318,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Zoog", :source "CCodex", :page 396, :type "aberration"}
+  {:name "Lantern Beetle", :source "ToB2", :page 40, :type "beast"}
+  {:name "Bilby", :source "ToB2", :page 388, :type "beast"}
+  {:name "Cranium Rat", :source "VGM", :page 133, :type "beast"}],
+ 1/8
+ [{:name   "Bandit",
+   :source "MM",
+   :page   343,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Blood Hawk", :source "MM", :page 319, :type "beast"}
+  {:name "Camel", :source "MM", :page 320, :type "beast"}
+  {:name   "Cultist",
+   :source "MM",
+   :page   345,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Flumph", :source "MM", :page 135, :type "aberration"}
+  {:name "Flying Snake", :source "MM", :page 322, :type "beast"}
+  {:name "Giant Crab", :source "MM", :page 324, :type "beast"}
+  {:name "Giant Rat", :source "MM", :page 327, :type "beast"}
+  {:name "Giant Weasel", :source "MM", :page 329, :type "beast"}
+  {:name   "Guard",
+   :source "MM",
+   :page   347,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Kobold",
+   :source "MM",
+   :page   195,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Manes",
+   :source "MM",
+   :page   60,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Mastiff", :source "MM", :page 332, :type "beast"}
+  {:name   "Merfolk",
+   :source "MM",
+   :page   218,
+   :type   {:tags ["merfolk"], :type "humanoid"}}
+  {:name "Monodrone", :source "MM", :page 224, :type "construct"}
+  {:name "Mule", :source "MM", :page 333, :type "beast"}
+  {:name   "Noble",
+   :source "MM",
+   :page   348,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Poisonous Snake", :source "MM", :page 334, :type "beast"}
+  {:name "Pony", :source "MM", :page 335, :type "beast"}
+  {:name "Slaad Tadpole", :source "MM", :page 276, :type "aberration"}
+  {:name "Stirge", :source "MM", :page 284, :type "beast"}
+  {:name   "Tribal Warrior",
+   :source "MM",
+   :page   350,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Twig Blight", :source "MM", :page 32, :type "plant"}
+  {:name   "Expeditious Messenger",
+   :source "ERLW",
+   :page   293,
+   :type   "construct"}
+  {:name "Valenar Hawk", :source "ERLW", :page 312, :type "fey"}
+  {:name "Bookkeeper", :source "CCodex", :page 55, :type "construct"}
+  {:name   "Clockwork Servant",
+   :source "CCodex",
+   :page   65,
+   :type   "construct"}
+  {:name "Giant Moth", :source "CCodex", :page 178, :type "beast"}
+  {:name "Leonino", :source "CCodex", :page 250, :type "beast"}
+  {:name   "Young Kruthik",
+   :source "MTF",
+   :page   211,
+   :type   "monstrosity"}
+  {:name "Sniffer Beetle", :source "ToB2", :page 40, :type "beast"}
+  {:name "Compsognathus", :source "ToB2", :page 108, :type "beast"}
+  {:name "Pixie's Umbrella", :source "ToB2", :page 158, :type "plant"}
+  {:name "Ice Bogie", :source "ToB2", :page 209, :type "fey"}
+  {:name   "Gorao-Ka",
+   :source "ToB2",
+   :page   221,
+   :type   {:tags ["kami"], :type "fey"}}
+  {:name "Lymarien", :source "ToB2", :page 248, :type "fey"}
+  {:name   "Wicked Skull",
+   :source "ToB2",
+   :page   368,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name "Fennec Fox", :source "ToB2", :page 390, :type "beast"}
+  {:name "Boggle", :source "VGM", :page 128, :type "fey"}
+  {:name "Dolphin", :source "VGM", :page 208, :type "beast"}
+  {:name   "Neogi Hatchling",
+   :source "VGM",
+   :page   179,
+   :type   "aberration"}
+  {:name   "Xvart",
+   :source "VGM",
+   :page   200,
+   :type   {:tags ["xvart"], :type "humanoid"}}
+  {:name   "Xvart Speaker",
+   :source "VGM",
+   :page   200,
+   :type   {:tags ["xvart"], :type "humanoid"}}
+  {:name "Cikavak", :source "ToB", :page 58, :type "fey"}
+  {:name "Shroud", :source "ToB", :page 348, :type "undead"}
+  {:name "Sluagh", :source "ToB", :page 376, :type "fey"}
+  {:name "Stryx", :source "ToB", :page 369, :type "monstrosity"}
+  {:name "Wharfling", :source "ToB", :page 407, :type "beast"}
+  {:name   "Kobold Underling",
+   :source "EGW",
+   :page   221,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Vox Seeker", :source "EGW", :page 270, :type "construct"}],
+ 1/4
+ [{:name   "Aarakocra",
+   :source "MM",
+   :page   12,
+   :type   {:tags ["aarakocra"], :type "humanoid"}}
+  {:name   "Acolyte",
+   :source "MM",
+   :page   342,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Axe Beak", :source "MM", :page 317, :type "beast"}
+  {:name "Blink Dog", :source "MM", :page 318, :type "fey"}
+  {:name "Boar", :source "MM", :page 319, :type "beast"}
+  {:name   "Bullywug",
+   :source "MM",
+   :page   35,
+   :type   {:tags ["bullywug"], :type "humanoid"}}
+  {:name "Constrictor Snake", :source "MM", :page 320, :type "beast"}
+  {:name "Draft Horse", :source "MM", :page 321, :type "beast"}
+  {:name   "Dretch",
+   :source "MM",
+   :page   57,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Drow",
+   :source "MM",
+   :page   128,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Duodrone", :source "MM", :page 225, :type "construct"}
+  {:name "Elk", :source "MM", :page 322, :type "beast"}
+  {:name "Flying Sword", :source "MM", :page 20, :type "construct"}
+  {:name "Giant Badger", :source "MM", :page 323, :type "beast"}
+  {:name "Giant Bat", :source "MM", :page 323, :type "beast"}
+  {:name "Giant Centipede", :source "MM", :page 323, :type "beast"}
+  {:name "Giant Frog", :source "MM", :page 325, :type "beast"}
+  {:name "Giant Lizard", :source "MM", :page 326, :type "beast"}
+  {:name "Giant Owl", :source "MM", :page 327, :type "beast"}
+  {:name   "Giant Poisonous Snake",
+   :source "MM",
+   :page   327,
+   :type   "beast"}
+  {:name "Giant Wolf Spider", :source "MM", :page 330, :type "beast"}
+  {:name   "Goblin",
+   :source "MM",
+   :page   166,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Grimlock",
+   :source "MM",
+   :page   175,
+   :type   {:tags ["grimlock"], :type "humanoid"}}
+  {:name   "Kenku",
+   :source "MM",
+   :page   194,
+   :type   {:tags ["kenku"], :type "humanoid"}}
+  {:name   "Kuo-toa",
+   :source "MM",
+   :page   199,
+   :type   {:tags ["kuo-toa"], :type "humanoid"}}
+  {:name "Mud Mephit", :source "MM", :page 216, :type "elemental"}
+  {:name "Needle Blight", :source "MM", :page 32, :type "plant"}
+  {:name "Panther", :source "MM", :page 333, :type "beast"}
+  {:name "Pixie", :source "MM", :page 253, :type "fey"}
+  {:name "Pseudodragon", :source "MM", :page 254, :type "dragon"}
+  {:name "Pteranodon", :source "MM", :page 80, :type "beast"}
+  {:name "Riding Horse", :source "MM", :page 336, :type "beast"}
+  {:name "Skeleton", :source "MM", :page 272, :type "undead"}
+  {:name "Smoke Mephit", :source "MM", :page 217, :type "elemental"}
+  {:name "Sprite", :source "MM", :page 283, :type "fey"}
+  {:name "Steam Mephit", :source "MM", :page 217, :type "elemental"}
+  {:name   "Swarm of Bats",
+   :source "MM",
+   :page   337,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Swarm of Rats",
+   :source "MM",
+   :page   339,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Swarm of Ravens",
+   :source "MM",
+   :page   339,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Troglodyte",
+   :source "MM",
+   :page   290,
+   :type   {:tags ["troglodyte"], :type "humanoid"}}
+  {:name "Violet Fungus", :source "MM", :page 138, :type "plant"}
+  {:name   "Winged Kobold",
+   :source "MM",
+   :page   195,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Wolf", :source "MM", :page 341, :type "beast"}
+  {:name "Zombie", :source "MM", :page 316, :type "undead"}
+  {:name   "Anarch",
+   :source "GGR",
+   :page   239,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Frontline Medic",
+   :source "GGR",
+   :page   231,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Servitor Thrull",
+   :source "GGR",
+   :page   221,
+   :type   "construct"}
+  {:name "Fastieth", :source "ERLW", :page 289, :type "beast"}
+  {:name   "Kalashtar",
+   :source "ERLW",
+   :page   317,
+   :type   {:tags ["kalashtar"], :type "humanoid"}}
+  {:name "Acid Ant", :source "CCodex", :page 8, :type "monstrosity"}
+  {:name   "Fungal Acid Ant",
+   :source "CCodex",
+   :page   8,
+   :type   "monstrosity"}
+  {:name "Alliumite", :source "CCodex", :page 13, :type "plant"}
+  {:name   "Archaeopteryx",
+   :source "CCodex",
+   :page   108,
+   :type   {:tags ["dinosaur"], :type "beast"}}
+  {:name   "Exploding Toad",
+   :source "CCodex",
+   :page   150,
+   :type   "monstrosity"}
+  {:name "Rimewing", :source "CCodex", :page 178, :type "beast"}
+  {:name "Sootwing", :source "CCodex", :page 329, :type "beast"}
+  {:name   "Hair Golem",
+   :source "CCodex",
+   :page   200,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name "Paper Golem", :source "CCodex", :page 204, :type "construct"}
+  {:name "Goreling", :source "CCodex", :page 207, :type "undead"}
+  {:name "Inkling", :source "CCodex", :page 227, :type "construct"}
+  {:name "Living Shade", :source "CCodex", :page 255, :type "fey"}
+  {:name "Morko", :source "CCodex", :page 270, :type "fey"}
+  {:name "Necrotic Tick", :source "CCodex", :page 275, :type "beast"}
+  {:name "Skull Lantern", :source "CCodex", :page 343, :type "undead"}
+  {:name "Snow Cat", :source "CCodex", :page 346, :type "beast"}
+  {:name   "Wolpertinger",
+   :source "CCodex",
+   :page   382,
+   :type   "monstrosity"}
+  {:name   "Abyssal Wretch",
+   :source "MTF",
+   :page   136,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Derro",
+   :source "MTF",
+   :page   158,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name "Male Steeder", :source "MTF", :page 238, :type "monstrosity"}
+  {:name "Oblex Spawn", :source "MTF", :page 217, :type "ooze"}
+  {:name   "Star Spawn Grue",
+   :source "MTF",
+   :page   234,
+   :type   "aberration"}
+  {:name "The Wretched", :source "MTF", :page 233, :type "monstrosity"}
+  {:name   "Tortle",
+   :source "MTF",
+   :page   242,
+   :type   {:tags ["tortle"], :type "humanoid"}}
+  {:name   "Giant Bombardier Beetle",
+   :source "ToB2",
+   :page   39,
+   :type   "beast"}
+  {:name   "Edjet Initiate",
+   :source "ToB2",
+   :page   131,
+   :type   {:tags ["dragonborn"], :type "humanoid"}}
+  {:name   "Shiftshroom",
+   :source "ToB2",
+   :page   159,
+   :type   {:tags ["shapechanger"], :type "plant"}}
+  {:name   "Harefolk",
+   :source "ToB2",
+   :page   194,
+   :type   {:tags ["harefolk"], :type "humanoid"}}
+  {:name "Nyctli", :source "ToB2", :page 271, :type "fey"}
+  {:name   "Gray Orc",
+   :source "ToB2",
+   :page   284,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Orniraptor", :source "ToB2", :page 285, :type "monstrosity"}
+  {:name   "Otterfolk",
+   :source "ToB2",
+   :page   288,
+   :type   {:tags ["otterfolk"], :type "humanoid"}}
+  {:name "Shukankor Replica", :source "ToB2", :page 326, :type "beast"}
+  {:name "Alligator", :source "ToB2", :page 387, :type "beast"}
+  {:name "Alligator Turtle", :source "ToB2", :page 387, :type "beast"}
+  {:name "Bull", :source "ToB2", :page 388, :type "beast"}
+  {:name "Cave Goat", :source "ToB2", :page 389, :type "beast"}
+  {:name "Forest Falcon", :source "ToB2", :page 390, :type "beast"}
+  {:name "Ghoul Bat", :source "ToB2", :page 391, :type "undead"}
+  {:name "Giant Armadillo", :source "ToB2", :page 392, :type "beast"}
+  {:name "Giant Honey Bee", :source "ToB2", :page 392, :type "beast"}
+  {:name "Giant Leech", :source "ToB2", :page 393, :type "beast"}
+  {:name "Giant Mongoose", :source "ToB2", :page 393, :type "beast"}
+  {:name "Great Gray Owl", :source "ToB2", :page 394, :type "beast"}
+  {:name "Grove Bear", :source "ToB2", :page 394, :type "beast"}
+  {:name "Holler Spider", :source "ToB2", :page 395, :type "beast"}
+  {:name "Howler Baboon", :source "ToB2", :page 395, :type "beast"}
+  {:name "Resinous Frog", :source "ToB2", :page 397, :type "beast"}
+  {:name   "Apprentice Wizard",
+   :source "VGM",
+   :page   209,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Cow", :source "VGM", :page 207, :type "beast"}
+  {:name "Deep Rothé", :source "VGM", :page 208, :type "beast"}
+  {:name "Dimetrodon", :source "VGM", :page 139, :type "beast"}
+  {:name "Gnoll Witherling", :source "VGM", :page 155, :type "undead"}
+  {:name   "Grung",
+   :source "VGM",
+   :page   156,
+   :type   {:tags ["grung"], :type "humanoid"}}
+  {:name "Hadrosaurus", :source "VGM", :page 140, :type "beast"}
+  {:name   "Kobold Inventor",
+   :source "VGM",
+   :page   166,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Ox", :source "VGM", :page 208, :type "beast"}
+  {:name "Rothé", :source "VGM", :page 208, :type "beast"}
+  {:name "Stench Kow", :source "VGM", :page 208, :type "beast"}
+  {:name "Vegepygmy", :source "VGM", :page 196, :type "plant"}
+  {:name "Velociraptor", :source "VGM", :page 140, :type "beast"}
+  {:name "Azza Gremlin", :source "ToB", :page 28, :type "fey"}
+  {:name "Clurichaun", :source "ToB", :page 67, :type "fey"}
+  {:name "Dipsa", :source "ToB", :page 118, :type "ooze"}
+  {:name   "Dust Goblin",
+   :source "ToB",
+   :page   232,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Erina Scrounger",
+   :source "ToB",
+   :page   178,
+   :type   {:tags ["erina"], :type "humanoid"}}
+  {:name "Garroter Crab", :source "ToB", :page 208, :type "beast"}
+  {:name "Kalke", :source "ToB", :page 259, :type "fiend"}
+  {:name   "Lemurfolk",
+   :source "ToB",
+   :page   271,
+   :type   {:tags ["lemurfolk"], :type "humanoid"}}
+  {:name "Living Wick", :source "ToB", :page 278, :type "construct"}
+  {:name "Map Mimic", :source "ToB", :page 289, :type "monstrosity"}
+  {:name   "Ramag",
+   :source "ToB",
+   :page   317,
+   :type   {:tags ["ramag"], :type "humanoid"}}
+  {:name   "Ratfolk",
+   :source "ToB",
+   :page   320,
+   :type   {:tags ["ratfolk"], :type "humanoid"}}
+  {:name   "Red-Banded Line Spider",
+   :source "ToB",
+   :page   363,
+   :type   "beast"}
+  {:name   "Roachling Skirmisher",
+   :source "ToB",
+   :page   329,
+   :type   {:tags ["roachling"], :type "humanoid"}}
+  {:name   "Shadow Fey",
+   :source "ToB",
+   :page   171,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Suturefly", :source "ToB", :page 372, :type "beast"}
+  {:name "Swamp Adder", :source "ToB", :page 354, :type "beast"}
+  {:name "Treacle", :source "ToB", :page 387, :type "ooze"}
+  {:name "Witchlight", :source "ToB", :page 409, :type "construct"}
+  {:name "Xanka", :source "ToB", :page 411, :type "construct"}],
+ 1/2
+ [{:name "Ape", :source "MM", :page 317, :type "beast"}
+  {:name "Black Bear", :source "MM", :page 318, :type "beast"}
+  {:name "Cockatrice", :source "MM", :page 42, :type "monstrosity"}
+  {:name "Crocodile", :source "MM", :page 320, :type "beast"}
+  {:name "Darkmantle", :source "MM", :page 46, :type "monstrosity"}
+  {:name   "Deep Gnome (Svirfneblin)",
+   :source "MM",
+   :page   164,
+   :type   {:tags ["gnome"], :type "humanoid"}}
+  {:name "Dust Mephit", :source "MM", :page 215, :type "elemental"}
+  {:name "Gas Spore", :source "MM", :page 138, :type "plant"}
+  {:name "Giant Goat", :source "MM", :page 326, :type "beast"}
+  {:name "Giant Sea Horse", :source "MM", :page 328, :type "beast"}
+  {:name "Giant Wasp", :source "MM", :page 329, :type "beast"}
+  {:name   "Gnoll",
+   :source "MM",
+   :page   163,
+   :type   {:tags ["gnoll"], :type "humanoid"}}
+  {:name "Gray Ooze", :source "MM", :page 243, :type "ooze"}
+  {:name   "Hobgoblin",
+   :source "MM",
+   :page   186,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name "Ice Mephit", :source "MM", :page 215, :type "elemental"}
+  {:name   "Jackalwere",
+   :source "MM",
+   :page   193,
+   :type   {:tags ["shapechanger"], :type "humanoid"}}
+  {:name   "Lizardfolk",
+   :source "MM",
+   :page   204,
+   :type   {:tags ["lizardfolk"], :type "humanoid"}}
+  {:name "Magma Mephit", :source "MM", :page 216, :type "elemental"}
+  {:name "Magmin", :source "MM", :page 212, :type "elemental"}
+  {:name "Myconid Adult", :source "MM", :page 232, :type "plant"}
+  {:name   "Orc",
+   :source "MM",
+   :page   246,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Piercer", :source "MM", :page 252, :type "monstrosity"}
+  {:name "Reef Shark", :source "MM", :page 336, :type "beast"}
+  {:name "Rust Monster", :source "MM", :page 262, :type "monstrosity"}
+  {:name   "Sahuagin",
+   :source "MM",
+   :page   263,
+   :type   {:tags ["sahuagin"], :type "humanoid"}}
+  {:name "Satyr", :source "MM", :page 267, :type "fey"}
+  {:name   "Scout",
+   :source "MM",
+   :page   349,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Shadow", :source "MM", :page 269, :type "undead"}
+  {:name   "Swarm of Beetles",
+   :source "MM",
+   :page   338,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Swarm of Centipedes",
+   :source "MM",
+   :page   338,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Swarm of Insects",
+   :source "MM",
+   :page   338,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Swarm of Spiders",
+   :source "MM",
+   :page   338,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Swarm of Wasps",
+   :source "MM",
+   :page   338,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Thug",
+   :source "MM",
+   :page   350,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Tridrone", :source "MM", :page 225, :type "construct"}
+  {:name "Vine Blight", :source "MM", :page 32, :type "plant"}
+  {:name "Warhorse", :source "MM", :page 340, :type "beast"}
+  {:name "Warhorse Skeleton", :source "MM", :page 273, :type "undead"}
+  {:name "Worg", :source "MM", :page 341, :type "monstrosity"}
+  {:name   "Cackler",
+   :source "GGR",
+   :page   195,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Hybrid Spy",
+   :source "GGR",
+   :page   218,
+   :type   {:tags ["Simic hybrid"], :type "humanoid"}}
+  {:name   "Kraul Warrior",
+   :source "GGR",
+   :page   213,
+   :type   {:tags ["kraul"], :type "humanoid"}}
+  {:name   "Rubblebelt Stalker",
+   :source "GGR",
+   :page   239,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Scorchbringer Guard",
+   :source "GGR",
+   :page   243,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Soldier",
+   :source "GGR",
+   :page   226,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Winged Thrull", :source "GGR", :page 221, :type "construct"}
+  {:name   "Changeling",
+   :source "ERLW",
+   :page   317,
+   :type   {:tags ["changeling" "shapechanger"], :type "humanoid"}}
+  {:name "Dolgrim", :source "ERLW", :page 291, :type "aberration"}
+  {:name   "Shifter",
+   :source "ERLW",
+   :page   319,
+   :type   {:tags ["shifter"], :type "humanoid"}}
+  {:name "Valenar Hound", :source "ERLW", :page 312, :type "fey"}
+  {:name "Valenar Steed", :source "ERLW", :page 313, :type "fey"}
+  {:name "Alkonost", :source "CCodex", :page 12, :type "monstrosity"}
+  {:name   "Boot Grabber",
+   :source "CCodex",
+   :page   56,
+   :type   "aberration"}
+  {:name "Chupacabra", :source "CCodex", :page 63, :type "monstrosity"}
+  {:name "Corpse Thief", :source "CCodex", :page 66, :type "humanoid"}
+  {:name "Cueyatl", :source "CCodex", :page 68, :type "humanoid"}
+  {:name   "Fire Imp",
+   :source "CCodex",
+   :page   103,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Flesh Reaver", :source "CCodex", :page 160, :type "undead"}
+  {:name "Foxin", :source "CCodex", :page 163, :type "fey"}
+  {:name   "Chaos-spawn Goblin",
+   :source "CCodex",
+   :page   190,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Shadow Goblin",
+   :source "CCodex",
+   :page   191,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name "Mandrake", :source "CCodex", :page 260, :type "plant"}
+  {:name   "Nalusa Falaya",
+   :source "CCodex",
+   :page   274,
+   :type   "aberration"}
+  {:name   "Green Abyss Orc",
+   :source "CCodex",
+   :page   291,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Execrable Shrub", :source "CCodex", :page 304, :type "fiend"}
+  {:name   "Hallowed Reed",
+   :source "CCodex",
+   :page   304,
+   :type   "celestial"}
+  {:name   "Shard Swarm",
+   :source "CCodex",
+   :page   329,
+   :type   {:swarmSize "T", :type "construct"}}
+  {:name   "Sooze",
+   :source "CCodex",
+   :page   334,
+   :type   {:tags ["shoth"], :type "aberration"}}
+  {:name   "Kapi",
+   :source "CCodex",
+   :page   336,
+   :type   {:tags ["simian"], :type "humanoid"}}
+  {:name   "Storm Spirit",
+   :source "CCodex",
+   :page   350,
+   :type   "elemental"}
+  {:name   "Weirding Scroll",
+   :source "CCodex",
+   :page   376,
+   :type   "construct"}
+  {:name "Woodwose", :source "CCodex", :page 383, :type "humanoid"}
+  {:name   "Elfmarked Human",
+   :source "CCodex",
+   :page   403,
+   :type   {:tags ["half-elf"], :type "humanoid"}}
+  {:name   "Void Cultist",
+   :source "CCodex",
+   :page   407,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Nupperibo",
+   :source "MTF",
+   :page   168,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Skulk", :source "MTF", :page 227, :type "humanoid"}
+  {:name   "Ahu-Nixta Drudge",
+   :source "ToB2",
+   :page   10,
+   :type   "aberration"}
+  {:name "Attercroppe", :source "ToB2", :page 32, :type "fey"}
+  {:name "Aviere", :source "ToB2", :page 36, :type "celestial"}
+  {:name "Brain Hood", :source "ToB2", :page 50, :type "aberration"}
+  {:name "Cadaver Sprite", :source "ToB2", :page 55, :type "undead"}
+  {:name "Corrupted Pixie", :source "ToB2", :page 72, :type "fiend"}
+  {:name "Crimson Shambler", :source "ToB2", :page 73, :type "plant"}
+  {:name   "Derro Guard",
+   :source "ToB2",
+   :page   97,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name   "Blood Imp",
+   :source "ToB2",
+   :page   103,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Keyhole Dragonette",
+   :source "ToB2",
+   :page   118,
+   :type   "dragon"}
+  {:name "Light Drake", :source "ToB2", :page 125, :type "dragon"}
+  {:name "Boomer", :source "ToB2", :page 157, :type "plant"}
+  {:name   "Greed Swarm",
+   :source "ToB2",
+   :page   184,
+   :type   {:swarmSize "T", :type "construct"}}
+  {:name "Husk", :source "ToB2", :page 205, :type "undead"}
+  {:name   "Kobold Spellclerk",
+   :source "ToB2",
+   :page   232,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Mydnari", :source "ToB2", :page 264, :type "humanoid"}
+  {:name "Narshark", :source "ToB2", :page 266, :type "monstrosity"}
+  {:name   "Cackling Skeleton",
+   :source "ToB2",
+   :page   330,
+   :type   "undead"}
+  {:name "Valkruung", :source "ToB2", :page 355, :type "monstrosity"}
+  {:name "Wintergrim", :source "ToB2", :page 372, :type "fey"}
+  {:name "Yowler", :source "ToB2", :page 380, :type "undead"}
+  {:name "Cavefish Zombie", :source "ToB2", :page 384, :type "undead"}
+  {:name "Chitine", :source "VGM", :page 131, :type "monstrosity"}
+  {:name "Darkling", :source "VGM", :page 134, :type "fey"}
+  {:name   "Firenewt Warrior",
+   :source "VGM",
+   :page   142,
+   :type   {:tags ["firenewt"], :type "humanoid"}}
+  {:name "Gazer", :source "VGM", :page 126, :type "aberration"}
+  {:name   "Gnoll Hunter",
+   :source "VGM",
+   :page   154,
+   :type   {:tags ["gnoll"], :type "humanoid"}}
+  {:name   "Orc Nurtured One of Yurtrus",
+   :source "VGM",
+   :page   184,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name   "Swarm of Rot Grubs",
+   :source "VGM",
+   :page   208,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Alehouse Drake", :source "ToB", :page 148, :type "dragon"}
+  {:name "Alseid", :source "ToB", :page 15, :type "monstrosity"}
+  {:name "Beggar Ghoul", :source "ToB", :page 213, :type "undead"}
+  {:name "Bone Crab", :source "ToB", :page 40, :type "beast"}
+  {:name "Bucca", :source "ToB", :page 46, :type "fey"}
+  {:name   "Burrowling",
+   :source "ToB",
+   :page   49,
+   :type   {:tags ["burrowling"], :type "humanoid"}}
+  {:name   "Clockwork Beetle",
+   :source "ToB",
+   :page   60,
+   :type   "construct"}
+  {:name   "Clockwork Watchman",
+   :source "ToB",
+   :page   65,
+   :type   "construct"}
+  {:name "Empty Cloak", :source "ToB", :page 176, :type "construct"}
+  {:name "Fraughashar", :source "ToB", :page 206, :type "fey"}
+  {:name   "Lantern Dragonette",
+   :source "ToB",
+   :page   270,
+   :type   "dragon"}
+  {:name   "Library Automaton",
+   :source "ToB",
+   :page   273,
+   :type   "construct"}
+  {:name "Miremal", :source "ToB", :page 292, :type "fey"}
+  {:name   "Morphoi",
+   :source "ToB",
+   :page   297,
+   :type   {:tags ["shapechanger"], :type "plant"}}
+  {:name   "Nkosi",
+   :source "ToB",
+   :page   306,
+   :type   {:tags ["shapechanger" "nkosi"], :type "humanoid"}}
+  {:name   "Ravenfolk Scout",
+   :source "ToB",
+   :page   322,
+   :type   {:tags ["kenku"], :type "humanoid"}}
+  {:name "Rum Gremlin", :source "ToB", :page 239, :type "fey"}
+  {:name   "Scorpion Cultist",
+   :source "ToB",
+   :page   425,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Skin Bat", :source "ToB", :page 87, :type "undead"}
+  {:name   "Tosculi Drone",
+   :source "ToB",
+   :page   386,
+   :type   "monstrosity"}
+  {:name "War Ostrich", :source "ToB", :page 307, :type "beast"}
+  {:name   "Yinra Emberwind",
+   :source "EGW",
+   :page   223,
+   :type   {:tags ["elf"], :type "humanoid"}}],
+ 1
+ [{:name "Animated Armor", :source "MM", :page 19, :type "construct"}
+  {:name   "Brass Dragon Wyrmling",
+   :source "MM",
+   :page   106,
+   :type   "dragon"}
+  {:name "Brown Bear", :source "MM", :page 319, :type "beast"}
+  {:name   "Bugbear",
+   :source "MM",
+   :page   33,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Copper Dragon Wyrmling",
+   :source "MM",
+   :page   111,
+   :type   "dragon"}
+  {:name "Death Dog", :source "MM", :page 321, :type "monstrosity"}
+  {:name "Dire Wolf", :source "MM", :page 321, :type "beast"}
+  {:name "Dryad", :source "MM", :page 121, :type "fey"}
+  {:name   "Duergar",
+   :source "MM",
+   :page   122,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Faerie Dragon (Orange)",
+   :source "MM",
+   :page   133,
+   :type   "dragon"}
+  {:name   "Faerie Dragon (Red)",
+   :source "MM",
+   :page   133,
+   :type   "dragon"}
+  {:name   "Faerie Dragon (Yellow)",
+   :source "MM",
+   :page   133,
+   :type   "dragon"}
+  {:name "Fire Snake", :source "MM", :page 265, :type "elemental"}
+  {:name "Ghoul", :source "MM", :page 148, :type "undead"}
+  {:name "Giant Eagle", :source "MM", :page 324, :type "beast"}
+  {:name "Giant Hyena", :source "MM", :page 326, :type "beast"}
+  {:name "Giant Octopus", :source "MM", :page 326, :type "beast"}
+  {:name "Giant Spider", :source "MM", :page 328, :type "beast"}
+  {:name "Giant Toad", :source "MM", :page 329, :type "beast"}
+  {:name "Giant Vulture", :source "MM", :page 329, :type "beast"}
+  {:name   "Goblin Boss",
+   :source "MM",
+   :page   166,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Half-Ogre (Ogrillon)",
+   :source "MM",
+   :page   238,
+   :type   "giant"}
+  {:name "Harpy", :source "MM", :page 181, :type "monstrosity"}
+  {:name "Hippogriff", :source "MM", :page 184, :type "monstrosity"}
+  {:name   "Imp",
+   :source "MM",
+   :page   76,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Kuo-toa Whip",
+   :source "MM",
+   :page   200,
+   :type   {:tags ["kuo-toa"], :type "humanoid"}}
+  {:name "Lion", :source "MM", :page 331, :type "beast"}
+  {:name "Quadrone", :source "MM", :page 226, :type "construct"}
+  {:name   "Quaggoth Spore Servant",
+   :source "MM",
+   :page   230,
+   :type   "plant"}
+  {:name   "Quasit",
+   :source "MM",
+   :page   63,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Scarecrow", :source "MM", :page 268, :type "construct"}
+  {:name "Specter", :source "MM", :page 279, :type "undead"}
+  {:name   "Spy",
+   :source "MM",
+   :page   349,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Swarm of Quippers",
+   :source "MM",
+   :page   338,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Thri-kreen",
+   :source "MM",
+   :page   288,
+   :type   {:tags ["thri-kreen"], :type "humanoid"}}
+  {:name "Tiger", :source "MM", :page 339, :type "beast"}
+  {:name   "Yuan-ti Pureblood",
+   :source "MM",
+   :page   310,
+   :type   {:tags ["yuan-ti"], :type "humanoid"}}
+  {:name   "Category 1 Krasis",
+   :source "GGR",
+   :page   210,
+   :type   "monstrosity"}
+  {:name   "Galvanice Weird",
+   :source "GGR",
+   :page   209,
+   :type   "elemental"}
+  {:name   "Horncaller",
+   :source "GGR",
+   :page   253,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Hybrid Poisoner",
+   :source "GGR",
+   :page   217,
+   :type   {:tags ["Simic hybrid"], :type "humanoid"}}
+  {:name   "Hybrid Shocker",
+   :source "GGR",
+   :page   218,
+   :type   {:tags ["Simic hybrid"], :type "humanoid"}}
+  {:name "Indentured Spirit", :source "GGR", :page 206, :type "undead"}
+  {:name   "Rakdos Performer, Blade Juggler",
+   :source "GGR",
+   :page   249,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Rakdos Performer, Fire Eater",
+   :source "GGR",
+   :page   249,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Rakdos Performer, High-Wire Acrobat",
+   :source "GGR",
+   :page   249,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Thought Spy",
+   :source "GGR",
+   :page   233,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Clawfoot", :source "ERLW", :page 289, :type "beast"}
+  {:name "Iron Defender", :source "ERLW", :page 293, :type "construct"}
+  {:name   "Living Burning Hands",
+   :source "ERLW",
+   :page   298,
+   :type   "construct"}
+  {:name   "Warforged Soldier",
+   :source "ERLW",
+   :page   320,
+   :type   {:tags ["warforged"], :type "humanoid"}}
+  {:name "Agnibarra", :source "CCodex", :page 9, :type "monstrosity"}
+  {:name   "Alp",
+   :source "CCodex",
+   :page   14,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Eye of the Gods",
+   :source "CCodex",
+   :page   16,
+   :type   {:tags ["as its creator deity"], :type "celestial"}}
+  {:name "Anophiloi", :source "CCodex", :page 39, :type "monstrosity"}
+  {:name "Bilwis", :source "CCodex", :page 53, :type "elemental"}
+  {:name "Carbuncle", :source "CCodex", :page 57, :type "monstrosity"}
+  {:name   "Clockwork Soldier",
+   :source "CCodex",
+   :page   65,
+   :type   "construct"}
+  {:name   "Cueyatl Sea Priest",
+   :source "CCodex",
+   :page   69,
+   :type   "humanoid"}
+  {:name   "Cueyatl Warrior",
+   :source "CCodex",
+   :page   69,
+   :type   "humanoid"}
+  {:name   "Dark Servant",
+   :source "CCodex",
+   :page   47,
+   :type   {:tags ["dark folk"], :type "humanoid"}}
+  {:name   "Dhampir",
+   :source "CCodex",
+   :page   106,
+   :type   {:tags ["dhampir"], :type "humanoid"}}
+  {:name   "Nodosaurus",
+   :source "CCodex",
+   :page   109,
+   :type   {:tags ["dinosaur"], :type "beast"}}
+  {:name   "Light Cavalry",
+   :source "CCodex",
+   :page   124,
+   :type   {:tags ["dragonborn"], :type "humanoid"}}
+  {:name "Pact Drake", :source "CCodex", :page 130, :type "dragon"}
+  {:name "Wirbeln Fungi", :source "CCodex", :page 166, :type "plant"}
+  {:name "Shockwing", :source "CCodex", :page 179, :type "beast"}
+  {:name   "Mud Golem",
+   :source "CCodex",
+   :page   201,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name "Grindylow", :source "CCodex", :page 210, :type "aberration"}
+  {:name   "Gumienniki",
+   :source "CCodex",
+   :page   213,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name   "Elite Kobold",
+   :source "CCodex",
+   :page   237,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Serpentine Lamia",
+   :source "CCodex",
+   :page   248,
+   :type   "monstrosity"}
+  {:name "Great Mandrake", :source "CCodex", :page 260, :type "plant"}
+  {:name   "The Barbed",
+   :source "CCodex",
+   :page   263,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Alchemical Apprentice",
+   :source "CCodex",
+   :page   281,
+   :type   "ooze"}
+  {:name "Suppurating Ooze", :source "CCodex", :page 288, :type "ooze"}
+  {:name "Phantom", :source "CCodex", :page 296, :type "undead"}
+  {:name   "Ratfolk Warlock",
+   :source "CCodex",
+   :page   316,
+   :type   {:tags ["ratfolk"], :type "humanoid"}}
+  {:name   "Serpentfolk of Yig",
+   :source "CCodex",
+   :page   324,
+   :type   "humanoid"}
+  {:name "Shadow Blight", :source "CCodex", :page 326, :type "plant"}
+  {:name   "Sunset Raptor",
+   :source "CCodex",
+   :page   351,
+   :type   "monstrosity"}
+  {:name   "Albino Death Weasel",
+   :source "CCodex",
+   :page   374,
+   :type   "beast"}
+  {:name "Bronze Scout", :source "MTF", :page 125, :type "construct"}
+  {:name "Choker", :source "MTF", :page 123, :type "aberration"}
+  {:name   "Duergar Soulblade",
+   :source "MTF",
+   :page   190,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Female Steeder",
+   :source "MTF",
+   :page   238,
+   :type   "monstrosity"}
+  {:name   "Meazel",
+   :source "MTF",
+   :page   214,
+   :type   {:tags ["meazel"], :type "humanoid"}}
+  {:name "Stone Cursed", :source "MTF", :page 240, :type "construct"}
+  {:name "Giant Snow Beetle", :source "ToB2", :page 39, :type "beast"}
+  {:name "Bulbous Violet", :source "ToB2", :page 53, :type "plant"}
+  {:name "Carnivorous Sod", :source "ToB2", :page 57, :type "plant"}
+  {:name "Chamrosh", :source "ToB2", :page 59, :type "celestial"}
+  {:name   "Clockwork Leech",
+   :source "ToB2",
+   :page   66,
+   :type   "construct"}
+  {:name "Web Zombie", :source "ToB2", :page 83, :type "undead"}
+  {:name   "Swarm of Compsognathus",
+   :source "ToB2",
+   :page   108,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Flithidir",
+   :source "ToB2",
+   :page   154,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "Garlicle", :source "ToB2", :page 162, :type "plant"}
+  {:name "Ghillie Dubh", :source "ToB2", :page 165, :type "celestial"}
+  {:name   "Glacial Corrupter",
+   :source "ToB2",
+   :page   176,
+   :type   "undead"}
+  {:name "Grimmlet", :source "ToB2", :page 186, :type "monstrosity"}
+  {:name "Heggarna", :source "ToB2", :page 196, :type "aberration"}
+  {:name "Irid", :source "ToB2", :page 217, :type "celestial"}
+  {:name   "Minor Malleable",
+   :source "ToB2",
+   :page   252,
+   :type   "aberration"}
+  {:name   "Mountain Strider",
+   :source "ToB2",
+   :page   261,
+   :type   "monstrosity"}
+  {:name   "Pestilence Swarm",
+   :source "ToB2",
+   :page   294,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Putrescent Slime", :source "ToB2", :page 300, :type "ooze"}
+  {:name "Sema", :source "ToB2", :page 320, :type "aberration"}
+  {:name "Stone Creeper", :source "ToB2", :page 339, :type "plant"}
+  {:name   "Trollkin Raider",
+   :source "ToB2",
+   :page   352,
+   :type   "humanoid"}
+  {:name "Wood Ward", :source "ToB2", :page 374, :type "construct"}
+  {:name "Balloon Spider", :source "ToB2", :page 387, :type "beast"}
+  {:name "Sporous Crab", :source "ToB2", :page 398, :type "beast"}
+  {:name   "Spurred Water Skate",
+   :source "ToB2",
+   :page   399,
+   :type   "beast"}
+  {:name "Swarm of Bees", :source "ToB2", :page 400, :type "beast"}
+  {:name "Deinonychus", :source "VGM", :page 139, :type "beast"}
+  {:name   "Firenewt Warlock of Imix",
+   :source "VGM",
+   :page   143,
+   :type   {:tags ["firenewt"], :type "humanoid"}}
+  {:name   "Giant Strider",
+   :source "VGM",
+   :page   143,
+   :type   "monstrosity"}
+  {:name   "Gnoll Flesh Gnawer",
+   :source "VGM",
+   :page   154,
+   :type   {:tags ["gnoll"], :type "humanoid"}}
+  {:name   "Grung Wildling",
+   :source "VGM",
+   :page   157,
+   :type   {:tags ["grung"], :type "humanoid"}}
+  {:name   "Kobold Dragonshield",
+   :source "VGM",
+   :page   165,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Kobold Scale Sorcerer",
+   :source "VGM",
+   :page   167,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Maw Demon",
+   :source "VGM",
+   :page   137,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Nilbog",
+   :source "VGM",
+   :page   182,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name "Quickling", :source "VGM", :page 187, :type "fey"}
+  {:name "Sea Spawn", :source "VGM", :page 189, :type "humanoid"}
+  {:name "Thorny", :source "VGM", :page 197, :type "plant"}
+  {:name "Vargouille", :source "VGM", :page 195, :type "fiend"}
+  {:name   "Xvart Warlock of Raxivort",
+   :source "VGM",
+   :page   200,
+   :type   {:tags ["xvart"], :type "humanoid"}}
+  {:name   "Bastet Temple Cat",
+   :source "ToB",
+   :page   32,
+   :type   "monstrosity"}
+  {:name "Boloti", :source "ToB", :page 38, :type "fey"}
+  {:name "Broodiken", :source "ToB", :page 45, :type "construct"}
+  {:name "Chernomoi", :source "ToB", :page 55, :type "fey"}
+  {:name "Child of the Briar", :source "ToB", :page 56, :type "plant"}
+  {:name   "Clockwork Weaving Spider",
+   :source "ToB",
+   :page   66,
+   :type   "construct"}
+  {:name "Crimson Drake", :source "ToB", :page 151, :type "dragon"}
+  {:name "Dogmole", :source "ToB", :page 120, :type "beast"}
+  {:name "Emerald Eye", :source "ToB", :page 175, :type "construct"}
+  {:name   "Eonic Drifter",
+   :source "ToB",
+   :page   177,
+   :type   {:tags ["human"], :type "humanoid"}}
+  {:name   "Erina Defender",
+   :source "ToB",
+   :page   178,
+   :type   {:tags ["erina"], :type "humanoid"}}
+  {:name "Gerridae", :source "ToB", :page 212, :type "fey"}
+  {:name "Glass Gator", :source "ToB", :page 228, :type "beast"}
+  {:name   "Kobold Trapsmith",
+   :source "ToB",
+   :page   264,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Leshy", :source "ToB", :page 272, :type "monstrosity"}
+  {:name "Moss Lurker", :source "ToB", :page 298, :type "humanoid"}
+  {:name "Nihilethic Zombie", :source "ToB", :page 9, :type "undead"}
+  {:name   "Ratfolk Rogue",
+   :source "ToB",
+   :page   320,
+   :type   {:tags ["ratfolk"], :type "humanoid"}}
+  {:name "Rime Worm Grub", :source "ToB", :page 327, :type "elemental"}
+  {:name "Sharkjaw Skeleton", :source "ToB", :page 350, :type "undead"}
+  {:name "Wampus Cat", :source "ToB", :page 405, :type "monstrosity"}
+  {:name   "Wind Dragon Wyrmling",
+   :source "ToB",
+   :page   145,
+   :type   "dragon"}
+  {:name "Zanskaran Viper", :source "ToB", :page 354, :type "beast"}
+  {:name   "Core Spawn Crawler",
+   :source "EGW",
+   :page   286,
+   :type   "aberration"}
+  {:name "Husk Zombie", :source "EGW", :page 293, :type "undead"}
+  {:name "Moorbounder", :source "EGW", :page 295, :type "beast"}
+  {:name   "Sken Zabriss",
+   :source "EGW",
+   :page   221,
+   :type   {:tags ["goliath"], :type "humanoid"}}],
+ 2
+ [{:name "Allosaurus", :source "MM", :page 79, :type "beast"}
+  {:name "Ankheg", :source "MM", :page 21, :type "monstrosity"}
+  {:name "Awakened Tree", :source "MM", :page 317, :type "plant"}
+  {:name "Azer", :source "MM", :page 22, :type "elemental"}
+  {:name   "Bandit Captain",
+   :source "MM",
+   :page   344,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Berserker",
+   :source "MM",
+   :page   344,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Black Dragon Wyrmling",
+   :source "MM",
+   :page   88,
+   :type   "dragon"}
+  {:name   "Bronze Dragon Wyrmling",
+   :source "MM",
+   :page   109,
+   :type   "dragon"}
+  {:name   "Carrion Crawler",
+   :source "MM",
+   :page   37,
+   :type   "monstrosity"}
+  {:name "Cave Bear", :source "MM", :page 334, :type "beast"}
+  {:name "Centaur", :source "MM", :page 38, :type "monstrosity"}
+  {:name   "Cult Fanatic",
+   :source "MM",
+   :page   345,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Druid",
+   :source "MM",
+   :page   346,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Ettercap", :source "MM", :page 131, :type "monstrosity"}
+  {:name   "Faerie Dragon (Blue)",
+   :source "MM",
+   :page   133,
+   :type   "dragon"}
+  {:name   "Faerie Dragon (Green)",
+   :source "MM",
+   :page   133,
+   :type   "dragon"}
+  {:name   "Faerie Dragon (Indigo)",
+   :source "MM",
+   :page   133,
+   :type   "dragon"}
+  {:name   "Faerie Dragon (Violet)",
+   :source "MM",
+   :page   133,
+   :type   "dragon"}
+  {:name "Gargoyle", :source "MM", :page 140, :type "elemental"}
+  {:name "Gelatinous Cube", :source "MM", :page 242, :type "ooze"}
+  {:name "Ghast", :source "MM", :page 148, :type "undead"}
+  {:name "Giant Boar", :source "MM", :page 323, :type "beast"}
+  {:name   "Giant Constrictor Snake",
+   :source "MM",
+   :page   324,
+   :type   "beast"}
+  {:name "Giant Elk", :source "MM", :page 325, :type "beast"}
+  {:name   "Gibbering Mouther",
+   :source "MM",
+   :page   157,
+   :type   "aberration"}
+  {:name   "Githzerai Monk",
+   :source "MM",
+   :page   161,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name   "Gnoll Pack Lord",
+   :source "MM",
+   :page   163,
+   :type   {:tags ["gnoll"], :type "humanoid"}}
+  {:name   "Green Dragon Wyrmling",
+   :source "MM",
+   :page   95,
+   :type   "dragon"}
+  {:name "Grick", :source "MM", :page 173, :type "monstrosity"}
+  {:name "Griffon", :source "MM", :page 174, :type "monstrosity"}
+  {:name "Hunter Shark", :source "MM", :page 330, :type "beast"}
+  {:name   "Intellect Devourer",
+   :source "MM",
+   :page   191,
+   :type   "aberration"}
+  {:name   "Lizardfolk Shaman",
+   :source "MM",
+   :page   205,
+   :type   {:tags ["lizardfolk"], :type "humanoid"}}
+  {:name "Merrow", :source "MM", :page 219, :type "monstrosity"}
+  {:name   "Mimic",
+   :source "MM",
+   :page   220,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name "Minotaur Skeleton", :source "MM", :page 273, :type "undead"}
+  {:name "Myconid Sovereign", :source "MM", :page 232, :type "plant"}
+  {:name "Nothic", :source "MM", :page 236, :type "aberration"}
+  {:name "Ochre Jelly", :source "MM", :page 243, :type "ooze"}
+  {:name "Ogre", :source "MM", :page 237, :type "giant"}
+  {:name "Ogre Zombie", :source "MM", :page 316, :type "undead"}
+  {:name   "Orc Eye of Gruumsh",
+   :source "MM",
+   :page   247,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name   "Orog",
+   :source "MM",
+   :page   247,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Pegasus", :source "MM", :page 250, :type "celestial"}
+  {:name "Pentadrone", :source "MM", :page 226, :type "construct"}
+  {:name "Peryton", :source "MM", :page 251, :type "monstrosity"}
+  {:name "Plesiosaurus", :source "MM", :page 80, :type "beast"}
+  {:name "Polar Bear", :source "MM", :page 334, :type "beast"}
+  {:name "Poltergeist", :source "MM", :page 279, :type "undead"}
+  {:name   "Priest",
+   :source "MM",
+   :page   348,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Quaggoth",
+   :source "MM",
+   :page   256,
+   :type   {:tags ["quaggoth"], :type "humanoid"}}
+  {:name "Rhinoceros", :source "MM", :page 336, :type "beast"}
+  {:name   "Rug of Smothering",
+   :source "MM",
+   :page   20,
+   :type   "construct"}
+  {:name "Saber-Toothed Tiger", :source "MM", :page 336, :type "beast"}
+  {:name   "Sahuagin Priestess",
+   :source "MM",
+   :page   264,
+   :type   {:tags ["sahuagin"], :type "humanoid"}}
+  {:name "Sea Hag", :source "MM", :page 179, :type "fey"}
+  {:name   "Silver Dragon Wyrmling",
+   :source "MM",
+   :page   118,
+   :type   "dragon"}
+  {:name   "Spined Devil",
+   :source "MM",
+   :page   78,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Swarm of Poisonous Snakes",
+   :source "MM",
+   :page   338,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Wererat",
+   :source "MM",
+   :page   209,
+   :type   {:tags ["human" "shapechanger"], :type "humanoid"}}
+  {:name   "White Dragon Wyrmling",
+   :source "MM",
+   :page   102,
+   :type   "dragon"}
+  {:name "Will-o'-Wisp", :source "MM", :page 301, :type "undead"}
+  {:name   "Counterflux Blastseeker",
+   :source "GGR",
+   :page   242,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Hybrid Brute",
+   :source "GGR",
+   :page   217,
+   :type   {:tags ["Simic hybrid"], :type "humanoid"}}
+  {:name   "Hybrid Flier",
+   :source "GGR",
+   :page   217,
+   :type   {:tags ["Simic hybrid"], :type "humanoid"}}
+  {:name   "Rakdos Lampooner",
+   :source "GGR",
+   :page   248,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Skyjek Roc", :source "GGR", :page 219, :type "monstrosity"}
+  {:name   "Inspired",
+   :source "ERLW",
+   :page   294,
+   :type   {:tags ["human"], :type "humanoid"}}
+  {:name   "Tarkanan Assassin",
+   :source "ERLW",
+   :page   320,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Undying Soldier", :source "ERLW", :page 311, :type "undead"}
+  {:name "Ahuizotl", :source "CCodex", :page 10, :type "monstrosity"}
+  {:name   "Arcamag",
+   :source "CCodex",
+   :page   41,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name   "The Iron Teeth of Baba Yaga",
+   :source "CCodex",
+   :page   47,
+   :type   "fey"}
+  {:name   "Giant Vampire Bat",
+   :source "CCodex",
+   :page   50,
+   :type   "beast"}
+  {:name   "Bearmit Crab",
+   :source "CCodex",
+   :page   52,
+   :type   "monstrosity"}
+  {:name "Cauldronborn", :source "CCodex", :page 59, :type "construct"}
+  {:name   "Wind Demon",
+   :source "CCodex",
+   :page   93,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Lystrosaurus",
+   :source "CCodex",
+   :page   108,
+   :type   {:tags ["dinosaur"], :type "beast"}}
+  {:name   "Light Dragon Wyrmling",
+   :source "CCodex",
+   :page   113,
+   :type   "dragon"}
+  {:name   "Elementalist",
+   :source "CCodex",
+   :page   122,
+   :type   {:tags ["dragonborn"], :type "humanoid"}}
+  {:name   "Heavy Cavalry",
+   :source "CCodex",
+   :page   123,
+   :type   {:tags ["dragonborn"], :type "humanoid"}}
+  {:name "Forest Drake", :source "CCodex", :page 128, :type "dragon"}
+  {:name "Dream Squire", :source "CCodex", :page 134, :type "fey"}
+  {:name   "Pattern Dancer",
+   :source "CCodex",
+   :page   147,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Fear Liath", :source "CCodex", :page 152, :type "undead"}
+  {:name   "Flame Eater Swarm",
+   :source "CCodex",
+   :page   158,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Glass Golem",
+   :source "CCodex",
+   :page   200,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name "Kallikantzaros", :source "CCodex", :page 233, :type "fey"}
+  {:name "Kappa", :source "CCodex", :page 234, :type "fey"}
+  {:name   "Kitsune",
+   :source "CCodex",
+   :page   236,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Junk Shaman",
+   :source "CCodex",
+   :page   238,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Kuunganisha", :source "CCodex", :page 245, :type "fiend"}
+  {:name "Lady In White", :source "CCodex", :page 246, :type "undead"}
+  {:name   "Lou Carcolh",
+   :source "CCodex",
+   :page   257,
+   :type   "monstrosity"}
+  {:name   "Black Sun Orc",
+   :source "CCodex",
+   :page   289,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name   "Pech",
+   :source "CCodex",
+   :page   294,
+   :type   {:tags ["pech"], :type "elemental"}}
+  {:name "Rageipede", :source "CCodex", :page 310, :type "beast"}
+  {:name   "Ratfolk Mercenary",
+   :source "CCodex",
+   :page   315,
+   :type   {:tags ["ratfolk"], :type "humanoid"}}
+  {:name   "Roachling Scout",
+   :source "CCodex",
+   :page   319,
+   :type   {:tags ["roachling"], :type "humanoid"}}
+  {:name   "Roggenwolf",
+   :source "CCodex",
+   :page   320,
+   :type   "monstrosity"}
+  {:name "Scitalis", :source "CCodex", :page 321, :type "monstrosity"}
+  {:name   "Lesser Scrag",
+   :source "CCodex",
+   :page   322,
+   :type   "monstrosity"}
+  {:name "Sigilian", :source "CCodex", :page 335, :type "construct"}
+  {:name   "Vanara",
+   :source "CCodex",
+   :page   338,
+   :type   {:tags ["simian"], :type "humanoid"}}
+  {:name   "Clacking Skeleton",
+   :source "CCodex",
+   :page   340,
+   :type   {:tags ["skeleton"], :type "undead"}}
+  {:name   "Shadow Skeleton",
+   :source "CCodex",
+   :page   342,
+   :type   {:tags ["skeleton"], :type "undead"}}
+  {:name "Crypt Spider", :source "CCodex", :page 348, :type "beast"}
+  {:name "Terror Bird", :source "CCodex", :page 352, :type "beast"}
+  {:name   "Trollkin Grunt",
+   :source "CCodex",
+   :page   357,
+   :type   {:tags ["trollkin"], :type "humanoid"}}
+  {:name   "Vampire Thrall",
+   :source "CCodex",
+   :page   368,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Wind Weasel",
+   :source "CCodex",
+   :page   375,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "White Stag", :source "CCodex", :page 379, :type "celestial"}
+  {:name "Wind Eater", :source "CCodex", :page 381, :type "undead"}
+  {:name   "Yakirian",
+   :source "CCodex",
+   :page   390,
+   :type   {:tags ["yakirian"], :type "humanoid"}}
+  {:name   "Yann-An-Oed",
+   :source "CCodex",
+   :page   391,
+   :type   "aberration"}
+  {:name "Blood Zombie", :source "CCodex", :page 393, :type "undead"}
+  {:name   "Metee-Kolen-Ol",
+   :source "CCodex",
+   :page   404,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Adult Kruthik",
+   :source "MTF",
+   :page   212,
+   :type   "monstrosity"}
+  {:name "Berbalang", :source "MTF", :page 120, :type "aberration"}
+  {:name   "Duergar Hammerer",
+   :source "MTF",
+   :page   188,
+   :type   "construct"}
+  {:name   "Duergar Kavalrachni",
+   :source "MTF",
+   :page   189,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Duergar Mind Master",
+   :source "MTF",
+   :page   189,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Duergar Stone Guard",
+   :source "MTF",
+   :page   191,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Duergar Xarrorn",
+   :source "MTF",
+   :page   193,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name "Ogre Bolt Launcher", :source "MTF", :page 220, :type "giant"}
+  {:name "Ogre Howdah", :source "MTF", :page 221, :type "giant"}
+  {:name   "Rutterkin",
+   :source "MTF",
+   :page   136,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Tortle Druid",
+   :source "MTF",
+   :page   242,
+   :type   {:tags ["tortle"], :type "humanoid"}}
+  {:name "Chimeric Phantom", :source "ToB2", :page 63, :type "undead"}
+  {:name "Crinaea", :source "ToB2", :page 74, :type "fey"}
+  {:name   "Derro Explorer",
+   :source "ToB2",
+   :page   97,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name   "Boreal Dragon Wyrmling",
+   :source "ToB2",
+   :page   113,
+   :type   "dragon"}
+  {:name "Hoarfrost Drake", :source "ToB2", :page 123, :type "dragon"}
+  {:name "Egret Harpy", :source "ToB2", :page 195, :type "monstrosity"}
+  {:name   "Initiate of the Elder Elementals",
+   :source "ToB2",
+   :page   216,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Lesser Lunarchidna",
+   :source "ToB2",
+   :page   242,
+   :type   "aberration"}
+  {:name "Mad Piper", :source "ToB2", :page 250, :type "construct"}
+  {:name "Ichor Ooze", :source "ToB2", :page 279, :type "ooze"}
+  {:name "Ophinix", :source "ToB2", :page 283, :type "monstrosity"}
+  {:name "Orphan of the Black", :source "ToB2", :page 286, :type "fey"}
+  {:name "Qiqirn", :source "ToB2", :page 301, :type "monstrosity"}
+  {:name "Rock Roach", :source "ToB2", :page 308, :type "beast"}
+  {:name "Rotsam", :source "ToB2", :page 309, :type "ooze"}
+  {:name "Scrofin", :source "ToB2", :page 319, :type "fey"}
+  {:name   "Silver Dragon Wyrmling Skeleton",
+   :source "ToB2",
+   :page   331,
+   :type   "undead"}
+  {:name "Swampgas Bubble", :source "ToB2", :page 343, :type "ooze"}
+  {:name "Tree Skinner", :source "ToB2", :page 351, :type "fiend"}
+  {:name "Yumerai", :source "ToB2", :page 381, :type "fey"}
+  {:name   "Leech Swarm",
+   :source "ToB2",
+   :page   396,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Swarm of Esteron", :source "ToB2", :page 400, :type "beast"}
+  {:name "Aurochs", :source "VGM", :page 207, :type "beast"}
+  {:name   "Bard",
+   :source "VGM",
+   :page   211,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Black Guard Drake", :source "VGM", :page 158, :type "dragon"}
+  {:name "Blue Guard Drake", :source "VGM", :page 158, :type "dragon"}
+  {:name "Darkling Elder", :source "VGM", :page 134, :type "fey"}
+  {:name "Green Guard Drake", :source "VGM", :page 158, :type "dragon"}
+  {:name   "Grung Elite Warrior",
+   :source "VGM",
+   :page   157,
+   :type   {:tags ["grung"], :type "humanoid"}}
+  {:name   "Hobgoblin Iron Shadow",
+   :source "VGM",
+   :page   162,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name "Meenlock", :source "VGM", :page 170, :type "fey"}
+  {:name   "Orc Claw of Luthic",
+   :source "VGM",
+   :page   183,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name   "Orc Hand of Yurtrus",
+   :source "VGM",
+   :page   184,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Quetzalcoatlus", :source "VGM", :page 140, :type "beast"}
+  {:name "Red Guard Drake", :source "VGM", :page 158, :type "dragon"}
+  {:name   "Shadow Mastiff",
+   :source "VGM",
+   :page   190,
+   :type   "monstrosity"}
+  {:name "Vegepygmy Chief", :source "VGM", :page 197, :type "plant"}
+  {:name "White Guard Drake", :source "VGM", :page 158, :type "dragon"}
+  {:name   "Yuan-ti Broodguard",
+   :source "VGM",
+   :page   203,
+   :type   {:tags ["yuan-ti"], :type "humanoid"}}
+  {:name "Anubian", :source "ToB", :page 24, :type "elemental"}
+  {:name "Behtu", :source "ToB", :page 34, :type "humanoid"}
+  {:name "Beli", :source "ToB", :page 35, :type "fey"}
+  {:name   "Cave Dragon Wyrmling",
+   :source "ToB",
+   :page   127,
+   :type   "dragon"}
+  {:name "Clockwork Hound", :source "ToB", :page 62, :type "construct"}
+  {:name   "Cobbleswarm",
+   :source "ToB",
+   :page   68,
+   :type   {:swarmSize "T", :type "monstrosity"}}
+  {:name "Deep One", :source "ToB", :page 73, :type "humanoid"}
+  {:name "Doppelrat", :source "ToB", :page 123, :type "monstrosity"}
+  {:name "Eala", :source "ToB", :page 163, :type "monstrosity"}
+  {:name "Eel Hound", :source "ToB", :page 166, :type "fey"}
+  {:name "Firegeist", :source "ToB", :page 202, :type "elemental"}
+  {:name "Folk of Leng", :source "ToB", :page 204, :type "humanoid"}
+  {:name "Giant Ant", :source "ToB", :page 23, :type "beast"}
+  {:name "Gray Thirster", :source "ToB", :page 238, :type "undead"}
+  {:name   "Ink Devil",
+   :source "ToB",
+   :page   107,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Kobold Alchemist",
+   :source "ToB",
+   :page   261,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Kot Bayun", :source "ToB", :page 268, :type "monstrosity"}
+  {:name "Myling", :source "ToB", :page 301, :type "undead"}
+  {:name   "Noctiny",
+   :source "ToB",
+   :page   308,
+   :type   {:tags ["noctiny"], :type "humanoid"}}
+  {:name "Paper Drake", :source "ToB", :page 154, :type "dragon"}
+  {:name "Putrid Haunt", :source "ToB", :page 315, :type "undead"}
+  {:name   "Roachling Lord",
+   :source "ToB",
+   :page   329,
+   :type   {:tags ["roachling"], :type "humanoid"}}
+  {:name   "Sea Dragon Wyrmling",
+   :source "ToB",
+   :page   136,
+   :type   "dragon"}
+  {:name "Shadhavar", :source "ToB", :page 344, :type "monstrosity"}
+  {:name "Shellycoat", :source "ToB", :page 346, :type "fey"}
+  {:name "Spider Thief", :source "ToB", :page 366, :type "construct"}
+  {:name "Tendril Puppet", :source "ToB", :page 403, :type "plant"}
+  {:name   "Tosculi Warrior",
+   :source "ToB",
+   :page   386,
+   :type   "monstrosity"}
+  {:name "Uraeus", :source "ToB", :page 392, :type "celestial"}
+  {:name "Vile Barber", :source "ToB", :page 401, :type "fey"}
+  {:name   "Void Dragon Wyrmling",
+   :source "ToB",
+   :page   140,
+   :type   "dragon"}],
+ 3
+ [{:name "Ankylosaurus", :source "MM", :page 79, :type "beast"}
+  {:name "Basilisk", :source "MM", :page 24, :type "monstrosity"}
+  {:name   "Bearded Devil",
+   :source "MM",
+   :page   70,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Blue Dragon Wyrmling",
+   :source "MM",
+   :page   91,
+   :type   "dragon"}
+  {:name   "Bugbear Chief",
+   :source "MM",
+   :page   33,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Displacer Beast",
+   :source "MM",
+   :page   81,
+   :type   "monstrosity"}
+  {:name   "Doppelganger",
+   :source "MM",
+   :page   82,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name "Giant Scorpion", :source "MM", :page 327, :type "beast"}
+  {:name   "Githyanki Warrior",
+   :source "MM",
+   :page   160,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name   "Gold Dragon Wyrmling",
+   :source "MM",
+   :page   115,
+   :type   "dragon"}
+  {:name "Green Hag", :source "MM", :page 177, :type "fey"}
+  {:name "Grell", :source "MM", :page 172, :type "aberration"}
+  {:name "Hell Hound", :source "MM", :page 182, :type "fiend"}
+  {:name   "Hobgoblin Captain",
+   :source "MM",
+   :page   186,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name "Hook Horror", :source "MM", :page 189, :type "monstrosity"}
+  {:name "Killer Whale", :source "MM", :page 331, :type "beast"}
+  {:name   "Knight",
+   :source "MM",
+   :page   347,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Kuo-toa Monitor",
+   :source "MM",
+   :page   198,
+   :type   {:tags ["kuo-toa"], :type "humanoid"}}
+  {:name "Manticore", :source "MM", :page 213, :type "monstrosity"}
+  {:name "Minotaur", :source "MM", :page 223, :type "monstrosity"}
+  {:name "Mummy", :source "MM", :page 228, :type "undead"}
+  {:name "Nightmare", :source "MM", :page 235, :type "fiend"}
+  {:name "Owlbear", :source "MM", :page 249, :type "monstrosity"}
+  {:name "Phase Spider", :source "MM", :page 334, :type "monstrosity"}
+  {:name   "Quaggoth Thonot",
+   :source "MM",
+   :page   256,
+   :type   {:tags ["quaggoth"], :type "humanoid"}}
+  {:name "Spectator", :source "MM", :page 30, :type "aberration"}
+  {:name   "Veteran",
+   :source "MM",
+   :page   350,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Water Weird", :source "MM", :page 299, :type "elemental"}
+  {:name   "Werewolf",
+   :source "MM",
+   :page   211,
+   :type   {:tags ["human" "shapechanger"], :type "humanoid"}}
+  {:name "Wight", :source "MM", :page 300, :type "undead"}
+  {:name "Winter Wolf", :source "MM", :page 340, :type "monstrosity"}
+  {:name "Yeti", :source "MM", :page 305, :type "monstrosity"}
+  {:name   "Yuan-ti Malison (Type 1)",
+   :source "MM",
+   :page   309,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name   "Yuan-ti Malison (Type 2)",
+   :source "MM",
+   :page   309,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name   "Yuan-ti Malison (Type 3)",
+   :source "MM",
+   :page   309,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name "Flying Horror", :source "GGR", :page 203, :type "aberration"}
+  {:name   "Precognitive Mage",
+   :source "GGR",
+   :page   228,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Dolgaunt", :source "ERLW", :page 290, :type "aberration"}
+  {:name   "Karrnathi Undead Soldier",
+   :source "ERLW",
+   :page   295,
+   :type   "undead"}
+  {:name "Ahu-Nixta", :source "CCodex", :page 11, :type "aberration"}
+  {:name   "Kinnara",
+   :source "CCodex",
+   :page   17,
+   :type   {:tags ["angel"], :type "celestial"}}
+  {:name   "Astral Snapper",
+   :source "CCodex",
+   :page   43,
+   :type   "aberration"}
+  {:name   "Bar Brawl",
+   :source "CCodex",
+   :page   48,
+   :type   {:swarmSize "M", :type "humanoid"}}
+  {:name   "Giant Albino Bat",
+   :source "CCodex",
+   :page   50,
+   :type   "monstrosity"}
+  {:name   "Bloody Bones",
+   :source "CCodex",
+   :page   54,
+   :type   "monstrosity"}
+  {:name   "Dark Eye",
+   :source "CCodex",
+   :page   72,
+   :type   {:tags ["dark folk"], :type "humanoid"}}
+  {:name   "Pishacha",
+   :source "CCodex",
+   :page   88,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name   "Plaresh",
+   :source "CCodex",
+   :page   89,
+   :type   {:tags ["demon"], :swarmSize "T", :type "fiend"}}
+  {:name   "Wasteland Dragon Wyrmling",
+   :source "CCodex",
+   :page   118,
+   :type   "dragon"}
+  {:name   "Edjet",
+   :source "CCodex",
+   :page   121,
+   :type   {:tags ["dragonborn"], :type "humanoid"}}
+  {:name   "Bathhouse Drake",
+   :source "CCodex",
+   :page   126,
+   :type   "dragon"}
+  {:name "Peluda Drake", :source "CCodex", :page 131, :type "dragon"}
+  {:name "Skull Drake", :source "CCodex", :page 132, :type "dragon"}
+  {:name   "Dust Goblin Chieftain",
+   :source "CCodex",
+   :page   136,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Far Wanderer",
+   :source "CCodex",
+   :page   151,
+   :type   "aberration"}
+  {:name   "Ghast of Leng",
+   :source "CCodex",
+   :page   168,
+   :type   "aberration"}
+  {:name   "Ghost Boar",
+   :source "CCodex",
+   :page   169,
+   :type   "monstrosity"}
+  {:name "Ghoulsteed", :source "CCodex", :page 177, :type "undead"}
+  {:name "Gloomflower", :source "CCodex", :page 188, :type "plant"}
+  {:name   "Gnoll Slaver",
+   :source "CCodex",
+   :page   189,
+   :type   {:tags ["gnoll"], :type "humanoid"}}
+  {:name   "Bronze Golem",
+   :source "CCodex",
+   :page   196,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Keg Golem",
+   :source "CCodex",
+   :page   199,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Paper Golem Swarm",
+   :source "CCodex",
+   :page   204,
+   :type   {:swarmSize "T", :type "construct"}}
+  {:name   "Wood Golem",
+   :source "CCodex",
+   :page   201,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name "Snow Hag", :source "CCodex", :page 214, :type "fey"}
+  {:name "Preta", :source "CCodex", :page 223, :type "undead"}
+  {:name   "Swolbold",
+   :source "CCodex",
+   :page   240,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name "Korrigan", :source "CCodex", :page 242, :type "fey"}
+  {:name   "Werebat",
+   :source "CCodex",
+   :page   258,
+   :type   {:tags ["human" "shapechanger"], :type "humanoid"}}
+  {:name   "Werehyena",
+   :source "CCodex",
+   :page   259,
+   :type   {:tags ["gnoll" "shapechanger"], :type "humanoid"}}
+  {:name "Megapede", :source "CCodex", :page 266, :type "monstrosity"}
+  {:name "Shadow Ooze", :source "CCodex", :page 287, :type "ooze"}
+  {:name   "Black Sun Priestess",
+   :source "CCodex",
+   :page   290,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Orthrus", :source "CCodex", :page 292, :type "monstrosity"}
+  {:name "Purple Slime", :source "CCodex", :page 307, :type "ooze"}
+  {:name   "Thread-bound Constrictor Snake",
+   :source "CCodex",
+   :page   353,
+   :type   "construct"}
+  {:name   "Fang of the Great Wolf",
+   :source "CCodex",
+   :page   384,
+   :type   {:tags ["worg"], :type "monstrosity"}}
+  {:name   "Xenabsorber",
+   :source "CCodex",
+   :page   387,
+   :type   "aberration"}
+  {:name "Mold Zombie", :source "CCodex", :page 395, :type "undead"}
+  {:name   "War Chaplain",
+   :source "CCodex",
+   :page   410,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Bulezau",
+   :source "MTF",
+   :page   131,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Deathlock Wight", :source "MTF", :page 129, :type "undead"}
+  {:name   "Derro Savant",
+   :source "MTF",
+   :page   159,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name   "Duergar Screamer",
+   :source "MTF",
+   :page   190,
+   :type   "construct"}
+  {:name "Giff", :source "MTF", :page 204, :type "humanoid"}
+  {:name   "Merrenoloth",
+   :source "MTF",
+   :page   250,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name "Ogre Chain Brute", :source "MTF", :page 221, :type "giant"}
+  {:name   "Sword Wraith Warrior",
+   :source "MTF",
+   :page   241,
+   :type   "undead"}
+  {:name "Vampiric Mist", :source "MTF", :page 246, :type "undead"}
+  {:name "Alpha Fish", :source "ToB2", :page 14, :type "beast"}
+  {:name "Apaxrusl", :source "ToB2", :page 27, :type "construct"}
+  {:name "Bleakheart", :source "ToB2", :page 43, :type "undead"}
+  {:name "Bloodsapper", :source "ToB2", :page 44, :type "aberration"}
+  {:name   "Brimstone Locusthound",
+   :source "ToB2",
+   :page   51,
+   :type   "monstrosity"}
+  {:name "Catscratch", :source "ToB2", :page 58, :type "aberration"}
+  {:name "Chill Haunt", :source "ToB2", :page 62, :type "undead"}
+  {:name "Corpse Worm", :source "ToB2", :page 71, :type "monstrosity"}
+  {:name "Crocotta", :source "ToB2", :page 75, :type "monstrosity"}
+  {:name   "Imperial Dragon Wyrmling",
+   :source "ToB2",
+   :page   117,
+   :type   "dragon"}
+  {:name "Cave Drake", :source "ToB2", :page 119, :type "dragon"}
+  {:name "Kelp Drake", :source "ToB2", :page 124, :type "dragon"}
+  {:name "Fane Spirit", :source "ToB2", :page 141, :type "undead"}
+  {:name "Fragrant One", :source "ToB2", :page 156, :type "fey"}
+  {:name "Gaunt One", :source "ToB2", :page 163, :type "aberration"}
+  {:name "Abbanith Giant", :source "ToB2", :page 170, :type "giant"}
+  {:name "Vine Golem", :source "ToB2", :page 181, :type "construct"}
+  {:name "Hodag", :source "ToB2", :page 200, :type "beast"}
+  {:name "Lazavik", :source "ToB2", :page 236, :type "fey"}
+  {:name "Mineral Ooze", :source "ToB2", :page 280, :type "ooze"}
+  {:name   "Pale Screamer",
+   :source "ToB2",
+   :page   290,
+   :type   "aberration"}
+  {:name   "Radiant Spark Swarm",
+   :source "ToB2",
+   :page   305,
+   :type   {:swarmSize "T", :type "elemental"}}
+  {:name   "Satarre Destroyer",
+   :source "ToB2",
+   :page   315,
+   :type   {:tags ["satarre"], :type "humanoid"}}
+  {:name   "Satarre Mystic",
+   :source "ToB2",
+   :page   315,
+   :type   {:type "humanoid", :tag ["satarre"]}}
+  {:name "Shadow Boxer", :source "ToB2", :page 322, :type "fey"}
+  {:name   "Veteran Swordbreaker Skeleton",
+   :source "ToB2",
+   :page   332,
+   :type   "undead"}
+  {:name   "Snake with a Hundred Mage Hands",
+   :source "ToB2",
+   :page   333,
+   :type   "monstrosity"}
+  {:name "Ssadar", :source "ToB2", :page 337, :type "humanoid"}
+  {:name "Viiret", :source "ToB2", :page 361, :type "plant"}
+  {:name "Woe Siphon", :source "ToB2", :page 373, :type "fey"}
+  {:name "Carrier Mosquito", :source "ToB2", :page 389, :type "beast"}
+  {:name "Frost Mole", :source "ToB2", :page 390, :type "beast"}
+  {:name   "Archer",
+   :source "VGM",
+   :page   210,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Cave Fisher", :source "VGM", :page 130, :type "monstrosity"}
+  {:name "Choldrith", :source "VGM", :page 132, :type "monstrosity"}
+  {:name   "Deep Scion",
+   :source "VGM",
+   :page   135,
+   :type   {:tags ["shapechanger"], :type "humanoid"}}
+  {:name "Flail Snail", :source "VGM", :page 144, :type "elemental"}
+  {:name   "Illusionist",
+   :source "VGM",
+   :page   214,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Leucrotta", :source "VGM", :page 169, :type "monstrosity"}
+  {:name   "Martial Arts Adept",
+   :source "VGM",
+   :page   216,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Neogi", :source "VGM", :page 180, :type "aberration"}
+  {:name   "Orc Red Fang of Shargaas",
+   :source "VGM",
+   :page   185,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Redcap", :source "VGM", :page 188, :type "fey"}
+  {:name "Slithering Tracker", :source "VGM", :page 191, :type "ooze"}
+  {:name   "Swashbuckler",
+   :source "VGM",
+   :page   217,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Trapper", :source "VGM", :page 194, :type "monstrosity"}
+  {:name   "Yuan-ti Malison (Type 4)",
+   :source "VGM",
+   :page   96,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name   "Yuan-ti Malison (Type 5)",
+   :source "VGM",
+   :page   96,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name   "Alseid Grovekeeper",
+   :source "ToB",
+   :page   15,
+   :type   "monstrosity"}
+  {:name "Amphiptere", :source "ToB", :page 16, :type "beast"}
+  {:name   "Arboreal Grappler",
+   :source "ToB",
+   :page   25,
+   :type   "aberration"}
+  {:name "Bagiennik", :source "ToB", :page 31, :type "aberration"}
+  {:name   "Bearfolk",
+   :source "ToB",
+   :page   33,
+   :type   {:tags ["bearfolk"], :type "humanoid"}}
+  {:name "Cactid", :source "ToB", :page 50, :type "plant"}
+  {:name   "Clockwork Beetle Swarm",
+   :source "ToB",
+   :page   61,
+   :type   {:swarmSize "T", :type "construct"}}
+  {:name   "Clockwork Huntsman",
+   :source "ToB",
+   :page   63,
+   :type   "construct"}
+  {:name "Darakhul Ghoul", :source "ToB", :page 216, :type "undead"}
+  {:name "Duskthorn Dryad", :source "ToB", :page 160, :type "fey"}
+  {:name   "Elvish Veteran Archer",
+   :source "ToB",
+   :page   422,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Far Darrig", :source "ToB", :page 179, :type "fey"}
+  {:name   "Flame Dragon Wyrmling",
+   :source "ToB",
+   :page   131,
+   :type   "dragon"}
+  {:name   "Gnoll Havoc Runner",
+   :source "ToB",
+   :page   230,
+   :type   {:tags ["gnoll"], :type "humanoid"}}
+  {:name "Goat-Man", :source "ToB", :page 231, :type "monstrosity"}
+  {:name   "Imy-ut Ushabti",
+   :source "ToB",
+   :page   256,
+   :type   "monstrosity"}
+  {:name "J'ba Fofi Spider", :source "ToB", :page 362, :type "beast"}
+  {:name "Jaculus", :source "ToB", :page 258, :type "dragon"}
+  {:name "Mahoru", :source "ToB", :page 281, :type "monstrosity"}
+  {:name "Mbielu", :source "ToB", :page 114, :type "beast"}
+  {:name "Millitaur", :source "ToB", :page 288, :type "monstrosity"}
+  {:name "Mindrot Thrall", :source "ToB", :page 290, :type "plant"}
+  {:name   "Mirager",
+   :source "ToB",
+   :page   291,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Monolith Footman",
+   :source "ToB",
+   :page   295,
+   :type   "construct"}
+  {:name "Night Scorpion", :source "ToB", :page 340, :type "beast"}
+  {:name "Pombero", :source "ToB", :page 313, :type "fey"}
+  {:name   "Prismatic Beetle Swarm",
+   :source "ToB",
+   :page   375,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Ravenfolk Warrior",
+   :source "ToB",
+   :page   323,
+   :type   {:tags ["kenku"], :type "humanoid"}}
+  {:name   "Sluagh Swarm",
+   :source "ToB",
+   :page   376,
+   :type   {:swarmSize "T", :type "fey"}}
+  {:name "Spire Walker", :source "ToB", :page 367, :type "fey"}
+  {:name   "Stygian Fat-Tailed Scorpion",
+   :source "ToB",
+   :page   340,
+   :type   "beast"}
+  {:name "Thursir Giant", :source "ToB", :page 227, :type "giant"}
+  {:name "Venomous Mummy", :source "ToB", :page 299, :type "undead"}
+  {:name   "Wolf Reaver Dwarf",
+   :source "ToB",
+   :page   426,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Bol'bara",
+   :source "EGW",
+   :page   261,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Bristled Moorbounder",
+   :source "EGW",
+   :page   295,
+   :type   "beast"}
+  {:name   "Nergaliid",
+   :source "EGW",
+   :page   296,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Sahuagin Warlock of Uk'otoa",
+   :source "EGW",
+   :page   297,
+   :type   {:tags ["sahuagin"], :type "humanoid"}}],
+ 4
+ [{:name "Banshee", :source "MM", :page 23, :type "undead"}
+  {:name "Black Pudding", :source "MM", :page 241, :type "ooze"}
+  {:name   "Bone Naga (Guardian)",
+   :source "MM",
+   :page   233,
+   :type   "undead"}
+  {:name "Bone Naga (Spirit)", :source "MM", :page 233, :type "undead"}
+  {:name "Chuul", :source "MM", :page 40, :type "aberration"}
+  {:name "Couatl", :source "MM", :page 43, :type "celestial"}
+  {:name "Elephant", :source "MM", :page 322, :type "beast"}
+  {:name "Ettin", :source "MM", :page 132, :type "giant"}
+  {:name "Flameskull", :source "MM", :page 134, :type "undead"}
+  {:name "Ghost", :source "MM", :page 147, :type "undead"}
+  {:name   "Gnoll Fang of Yeenoghu",
+   :source "MM",
+   :page   163,
+   :type   {:tags ["gnoll"], :type "fiend"}}
+  {:name "Helmed Horror", :source "MM", :page 183, :type "construct"}
+  {:name   "Incubus",
+   :source "MM",
+   :page   285,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name "Lamia", :source "MM", :page 201, :type "monstrosity"}
+  {:name   "Lizard King",
+   :source "MM",
+   :page   205,
+   :type   {:tags ["lizardfolk"], :type "humanoid"}}
+  {:name   "Lizard Queen",
+   :source "MM",
+   :page   205,
+   :type   {:tags ["lizardfolk"], :type "humanoid"}}
+  {:name   "Orc War Chief",
+   :source "MM",
+   :page   246,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Red Dragon Wyrmling", :source "MM", :page 98, :type "dragon"}
+  {:name   "Shadow Demon",
+   :source "MM",
+   :page   64,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Succubus",
+   :source "MM",
+   :page   285,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name   "Wereboar",
+   :source "MM",
+   :page   209,
+   :type   {:tags ["human" "shapechanger"], :type "humanoid"}}
+  {:name   "Weretiger",
+   :source "MM",
+   :page   210,
+   :type   {:tags ["human" "shapechanger"], :type "humanoid"}}
+  {:name   "Blistercoil Weird",
+   :source "GGR",
+   :page   207,
+   :type   "elemental"}
+  {:name   "Cosmotronic Blastseeker",
+   :source "GGR",
+   :page   242,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Kraul Death Priest",
+   :source "GGR",
+   :page   214,
+   :type   {:tags ["kraul"], :type "humanoid"}}
+  {:name   "Mind Drinker Vampire",
+   :source "GGR",
+   :page   224,
+   :type   "undead"}
+  {:name   "Reckoner",
+   :source "GGR",
+   :page   231,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Arcanaphage",
+   :source "CCodex",
+   :page   42,
+   :type   "monstrosity"}
+  {:name "Azeban", :source "CCodex", :page 44, :type "fey"}
+  {:name   "Cats of Ulthar",
+   :source "CCodex",
+   :page   58,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Dark Father", :source "CCodex", :page 71, :type "undead"}
+  {:name   "Rattok",
+   :source "CCodex",
+   :page   90,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Yek",
+   :source "CCodex",
+   :page   95,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Wind's Harp",
+   :source "CCodex",
+   :page   105,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Venom Elemental",
+   :source "CCodex",
+   :page   140,
+   :type   "elemental"}
+  {:name "Elophar", :source "CCodex", :page 149, :type "undead"}
+  {:name   "Darakhul Shadowmancer",
+   :source "CCodex",
+   :page   173,
+   :type   "undead"}
+  {:name   "Darakhul Shadowmancer (Midgard Version)",
+   :source "CCodex",
+   :page   173,
+   :type   "undead"}
+  {:name   "Necrophage Ghast",
+   :source "CCodex",
+   :page   175,
+   :type   "undead"}
+  {:name "Tar Ghoul", :source "CCodex", :page 176, :type "undead"}
+  {:name   "Laestrigonian Giant",
+   :source "CCodex",
+   :page   184,
+   :type   "giant"}
+  {:name "Nian", :source "CCodex", :page 276, :type "monstrosity"}
+  {:name "Ink Guardian", :source "CCodex", :page 285, :type "ooze"}
+  {:name   "Pech Stonemaster",
+   :source "CCodex",
+   :page   295,
+   :type   {:tags ["pech"], :type "elemental"}}
+  {:name   "Philosopher's Ghost",
+   :source "CCodex",
+   :page   297,
+   :type   "ooze"}
+  {:name   "Pillar of the Lost Magocracy",
+   :source "CCodex",
+   :page   299,
+   :type   "construct"}
+  {:name   "Servant of Yig",
+   :source "CCodex",
+   :page   325,
+   :type   "aberration"}
+  {:name   "Shoreline Scrapper",
+   :source "CCodex",
+   :page   330,
+   :type   "beast"}
+  {:name   "Spawn of Chernobog",
+   :source "CCodex",
+   :page   347,
+   :type   "fiend"}
+  {:name   "Tosculi Jeweled Drone",
+   :source "CCodex",
+   :page   355,
+   :type   {:tags ["tosculi"], :type "humanoid"}}
+  {:name   "Trollkin Shaman",
+   :source "CCodex",
+   :page   357,
+   :type   {:tags ["trollkin"], :type "humanoid"}}
+  {:name "Tulpa", :source "CCodex", :page 358, :type "undead"}
+  {:name "Unhatched", :source "CCodex", :page 363, :type "undead"}
+  {:name   "Water Horse",
+   :source "CCodex",
+   :page   373,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Battle Mage",
+   :source "CCodex",
+   :page   397,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Graveslayer",
+   :source "CCodex",
+   :page   400,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Gear Mage",
+   :source "CCodex",
+   :page   401,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Gear Mage (Midgard Version)",
+   :source "CCodex",
+   :page   402,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Deathlock", :source "MTF", :page 128, :type "undead"}
+  {:name   "Dybbuk",
+   :source "MTF",
+   :page   132,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Iron Cobra", :source "MTF", :page 125, :type "construct"}
+  {:name   "Merregon",
+   :source "MTF",
+   :page   166,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Ogre Battering Ram", :source "MTF", :page 220, :type "giant"}
+  {:name "Stone Defender", :source "MTF", :page 126, :type "construct"}
+  {:name   "Alchemical Skunk",
+   :source "ToB2",
+   :page   13,
+   :type   "monstrosity"}
+  {:name "Mead Archon", :source "ToB2", :page 18, :type "celestial"}
+  {:name   "Animated Bearskin Rug",
+   :source "ToB2",
+   :page   24,
+   :type   "construct"}
+  {:name   "August Rooster",
+   :source "ToB2",
+   :page   33,
+   :type   "monstrosity"}
+  {:name   "Brachyura Shambler",
+   :source "ToB2",
+   :page   49,
+   :type   "monstrosity"}
+  {:name "Dancing Foliage", :source "ToB2", :page 79, :type "plant"}
+  {:name "De Ogen", :source "ToB2", :page 80, :type "undead"}
+  {:name   "Death Vulture",
+   :source "ToB2",
+   :page   81,
+   :type   "monstrosity"}
+  {:name "Deathspeaker", :source "ToB2", :page 82, :type "undead"}
+  {:name "Emperor's Hyena", :source "ToB2", :page 135, :type "undead"}
+  {:name   "Faceless Wanderer",
+   :source "ToB2",
+   :page   139,
+   :type   "aberration"}
+  {:name "Falsifier Fog", :source "ToB2", :page 140, :type "undead"}
+  {:name "Fleshspurned", :source "ToB2", :page 153, :type "undead"}
+  {:name "Strobing Fungus", :source "ToB2", :page 160, :type "plant"}
+  {:name "Rum Lord", :source "ToB2", :page 185, :type "fey"}
+  {:name "Guiguai", :source "ToB2", :page 188, :type "undead"}
+  {:name "Bagui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Meigui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Gudugui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Xiqigui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Infernal Centaur", :source "ToB2", :page 214, :type "fiend"}
+  {:name "Kezai", :source "ToB2", :page 228, :type "monstrosity"}
+  {:name   "Greater Lunarchidna",
+   :source "ToB2",
+   :page   242,
+   :type   "aberration"}
+  {:name "Mari Lwyd", :source "ToB2", :page 257, :type "undead"}
+  {:name "Amber Ooze", :source "ToB2", :page 2770, :type "ooze"}
+  {:name "Ortifex", :source "ToB2", :page 287, :type "undead"}
+  {:name "Overshadow", :source "ToB2", :page 289, :type "undead"}
+  {:name "Quickserpent", :source "ToB2", :page 303, :type "beast"}
+  {:name   "Servant of the Unsated God",
+   :source "ToB2",
+   :page   321,
+   :type   "undead"}
+  {:name   "Sulsha",
+   :source "ToB2",
+   :page   329,
+   :type   {:tags ["simian"], :type "humanoid"}}
+  {:name "Spellhound", :source "ToB2", :page 336, :type "monstrosity"}
+  {:name "Storm Maiden", :source "ToB2", :page 340, :type "elemental"}
+  {:name "Deep Troll", :source "ToB2", :page 352, :type "giant"}
+  {:name "Vangsluagh", :source "ToB2", :page 359, :type "aberration"}
+  {:name "Winterghast", :source "ToB2", :page 371, :type "undead"}
+  {:name   "Giant Water Scorpion",
+   :source "ToB2",
+   :page   393,
+   :type   "beast"}
+  {:name "Megaloceros", :source "ToB2", :page 396, :type "beast"}
+  {:name   "Babau",
+   :source "VGM",
+   :page   136,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Barghest",
+   :source "VGM",
+   :page   123,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name "Girallon", :source "VGM", :page 152, :type "monstrosity"}
+  {:name   "Hobgoblin Devastator",
+   :source "VGM",
+   :page   161,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name "Neogi Master", :source "VGM", :page 180, :type "aberration"}
+  {:name   "Orc Blade of Ilneval",
+   :source "VGM",
+   :page   183,
+   :type   {:tags ["orc"], :type "humanoid"}}
+  {:name "Stegosaurus", :source "VGM", :page 140, :type "beast"}
+  {:name   "Warlock of the Archfey",
+   :source "VGM",
+   :page   219,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Yeth Hound", :source "VGM", :page 201, :type "fey"}
+  {:name   "Yuan-ti Mind Whisperer",
+   :source "VGM",
+   :page   204,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name   "Yuan-ti Nightmare Speaker",
+   :source "VGM",
+   :page   205,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name "Accursed Defiler", :source "ToB", :page 12, :type "undead"}
+  {:name "Angler Worm", :source "ToB", :page 22, :type "monstrosity"}
+  {:name "Ash Drake", :source "ToB", :page 149, :type "dragon"}
+  {:name   "Bandit Lord",
+   :source "ToB",
+   :page   418,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Bereginyas", :source "ToB", :page 36, :type "fey"}
+  {:name "Carrion Beetle", :source "ToB", :page 52, :type "beast"}
+  {:name "Cavelight Moss", :source "ToB", :page 53, :type "plant"}
+  {:name   "City Watch Captain",
+   :source "ToB",
+   :page   419,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Dau", :source "ToB", :page 70, :type "fey"}
+  {:name   "Death Butterfly Swarm",
+   :source "ToB",
+   :page   71,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Deathcap Myconid", :source "ToB", :page 300, :type "plant"}
+  {:name   "Deep One Hybrid Priest",
+   :source "ToB",
+   :page   73,
+   :type   "humanoid"}
+  {:name   "Derro Fetal Savant",
+   :source "ToB",
+   :page   92,
+   :type   "humanoid"}
+  {:name "Domovoi", :source "ToB", :page 122, :type "fey"}
+  {:name "Dorreq", :source "ToB", :page 124, :type "aberration"}
+  {:name "Edimmu", :source "ToB", :page 165, :type "undead"}
+  {:name "Firebird", :source "ToB", :page 201, :type "celestial"}
+  {:name "Flab Giant", :source "ToB", :page 223, :type "giant"}
+  {:name "Forest Marauder", :source "ToB", :page 205, :type "giant"}
+  {:name "Frostveil", :source "ToB", :page 207, :type "plant"}
+  {:name "Giant Ant Queen", :source "ToB", :page 23, :type "beast"}
+  {:name "Imperial Ghoul", :source "ToB", :page 220, :type "undead"}
+  {:name   "Kobold Chieftain",
+   :source "ToB",
+   :page   263,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Lemurfolk Greyfur",
+   :source "ToB",
+   :page   271,
+   :type   {:tags ["lemurfolk"], :type "humanoid"}}
+  {:name "Lich Hound", :source "ToB", :page 274, :type "undead"}
+  {:name   "Manabane Scarab Swarm",
+   :source "ToB",
+   :page   374,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Mngwa", :source "ToB", :page 293, :type "aberration"}
+  {:name   "Nkosi Pridelord",
+   :source "ToB",
+   :page   306,
+   :type   {:tags ["shapechanger" "nkosi"], :type "humanoid"}}
+  {:name   "Oculo Swarm",
+   :source "ToB",
+   :page   309,
+   :type   {:swarmSize "T", :type "aberration"}}
+  {:name "Ostinato", :source "ToB", :page 312, :type "aberration"}
+  {:name "Ratatosk", :source "ToB", :page 319, :type "celestial"}
+  {:name "Sap Demon", :source "ToB", :page 335, :type "ooze"}
+  {:name "Selang", :source "ToB", :page 341, :type "fey"}
+  {:name "Serpopard", :source "ToB", :page 342, :type "beast"}
+  {:name   "Shadow Fey Guardian",
+   :source "ToB",
+   :page   171,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Skitterhaunt", :source "ToB", :page 352, :type "ooze"}
+  {:name   "Trollkin Reaver",
+   :source "ToB",
+   :page   390,
+   :type   {:tags ["trollkin"], :type "humanoid"}}
+  {:name   "Tusked Skyfish",
+   :source "ToB",
+   :page   391,
+   :type   "aberration"}
+  {:name "Vaettir", :source "ToB", :page 395, :type "undead"}
+  {:name "Water Leaper", :source "ToB", :page 406, :type "monstrosity"}
+  {:name   "Wharfling Swarm",
+   :source "ToB",
+   :page   407,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Zimwi", :source "ToB", :page 415, :type "giant"}
+  {:name   "Guardian Wolf",
+   :source "EGW",
+   :page   272,
+   :type   "monstrosity"}
+  {:name   "Merrow Shallowpriest",
+   :source "EGW",
+   :page   294,
+   :type   "monstrosity"}],
+ 5
+ [{:name "Air Elemental", :source "MM", :page 124, :type "elemental"}
+  {:name   "Barbed Devil",
+   :source "MM",
+   :page   70,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Barlgura",
+   :source "MM",
+   :page   56,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Beholder Zombie", :source "MM", :page 316, :type "undead"}
+  {:name "Bulette", :source "MM", :page 34, :type "monstrosity"}
+  {:name "Cambion", :source "MM", :page 36, :type "fiend"}
+  {:name   "Drow Elite Warrior",
+   :source "MM",
+   :page   128,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Earth Elemental", :source "MM", :page 124, :type "elemental"}
+  {:name "Fire Elemental", :source "MM", :page 125, :type "elemental"}
+  {:name "Flesh Golem", :source "MM", :page 169, :type "construct"}
+  {:name "Giant Crocodile", :source "MM", :page 324, :type "beast"}
+  {:name "Giant Shark", :source "MM", :page 328, :type "beast"}
+  {:name   "Gladiator",
+   :source "MM",
+   :page   346,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Gorgon", :source "MM", :page 171, :type "monstrosity"}
+  {:name   "Half-Red Dragon Veteran",
+   :source "MM",
+   :page   180,
+   :type   {:tags ["human"], :type "humanoid"}}
+  {:name "Hill Giant", :source "MM", :page 155, :type "giant"}
+  {:name   "Mezzoloth",
+   :source "MM",
+   :page   313,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name "Night Hag", :source "MM", :page 178, :type "fiend"}
+  {:name "Otyugh", :source "MM", :page 248, :type "aberration"}
+  {:name "Red Slaad", :source "MM", :page 276, :type "aberration"}
+  {:name "Revenant", :source "MM", :page 259, :type "undead"}
+  {:name "Roper", :source "MM", :page 261, :type "monstrosity"}
+  {:name   "Sahuagin Baron",
+   :source "MM",
+   :page   264,
+   :type   {:tags ["sahuagin"], :type "humanoid"}}
+  {:name "Salamander", :source "MM", :page 266, :type "elemental"}
+  {:name "Shambling Mound", :source "MM", :page 270, :type "plant"}
+  {:name "Triceratops", :source "MM", :page 80, :type "beast"}
+  {:name "Troll", :source "MM", :page 291, :type "giant"}
+  {:name "Umber Hulk", :source "MM", :page 292, :type "monstrosity"}
+  {:name "Unicorn", :source "MM", :page 294, :type "celestial"}
+  {:name "Vampire Spawn", :source "MM", :page 298, :type "undead"}
+  {:name "Water Elemental", :source "MM", :page 125, :type "elemental"}
+  {:name   "Werebear",
+   :source "MM",
+   :page   208,
+   :type   {:tags ["human" "shapechanger"], :type "humanoid"}}
+  {:name "Wraith", :source "MM", :page 302, :type "undead"}
+  {:name "Xorn", :source "MM", :page 304, :type "elemental"}
+  {:name   "Young Remorhaz",
+   :source "MM",
+   :page   258,
+   :type   "monstrosity"}
+  {:name   "Battleforce Angel",
+   :source "GGR",
+   :page   189,
+   :type   "celestial"}
+  {:name "Felidar", :source "GGR", :page 199, :type "celestial"}
+  {:name   "Flux Blastseeker",
+   :source "GGR",
+   :page   242,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Galvanic Blastseeker",
+   :source "GGR",
+   :page   243,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Golgari Shaman",
+   :source "GGR",
+   :page   236,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Mind Mage",
+   :source "GGR",
+   :page   233,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Bone Knight",
+   :source "ERLW",
+   :page   316,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Living Lightning Bolt",
+   :source "ERLW",
+   :page   299,
+   :type   "construct"}
+  {:name "Zakya Rakshasa", :source "ERLW", :page 309, :type "fiend"}
+  {:name   "Aatxe",
+   :source "CCodex",
+   :page   7,
+   :type   {:tags ["shapechanger"], :type "celestial"}}
+  {:name   "Corrupted Aatxe",
+   :source "CCodex",
+   :page   7,
+   :type   {:tags ["shapechanger"], :type "celestial"}}
+  {:name   "Centaur Chieftain",
+   :source "CCodex",
+   :page   60,
+   :type   "monstrosity"}
+  {:name   "Cueyatl Moon Priest",
+   :source "CCodex",
+   :page   68,
+   :type   "humanoid"}
+  {:name   "Dark Voice",
+   :source "CCodex",
+   :page   73,
+   :type   {:tags ["dark folk"], :type "humanoid"}}
+  {:name   "Cipactli",
+   :source "CCodex",
+   :page   83,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Spree",
+   :source "CCodex",
+   :page   91,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Speaker to the Darkness",
+   :source "CCodex",
+   :page   96,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name   "Witch Queen",
+   :source "CCodex",
+   :page   97,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name   "Spawn of Parzelon",
+   :source "CCodex",
+   :page   102,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Moon Drake", :source "CCodex", :page 129, :type "dragon"}
+  {:name "Dream Wraith", :source "CCodex", :page 139, :type "undead"}
+  {:name   "Dvarapala",
+   :source "CCodex",
+   :page   137,
+   :type   {:tags ["as its patron deity"], :type "giant"}}
+  {:name   "Blood Elemental",
+   :source "CCodex",
+   :page   138,
+   :type   "elemental"}
+  {:name   "Knight of the Road",
+   :source "CCodex",
+   :page   146,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Fierstjerren", :source "CCodex", :page 157, :type "undead"}
+  {:name   "Gargoctopus",
+   :source "CCodex",
+   :page   167,
+   :type   "monstrosity"}
+  {:name "Iron Sphere", :source "CCodex", :page 229, :type "construct"}
+  {:name   "Karakura",
+   :source "CCodex",
+   :page   235,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name   "Wizard Kobold",
+   :source "CCodex",
+   :page   241,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Kryt",
+   :source "CCodex",
+   :page   243,
+   :type   {:tags ["kryt"], :type "humanoid"}}
+  {:name   "Matriarch Serpentine Lamia",
+   :source "CCodex",
+   :page   248,
+   :type   "monstrosity"}
+  {:name "Mandriano", :source "CCodex", :page 261, :type "plant"}
+  {:name   "Labyrinth Keeper",
+   :source "CCodex",
+   :page   267,
+   :type   "monstrosity"}
+  {:name   "Tusked Crimson Ogre",
+   :source "CCodex",
+   :page   279,
+   :type   "giant"}
+  {:name "Quickstep", :source "CCodex", :page 308, :type "fey"}
+  {:name   "Ramag Portal Master",
+   :source "CCodex",
+   :page   313,
+   :type   {:tags ["ramag"], :type "humanoid"}}
+  {:name   "Ratatosk Warlord",
+   :source "CCodex",
+   :page   314,
+   :type   "celestial"}
+  {:name "Razorleaf", :source "CCodex", :page 317, :type "plant"}
+  {:name "Shantak", :source "CCodex", :page 328, :type "monstrosity"}
+  {:name   "Oth",
+   :source "CCodex",
+   :page   334,
+   :type   {:tags ["shoth"], :type "aberration"}}
+  {:name "Simurg", :source "CCodex", :page 339, :type "celestial"}
+  {:name "Sleipnir", :source "CCodex", :page 344, :type "monstrosity"}
+  {:name   "Three-headed Cobra",
+   :source "CCodex",
+   :page   354,
+   :type   "monstrosity"}
+  {:name   "Undine",
+   :source "CCodex",
+   :page   362,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Wyvern Knight",
+   :source "CCodex",
+   :page   385,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Xiphus", :source "CCodex", :page 388, :type "fey"}
+  {:name "Yaga Goo", :source "CCodex", :page 389, :type "ooze"}
+  {:name "Lord Zombie", :source "CCodex", :page 394, :type "undead"}
+  {:name   "Cleric of the Brew",
+   :source "CCodex",
+   :page   399,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Gnomish Knife Cultist",
+   :source "CCodex",
+   :page   402,
+   :type   {:tags ["gnome"], :type "humanoid"}}
+  {:name "Adult Oblex", :source "MTF", :page 218, :type "ooze"}
+  {:name "Allip", :source "MTF", :page 116, :type "undead"}
+  {:name   "Kruthik Hive Lord",
+   :source "MTF",
+   :page   212,
+   :type   "monstrosity"}
+  {:name "Oaken Bolter", :source "MTF", :page 126, :type "construct"}
+  {:name   "Star Spawn Mangler",
+   :source "MTF",
+   :page   236,
+   :type   "aberration"}
+  {:name   "Aniwye",
+   :source "ToB2",
+   :page   25,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name "Befouled Weird", :source "ToB2", :page 41, :type "elemental"}
+  {:name "Deathweaver", :source "ToB2", :page 83, :type "monstrosity"}
+  {:name   "Arachnocrat",
+   :source "ToB2",
+   :page   102,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Scribe Devil",
+   :source "ToB2",
+   :page   105,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Diminution Drake", :source "ToB2", :page 121, :type "dragon"}
+  {:name   "Dread Walker Excavator",
+   :source "ToB2",
+   :page   129,
+   :type   "construct"}
+  {:name "Ice Elemental", :source "ToB2", :page 133, :type "elemental"}
+  {:name   "Empusa",
+   :source "ToB2",
+   :page   136,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name "Far Dorocha", :source "ToB2", :page 142, :type "fey"}
+  {:name "Flayed Wraith", :source "ToB2", :page 151, :type "undead"}
+  {:name "Fleshdreg", :source "ToB2", :page 152, :type "plant"}
+  {:name "Darakhul Spy", :source "ToB2", :page 168, :type "undead"}
+  {:name "Ghul", :source "ToB2", :page 169, :type "undead"}
+  {:name "Phase Giant", :source "ToB2", :page 172, :type "giant"}
+  {:name "Snow Giant", :source "ToB2", :page 174, :type "giant"}
+  {:name   "Death Shroud Golem",
+   :source "ToB2",
+   :page   179,
+   :type   "construct"}
+  {:name "Ba-meigui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Ba-gudugui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Ba-xiqigui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Mei-gudugui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Mei-xiqigui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Gudu-xiqigui", :source "ToB2", :page 188, :type "undead"}
+  {:name "Jack of Strings", :source "ToB2", :page 218, :type "fey"}
+  {:name   "Kamaitachi",
+   :source "ToB2",
+   :page   220,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name   "Knight Ab-errant",
+   :source "ToB2",
+   :page   231,
+   :type   "humanoid"}
+  {:name "Lunarian", :source "ToB2", :page 245, :type "fey"}
+  {:name   "Wereowl",
+   :source "ToB2",
+   :page   246,
+   :type   {:tags ["elf" "shapechanger"], :type "humanoid"}}
+  {:name   "Wereshark",
+   :source "ToB2",
+   :page   247,
+   :type   {:tags ["human" "shapechanger"], :type "humanoid"}}
+  {:name   "Lymarien Swarm",
+   :source "ToB2",
+   :page   249,
+   :type   {:swarmSize "T", :type "fey"}}
+  {:name   "Moderate Malleable",
+   :source "ToB2",
+   :page   253,
+   :type   "aberration"}
+  {:name   "Manggus",
+   :source "ToB2",
+   :page   256,
+   :type   {:tags ["shapechanger"], :type "giant"}}
+  {:name "Moonkite", :source "ToB2", :page 260, :type "celestial"}
+  {:name "One-Horned Ogre", :source "ToB2", :page 274, :type "giant"}
+  {:name "Eldritch Ooze", :source "ToB2", :page 278, :type "ooze"}
+  {:name "Ophidiotaur", :source "ToB2", :page 282, :type "monstrosity"}
+  {:name "Quoreq", :source "ToB2", :page 304, :type "aberration"}
+  {:name "Sasquatch", :source "ToB2", :page 314, :type "beast"}
+  {:name   "Scarlet Ibis",
+   :source "ToB2",
+   :page   318,
+   :type   "monstrosity"}
+  {:name "Shimmer Seal", :source "ToB2", :page 324, :type "beast"}
+  {:name "Somberweave", :source "ToB2", :page 335, :type "fey"}
+  {:name "Voidpool", :source "ToB2", :page 362, :type "ooze"}
+  {:name "Willowhaunt", :source "ToB2", :page 369, :type "undead"}
+  {:name "Windy Wailer", :source "ToB2", :page 370, :type "undead"}
+  {:name   "Giant Frilled Lizard",
+   :source "ToB2",
+   :page   392,
+   :type   "beast"}
+  {:name "Banderhobb", :source "VGM", :page 122, :type "monstrosity"}
+  {:name "Brontosaurus", :source "VGM", :page 139, :type "beast"}
+  {:name "Catoblepas", :source "VGM", :page 129, :type "monstrosity"}
+  {:name   "Enchanter",
+   :source "VGM",
+   :page   213,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Kraken Priest",
+   :source "VGM",
+   :page   215,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Master Thief",
+   :source "VGM",
+   :page   216,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Mindwitness", :source "VGM", :page 176, :type "aberration"}
+  {:name "Spawn of Kyuss", :source "VGM", :page 192, :type "undead"}
+  {:name   "Swarm of Cranium Rats",
+   :source "VGM",
+   :page   133,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name   "Tanarukk",
+   :source "VGM",
+   :page   186,
+   :type   {:tags ["demon" "orc"], :type "fiend"}}
+  {:name "Tlincalli", :source "VGM", :page 193, :type "monstrosity"}
+  {:name   "Transmuter",
+   :source "VGM",
+   :page   218,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Wood Woad", :source "VGM", :page 198, :type "plant"}
+  {:name   "Yuan-ti Pit Master",
+   :source "VGM",
+   :page   206,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name "Aridni", :source "ToB", :page 26, :type "fey"}
+  {:name "Asanbosam", :source "ToB", :page 27, :type "aberration"}
+  {:name   "Black Knight Commander",
+   :source "ToB",
+   :page   418,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Bouda",
+   :source "ToB",
+   :page   44,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name   "Clockwork Abomination",
+   :source "ToB",
+   :page   59,
+   :type   {:tags ["devil"], :type "construct"}}
+  {:name "Corrupting Ooze", :source "ToB", :page 311, :type "ooze"}
+  {:name   "Derro Shadow Antipaladin",
+   :source "ToB",
+   :page   93,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name   "Dogmole Juggernaut",
+   :source "ToB",
+   :page   121,
+   :type   "monstrosity"}
+  {:name "Drakon", :source "ToB", :page 157, :type "beast"}
+  {:name "Dream Eater", :source "ToB", :page 158, :type "fiend"}
+  {:name "Drowned Maiden", :source "ToB", :page 159, :type "undead"}
+  {:name "Eleinomae", :source "ToB", :page 168, :type "fey"}
+  {:name "Fellforged", :source "ToB", :page 182, :type "construct"}
+  {:name "Fidele Angel", :source "ToB", :page 21, :type "celestial"}
+  {:name   "Hound of the Night",
+   :source "ToB",
+   :page   251,
+   :type   "monstrosity"}
+  {:name   "Hulking Whelp",
+   :source "ToB",
+   :page   252,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "Iron Ghoul", :source "ToB", :page 221, :type "undead"}
+  {:name "Kikimora", :source "ToB", :page 260, :type "fey"}
+  {:name "Kongamato", :source "ToB", :page 265, :type "beast"}
+  {:name "Lindwurm", :source "ToB", :page 276, :type "dragon"}
+  {:name "Lorelei", :source "ToB", :page 279, :type "fey"}
+  {:name "Mi-Go", :source "ToB", :page 287, :type "plant"}
+  {:name "Ngobou", :source "ToB", :page 115, :type "beast"}
+  {:name "Owl Harpy", :source "ToB", :page 246, :type "monstrosity"}
+  {:name "Rat King", :source "ToB", :page 318, :type "monstrosity"}
+  {:name "Ravenala", :source "ToB", :page 321, :type "plant"}
+  {:name   "Ravenfolk Doom Croaker",
+   :source "ToB",
+   :page   324,
+   :type   {:tags ["kenku"], :type "humanoid"}}
+  {:name "Rift Swine", :source "ToB", :page 326, :type "aberration"}
+  {:name "Sand Hag", :source "ToB", :page 245, :type "monstrosity"}
+  {:name "Sandman", :source "ToB", :page 333, :type "celestial"}
+  {:name "Sarcophagus Slime", :source "ToB", :page 336, :type "undead"}
+  {:name   "Shadow Fey Forest Hunter",
+   :source "ToB",
+   :page   171,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Spawn of Akyishigal",
+   :source "ToB",
+   :page   83,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Spawn of Arbeyach",
+   :source "ToB",
+   :page   97,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Subek",
+   :source "ToB",
+   :page   371,
+   :type   {:tags ["subek"], :type "humanoid"}}
+  {:name "Temple Dog", :source "ToB", :page 378, :type "celestial"}
+  {:name   "Tosculi Elite Bow Raider",
+   :source "ToB",
+   :page   386,
+   :type   {:tags ["tosculi"], :type "humanoid"}}
+  {:name "Vapor Lynx", :source "ToB", :page 398, :type "monstrosity"}
+  {:name "Vila", :source "ToB", :page 400, :type "fey"}
+  {:name   "Wormhearted Suffragan",
+   :source "ToB",
+   :page   410,
+   :type   "undead"}
+  {:name "Young Spinosaurus", :source "ToB", :page 117, :type "beast"}
+  {:name "Zmey Headling", :source "ToB", :page 417, :type "dragon"}
+  {:name   "Blood Hunter",
+   :source "EGW",
+   :page   284,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Shadowghast", :source "EGW", :page 299, :type "undead"}],
+ 6
+ [{:name   "Chasme",
+   :source "MM",
+   :page   57,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Chimera", :source "MM", :page 39, :type "monstrosity"}
+  {:name "Cyclops", :source "MM", :page 45, :type "giant"}
+  {:name "Drider", :source "MM", :page 120, :type "monstrosity"}
+  {:name "Galeb Duhr", :source "MM", :page 139, :type "elemental"}
+  {:name   "Githzerai Zerth",
+   :source "MM",
+   :page   161,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name   "Hobgoblin Warlord",
+   :source "MM",
+   :page   187,
+   :type   {:tags ["goblinoid"], :type "humanoid"}}
+  {:name   "Invisible Stalker",
+   :source "MM",
+   :page   192,
+   :type   "elemental"}
+  {:name   "Kuo-toa Archpriest",
+   :source "MM",
+   :page   200,
+   :type   {:tags ["kuo-toa"], :type "humanoid"}}
+  {:name   "Mage",
+   :source "MM",
+   :page   347,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Mammoth", :source "MM", :page 332, :type "beast"}
+  {:name "Medusa", :source "MM", :page 214, :type "monstrosity"}
+  {:name   "Vrock",
+   :source "MM",
+   :page   64,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Wyvern", :source "MM", :page 303, :type "dragon"}
+  {:name "Young Brass Dragon", :source "MM", :page 105, :type "dragon"}
+  {:name "Young White Dragon", :source "MM", :page 101, :type "dragon"}
+  {:name "Bloodfray Giant", :source "GGR", :page 200, :type "giant"}
+  {:name   "Category 2 Krasis",
+   :source "GGR",
+   :page   211,
+   :type   "monstrosity"}
+  {:name   "Lawmage",
+   :source "GGR",
+   :page   228,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Orzhov Giant", :source "GGR", :page 202, :type "giant"}
+  {:name   "Undercity Medusa",
+   :source "GGR",
+   :page   222,
+   :type   "monstrosity"}
+  {:name "Dusk Hag", :source "ERLW", :page 292, :type "fey"}
+  {:name   "Song",
+   :source "CCodex",
+   :page   20,
+   :type   {:tags ["angel"], :type "celestial"}}
+  {:name   "Bearfolk Chieftain",
+   :source "CCodex",
+   :page   51,
+   :type   {:tags ["bearfolk"], :type "humanoid"}}
+  {:name   "Child of Yggdrasil",
+   :source "CCodex",
+   :page   61,
+   :type   "aberration"}
+  {:name   "Clockwork Assassin",
+   :source "CCodex",
+   :page   64,
+   :type   "construct"}
+  {:name "Crimson Mist", :source "CCodex", :page 67, :type "undead"}
+  {:name   "Echo",
+   :source "CCodex",
+   :page   84,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Dracotaurof The Northern Wind",
+   :source "CCodex",
+   :page   110,
+   :type   "dragon"}
+  {:name   "Dracotaur of The Southern Wind",
+   :source "CCodex",
+   :page   110,
+   :type   "dragon"}
+  {:name   "Dracotaur of The Eastern Wind",
+   :source "CCodex",
+   :page   110,
+   :type   "dragon"}
+  {:name   "Dracotaur of The Western Wind",
+   :source "CCodex",
+   :page   110,
+   :type   "dragon"}
+  {:name "Fey Drake", :source "CCodex", :page 127, :type "dragon"}
+  {:name   "Deathsworn",
+   :source "CCodex",
+   :page   142,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Servant of the Vine",
+   :source "CCodex",
+   :page   144,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Fleshpod Hornet", :source "CCodex", :page 161, :type "beast"}
+  {:name   "Fragrite",
+   :source "CCodex",
+   :page   164,
+   :type   {:tags ["shapechanger"], :type "elemental"}}
+  {:name   "Elder Ghost Boar",
+   :source "CCodex",
+   :page   169,
+   :type   "monstrosity"}
+  {:name "Ghost Dwarf", :source "CCodex", :page 171, :type "undead"}
+  {:name "Cacus Giant", :source "CCodex", :page 181, :type "giant"}
+  {:name "Haunted Giant", :source "CCodex", :page 183, :type "giant"}
+  {:name   "Green Knight of the Woods",
+   :source "CCodex",
+   :page   209,
+   :type   "fey"}
+  {:name "Gulon", :source "CCodex", :page 212, :type "monstrosity"}
+  {:name "Jiangshi", :source "CCodex", :page 230, :type "undead"}
+  {:name   "King Kobold",
+   :source "CCodex",
+   :page   239,
+   :type   {:tags ["kobold"], :type "humanoid"}}
+  {:name   "Moonchild Naga",
+   :source "CCodex",
+   :page   273,
+   :type   "monstrosity"}
+  {:name "Blood Ooze", :source "CCodex", :page 282, :type "ooze"}
+  {:name "Ruby Ooze", :source "CCodex", :page 286, :type "ooze"}
+  {:name "Ouroboros", :source "CCodex", :page 293, :type "dragon"}
+  {:name "Piasa", :source "CCodex", :page 298, :type "dragon"}
+  {:name "Pixiu", :source "CCodex", :page 300, :type "monstrosity"}
+  {:name "Devil Bough", :source "CCodex", :page 302, :type "fiend"}
+  {:name "Quiet Soul", :source "CCodex", :page 309, :type "undead"}
+  {:name "Desert Troll", :source "CCodex", :page 356, :type "giant"}
+  {:name   "Doomspeaker",
+   :source "CCodex",
+   :page   399,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Doomspeaker (Midgard Version)",
+   :source "CCodex",
+   :page   399,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Necromancer",
+   :source "CCodex",
+   :page   404,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Duergar Warlord",
+   :source "MTF",
+   :page   192,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "White Abishai",
+   :source "MTF",
+   :page   163,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Akaasit", :source "ToB2", :page 11, :type "construct"}
+  {:name "Akhlut", :source "ToB2", :page 12, :type "beast"}
+  {:name "Ashen Custodian", :source "ToB2", :page 29, :type "fey"}
+  {:name "Barometz", :source "ToB2", :page 38, :type "plant"}
+  {:name   "Clockwork Mantis",
+   :source "ToB2",
+   :page   67,
+   :type   "construct"}
+  {:name   "Clockwork Tiger",
+   :source "ToB2",
+   :page   68,
+   :type   "construct"}
+  {:name "Cryoceros", :source "ToB2", :page 76, :type "monstrosity"}
+  {:name   "Spawn of Rhopalocerex",
+   :source "ToB2",
+   :page   92,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Spawn of Alquam",
+   :source "ToB2",
+   :page   95,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Derro Shadowseeker",
+   :source "ToB2",
+   :page   98,
+   :type   {:tags ["derro"], :type "humanoid"}}
+  {:name "Sanddrift Drake", :source "ToB2", :page 127, :type "dragon"}
+  {:name   "Magnetic Elemental",
+   :source "ToB2",
+   :page   134,
+   :type   "elemental"}
+  {:name "Bloated Ghoul", :source "ToB2", :page 166, :type "undead"}
+  {:name "Bearing Golem", :source "ToB2", :page 178, :type "construct"}
+  {:name   "Ba-mei-gudu-laogui",
+   :source "ToB2",
+   :page   188,
+   :type   "undead"}
+  {:name   "Ba-mei-xiqi-laogui",
+   :source "ToB2",
+   :page   188,
+   :type   "undead"}
+  {:name   "Mei-gudu-xiqi-laogui",
+   :source "ToB2",
+   :page   188,
+   :type   "undead"}
+  {:name   "Ba-gudu-xiqi-laogui",
+   :source "ToB2",
+   :page   188,
+   :type   "undead"}
+  {:name "Hooden Horse", :source "ToB2", :page 202, :type "undead"}
+  {:name "Hverhuldra", :source "ToB2", :page 206, :type "fey"}
+  {:name "Bloom Hydra", :source "ToB2", :page 207, :type "plant"}
+  {:name   "Naizu-Ha",
+   :source "ToB2",
+   :page   223,
+   :type   {:tags ["kami"], :type "fey"}}
+  {:name "Kaveph", :source "ToB2", :page 225, :type "aberration"}
+  {:name   "Transcendent Lunarchidna",
+   :source "ToB2",
+   :page   244,
+   :type   "aberration"}
+  {:name "Scroll Mummy", :source "ToB2", :page 262, :type "undead"}
+  {:name "Swamp Naga", :source "ToB2", :page 265, :type "monstrosity"}
+  {:name "Mountain Nymph", :source "ToB2", :page 272, :type "fey"}
+  {:name "Ogrepede", :source "ToB2", :page 275, :type "undead"}
+  {:name "Tar Ooze", :source "ToB2", :page 281, :type "ooze"}
+  {:name "Primal Oozer", :source "ToB2", :page 297, :type "aberration"}
+  {:name   "Rotsam Swarm",
+   :source "ToB2",
+   :page   309,
+   :type   {:swarmSize "T", :type "ooze"}}
+  {:name "Sapphire Jelly", :source "ToB2", :page 312, :type "ooze"}
+  {:name "Stormboar", :source "ToB2", :page 341, :type "monstrosity"}
+  {:name "Tembril", :source "ToB2", :page 344, :type "monstrosity"}
+  {:name "Tidehunter", :source "ToB2", :page 348, :type "monstrosity"}
+  {:name "Vexxeh", :source "ToB2", :page 360, :type "fiend"}
+  {:name "Wardu", :source "ToB2", :page 365, :type "aberration"}
+  {:name "Werynax", :source "ToB2", :page 367, :type "monstrosity"}
+  {:name "Yavalnoi", :source "ToB2", :page 379, :type "aberration"}
+  {:name "Zeitgeist", :source "ToB2", :page 383, :type "humanoid"}
+  {:name "Zouyu", :source "ToB2", :page 386, :type "monstrosity"}
+  {:name "Annis Hag", :source "VGM", :page 159, :type "fey"}
+  {:name "Bodak", :source "VGM", :page 127, :type "undead"}
+  {:name   "Conjurer",
+   :source "VGM",
+   :page   212,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Gauth", :source "VGM", :page 125, :type "aberration"}
+  {:name   "Mouth of Grolantor",
+   :source "VGM",
+   :page   149,
+   :type   {:tags ["hill giant"], :type "giant"}}
+  {:name   "Warlock of the Great Old One",
+   :source "VGM",
+   :page   220,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Adult Rime Worm",
+   :source "ToB",
+   :page   327,
+   :type   "elemental"}
+  {:name "Angatra", :source "ToB", :page 19, :type "undead"}
+  {:name   "Apau Perape",
+   :source "ToB",
+   :page   75,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Clockwork Myrmidon",
+   :source "ToB",
+   :page   64,
+   :type   "construct"}
+  {:name   "Corrupted Ogre Chieftain",
+   :source "ToB",
+   :page   423,
+   :type   "giant"}
+  {:name   "Crystalline Devil",
+   :source "ToB",
+   :page   105,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Fate Eater", :source "ToB", :page 180, :type "aberration"}
+  {:name "Fext", :source "ToB", :page 183, :type "undead"}
+  {:name   "Gbahali (Postosuchus)",
+   :source "ToB",
+   :page   209,
+   :type   "beast"}
+  {:name   "Gearforged Templar",
+   :source "ToB",
+   :page   210,
+   :type   {:tags ["gearforged"], :type "humanoid"}}
+  {:name "Ghost Knight", :source "ToB", :page 423, :type "undead"}
+  {:name "Gnarljak", :source "ToB", :page 229, :type "construct"}
+  {:name   "Greater Death Butterfly Swarm",
+   :source "ToB",
+   :page   71,
+   :type   {:swarmSize "T", :type "beast"}}
+  {:name "Ice Maiden", :source "ToB", :page 254, :type "fey"}
+  {:name "Likho", :source "ToB", :page 275, :type "monstrosity"}
+  {:name "Loxoda", :source "ToB", :page 280, :type "monstrosity"}
+  {:name "Malphas (Storm Crow)", :source "ToB", :page 283, :type "fey"}
+  {:name   "Mamura",
+   :source "ToB",
+   :page   284,
+   :type   {:tags ["fey"], :type "aberration"}}
+  {:name "Mirror Hag", :source "ToB", :page 243, :type "fey"}
+  {:name "Nichny", :source "ToB", :page 303, :type "fey"}
+  {:name "Nightgarm", :source "ToB", :page 305, :type "monstrosity"}
+  {:name "Redcap", :source "ToB", :page 325, :type "fey"}
+  {:name "Rotting Wind", :source "ToB", :page 330, :type "undead"}
+  {:name "Rusalka", :source "ToB", :page 331, :type "undead"}
+  {:name   "Salt Devil",
+   :source "ToB",
+   :page   113,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Sand Silhouette", :source "ToB", :page 332, :type "undead"}
+  {:name "Sandwyrm", :source "ToB", :page 334, :type "dragon"}
+  {:name "Scheznyki", :source "ToB", :page 339, :type "fey"}
+  {:name   "Shadow Fey Duelist",
+   :source "ToB",
+   :page   171,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Spectral Guardian", :source "ToB", :page 358, :type "undead"}
+  {:name "Weeping Treant", :source "ToB", :page 388, :type "plant"}
+  {:name "White Ape", :source "ToB", :page 408, :type "monstrosity"}
+  {:name   "Wolf Spirit Swarm",
+   :source "ToB",
+   :page   377,
+   :type   {:swarmSize "M", :type "undead"}}
+  {:name   "Young Mithral Dragon",
+   :source "ToB",
+   :page   134,
+   :type   "dragon"}
+  {:name "Young Wind Dragon", :source "ToB", :page 144, :type "dragon"}
+  {:name   "Core Spawn Emissary",
+   :source "EGW",
+   :page   286,
+   :type   "aberration"}
+  {:name   "Gloomstalker",
+   :source "EGW",
+   :page   291,
+   :type   "monstrosity"}],
+ 7
+ [{:name "Blue Slaad", :source "MM", :page 276, :type "aberration"}
+  {:name   "Drow Mage",
+   :source "MM",
+   :page   129,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Giant Ape", :source "MM", :page 323, :type "beast"}
+  {:name "Grick Alpha", :source "MM", :page 173, :type "monstrosity"}
+  {:name "Mind Flayer", :source "MM", :page 222, :type "aberration"}
+  {:name "Oni", :source "MM", :page 239, :type "giant"}
+  {:name "Shield Guardian", :source "MM", :page 271, :type "construct"}
+  {:name "Stone Giant", :source "MM", :page 156, :type "giant"}
+  {:name "Young Black Dragon", :source "MM", :page 88, :type "dragon"}
+  {:name   "Young Copper Dragon",
+   :source "MM",
+   :page   112,
+   :type   "dragon"}
+  {:name   "Yuan-ti Abomination",
+   :source "MM",
+   :page   308,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name   "Blood Witch",
+   :source "GGR",
+   :page   248,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Druid of the Old Ways",
+   :source "GGR",
+   :page   239,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Firefist",
+   :source "GGR",
+   :page   231,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Fluxcharger", :source "GGR", :page 208, :type "elemental"}
+  {:name   "Living Cloudkill",
+   :source "ERLW",
+   :page   299,
+   :type   "construct"}
+  {:name   "Tsucora Quori",
+   :source "ERLW",
+   :page   307,
+   :type   "aberration"}
+  {:name   "Sammael",
+   :source "CCodex",
+   :page   19,
+   :type   {:tags ["angel"], :type "celestial"}}
+  {:name "Chuhaister", :source "CCodex", :page 62, :type "giant"}
+  {:name   "Vellso",
+   :source "CCodex",
+   :page   92,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Dhampir Commander",
+   :source "CCodex",
+   :page   107,
+   :type   {:tags ["dhampir"], :type "humanoid"}}
+  {:name   "Young Light Dragon",
+   :source "CCodex",
+   :page   114,
+   :type   "dragon"}
+  {:name   "Enchanter",
+   :source "CCodex",
+   :page   143,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Armory Golem",
+   :source "CCodex",
+   :page   194,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Bone Golem",
+   :source "CCodex",
+   :page   195,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Goliath Longlegs",
+   :source "CCodex",
+   :page   206,
+   :type   "monstrosity"}
+  {:name "Ijiraq", :source "CCodex", :page 226, :type "fey"}
+  {:name   "Jaanavar Jal",
+   :source "CCodex",
+   :page   229,
+   :type   "monstrosity"}
+  {:name   "Moon Priestess",
+   :source "CCodex",
+   :page   267,
+   :type   "monstrosity"}
+  {:name "Ningyo", :source "CCodex", :page 278, :type "aberration"}
+  {:name   "Pech Lithlord",
+   :source "CCodex",
+   :page   295,
+   :type   {:tags ["pech"], :type "elemental"}}
+  {:name   "Alabaster Tree",
+   :source "CCodex",
+   :page   301,
+   :type   "celestial"}
+  {:name   "Greater Scrag",
+   :source "CCodex",
+   :page   322,
+   :type   "monstrosity"}
+  {:name   "Sentinel In Darkness",
+   :source "CCodex",
+   :page   323,
+   :type   "construct"}
+  {:name "Giant Sloth", :source "CCodex", :page 345, :type "beast"}
+  {:name "Spirit Lamp", :source "CCodex", :page 349, :type "undead"}
+  {:name "Tveirherjar", :source "CCodex", :page 359, :type "undead"}
+  {:name   "Two-headed Eagle",
+   :source "CCodex",
+   :page   360,
+   :type   "monstrosity"}
+  {:name   "Ursa Polaris",
+   :source "CCodex",
+   :page   364,
+   :type   "monstrosity"}
+  {:name   "Warlock's Trumpetbloom",
+   :source "CCodex",
+   :page   372,
+   :type   "plant"}
+  {:name "War Wyvern", :source "CCodex", :page 386, :type "dragon"}
+  {:name   "Blood Mage",
+   :source "CCodex",
+   :page   397,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Blood Mage (Midgard Version)",
+   :source "CCodex",
+   :page   397,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Void Speaker",
+   :source "CCodex",
+   :page   408,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Void Speaker (Midgard Version)",
+   :source "CCodex",
+   :page   408,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Air Elemental Myrmidon",
+   :source "MTF",
+   :page   202,
+   :type   "elemental"}
+  {:name   "Armanite",
+   :source "MTF",
+   :page   131,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Black Abishai",
+   :source "MTF",
+   :page   160,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Dhergoloth",
+   :source "MTF",
+   :page   248,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name   "Earth Elemental Myrmidon",
+   :source "MTF",
+   :page   202,
+   :type   "elemental"}
+  {:name   "Fire Elemental Myrmidon",
+   :source "MTF",
+   :page   203,
+   :type   "elemental"}
+  {:name   "Maurezhi",
+   :source "MTF",
+   :page   133,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Shadow Dancer",
+   :source "MTF",
+   :page   225,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "The Lost", :source "MTF", :page 233, :type "monstrosity"}
+  {:name "Venom Troll", :source "MTF", :page 245, :type "giant"}
+  {:name   "Water Elemental Myrmidon",
+   :source "MTF",
+   :page   203,
+   :type   "elemental"}
+  {:name "Aalpamac", :source "ToB2", :page 8, :type "monstrosity"}
+  {:name "A-mi-kuk", :source "ToB2", :page 15, :type "aberration"}
+  {:name   "Avalanche Screamer",
+   :source "ToB2",
+   :page   35,
+   :type   "aberration"}
+  {:name "Boreas' Chosen", :source "ToB2", :page 48, :type "humanoid"}
+  {:name "Chatterlome", :source "ToB2", :page 60, :type "fiend"}
+  {:name   "Crystalline Monolith",
+   :source "ToB2",
+   :page   77,
+   :type   "aberration"}
+  {:name "Vine Drake", :source "ToB2", :page 128, :type "dragon"}
+  {:name   "Fire-Infused Water Elemental",
+   :source "ToB2",
+   :page   132,
+   :type   "elemental"}
+  {:name   "Eonic Savant",
+   :source "ToB2",
+   :page   137,
+   :type   {:tags ["human"], :type "humanoid"}}
+  {:name "Fey Revenant", :source "ToB2", :page 150, :type "fey"}
+  {:name "Ophio Fungus", :source "ToB2", :page 157, :type "plant"}
+  {:name "Graveyard Dragon", :source "ToB2", :page 183, :type "undead"}
+  {:name   "Ba-mei-gudu-xiqi-laogui",
+   :source "ToB2",
+   :page   188,
+   :type   "undead"}
+  {:name "Haleshi", :source "ToB2", :page 191, :type "fey"}
+  {:name "Giant Husk", :source "ToB2", :page 205, :type "undead"}
+  {:name   "Lambent Witchfyre",
+   :source "ToB2",
+   :page   234,
+   :type   "aberration"}
+  {:name "Mei Jiao Shou", :source "ToB2", :page 259, :type "beast"}
+  {:name "Repository", :source "ToB2", :page 306, :type "construct"}
+  {:name "Sarsaok", :source "ToB2", :page 313, :type "monstrosity"}
+  {:name "Shurale", :source "ToB2", :page 327, :type "fey"}
+  {:name "Silenal", :source "ToB2", :page 328, :type "fey"}
+  {:name "Swamp Lily", :source "ToB2", :page 342, :type "plant"}
+  {:name "Mangrove Treant", :source "ToB2", :page 350, :type "plant"}
+  {:name "Ulnorya", :source "ToB2", :page 354, :type "aberration"}
+  {:name "Vallowex", :source "ToB2", :page 256, :type "aberration"}
+  {:name "Walled Horror", :source "ToB2", :page 363, :type "undead"}
+  {:name "Yathon", :source "ToB2", :page 378, :type "humanoid"}
+  {:name "Zalikum", :source "ToB2", :page 382, :type "construct"}
+  {:name "Bheur Hag", :source "VGM", :page 160, :type "fey"}
+  {:name   "Draegloth",
+   :source "VGM",
+   :page   141,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Korred", :source "VGM", :page 168, :type "fey"}
+  {:name   "Warlock of the Fiend",
+   :source "VGM",
+   :page   219,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Chelicerae", :source "ToB", :page 54, :type "aberration"}
+  {:name "Coral Drake", :source "ToB", :page 150, :type "dragon"}
+  {:name "Deathwisp", :source "ToB", :page 72, :type "undead"}
+  {:name "Dissimortuum", :source "ToB", :page 119, :type "undead"}
+  {:name   "Dwarven Ringmage",
+   :source "ToB",
+   :page   420,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name   "Einherjar",
+   :source "ToB",
+   :page   167,
+   :type   {:tags ["extraplanar"], :type "humanoid"}}
+  {:name   "Elder Shadow Drake",
+   :source "ToB",
+   :page   153,
+   :type   "dragon"}
+  {:name   "Fire Dancer Swarm",
+   :source "ToB",
+   :page   373,
+   :type   {:swarmSize "T", :type "elemental"}}
+  {:name   "Gilded Devil",
+   :source "ToB",
+   :page   106,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Herald of Darkness", :source "ToB", :page 249, :type "fiend"}
+  {:name "Lake Troll", :source "ToB", :page 389, :type "giant"}
+  {:name   "Possessed Pillar",
+   :source "ToB",
+   :page   314,
+   :type   "construct"}
+  {:name   "Psoglav Demon",
+   :source "ToB",
+   :page   79,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Red Hag", :source "ToB", :page 244, :type "fey"}
+  {:name "Risen Reaver", :source "ToB", :page 328, :type "undead"}
+  {:name "Sand Spider", :source "ToB", :page 364, :type "beast"}
+  {:name "Shadow Beast", :source "ToB", :page 345, :type "fey"}
+  {:name   "Shadow Fey Enchantress",
+   :source "ToB",
+   :page   171,
+   :type   {:tags ["shadow fey"], :type "humanoid"}}
+  {:name "Soul Eater", :source "ToB", :page 356, :type "fiend"}
+  {:name "Spark", :source "ToB", :page 357, :type "elemental"}
+  {:name   "Spider of Leng",
+   :source "ToB",
+   :page   365,
+   :type   "aberration"}
+  {:name "Umbral Vampire", :source "ToB", :page 397, :type "fiend"}
+  {:name "Vine Lord", :source "ToB", :page 402, :type "plant"}
+  {:name   "Horizonback Tortoise",
+   :source "EGW",
+   :page   292,
+   :type   "monstrosity"}
+  {:name   "Swavain Basilisk",
+   :source "EGW",
+   :page   300,
+   :type   "monstrosity"}],
+ 8
+ [{:name   "Assassin",
+   :source "MM",
+   :page   343,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Chain Devil",
+   :source "MM",
+   :page   72,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Cloaker", :source "MM", :page 41, :type "aberration"}
+  {:name   "Drow Priestess of Lolth",
+   :source "MM",
+   :page   129,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Fomorian", :source "MM", :page 136, :type "giant"}
+  {:name "Frost Giant", :source "MM", :page 155, :type "giant"}
+  {:name   "Githyanki Knight",
+   :source "MM",
+   :page   160,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name   "Green Slaad",
+   :source "MM",
+   :page   277,
+   :type   {:tags ["shapechanger"], :type "aberration"}}
+  {:name   "Hezrou",
+   :source "MM",
+   :page   60,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Hydra", :source "MM", :page 190, :type "monstrosity"}
+  {:name   "Mind Flayer Arcanist",
+   :source "MM",
+   :page   222,
+   :type   "aberration"}
+  {:name "Spirit Naga", :source "MM", :page 234, :type "monstrosity"}
+  {:name "Tyrannosaurus Rex", :source "MM", :page 80, :type "beast"}
+  {:name   "Young Bronze Dragon",
+   :source "MM",
+   :page   108,
+   :type   "dragon"}
+  {:name "Young Green Dragon", :source "MM", :page 94, :type "dragon"}
+  {:name   "Blood Drinker Vampire",
+   :source "GGR",
+   :page   223,
+   :type   "undead"}
+  {:name "Gloamwing", :source "GGR", :page 215, :type "undead"}
+  {:name "Guardian Giant", :source "GGR", :page 201, :type "giant"}
+  {:name "Nivix Cyclops", :source "GGR", :page 216, :type "giant"}
+  {:name "Obzedat Ghost", :source "GGR", :page 245, :type "undead"}
+  {:name   "Warforged Titan",
+   :source "ERLW",
+   :page   315,
+   :type   "construct"}
+  {:name   "Zoryas",
+   :source "CCodex",
+   :page   21,
+   :type   {:tags ["angel"], :type "celestial"}}
+  {:name   "Ankou Soul Seeker",
+   :source "CCodex",
+   :page   38,
+   :type   "dragon"}
+  {:name "Arborcyte", :source "CCodex", :page 40, :type "plant"}
+  {:name   "Dakini, Simhamukha",
+   :source "CCodex",
+   :page   70,
+   :type   {:tags ["dakini"], :type "celestial"}}
+  {:name   "Neophron",
+   :source "CCodex",
+   :page   87,
+   :type   {:tags ["shapechanger" "demon"], :type "fiend"}}
+  {:name   "One-headed Clockwork Dragon",
+   :source "CCodex",
+   :page   111,
+   :type   "construct"}
+  {:name "Blood Giant", :source "CCodex", :page 180, :type "giant"}
+  {:name   "Fractal Golem",
+   :source "CCodex",
+   :page   198,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Manastorm Golem",
+   :source "CCodex",
+   :page   203,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Hound of Tindalos",
+   :source "CCodex",
+   :page   221,
+   :type   "aberration"}
+  {:name "Gaki", :source "CCodex", :page 222, :type "undead"}
+  {:name   "Ancient Mandriano",
+   :source "CCodex",
+   :page   261,
+   :type   "plant"}
+  {:name "Lost Minotaur", :source "CCodex", :page 268, :type "undead"}
+  {:name "Moon Nymph", :source "CCodex", :page 269, :type "aberration"}
+  {:name "Nachzehrer", :source "CCodex", :page 272, :type "undead"}
+  {:name "Oliphaunt", :source "CCodex", :page 280, :type "beast"}
+  {:name "Giant Shark Bowl", :source "CCodex", :page 284, :type "ooze"}
+  {:name   "Ring Servant",
+   :source "CCodex",
+   :page   318,
+   :type   "construct"}
+  {:name   "Vampire Priestess",
+   :source "CCodex",
+   :page   367,
+   :type   "undead"}
+  {:name   "Vampire Priestess (Midgard Version)",
+   :source "CCodex",
+   :page   367,
+   :type   "undead"}
+  {:name   "Vines of Nemthyr",
+   :source "CCodex",
+   :page   371,
+   :type   "plant"}
+  {:name "Ziphius", :source "CCodex", :page 392, :type "aberration"}
+  {:name   "Scorpion Assassin",
+   :source "CCodex",
+   :page   405,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Thief Lord",
+   :source "CCodex",
+   :page   406,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Voidwracked Mage",
+   :source "CCodex",
+   :page   409,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Voidwracked Mage (Midgard Version)",
+   :source "CCodex",
+   :page   409,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "War Priest",
+   :source "CCodex",
+   :page   411,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Canoloth",
+   :source "MTF",
+   :page   247,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name "Corpse Flower", :source "MTF", :page 127, :type "plant"}
+  {:name   "Deathlock Mastermind",
+   :source "MTF",
+   :page   129,
+   :type   "undead"}
+  {:name "Howler", :source "MTF", :page 210, :type "fiend"}
+  {:name   "Sword Wraith Commander",
+   :source "MTF",
+   :page   241,
+   :type   "undead"}
+  {:name   "Ahu-Nixta Cataphract",
+   :source "ToB2",
+   :page   9,
+   :type   "aberration"}
+  {:name   "Astral Devourer",
+   :source "ToB2",
+   :page   30,
+   :type   {:swarmSize "T", :type "aberration"}}
+  {:name "Astri", :source "ToB2", :page 31, :type "celestial"}
+  {:name "Avulzor", :source "ToB2", :page 37, :type "aberration"}
+  {:name   "Bloodstone Sentinel",
+   :source "ToB2",
+   :page   45,
+   :type   "construct"}
+  {:name   "Tzepharion",
+   :source "ToB2",
+   :page   106,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Young Boreal Dragon",
+   :source "ToB2",
+   :page   112,
+   :type   "dragon"}
+  {:name "Hoard Drake", :source "ToB2", :page 122, :type "dragon"}
+  {:name   "Tarkun the Desiccated",
+   :source "ToB2",
+   :page   148,
+   :type   "fey"}
+  {:name   "Greater Ghast of Leng",
+   :source "ToB2",
+   :page   164,
+   :type   "aberration"}
+  {:name "Hantu Penanggal", :source "ToB2", :page 192, :type "fiend"}
+  {:name "Hongaek", :source "ToB2", :page 201, :type "elemental"}
+  {:name "Huecambra", :source "ToB2", :page 203, :type "monstrosity"}
+  {:name "Ikuchi", :source "ToB2", :page 210, :type "elemental"}
+  {:name "Kachlian", :source "ToB2", :page 219, :type "aberration"}
+  {:name   "Hebi-Doku",
+   :source "ToB2",
+   :page   222,
+   :type   {:tags ["kami"], :type "fey"}}
+  {:name "Locksmith", :source "ToB2", :page 240, :type "construct"}
+  {:name "Magma Octopus", :source "ToB2", :page 251, :type "elemental"}
+  {:name "Marsh Dire", :source "ToB2", :page 258, :type "undead"}
+  {:name   "Onyx Magistrate",
+   :source "ToB2",
+   :page   276,
+   :type   "construct"}
+  {:name "Pal-Rai-Yuk", :source "ToB2", :page 291, :type "monstrosity"}
+  {:name "Parzz'val", :source "ToB2", :page 292, :type "aberration"}
+  {:name   "Snow Terror",
+   :source "ToB2",
+   :page   334,
+   :type   {:tags ["shapechanger"], :type "fiend"}}
+  {:name "Tetomatli", :source "ToB2", :page 345, :type "construct"}
+  {:name "Wanyudo", :source "ToB2", :page 364, :type "fiend"}
+  {:name   "Blackguard",
+   :source "VGM",
+   :page   211,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Diviner",
+   :source "VGM",
+   :page   213,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Mind Flayer Psion",
+   :source "VGM",
+   :page   71,
+   :type   "aberration"}
+  {:name   "Shoosuva",
+   :source "VGM",
+   :page   137,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Ala", :source "ToB", :page 13, :type "fey"}
+  {:name "Arcane Guardian", :source "ToB", :page 358, :type "undead"}
+  {:name "Blemmyes", :source "ToB", :page 37, :type "monstrosity"}
+  {:name "Bone Collective", :source "ToB", :page 39, :type "undead"}
+  {:name "Chained Angel", :source "ToB", :page 20, :type "celestial"}
+  {:name "Chronalmental", :source "ToB", :page 57, :type "elemental"}
+  {:name   "Deep One Archimandrite",
+   :source "ToB",
+   :page   74,
+   :type   "humanoid"}
+  {:name "Degenerate Titan", :source "ToB", :page 381, :type "giant"}
+  {:name "Dragonleaf Tree", :source "ToB", :page 147, :type "plant"}
+  {:name   "Dune Mimic",
+   :source "ToB",
+   :page   162,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name   "Emerald Order Cult Leader",
+   :source "ToB",
+   :page   421,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Feyward Tree", :source "ToB", :page 200, :type "construct"}
+  {:name "Idolic Deity", :source "ToB", :page 255, :type "construct"}
+  {:name   "Kishi Demon",
+   :source "ToB",
+   :page   77,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Liosalfar", :source "ToB", :page 277, :type "elemental"}
+  {:name   "Lunar Devil",
+   :source "ToB",
+   :page   110,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Mallqui", :source "ToB", :page 282, :type "undead"}
+  {:name   "Monolith Champion",
+   :source "ToB",
+   :page   294,
+   :type   "construct"}
+  {:name "Qwyllion", :source "ToB", :page 316, :type "aberration"}
+  {:name "Rust Drake", :source "ToB", :page 155, :type "dragon"}
+  {:name "Savager", :source "ToB", :page 338, :type "beast"}
+  {:name "Shabti", :source "ToB", :page 343, :type "construct"}
+  {:name "Tophet", :source "ToB", :page 383, :type "construct"}
+  {:name "Xhkarsh", :source "ToB", :page 412, :type "aberration"}
+  {:name "Young Cave Dragon", :source "ToB", :page 127, :type "dragon"}
+  {:name   "Aeorian Reverser",
+   :source "EGW",
+   :page   284,
+   :type   "monstrosity"}],
+ 9
+ [{:name   "Abominable Yeti",
+   :source "MM",
+   :page   306,
+   :type   "monstrosity"}
+  {:name   "Bone Devil",
+   :source "MM",
+   :page   71,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Clay Golem", :source "MM", :page 168, :type "construct"}
+  {:name "Cloud Giant", :source "MM", :page 154, :type "giant"}
+  {:name "Fire Giant", :source "MM", :page 154, :type "giant"}
+  {:name   "Glabrezu",
+   :source "MM",
+   :page   58,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Gray Slaad",
+   :source "MM",
+   :page   277,
+   :type   {:tags ["shapechanger"], :type "aberration"}}
+  {:name   "Nycaloth",
+   :source "MM",
+   :page   314,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name "Treant", :source "MM", :page 289, :type "plant"}
+  {:name "Young Blue Dragon", :source "MM", :page 91, :type "dragon"}
+  {:name   "Young Silver Dragon",
+   :source "MM",
+   :page   118,
+   :type   "dragon"}
+  {:name "Conclave Dryad", :source "GGR", :page 194, :type "fey"}
+  {:name   "Master of Cruelties",
+   :source "GGR",
+   :page   196,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Shadow Horror", :source "GGR", :page 205, :type "aberration"}
+  {:name   "Hashalaq Quori",
+   :source "ERLW",
+   :page   305,
+   :type   "aberration"}
+  {:name "Ammut", :source "CCodex", :page 15, :type "celestial"}
+  {:name   "Alnaar",
+   :source "CCodex",
+   :page   82,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Fulad-zereh",
+   :source "CCodex",
+   :page   85,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Alpha Yek",
+   :source "CCodex",
+   :page   95,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Young Wasteland Dragon",
+   :source "CCodex",
+   :page   118,
+   :type   "dragon"}
+  {:name "Spider Drake", :source "CCodex", :page 133, :type "dragon"}
+  {:name   "Shadow Fey Ambassador",
+   :source "CCodex",
+   :page   145,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Flame-scourged Scion",
+   :source "CCodex",
+   :page   159,
+   :type   "aberration"}
+  {:name "Fulminar", :source "CCodex", :page 165, :type "elemental"}
+  {:name   "Darakhul High Priestess",
+   :source "CCodex",
+   :page   172,
+   :type   "undead"}
+  {:name   "Alchemical Golem",
+   :source "CCodex",
+   :page   192,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Lotus Golem",
+   :source "CCodex",
+   :page   202,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name "Jinmenju", :source "CCodex", :page 232, :type "plant"}
+  {:name "Külmking", :source "CCodex", :page 244, :type "undead"}
+  {:name   "Hierophant Lich",
+   :source "CCodex",
+   :page   251,
+   :type   "undead"}
+  {:name   "Mantik, Barbed King of the Manticores",
+   :source "CCodex",
+   :page   262,
+   :type   "monstrosity"}
+  {:name "Mytholabe", :source "CCodex", :page 271, :type "construct"}
+  {:name   "Shadow River Lord",
+   :source "CCodex",
+   :page   327,
+   :type   "undead"}
+  {:name   "Monarch Skeleton",
+   :source "CCodex",
+   :page   341,
+   :type   {:tags ["skeleton"], :type "undead"}}
+  {:name "Wickerman", :source "CCodex", :page 380, :type "construct"}
+  {:name   "Drow House Captain",
+   :source "MTF",
+   :page   184,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Frost Salamander",
+   :source "MTF",
+   :page   223,
+   :type   "elemental"}
+  {:name   "Gloom Weaver",
+   :source "MTF",
+   :page   224,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Hydroloth",
+   :source "MTF",
+   :page   249,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name "Rot Troll", :source "MTF", :page 244, :type "giant"}
+  {:name "The Lonely", :source "MTF", :page 232, :type "monstrosity"}
+  {:name "Anzu", :source "ToB2", :page 26, :type "monstrosity"}
+  {:name "Ash Phoenix", :source "ToB2", :page 28, :type "undead"}
+  {:name   "Aurora Horribilis",
+   :source "ToB2",
+   :page   34,
+   :type   "aberration"}
+  {:name   "Dimensional Shambler",
+   :source "ToB2",
+   :page   107,
+   :type   "aberration"}
+  {:name "Darakhul Captain", :source "ToB2", :page 166, :type "undead"}
+  {:name "Thin Giant", :source "ToB2", :page 175, :type "giant"}
+  {:name   "Gulper Behemoth",
+   :source "ToB2",
+   :page   190,
+   :type   "monstrosity"}
+  {:name   "Huli Jing",
+   :source "ToB2",
+   :page   204,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Sasori Fukurōwashi",
+   :source "ToB2",
+   :page   224,
+   :type   {:tags ["kami"], :type "fey"}}
+  {:name   "Keelbreaker Crab",
+   :source "ToB2",
+   :page   226,
+   :type   "monstrosity"}
+  {:name "Kirikari", :source "ToB2", :page 230, :type "monstrosity"}
+  {:name   "Kobold War Machine",
+   :source "ToB2",
+   :page   233,
+   :type   "construct"}
+  {:name "Murgrik", :source "ToB2", :page 263, :type "aberration"}
+  {:name "Nharyth", :source "ToB2", :page 269, :type "aberration"}
+  {:name   "Oasis Keeper",
+   :source "ToB2",
+   :page   273,
+   :type   "monstrosity"}
+  {:name "Pine Doom", :source "ToB2", :page 295, :type "plant"}
+  {:name "Plague Spirit", :source "ToB2", :page 296, :type "fey"}
+  {:name   "Righteous Sentinel",
+   :source "ToB2",
+   :page   307,
+   :type   "construct"}
+  {:name "Shriekbat", :source "ToB2", :page 325, :type "monstrosity"}
+  {:name "Shukankor", :source "ToB2", :page 326, :type "aberration"}
+  {:name   "Thornheart Guardian",
+   :source "ToB2",
+   :page   346,
+   :type   "construct"}
+  {:name "Warmth Thief", :source "ToB2", :page 366, :type "fey"}
+  {:name "Wraith Bear", :source "ToB2", :page 375, :type "undead"}
+  {:name   "Abjurer",
+   :source "VGM",
+   :page   209,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Champion",
+   :source "VGM",
+   :page   212,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Evoker",
+   :source "VGM",
+   :page   214,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Flind",
+   :source "VGM",
+   :page   153,
+   :type   {:tags ["gnoll"], :type "humanoid"}}
+  {:name   "Necromancer",
+   :source "VGM",
+   :page   217,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Ulitharid", :source "VGM", :page 175, :type "aberration"}
+  {:name   "War Priest",
+   :source "VGM",
+   :page   218,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Al-Aeshma Genie",
+   :source "ToB",
+   :page   211,
+   :type   "elemental"}
+  {:name "Bukavac", :source "ToB", :page 47, :type "monstrosity"}
+  {:name "Deep Drake", :source "ToB", :page 152, :type "dragon"}
+  {:name "Desert Giant", :source "ToB", :page 222, :type "giant"}
+  {:name   "Devilbound Gnomish Prince",
+   :source "ToB",
+   :page   420,
+   :type   {:tags ["gnome"], :type "humanoid"}}
+  {:name   "Eater of Dust (Yakat-Shi)",
+   :source "ToB",
+   :page   164,
+   :type   "aberration"}
+  {:name   "Ghostwalk Spider",
+   :source "ToB",
+   :page   361,
+   :type   "monstrosity"}
+  {:name "Horakh", :source "ToB", :page 250, :type "monstrosity"}
+  {:name "Krake Spawn", :source "ToB", :page 269, :type "monstrosity"}
+  {:name   "Malakbel",
+   :source "ToB",
+   :page   78,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Oozasis", :source "ToB", :page 310, :type "ooze"}
+  {:name "Ushabti", :source "ToB", :page 394, :type "construct"}
+  {:name   "Vine Troll Skeleton",
+   :source "ToB",
+   :page   351,
+   :type   "plant"}
+  {:name   "Young Flame Dragon",
+   :source "ToB",
+   :page   130,
+   :type   "dragon"}
+  {:name "Young Sea Dragon", :source "ToB", :page 136, :type "dragon"}
+  {:name "Young Void Dragon", :source "ToB", :page 140, :type "dragon"}
+  {:name   "Frost Giant Zombie",
+   :source "EGW",
+   :page   288,
+   :type   "undead"}],
+ 10
+ [{:name "Aboleth", :source "MM", :page 13, :type "aberration"}
+  {:name   "Death Slaad",
+   :source "MM",
+   :page   278,
+   :type   {:tags ["shapechanger"], :type "aberration"}}
+  {:name "Deva", :source "MM", :page 16, :type "celestial"}
+  {:name "Guardian Naga", :source "MM", :page 234, :type "monstrosity"}
+  {:name "Stone Golem", :source "MM", :page 170, :type "construct"}
+  {:name   "Yochlol",
+   :source "MM",
+   :page   65,
+   :type   {:tags ["demon" "shapechanger"], :type "fiend"}}
+  {:name "Young Gold Dragon", :source "MM", :page 115, :type "dragon"}
+  {:name "Young Red Dragon", :source "MM", :page 98, :type "dragon"}
+  {:name   "Biomancer",
+   :source "GGR",
+   :page   256,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name "Nightveil Specter", :source "GGR", :page 215, :type "undead"}
+  {:name "Sunder Shaman", :source "GGR", :page 202, :type "giant"}
+  {:name   "Undying Councilor",
+   :source "ERLW",
+   :page   311,
+   :type   "undead"}
+  {:name   "Alchemist Archer",
+   :source "CCodex",
+   :page   141,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Cave Giant", :source "CCodex", :page 182, :type "giant"}
+  {:name   "Altar Flame Golem",
+   :source "CCodex",
+   :page   193,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Doom Golem",
+   :source "CCodex",
+   :page   197,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name "Grave Behemoth", :source "CCodex", :page 208, :type "undead"}
+  {:name "Incinis", :source "CCodex", :page 226, :type "elemental"}
+  {:name "Lamassu", :source "CCodex", :page 247, :type "celestial"}
+  {:name "Nightgaunt", :source "CCodex", :page 277, :type "aberration"}
+  {:name "Foxfire Ooze", :source "CCodex", :page 283, :type "ooze"}
+  {:name   "Vampire Patrician",
+   :source "CCodex",
+   :page   366,
+   :type   "undead"}
+  {:name   "Autumn Eladrin",
+   :source "MTF",
+   :page   195,
+   :type   {:tags ["elf"], :type "fey"}}
+  {:name "Elder Oblex", :source "MTF", :page 219, :type "ooze"}
+  {:name   "Githyanki Gish",
+   :source "MTF",
+   :page   205,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name   "Githzerai Enlightened",
+   :source "MTF",
+   :page   208,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name   "Orthon",
+   :source "MTF",
+   :page   169,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Spring Eladrin",
+   :source "MTF",
+   :page   196,
+   :type   {:tags ["elf"], :type "fey"}}
+  {:name   "Star Spawn Hulk",
+   :source "MTF",
+   :page   234,
+   :type   "aberration"}
+  {:name   "Summer Eladrin",
+   :source "MTF",
+   :page   196,
+   :type   {:tags ["elf"], :type "fey"}}
+  {:name   "Winter Eladrin",
+   :source "MTF",
+   :page   197,
+   :type   {:tags ["elf"], :type "fey"}}
+  {:name   "Toad King",
+   :source "ToB2",
+   :page   22,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "Colláis", :source "ToB2", :page 69, :type "monstrosity"}
+  {:name   "Conjoined Queen",
+   :source "ToB2",
+   :page   70,
+   :type   "monstrosity"}
+  {:name   "Spawn of Hriggala",
+   :source "ToB2",
+   :page   89,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Fabricator", :source "ToB2", :page 138, :type "construct"}
+  {:name   "Dragonflesh Golem",
+   :source "ToB2",
+   :page   180,
+   :type   "construct"}
+  {:name   "Chameleon Hydra",
+   :source "ToB2",
+   :page   208,
+   :type   "monstrosity"}
+  {:name "Kelp Eel", :source "ToB2", :page 227, :type "plant"}
+  {:name "Luck Leech", :source "ToB2", :page 241, :type "fey"}
+  {:name   "Major Malleable",
+   :source "ToB2",
+   :page   254,
+   :type   "aberration"}
+  {:name   "Nyctli Swarm",
+   :source "ToB2",
+   :page   271,
+   :type   {:swarmSize "T", :type "fey"}}
+  {:name "Peat Mammoth", :source "ToB2", :page 293, :type "plant"}
+  {:name "Pumpkin King", :source "ToB2", :page 298, :type "fey"}
+  {:name "Tormented Qiqirn", :source "ToB2", :page 302, :type "fiend"}
+  {:name   "Runeswarm",
+   :source "ToB2",
+   :page   310,
+   :type   {:swarmSize "T", :type "construct"}}
+  {:name   "Young Blue Dragon Zombie",
+   :source "ToB2",
+   :page   385,
+   :type   "undead"}
+  {:name "Alhoon", :source "VGM", :page 172, :type "undead"}
+  {:name "Death Kiss", :source "VGM", :page 124, :type "aberration"}
+  {:name "Froghemoth", :source "VGM", :page 145, :type "monstrosity"}
+  {:name   "Stone Giant Dreamwalker",
+   :source "VGM",
+   :page   150,
+   :type   {:tags ["stone giant"], :type "giant"}}
+  {:name "Algorith", :source "ToB", :page 14, :type "construct"}
+  {:name   "Automata Devil",
+   :source "ToB",
+   :page   102,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Bone Swarm",
+   :source "ToB",
+   :page   41,
+   :type   {:swarmSize "T", :type "undead"}}
+  {:name "Fear Smith", :source "ToB", :page 181, :type "fey"}
+  {:name "Hundun", :source "ToB", :page 253, :type "celestial"}
+  {:name   "Rubezahl",
+   :source "ToB",
+   :page   80,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Salt Golem", :source "ToB", :page 235, :type "construct"}
+  {:name "Sathaq Worm", :source "ToB", :page 337, :type "elemental"}
+  {:name "Thuellai", :source "ToB", :page 379, :type "elemental"}
+  {:name   "Aeorian Absorber",
+   :source "EGW",
+   :page   283,
+   :type   "monstrosity"}
+  {:name   "Gearkeeper Construct",
+   :source "EGW",
+   :page   290,
+   :type   "construct"}],
+ 11
+ [{:name "Behir", :source "MM", :page 25, :type "monstrosity"}
+  {:name "Dao", :source "MM", :page 143, :type "elemental"}
+  {:name "Djinni", :source "MM", :page 144, :type "elemental"}
+  {:name "Efreeti", :source "MM", :page 145, :type "elemental"}
+  {:name "Gynosphinx", :source "MM", :page 282, :type "monstrosity"}
+  {:name   "Horned Devil",
+   :source "MM",
+   :page   74,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Marid", :source "MM", :page 146, :type "elemental"}
+  {:name "Remorhaz", :source "MM", :page 258, :type "monstrosity"}
+  {:name "Roc", :source "MM", :page 260, :type "monstrosity"}
+  {:name "Radiant Idol", :source "ERLW", :page 308, :type "celestial"}
+  {:name   "Mouse King",
+   :source "CCodex",
+   :page   28,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Ouroban",
+   :source "CCodex",
+   :page   125,
+   :type   {:tags ["dragonborn"], :type "humanoid"}}
+  {:name   "Shadow Fey Poisoner",
+   :source "CCodex",
+   :page   148,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Flying Polyp",
+   :source "CCodex",
+   :page   162,
+   :type   "aberration"}
+  {:name "Ghost Dragon", :source "CCodex", :page 170, :type "undead"}
+  {:name "Void Giant", :source "CCodex", :page 187, :type "giant"}
+  {:name   "Herald of Undeath",
+   :source "CCodex",
+   :page   219,
+   :type   "undead"}
+  {:name "Ichneumon", :source "CCodex", :page 224, :type "monstrosity"}
+  {:name   "Ecstatic Bloom",
+   :source "CCodex",
+   :page   303,
+   :type   "celestial"}
+  {:name   "Thorned Sulfurlord",
+   :source "CCodex",
+   :page   306,
+   :type   "fiend"}
+  {:name   "Vampiric Knight",
+   :source "CCodex",
+   :page   369,
+   :type   {:tags ["Vampire"], :type "undead"}}
+  {:name "Wendigo", :source "CCodex", :page 377, :type "monstrosity"}
+  {:name   "Alkilith",
+   :source "MTF",
+   :page   130,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Balhannoth", :source "MTF", :page 119, :type "aberration"}
+  {:name   "Drow Shadowblade",
+   :source "MTF",
+   :page   187,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Soul Monger",
+   :source "MTF",
+   :page   226,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Spirit Troll", :source "MTF", :page 244, :type "giant"}
+  {:name "The Hungry", :source "MTF", :page 232, :type "monstrosity"}
+  {:name   "Yagnoloth",
+   :source "MTF",
+   :page   252,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name "Black Crier", :source "ToB2", :page 42, :type "undead"}
+  {:name   "Broodmother of Leng",
+   :source "ToB2",
+   :page   52,
+   :type   "aberration"}
+  {:name   "Young Imperial Dragon",
+   :source "ToB2",
+   :page   117,
+   :type   "dragon"}
+  {:name "Crater Drake", :source "ToB2", :page 120, :type "dragon"}
+  {:name "Mountain Dryad", :source "ToB2", :page 130, :type "fey"}
+  {:name   "Herald of Slaughter",
+   :source "ToB2",
+   :page   198,
+   :type   "fiend"}
+  {:name   "Herald of the Void",
+   :source "ToB2",
+   :page   199,
+   :type   "fiend"}
+  {:name "Xing Tian", :source "ToB2", :page 376, :type "giant"}
+  {:name   "Cloud Giant Smiling One",
+   :source "VGM",
+   :page   146,
+   :type   {:tags ["cloud giant"], :type "giant"}}
+  {:name "Morkoth", :source "VGM", :page 177, :type "aberration"}
+  {:name "Abominable Beauty", :source "ToB", :page 11, :type "fey"}
+  {:name   "Baba Yaga's Horsemen (Black Night)",
+   :source "ToB",
+   :page   29,
+   :type   "fey"}
+  {:name   "Baba Yaga's Horsemen (Bright Day)",
+   :source "ToB",
+   :page   29,
+   :type   "fey"}
+  {:name   "Baba Yaga's Horsemen (Red Sun)",
+   :source "ToB",
+   :page   29,
+   :type   "fey"}
+  {:name   "Berstuc",
+   :source "ToB",
+   :page   76,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Blood Hag", :source "ToB", :page 242, :type "fey"}
+  {:name "Buraq", :source "ToB", :page 48, :type "celestial"}
+  {:name "Corpse Mound", :source "ToB", :page 69, :type "undead"}
+  {:name "Dullahan", :source "ToB", :page 161, :type "fey"}
+  {:name "Eye Golem", :source "ToB", :page 233, :type "construct"}
+  {:name "Grim Jester", :source "ToB", :page 240, :type "undead"}
+  {:name   "Koralk (Harvester Devil)",
+   :source "ToB",
+   :page   108,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Naina",
+   :source "ToB",
+   :page   302,
+   :type   {:tags ["shapechanger"], :type "dragon"}}
+  {:name "Valkyrie", :source "ToB", :page 396, :type "celestial"}
+  {:name "Vesiculosa", :source "ToB", :page 399, :type "plant"}
+  {:name "Voidling", :source "ToB", :page 404, :type "aberration"}
+  {:name "Ychen Bannog", :source "ToB", :page 413, :type "beast"}],
+ 12
+ [{:name   "Arcanaloth",
+   :source "MM",
+   :page   313,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name   "Archmage",
+   :source "MM",
+   :page   342,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Erinyes",
+   :source "MM",
+   :page   73,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Arclight Phoenix",
+   :source "GGR",
+   :page   193,
+   :type   "elemental"}
+  {:name "Firemane Angel", :source "GGR", :page 190, :type "celestial"}
+  {:name   "Sire of Insanity",
+   :source "GGR",
+   :page   197,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Lord of Vultures",
+   :source "CCodex",
+   :page   26,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Queen of Serpents",
+   :source "CCodex",
+   :page   34,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Reynard",
+   :source "CCodex",
+   :page   155,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "Herald of Fire", :source "CCodex", :page 215, :type "dragon"}
+  {:name   "Horned Serpent",
+   :source "CCodex",
+   :page   220,
+   :type   "monstrosity"}
+  {:name   "Droth",
+   :source "CCodex",
+   :page   333,
+   :type   {:tags ["shoth"], :type "aberration"}}
+  {:name "Undead Phoenix", :source "CCodex", :page 361, :type "undead"}
+  {:name   "Venom Maw Hydra",
+   :source "CCodex",
+   :page   370,
+   :type   "monstrosity"}
+  {:name "Boneclaw", :source "MTF", :page 121, :type "undead"}
+  {:name   "Duergar Despot",
+   :source "MTF",
+   :page   188,
+   :type   {:tags ["dwarf"], :type "humanoid"}}
+  {:name "Eidolon", :source "MTF", :page 194, :type "undead"}
+  {:name   "Githyanki Kith'rak",
+   :source "MTF",
+   :page   205,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name "Gray Render", :source "MTF", :page 209, :type "monstrosity"}
+  {:name   "Oinoloth",
+   :source "MTF",
+   :page   251,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name   "Angelic Enforcer",
+   :source "ToB2",
+   :page   17,
+   :type   "celestial"}
+  {:name "Boneshard Wraith", :source "ToB2", :page 46, :type "undead"}
+  {:name   "Chronomatic Enhancer",
+   :source "ToB2",
+   :page   64,
+   :type   "construct"}
+  {:name   "Culicoid",
+   :source "ToB2",
+   :page   94,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Derendian Moth Abomination",
+   :source "ToB2",
+   :page   96,
+   :type   "monstrosity"}
+  {:name "Galidroo", :source "ToB2", :page 161, :type "monstrosity"}
+  {:name "Glacier Behemoth", :source "ToB2", :page 177, :type "beast"}
+  {:name "Kembingur", :source "ToB2", :page 211, :type "monstrosity"}
+  {:name   "Infernal Swarm",
+   :source "ToB2",
+   :page   215,
+   :type   {:swarmSize "S", :type "fiend"}}
+  {:name "Virtuoso Lich", :source "ToB2", :page 237, :type "undead"}
+  {:name "Death Barque", :source "ToB2", :page 268, :type "undead"}
+  {:name   "Yskarakta, Lord of the Satarre",
+   :source "ToB2",
+   :page   317,
+   :type   "fiend"}
+  {:name   "Stellar Rorqual",
+   :source "ToB2",
+   :page   338,
+   :type   "aberration"}
+  {:name "Thrummren", :source "ToB2", :page 347, :type "celestial"}
+  {:name   "Archdruid",
+   :source "VGM",
+   :page   210,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Frost Giant Everlasting One",
+   :source "VGM",
+   :page   148,
+   :type   {:tags ["frost giant"], :type "giant"}}
+  {:name "Ki-rin", :source "VGM", :page 163, :type "celestial"}
+  {:name   "Warlord",
+   :source "VGM",
+   :page   220,
+   :type   {:tags ["any race"], :type "humanoid"}}
+  {:name   "Yuan-ti Anathema",
+   :source "VGM",
+   :page   202,
+   :type   {:tags ["shapechanger" "yuan-ti"], :type "monstrosity"}}
+  {:name   "Akyishigal, Demon Lord of Cockroaches",
+   :source "ToB",
+   :page   82,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Ancient Titan",
+   :source "ToB",
+   :page   380,
+   :type   {:tags ["titan"], :type "celestial"}}
+  {:name   "Bear King",
+   :source "ToB",
+   :page   186,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "Bonepowder Ghoul", :source "ToB", :page 214, :type "undead"}
+  {:name   "Chort Devil",
+   :source "ToB",
+   :page   104,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Dragon Eel", :source "ToB", :page 146, :type "dragon"}
+  {:name "Flutterflesh", :source "ToB", :page 203, :type "undead"}
+  {:name "Gug", :source "ToB", :page 241, :type "giant"}
+  {:name "Herald of Blood", :source "ToB", :page 248, :type "fiend"}
+  {:name "Hoard Golem", :source "ToB", :page 234, :type "construct"}
+  {:name "Mavka", :source "ToB", :page 286, :type "undead"}
+  {:name "Nihileth", :source "ToB", :page 8, :type "undead"}
+  {:name "Skein Witch", :source "ToB", :page 349, :type "celestial"}
+  {:name   "Son of Fenris",
+   :source "ToB",
+   :page   355,
+   :type   "monstrosity"}
+  {:name "Titanoboa", :source "ToB", :page 382, :type "beast"}
+  {:name   "Tosculi Hive-Queen",
+   :source "ToB",
+   :page   385,
+   :type   "monstrosity"}
+  {:name   "Aeorian Nullifier",
+   :source "EGW",
+   :page   283,
+   :type   "monstrosity"}
+  {:name "Sea Fury", :source "EGW", :page 299, :type "fey"}],
+ 13
+ [{:name "Adult Brass Dragon", :source "MM", :page 105, :type "dragon"}
+  {:name "Adult White Dragon", :source "MM", :page 101, :type "dragon"}
+  {:name "Beholder", :source "MM", :page 28, :type "aberration"}
+  {:name   "Nalfeshnee",
+   :source "MM",
+   :page   62,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Rakshasa", :source "MM", :page 257, :type "fiend"}
+  {:name "Storm Giant", :source "MM", :page 156, :type "giant"}
+  {:name   "Ultroloth",
+   :source "MM",
+   :page   314,
+   :type   {:tags ["yugoloth"], :type "fiend"}}
+  {:name   "Vampire",
+   :source "MM",
+   :page   297,
+   :type   {:tags ["shapechanger"], :type "undead"}}
+  {:name   "Young Red Shadow Dragon",
+   :source "MM",
+   :page   85,
+   :type   "dragon"}
+  {:name "Skyswimmer", :source "GGR", :page 220, :type "monstrosity"}
+  {:name   "Bat King",
+   :source "CCodex",
+   :page   22,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Chittr'k'k, Demon Lord of Rats",
+   :source "CCodex",
+   :page   76,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Devil Shark",
+   :source "CCodex",
+   :page   98,
+   :type   "monstrosity"}
+  {:name "Storm Lord", :source "CCodex", :page 139, :type "elemental"}
+  {:name "Dire Troll", :source "MTF", :page 243, :type "giant"}
+  {:name   "Drow Arachnomancer",
+   :source "MTF",
+   :page   182,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Narzugon",
+   :source "MTF",
+   :page   167,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Star Spawn Seer",
+   :source "MTF",
+   :page   236,
+   :type   "aberration"}
+  {:name "The Angry", :source "MTF", :page 231, :type "monstrosity"}
+  {:name   "Wastrilith",
+   :source "MTF",
+   :page   139,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Queen of Scorpions",
+   :source "ToB2",
+   :page   20,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "Bonespitter", :source "ToB2", :page 47, :type "monstrosity"}
+  {:name   "Carnivorous Ship",
+   :source "ToB2",
+   :page   56,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name   "Clockwork Archon",
+   :source "ToB2",
+   :page   65,
+   :type   "construct"}
+  {:name   "Tricenatorus",
+   :source "ToB2",
+   :page   109,
+   :type   "monstrosity"}
+  {:name "Helashruu", :source "ToB2", :page 197, :type "aberration"}
+  {:name "Incarnate Gloom", :source "ToB2", :page 213, :type "undead"}
+  {:name "Bone Colossus", :source "ToB2", :page 267, :type "undead"}
+  {:name "Noth-norren", :source "ToB2", :page 270, :type "elemental"}
+  {:name "Pustulent Shambler", :source "ToB2", :page 299, :type "ooze"}
+  {:name   "Salamander Monarch",
+   :source "ToB2",
+   :page   311,
+   :type   "elemental"}
+  {:name "Psychic Vampire", :source "ToB2", :page 257, :type "undead"}
+  {:name "Devourer", :source "VGM", :page 138, :type "fiend"}
+  {:name "Neothelid", :source "VGM", :page 181, :type "aberration"}
+  {:name "Haugbui", :source "ToB", :page 247, :type "undead"}
+  {:name "Mask Wight", :source "ToB", :page 285, :type "undead"}
+  {:name "Spinosaurus", :source "ToB", :page 116, :type "beast"}
+  {:name "Steam Golem", :source "ToB", :page 237, :type "construct"}
+  {:name "Stuhac", :source "ToB", :page 370, :type "fiend"}
+  {:name   "Vampire Warlock",
+   :source "ToB",
+   :page   425,
+   :type   {:tags ["shapechanger"], :type "undead"}}
+  {:name   "Core Spawn Seer",
+   :source "EGW",
+   :page   286,
+   :type   "aberration"}],
+ 14
+ [{:name "Adult Black Dragon", :source "MM", :page 88, :type "dragon"}
+  {:name   "Adult Copper Dragon",
+   :source "MM",
+   :page   112,
+   :type   "dragon"}
+  {:name "Death Tyrant", :source "MM", :page 29, :type "undead"}
+  {:name   "Ice Devil",
+   :source "MM",
+   :page   75,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Archon of the Triumvirate",
+   :source "GGR",
+   :page   192,
+   :type   "celestial"}
+  {:name   "Deathpact Angel",
+   :source "GGR",
+   :page   192,
+   :type   "celestial"}
+  {:name "Devkarin Lich", :source "GGR", :page 198, :type "undead"}
+  {:name "Wurm", :source "GGR", :page 225, :type "monstrosity"}
+  {:name   "Queen of Birds",
+   :source "CCodex",
+   :page   30,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name "Azi Dahaka", :source "CCodex", :page 45, :type "dragon"}
+  {:name   "Three-headed Clockwork Dragon",
+   :source "CCodex",
+   :page   112,
+   :type   "construct"}
+  {:name   "Cadaver Collector",
+   :source "MTF",
+   :page   122,
+   :type   "construct"}
+  {:name   "Drow Inquisitor",
+   :source "MTF",
+   :page   184,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Githyanki Supreme Commander",
+   :source "MTF",
+   :page   206,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name "Retriever", :source "MTF", :page 222, :type "construct"}
+  {:name "Uridimmu", :source "ToB2", :page 19, :type "celestial"}
+  {:name "Butatsch", :source "ToB2", :page 54, :type "aberration"}
+  {:name "Cherufe", :source "ToB2", :page 61, :type "elemental"}
+  {:name   "Baliri Demon",
+   :source "ToB2",
+   :page   93,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Liminal Drake", :source "ToB2", :page 126, :type "dragon"}
+  {:name "Cave Giant Shaman", :source "ToB2", :page 171, :type "giant"}
+  {:name "Graknork", :source "ToB2", :page 182, :type "monstrosity"}
+  {:name   "Grimmlet Swarm",
+   :source "ToB2",
+   :page   187,
+   :type   {:swarmSize "T", :type "monstrosity"}}
+  {:name "Khodumodumo", :source "ToB2", :page 229, :type "monstrosity"}
+  {:name "Elder Brain", :source "VGM", :page 173, :type "aberration"}
+  {:name   "Fire Giant Dreadnought",
+   :source "VGM",
+   :page   147,
+   :type   {:tags ["fire giant"], :type "giant"}}
+  {:name   "Adult Mithral Dragon",
+   :source "ToB",
+   :page   133,
+   :type   "dragon"}
+  {:name "Adult Void Dragon", :source "ToB", :page 139, :type "dragon"}
+  {:name "Cambium", :source "ToB", :page 51, :type "fiend"}
+  {:name "Gypsosphinx", :source "ToB", :page 359, :type "monstrosity"}
+  {:name "Isonade", :source "ToB", :page 257, :type "monstrosity"}
+  {:name   "Orobas Devil",
+   :source "ToB",
+   :page   111,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Smaragdine Golem",
+   :source "ToB",
+   :page   236,
+   :type   "construct"}
+  {:name "Zmey", :source "ToB", :page 416, :type "dragon"}],
+ 15
+ [{:name   "Adult Bronze Dragon",
+   :source "MM",
+   :page   108,
+   :type   "dragon"}
+  {:name "Adult Green Dragon", :source "MM", :page 94, :type "dragon"}
+  {:name "Mummy Lord", :source "MM", :page 229, :type "undead"}
+  {:name "Purple Worm", :source "MM", :page 255, :type "monstrosity"}
+  {:name   "Vampire Spellcaster",
+   :source "MM",
+   :page   298,
+   :type   {:tags ["shapechanger"], :type "undead"}}
+  {:name   "Vampire Warrior",
+   :source "MM",
+   :page   298,
+   :type   {:tags ["shapechanger"], :type "undead"}}
+  {:name   "Skittering Horror",
+   :source "GGR",
+   :page   205,
+   :type   "aberration"}
+  {:name "Mordakhesh", :source "ERLW", :page 301, :type "fiend"}
+  {:name   "Queen of Cats",
+   :source "CCodex",
+   :page   32,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Herald of the Great Wyrm",
+   :source "CCodex",
+   :page   217,
+   :type   "dragon"}
+  {:name "Pact Lich", :source "CCodex", :page 253, :type "undead"}
+  {:name   "Greater Rakshasa",
+   :source "CCodex",
+   :page   312,
+   :type   "fiend"}
+  {:name   "Whisperer In Darkness",
+   :source "CCodex",
+   :page   378,
+   :type   "aberration"}
+  {:name   "Green Abishai",
+   :source "MTF",
+   :page   162,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Nabassu",
+   :source "MTF",
+   :page   135,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Skull Lord", :source "MTF", :page 230, :type "undead"}
+  {:name   "Commander of Horn and Gold",
+   :source "ToB2",
+   :page   144,
+   :type   "fey"}
+  {:name   "Mistress of Midnight Teeth",
+   :source "ToB2",
+   :page   146,
+   :type   "fey"}
+  {:name   "Forest Emperor",
+   :source "ToB2",
+   :page   155,
+   :type   "aberration"}
+  {:name "Shadow Giant", :source "ToB2", :page 173, :type "giant"}
+  {:name   "Timingila",
+   :source "ToB2",
+   :page   349,
+   :type   {:tags ["titan"], :type "monstrosity"}}
+  {:name "Yaojing", :source "ToB2", :page 377, :type "celestial"}
+  {:name "Andrenjinyi", :source "ToB", :page 17, :type "celestial"}
+  {:name   "Ia'Affrat the Insatiable",
+   :source "ToB",
+   :page   98,
+   :type   {:swarmSize "T", :type "fiend"}}
+  {:name "Mordant Snare", :source "ToB", :page 296, :type "aberration"}
+  {:name "Slow Storm", :source "ToB", :page 353, :type "elemental"}
+  {:name "Star Drake", :source "ToB", :page 156, :type "dragon"}
+  {:name   "Star-Spawn of Cthulhu",
+   :source "ToB",
+   :page   368,
+   :type   "fiend"}
+  {:name   "Core Spawn Worm",
+   :source "EGW",
+   :page   287,
+   :type   "aberration"}],
+ 16
+ [{:name "Adult Blue Dragon", :source "MM", :page 91, :type "dragon"}
+  {:name   "Adult Silver Dragon",
+   :source "MM",
+   :page   117,
+   :type   "dragon"}
+  {:name "Iron Golem", :source "MM", :page 170, :type "construct"}
+  {:name   "Marilith",
+   :source "MM",
+   :page   61,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Planetar", :source "MM", :page 17, :type "celestial"}
+  {:name   "Category 3 Krasis",
+   :source "GGR",
+   :page   212,
+   :type   "monstrosity"}
+  {:name   "Zegana",
+   :source "GGR",
+   :page   255,
+   :type   {:tags ["merfolk"], :type "humanoid"}}
+  {:name   "Ophanim",
+   :source "CCodex",
+   :page   18,
+   :type   {:tags ["angel"], :type "celestial"}}
+  {:name   "Brother Ox",
+   :source "CCodex",
+   :page   24,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Infernal Knight",
+   :source "CCodex",
+   :page   104,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Adult Light Dragon",
+   :source "CCodex",
+   :page   114,
+   :type   "dragon"}
+  {:name   "Berchta",
+   :source "CCodex",
+   :page   153,
+   :type   {:tags ["shapechanger"], :type "fey"}}
+  {:name   "Githzerai Anarch",
+   :source "MTF",
+   :page   207,
+   :type   {:tags ["gith"], :type "humanoid"}}
+  {:name   "Hellfire Engine",
+   :source "MTF",
+   :page   165,
+   :type   "construct"}
+  {:name "Phoenix", :source "MTF", :page 199, :type "elemental"}
+  {:name   "Star Spawn Larva Mage",
+   :source "MTF",
+   :page   235,
+   :type   "aberration"}
+  {:name "Steel Predator", :source "MTF", :page 239, :type "construct"}
+  {:name   "Titivilus",
+   :source "MTF",
+   :page   179,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Bathael, the Exiled Lord",
+   :source "ToB2",
+   :page   87,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Nephirron Devil",
+   :source "ToB2",
+   :page   104,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Nauthveli", :source "ToB2", :page 212, :type "monstrosity"}
+  {:name "Vent Linnorm", :source "ToB2", :page 239, :type "dragon"}
+  {:name   "Massive Malleable",
+   :source "ToB2",
+   :page   255,
+   :type   "aberration"}
+  {:name   "Storm Giant Quintessent",
+   :source "VGM",
+   :page   151,
+   :type   {:tags ["storm giant"], :type "giant"}}
+  {:name "Adult Cave Dragon", :source "ToB", :page 125, :type "dragon"}
+  {:name   "Adult Flame Dragon",
+   :source "ToB",
+   :page   129,
+   :type   "dragon"}
+  {:name "Adult Sea Dragon", :source "ToB", :page 135, :type "dragon"}
+  {:name "River King", :source "ToB", :page 196, :type "fey"}
+  {:name "Snow Queen", :source "ToB", :page 198, :type "fey"}
+  {:name "Udaak", :source "EGW", :page 301, :type "fiend"}],
+ 17
+ [{:name   "Adult Blue Dracolich",
+   :source "MM",
+   :page   84,
+   :type   "undead"}
+  {:name "Adult Gold Dragon", :source "MM", :page 114, :type "dragon"}
+  {:name "Adult Red Dragon", :source "MM", :page 98, :type "dragon"}
+  {:name "Androsphinx", :source "MM", :page 281, :type "monstrosity"}
+  {:name "Death Knight", :source "MM", :page 47, :type "undead"}
+  {:name "Dragon Turtle", :source "MM", :page 119, :type "dragon"}
+  {:name   "Goristro",
+   :source "MM",
+   :page   59,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Lazav",
+   :source "GGR",
+   :page   232,
+   :type   {:tags ["shapechanger"], :type "monstrosity"}}
+  {:name "Barong", :source "CCodex", :page 49, :type "celestial"}
+  {:name   "Rangda, Demon Lord of Witches",
+   :source "CCodex",
+   :page   49,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Adult Wasteland Dragon",
+   :source "CCodex",
+   :page   119,
+   :type   "dragon"}
+  {:name   "Master of Demon Mountain",
+   :source "CCodex",
+   :page   264,
+   :type   {:tags ["tiefling"], :type "humanoid"}}
+  {:name   "Master of Demon Mountain (Midgard Version)",
+   :source "CCodex",
+   :page   264,
+   :type   {:tags ["tiefling"], :type "humanoid"}}
+  {:name   "Blue Abishai",
+   :source "MTF",
+   :page   161,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Nagpa",
+   :source "MTF",
+   :page   215,
+   :type   {:tags ["nagpa"], :type "humanoid"}}
+  {:name   "Adult Boreal Dragon",
+   :source "ToB2",
+   :page   111,
+   :type   "dragon"}
+  {:name "Adult Wind Dragon", :source "ToB", :page 143, :type "dragon"}
+  {:name   "Avatar of Boreas",
+   :source "ToB",
+   :page   42,
+   :type   {:tags ["shapechanger"], :type "elemental"}}
+  {:name   "Elemental Locus",
+   :source "ToB",
+   :page   169,
+   :type   "elemental"}
+  {:name "Koschei", :source "ToB", :page 266, :type "fiend"}
+  {:name "Moonlit King", :source "ToB", :page 190, :type "fey"}
+  {:name "Queen of Witches", :source "ToB", :page 194, :type "fey"}
+  {:name   "Urochar (Strangling Watcher)",
+   :source "ToB",
+   :page   393,
+   :type   "aberration"}
+  {:name "Frost Worm", :source "EGW", :page 289, :type "monstrosity"}],
+ 18
+ [{:name "Demilich", :source "MM", :page 48, :type "undead"}
+  {:name "Borborygmos", :source "GGR", :page 238, :type "giant"}
+  {:name "Trostani", :source "GGR", :page 252, :type "fey"}
+  {:name   "The Lord of Blades",
+   :source "ERLW",
+   :page   300,
+   :type   {:tags ["warforged"], :type "humanoid"}}
+  {:name   "War Machine Golem",
+   :source "CCodex",
+   :page   205,
+   :type   {:tags ["golem"], :type "construct"}}
+  {:name   "Amnizu",
+   :source "MTF",
+   :page   164,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Drow Favored Consort",
+   :source "MTF",
+   :page   183,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name   "Sibriex",
+   :source "MTF",
+   :page   137,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Angel of Judgment",
+   :source "ToB2",
+   :page   16,
+   :type   "celestial"}
+  {:name "Lava Keeper", :source "ToB2", :page 235, :type "elemental"}
+  {:name   "Ancient Mithral Dragon",
+   :source "ToB",
+   :page   132,
+   :type   "dragon"}
+  {:name "Lord of the Hunt", :source "ToB", :page 188, :type "fey"}],
+ 19
+ [{:name   "Balor",
+   :source "MM",
+   :page   55,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Kalaraq Quori",
+   :source "ERLW",
+   :page   306,
+   :type   "aberration"}
+  {:name   "Chemosh, Demon Lord of Conquest",
+   :source "CCodex",
+   :page   75,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Living Star", :source "CCodex", :page 256, :type "celestial"}
+  {:name   "Bael",
+   :source "MTF",
+   :page   170,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Red Abishai",
+   :source "MTF",
+   :page   160,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Poena, Duke of Retribution",
+   :source "ToB2",
+   :page   99,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Felid Dragon", :source "ToB2", :page 143, :type "dragon"}
+  {:name   "Hraesvelgr, The Corpse Swallower",
+   :source "ToB",
+   :page   224,
+   :type   {:tags ["shapechanger" "titan"], :type "giant"}}
+  {:name "Shoggoth", :source "ToB", :page 347, :type "aberration"}],
+ 20
+ [{:name   "Ancient Brass Dragon",
+   :source "MM",
+   :page   104,
+   :type   "dragon"}
+  {:name   "Ancient White Dragon",
+   :source "MM",
+   :page   100,
+   :type   "dragon"}
+  {:name   "Pit Fiend",
+   :source "MM",
+   :page   77,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Baba Yaga", :source "CCodex", :page 46, :type "fey"}
+  {:name   "Drow Matron Mother",
+   :source "MTF",
+   :page   186,
+   :type   {:tags ["elf"], :type "humanoid"}}
+  {:name "Leviathan", :source "MTF", :page 198, :type "elemental"}
+  {:name "Nightwalker", :source "MTF", :page 216, :type "undead"}
+  {:name   "Rhopalocerex",
+   :source "ToB2",
+   :page   90,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Adult Imperial Dragon",
+   :source "ToB2",
+   :page   115,
+   :type   "dragon"}
+  {:name   "Harbinger of Wrath",
+   :source "ToB2",
+   :page   193,
+   :type   "construct"}
+  {:name   "Emperor of the Ghouls",
+   :source "ToB",
+   :page   218,
+   :type   "undead"}],
+ 21
+ [{:name   "Ancient Black Dragon",
+   :source "MM",
+   :page   87,
+   :type   "dragon"}
+  {:name   "Ancient Copper Dragon",
+   :source "MM",
+   :page   110,
+   :type   "dragon"}
+  {:name "Lich", :source "MM", :page 202, :type "undead"}
+  {:name "Solar", :source "MM", :page 18, :type "celestial"}
+  {:name "Isperia", :source "GGR", :page 227, :type "monstrosity"}
+  {:name   "Ankou Soul Herald",
+   :source "CCodex",
+   :page   37,
+   :type   "dragon"}
+  {:name "Mountain Giant", :source "CCodex", :page 185, :type "giant"}
+  {:name "Gugalanna", :source "CCodex", :page 211, :type "celestial"}
+  {:name   "Avatar of Shoth",
+   :source "CCodex",
+   :page   332,
+   :type   {:tags ["shoth"], :type "aberration"}}
+  {:name   "Monkey King",
+   :source "CCodex",
+   :page   337,
+   :type   {:tags ["simian"], :type "celestial"}}
+  {:name   "Astral Dreadnought",
+   :source "MTF",
+   :page   117,
+   :type   {:tags ["titan"], :type "monstrosity"}}
+  {:name   "Hutijin",
+   :source "MTF",
+   :page   175,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Moloch",
+   :source "MTF",
+   :page   177,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Molydeus",
+   :source "MTF",
+   :page   134,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Shadow of Death",
+   :source "ToB2",
+   :page   323,
+   :type   "celestial"}
+  {:name   "Alquam, Demon Lord of Night",
+   :source "ToB",
+   :page   84,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Arbeyach, Prince of Swarms",
+   :source "ToB",
+   :page   95,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Queen of Night and Magic",
+   :source "ToB",
+   :page   192,
+   :type   "fey"}],
+ 22
+ [{:name   "Ancient Bronze Dragon",
+   :source "MM",
+   :page   107,
+   :type   "dragon"}
+  {:name   "Ancient Green Dragon",
+   :source "MM",
+   :page   93,
+   :type   "dragon"}
+  {:name "Jarad Vod Savo", :source "GGR", :page 235, :type "undead"}
+  {:name "Belashyrra", :source "ERLW", :page 286, :type "aberration"}
+  {:name "Lady Illmarrow", :source "ERLW", :page 296, :type "undead"}
+  {:name   "Typhon, Father of Monsters",
+   :source "CCodex",
+   :page   81,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Belphegor, Hell's Inventor",
+   :source "CCodex",
+   :page   100,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Ancient Light Dragon",
+   :source "CCodex",
+   :page   116,
+   :type   "dragon"}
+  {:name   "Geryon",
+   :source "MTF",
+   :page   173,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name "Zaratan", :source "MTF", :page 201, :type "elemental"}
+  {:name "Illithilich", :source "VGM", :page 172, :type "undead"}
+  {:name   "Ancient Sea Dragon",
+   :source "ToB",
+   :page   135,
+   :type   "dragon"}
+  {:name   "Ancient Wind Dragon",
+   :source "ToB",
+   :page   142,
+   :type   "dragon"}
+  {:name   "Camazotz, Demon Lord of Bats and Fire",
+   :source "ToB",
+   :page   85,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Jotun Giant", :source "ToB", :page 226, :type "giant"}],
+ 23
+ [{:name "Ancient Blue Dragon", :source "MM", :page 90, :type "dragon"}
+  {:name   "Ancient Silver Dragon",
+   :source "MM",
+   :page   116,
+   :type   "dragon"}
+  {:name   "Empyrean",
+   :source "MM",
+   :page   130,
+   :type   {:tags ["titan"], :type "celestial"}}
+  {:name   "Kraken",
+   :source "MM",
+   :page   197,
+   :type   {:tags ["titan"], :type "monstrosity"}}
+  {:name   "Aurelia",
+   :source "GGR",
+   :page   230,
+   :type   {:tags ["angel"], :type "celestial"}}
+  {:name   "Ancient Wasteland Dragon",
+   :source "CCodex",
+   :page   120,
+   :type   "dragon"}
+  {:name   "Baphomet",
+   :source "MTF",
+   :page   143,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Elder Tempest", :source "MTF", :page 200, :type "elemental"}
+  {:name   "Fraz-Urb'luu",
+   :source "MTF",
+   :page   146,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Juiblex",
+   :source "MTF",
+   :page   151,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Zuggtmoy",
+   :source "MTF",
+   :page   157,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Hriggala, Jaws of the Unsated God",
+   :source "ToB2",
+   :page   88,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Qorgeth, Demon Lord of The Devouring Worm",
+   :source "ToB",
+   :page   90,
+   :type   {:tags ["demon"], :type "fiend"}}],
+ 24
+ [{:name   "Ancient Gold Dragon",
+   :source "MM",
+   :page   113,
+   :type   "dragon"}
+  {:name "Ancient Red Dragon", :source "MM", :page 97, :type "dragon"}
+  {:name   "Rakdos",
+   :source "GGR",
+   :page   247,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name "Dyrrn", :source "ERLW", :page 288, :type "aberration"}
+  {:name   "Graz'zt",
+   :source "MTF",
+   :page   149,
+   :type   {:tags ["demon" "shapechanger"], :type "fiend"}}
+  {:name   "Yeenoghu",
+   :source "MTF",
+   :page   155,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "The Curator, Hell's Collector",
+   :source "ToB2",
+   :page   100,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Ancient Boreal Dragon",
+   :source "ToB2",
+   :page   110,
+   :type   "dragon"}
+  {:name   "Ancient Flame Dragon",
+   :source "ToB",
+   :page   128,
+   :type   "dragon"}
+  {:name   "Ancient Void Dragon",
+   :source "ToB",
+   :page   138,
+   :type   "dragon"}
+  {:name   "Totivillus, Scribe of Hell",
+   :source "ToB",
+   :page   101,
+   :type   {:tags ["devil"], :type "fiend"}}],
+ 25
+ [{:name   "Warforged Colossus",
+   :source "ERLW",
+   :page   314,
+   :type   "construct"}
+  {:name   "Parzelon, King of Secrets",
+   :source "CCodex",
+   :page   101,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Marut",
+   :source "MTF",
+   :page   213,
+   :type   {:tags ["inevitable"], :type "construct"}}
+  {:name   "Mammon, Archduke of Greed",
+   :source "ToB",
+   :page   99,
+   :type   {:tags ["devil"], :type "fiend"}}],
+ 26
+ [{:name "Niv-Mizzet", :source "GGR", :page 241, :type "dragon"}
+  {:name   "Demogorgon",
+   :source "MTF",
+   :page   144,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Orcus",
+   :source "MTF",
+   :page   153,
+   :type   {:tags ["demon"], :type "fiend"}}
+  {:name   "Zariel",
+   :source "MTF",
+   :page   180,
+   :type   {:tags ["devil"], :type "fiend"}}
+  {:name   "Ancient Imperial Dragon",
+   :source "ToB2",
+   :page   114,
+   :type   "dragon"}
+  {:name   "Zaratan",
+   :source "ToB",
+   :page   414,
+   :type   {:tags ["titan"], :type "monstrosity"}}],
+ 27
+ [{:name   "Mechuiti, Demon Lord of Apes",
+   :source "ToB",
+   :page   88,
+   :type   {:tags ["demon"], :type "fiend"}}],
+ 28
+ [{:name "Rak Tulkhesh", :source "ERLW", :page 303, :type "fiend"}
+  {:name "Sul Khatesh", :source "ERLW", :page 304, :type "fiend"}
+  {:name "Degmadu", :source "ToB2", :page 84, :type "monstrosity"}
+  {:name   "Alsikaya, the Screeching Mother of Volcanoes",
+   :source "ToB2",
+   :page   85,
+   :type   {:tags ["demon"], :type "fiend"}}],
+ 30
+ [{:name   "Tarrasque",
+   :source "MM",
+   :page   286,
+   :type   {:tags ["titan"], :type "monstrosity"}}]}

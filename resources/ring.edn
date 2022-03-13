@@ -1,0 +1,103 @@
+[{:name   "The Matchmaker"
+  :effect "+1 Charisma for each ring type you are wearing more than one of."
+  :points 4}
+ {:name   "The Doctor"
+  :effect "+2 to Medicine checks for stabilising allies for each synergy ring the ally is wearing."
+  :points 4}
+ {:name   "The Hardened"
+  :effect "+1 physical damage reduction for each non-synergy ring worn."
+  :points 7}
+ {:name   "The Lone Wolf"
+  :effect "-1 critical strike requirement while this is your only synergy ring."
+  :points 6}
+ {:name   "The Conduit"
+  :effect "+1 to maximum number of rings."
+  :points 1}
+ {:name   "The Joker"
+  :effect "This ring has no effect, but may count as any ring type you choose. It can only count as one ring type at one time."
+  :points 0}
+ {:name   "The Investment"
+  :effect "-1 to maximum number of rings worn."
+  :points -4}
+ {:name   "The Speedster"
+  :effect "+5 feet to all of your speed types for each 'The Speedster' ring worn."
+  :points 5}
+ {:name   "The Prosperous"
+  :effect "+5 gold found for each 'The Prosperous' ring worn."
+  :points 1}
+ {:name   "The Simpleton"
+  :effect "Your non-synergy rings' cost decreases by 1 point. Your synergy rings' cost increases by 2."
+  :points -2}                                               ;0 if you include the ring's effect once
+ {:name   "The Catalyst"
+  :effect "You have double the options when using this ring in a ring sacrifice."
+  :points 99}
+ {:name   "The Beacon"
+  :effect "You emit dim light in a radius of 5 feet from you for each ring worn. You emit bright light in a radius of 5 feet for each synergy ring worn."
+  :points 2}
+ {:name    "The Trained"
+  :effect  "If all of your worn rings are 'The Trained', with a minimum of 4, you may choose to gain a feat from one of your rings. This rings grants the option of `%s`. You may change the chosen ring during a long rest."
+  :randoms [["Alert" "Athlete" "Actor" "Brawler" "Charger" "Chef" "Crossbow Expert" "Defensive Duelist"
+             "Dual Wielder" "Dungeon Delver" "Durable" "Eldritch Adept" "Grappler" "Fighting Initiate"
+             "Great Weapon Master" "Healer" "Heavy Armor Master" "Inspiring Leader" "Keen Mind" "Light Armor Master"
+             "Mage Slayer" "Magic Initiate" "Martial Adept" "Medium Armor Master" "Metamagic Adept"
+             "Mobile" "Mounted Combatant" "Polearm Master" "Resilient" "Ritual Caster" "Savage Attacker"
+             "Sentinel" "Sharpshooter" "Shield Master" "Skilled" "Skulker" "Specialist" "Spell Sniper"
+             "Spell Touched" "Telekinetic" "Telepathic" "War Caster"]]
+  :points  0}
+ {:name    "The Able"
+  :effect  "+1 %s while not wearing any synergy rings that are not 'The Able'"
+  :randoms [["Strength" "Dexterity" "Constitution" "Wisdom" "Intelligence" "Charisma"]]
+  :points  5}
+ {:name   "Vengeful"
+  :effect "Once per short rest, as a reaction to being damaged, you may cast Hex on the creature that damaged you. Normal range/visibility/concentration restrictions apply."
+  :points 4}
+ {:name   "Jack of All Trades"
+  :effect "None of your attributes can be below 10. Any ability scores below 10 are considered to be 10 instead."
+  :points 5}
+ {:name   "Ready"
+  :effect "You have advantage on attacks and skill checks with readied actions."
+  :points 5}
+ {:name   "Stable"
+  :effect "You cannot critically fail death saves. You only need two failed death saves to die, and two successful ones to stabilise."
+  :points 2}
+ {:name   "Watchful"
+  :effect "You may trance instead of sleeping during long rests, but must still rest for 8 hours (by default) to achieve a long rest."
+  :points 2}
+ {:name   "Restless"
+  :effect "You do not suffer disadvantage on perception checks while asleep."
+  :points 3}
+ {:name   "Paranoid"
+  :effect "When attempting to discern truthfulness, you have advantage on Insight checks when the person is lying and disadvantage when they're being fully truthful."
+  :points 3}
+ {:name    "Divergent"
+  :effect  "You take %s damage as %s damage instead. Reroll second in case of duplicates: %s %s %s"
+  :randoms [["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]
+            ["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]
+            ["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]
+            ["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]
+            ["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]]
+  :points  1}
+ {:name   "Bloodthirsty"
+  :effect "You may use healing surges as a free action if you have landed a killing blow in your current turn."
+  :points 3}
+ {:name    "Multilingual"
+  :effect  "You can speak, read, and write %s if worn for at least 24 hours."
+  :randoms [["Common" "Dwarvish" "Elvish" "Giant" "Gnomish" "Goblin" "Halfling" "Orc"
+             "Abyssal" "Celestial" "Draconic" "Deep Speech" "Infernal" "Primordial" "Sylvan" "Undercommon"]]
+  :points  2}
+ {:name    "Protected"
+  :effect  "You lose proficiency in a saving throw of your choice. You gain proficiency in %s saving throws."
+  :randoms [["Intelligence" "Charisma" "Strength"]]
+  :points  2}
+ {:name   "Powerful"
+  :effect "Your strength is considered to be 15 for the purpose of wearing armour."
+  :points 5}
+ {:name   "Acrobat"
+  :effect "You make take high and long jumps without a run-up."
+  :points 1}
+ {:name   "Scapegoat"
+  :effect "When a creature within 5 feet of you takes damage, you may choose for them to take no damage instead. You then take twice that amount of damage."
+  :points 2}
+ {:name   "Persistent"
+  :effect "You need 4 failed death save points to die, instead of 3."
+  :points 7}]

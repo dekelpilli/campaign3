@@ -3,9 +3,9 @@
 (require 'cljs.repl.node)
 
 (cljs.build.api/build "src"
-                      {:main 'hello-world.core
+                      {:main      'hello-world.core
                        :output-to "out/main.js"
-                       :verbose true})
+                       :verbose   true})
 
 (cljs.repl/repl (cljs.repl.node/repl-env)
                 :watch "src"

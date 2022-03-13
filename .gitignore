@@ -7,3 +7,6 @@ target
 .DS_Store
 node_modules
 .cljs_node_repl
+.clj-kondo
+.lsp
+out

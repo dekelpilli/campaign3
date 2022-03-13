@@ -1,0 +1,15 @@
+[{:name "Template",
+  :type "weapon/armour",
+  :existing
+  [{:effect "effect",
+    :upgradeable? false,
+    :level 1,
+    :upgrade-points 10}],
+  :available
+  [{:effect "upgradeableEffect",
+    :upgradeable? true,
+    :level 1,
+    :upgrade-points 10}],
+  :enabled? false,
+  :found? false,
+  :level 1}]
