@@ -10,3 +10,5 @@ node_modules
 .clj-kondo
 .lsp
 out
+pom.xml
+.shadow-cljs

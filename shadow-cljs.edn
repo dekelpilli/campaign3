@@ -1,0 +1,8 @@
+{:source-paths ["src/campaign3"
+                "src"
+                "test/campaign3"]
+ :dependencies [[funcool/promesa "6.0.2"]]
+ :nrepl        {:port 12389}
+ :builds       {:campaign3 {:target    :node-script
+                            :output-to "target/main.js"
+                            :main      campaign3.core/-main}}}
