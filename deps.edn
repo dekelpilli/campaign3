@@ -1,3 +1,0 @@
-{:paths ["src"]
- :deps  {org.clojure/clojurescript {:mvn/version "1.11.4"}
-         funcool/promesa           {:mvn/version "6.0.2"}}}

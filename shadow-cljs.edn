@@ -3,6 +3,9 @@
                 "test/campaign3"]
  :dependencies [[funcool/promesa "6.0.2"]]
  :nrepl        {:port 12389}
- :builds       {:campaign3 {:target    :node-script
-                            :output-to "target/main.js"
+ :builds       {:repl {:target    :node-script
+                       :output-to "target/campaign3_repl.js"
+                       :main      campaign3.core/r}
+                :campaign3 {:target    :node-script
+                            :output-to "target/campaign3.js"
                             :main      campaign3.core/-main}}}
