@@ -1,0 +1,130 @@
+[{:ac                     11,
+  :name                   "Padded Body Armour",
+  :type                   "Light",
+  :slot                   "body"
+  :disadvantaged-stealth? true}
+ {:ac                     11,
+  :name                   "Leather Body Armour",
+  :type                   "Light",
+  :slot                   "body"
+  :disadvantaged-stealth? false}
+ {:ac                     12,
+  :name                   "Studded Leather Body Armour",
+  :type                   "Light",
+  :slot                   "body"
+  :disadvantaged-stealth? false}
+ {:ac                     12,
+  :name                   "Hide Body Armour",
+  :type                   "Medium",
+  :slot                   "body"
+  :disadvantaged-stealth? false}
+ {:ac                     13,
+  :name                   "Chain Shirt Armour",
+  :type                   "Medium",
+  :slot                   "body"
+  :disadvantaged-stealth? false}
+ {:ac                     14,
+  :name                   "Scale Mail Body Armour",
+  :type                   "Medium",
+  :slot                   "body"
+  :disadvantaged-stealth? true}
+ {:ac                     14,
+  :name                   "Breastplate Body Armour",
+  :type                   "Medium",
+  :slot                   "body"
+  :disadvantaged-stealth? false}
+ {:ac                     15,
+  :name                   "Half Plate Body Armour",
+  :type                   "Medium",
+  :slot                   "body"
+  :disadvantaged-stealth? true}
+ {:ac                     14,
+  :name                   "Ring Mail Body Armour",
+  :type                   "Heavy",
+  :slot                   "body"
+  :disadvantaged-stealth? true}
+ {:ac                     16,
+  :name                   "Chain Mail Body Armour",
+  :type                   "Heavy",
+  :slot                   "body"
+  :disadvantaged-stealth? true}
+ {:ac                     17,
+  :name                   "Splint Body Armour",
+  :type                   "Heavy",
+  :slot                   "body"
+  :disadvantaged-stealth? true}
+ {:ac                     18,
+  :name                   "Plate Body Armour",
+  :type                   "Heavy",
+  :slot                   "body"
+  :disadvantaged-stealth? true}
+ {:ac                     2
+  :name                   "Shield"
+  :type                   "Shield"
+  :slot                   "shield"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Unarmoured boots",
+  :type                   "Unarmoured",
+  :slot                   "boots"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Unarmoured gloves",
+  :type                   "Unarmoured",
+  :slot                   "gloves"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Unarmoured helmet",
+  :type                   "Unarmoured",
+  :slot                   "helmet"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Unarmoured body armour (shirt)",
+  :type                   "Unarmoured",
+  :slot                   "body"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Light boots",
+  :type                   "Light",
+  :slot                   "boots"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Light gloves",
+  :type                   "Light",
+  :slot                   "gloves"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Light helmet",
+  :type                   "Light",
+  :slot                   "helmet"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Medium boots",
+  :type                   "Medium",
+  :slot                   "boots"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Medium gloves",
+  :type                   "Medium",
+  :slot                   "gloves"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Medium helmet",
+  :type                   "Medium",
+  :slot                   "helmet"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Heavy boots",
+  :type                   "Heavy",
+  :slot                   "boots"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Heavy gloves",
+  :type                   "Heavy",
+  :slot                   "gloves"
+  :disadvantaged-stealth? false}
+ {:ac                     0,
+  :name                   "Heavy helmet",
+  :type                   "Heavy",
+  :slot                   "helmet"
+  :disadvantaged-stealth? false}]

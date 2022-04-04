@@ -12,4 +12,625 @@
     :upgrade-points 10}],
   :enabled? false,
   :found? false,
-  :level 1}]
+  :level 1}
+ {:name "Krenle's Return",
+  :type "weapon",
+  :owner :jumlin,
+  :base
+  {:category "Magic",
+   :proficiency "Simple",
+   :name "Wand",
+   :type "Ranged",
+   :damage "1d4",
+   :damage-types ["Force"],
+   :range "30/60",
+   :traits ["Conduit" "Light" "Mental"]},
+  :existing
+  [{:effect
+    "Creatures that receive critical radiant damage from you must succeed on a Constitution saving throw or be blinded until the end of your next turn.",
+    :upgradeable? false,
+    :level 1,
+    :points 0}
+   {:effect "+1d4 necrotic damage with spells.",
+    :upgradeable? false,
+    :level 1,
+    :points 0}
+   {:effect
+    "+[1] spell damage while within 30 feet of any enemies, +[5] feet speed when you start your turn within 10 feet of an enemy.",
+    :level 1,
+    :upgrade-points 10}],
+  :available
+  [{:effect "+[1] die size with your Cosmic Omen.", :level 1}
+   {:effect "Healing Surges you give advantage to have +1 die size.",
+    :level 1,
+    :upgradeable? false}
+   {:effect
+    "While concentrating, spells you cast below the level of the spell on which you're concentrating have a 10% chance to not consume a spell slot.",
+    :level 1,
+    :upgradeable? false}
+   {:effect
+    "When you make a Wisdom check, you can replace the number you roll with a [10].",
+    :level 1,
+    :upgrade-points 20}],
+  :found? true,
+  :level 3}
+ {:name "Zetnos' Vengeance",
+  :type "armour",
+  :owner :festus,
+  :base
+  {:ac 2,
+   :name "Shield",
+   :type "Shield",
+   :slot "shield",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect
+    "Attacks you block from creatures within 5 feet of you that have already hit you in that turn trigger an opportunity attack.",
+    :upgradeable? false}
+   {:effect
+    "+[1] AC against creatures that have landed a killing blow in the last minute.",
+    :upgrade-points 20}
+   {:effect
+    "Whenever you inflict blight on a creature but cause no additional affects, you instead deal 1d[4] necrotic damage to it.",
+    :level 1,
+    :points 10,
+    :upgrade-points 10}],
+  :available
+  [{:effect
+    "+[1] to all saving throws against effects from creatures that have landed a killing blow in the last minute.",
+    :upgrade-points 20}
+   {:effect
+    "[Once] per short rest, when an enemy provokes an opportunity attack from you by attacking you, you may instead cast Hex on the creature."}
+   {:effect
+    "+[1] resistance against damage from enemies marked or cursed by you.",
+    :upgrade-points 20}
+   {:effect
+    "Once per long rest, on your next turn after gaining hit points while on 0 hit points, you are affected by the Haste Spell. You do not suffer from lethargy as a result.",
+    :upgradeable? false}],
+  :found? true,
+  :level 3}
+ {:name "Gasco's Alliance",
+  :type "armour",
+  :owner :heath,
+  :base
+  {:ac 0,
+   :name "Unarmoured body armour (shirt)",
+   :type "Unarmoured",
+   :slot "body",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect "+[1] to necrotic damage.",
+    :points 40,
+    :level 4,
+    :upgrade-points 10}
+   {:effect
+    "Heal 1 point whenever a creature you can see, including yourself, takes necrotic damage.",
+    :upgradeable? false,
+    :points 0}
+   {:effect
+    "+[1] to Charisma checks during your first encounter with a creature.",
+    :points 5,
+    :level 1,
+    :upgrade-points 5}],
+  :available
+  [{:effect
+    "Necromancy spells you cast have a [10]% chance to not consume a spell slot.",
+    :upgrade-points 20}
+   {:effect
+    "Undead creatures you transform into have Undead Fortitude.",
+    :upgradeable? false}
+   {:effect
+    "Whenever you deal Necrotic damage to a creature as an action, bonus action, or reaction, that creature also takes 1 necrotic damage at the start of its next turn.",
+    :upgradeable? false}
+   {:effect
+    "Once per short rest, you may convert the damage of a spell of level [3] or lower to necrotic."}
+   {:effect
+    "You may conjure a skeleton to deliver a message for you following the rules of the Sending spell, [once] per long rest. The skeleton then collapses."}],
+  :progressed [],
+  :found? true,
+  :level 5}
+ {:name "Ateus' Serendipity",
+  :type "armour",
+  :owner :jumlin,
+  :base
+  {:ac 0,
+   :name "Unarmoured gloves",
+   :type "Unarmoured",
+   :slot "gloves",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect
+    "You have a [50]% chance to avoid extra damage from critical strikes.",
+    :upgrade-points 20}
+   {:effect
+    "Your loot rolls have a 5% chance to receive +1 to the roll, to a maximum of the dice's maximum (12 on 1d12 stays as 12).",
+    :upgradeable? false,
+    :points 0}
+   {:effect
+    "[Once] per minute, when taking damage (after learning the amount), you may roll 1d20 to attempt to halve that damage: 1-10 = take 1.5x, 11-20 take half."}],
+  :available
+  [{:effect
+    "Gain 15 temporary hit points when a creature within 10 feet of you scores or receives a natural critical strikes.",
+    :upgradeable? false}
+   {:effect "-1 critical strike requirement with attacks.", :points 20}
+   {:effect
+    "When finding a non-synergy ring, you have a 50% chance to instead find a synergy ring. When finding a synergy ring, you have a 25% chance to find two instead.",
+    :upgradeable? false}
+   {:effect
+    "When finding unique items, you instead reveal three and choose one.",
+    :upgradeable? false}],
+  :found? true,
+  :level 2}
+ {:name "Staff of the Blessed Disease",
+  :type "weapon",
+  :owner :festus,
+  :base
+  {:category "Axe",
+   :proficiency "Martial",
+   :name "Battle Axe",
+   :type "Melee",
+   :damage "1d8",
+   :damage-types ["Slashing"],
+   :traits ["Sweep"]},
+  :existing
+  [{:effect
+    "Creatures you hit with this weapon are afflicted by Blight equivalent to that of your Bile.",
+    :upgradeable? false,
+    :level 1,
+    :upgrade-points 10}
+   {:effect
+    "+[1] damage resistance against critical hits while affected by Enhance.",
+    :level 1,
+    :upgrade-points 10}
+   {:effect
+    "This weapon cannot deal its base damage type. Instead, you may choose to convert that damage type to Poison or Necrotic damage.",
+    :upgradeable? false,
+    :level 1}
+   {:effect
+    "+1AC against attacks when both you and the attacking creature have at least one stack of blight.",
+    :upgradeable? false,
+    :level 1,
+    :points 10,
+    :upgrade-points 10}
+   {:effect
+    "When applying a blight to yourself, you may choose to extend the blight's duration by up to a minute. This can be done after rolling for damage.",
+    :upgradeable? false}],
+  :available
+  [{:effect
+    "Enemies blighted by you have +1 vulnerability to Poison and Necrotic damage per stack of blight.",
+    :upgradeable? false}
+   {:effect "+[5] feet Noxious Aura radius."}
+   {:effect
+    "Enemies you critically strike with this weapon become poisoned for 12 seconds. Enemies that critically fail a save against becoming blighted by you are afflicted by two instances of that blight.",
+    :upgradeable? false}
+   {:effect
+    "+1 AB with this weapon against enemies afflicted by at least one stack of blight.",
+    :upgrade-points 20}],
+  :found? true,
+  :level 4}
+ {:name "Heath's Anointment",
+  :type "armour",
+  :owner :heath,
+  :base
+  {:ac 0,
+   :name "Unarmoured helmet",
+   :type "Unarmoured",
+   :slot "helmet",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect
+    "+25% chance to have an additional mutation upon rolling initiative.",
+    :upgradeable? false,
+    :level 1,
+    :upgrade-points 10}
+   {:effect "+[1] global damage per active mutation.",
+    :level 1,
+    :upgrade-points 20}
+   {:effect "You have advantage on initiative rolls.",
+    :upgradeable? false,
+    :level 1,
+    :points 10,
+    :upgrade-points 10}],
+  :available
+  [{:effect "+[1] to your Guiding Bolt die size.",
+    :level 1,
+    :upgrade-points 10}
+   {:effect "+[1] to your Glyphic Burst die size.",
+    :level 1,
+    :upgrade-points 10}
+   {:effect
+    "+[1] AB with cantrips for each consecutive previous turn where you cast a cantrip attack that missed.",
+    :upgradeable? false}
+   {:effect
+    "You have [1] additional prayer path progression while wearing this item.",
+    :upgrade-points 20}
+   {:effect
+    "Gain +[1] AC until the start of your next turn when damage is dealt by your cantrips or minions (does not stack).",
+    :upgrade-points 30}],
+  :progressed
+  [{:effect "+[1] global damage per active mutation.",
+    :level 1,
+    :upgrade-points 20,
+    :committed 10}],
+  :found? true,
+  :level 4}
+ {:name "Reven's Invitation",
+  :type "weapon",
+  :owner :reven,
+  :base
+  {:category "Bow",
+   :proficiency "Simple",
+   :name "Heavy Crossbow",
+   :type "Ranged",
+   :damage "1d10",
+   :damage-types ["Piercing"],
+   :range "120/240",
+   :traits ["Two-handed" "Reload"]},
+  :existing
+  [{:effect
+    "Damage from your Crimson Rite damage dice is always rolled as at least [5] (max of die size).",
+    :level 1,
+    :points 10}
+   {:effect
+    "Spells you cast via your Revealed Arcana and Unsealed Arcana features can be cast at two levels above your spell slot level.",
+    :level 1,
+    :points 0,
+    :upgradeable? false}
+   {:effect "+[1] to your Hemocraft die size.",
+    :upgrade-points 20,
+    :level 1,
+    :points 10}
+   {:effect
+    "You may use your Brand of Castigation [one] additional time per short rest."}
+   {:effect "+1 spell save and special feature DCs",
+    :points 10,
+    :level 1,
+    :upgrade-points 35}
+   {:effect "+2 damage with this weapon against cursed enemies."}],
+  :available
+  [{:effect
+    "When activating your Crimson Rite, instead of choosing a weapon, you may choose for the effect to apply to all of your spells instead.",
+    :upgradeable? false}
+   {:effect
+    "When you score a critical strike with this weapon, you may immediately apply a curse that would normally require a bonus action.",
+    :upgradeable? false}
+   {:effect
+    "When you score a critical strike with this weapon, you may immediately apply a curse that would normally require a bonus action.",
+    :upgradeable? false}],
+  :progressed
+  [{:effect "+[1] to your Hemocraft die size.",
+    :upgrade-points 20,
+    :level 1,
+    :points 10,
+    :committed 10}],
+  :found? true,
+  :level 6}
+ {:name "Zauvek's Rescue",
+  :type "weapon",
+  :owner :jumlin,
+  :base
+  {:category "Magic",
+   :proficiency "Simple",
+   :name "Wand",
+   :type "Ranged",
+   :damage "1d4",
+   :damage-types ["Force"],
+   :range "30/60",
+   :traits ["Conduit" "Light" "Mental"]},
+  :existing
+  [{:effect "+1 AB with this weapon against grappled creatures.",
+    :upgrade-points 10}
+   {:effect "+1d[4] poison damage with this weapon.",
+    :points 0,
+    :upgrade-points 10}],
+  :available
+  [{:effect
+    "Upon taking poison damage, gain resistance to poison damage until the start of your next turn.",
+    :upgradeable? false}
+   {:effect
+    "This weapon gains the Forceful Property. If it already has that tag, its effects are added one additional time.",
+    :upgrade-points 30}
+   {:effect "+1 poison damage."}
+   {:effect
+    "+1 DC for effects that would cause the Charmed condition.",
+    :upgrade-points 20}
+   {:effect
+    "[Once] per long rest, when you Frighten a creature, you may choose for it to also be Poisoned while Frightened in this way.",
+    :upgrade-points 10}],
+  :found? true,
+  :level 1}
+ {:name "Challengers' Downfall",
+  :type "armour",
+  :owner :reven,
+  :base
+  {:ac 0,
+   :name "Unarmoured helmet",
+   :type "Unarmoured",
+   :slot "helmet",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect
+    "While in combat with exactly one enemy, your first Healing Surge of each turn does not consume a surge.",
+    :points 0,
+    :upgradeable? false}
+   {:effect
+    "[Once] per short rest, when you land a killilng blow, regain half of your consumed healing surges."}
+   {:effect
+    "+1 to Dexterity saving throws if wearing a light or unarmoured body armour, helmet, gloves, and boots, and no using a shield.",
+    :metadata #{"armour"},
+    :type #{"Unarmoured" "Light"},
+    :level 1,
+    :points 10,
+    :upgrade-points 10}
+   {:effect
+    "+1 weapon attack AB with attacks that deal non-physical damage.",
+    :points 10,
+    :level 1,
+    :upgrade-points 30}
+   {:effect
+    "No more than once per minute, when you score a critical strike, recover a 10% of your maximum class points (minimum 1).",
+    :level 1,
+    :points 10,
+    :upgrade-points 10}],
+  :available
+  [{:effect "+1 AB with melee attacks against restrained creatures.",
+    :upgradeable? false}
+   {:effect
+    "[Once] per long rest, when you make a saving throw that does not result in a critical failure, you may attempt it again, but must keep this result.",
+    :upgrade-points 20}
+   {:effect
+    "Once per long rest, when you cast a spell as an action on your turn, you may immediately cast it a second time at the same target (location or creature), consuming no additional spell slots. If you choose to do this, both of the casts are made with disadvantaged offence.",
+    :upgradeable? false}
+   {:effect
+    "You learn the Mage Armor spell may cast it once per turn as a free action. You can have no more than 10 active Mage Armors cast in this way.",
+    :upgradeable? false}
+   {:effect
+    "When an enemy fails a saving throw against an effect of yours that deals Necrotic damage, future instances of that effect have +1 DC against that creature. This does not stack.",
+    :upgradeable? false}],
+  :found? true,
+  :level 4}
+ {:name "Norwood's Mastery",
+  :type "weapon",
+  :owner :reven,
+  :base
+  {:category "Flail",
+   :proficiency "Martial",
+   :name "Whip",
+   :type "Melee",
+   :damage "1d4",
+   :damage-types ["Slashing"],
+   :traits ["Disarm" "Finesse" "Non-lethal" "Reach" "Trip"]},
+  :existing
+  [{:effect
+    "You can ready spells that would deal cold, fire, or lightning damage without consuming the spell slot. The spell slot is still consumed when you cast the spell.",
+    :upgradeable? false,
+    :points 0}
+   {:effect
+    "You learn the Witch Bolt spell and may cast it as a 5th level spell [once] per long rest. When cast in this way, the target must make a Constitution saving throw whenever it takes damage from this spell, becoming restrained until the start of its next turn on a failed save."}],
+  :available
+  [{:effect
+    "When you cast Wall of Fire, Wall of Ice, or Wall of Water, you consume a spell slot [1] level below the one required by the spell.",
+    :level 1,
+    :upgrade-points 20,
+    :points 10}
+   {:effect
+    "[Once] per long rest, when you deal cold, fire, or lightning damage with a critical strike, regain one class point or first level spell slot.",
+    :level 1,
+    :upgrade-points 10,
+    :points 10}
+   {:effect
+    "Whenever you take damage, you may choose to take it as cold damage instead.",
+    :level 1,
+    :upgrade-points 10,
+    :points 10}
+   {:effect
+    "Whenever you take lightning damage and do not go down as a result, you may gain temporary hit points equal to [half] your level.",
+    :level 1,
+    :upgrade-points 10,
+    :points 10}
+   {:effect
+    "Your fire damage is halved. When you deal fire damage to a creature, if it was resistant to lightning or cold damage, it loses that resistance until the end of your next turn ([1] round).",
+    :level 1,
+    :upgrade-points 10,
+    :points 10}],
+  :enabled? false,
+  :found? true,
+  :level 1}
+ {:name "Rislog's Legacy",
+  :type "armour",
+  :owner :heath,
+  :base
+  {:ac 0,
+   :name "Unarmoured gloves",
+   :type "Unarmoured",
+   :slot "gloves",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect "Allies that can see you cannot be frightened.",
+    :upgradeable? false}
+   {:effect
+    "You are proficient in all weapon types. +1 damage with martial weapons.",
+    :upgradeable? false,
+    :points 0}
+   {:effect
+    "+[1] to skill checks in which you've gained expertise via Shifting Organs.",
+    :level 2,
+    :points 20,
+    :upgrade-points 10}
+   {:effect
+    "[Once] per turn, when an attack you make would otherwise have disadvantage, you may make the attack normally instead.",
+    :upgrade-points 5}
+   {:effect "Growth and Rot no longer reduces your Intelligence.",
+    :upgradeable? false,
+    :level 1,
+    :points 10,
+    :upgrade-points 10}
+   {:effect
+    "After receiving damage for the first time in a combat, you may choose to become resistant to that damage type for the rest of the combat. If you choose to do so, you then become vulnerable Lightning and Cold",
+    :level 1,
+    :points 10,
+    :upgrade-points 10}],
+  :available
+  [{:effect
+    "Your Strength cannot be below 15. If it was, it is considered to be 15 instead.",
+    :upgradeable? false}
+   {:effect
+    "Attacks with two handed melee weapons made during your bonus action have +[3] damage.",
+    :upgrade-points 10}
+   {:effect
+    "You may take the Shove action as a bonus action. [Once] per minute, if you shoved successfully as a bonus action, you make take another bonus action in that turn.",
+    :upgrade-points 10}
+   {:effect "+[1] Charisma.", :upgrade-points 20}],
+  :found? true,
+  :level 6}
+ {:name "Eion's Uprising",
+  :type "weapon",
+  :owner :reven,
+  :base
+  {:category "Bow",
+   :proficiency "Simple",
+   :name "Heavy Crossbow",
+   :type "Ranged",
+   :damage "1d10",
+   :damage-types ["Piercing"],
+   :range "120/240",
+   :traits ["Two-handed" "Reload"]},
+  :existing
+  [{:effect
+    "+[1] damage with Conjuration spells, and minions from Conjurations spells deal +[1] damage.",
+    :level 1}],
+  :available
+  [{:effect
+    "Once per long rest, after rolling for a Concentration save for a Conjuration spell, you may choose to add [5] to the result."}
+   {:effect
+    "Your speed is considered to be [10] feet higher for when teleporting."}
+   {:effect
+    "You may teleport up to your speed when taking the Dash action.",
+    :upgradeable? false}
+   {:effect
+    "Minions from your Conjuration spells have +[2] maximum hit points for each spell level from which they originate."}
+   {:effect
+    "[Twice] per minute, you make replace an attack with this weapon with the casting of a Conjuration cantrip (mental attribute of choice)."}],
+  :enabled? false,
+  :found? true,
+  :level 1}
+ {:name "Vuneta's Peace",
+  :type "armour",
+  :owner :heath,
+  :base
+  {:ac 0,
+   :name "Unarmoured helmet",
+   :type "Unarmoured",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect
+    "+1 resistance to damage dealt by creatures you have not damaged.",
+    :points 0,
+    :upgradeable? false}
+   {:effect "You may choose to make critical strikes non-lethally.",
+    :upgradeable? false}
+   {:effect "Growth and Rot no longer reduces your Dexterity.",
+    :upgradeable? false,
+    :level 1,
+    :points 10,
+    :upgrade-points 10}
+   {:effect
+    "At the start of your turn in combat, if you haven't taken damage since the start of your last turn, gain 1 temporary hit point. This stacks with any existing temporary hit points.",
+    :metadata #{"armour"},
+    :level 2,
+    :points 20,
+    :upgrade-points 10,
+    :upgradeable? false}
+   {:effect
+    "Non-damaging conditions you inflict require +[1] DC to escape. The DC returns to normal if the creature is damaged."}],
+  :available
+  [{:effect
+    "+[2] AC if you have not dealt damage since your last initiative roll.",
+    :upgrade-points 20}
+   {:effect
+    "You may cast the Calm Emotions spell [once] per short rest. Mental of choice."}
+   {:effect
+    "Creatures you have healed in the last hour have disadvantage against your charms and charm-like effects.",
+    :upgradeable? false}
+   {:effect
+    "Feeding others potions requires a bonus action instead of an action.",
+    :upgradeable? false}],
+  :progressed [],
+  :enabled? false,
+  :found? true,
+  :level 5}
+ {:name "Thetia's Ruthlessness",
+  :type "armour",
+  :owner :reven,
+  :base
+  {:ac 0,
+   :name "Unarmoured boots",
+   :type "Unarmoured",
+   :slot "boots",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect
+    "+[2] die size when damaging prone or incapacitated creatures.",
+    :upgrade-points 10,
+    :level 2,
+    :points 20}
+   {:effect
+    "Your ranged attacks do not suffer disadvantage as a result of targeting prone creatures.",
+    :upgradeable? false}
+   {:effect "You know all of the Primal Rites.",
+    :upgradeable? false,
+    :level 1,
+    :points 10,
+    :upgrade-points 10}
+   {:effect
+    "On killing blow, +[3] resistance to all damage until the end of your next turn.",
+    :upgrade-points 10}],
+  :available
+  [{:effect
+    "You gain advantage on attacks until the end of your [next] turn upon an ally going down to 0 hit points.",
+    :upgrade-points 10}
+   {:effect "+[15] feet movement turing the first round of combat.",
+    :upgrade-points 10}
+   {:effect
+    "You may cast Wrathful Smite as a free action once per short rest. DC = 8 + AB for the attack that applied it.",
+    :upgradeable? false}
+   {:effect
+    "+[2] investigation after combats in which you've landed a killing blow.",
+    :upgrade-points 5}],
+  :found? true,
+  :level 4}
+ {:name "Amman's Research",
+  :type "armour",
+  :owner :festus,
+  :base
+  {:ac 0,
+   :name "Unarmoured boots",
+   :type "Unarmoured",
+   :slot "boots",
+   :disadvantaged-stealth? false},
+  :existing
+  [{:effect "You have expertise with Arcana checks.",
+    :upgradeable? false}
+   {:effect
+    "When a creature attempts a saving throw against a magical effect of yours, you immediately learn whether or not it has Magic Resistance.",
+    :points 0,
+    :upgradeable? false}
+   {:effect
+    "+1 resistance to damage taken from creatures afflicted by at least one stack of blight.",
+    :upgrade-points 20,
+    :level 2,
+    :points 30}],
+  :available
+  [{:effect
+    "You can fluently read text in any language that you recognise.",
+    :upgradeable? false}
+   {:effect
+    "[Once] per short rest, you may cause a creature with Magic Resistance to make a spell saving throw without advantage."}
+   {:effect "You and your minions have +[2] fire damage."}
+   {:effect
+    "You may cast Glyph of Warding [once] per long rest with a casting time 1 minute."}
+   {:effect
+    "+1 AC while concentrating on a spell. +[1] fire thorns."}],
+  :progressed [],
+  :found? true,
+  :level 4}]

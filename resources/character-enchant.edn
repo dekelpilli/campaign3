@@ -1,0 +1,66 @@
+{:festus [{:effect         "+[1] Strength."
+           :upgrade-points 20}
+          {:effect       "+1AC against attacks when both you and the attacking creature have at least one stack of blight."
+           :upgradeable? false}
+          {:effect       "The duration of your blights does not deplete while you are transformed. Your blights continue to deal damage."
+           :upgradeable? false}
+          {:effect       "The duration of your blights decreases by one (potentially to 0). The first instance of damage from each blight is doubled. This does not stack."
+           :upgradeable? false}
+          {:effect       "+[1] damage resistance against critical hits while affected by Enhance."}
+          {:effect         "Whenever you inflict blight on a creature but cause no additional affects, you instead deal 1d[4] necrotic damage to it."}
+          {:effect "+1 die size for Necrotic damage."}
+          {:effect "+10 feet of flying speed for each creature that has become unable to fly as a result of your Sticky Pus feature."
+           :points 5}
+          {:effect         "+1 DC to the save required by your Bile feature."
+           :upgrade-points 30}]
+ :heath  [{:effect         "+[1] Charisma."
+           :upgrade-points 20}
+          {:effect "+[1] to skill checks in which you've gained expertise via Shifting Organs."}
+          {:effect "+[10] feet range to your Cruel Harvest area."
+           :points 5}
+          {:effect         "+[1] die size for the added damage granted by Cruel Harvest."
+           :upgrade-points 15}
+          {:effect       "Growth and Rot no longer reduces your %s."
+           :randoms      [["Dexterity" "Intelligence" "Wisdom"]]
+           :upgradeable? false}
+          {:effect       "When you would normally activate your %s Touch, you may reroll instead. You must then accept that result."
+           :randoms      [["Annihilating" "Decaying" "Healing" "Hexing" "Nullifying" "Persistent" "Precise" "Shielding" "Slinging" "Splitting"]]
+           :upgradeable? false}
+          {:effect "You may gain the benefits of [1] additional option from Manifesting Power I."}
+          {:effect "+[1] to Charisma checks during your first encounter with a creature." ;+1 on upgrade
+           :points 5}]
+ :jumlin [{:effect         "+[1] Wisdom"
+           :upgrade-points 20}
+          {:effect       "Your Cosmic Omen feature grants both the Woe and Weal option at all times, rather than having to roll on long rest."
+           :upgradeable? false}
+          {:effect       "When you cast Guiding Bolt via your Star Map feature, it is cast as a second level spell slot instead of first."
+           :upgradeable? false}
+          {:effect         "You may learn [one] additional Druid cantrip."
+           :upgrade-points 20}
+          {:effect "Your flying speed while in Dragon form increases by [10] feet."}
+          {:effect "+3 outgoing healing while in Chalice form."}
+          {:effect         "-[1] critical strike requirement with your luminous arrow while in Archer form."
+           :upgrade-points 20}
+          {:effect       "When wildshaped into an animal or while transformed, you may emit a light as per your Starry Form. You must choose upon transformation."
+           :upgradeable? false}
+          {:effect "When you cast a Divination spell, you may add a minute to the spell's casting time to gain a [25]% chance to not consume a spell slot. Multiple instances of this enchant do not stack."} ;+5% per level
+          {:effect       "You gain the Shell Defense ability (see Tortle)."
+           :upgradeable? false}]
+ :reven  [{:effect         "+[1] Dexterity."
+           :upgrade-points 20}
+          {:effect         "+[1] to your Hemocraft die size."
+           :upgrade-points 20}
+          {:effect       "You know all of the Primal Rites."
+           :upgradeable? false}
+          {:effect       "You Dark Augmentation feature also applies to Charisma saving throws."
+           :upgradeable? false}
+          {:effect       "%s also converts your weapon's base damage to the damage type it adds."
+           :randoms      [["Rite of the Flame" "Rite of the Frozen" "Rite of the Storm"
+                           "Rite of the Dead" "Rite of the Oracle" "Rite of the Roar"]]
+           :upgradeable? false}
+          {:effect       "When you block an attack from creatures under the effect of your Brand of Castigation, you take 1 damage instead of none."
+           :upgradeable? false}
+          {:effect       "While you have Rite of Flame active, if you roll a 1 or 2 on your damage die for a Scorching Ray cast from Revealed Arcana, you can reroll the die and choose which roll to use."
+           :upgradeable? false}
+          {:effect "Creatures affected by your Brand of the Sapping Scar feature that also have Magic Resistance take +[2] damage from your spells."
+           :upgrade-points 5}]}

@@ -1,0 +1,16 @@
+{:paths   ["src" "resources"]
+ :deps    {org.clojure/clojure              {:mvn/version "1.11.0"}
+           org.clojure/data.codec           {:mvn/version "0.1.1"}
+           org.clojure/tools.logging        {:mvn/version "1.2.4"}
+           org.clojure/core.match           {:mvn/version "1.0.0"}
+
+           metosin/jsonista                 {:mvn/version "0.3.5"}
+
+           table/table                      {:mvn/version "0.5.0"}
+
+           org.fversnel/dnddice             {:mvn/version "4.1.0"}
+           de.codeshelf.consoleui/consoleui {:mvn/version "0.0.13"}}
+ :aliases {:dev      {:extra-deps  {com.hypirion/clj-xchart {:mvn/version "0.2.0"}}
+                      :extra-paths ["data/5et"]}
+           :outdated {:extra-deps {olical/depot {:mvn/version "2.3.0"}}
+                      :main-opts  ["-m" "depot.outdated.main"]}}}

@@ -1,0 +1,106 @@
+Amulets:
+    As a bonus action, you can transform into the creature contained in the amulet, but with a fifth of the hit points. You can stay in this form for up to a minute, or until you lose all of the creature's hit points. You may also exit the form at will.
+    If your transformation ended due to losing hit points, you cannot transform again until you complete a long rest. Otherwise, you cannot transform again until you complete a short rest.
+    While in this form, you retain all magical bonuses from your gear.
+    Amulets are created with a certain CR capacity. You can combine multiple amulets to create an amulet with a higher CR capacity (resulting amulet's CR is the highest CR whose XP is lower than the sum of the given amulet CR XPs)
+    You can pay 10 * CR gold to replace the creature in an amulet
+    Any temporary hit points you gain while transformed, or have when transforming, are also divided by five. Any temporary hit points you have when transforming back to your original form are multiplied by 5.
+
+Prayer Stones:
+    You can use any prayer stone to pray to any Deity, but when using the appropriate prayer stone, you get the option of skipping a step
+
+Moving mods:
+    Between weapons, so long as all mods are compatible with new weapon. Incompatible mods can be removed as part of the transfer.
+    Between rings
+    Between armours
+
+Enchant rules:
+    Double flat, dice additions, and die size enchants on single attackers (don't have extra attack, not dual wielding).
+    Double flat, dice additions, and die size enchants for cantrips targeting a single creature, including AoE cantrips that happen to only hit one creature..
+    Multiply flat, dice additions, and die size enchants by the spell slot level for spells targeting a single creature, including AoE spells that happen to only hit one creature..
+    Die size increases increase the size of a single die (2d6 -> 1d6 + 1d8, 8d6 -> 5d6 + 1d8).
+
+Miscreations:
+    Always use 8 + prof + highest attribute mod for DCs and prof + highest attribute for ABs
+    Cantrip scaling (multiply flats/die amounts)
+    Unsellable
+
+Rings:
+    Max number of rings worn = prof bonus
+    Max number of ring points used = char level + highest attribute modifier
+    Sacrifice: Smash n rings together (n > 1) to get a choice of 1 from n unique new rings that can't be of the same type as any of the inputs.
+    Synergy rings = rings whose name starts with "The" = rings whose purpose is to interact with other rings.
+
+Uniques:
+    Unique items are, lore-wise, failed attempts creating relics, or at replicating items from myths/folk stories
+    Sell for 50g
+
+Relics:
+    Relics related to a specific personality are unlocked at a certain quest state.
+    Relics can only be attuned to one person (old attunements need to be let go).
+    Last relic level (10) is a choice of level (new random mod from list of mods available on artifact, upgrade existing mod of choice, new random mod)
+    Costs:
+        1:  0 (attunement),
+        2:  75,
+        3:  200,
+        4:  300,
+        5:  500,
+        6:  500,
+        7:  500,
+        8:  500,
+        9:  500,
+        10: 1500
+
+Vendor valuations:
+    Mundane: 25
+    Ring: 15
+    Unique: 50
+    Magical: 100/200/250 (low/medium/high value)
+    Amulets: 50 * CR capacity
+    Crafting items: 40
+    Prayer stones: 100
+    Relics: 300 + half of money spent on levelling
+    Other potions: 10
+
+Sales and services:
+    Orbs of Flux: 200
+    Orb of Balance: 200
+    Orbs of Disavowment: 50
+    Mundanes: 50
+    Loot: 2d8 unsellable loot roll - 150
+
+XP      Challenge
+0       10
+1/8     25
+1/4     50
+1/2     100
+1       200
+2       450
+3       700
+4       1,100
+5       1,800
+6       2,300
+7       2,900
+8       3,900
+9       5,000
+10      5,900
+11      7,200
+12      8,400
+13      10,000
+14      11,500
+15      13,000
+16      15,000
+17      18,000
+18      20,000
+19      22,000
+20      25,000
+21      33,000
+22      41,000
+23      50,000
+24      62,000
+25      75,000
+26      90,000
+27      105,000
+28      120,000
+29      135,000
+30      155,000
