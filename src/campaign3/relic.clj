@@ -1,6 +1,5 @@
 (ns campaign3.relic
   (:require [campaign3
-             [state :refer [relics override-relics! character-enchants]]
              [util :as util]
              [enchant :as e]
              [mundane :as mundane]]))
@@ -17,21 +16,21 @@
            (util/&choose)))
 
 (defn- &owned []
-  (let [owned? (fn [{:keys [found? enabled?]
-                     :or   {enabled? true}}] (and found? enabled?))]
-    (->> @relics
-         (filter owned?)
-         (&choose-relic))))
+  #_(let [owned? (fn [{:keys [found? enabled?]
+                       :or   {enabled? true}}] (and found? enabled?))]
+      (->> @relics
+           (filter owned?)
+           (&choose-relic))))
 
 (defn- &upgradeable []
-  (let [upgradeable? (fn [{:keys [found? enabled? level]
-                           :or   {enabled? true}}] (and found? enabled? (<= level 10)))]
-    (->> @relics
-         (filter upgradeable?)
-         (&choose-relic))))
+  #_(let [upgradeable? (fn [{:keys [found? enabled? level]
+                             :or   {enabled? true}}] (and found? enabled? (<= level 10)))]
+      (->> @relics
+           (filter upgradeable?)
+           (&choose-relic))))
 
-(defn- override-relic! [{:keys [name] :as relic}]
-  (override-relics! (mapv #(if (= (:name %) name) relic %) @relics)))
+(defn- update-relic! [{:keys [name] :as relic}]
+  )
 
 (defn- upgrade-mod [{:keys [committed points upgrade-points effect]
                      :or   {committed 0} :as modifier}
@@ -68,60 +67,60 @@
   ([] (when-let [relic (&upgradeable)]
         (&level-relic! relic)))
   ([{:keys [level existing base type available progressed owner] :as relic}]
-   (let [points-remaining (- (* points-per-level (inc level))
-                             (->> existing
-                                  (map #(:points % 10))
-                                  (reduce + 0))
-                             (->> progressed
-                                  (map :committed)
-                                  (reduce +)))
-         upgradeable-mods (filter #(:upgradeable? % true) existing)
-         possible-options (cond-> [:new-relic-mod :new-random-mod :new-character-mod]
-                                  (seq upgradeable-mods) (conj :upgrade-existing-mod))
-         upgrade-options (concat [:none]
-                                 (repeat (count progressed) :continue-progress)
-                                 (repeatedly #(rand-nth possible-options)))
-         valid-enchants (e/find-valid-enchants base type)
-         rand-filled #(->> % util/rand-enabled util/fill-randoms)
-         mod-options (->> upgrade-options
-                          (map (fn [o]
-                                 [o (rand-filled
-                                      (case o
-                                        :continue-progress progressed
-                                        :none [nil]
-                                        :new-character-mod (@character-enchants owner)
-                                        :new-relic-mod available
-                                        :upgrade-existing-mod upgradeable-mods
-                                        :new-random-mod valid-enchants))]))
-                          (dedupe)
-                          (take 3)
-                          (map-indexed #(into [%1] %2))
-                          (into [["Key" "Type" "Value"]])
-                          (util/display-multi-value))
-         choice (util/&num)
-         [_ option-type modifier] (when (and choice (>= choice 0)) (nth mod-options (inc choice)))]
-     (when option-type
-       (-> (case option-type
-             (:new-character-mod :new-random-mod) (attach-new-mod modifier relic)
-             (:continue-progress :upgrade-existing-mod) (upgrade-mod modifier points-remaining relic)
-             :new-relic-mod (-> relic
-                                (update :available #(filterv (fn [m] (not= modifier m)) %))
-                                (update :existing #(conj % modifier)))
-             :none relic)
-           (update :level inc)
-           (override-relic!))))))
+   #_(let [points-remaining (- (* points-per-level (inc level))
+                               (->> existing
+                                    (map #(:points % 10))
+                                    (reduce + 0))
+                               (->> progressed
+                                    (map :committed)
+                                    (reduce +)))
+           upgradeable-mods (filter #(:upgradeable? % true) existing)
+           possible-options (cond-> [:new-relic-mod :new-random-mod :new-character-mod]
+                                    (seq upgradeable-mods) (conj :upgrade-existing-mod))
+           upgrade-options (concat [:none]
+                                   (repeat (count progressed) :continue-progress)
+                                   (repeatedly #(rand-nth possible-options)))
+           valid-enchants (e/find-valid-enchants base type)
+           rand-filled #(->> % util/rand-enabled util/fill-randoms)
+           mod-options (->> upgrade-options
+                            (map (fn [o]
+                                   [o (rand-filled
+                                        (case o
+                                          :continue-progress progressed
+                                          :none [nil]
+                                          :new-character-mod (@character-enchants owner)
+                                          :new-relic-mod available
+                                          :upgrade-existing-mod upgradeable-mods
+                                          :new-random-mod valid-enchants))]))
+                            (dedupe)
+                            (take 3)
+                            (map-indexed #(into [%1] %2))
+                            (into [["Key" "Type" "Value"]])
+                            (util/display-multi-value))
+           choice (util/&num)
+           [_ option-type modifier] (when (and choice (>= choice 0)) (nth mod-options (inc choice)))]
+       (when option-type
+         (-> (case option-type
+               (:new-character-mod :new-random-mod) (attach-new-mod modifier relic)
+               (:continue-progress :upgrade-existing-mod) (upgrade-mod modifier points-remaining relic)
+               :new-relic-mod (-> relic
+                                  (update :available #(filterv (fn [m] (not= modifier m)) %))
+                                  (update :existing #(conj % modifier)))
+               :none relic)
+             (update :level inc)
+             (update-relic!))))))
 
 (defn &new! []
-  (let [relic (->> @relics
-                   (remove :found?)
-                   (util/rand-enabled))]
-    (if relic
-      (util/display-multi-value (dissoc relic :available :found? :level))
-      (throw (Exception. "Out of relics :(")))
-    (let [base (mundane/&base (:type relic))
-          owner (when base (util/&choose (keys @character-enchants)))]
-      (when (and base owner)
-        (override-relic! (assoc relic :found? true
+  #_(let [relic (->> @relics
+                     (remove :found?)
+                     (util/rand-enabled))]
+      (if relic
+        (util/display-multi-value (dissoc relic :available :found? :level))
+        (throw (Exception. "Out of relics :(")))
+      (let [base (mundane/&base (:type relic))
+            owner (when base (util/&choose (keys @character-enchants)))]
+        (when (and base owner)
+          (update-relic! (assoc relic :found? true
                                       :base base
                                       :owner owner))))))
 
@@ -129,4 +128,4 @@
   (when-let [{:keys [name level] :as relic} (&owned)]
     (println "Sell" name "for" (int (+ 300 (/ (reduce + (take level upgrade-prices)) 2))) "?")
     (when (util/&choose [true false])
-      (override-relic! (assoc relic :enabled? false)))))
+      (update-relic! (assoc relic :enabled? false)))))

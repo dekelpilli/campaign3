@@ -2,27 +2,35 @@
   (:require
     [campaign3
      [util :as util]
-     [state :refer [rings]]]
+     [db :as db]]
     [clojure.string :as str]))
+
+(def synergy-rings (db/execute! {:select [:*]
+                                 :from   [:rings]
+                                 :where  [:is :synergy true]}))
+(def regular-rings (db/execute! {:select [:*]
+                                 :from   [:rings]
+                                 :where  [:is :synergy false]}))
 
 (defn- synergy? [{:keys [name]}]
   (str/starts-with? name "The"))
 
 (defn new-non-synergy []
-  (->> @rings
+  (->> synergy-rings
        (remove synergy?)
        (util/rand-enabled)
        (util/fill-randoms)))
 
 (defn new-synergy []
-  (->> @rings
+  (->> regular-rings
        (filter synergy?)
        (util/rand-enabled)
        (util/fill-randoms)))
 
 (defn &sacrifice []
   (println "Which rings are being sacrificed?")
-  (let [ban-opts (as-> @rings $
+  (let [rings (into synergy-rings regular-rings)
+        ban-opts (as-> rings $
                        (map :name $)
                        (util/make-options $ {:sort? true})
                        (util/display-pairs $ {:sort? true :v "Name"}))
@@ -38,7 +46,7 @@
                              (count)
                              (Math/pow 2)
                              (* (count sacrificed)))]
-        (->> @rings
+        (->> rings
              (remove #(sacrificed? (:name %)))
              (shuffle)
              (take num-options)

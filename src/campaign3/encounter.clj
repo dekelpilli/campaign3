@@ -1,8 +1,8 @@
 (ns campaign3.encounter
   (:require [campaign3.util :as util]
-            [campaign3.state :refer [positive-encounters]]
             [clojure.string :as str]
-            [clojure.core.match :refer [match]]))
+            [clojure.core.match :refer [match]]
+            [campaign3.db :as db]))
 
 (def ^:private extra-loot-threshold 13)
 (def ^:private extra-loot-step 6)
@@ -12,6 +12,8 @@
                       "Tiefling" "Tortle" "Triton" "Vedalken" "Yuan-Ti Pureblood"])
 (def ^:private sexes ["female" "male"])
 (def ^:private had-random? (atom false))
+
+(def positive-encounters (db/execute! {:select [:*] :from [:crafting-items]}))
 
 (defn travel [^long days]
   (->> (range 1 (inc days))
@@ -81,7 +83,7 @@
 (defn new-positive []
   {:race      (rand-nth races)
    :sex       (rand-nth sexes)
-   :encounter (rand-nth @positive-encounters)})
+   :encounter (rand-nth positive-encounters)})
 
 (defn- new-room-dimensions []
   (vec (repeatedly 2 #(+ 4 (rand-int 6)))))

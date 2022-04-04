@@ -2,11 +2,14 @@
   (:require
     [campaign3
      [util :as util]
-     [state :refer [uniques]]]
+     [db :as db]]
     [clojure.walk :as walk]))
 
+(def uniques (db/execute! {:select [:*]
+                           :from   [:uniques]}))
+
 (defn new []
-  (let [{:keys [effects] :as unique} (util/rand-enabled @uniques)]
+  (let [{:keys [effects] :as unique} (util/rand-enabled uniques)]
     (loop [[current & remaining] effects
            unique unique
            n 1]

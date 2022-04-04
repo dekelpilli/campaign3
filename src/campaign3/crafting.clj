@@ -3,8 +3,10 @@
     [campaign3
      [util :as util]
      [enchant :as enchant]
-     [mundane :as mundane]
-     [state :refer [crafting-items]]]))
+     [db :as db]
+     [mundane :as mundane]]))
+
+(def crafting-items (db/execute! {:select [:*] :from [:crafting-items]}))
 
 (def crafting-actions
   {:chaos       (fn []
@@ -36,7 +38,7 @@
                          (util/rand-enabled))))})
 
 (defn new []
-  (util/get-multiple-items @crafting-items #(inc (rand-int 3))))
+  (util/get-multiple-items crafting-items #(inc (rand-int 3))))
 
 (defn &use []
   (when-let [choice (util/&choose crafting-actions)]

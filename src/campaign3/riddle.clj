@@ -1,11 +1,10 @@
 (ns campaign3.riddle
   (:require
     [campaign3
-     [util :as util]
-     [state :refer [riddles override-riddles!]]]))
+     [util :as util]]))
 
 (defn new! []
-  (let [{:keys [riddle] :as randomised-riddle} (->> @riddles
+  #_(let [{:keys [riddle] :as randomised-riddle} (->> @riddles
                                                     (util/rand-enabled)
                                                     (util/fill-randoms))]
     (->> @riddles

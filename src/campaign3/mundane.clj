@@ -1,9 +1,12 @@
 (ns campaign3.mundane
   (:require [campaign3
-             [state :refer [armours weapons]]
+             [db :as db]
              [util :as util]]))
 
-(def base-types {"weapon" @weapons "armour" @armours})
+(def weapons (db/execute! {:select [:*] :from [:weapons]}))
+(def armours (db/execute! {:select [:*] :from [:armours]}))
+
+(def base-types {"weapon" weapons "armour" armours})
 
 (defn &base
   ([]

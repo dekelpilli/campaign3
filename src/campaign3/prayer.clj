@@ -1,19 +1,22 @@
 (ns campaign3.prayer
   (:require
     [campaign3
-     [state :refer [prayer-paths prayer-progressions override-prayer-progress!]]
+     [db :as db]
      [util :as util]]))
 
-(defn new-stone []
-  (-> @prayer-paths util/rand-enabled :name))
+(def prayer-paths (db/execute! {:select [:*] :from [:prayer-paths]}))
 
-(defn- override-progress! [{:keys [character path] :as new-progression}]
-  (override-prayer-progress! (mapv
-                               #(if (and (= (:character %) character) (= (:path %) path)) new-progression %)
-                               @prayer-progressions)))
+
+(defn new-stone []
+  (-> prayer-paths util/rand-enabled :name))
+
+(defn- update-progress! [{:keys [character path] :as new-progression}]
+  ;TODO
+  )
 
 (defn &progress-path! []
-  (let [done? #(contains? (:taken %) 10)
+  ;TODO
+  #_(let [done? #(contains? (:taken %) 10)
         unfinished-paths (filter #(and (not (done? %)) (:enabled? % true)) @prayer-progressions)
         player-paths (group-by :character unfinished-paths)
         path-options (->> player-paths
@@ -36,5 +39,5 @@
             new-latest (util/&num)
             valid (and new-latest (contains? progress-index-options new-latest))]
         (when valid
-          (override-progress!
+          (update-progress!
             (update current-progression :taken #(conj % new-latest))))))))

@@ -1,7 +1,0 @@
-[{:character "heath",
-  :path "Cerasil-heath",
-  :taken #{7 4 6 3 2 9 5 10 8}}
- {:character "heath", :path "Odi-heath", :taken #{1}}
- {:character "jumlin", :path "Odi", :taken #{7 4 6 3 2 8}}
- {:character "festus", :path "Thatar", :taken #{7 1 4 2 5}}
- {:character "reven", :path "Vuneta", :taken #{7 1 4 6 2 5 8}}]

@@ -2,11 +2,12 @@
   (:require
     [clojure.set :as s]
     [campaign3
-     [state :refer [enchants]]
+     [db :as db]
      [util :as util]
      [mundane :as mundane]]))
 
 (def default-points 10)
+(def enchants (db/execute! {:select [:*] :from [:crafting-items]}))
 
 (defn- compatible? [base enchant field]
   (let [not-field (->> field
@@ -40,7 +41,7 @@
        (compatible? base enchant :type)))
 
 (defn find-valid-enchants [base type]
-  (let [enabled-enchants (filter #(:enabled? % true) @enchants)]
+  (let [enabled-enchants (filter #(:enabled? % true) enchants)]
     (case type
       "weapon" (filter #(compatible-weapon? base %) enabled-enchants)
       "armour" (filter #(compatible-armour? base %) enabled-enchants))))

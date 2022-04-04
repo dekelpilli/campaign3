@@ -8,14 +8,11 @@
              [crafting :as crafting]
              [consumable :as consumable]
              [prayer :as prayer :refer [&progress-path!]]
-             [monster :as monster]
-             [miscreation :as miscreation]
              [encounter :as encounter :refer [rewards]]
              [dice :as dice :refer [roll]]
              [ring :as ring :refer [&sacrifice]]
              [unique :as unique]
-             [riddle :as riddle]
-             [state :as state :refer [reload!]]]
+             [riddle :as riddle]]
             [clojure.tools.logging :as log]))
 
 (def loot-actions
@@ -26,8 +23,6 @@
        :action riddle/new!}
    3  {:name   "Mundane item"
        :action #(:base (mundane/new))}
-   4  {:name   "Miscreation"
-       :action miscreation/new}
    5  {:name   "Consumable"
        :action consumable/new}
    6  {:name   "Unique"
@@ -46,20 +41,14 @@
        :action #(enchant/random-enchanted 30)}
    13 {:name   "Crafting item"
        :action crafting/new}
-   14 {:name   "Amulet"
-       :action monster/generate-amulet}
    15 {:name   "Prayer stone"
        :action prayer/new-stone}
    16 {:name   "New relic"
        :action relic/&new!}
-   17 {:name   "Reload data from files"
-       :action state/reload!}
    18 {:name   "Level a relic"
        :action relic/&level-relic!}
    19 {:name   "Progress a prayer path"
        :action prayer/&progress-path!}
-   20 {:name   "Choose monsters from given CRs"
-       :action monster/&new}
    21 {:name   "Add a modifier to an existing item"
        :action enchant/&add}
    22 {:name   "Add modifiers to an existing items with the given total"
