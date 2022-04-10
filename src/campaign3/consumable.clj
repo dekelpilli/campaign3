@@ -4,7 +4,7 @@
      [util :as util]
      [db :as db]]))
 
-(def consumables (db/execute! {:select [:*] :from [:consumables]}))
+(def consumables #_(db/execute! {:select [:*] :from [:consumables]}))
 
 (defn new []
   (util/get-multiple-items consumables #(inc (rand-int 4))))

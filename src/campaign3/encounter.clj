@@ -13,7 +13,7 @@
 (def ^:private sexes ["female" "male"])
 (def ^:private had-random? (atom false))
 
-(def positive-encounters (db/execute! {:select [:*] :from [:crafting-items]}))
+(def positive-encounters #_(db/execute! {:select [:*] :from [:positive-encounters]}))
 
 (defn travel [^long days]
   (->> (range 1 (inc days))

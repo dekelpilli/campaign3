@@ -1,14 +1,13 @@
 - Gemstones: allow for rolling items with weighted mods. More stones = more mods on item, capped at 30 points?
-- Remove miscreations
 - Buff non-synergy rings/nerf synergies/add more synergies with non-synergies/remove non-synergy rings(?). Also, simplify to avoid player confusion/make it easier to keep track (This could happen naturally in a lower level campaign)?
 - Remove stoneskin/memory/power(?) potions, add replacements. Reactive more likely to be used.
 - Add crafting item for rerolling uniques? Allow purchasing of uniques that have already been found?
 - Let loose on character enchants, make them rarer than relic mods/random mods/upgrades
-- Amulets: put more weight on on higher CRs/increase CR cap depending on campaign level. Alternatively, rework to encourage more focus on the creature instead of simply being a temp HP button. Also, simplify to avoid player confusion?
+- Amulets: put more weight on higher CRs/increase CR cap depending on campaign level. Alternatively, rework to encourage more focus on the creature instead of simply being a temp HP button. Also, simplify to avoid player confusion?
 - Offer players more information before choosing prayer path.
 - Allow storing of prayer path skips? Could help with any higher level mods that don't fit the character + reduce FOMO
+- Pristine prayerstones - grant next 2 levels (instead of skip) when matching, or some chance (10%?) to grant extra level when not matching
 - See if players like riddles in feedback
 - Lower/smoother relic leveling prices
-- Make SPA GUI + DB backend? Overkill, but exposure to cljs + less state management logic in backend, and fixes issue of too many command indexes
 - Riddles: keep but reduce frequency? Mixed feedback
 - Allow consumables to be used for free on initiative?

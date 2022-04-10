@@ -141,13 +141,13 @@
   :damage       "1d8",
   :damage-types ["Slashing"],
   :traits       ["Sweep"]}
- {:category     "Sword",
+ #_{:category     "Sword",
   :proficiency  "Martial",
   :name         "Bastard Sword",
   :type         "Melee",
   :damage       "1d10",
   :damage-types ["Slashing"],
-  :traits       ["Two-handed" "Grapple"]}
+  :traits       ["Two-handed" "Grapple"]} ;TODO duplicate item, need to redo weapons anyway
  {:category     "Club",
   :proficiency  "Martial",
   :name         "Bo Staff",

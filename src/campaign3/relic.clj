@@ -6,7 +6,7 @@
 
 (def ^:private points-per-level 10)
 
-(def upgrade-prices [0 75 200 300 600 800 1100 1300 1500 2000])
+(def upgrade-prices [0 100 200 300 400 500 600 700 800 1500])
 
 (defn &choose-relic [relics]
   (some->> relics

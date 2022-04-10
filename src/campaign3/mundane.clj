@@ -1,7 +1,8 @@
 (ns campaign3.mundane
   (:require [campaign3
              [db :as db]
-             [util :as util]]))
+             [util :as util]]
+            [randy.core :as r]))
 
 (def weapons (db/execute! {:select [:*] :from [:weapons]}))
 (def armours (db/execute! {:select [:*] :from [:armours]}))
@@ -24,11 +25,11 @@
         mundanes (get base-types type)
         base (case type
                "weapon" (util/rand-enabled mundanes)
-               "armour" (let [slot (util/weighted-rand-choice {"body"   3
-                                                               "helmet" 3
-                                                               "gloves" 3
-                                                               "boots"  3
-                                                               "shield" 1})]
+               "armour" (let [slot (r/weighted-sample {"body"   3
+                                                       "helmet" 3
+                                                       "gloves" 3
+                                                       "boots"  3
+                                                       "shield" 1})]
                           (->> mundanes
                                (filter #(= slot (:slot %)))
                                (rand-nth))))]

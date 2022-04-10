@@ -1,3 +1,3 @@
 #!/bin/sh
 
-clojure -X campaign2.core/-main
+clojure -X campaign3.core/-main

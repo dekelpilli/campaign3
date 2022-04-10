@@ -20,11 +20,6 @@ Enchant rules:
     Multiply flat, dice additions, and die size enchants by the spell slot level for spells targeting a single creature, including AoE spells that happen to only hit one creature..
     Die size increases increase the size of a single die (2d6 -> 1d6 + 1d8, 8d6 -> 5d6 + 1d8).
 
-Miscreations:
-    Always use 8 + prof + highest attribute mod for DCs and prof + highest attribute for ABs
-    Cantrip scaling (multiply flats/die amounts)
-    Unsellable
-
 Rings:
     Max number of rings worn = prof bonus
     Max number of ring points used = char level + highest attribute modifier
@@ -41,14 +36,14 @@ Relics:
     Last relic level (10) is a choice of level (new random mod from list of mods available on artifact, upgrade existing mod of choice, new random mod)
     Costs:
         1:  0 (attunement),
-        2:  75,
+        2:  100,
         3:  200,
         4:  300,
-        5:  500,
+        5:  400,
         6:  500,
-        7:  500,
-        8:  500,
-        9:  500,
+        7:  600,
+        8:  700,
+        9:  800,
         10: 1500
 
 Vendor valuations:

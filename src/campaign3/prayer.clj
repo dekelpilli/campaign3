@@ -4,7 +4,7 @@
      [db :as db]
      [util :as util]]))
 
-(def prayer-paths (db/execute! {:select [:*] :from [:prayer-paths]}))
+(def prayer-paths #_(db/execute! {:select [:*] :from [:prayer-paths]}))
 
 
 (defn new-stone []

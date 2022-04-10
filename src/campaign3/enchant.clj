@@ -7,7 +7,7 @@
      [mundane :as mundane]]))
 
 (def default-points 10)
-(def enchants (db/execute! {:select [:*] :from [:crafting-items]}))
+(def enchants #_(db/execute! {:select [:*] :from [:enchants]}))
 
 (defn- compatible? [base enchant field]
   (let [not-field (->> field

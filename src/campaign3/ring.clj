@@ -5,32 +5,27 @@
      [db :as db]]
     [clojure.string :as str]))
 
-(def synergy-rings (db/execute! {:select [:*]
+(def synergy-rings #_(db/execute! {:select [:*]
                                  :from   [:rings]
                                  :where  [:is :synergy true]}))
-(def regular-rings (db/execute! {:select [:*]
+(def regular-rings #_(db/execute! {:select [:*]
                                  :from   [:rings]
                                  :where  [:is :synergy false]}))
-
-(defn- synergy? [{:keys [name]}]
-  (str/starts-with? name "The"))
+(def all-rings #_(into synergy-rings regular-rings))
 
 (defn new-non-synergy []
-  (->> synergy-rings
-       (remove synergy?)
+  (->> regular-rings
        (util/rand-enabled)
        (util/fill-randoms)))
 
 (defn new-synergy []
-  (->> regular-rings
-       (filter synergy?)
+  (->> synergy-rings
        (util/rand-enabled)
        (util/fill-randoms)))
 
 (defn &sacrifice []
   (println "Which rings are being sacrificed?")
-  (let [rings (into synergy-rings regular-rings)
-        ban-opts (as-> rings $
+  (let [ban-opts (as-> all-rings $
                        (map :name $)
                        (util/make-options $ {:sort? true})
                        (util/display-pairs $ {:sort? true :v "Name"}))
@@ -46,7 +41,7 @@
                              (count)
                              (Math/pow 2)
                              (* (count sacrificed)))]
-        (->> rings
+        (->> all-rings
              (remove #(sacrificed? (:name %)))
              (shuffle)
              (take num-options)

@@ -2,6 +2,7 @@
   (:gen-class)
   (:require [campaign3
              [util :as util]
+             [prompting :as p]
              [relic :as relic :refer [&level-relic!]]
              [mundane :as mundane]
              [enchant :as enchant :refer [add-totalling]]
@@ -69,7 +70,7 @@
        :action crafting/&use}})
 
 (defn start []
-  (let [loot-action-names (->> loot-actions
+  #_(let [loot-action-names (->> loot-actions
                                (map (fn [[k {:keys [name]}]] [k name]))
                                (into (sorted-map)))]
     (util/display-pairs loot-action-names {:sort? true})

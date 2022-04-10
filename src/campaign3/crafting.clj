@@ -6,7 +6,7 @@
      [db :as db]
      [mundane :as mundane]]))
 
-(def crafting-items (db/execute! {:select [:*] :from [:crafting-items]}))
+(def crafting-items #_(db/execute! {:select [:*] :from [:crafting-items]}))
 
 (def crafting-actions
   {:chaos       (fn []

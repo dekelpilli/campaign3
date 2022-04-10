@@ -1,5 +1,5 @@
 {:paths   ["src" "resources"]
- :deps    {org.clojure/clojure              {:mvn/version "1.11.0"}
+ :deps    {org.clojure/clojure              {:mvn/version "1.11.1"}
            org.clojure/data.codec           {:mvn/version "0.1.1"}
            org.clojure/tools.logging        {:mvn/version "1.2.4"}
            org.clojure/core.match           {:mvn/version "1.0.0"}
@@ -8,7 +8,10 @@
 
            table/table                      {:mvn/version "0.5.0"}
 
-           ;TODO randy
+           ;TODO clojars
+           io.github.dekelpilli/randy       {:git/url "https://github.com/dekelpilli/randy.git"
+                                             :sha     "808360b08ecd97424f1349f4149ac55cbcdec374"}
+
            yogthos/config                   {:mvn/version "1.2.0"}
 
            org.fversnel/dnddice             {:mvn/version "4.1.0"}

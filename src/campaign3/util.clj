@@ -3,10 +3,8 @@
             [clojure.edn :as edn]
             [clojure.string :as str]))
 
-(defn weighted-rand-choice [m]
-  (let [w (reductions #(+ % %2) (vals m))
-        r (rand-int (last w))]
-    (nth (keys m) (count (take-while #(<= % r) w)))))
+(defn jsonb-lift [x]
+  (when x [:lift x]))
 
 (defn ->num [s]
   (try

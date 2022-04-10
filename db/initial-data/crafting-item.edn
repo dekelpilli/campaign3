@@ -12,7 +12,7 @@
  {:name   "Orb(s) of Balance"
   :effect "Remove a mod from a magical item and replace it with mods at least equal in point value."}
  {:name   "Divine Orb(s)"
-  :effect "Reroll the randmoised values of one mod, or of all mods on an item."}
+  :effect "Reroll the randomised values of one mod, or of all mods on an item."}
  {:name     "Orb of Mulligan"
   :effect   "completely level down a relic or artefact, then level it back up to its current level. Before levelling it back up, you can let go of your attunement to it.",
   :metadata ["1"]}
