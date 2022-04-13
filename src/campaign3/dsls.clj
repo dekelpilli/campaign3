@@ -18,14 +18,13 @@
   (cond
     (vector? roll-unit) (parse-roll-vec roll-unit default-fn)
     (nil? roll-unit) default-fn
-    (string? roll-unit) (case roll-unit
+    (keyword? roll-unit) (case roll-unit
                           :default (fn [] default-fn)
                           :disadvantaged disadv
                           :advantaged adv
                           :* (fn [multiplier factor]
                                (fn [] (* (multiplier) (factor))))
-                          :constant (fn [x] (fn [] x))
-                          (fn [] (dice->roll-fn roll-unit)))
+                          :constant (fn [x] (fn [] x)))
     (number? roll-unit) roll-unit))
 
 (defn roll->fn [roll default-roll] ;TODO rename to amount?
