@@ -68,22 +68,12 @@
 (defn occurred? [likelihood-probability]
   (< (rand) likelihood-probability))
 
-(defn- disadv [f] #(min (f) (f)))
-(defn- adv [f] #(max (f) (f)))
-(defn- multi [f multiplier-str] #(* (f) (Long/parseLong (subs multiplier-str 1))))
-(defn- static [const] (constantly (Long/parseLong const)))
-(defn get-multiple-items [coll f]
-  (let [{:keys [metadata] :as item} (rand-enabled coll)
-        randomiser (reduce #(cond
-                              (= "disadvantage" %2) (disadv %1)
-                              (= "advantage" %2) (adv %1)
-                              (str/starts-with? %2 "x") (multi %1 %2)
-                              :else (static %2))
-                           f metadata)]
+(defn get-rand-rollable [coll]
+  (let [{:keys [roll] :as item} (rand-nth coll)]
     (-> item
-        (assoc :amount (randomiser))
+        (dissoc :roll)
         (fill-randoms)
-        (dissoc :metadata))))
+        (assoc :amount (roll)))))
 
 ;d100 + this for a positive random encounter, with result being the total points of a magic item?
 ; could also give nothing if they go above the number, or a low loot roll

@@ -10,6 +10,9 @@
     (binding [*read-eval* false]
       (read r))))
 
+(defn- drop! [table]
+  (db/execute! {:drop-table [:if-exists table]}))
+
 (defn create-armours! []
   (db/execute! {:create-table :armours
                 :with-columns [[:name :text [:primary-key] [:not nil]]
@@ -20,6 +23,7 @@
 
 
 (defn insert-armours! []
+  (drop! :armours)
   (create-armours!)
   (let [armours (load-data "armour")]
     (db/execute! {:insert-into [:armours]
@@ -41,6 +45,7 @@
 
 
 (defn insert-weapons! []
+  (drop! :weapons)
   (create-weapons!)
   (let [weapons (load-data "weapon")]
     (db/execute! {:insert-into [:weapons]
@@ -60,6 +65,7 @@
                                [:extras :jsonb]]}))
 
 (defn insert-uniques! []
+  (drop! :uniques)
   (create-uniques!)
   (let [uniques (load-data "unique")]
     (db/execute! {:insert-into [:uniques]
@@ -72,8 +78,52 @@
                                (assoc :extras [:lift extras]))))
                        uniques)})))
 
+(defn create-crafting-items! []
+  (db/execute! {:create-table :crafting-items
+                :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:effect :text [:not nil]]
+                               [:roll :jsonb]]}))
+
+(defn insert-crafting-items! []
+  (drop! :crafting-items)
+  (create-crafting-items!)
+  (let [crafting-items (load-data "crafting-item")]
+    (db/execute! {:insert-into [:crafting-items]
+                  :values
+                  (->> crafting-items
+                       (filter #(:enabled? % true))
+                       (map (fn [crafting-item]
+                              (-> crafting-item
+                                  (dissoc :enabled?)
+                                  (update :roll u/jsonb-lift)))))})))
+
+(defn create-consumables! []
+  (db/execute! {:create-table :consumables
+                :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:effect :text [:not nil]]
+                               [:roll :jsonb]
+                               [:randoms :jsonb]]}))
+
+(defn insert-consumables! []
+  (drop! :consumables)
+  (create-consumables!)
+  (let [consumables (load-data "consumable")]
+    (db/execute! {:insert-into [:consumables]
+                  :values
+                  (map (fn [consumable]
+                         (-> consumable
+                             (update :roll u/jsonb-lift)
+                             (update :randoms u/jsonb-lift)))
+                       consumables)})))
+
 (defn insert-data! []
   (db/in-transaction
     (insert-armours!)
     (insert-weapons!)
-    (insert-uniques!)))
+    (insert-uniques!)
+    (insert-crafting-items!)
+    (insert-consumables!)))
+
+(defn backup-data! []
+  ;TODO write any mutable data to db/current-state to keep log of changes by session
+  )

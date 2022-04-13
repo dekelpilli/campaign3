@@ -1,19 +1,19 @@
 [{:name    "Level x health potion(s)"
-  :effect  "Equivalent to receiving healing from %d healing surge(s)"
-  :randoms [[1 2 3 4 5]]}
+  :effect  "Equivalent to receiving healing from %d healing surge(s)."
+  :randoms [{:range [1 5]}]}
  {:name   "Potion(s) of power"
   :effect "+1d4 damage for 1 minute"}
- {:value    "Greater potion(s) of power"
-  :effect   "+1d6 damage for 1 minute"
-  :metadata ["disadvantage"]}
+ {:name   "Greater potion(s) of power"
+  :effect "+1d6 damage for 1 minute"
+  :roll   [:disadvantaged [:default]]}
  {:name   "Invulnerability potion(s)"
   :effect "The next instance of damage you take is nullified."}
- {:name     "Greater invulnerability potion(s)"
-  :effect   "you are immune to damage until the start of your next turn"
-  :metadata ["disadvantage"]}
- {:name     "Potion(s) of Fortune"
-  :effect   "Gain advantage on your next loot roll.",
-  :metadata ["disadvantage"]}
+ {:name   "Greater invulnerability potion(s)"
+  :effect "You are immune to damage until the start of your next turn."
+  :roll   [:disadvantaged [:default]]}
+ {:name   "Potion(s) of Fortune"
+  :effect "Gain advantage on your next loot roll.",
+  :roll   [:disadvantaged [:default]]}
  {:name   "Stoneskin potion(s)"
   :effect "When you drink this potion, if you go down within the next day, you become petrified for a minute instead and remain on 1 hit point. While petrified in this way, you do not need to make death saves, and you are immune to damage."}
  {:name   "Memory potion(s)"
@@ -22,6 +22,6 @@
   :effect "Gain 20 temporary hit points when drunk, but lose all temporary hit points 1 minute later."}
  {:name   "Potion(s) of invisibility"
   :effect "You and everything you're wearing become invisible for up to a minute. This effect ends if you attack or cast a spell."}
- {:name     "Potion(s) of greater invisibility"
-  :effect   "You and everything you're wearing become invisible for up to a minute. You may end the invisibility at will.",
-  :metadata ["disadvantage"]}]
+ {:name   "Potion(s) of greater invisibility"
+  :effect "You and everything you're wearing become invisible for up to a minute. You may end the invisibility at will.",
+  :roll   [:disadvantaged [:default]]}]

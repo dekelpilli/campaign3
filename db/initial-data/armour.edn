@@ -1,36 +1,6 @@
-[{:ac                     11,
-  :name                   "Padded Body Armour",
-  :type                   "Light",
-  :slot                   "body"
-  :disadvantaged-stealth? true}
- {:ac                     11,
-  :name                   "Leather Body Armour",
-  :type                   "Light",
-  :slot                   "body"
-  :disadvantaged-stealth? false}
- {:ac                     12,
+[ {:ac                     12,
   :name                   "Studded Leather Body Armour",
   :type                   "Light",
-  :slot                   "body"
-  :disadvantaged-stealth? false}
- {:ac                     12,
-  :name                   "Hide Body Armour",
-  :type                   "Medium",
-  :slot                   "body"
-  :disadvantaged-stealth? false}
- {:ac                     13,
-  :name                   "Chain Shirt Armour",
-  :type                   "Medium",
-  :slot                   "body"
-  :disadvantaged-stealth? false}
- {:ac                     14,
-  :name                   "Scale Mail Body Armour",
-  :type                   "Medium",
-  :slot                   "body"
-  :disadvantaged-stealth? true}
- {:ac                     14,
-  :name                   "Breastplate Body Armour",
-  :type                   "Medium",
   :slot                   "body"
   :disadvantaged-stealth? false}
  {:ac                     15,
@@ -38,27 +8,11 @@
   :type                   "Medium",
   :slot                   "body"
   :disadvantaged-stealth? true}
- {:ac                     14,
-  :name                   "Ring Mail Body Armour",
-  :type                   "Heavy",
-  :slot                   "body"
-  :disadvantaged-stealth? true}
- {:ac                     16,
-  :name                   "Chain Mail Body Armour",
-  :type                   "Heavy",
-  :slot                   "body"
-  :disadvantaged-stealth? true}
- {:ac                     17,
-  :name                   "Splint Body Armour",
-  :type                   "Heavy",
-  :slot                   "body"
-  :disadvantaged-stealth? true}
  {:ac                     18,
   :name                   "Plate Body Armour",
   :type                   "Heavy",
   :slot                   "body"
   :disadvantaged-stealth? true}
- ;TODO consider removing base types that aren't best in class - useless in our homebrew?
  {:ac                     2
   :name                   "Shield"
   :type                   "Shield"

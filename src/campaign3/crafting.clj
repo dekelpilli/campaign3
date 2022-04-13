@@ -4,9 +4,11 @@
      [util :as util]
      [enchant :as enchant]
      [db :as db]
+     [dsls :as dsls]
      [mundane :as mundane]]))
 
-(def crafting-items #_(db/execute! {:select [:*] :from [:crafting-items]}))
+(def crafting-items (->> (db/execute! {:select [:*] :from [:crafting-items]})
+                         (map #(dsls/roll->fn % "1d3"))))
 
 (def crafting-actions
   {:chaos       (fn []
@@ -38,7 +40,7 @@
                          (util/rand-enabled))))})
 
 (defn new []
-  (util/get-multiple-items crafting-items #(inc (rand-int 3))))
+  (util/get-rand-rollable crafting-items))
 
 (defn &use []
   (when-let [choice (util/&choose crafting-actions)]

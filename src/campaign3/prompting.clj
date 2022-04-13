@@ -1,7 +1,7 @@
 (ns campaign3.prompting
   (:import (de.codeshelf.consoleui.prompt ConsolePrompt)))
 
-;TODO use old prompting if called from repl
+(def ^:dynamic *console-prompt?* false) ;TODO use old prompting if called from repl
 
 (def ^:private prompt (ConsolePrompt.))
 
