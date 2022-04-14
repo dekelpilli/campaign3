@@ -1,21 +1,37 @@
 (ns campaign3.prompting
-  (:import (de.codeshelf.consoleui.prompt ConsolePrompt)))
+  (:import (de.codeshelf.consoleui.prompt ConsolePrompt CheckboxResult InputResult)))
 
-(def ^:dynamic *console-prompt?* false) ;TODO use old prompting if called from repl
+(def ^:private console-prompt (ConsolePrompt.))
 
-(def ^:private prompt (ConsolePrompt.))
+(defn >>checkbox
+  ([coll] (>>checkbox "Choose all that apply: " coll))
+  ([prompt coll]
+   (let [prompt-builder (.getPromptBuilder console-prompt)]
+     (-> prompt-builder
+         (.createCheckboxPrompt)
+         (.message prompt)
+         (as-> builder (reduce
+                         #(doto %1 (-> (.newItem %2)
+                                       (.text %2)
+                                       (.add)))
+                         builder
+                         coll))
+         (.addPrompt))
+     (-> (.prompt console-prompt (.build prompt-builder))
+         ^CheckboxResult (get prompt)
+         (.getSelectedIds)
+         (set)))))
 
-(defn choose-multi [coll]
-  (let [prompt-builder (.getPromptBuilder prompt)]
-    (-> prompt-builder
-        (.createCheckboxPrompt)
-        (.message "Choose all that apply: ")
-        (as-> builder (reduce
-                        #(doto %1 (-> (.newItem %2)
-                                      (.text %2)
-                                      (.add)))
-                        builder
-                        coll))
-        (.addPrompt))
-    (doto (.prompt prompt (.build prompt-builder))
-      println)))
+(defn >>number
+  ([] (>>number "Enter number: "))
+  ([prompt]
+   (let [prompt-builder (.getPromptBuilder console-prompt)]
+     (-> prompt-builder
+         (.createInputPrompt)
+         (.message prompt)
+         (.name prompt)
+         (.addPrompt))
+     (-> (.prompt console-prompt (.build prompt-builder))
+         ^InputResult (get prompt)
+         (.getInput)
+         (parse-long)))))

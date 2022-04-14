@@ -96,5 +96,4 @@
 
 (defn -main [& _]
   (println "starting")
-  (binding [p/*console-prompt?* true]
-    (start)))
+  (start))
