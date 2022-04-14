@@ -13,6 +13,9 @@
   :effect "Remove a mod from a magical item and replace it with mods at least equal in point value."}
  {:name   "Divine Orb(s)"
   :effect "Reroll the randomised values of one mod, or of all mods on an item."}
+ {:name   "Mythic Orb(s)"
+  :effect "Transform a unique item into another random unique item."
+  :amount [:advantaged [:default]]}
  {:name   "Orb of Mulligan"
   :effect "completely level down a relic or artefact, then level it back up to its current level. Before levelling it back up, you can let go of your attunement to it.",
   :amount [:constant 1]}

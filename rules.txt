@@ -30,6 +30,9 @@ Uniques:
     Unique items are, lore-wise, failed attempts creating relics, or at replicating items from myths/folk stories
     Sell for 50g
 
+Vials:
+    As a bonus action, can be drunk or thrown at willing target within 20 feet.
+
 Relics:
     Relics related to a specific personality are unlocked at a certain quest state.
     Relics can only be attuned to one person (old attunements need to be let go).

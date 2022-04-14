@@ -2,12 +2,15 @@
 
 (defmulti randoms-preset (comp keyword :preset))
 
+(defn- keyword-type [conf]
+  (update conf :type keyword))
+
 (defn- rand-from [vs]
   #(rand-nth vs))
 
 (defn randoms->fn [randoms]
   (cond
-    (vector? randoms) (apply juxt (map (comp rand-from randoms-preset) randoms))
+    (vector? randoms) (apply juxt (map (comp rand-from randoms-preset keyword-type) randoms))
     (map? randoms) (randoms-preset randoms)))
 
 (defmethod randoms-preset :languages [_]
@@ -24,32 +27,32 @@
    "Spell Touched" "Telekinetic" "Telepathic" "War Caster"])
 
 (defmethod randoms-preset :skills [{:keys [type]
-                                    :or   {type "all"}}]
+                                    :or   {type :all}}]
   (case type
-    "common" ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"]
-    "uncommon" ["arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
-                "nature" "religion" "animal handling" "intimidation" "performance"]
-    "all" ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"
-           "arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
-           "nature" "religion" "animal handling" "intimidation" "performance"])) ;TODO ensure none were missed
+    :common ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"]
+    :uncommon ["arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
+               "nature" "religion" "animal handling" "intimidation" "performance"]
+    :all ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"
+          "arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
+          "nature" "religion" "animal handling" "intimidation" "performance"])) ;TODO ensure none were missed
 
 (defmethod randoms-preset :range [{:keys [args]}]
   (vec (apply range args)))
 
 (defmethod randoms-preset :damage-types [{:keys [type]
-                                          :or   {type "all"}}]
+                                          :or   {type :all}}]
   (case type
-    "physical" ["bludgeoning" "piercing" "slashing"]
-    "non-physical" ["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]
-    "elemental" ["cold" "fire" "lightning"]
-    "all" ["acid" "bludgeoning" "cold" "fire" "force" "lightning" "necrotic" "piercing" "poison" "psychic" "radiant" "slashing" "thunder"]))
+    :physical ["bludgeoning" "piercing" "slashing"]
+    :non-physical ["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]
+    :elemental ["cold" "fire" "lightning"]
+    :all ["acid" "bludgeoning" "cold" "fire" "force" "lightning" "necrotic" "piercing" "poison" "psychic" "radiant" "slashing" "thunder"]))
 
 (defmethod randoms-preset :attributes [{:keys [type]
-                                        :or   {type "all"}}]
+                                        :or   {type :all}}]
   (case type
-    "common" ["Constitution" "Dexterity" "Wisdom"]
-    "uncommon" ["Strength" "Intelligence" "Charisma"]
-    "all" ["Charisma" "Constitution" "Dexterity" "Intelligence" "Strength" "Wisdom"]))
+    :common ["Constitution" "Dexterity" "Wisdom"]
+    :uncommon ["Strength" "Intelligence" "Charisma"]
+    :all ["Charisma" "Constitution" "Dexterity" "Intelligence" "Strength" "Wisdom"]))
 
 (defmethod randoms-preset :monster-type [_]
   ["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
@@ -69,4 +72,4 @@
 
 (defmethod randoms-preset :without-replacement [{:keys [amount from]}]
   (let [vs (randoms-preset from)]
-    (comment "sample amount from vs"))) ;TODO
+    (apply juxt (repeat amount (constantly "todo"))))) ;TODO

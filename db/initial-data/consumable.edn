@@ -2,23 +2,19 @@
   :effect  "Equivalent to receiving healing from %d healing surge(s)."
   :randoms [{:preset :range
              :args   [1 5]}]}
- {:name   "Potion(s) of power"
-  :effect "+1d4 damage for 1 minute"}
- {:name   "Greater potion(s) of power"
-  :effect "+1d6 damage for 1 minute"
-  :amount [:disadvantaged [:default]]}
- {:name   "Invulnerability potion(s)"
-  :effect "The next instance of damage you take is nullified."}
- {:name   "Greater invulnerability potion(s)"
-  :effect "You are immune to damage until the start of your next turn."
-  :amount [:disadvantaged [:default]]}
  {:name   "Potion(s) of Fortune"
   :effect "Gain advantage on your next loot roll.",
   :amount [:disadvantaged [:default]]}
- {:name   "Stoneskin potion(s)"
-  :effect "When you drink this potion, if you go down within the next day, you become petrified for a minute instead and remain on 1 hit point. While petrified in this way, you do not need to make death saves, and you are immune to damage."}
- {:name   "Memory potion(s)"
-  :effect "Your next History check has a minimum roll of 15."}
+ {:name   "Potion(s) of Eureka"
+  :effect "Your next investigation or survival is treated as a natural 20 for the purposes of finding loot.",
+  :amount [:constant 1]}
+ {:name   "Vial(s) of Nullification"
+  :effect "Remove one magical ailment from the target."}
+ {:name   "Wormhole Vial(s)"
+  :effect "The target is sent to a safe pocket dimension until the start of your next turn. Time is paused for the target for the duration."}
+ {:name   "Potion(s) of Reversal"
+  :effect "Heal an amount equal to the last instance of damage you have taken."
+  :amount [:disadvantaged [:default]]}
  {:name   "Rejuvenation potion(s)"
   :effect "Gain 20 temporary hit points when drunk, but lose all temporary hit points 1 minute later."}
  {:name   "Potion(s) of invisibility"
