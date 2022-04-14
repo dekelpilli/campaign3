@@ -1,10 +1,10 @@
-(ns campaign3.enchant
+(ns campaign3.enchants
   (:require
     [clojure.set :as s]
     [campaign3
      [db :as db]
      [util :as util]
-     [mundane :as mundane]]))
+     [mundanes :as mundane]]))
 
 (def default-points 10)
 (def enchants #_(db/execute! {:select [:*] :from [:enchants]}))

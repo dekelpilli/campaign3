@@ -1,4 +1,4 @@
-(ns campaign3.prayer
+(ns campaign3.prayers
   (:require
     [campaign3
      [db :as db]

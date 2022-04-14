@@ -1,4 +1,4 @@
-(ns campaign3.consumable
+(ns campaign3.consumables
   (:require
     [campaign3
      [util :as util]

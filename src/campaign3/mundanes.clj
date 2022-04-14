@@ -1,4 +1,4 @@
-(ns campaign3.mundane
+(ns campaign3.mundanes
   (:require [campaign3
              [db :as db]
              [util :as util]]

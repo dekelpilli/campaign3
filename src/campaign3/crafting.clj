@@ -2,10 +2,10 @@
   (:require
     [campaign3
      [util :as util]
-     [enchant :as enchant]
+     [enchants :as enchant]
      [db :as db]
      [amounts :as amounts]
-     [mundane :as mundane]]))
+     [mundanes :as mundane]]))
 
 (def crafting-items (->> (db/execute! {:select [:*] :from [:crafting-items]})
                          (map #(update % :amount amounts/amount->fn "1d3"))))

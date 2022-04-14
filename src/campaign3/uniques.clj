@@ -1,4 +1,4 @@
-(ns campaign3.unique
+(ns campaign3.uniques
   (:require
     [campaign3
      [util :as util]

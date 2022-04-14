@@ -1,18 +1,18 @@
 (ns campaign3.core
   (:gen-class)
   (:require [campaign3
-             [util :as util]
+             [util :as u]
              [prompting :as p]
-             [relic :as relic :refer [&level-relic!]]
-             [mundane :as mundane]
-             [enchant :as enchant :refer [add-totalling]]
+             [relics :as relics]
+             [mundanes :as mundane]
+             [enchants :as e]
              [crafting :as crafting]
-             [consumable :as consumable]
-             [prayer :as prayer :refer [&progress-path!]]
-             [encounter :as encounter :refer [rewards]]
-             [dice :as dice :refer [roll]]
-             [ring :as ring :refer [&sacrifice]]
-             [unique :as unique]
+             [consumables :as consumables]
+             [prayers :as prayers]
+             [encounters :as encounter]
+             [dice :as dice]
+             [rings :as rings]
+             [uniques :as unique]
              [riddle :as riddle]]
             [clojure.tools.logging :as log]))
 
@@ -25,39 +25,39 @@
    3  {:name   "Mundane item"
        :action (comp :base mundane/new)}
    5  {:name   "Consumable"
-       :action consumable/new}
+       :action consumables/new}
    6  {:name   "Unique"
        :action unique/new}
    7  {:name   "Low value enchanted item (10 points)"
-       :action #(enchant/random-enchanted 10)}
+       :action #(e/random-enchanted 10)}
    8  {:name   "100-150 gold"
        :action #(str (+ 100 (rand-int 51)) " gold")}
    9  {:name   "Non-synergy ring"
-       :action ring/new-non-synergy}
+       :action rings/new-non-synergy}
    10 {:name   "Synergy ring"
-       :action ring/new-synergy}
+       :action rings/new-synergy}
    11 {:name   "Enchanted item (20 points)"
-       :action #(enchant/random-enchanted 20)}
+       :action #(e/random-enchanted 20)}
    12 {:name   "High value enchanted item (30 points)"
-       :action #(enchant/random-enchanted 30)}
+       :action #(e/random-enchanted 30)}
    13 {:name   "Crafting item"
        :action crafting/new}
    15 {:name   "Prayer stone"
-       :action prayer/new-stone}
+       :action prayers/new-stone}
    16 {:name   "New relic"
-       :action relic/&new!}
+       :action relics/&new!}
    18 {:name   "Level a relic"
-       :action relic/&level-relic!}
+       :action relics/&level-relic!}
    19 {:name   "Progress a prayer path"
-       :action prayer/&progress-path!}
+       :action prayers/&progress-path!}
    21 {:name   "Add a modifier to an existing item"
-       :action enchant/&add}
+       :action e/&add}
    22 {:name   "Add modifiers to an existing items with the given total"
-       :action enchant/&add-totalling}
+       :action e/&add-totalling}
    23 {:name   "Perform a ring sacrifice"
-       :action ring/&sacrifice}
+       :action rings/&sacrifice}
    24 {:name   "Sell a relic"
-       :action relic/&sell!}
+       :action relics/&sell!}
    25 {:name   "Travel"
        :action encounter/&travel}
    26 {:name   "Calculate loot rewards"
@@ -73,11 +73,11 @@
   #_(let [loot-action-names (->> loot-actions
                                (map (fn [[k {:keys [name]}]] [k name]))
                                (into (sorted-map)))]
-    (util/display-pairs loot-action-names {:sort? true})
+    (u/display-pairs loot-action-names {:sort? true})
     (loop [action (atom nil)]
       (try
         (let [input (read-line)
-              num-input (util/->num input)
+              num-input (u/->num input)
               pos-num? (and num-input (pos? num-input))
               dice-input (when-not pos-num? (dice/parse input))
               _ (reset! action (or (:action (loot-actions num-input))
@@ -86,9 +86,9 @@
               result (when @action (@action))]
           (cond
             (string? result) (println result)
-            (map? result) (util/display-pairs result {:sort? (sorted? result)})
-            (seqable? result) (run! util/display-multi-value result)
-            :else (when result (util/display-multi-value result))))
+            (map? result) (u/display-pairs result {:sort? (sorted? result)})
+            (seqable? result) (run! u/display-multi-value result)
+            :else (when result (u/display-multi-value result))))
         (catch Exception e
           (log/errorf e "Unexpected error")))
       (when @action

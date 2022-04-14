@@ -1,4 +1,4 @@
-(ns campaign3.ring
+(ns campaign3.rings
   (:require
     [campaign3
      [util :as util]

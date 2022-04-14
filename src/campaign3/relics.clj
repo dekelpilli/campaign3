@@ -1,8 +1,8 @@
-(ns campaign3.relic
+(ns campaign3.relics
   (:require [campaign3
              [util :as util]
-             [enchant :as e]
-             [mundane :as mundane]]))
+             [enchants :as e]
+             [mundanes :as mundane]]))
 
 (def ^:private points-per-level 10)
 
