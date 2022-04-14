@@ -142,7 +142,7 @@
  {:effect "+5 points of Lay on Hands per long rest."
   :points 5}
  {:effect  "+4 damage against %s creatures."
-  :randoms [{:preset :monster-type}]}
+  :randoms [{:preset :monster-types}]}
  {:effect   "Your short rests can be 10 minutes shorter, to a minimum of 20 minutes.",
   :metadata #{"armour"}
   :points   3}
@@ -210,17 +210,17 @@
  {:effect "Whenever you grant a buff with a duration to a creature, gain outgoing healing +1 until the end of thee buff."}
  {:effect "Every third spell you cast deals +[5] damage, across any amount of time."}
  {:effect  "+2 global AB against %s creatures."
-  :randoms [{:preset :monster-type}]}
+  :randoms [{:preset :monster-types}]}
  {:effect "+2 damage against enemies you are flanking."}
  {:effect "+2 global damage against creatures behind you in the initiative tracker."}
  {:effect "Heal 5 hit points when you roll for initiative."}
  {:effect       "You can travel through 1 inch of solid surface with a full movement action. If you end your turn inside the surface, you are shunted back to your original location."
   :upgradeable? false}
  {:effect       "All of your damage type-seeks to maximise damage against %s creatures."
-  :randoms      [{:preset :monster-type}]
+  :randoms      [{:preset :monster-types}]
   :upgradeable? false}
  {:effect  "+2 resistance to damage from %s creatures."
-  :randoms [{:preset :monster-type}]}
+  :randoms [{:preset :monster-types}]}
  {:effect   "+25% chance to ignore bonus damage from incoming critical strikes."
   :metadata #{"armour"}}
  {:effect       "While you have 3 different enchantments equipped that grant bonuses against the same type of creature, you have +1 to your proficiency bonus."
@@ -264,7 +264,7 @@
  {:effect "25% chance when using a Miscreation to not consume the item."}
  {:effect  "+1 to your %s maximum."
   :points  20
-  :randoms [["Dexterity" "Constitution" "Wisdom" "Charisma" "Strength" "Intelligence"]]}
+  :randoms [{:preset :attributes}]}
  {:effect       "You are considered to be proficient in Acrobatics checks that are made with disadvantage."
   :points       4
   :upgradeable? false}

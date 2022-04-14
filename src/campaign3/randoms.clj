@@ -1,6 +1,6 @@
 (ns campaign3.randoms)
 
-(defmulti ^:private randoms-preset (comp keyword :preset))
+(defmulti randoms-preset (comp keyword :preset))
 
 (defn- rand-from [vs]
   #(rand-nth vs))
@@ -9,6 +9,19 @@
   (cond
     (vector? randoms) (apply juxt (map (comp rand-from randoms-preset) randoms))
     (map? randoms) (randoms-preset randoms)))
+
+(defmethod randoms-preset :languages [_]
+  ["Common" "Dwarvish" "Elvish" "Giant" "Gnomish" "Goblin" "Halfling" "Orc"
+   "Abyssal" "Celestial" "Draconic" "Deep Speech" "Infernal" "Primordial" "Sylvan" "Undercommon"])
+
+(defmethod randoms-preset :feats [_]
+  ["Alert" "Athlete" "Actor" "Brawler" "Charger" "Chef" "Crossbow Expert" "Defensive Duelist"
+   "Dual Wielder" "Dungeon Delver" "Durable" "Eldritch Adept" "Grappler" "Fighting Initiate"
+   "Great Weapon Master" "Healer" "Heavy Armor Master" "Inspiring Leader" "Keen Mind" "Light Armor Master"
+   "Mage Slayer" "Magic Initiate" "Martial Adept" "Medium Armor Master" "Metamagic Adept"
+   "Mobile" "Mounted Combatant" "Polearm Master" "Resilient" "Ritual Caster" "Savage Attacker"
+   "Sentinel" "Sharpshooter" "Shield Master" "Skilled" "Skulker" "Specialist" "Spell Sniper"
+   "Spell Touched" "Telekinetic" "Telepathic" "War Caster"])
 
 (defmethod randoms-preset :skills [{:keys [type]
                                     :or   {type "all"}}]
@@ -56,4 +69,4 @@
 
 (defmethod randoms-preset :without-replacement [{:keys [amount from]}]
   (let [vs (randoms-preset from)]
-    (comment "sample amount from vs")))
+    (comment "sample amount from vs"))) ;TODO

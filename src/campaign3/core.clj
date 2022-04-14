@@ -23,7 +23,7 @@
    2  {:name   "Riddle"
        :action riddle/new!}
    3  {:name   "Mundane item"
-       :action #(:base (mundane/new))}
+       :action (comp :base mundane/new)}
    5  {:name   "Consumable"
        :action consumable/new}
    6  {:name   "Unique"
