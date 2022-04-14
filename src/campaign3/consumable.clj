@@ -2,11 +2,11 @@
   (:require
     [campaign3
      [util :as util]
-     [dsls :as dsls]
+     [amounts :as amounts]
      [db :as db]]))
 
 (def consumables (->> (db/execute! {:select [:*] :from [:consumables]})
-                      (map #(dsls/roll->fn % "1d4"))))
+                      (map #(update % :amount amounts/amount->fn "1d4"))))
 
 (defn new []
-  (util/get-rand-rollable consumables))
+  (util/get-rand-amount consumables))

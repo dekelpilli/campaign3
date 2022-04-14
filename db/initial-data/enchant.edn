@@ -21,7 +21,8 @@
  {:effect   "+1d4 %s damage with attacks with this weapon."
   :points   17
   :metadata #{"weapon"}
-  :randoms  [["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]]}
+  :randoms  [{:preset :damage-types
+              :type   :non-physical}]}
  {:effect "+1 spell save and special feature DCs"
   :points 35}
  {:effect     "+1 AC while unarmoured and not using a Shield or Targe weapons."
@@ -32,16 +33,19 @@
   :points 25}
  {:effect "Gain resistance to physical damage equal to half the CR total of your highest CR active minion."}
  {:effect  "+2 %s damage."
-  :randoms [["piercing" "slashing" "bludgeoning"]]
+  :randoms [{:preset :damage-types
+             :type   :physical}]
   :points  20}
  {:effect         "+[2] %s damage."
-  :randoms        [["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]]
+  :randoms        [{:preset :damage-types
+                    :type   :non-physical}]
   :points         15
   :upgrade-points 10}
  {:effect  "+1 %s resistance."
-  :randoms [["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]]}
+  :randoms [{:preset :damage-types
+             :type   :non-physical}]}
  {:effect  "+1 %s."
-  :randoms [["Dexterity" "Constitution" "Wisdom" "Charisma" "Strength" "Intelligence"]]
+  :randoms [{:preset :attributes}]
   :points  20}
  {:effect "You have an additional second level spell slot (only if you already had at least 1)."
   :points 15}
@@ -61,13 +65,16 @@
   :points   25}
  {:effect   "+1d4 %s damage with attacks with this weapon."
   :points   20
-  :randoms  [["Bludgeoning" "Piercing" "Slashing"]]
+  :randoms  [{:preset :damage-types
+              :type   :physical}]
   :metadata #{"weapon"}}
  {:effect   "+1 to %s saving throws"
-  :randoms  [["Intelligence" "Charisma" "Strength"]]
+  :randoms  [{:preset :attributes
+              :type   :uncommon}]
   :metadata #{"armour"}}
  {:effect   "+1 to %s saving throws"
-  :randoms  [["Constitution" "Dexterity" "Wisdom"]]
+  :randoms  [{:preset :attributes
+              :type   :common}]
   :points   18
   :metadata #{"armour"}}
  {:effect   "This weapon deals no base damage. Roll another modifier and empower it twice.",
@@ -78,7 +85,8 @@
  {:effect "You can use your reaction to change any damage you deal into a damage type of your choice. This is visually noticeable."}
  {:effect   "+1 resistance to %s damage."
   :metadata #{"armour"}
-  :randoms  [["bludgeoning" "piercing" "slashing"]]}
+  :randoms  [{:preset :damage-types
+              :type   :physical}]}
  {:effect   "Once per round, when you take damage from a melee or touch attack, the attacker takes true damage equal to half your level, rounded down.",
   :metadata #{"armour"}}
  {:effect   "When a melee or touch fails to hit you, the attacker takes true damage equal to half your level (rounded up).",
@@ -94,13 +102,15 @@
  {:effect "+1 global damage."
   :points 15}
  {:effect "+1 to death saves."}
- {:effect  "After receiving damage for the first time in a combat, you may choose to become resistant to that damage type for the rest of the combat. If you choose to do so, you then become vulnerable %s and %s"
-  :randoms [["Acid" "Bludgeoning" "Cold" "Fire" "Force" "Lightning" "Necrotic" "Piercing" "Poison" "Psychic" "Radiant" "Slashing" "Thunder"]
-            ["Acid" "Bludgeoning" "Cold" "Fire" "Force" "Lightning" "Necrotic" "Piercing" "Poison" "Psychic" "Radiant" "Slashing" "Thunder"]]}
+ {:effect  "After receiving damage for the first time in a combat, you may choose to become resistant to that damage type for the next two rounds. If you choose to do so, you then become vulnerable %s and %s for the rest of the combat."
+  :randoms {:preset :without-replacement
+            :amount 2
+            :from   {:preset :damage-types}}}
  {:effect "Gain temporary hit points equal to your lowest ability score (not bonus) at the beginning of each combat."}
  {:effect   "+1 resistance to %s damage."
   :metadata #{"armour"}
-  :randoms  [["Acid" "Cold" "Lightning" "Fire" "Poison" "Force" "Necrotic" "Psychic" "Radiant" "Thunder"]]}
+  :randoms  [{:preset :damage-types
+              :type   :non-physical}]}
  {:effect "You have an additional first level spell slot."}
  {:effect "+10ft darkvision."
   :points 15}
@@ -132,39 +142,31 @@
  {:effect "+5 points of Lay on Hands per long rest."
   :points 5}
  {:effect  "+4 damage against %s creatures."
-  :randoms [["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
-             "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"]]}
+  :randoms [{:preset :monster-type}]}
  {:effect   "Your short rests can be 10 minutes shorter, to a minimum of 20 minutes.",
   :metadata #{"armour"}
   :points   3}
  {:effect "Your long rests can be 1 hour shorter, to a minimum of 3 hours."
   :points 3}
- {:effect  "+2 %s."
-  :randoms [["arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
-             "nature" "religion" "animal handling" "survival" "intimidation" "performance"]]
+ {:effect  "+1 expertise die with %s."
+  :randoms [{:preset :skills
+             :type :uncommon}]
   :points  15}
  {:effect  "+1 to non-proficient %s checks."
-  :randoms [["arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
+  :randoms [{:preset :skills}
+            ["arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
              "nature" "religion" "animal handling" "survival" "intimidation" "performance"
              "perception" "medicine" "deception" "persuasion" "investigation" "insight"]]}
  {:effect  "+1 %s."
-  :randoms [["perception" "medicine" "deception" "persuasion" "investigation" "insight"]]
+  :randoms [{:preset :skills
+             :type   :common}]
   :points  15}
  {:effect   "+20 feet to both range options on ranged weapons."
   :points   20
   :ranged?  true
   :metadata #{"weapon"}}
  {:effect  "While wearing this item, you may cast %s once per long rest (mental attribute of your choice)."
-  :randoms [["Acid Splash", "Blade Ward", "Booming Blade", "Chill Touch", "Control Flames",
-             "Create Bonfire", "Dancing Lights", "Druidcraft", "Eldritch Blast",
-             "Encode Thoughts", "Fire Bolt", "Friends", "Frostbite", "Green-Flame Blade",
-             "Guidance", "Gust", "Infestation", "Light", "Lightning Lure", "Mage Hand",
-             "Magic Stone", "Mending", "Message", "Mind Sliver", "Minor Illusion",
-             "Mold Earth", "Poison Spray", "Prestidigitation", "Primal Savagery",
-             "Produce Flame", "Ray of Frost", "Resistance", "Sacred Flame", "Sapping Sting",
-             "Shape Water", "Shillelagh", "Shocking Grasp", "Spare the Dying", "Sword Burst",
-             "Thaumaturgy", "Thorn Whip", "Thunderclap", "Toll the Dead", "True Strike",
-             "Vicious Mockery", "Word of Radiance"]]}
+  :randoms [{:preset :cantrips}]}
  {:effect "+2 to deception in languages other than Common."}
  {:effect         "This item sells for an extra [1]d100 gold. You only roll after the item is sold."
   :upgrade-points 0}
@@ -208,20 +210,17 @@
  {:effect "Whenever you grant a buff with a duration to a creature, gain outgoing healing +1 until the end of thee buff."}
  {:effect "Every third spell you cast deals +[5] damage, across any amount of time."}
  {:effect  "+2 global AB against %s creatures."
-  :randoms [["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
-             "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"]]}
+  :randoms [{:preset :monster-type}]}
  {:effect "+2 damage against enemies you are flanking."}
  {:effect "+2 global damage against creatures behind you in the initiative tracker."}
  {:effect "Heal 5 hit points when you roll for initiative."}
  {:effect       "You can travel through 1 inch of solid surface with a full movement action. If you end your turn inside the surface, you are shunted back to your original location."
   :upgradeable? false}
  {:effect       "All of your damage type-seeks to maximise damage against %s creatures."
-  :randoms      [["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
-                  "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"]]
+  :randoms      [{:preset :monster-type}]
   :upgradeable? false}
  {:effect  "+2 resistance to damage from %s creatures."
-  :randoms [["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
-             "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"]]}
+  :randoms [{:preset :monster-type}]}
  {:effect   "+25% chance to ignore bonus damage from incoming critical strikes."
   :metadata #{"armour"}}
  {:effect       "While you have 3 different enchantments equipped that grant bonuses against the same type of creature, you have +1 to your proficiency bonus."

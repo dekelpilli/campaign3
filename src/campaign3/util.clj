@@ -68,12 +68,10 @@
 (defn occurred? [likelihood-probability]
   (< (rand) likelihood-probability))
 
-(defn get-rand-rollable [coll]
-  (let [{:keys [roll] :as item} (rand-nth coll)]
-    (-> item
-        (dissoc :roll)
-        (fill-randoms)
-        (assoc :amount (roll)))))
+(defn get-rand-amount [coll]
+  (-> (rand-nth coll)
+      (update :amount #(%))
+      (fill-randoms)))
 
 ;d100 + this for a positive random encounter, with result being the total points of a magic item?
 ; could also give nothing if they go above the number, or a low loot roll

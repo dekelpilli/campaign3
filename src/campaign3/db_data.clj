@@ -82,7 +82,7 @@
   (db/execute! {:create-table :crafting-items
                 :with-columns [[:name :text [:primary-key] [:not nil]]
                                [:effect :text [:not nil]]
-                               [:roll :jsonb]]}))
+                               [:amount :jsonb]]}))
 
 (defn insert-crafting-items! []
   (drop! :crafting-items)
@@ -95,13 +95,13 @@
                        (map (fn [crafting-item]
                               (-> crafting-item
                                   (dissoc :enabled?)
-                                  (update :roll u/jsonb-lift)))))})))
+                                  (update :amount u/jsonb-lift)))))})))
 
 (defn create-consumables! []
   (db/execute! {:create-table :consumables
                 :with-columns [[:name :text [:primary-key] [:not nil]]
                                [:effect :text [:not nil]]
-                               [:roll :jsonb]
+                               [:amount :jsonb]
                                [:randoms :jsonb]]}))
 
 (defn insert-consumables! []
@@ -112,7 +112,7 @@
                   :values
                   (map (fn [consumable]
                          (-> consumable
-                             (update :roll u/jsonb-lift)
+                             (update :amount u/jsonb-lift)
                              (update :randoms u/jsonb-lift)))
                        consumables)})))
 

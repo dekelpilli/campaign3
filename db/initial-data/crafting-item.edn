@@ -8,14 +8,14 @@
   :effect "Swap magical properties between compatible items, including simply moving enchantments to mundane items."}
  {:name   "Exalted Orb(s)"
   :effect "Add a mod to a magical item"
-  :roll   [:disadvantaged [:default]]}
+  :amount [:disadvantaged [:default]]}
  {:name   "Orb(s) of Balance"
   :effect "Remove a mod from a magical item and replace it with mods at least equal in point value."}
  {:name   "Divine Orb(s)"
   :effect "Reroll the randomised values of one mod, or of all mods on an item."}
  {:name   "Orb of Mulligan"
   :effect "completely level down a relic or artefact, then level it back up to its current level. Before levelling it back up, you can let go of your attunement to it.",
-  :roll   [:constant 1]}
+  :amount [:constant 1]}
  {:name     "Orb(s) of Purification"
   :effect   "Apply to an amulet and roll 1d6. If you roll above its current CR capacity, you may increase its CR capacity by 1. Contained creature does not change."
   :enabled? false}
