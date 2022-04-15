@@ -52,7 +52,7 @@
          (m)))))
 
 (defn >>input
-  ([] (>>input "Enter number: "))
+  ([] (>>input "Enter text: "))
   ([prompt]
    (let [prompt-builder (.getPromptBuilder console-prompt)]
      (-> prompt-builder

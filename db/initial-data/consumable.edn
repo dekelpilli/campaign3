@@ -10,8 +10,8 @@
   :amount [:constant 1]}
  {:name   "Vial(s) of Nullification"
   :effect "Remove one magical ailment from the target."}
- {:name   "Wormhole Vial(s)"
-  :effect "The target is sent to a safe pocket dimension until the start of your next turn. Time is paused for the target for the duration."}
+ {:name   "Vial(s) of Chronology"
+  :effect "Time is paused around the target until the start of your next turn. During this time, the target cannot act in any way, and cannot be affected by spells, attacks, or maneuvers (etc)."}
  {:name   "Potion(s) of Reversal"
   :effect "Heal an amount equal to the last instance of damage you have taken."
   :amount [:disadvantaged [:default]]}

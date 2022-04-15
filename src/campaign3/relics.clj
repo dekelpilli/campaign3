@@ -2,9 +2,7 @@
   (:require [campaign3
              [util :as u]
              [prompting :as p]
-             [mundanes :as mundane]]
-            [campaign3.]
-            [campaign3.]))
+             [mundanes :as mundane]]))
 
 (def ^:private points-per-level 10)
 
@@ -13,7 +11,7 @@
 (defn &choose-relic [relics]
   (some->> (not-empty relics)
            (u/assoc-by :name)
-           (p/>>item "Relic: ")))
+           (p/>>item "Relic:")))
 
 (defn- &owned []
   #_(let [owned? (fn [{:keys [found? enabled?]

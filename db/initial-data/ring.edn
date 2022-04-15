@@ -2,11 +2,11 @@
   :effect "+1 Charisma for each ring type you are wearing more than one of."
   :points 4}
  {:name   "The Doctor"
-  :effect "+2 to Medicine checks for stabilising allies for each synergy ring the ally is wearing."
+  :effect "+2 to Medicine checks for stabilising allies for each ring the ally is wearing."
   :points 4}
  {:name   "The Hardened"
   :effect "+1 physical damage reduction for each non-synergy ring worn."
-  :points 7}
+  :points 5}
  {:name   "The Lone Wolf"
   :effect "-1 critical strike requirement while not wearing any synergy rings that are not The Lone Wolf."
   :points 6}
@@ -15,13 +15,10 @@
   :points 1}
  {:name   "The Joker"
   :effect "This ring has no effect, but may count as any ring type you choose. It can only count as one ring type at one time."
-  :points 0}
+  :points 1}
  {:name   "The Investment"
   :effect "-1 to maximum number of rings worn."
-  :points -4}
- {:name   "The Elite"
-  :effect "+1 proficiency bonus while wearing at least 7 synergy rings."
-  :points 6}
+  :points -4} ;TODO remove rings worn cap?
  {:name   "The Speedster"
   :effect "+5 feet to all of your speed types for each 'The Speedster' ring worn."
   :points 5}
@@ -31,16 +28,13 @@
  {:name   "The Simpleton"
   :effect "Your non-synergy rings' cost decreases by 1 point and no longer count towards your ring limit. Your synergy rings' cost increases by 2."
   :points 0} ;2 if you include the ring's effect once
- {:name   "The Catalyst"
-  :effect "You have double the options when using this ring in a ring sacrifice."
-  :points 99}
  {:name   "The Beacon"
-  :effect "You emit dim light in a radius of 5 feet from you for each ring worn. You emit bright light in a radius of 5 feet for each synergy ring worn."
+  :effect "You emit bright light in a radius of 5 feet from you for each ring worn."
   :points 2}
  {:name    "The Trained"
-  :effect  "If all of your worn rings are 'The Trained', with a minimum of 4, you may choose to gain a feat from one of your rings. This rings grants the option of `%s`. You may change the chosen ring during a long rest."
+  :effect  "If all of your worn synergy rings are 'The Trained', with a minimum of 3, you may choose to gain a feat from one of your rings. This rings grants the option of `%s`. You may change the chosen ring during a long rest."
   :randoms [{:preset :feats}]
-  :points  0}
+  :points  2}
  {:name    "The Able"
   :effect  "+1 %s while not wearing any synergy rings that are not 'The Able'"
   :randoms [{:preset :attributes}]
@@ -74,12 +68,12 @@
                      :type   :non-physical}}
   :points  1}
  {:name   "Bloodthirsty"
-  :effect "You may use healing surges as a free action if you have landed a killing blow in your current turn."
+  :effect "You may immediately use a healing surge as a free action upon landing a killing blow."
   :points 3}
  {:name    "Multilingual"
   :effect  "You can speak, read, and write %s if worn for at least 24 hours."
   :randoms [{:preset :languages}]
-  :points  2}
+  :points  1}
  {:name    "Protected"
   :effect  "You lose proficiency in a saving throw of your choice. You gain proficiency in %s saving throws."
   :randoms [{:preset :attributes

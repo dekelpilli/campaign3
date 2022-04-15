@@ -16,22 +16,6 @@
              [riddle :as riddle]]
             [clojure.tools.logging :as log]))
 
-(defn _req []
-  (require '[campaign3
-             [util :as u]
-             [prompting :as p]
-             [relics :as relics]
-             [mundanes :as mundane]
-             [enchants :as e]
-             [crafting :as crafting]
-             [consumables :as consumables]
-             [prayers :as prayers]
-             [encounters :as encounter]
-             [dice :as dice]
-             [rings :as rings]
-             [uniques :as unique]
-             [riddle :as riddle]]))
-
 (def loot-actions
   {-1 {:name "Exit"}
    1  {:name   "1-10 gold"
