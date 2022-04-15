@@ -16,6 +16,22 @@
              [riddle :as riddle]]
             [clojure.tools.logging :as log]))
 
+(defn _req []
+  (require '[campaign3
+             [util :as u]
+             [prompting :as p]
+             [relics :as relics]
+             [mundanes :as mundane]
+             [enchants :as e]
+             [crafting :as crafting]
+             [consumables :as consumables]
+             [prayers :as prayers]
+             [encounters :as encounter]
+             [dice :as dice]
+             [rings :as rings]
+             [uniques :as unique]
+             [riddle :as riddle]]))
+
 (def loot-actions
   {-1 {:name "Exit"}
    1  {:name   "1-10 gold"
@@ -57,7 +73,7 @@
    23 {:name   "Perform a ring sacrifice"
        :action rings/&sacrifice}
    24 {:name   "Sell a relic"
-       :action relics/&sell!}
+       :action relics/>>sell!}
    25 {:name   "Travel"
        :action encounter/&travel}
    26 {:name   "Calculate loot rewards"
@@ -71,28 +87,28 @@
 
 (defn start []
   #_(let [loot-action-names (->> loot-actions
-                               (map (fn [[k {:keys [name]}]] [k name]))
-                               (into (sorted-map)))]
-    (u/display-pairs loot-action-names {:sort? true})
-    (loop [action (atom nil)]
-      (try
-        (let [input (read-line)
-              num-input (u/->num input)
-              pos-num? (and num-input (pos? num-input))
-              dice-input (when-not pos-num? (dice/parse input))
-              _ (reset! action (or (:action (loot-actions num-input))
-                                   (when dice-input #(dice/roll dice-input))
-                                   (when pos-num? (constantly loot-action-names))))
-              result (when @action (@action))]
-          (cond
-            (string? result) (println result)
-            (map? result) (u/display-pairs result {:sort? (sorted? result)})
-            (seqable? result) (run! u/display-multi-value result)
-            :else (when result (u/display-multi-value result))))
-        (catch Exception e
-          (log/errorf e "Unexpected error")))
-      (when @action
-        (recur action)))))
+                                 (map (fn [[k {:keys [name]}]] [k name]))
+                                 (into (sorted-map)))]
+      (u/display-pairs loot-action-names {:sort? true})
+      (loop [action (atom nil)]
+        (try
+          (let [input (read-line)
+                num-input (u/->num input)
+                pos-num? (and num-input (pos? num-input))
+                dice-input (when-not pos-num? (dice/parse input))
+                _ (reset! action (or (:action (loot-actions num-input))
+                                     (when dice-input #(dice/roll dice-input))
+                                     (when pos-num? (constantly loot-action-names))))
+                result (when @action (@action))]
+            (cond
+              (string? result) (println result)
+              (map? result) (u/display-pairs result {:sort? (sorted? result)})
+              (seqable? result) (run! u/display-multi-value result)
+              :else (when result (u/display-multi-value result))))
+          (catch Exception e
+            (log/errorf e "Unexpected error")))
+        (when @action
+          (recur action)))))
 
 (defn -main [& _]
   (println "starting")

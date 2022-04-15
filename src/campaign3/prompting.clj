@@ -1,10 +1,17 @@
 (ns campaign3.prompting
-  (:import (de.codeshelf.consoleui.prompt ConsolePrompt CheckboxResult InputResult)))
+  (:require [clojure.walk :as walk])
+  (:import (de.codeshelf.consoleui.prompt ConsolePrompt CheckboxResult InputResult ListResult)))
 
 (def ^:private console-prompt (ConsolePrompt.))
 
+(defn- stringify [x]
+  (if (keyword? x) (name x) (str x)))
+
+(defn- stringify-keys [m]
+  (walk/postwalk (fn [x] (if (map? x) (into {} (map (juxt (comp stringify key) val) x)) x)) m))
+
 (defn >>checkbox
-  ([coll] (>>checkbox "Choose all that apply: " coll))
+  ([coll] (>>checkbox "Choose all that apply:" coll))
   ([prompt coll]
    (let [prompt-builder (.getPromptBuilder console-prompt)]
      (-> prompt-builder
@@ -15,12 +22,34 @@
                                        (.text %2)
                                        (.add)))
                          builder
-                         coll))
+                         (map stringify coll)))
          (.addPrompt))
      (-> (.prompt console-prompt (.build prompt-builder))
          ^CheckboxResult (get prompt)
          (.getSelectedIds)
          (set)))))
+
+(defn >>item
+  ([coll] (>>item "Choose one from these:" coll))
+  ([prompt coll & {:keys [sorted?]}]
+   (let [prompt-builder (.getPromptBuilder console-prompt)
+         m (if (map? coll)
+             (stringify-keys coll)
+             (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
+     (-> prompt-builder
+         (.createListPrompt)
+         (.message prompt)
+         (as-> builder (reduce
+                         #(doto %1 (-> (.newItem %2)
+                                       (.text %2)
+                                       (.add)))
+                         builder
+                         (keys m)))
+         (.addPrompt))
+     (-> (.prompt console-prompt (.build prompt-builder))
+         ^ListResult (get prompt)
+         (.getSelectedId)
+         (m)))))
 
 (defn >>number
   ([] (>>number "Enter number: "))

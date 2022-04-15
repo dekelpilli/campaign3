@@ -1,19 +1,8 @@
 (ns campaign3.util
-  (:require [table.core :as t]
-            [clojure.edn :as edn]
-            [clojure.string :as str]))
+  (:require [table.core :as t]))
 
 (defn jsonb-lift [x]
   (when x [:lift x]))
-
-(defn ->num [s]
-  (try
-    (let [n (edn/read-string s)]
-      (when (number? n) n))
-    (catch Exception _)))
-
-(defn &num []
-  (->num (read-line)))
 
 (defn- table [out]
   (binding [table.width/*width* (delay 9999)]
@@ -44,14 +33,6 @@
          (map-indexed (fn [i option] [i option]) $)
          (into {} $))))
 
-(defn &choose
-  ([coll] (&choose coll nil))
-  ([coll opts]
-   (let [options (display-pairs (make-options coll opts) opts)]
-     (when-let [n (&num)]
-       (as-> (options n) $
-             (if (map? coll) (coll $) $))))))
-
 (defn rand-enabled [coll]
   (as-> coll $
         (remove (comp false? :enabled?) $)
@@ -63,7 +44,7 @@
     (-> item-modifier
         (update :effect #(apply format % (map rand-nth randoms)))
         (dissoc :randoms))
-    item-modifier))
+    item-modifier)) ;TODO remove in favour of randoms syntax
 
 (defn occurred? [likelihood-probability]
   (< (rand) likelihood-probability))
@@ -71,4 +52,7 @@
 (defn get-rand-amount [coll]
   (-> (rand-nth coll)
       (update :amount #(%))
-      (fill-randoms)))
+      (fill-randoms))) ;TODO move to amounts ns(?)
+
+(defn assoc-by [f coll]
+  (into {} (map (juxt f identity)) coll))

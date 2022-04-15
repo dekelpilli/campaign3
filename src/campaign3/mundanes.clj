@@ -2,23 +2,24 @@
   (:require [campaign3
              [db :as db]
              [util :as util]]
-            [randy.core :as r]))
+            [randy.core :as r]
+            [campaign3.prompting :as p]
+            [campaign3.util :as u]))
 
 (def weapons (db/execute! {:select [:*] :from [:weapons]}))
 (def armours (db/execute! {:select [:*] :from [:armours]}))
 
 (def base-types {"weapon" weapons "armour" armours})
 
-(defn &base
+(defn >>base
   ([]
-   (let [choice (util/&choose (keys base-types))]
+   (let [choice (p/>>item "Base category:" base-types)]
      (when choice
-       {:base (&base choice)
+       {:base (>>base choice)
         :type choice})))
   ([type]
-   (-> (group-by :name (base-types type))
-       (util/&choose {:sort? true :v "Base"})
-       (first))))
+   (-> (u/assoc-by :name (base-types type))
+       (p/>>item "Base type:"))))
 
 (defn new []
   (let [type (if (util/occurred? 2/3) "armour" "weapon")

@@ -1,19 +1,19 @@
 (ns campaign3.relics
   (:require [campaign3
-             [util :as util]
-             [enchants :as e]
-             [mundanes :as mundane]]))
+             [util :as u]
+             [prompting :as p]
+             [mundanes :as mundane]]
+            [campaign3.]
+            [campaign3.]))
 
 (def ^:private points-per-level 10)
 
 (def upgrade-prices [0 100 200 300 400 500 600 700 800 1500])
 
 (defn &choose-relic [relics]
-  (some->> relics
-           (not-empty)
-           (map (fn [relic] [(:name relic) relic]))
-           (into {})
-           (util/&choose)))
+  (some->> (not-empty relics)
+           (u/assoc-by :name)
+           (p/>>item "Relic: ")))
 
 (defn- &owned []
   #_(let [owned? (fn [{:keys [found? enabled?]
@@ -117,15 +117,15 @@
       (if relic
         (util/display-multi-value (dissoc relic :available :found? :level))
         (throw (Exception. "Out of relics :(")))
-      (let [base (mundane/&base (:type relic))
+      (let [base (mundane/>>base (:type relic))
             owner (when base (util/&choose (keys @character-enchants)))]
         (when (and base owner)
           (update-relic! (assoc relic :found? true
                                       :base base
                                       :owner owner))))))
 
-(defn &sell! []
+(defn >>sell! []
   (when-let [{:keys [name level] :as relic} (&owned)]
-    (println "Sell" name "for" (int (+ 300 (/ (reduce + (take level upgrade-prices)) 2))) "?")
-    (when (util/&choose [true false])
+    (when (p/>>item (str "Sell" name "for" (int (+ 300 (/ (reduce + (take level upgrade-prices)) 2))) "?")
+                    [true false])
       (update-relic! (assoc relic :enabled? false)))))

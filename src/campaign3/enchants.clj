@@ -4,7 +4,8 @@
     [campaign3
      [db :as db]
      [util :as util]
-     [mundanes :as mundane]]))
+     [mundanes :as mundane]]
+    [campaign3.prompting :as p]))
 
 (def default-points 10)
 (def enchants #_(db/execute! {:select [:*] :from [:enchants]}))
@@ -61,7 +62,7 @@
     (add-enchants base type points-target)))
 
 (defn &add []
-  (let [{:keys [base type]} (mundane/&base)]
+  (let [{:keys [base type]} (mundane/>>base)]
     (when (and base type)
       (->> (find-valid-enchants base type)
            (util/rand-enabled)
@@ -69,12 +70,12 @@
 
 (defn add-totalling [^long points]
   (if (pos-int? points)
-    (if-let [{:keys [base type]} (mundane/&base)]
+    (if-let [{:keys [base type]} (mundane/>>base)]
       (-> (add-enchants base type points)
           (second))
       [])
     []))
+
 (defn &add-totalling
   []
-  (println "Enter desired points total: ")
-  (some-> (util/&num) (add-totalling)))
+  (some-> (p/>>number "Desired points total:") (add-totalling)))

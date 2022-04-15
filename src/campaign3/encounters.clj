@@ -2,7 +2,8 @@
   (:require [campaign3.util :as util]
             [clojure.string :as str]
             [clojure.core.match :refer [match]]
-            [campaign3.db :as db]))
+            [campaign3.db :as db]
+            [campaign3.prompting :as p]))
 
 (def ^:private extra-loot-threshold 13)
 (def ^:private extra-loot-step 6)
@@ -28,8 +29,7 @@
        (into (sorted-map))))
 (defn &travel
   ([]
-   (println "How many days?")
-   (some-> (util/&num) (travel))))
+   (some-> (p/>>number "How many days?") (travel))))
 
 (defn- add-loot [extra-loot-factor base-loot]
   (let [extra-loot? (pos? extra-loot-factor)
@@ -71,12 +71,10 @@
      :loot (calculate-loot difficulty investigations)}))
 (defn &rewards
   ([]
-   (let [difficulties (util/display-pairs
-                        (util/make-options [:easy :medium :hard :deadly]))
-         difficulty (difficulties (util/&num))
+   (let [difficulty (p/>>item [:easy :medium :hard :deadly])
          investigations (when difficulty
                           (println "List investigations: ")
-                          (read-line))
+                          (read-line)) ;TODO prompt
          investigations (when investigations (str/split investigations #","))]
      (rewards difficulty investigations))))
 
