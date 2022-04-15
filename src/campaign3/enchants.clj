@@ -78,4 +78,4 @@
 
 (defn &add-totalling
   []
-  (some-> (p/>>number "Desired points total:") (add-totalling)))
+  (some-> (p/>>input "Desired points total:") (parse-long) (add-totalling)))

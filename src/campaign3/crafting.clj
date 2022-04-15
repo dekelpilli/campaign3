@@ -18,7 +18,8 @@
                      :enchants (enchant/add-enchants base type
                                                      (- (rand-int 51)))}))
    :destruction (fn []
-                  (let [num-mods (p/>>number "How many mods on the item?")]
+                  (let [num-mods (some-> (p/>>input "How many mods on the item?")
+                                         (parse-long))]
                     (when (and num-mods (pos? num-mods))
                       (format "Remove mod number %s"
                               (rand-int (inc num-mods))))))

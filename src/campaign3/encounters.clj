@@ -29,7 +29,7 @@
        (into (sorted-map))))
 (defn &travel
   ([]
-   (some-> (p/>>number "How many days?") (travel))))
+   (some-> (p/>>input "How many days?") (parse-long) (travel))))
 
 (defn- add-loot [extra-loot-factor base-loot]
   (let [extra-loot? (pos? extra-loot-factor)
@@ -47,8 +47,7 @@
     (concat loot bonus-loot)))
 
 (defn- calculate-loot [difficulty investigations]
-  (let [investigations (map #(Integer/parseInt %) investigations)
-        sum (reduce + investigations)
+  (let [sum (transduce (map parse-long) + 0 investigations)
         extra-loot-minimum (* extra-loot-threshold (count investigations))
         extra-loot-factor (- sum extra-loot-minimum)
         base-loot (case difficulty
@@ -61,22 +60,17 @@
          (frequencies)
          (sort-by {"1d16" 1 "2d8" 2 "1d12" 3}))))
 
-(defn rewards [difficulty investigations]
-  (when (and (keyword? difficulty) (vector? investigations))
-    {:xp   (case difficulty
-             :easy (+ 6 (rand-int 2))
-             :medium (+ 8 (rand-int 3))
-             :hard (+ 11 (rand-int 3))
-             :deadly (+ 13 (rand-int 4)))
-     :loot (calculate-loot difficulty investigations)}))
-(defn &rewards
+(defn >>rewards
   ([]
-   (let [difficulty (p/>>item [:easy :medium :hard :deadly])
-         investigations (when difficulty
-                          (println "List investigations: ")
-                          (read-line)) ;TODO prompt
-         investigations (when investigations (str/split investigations #","))]
-     (rewards difficulty investigations))))
+   (when-let [difficulty (p/>>item [:easy :medium :hard :deadly])]
+     (when-let [investigations (some-> (p/>>input "List investigations:")
+                                       (str/split #","))]
+       {:xp   (case difficulty
+                :easy (+ 6 (rand-int 2))
+                :medium (+ 8 (rand-int 3))
+                :hard (+ 11 (rand-int 3))
+                :deadly (+ 13 (rand-int 4)))
+        :loot (calculate-loot difficulty investigations)}))))
 
 (defn new-positive []
   {:race      (rand-nth races)

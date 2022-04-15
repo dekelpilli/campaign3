@@ -77,7 +77,7 @@
    25 {:name   "Travel"
        :action encounter/&travel}
    26 {:name   "Calculate loot rewards"
-       :action encounter/&rewards}
+       :action encounter/>>rewards}
    27 {:name   "Positive encounter"
        :action encounter/new-positive}
    28 {:name   "Generate dungeon template"

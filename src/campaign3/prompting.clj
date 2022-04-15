@@ -51,8 +51,8 @@
          (.getSelectedId)
          (m)))))
 
-(defn >>number
-  ([] (>>number "Enter number: "))
+(defn >>input
+  ([] (>>input "Enter number: "))
   ([prompt]
    (let [prompt-builder (.getPromptBuilder console-prompt)]
      (-> prompt-builder
@@ -62,5 +62,4 @@
          (.addPrompt))
      (-> (.prompt console-prompt (.build prompt-builder))
          ^InputResult (get prompt)
-         (.getInput)
-         (parse-long)))))
+         (.getInput)))))
