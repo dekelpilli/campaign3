@@ -116,13 +116,26 @@
                              (update :randoms u/jsonb-lift)))
                        consumables)})))
 
+(defn create-positive-encounters! []
+  (db/execute! {:create-table :positive-encounters
+                :with-columns [[:rules :text [:primary-key] [:not nil]]
+                               [:cost :text [:not nil]]
+                               [:participants :text [:not nil]]]}))
+
+(defn insert-positive-encounters! []
+  (drop! :positive-encounters)
+  (create-positive-encounters!)
+  (db/execute! {:insert-into [:positive-encounters]
+                :values      (load-data "positive-encounter")}))
+
 (defn insert-data! []
   (db/in-transaction
     (insert-armours!)
     (insert-weapons!)
     (insert-uniques!)
     (insert-crafting-items!)
-    (insert-consumables!)))
+    (insert-consumables!)
+    (insert-positive-encounters!)))
 
 (defn backup-data! []
   ;TODO write any mutable data to db/current-state to keep log of changes by session

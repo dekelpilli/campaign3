@@ -6,7 +6,7 @@
 
 (defn- table [out]
   (binding [table.width/*width* (delay 9999)]
-    (t/table out :style :unicode-3d)))
+    (t/table out :style :unicode-3d))) ;TODO pretty print instead?
 
 (defn display-multi-value [coll]
   (table (if (sequential? coll) coll [coll]))

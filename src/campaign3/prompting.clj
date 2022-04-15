@@ -37,7 +37,7 @@
              (stringify-keys coll)
              (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
      (-> prompt-builder
-         (.createListPrompt)
+         (.createListPrompt) ;TODO choice vs list?
          (.message prompt)
          (as-> builder (reduce
                          #(doto %1 (-> (.newItem %2)

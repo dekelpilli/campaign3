@@ -1,8 +1,15 @@
-["Each: 100g for disadvantaged d16 loot roll, granting reward twice."
- "Each: 75g for a random prayerstone, up to 2 times. Keep the prayerstone if it matches the path of anyone in the party, otherwise discard it. If someone in the party doesn’t have a path, they may immediately use any prayerstone that gets discarded."
- "All: 100g each to guess a number from 1 to 100. Closest player gets 10x 1d16 loot rolls, -1 for each distance from actual number, second closest 10x 2d8, third 10x 1d12, fourth 10x 2d6. All min 1, all max 5, but if would have been above 5 then 3 are with advantage."
- "Each: 200g to roll d4: 1. Advantage 1d16 loot roll. 2. 2x Orbs of Purification, or random amulet if you have none. 3. Prayerstone for current path or prayerstone of choice if you have none. 4. +1 level to a chosen worn relic, or a new relic if you have none."
- "Each: Pay any amount of money. Paying players roll 1d6 and may roll {4d6 take 1} to replace that value (any other modifications still apply, just as from items or levels) (1=str, 2=dex, 3=con, 4=int, 5=wis, 6=cha). If 1-100 gold, if they choose to roll the 4d6, they must use it. For each bracket above, they may reroll a 4d6 that many rimes, or the 1d6 for the attribute."
- "Each: Pay 200g and roll 11d16. Each player that rolled at least one 16 can choose a relic from the existing pool (based on name and item type alone). Order of choice is [# of 16s -> average roll -> d20 roll off] if more than one player rolled 16s. Players that have n 16s more than 1 get their next n highest rolls as loot rewards (e.g. 16 16 16 9 8 7 2 1 will get a relic, a 9, and an 8)."
- "All: Pay 300g and give all crafting items in the party. For each item, the party gains a Crafting Item loot roll result."
- ]
+[{:cost         "100g (each)"
+  :participants "any"
+  :rules        "Each paying player gets a disadvantaged d16 loot roll, granting the reward twice."}
+ {:cost         "100g (each)"
+  :participants "everyone"
+  :rules        "Guess a number from 1 to 100. Closest player gets 10x 1d16 loot rolls, -1 for each distance from actual number, second closest 10x 2d8, third 10x 1d12, fourth 10x 2d6. All min 1, all max 5, but if would have been above 5 then all are with advantage."}
+ {:cost         "200g (each)" ;TODO decide on amulets - remove Orbs of Purification?
+  :participants "any"
+  :rules        "Roll 1d4: 1. Advantage 1d16 loot roll. 2. 2x Orbs of Purification, or random amulet if you have none. 3. Prayerstone for current path or prayerstone of choice if you have none. 4. +1 level to a chosen worn relic, or a new relic if you have none."}
+ {:cost         "300g (party)"
+  :participants "everyone"
+  :rules        "Give all crafting items in the party. For each item, the party gains a Crafting Item loot roll result."}
+ {:cost         "75 (each)"
+  :participants "any"
+  :rules        "Choose a word and roll d100 and feed into Cheiro sum algorithm. Get a magic item on a base of player's choice with that many enchant points."}]
