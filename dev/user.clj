@@ -3,6 +3,8 @@
             [clojure.pprint :refer [pprint pp]]
             [hawk.core :as hawk]
             [campaign3
+             [db :as db]
+             [db-data :as dbd]
              [util :as u]
              [prompting :as p]
              [relics :as relics]
@@ -18,7 +20,7 @@
              [riddle :as riddle]
              [core :as core]]))
 
-(defmacro realias! []
+(defmacro reload []
   (cons 'do
         (reduce (fn [l [alias-sym ns-sym]]
                   (->> l

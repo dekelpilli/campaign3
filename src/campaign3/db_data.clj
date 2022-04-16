@@ -8,7 +8,7 @@
 (defn- load-data [type]
   (with-open [r (PushbackReader. (io/reader (str "db/initial-data/" type ".edn")))]
     (binding [*read-eval* false]
-      (read r))))
+      (filter #(:enabled? % true) (read r)))))
 
 (defn- drop! [table]
   (db/execute! {:drop-table [:if-exists table]}))
@@ -128,6 +128,35 @@
   (db/execute! {:insert-into [:positive-encounters]
                 :values      (load-data "positive-encounter")}))
 
+(defn create-enchants! []
+  (db/execute! {:create-table :enchants
+                :with-columns [[:effect :text [:not nil]]
+                               [:points :integer [:not nil]]
+                               [:upgrade-points :integer [:not nil]]
+                               [:upgradeable :boolean [:not nil]]
+                               [:requires :jsonb]
+                               [:prohibits :jsonb]
+                               [:randoms :jsonb]
+                               [[:primary-key :effect :points :upgrade-points]]]}))
+
+(defn insert-enchants! []
+  (drop! :enchants)
+  (create-enchants!)
+  (db/execute! {:insert-into [:enchants]
+                :values
+                (->> (load-data "enchant")
+                     (map (fn [{:keys [points upgrade-points upgradeable?]
+                                :or   {points 10 upgradeable? true}
+                                :as   enchant}]
+                            (-> enchant
+                                (update :requires u/jsonb-lift)
+                                (update :randoms u/jsonb-lift)
+                                (update :prohibits u/jsonb-lift)
+                                (dissoc :upgradeable?)
+                                (assoc :points points
+                                       :upgradeable upgradeable?
+                                       :upgrade-points (or upgrade-points points))))))}))
+
 (defn insert-data! []
   (db/in-transaction
     (insert-armours!)
@@ -135,7 +164,8 @@
     (insert-uniques!)
     (insert-crafting-items!)
     (insert-consumables!)
-    (insert-positive-encounters!)))
+    (insert-positive-encounters!)
+    (insert-enchants!)))
 
 (defn backup-data! []
   ;TODO write any mutable data to db/current-state to keep log of changes by session

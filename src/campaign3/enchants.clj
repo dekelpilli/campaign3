@@ -41,7 +41,7 @@
        (or (nil? disadvantaged-stealth?) (= disadvantaged-stealth? (:disadvantaged-stealth base)))
        (compatible? base enchant :type)))
 
-(defn find-valid-enchants [base type]
+(defn find-valid-enchants [base type] ;TODO memoize, update to new enchant validation syntax (:requires/:prohibits)
   (let [enabled-enchants (filter #(:enabled? % true) enchants)]
     (case type
       "weapon" (filter #(compatible-weapon? base %) enabled-enchants)
