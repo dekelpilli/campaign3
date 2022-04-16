@@ -10,7 +10,7 @@
 
            ;TODO clojars
            io.github.dekelpilli/randy       {:git/url "https://github.com/dekelpilli/randy.git"
-                                             :sha     "125906fe70e7f5a3735f998adb6ef55b27c7afe2"}
+                                             :sha     "ee0a9bcf56f48df6cc3d721a47072ee4d9eb93c9"}
 
            yogthos/config                   {:mvn/version "1.2.0"}
 
@@ -20,10 +20,10 @@
            com.github.seancorfield/honeysql {:mvn/version "2.2.868"}
            org.postgresql/postgresql        {:mvn/version "42.3.3"}
            seancorfield/next.jdbc           {:mvn/version "1.2.659"}}
- :aliases {:dev      {:extra-deps  {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-                      :extra-paths ["data/5et"]
-                      :main-opts   ["-e" "(require '[campaign3.core :as core])"
-                                    "-e" "(in-ns 'campaign3.core)"
-                                    "-m" "rebel-readline.main"]}
+ :aliases {:dev      {:extra-deps  {com.bhauman/rebel-readline  {:mvn/version "0.1.4"}
+                                    hawk/hawk                   {:mvn/version "0.2.11"}
+                                    org.clojure/tools.namespace {:mvn/version "1.2.0"}}
+                      :extra-paths ["dev"]
+                      :main-opts   ["-m" "rebel-readline.main"]}
            :outdated {:extra-deps {olical/depot {:mvn/version "2.3.0"}}
                       :main-opts  ["-m" "depot.outdated.main"]}}}
