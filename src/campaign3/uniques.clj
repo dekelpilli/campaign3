@@ -3,12 +3,13 @@
     [campaign3
      [util :as util]
      [db :as db]]
-    [clojure.walk :as walk]))
+    [clojure.walk :as walk]
+    [randy.core :as r]))
 
 (def uniques (db/execute! {:select [:*] :from [:uniques]}))
 
 (defn new []
-  (let [{:keys [effects] :as unique} (rand-nth uniques)]
+  (let [{:keys [effects] :as unique} (r/sample uniques)]
     (loop [[current & remaining] effects
            unique unique
            n 1]

@@ -33,6 +33,6 @@
                                                        "shield" 1})]
                           (->> mundanes
                                (filter #(= slot (:slot %)))
-                               (rand-nth))))]
+                               (r/sample))))]
     {:base base
      :type type}))

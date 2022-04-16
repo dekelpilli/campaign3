@@ -1,7 +1,8 @@
 (ns campaign3.encounters
-  (:require [campaign3.util :as util]
+  (:require [randy.core :as r]
             [clojure.string :as str]
             [clojure.core.match :refer [match]]
+            [campaign3.util :as util]
             [campaign3.db :as db]
             [campaign3.prompting :as p]))
 
@@ -73,15 +74,15 @@
         :loot (calculate-loot difficulty investigations)}))))
 
 (defn new-positive []
-  {:race      (rand-nth races)
-   :sex       (rand-nth sexes)
-   :encounter (rand-nth positive-encounters)})
+  {:race      (r/sample races)
+   :sex       (r/sample sexes)
+   :encounter (r/sample positive-encounters)})
 
 (defn- new-room-dimensions []
   (vec (repeatedly 2 #(+ 4 (rand-int 6)))))
 
 (defn- new-room-contents []
-  ((rand-nth [#(format "Easy: %s mobs" (+ 2 (rand-int 5)))
+  ((r/sample [#(format "Easy: %s mobs" (+ 2 (rand-int 5)))
               #(format "Medium: %s mobs" (+ 2 (rand-int 4)))
               #(format "Hard: %s mobs" (+ 4 (rand-int 3)))
               (constantly "Hard: 2 mobs")

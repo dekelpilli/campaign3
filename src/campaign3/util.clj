@@ -1,5 +1,6 @@
 (ns campaign3.util
-  (:require [table.core :as t]))
+  (:require [table.core :as t]
+            [randy.core :as r]))
 
 (defn jsonb-lift [x]
   (when x [:lift x]))
@@ -36,13 +37,13 @@
 (defn rand-enabled [coll]
   (as-> coll $
         (remove (comp false? :enabled?) $)
-        (if (empty? $) nil (rand-nth $))
+        (if (empty? $) nil (r/sample $))
         (when $ (dissoc $ :enabled?))))
 
 (defn fill-randoms [{:keys [randoms] :as item-modifier}]
   (if (seq randoms)
     (-> item-modifier
-        (update :effect #(apply format % (map rand-nth randoms)))
+        (update :effect #(apply format % (map r/sample randoms)))
         (dissoc :randoms))
     item-modifier)) ;TODO remove in favour of randoms syntax
 
@@ -50,7 +51,7 @@
   (< (rand) likelihood-probability))
 
 (defn get-rand-amount [coll]
-  (-> (rand-nth coll)
+  (-> (r/sample coll)
       (update :amount #(%))
       (fill-randoms))) ;TODO move to amounts ns(?)
 

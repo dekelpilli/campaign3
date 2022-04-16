@@ -1,4 +1,5 @@
-(ns campaign3.randoms)
+(ns campaign3.randoms
+  (:require [randy.core :as r]))
 
 (defmulti randoms-preset (comp keyword :preset))
 
@@ -6,7 +7,7 @@
   (update conf :type keyword))
 
 (defn- rand-from [vs]
-  #(rand-nth vs))
+  #(r/sample vs))
 
 (defn randoms->fn [randoms]
   (cond
@@ -72,4 +73,4 @@
 
 (defmethod randoms-preset :without-replacement [{:keys [amount from]}]
   (let [vs (randoms-preset from)]
-    (apply juxt (repeat amount (constantly "todo"))))) ;TODO
+    #(r/sample-without-replacement amount vs)))

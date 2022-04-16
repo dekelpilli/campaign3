@@ -77,7 +77,7 @@
                                     (seq upgradeable-mods) (conj :upgrade-existing-mod))
            upgrade-options (concat [:none]
                                    (repeat (count progressed) :continue-progress)
-                                   (repeatedly #(rand-nth possible-options)))
+                                   (repeatedly #(r/sample possible-options)))
            valid-enchants (e/find-valid-enchants base type)
            rand-filled #(->> % util/rand-enabled util/fill-randoms)
            mod-options (->> upgrade-options
