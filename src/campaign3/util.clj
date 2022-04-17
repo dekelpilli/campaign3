@@ -7,7 +7,7 @@
 
 (defn- table [out]
   (binding [table.width/*width* (delay 9999)]
-    (t/table out :style :unicode-3d))) ;TODO pretty print instead?
+    (t/table out :style :unicode-3d))) ;TODO pretty print instead? ansi-coloured?
 
 (defn display-multi-value [coll]
   (table (if (sequential? coll) coll [coll]))

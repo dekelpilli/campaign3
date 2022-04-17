@@ -31,12 +31,12 @@
                                                           (+ (rand-int 21) (rand-int 21))))}))
    :annexation  (fn []
                   (when-let [{:keys [base type]} (mundane/>>base)]
-                    (-> (enchant/find-valid-enchants base type)
+                    (-> (enchant/find-valid-enchants-memo base type)
                         (util/rand-enabled)
                         (util/fill-randoms))))
    :exalted     (fn []
                   (let [{:keys [base type]} (mundane/>>base)]
-                    (->> (enchant/find-valid-enchants base type)
+                    (->> (enchant/find-valid-enchants-memo base type)
                          (util/rand-enabled))))})
 
 (defn new []

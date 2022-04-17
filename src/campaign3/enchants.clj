@@ -23,20 +23,20 @@
                               (update :requires prep-matcher)
                               (update :prohibits prep-matcher))))))
 
-(defn- base-match? [actual req]
+(defn- equality-match? [actual req]
   (when req
     (= req actual)))
 
-(defn- range-match? [actual req]
+(defn- presence-match? [actual req]
   (when (some? req)
     (= req (some? actual))))
 
 (defn prohibits? [{:keys [range] :as base}
                   given-base-type
                   {:keys [base-type ranged?] :as prohibits}]
-  (or (false? (base-match? given-base-type base-type))
-      (false? (range-match? range ranged?))
-      ;TODO :disadvantaged-stealth matcher
+  (or (false? (equality-match? given-base-type base-type))
+      (false? (equality-match? (:disadvantaged-stealth base) (:disadvantaged-stealth prohibits)))
+      (false? (presence-match? range ranged?))
       (reduce
         (fn [_ [kw req]]
           (let [base-value (kw base)]
@@ -51,9 +51,9 @@
 (defn meets-requirements? [{:keys [range] :as base}
                            given-base-type
                            {:keys [base-type ranged?] :as requires}]
-  (and (not (false? (base-match? given-base-type base-type)))
-       (not (false? (range-match? range ranged?)))
-       ;TODO :disadvantaged-stealth matcher
+  (and (not (false? (equality-match? given-base-type base-type)))
+       (not (false? (equality-match? (:disadvantaged-stealth base) (:disadvantaged-stealth requires))))
+       (not (false? (presence-match? range ranged?)))
        (reduce
          (fn [_ [kw req]]
            (let [base-value (kw base)]
@@ -69,35 +69,36 @@
   (and (not (prohibits? base base-type prohibits))
        (meets-requirements? base base-type requires)))
 
-(defn find-valid-enchants [base base-type] ;TODO memoize, update to new enchant validation syntax (:requires/:prohibits)
-  (filter #(compatible? base base-type %) enchants))
+(defn find-valid-enchants [base base-type]
+  (filterv #(compatible? base base-type %) enchants))
+
+(defn find-valid-enchants-memo (memoize find-valid-enchants))
 
 (defn add-enchants [base type points-target]
-  (let [valid-enchants (->> (find-valid-enchants base type)
-                            (shuffle))
-        sum (atom 0) ;TODO refactor to not use atom, refactor to allow weighted enchants
-        enchants (->> valid-enchants
-                      (filter #(and (< @sum points-target)
-                                    (swap! sum (partial + (:points %)))))
-                      (map (comp u/prep-map u/fill-randoms)))]
-    [base enchants]))
+  (let [valid-enchants (find-valid-enchants-memo base type)]
+    (loop [points-sum 0
+           enchants []]
+      (let [{:keys [points] :as e} (r/sample valid-enchants)
+            new-points-sum (+ points points-sum)
+            new-enchants (conj enchants e)]
+        (if (> new-points-sum points-target)
+          (map (comp u/prep-map u/fill-randoms) new-enchants)
+          (recur new-points-sum new-enchants))))))
 
 (defn random-enchanted [points-target]
   (let [{:keys [base type]} (mundane/new)]
-    (add-enchants base type points-target)))
+    [base (add-enchants base type points-target)]))
 
 (defn >>add []
   (let [{:keys [base type]} (mundane/>>base)]
     (when (and base type)
-      (->> (find-valid-enchants base type)
-           (r/sample)))))
-
-(defn add-totalling [^long points]
-  (when (pos-int? points)
-    (when-let [{:keys [base type]} (mundane/>>base)]
-      (-> (add-enchants base type points)
-          (second)))))
+      (->> (find-valid-enchants-memo base type)
+           (r/sample)
+           (u/fill-randoms)
+           (u/prep-map)))))
 
 (defn >>add-totalling []
-  (or (some-> (p/>>input "Desired points total:") (parse-long) (add-totalling))
-      []))
+  (let [points (some-> (p/>>input "Desired points total:") (parse-long))
+        {:keys [base type]} (when points (mundane/>>base))]
+    [base
+     (add-enchants base type points)]))
