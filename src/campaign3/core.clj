@@ -51,7 +51,7 @@
    19 {:name   "Progress a prayer path"
        :action prayers/&progress-path!}
    21 {:name   "Add a modifier to an existing item"
-       :action e/&add}
+       :action e/>>add}
    22 {:name   "Add modifiers to an existing items with the given total"
        :action e/>>add-totalling}
    23 {:name   "Perform a ring sacrifice"

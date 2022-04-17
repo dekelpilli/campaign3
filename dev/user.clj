@@ -1,7 +1,9 @@
 (ns user
-  (:require [clojure.tools.namespace.repl :as repl]
+  (:require [clojure.tools.namespace.repl :as nsrepl]
             [clojure.pprint :refer [pprint pp]] ;TODO ansi colouring for pretty printing
             [hawk.core :as hawk]
+            [randy.core :as r]
+            [clojure.repl :as repl]
             [campaign3
              [db :as db]
              [db-data :as dbd]
@@ -31,4 +33,4 @@
 
 (hawk/watch! [{:paths   ["src"]
                :handler (fn [ctx e]
-                          (future (repl/refresh)))}])
+                          (future (nsrepl/refresh)))}])

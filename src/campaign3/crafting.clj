@@ -37,7 +37,6 @@
    :exalted     (fn []
                   (let [{:keys [base type]} (mundane/>>base)]
                     (->> (enchant/find-valid-enchants base type)
-                         (filter #(pos? (:points % enchant/default-points)))
                          (util/rand-enabled))))})
 
 (defn new []

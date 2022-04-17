@@ -8,19 +8,19 @@
  {:effect "Stone's Endurance (if you already have it, you get another use per long/short rest) (Volo's p109),"
   :points 16}
  {:effect       "This weapon is considered magical for the purposes of overcoming resistances and immunities.",
-  :requires     {:base-type #{"weapon"}}
+  :requires     {:base-type "weapon"}
   :points       25
   :upgradeable? false}
  {:effect "+1 to global AB."
   :points 35}
  {:effect   "+1 to this weapon's base damage die size.",
-  :requires {:base-type #{"weapon"}}
+  :requires {:base-type "weapon"}
   :points   11}
  {:effect "Recover a 1st-level spell slot when you roll for initiative."}
  {:effect "Recover 10% of your maximum class points (minimum 1) when you roll for initiative."}
  {:effect   "+1d4 %s damage with attacks with this weapon."
   :points   17
-  :requires {:base-type #{"weapon"}}
+  :requires {:base-type "weapon"}
   :randoms  [{:preset :damage-types
               :type   :non-physical}]}
  {:effect "+1 spell save and special feature DCs"
@@ -61,37 +61,37 @@
  {:effect "No more than once per minute, when you score a critical strike, recover a 1st-level spell slot."}
  {:effect "No more than once per minute, when you score a critical strike, recover a 10% of your maximum class points (minimum 1)."}
  {:effect   "+1 AB with unarmed attacks."
-  :requires {:base-type #{"armour"}}
+  :requires {:base-type "armour"}
   :points   25}
  {:effect   "+1d4 %s damage with attacks with this weapon."
   :points   20
   :randoms  [{:preset :damage-types
               :type   :physical}]
-  :requires {:base-type #{"weapon"}}}
+  :requires {:base-type "weapon"}}
  {:effect   "+1 to %s saving throws"
   :randoms  [{:preset :attributes
               :type   :uncommon}]
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect   "+1 to %s saving throws"
   :randoms  [{:preset :attributes
               :type   :common}]
   :points   18
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect   "This weapon deals no base damage. Roll another modifier and empower it twice.",
-  :requires {:base-type #{"weapon"}}}
+  :requires {:base-type "weapon"}}
  {:effect "You gain telepathy with a range of 10 feet."}
  {:effect "+1 question when learning creature stats (must have earned at least one question)"}
  {:effect "Your critical strikes add 1 additional damage die from the source's base damage."}
  {:effect "You can use your reaction to change any damage you deal into a damage type of your choice. This is visually noticeable."}
  {:effect   "+1 resistance to %s damage."
-  :requires {:base-type #{"armour"}}
+  :requires {:base-type "armour"}
   :randoms  [{:preset :damage-types}]}
  {:effect   "Once per round, when you take damage from a melee or touch attack, the attacker takes true damage equal to half your level, rounded down.",
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect   "When a melee or touch fails to hit you, the attacker takes true damage equal to half your level (rounded up).",
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect "Roll again, making that result a negative enchant. Then roll again, empowering that result."}
- {:effect "-1 to a creature's saving throws attempting to end an ongoing condition you caused."}
+ {:effect "-1 to a creature's saving throws attempting to end an ongoing condition you caused."} ;TODO should be worth more points, changed to +1dc instead of -1 save
  {:effect "Once per long rest, as an action, you can make a Persuasion check contested by a non-hostile creature's Wisdom save. The creature must be within 60 feet of you. On a success, you can give them a command as per the Command spell."}
  {:effect       "If you take damage exceeding 25% of your maximum hit points in one turn and do not reach 0 hit points by its end, heal hit points equal to your level."
   :upgradeable? false}
@@ -116,7 +116,7 @@
  {:effect       "When you score a critical strike with an attack of opportunity, the target is paralyzed until the end of their turn."
   :upgradeable? false}
  {:effect       "When you hit a creature with an attack with this weapon, they are silenced until the end of their next turn.",
-  :requires     {:base-type #{"weapon"}}
+  :requires     {:base-type "weapon"}
   :upgradeable? false}
  {:effect       "You're acclimated to high altitude, including elevations above 20,000 feet."
   :points       3
@@ -139,7 +139,7 @@
  {:effect  "+4 damage against %s creatures."
   :randoms [{:preset :monster-types}]}
  {:effect   "Your short rests can be 10 minutes shorter, to a minimum of 20 minutes.",
-  :requires {:base-type #{"armour"}}
+  :requires {:base-type "armour"}
   :points   3}
  {:effect "Your long rests can be 1 hour shorter, to a minimum of 3 hours."
   :points 3}
@@ -148,10 +148,7 @@
              :type   :uncommon}]
   :points  15}
  {:effect  "+1 to non-proficient %s checks."
-  :randoms [{:preset :skills}
-            ["arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
-             "nature" "religion" "animal handling" "survival" "intimidation" "performance"
-             "perception" "medicine" "deception" "persuasion" "investigation" "insight"]]}
+  :randoms [{:preset :skills}]}
  {:effect  "+1 %s."
   :randoms [{:preset :skills
              :type   :common}]
@@ -159,7 +156,7 @@
  {:effect   "+20 feet to both range options on ranged weapons."
   :points   20
   :requires {:ranged?   true
-             :base-type #{"weapon"}}}
+             :base-type "weapon"}}
  {:effect  "While wearing this item, you may cast %s once per long rest (mental attribute of your choice)."
   :randoms [{:preset :cantrips}]}
  {:effect "+2 to deception in languages other than Common."}
@@ -167,15 +164,15 @@
   :upgrade-points 0}
  {:effect "+4 Strength while restrained."}
  {:effect   "Missed attacks with this weapon have a 20% chance to be critical hits instead while you are below 20% hit points."
-  :requires {:base-type #{"weapon"}}}
+  :requires {:base-type "weapon"}}
  {:effect "Modifiers to your damage apply to your minions at 50% effectiveness (stacks, max 100%)."}
  {:effect "+1 incoming healing (not including from potions/healing surges)."}
  {:effect "+2 outgoing healing"}
  {:effect "Once per long rest, when rolling a natural 1 on a d20, you may reroll."}
  {:effect   "Heal 1 HP on hitting a creature with this weapon in combat."
-  :requires {:base-type #{"weapon"}}}
+  :requires {:base-type "weapon"}}
  {:effect   "+1 to saving throws made to end an ongoing condition if your HP is above 0."
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect       "You have resistance to all damage while taking the Dodge action."
   :upgradeable? false}
  {:effect       "You take no additional damage from damage you are vulnerable to."
@@ -185,11 +182,11 @@
  {:effect "[Once] per short rest, recover a 1st-level spell slot on Killing Blow."}
  {:effect "Recover 10% of your maximum class points (minimum 1) on Killing Blow."}
  {:effect   "At the start of your turn in combat, if you haven't taken damage since the start of your last turn, gain 1 temporary hit point. This stacks with any existing temporary hit points.",
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect   "+1 damage with weapon attacks."
-  :requires {:base-type #{"weapon"}}}
+  :requires {:base-type "weapon"}}
  {:effect   "Once per long rest, you can choose a target you can see as an action and then cast a random 1st-level spell on that target, ignoring range restrictions.",
-  :requires {:base-type #{"weapon"}}}
+  :requires {:base-type "weapon"}}
  {:effect "When you deliver a Killing Blow, gain +2 global damage for [1] minute."}
  {:effect "+2 to physical resistance while taking Damage Over Time."}
  {:effect "+1 to damage with light weapons."}
@@ -200,7 +197,7 @@
  {:effect "+1 to Damage Over Time."}
  {:effect "When you hit a creature with this weapon, they get a non-stacking -1 resistance to all damage dealt by creatures other than yourself for [1] minute."}
  {:effect   "+2 resistance to damage from projectiles."
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect "When you deliver a Killing Blow, gain 10 temporary hit points."}
  {:effect "Whenever you grant a buff with a duration to a creature, gain outgoing healing +1 until the end of thee buff."}
  {:effect "Every third spell you cast deals +[5] damage, across any amount of time."}
@@ -217,7 +214,7 @@
  {:effect  "+2 resistance to damage from %s creatures."
   :randoms [{:preset :monster-types}]}
  {:effect   "+25% chance to ignore bonus damage from incoming critical strikes."
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect       "While you have 3 different enchantments equipped that grant bonuses against the same type of creature, you have +1 to your proficiency bonus."
   :upgradeable? false}
  {:effect "+2 global damage while your hit points are below 50% of your hit point maximum."}
@@ -265,19 +262,19 @@
   :upgradeable? false}
  {:effect   "+1 to death saves in sunlight."
   :points   5
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect   "If you successfully disarm an enemy with this weapon, you may use a bonus action in the same turn to make an attack against the creature you disarmed."
   :points   15
-  :requires {:base-type #{"weapon"}
+  :requires {:base-type "weapon"
              :traits    #{"Disarm"}}}
  {:effect       "Enemies are considered to enter and leave your reach at both 5 and 10 feet."
   :points       25
-  :requires     {:base-type #{"weapon"}
+  :requires     {:base-type "weapon"
                  :traits    #{"Reach"}}
   :upgradeable? false}
  {:effect       "This weapon only requires 10 strength instead of 15. It is still considered heavy for the purpose of dual wielding."
   :points       5
-  :requires     {:base-type #{"weapon"}
+  :requires     {:base-type "weapon"
                  :traits    #{"Heavy"}}
   :upgradeable? false}
  {:effect "+1 damage die size from marks you caused."
@@ -295,27 +292,27 @@
  {:effect "+[2] damage with attacks that are at least your third during that turn."}
  {:effect "+[1] to contested Athletics and Acrobatics checks."}
  {:effect   "Your critical strikes with this weapon are also non-lethal."
-  :requires {:base-type #{"weapon"}
+  :requires {:base-type "weapon"
              :traits    #{"Non-lethal"}}}
  {:effect "[5]% chance to refund the spell slot used for a spell cast outside of your turn."}
  {:effect "Regain 2 hits points when you, or allies within [5] feet of you, take a critical hit and remains conscious."}
  {:effect   "This armour no longer causes Stealth checks to be made with disadvantage."
-  :requires {:base-type             #{"armour"}
+  :requires {:base-type             "armour"
              :disadvantaged-stealth true}}
  {:effect "Creatures you stabilise with a medicine check are always granted at least [1] healing surge."}
  {:effect   "+[2] to maximum hit points."
-  :requires {:base-type #{"armour"}}}
+  :requires {:base-type "armour"}}
  {:effect "You have an additional first level spell slot (only if you already had at least 1)."}
  {:effect   "When you hit an invisible creature with this weapon, they become visible."
-  :requires {:base-type #{"weapon"}}}
+  :requires {:base-type "weapon"}}
  {:effect       "Long range thrown attacks with this weapon have a 50% chance to not incur disadvantage due to the range."
   :upgradeable? false
-  :requires     {:base-type #{"weapon"}
+  :requires     {:base-type "weapon"
                  :traits    #{"Thrown"}}}
  {:effect       "+1 resistance to bludgeoning, piercing, and slashing damage if wearing a heavy body armour, helmet, gloves, and boots."
   :upgradeable? false
-  :requires     {:base-type #{"armour"}
+  :requires     {:base-type "armour"
                  :type      #{"Heavy"}}}
  {:effect   "+1 to Dexterity saving throws if wearing a light or unarmoured body armour, helmet, gloves, and boots, and no using a shield."
-  :requires {:base-type #{"armour"}
+  :requires {:base-type "armour"
              :type      #{"Light" "Unarmoured"}}}]

@@ -1,72 +1,96 @@
 (ns campaign3.enchants
   (:require
-    [clojure.set :as s]
     [campaign3
      [db :as db]
-     [util :as util]
+     [util :as u]
      [mundanes :as mundane]
-     [prompting :as p]]))
+     [randoms :as randoms]
+     [prompting :as p]]
+    [randy.core :as r]
+    [clojure.walk :as walk]))
 
-(def default-points 10)
-(def enchants (db/execute! {:select [:*] :from [:enchants]}))
+(defn prep-matcher [matcher]
+  (walk/prewalk
+    (fn [x] (if (and (vector? x) (not (map-entry? x)))
+              (set x)
+              x))
+    matcher))
 
-(defn- compatible? [base enchant field]
-  (let [not-field (->> field
-                       (name)
-                       (str "not-")
-                       (keyword))
-        base-field-val (as-> (field base) $
-                             (if (coll? $) (set $) #{$}))
-        requisites (field enchant)
-        incompatibles (not-field enchant)]
-    (and (empty? (s/intersection base-field-val incompatibles))
-         (or (empty? requisites)
-             (seq (s/intersection base-field-val requisites))))))
+(def enchants (->> (db/execute! {:select [:*] :from [:enchants]})
+                   (map (fn [e]
+                          (-> e
+                              (update :randoms randoms/randoms->fn)
+                              (update :requires prep-matcher)
+                              (update :prohibits prep-matcher))))))
 
-(defn- compatible-weapon? [{:keys [range] :as base}
-                           {:keys [ranged? metadata] :as enchant}]
-  (and (or (empty? metadata)
-           (contains? metadata "weapon"))
-       (or (nil? ranged?) (= ranged? (boolean range)))
-       (compatible? base enchant :traits)
-       (compatible? base enchant :category)
-       (compatible? base enchant :damage-types)
-       (compatible? base enchant :proficiency)
-       (compatible? base enchant :type)))
+(defn- base-match? [actual req]
+  (when req
+    (= req actual)))
 
-(defn- compatible-armour? [base
-                           {:keys [metadata disadvantaged-stealth?] :as enchant}]
-  (and (or (empty? metadata)
-           (contains? metadata "armour"))
-       (or (nil? disadvantaged-stealth?) (= disadvantaged-stealth? (:disadvantaged-stealth base)))
-       (compatible? base enchant :type)))
+(defn- range-match? [actual req]
+  (when (some? req)
+    (= req (some? actual))))
 
-(defn find-valid-enchants [base type] ;TODO memoize, update to new enchant validation syntax (:requires/:prohibits)
-  (let [enabled-enchants (filter #(:enabled? % true) enchants)]
-    (case type
-      "weapon" (filter #(compatible-weapon? base %) enabled-enchants)
-      "armour" (filter #(compatible-armour? base %) enabled-enchants))))
+(defn prohibits? [{:keys [range] :as base}
+                  given-base-type
+                  {:keys [base-type ranged?] :as prohibits}]
+  (or (false? (base-match? given-base-type base-type))
+      (false? (range-match? range ranged?))
+      ;TODO :disadvantaged-stealth matcher
+      (reduce
+        (fn [_ [kw req]]
+          (let [base-value (kw base)]
+            (if (if (coll? base-value)
+                  (some req base-value)
+                  (req base-value))
+              (reduced true)
+              false)))
+        false
+        (dissoc prohibits :base-type :ranged? :disadvantaged-stealth))))
+
+(defn meets-requirements? [{:keys [range] :as base}
+                           given-base-type
+                           {:keys [base-type ranged?] :as requires}]
+  (and (not (false? (base-match? given-base-type base-type)))
+       (not (false? (range-match? range ranged?)))
+       ;TODO :disadvantaged-stealth matcher
+       (reduce
+         (fn [_ [kw req]]
+           (let [base-value (kw base)]
+             (if (cond
+                   (coll? base-value) (some req base-value)
+                   (req base-value))
+               false
+               (reduced true))))
+         true
+         (dissoc requires :base-type :ranged? :disadvantaged-stealth))))
+
+(defn- compatible? [base base-type {:keys [requires prohibits]}]
+  (and (not (prohibits? base base-type prohibits))
+       (meets-requirements? base base-type requires)))
+
+(defn find-valid-enchants [base base-type] ;TODO memoize, update to new enchant validation syntax (:requires/:prohibits)
+  (filter #(compatible? base base-type %) enchants))
 
 (defn add-enchants [base type points-target]
   (let [valid-enchants (->> (find-valid-enchants base type)
                             (shuffle))
-        sum (atom 0)
+        sum (atom 0) ;TODO refactor to not use atom, refactor to allow weighted enchants
         enchants (->> valid-enchants
                       (filter #(and (< @sum points-target)
-                                    (swap! sum (partial + (:points % default-points)))))
-                      (map util/fill-randoms))]
+                                    (swap! sum (partial + (:points %)))))
+                      (map (comp u/prep-map u/fill-randoms)))]
     [base enchants]))
 
 (defn random-enchanted [points-target]
   (let [{:keys [base type]} (mundane/new)]
     (add-enchants base type points-target)))
 
-(defn &add []
+(defn >>add []
   (let [{:keys [base type]} (mundane/>>base)]
     (when (and base type)
       (->> (find-valid-enchants base type)
-           (util/rand-enabled)
-           (util/fill-randoms)))))
+           (r/sample)))))
 
 (defn add-totalling [^long points]
   (when (pos-int? points)

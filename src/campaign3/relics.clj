@@ -125,5 +125,5 @@
 (defn >>sell! []
   (when-let [{:keys [name level] :as relic} (&owned)]
     (when (p/>>item (str "Sell" name "for" (int (+ 300 (/ (reduce + (take level upgrade-prices)) 2))) "?")
-                    [true false]) ;TODO confirm prompt instead of item prompt
+                    [true false])
       (update-relic! (assoc relic :enabled? false)))))

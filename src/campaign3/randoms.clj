@@ -3,8 +3,9 @@
 
 (defmulti randoms-preset (comp keyword :preset))
 
-(defn- keyword-type [conf]
-  (update conf :type keyword))
+(defn- keyword-type [{:keys [type] :as conf}]
+  (cond-> conf
+          (some? type) (update :type keyword)))
 
 (defn- rand-from [vs]
   #(r/sample vs))
@@ -55,7 +56,7 @@
     :uncommon ["Strength" "Intelligence" "Charisma"]
     :all ["Charisma" "Constitution" "Dexterity" "Intelligence" "Strength" "Wisdom"]))
 
-(defmethod randoms-preset :monster-type [_]
+(defmethod randoms-preset :monster-types [_]
   ["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
    "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"])
 

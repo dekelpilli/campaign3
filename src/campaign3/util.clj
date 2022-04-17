@@ -41,11 +41,11 @@
         (when $ (dissoc $ :enabled?))))
 
 (defn fill-randoms [{:keys [randoms] :as item-modifier}]
-  (if (seq randoms)
+  (if randoms
     (-> item-modifier
-        (update :effect #(apply format % (map r/sample randoms)))
+        (update :effect #(apply format % (randoms)))
         (dissoc :randoms))
-    item-modifier)) ;TODO remove in favour of randoms syntax
+    item-modifier))
 
 (defn occurred? [likelihood-probability]
   (< (rand) likelihood-probability))
@@ -57,3 +57,6 @@
 
 (defn assoc-by [f coll]
   (into {} (map (juxt f identity)) coll))
+
+(defn prep-map [m]
+  (into (sorted-map) (filter (comp some? val)) m))
