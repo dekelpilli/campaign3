@@ -57,6 +57,3 @@
 
 (defn assoc-by [f coll]
   (into {} (map (juxt f identity)) coll))
-
-(defn prep-map [m]
-  (into (sorted-map) (filter (comp some? val)) m))

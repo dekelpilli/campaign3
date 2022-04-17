@@ -31,7 +31,7 @@
   (when (some? req)
     (= req (some? actual))))
 
-(defn prohibits? [{:keys [range] :as base}
+(defn- prohibits? [{:keys [range] :as base}
                   given-base-type
                   {:keys [base-type ranged?] :as prohibits}]
   (or (false? (equality-match? given-base-type base-type))
@@ -48,7 +48,7 @@
         false
         (dissoc prohibits :base-type :ranged? :disadvantaged-stealth))))
 
-(defn meets-requirements? [{:keys [range] :as base}
+(defn- meets-requirements? [{:keys [range] :as base}
                            given-base-type
                            {:keys [base-type ranged?] :as requires}]
   (and (not (false? (equality-match? given-base-type base-type)))
@@ -60,8 +60,8 @@
              (if (if (coll? base-value)
                    (some req base-value)
                    (req base-value))
-               false
-               (reduced true))))
+               true
+               (reduced false))))
          true
          (dissoc requires :base-type :ranged? :disadvantaged-stealth))))
 
@@ -82,7 +82,7 @@
             new-points-sum (+ points points-sum)
             new-enchants (conj enchants e)]
         (if (> new-points-sum points-target)
-          (map (comp u/prep-map u/fill-randoms) new-enchants)
+          (map (comp :effect u/fill-randoms) new-enchants)
           (recur new-points-sum new-enchants))))))
 
 (defn random-enchanted [points-target]
@@ -95,7 +95,7 @@
       (->> (find-valid-enchants-memo base type)
            (r/sample)
            (u/fill-randoms)
-           (u/prep-map)))))
+           (:effect)))))
 
 (defn >>add-totalling []
   (let [points (some-> (p/>>input "Desired points total:") (parse-long))
