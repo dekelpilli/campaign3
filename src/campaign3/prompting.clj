@@ -7,8 +7,13 @@
 (defn- stringify [x]
   (if (keyword? x) (name x) (str x)))
 
-(defn- stringify-keys [m]
-  (walk/postwalk (fn [x] (if (map? x) (into {} (map (juxt (comp stringify key) val) x)) x)) m))
+(defn- stringify-keys [{:keys [sorted?]} m]
+  (walk/postwalk (fn [x] (if (map? x)
+                           (into (if sorted? (sorted-map) {})
+                                 (map (juxt (comp stringify key) val))
+                                 x)
+                           x))
+                 m))
 
 (defn >>checkbox
   ([coll] (>>checkbox "Choose all that apply:" coll))
@@ -31,13 +36,16 @@
 
 (defn >>item
   ([coll] (>>item "Choose one from these:" coll))
-  ([prompt coll & {:keys [sorted?]}]
+  ([prompt coll & {:keys [sorted?]
+                   :as   opts}]
+   ;TODO add "none of the above"/nil option
+   ;TODO when (count coll) is above a certain number (10?), use input + autocomplete instead of list
    (let [prompt-builder (.getPromptBuilder console-prompt)
          m (if (map? coll)
-             (stringify-keys coll)
+             (stringify-keys opts coll)
              (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
      (-> prompt-builder
-         (.createListPrompt) ;TODO choice vs list?
+         (.createListPrompt)
          (.message prompt)
          (as-> builder (reduce
                          #(doto %1 (-> (.newItem %2)

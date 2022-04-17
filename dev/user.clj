@@ -1,6 +1,6 @@
 (ns user
   (:require [clojure.tools.namespace.repl :as repl]
-            [clojure.pprint :refer [pprint pp]]
+            [clojure.pprint :refer [pprint pp]] ;TODO ansi colouring for pretty printing
             [hawk.core :as hawk]
             [campaign3
              [db :as db]

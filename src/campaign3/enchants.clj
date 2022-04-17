@@ -4,11 +4,11 @@
     [campaign3
      [db :as db]
      [util :as util]
-     [mundanes :as mundane]]
-    [campaign3.prompting :as p]))
+     [mundanes :as mundane]
+     [prompting :as p]]))
 
 (def default-points 10)
-(def enchants #_(db/execute! {:select [:*] :from [:enchants]}))
+(def enchants (db/execute! {:select [:*] :from [:enchants]}))
 
 (defn- compatible? [base enchant field]
   (let [not-field (->> field
@@ -69,13 +69,11 @@
            (util/fill-randoms)))))
 
 (defn add-totalling [^long points]
-  (if (pos-int? points)
-    (if-let [{:keys [base type]} (mundane/>>base)]
+  (when (pos-int? points)
+    (when-let [{:keys [base type]} (mundane/>>base)]
       (-> (add-enchants base type points)
-          (second))
-      [])
-    []))
+          (second)))))
 
-(defn &add-totalling
-  []
-  (some-> (p/>>input "Desired points total:") (parse-long) (add-totalling)))
+(defn >>add-totalling []
+  (or (some-> (p/>>input "Desired points total:") (parse-long) (add-totalling))
+      []))
