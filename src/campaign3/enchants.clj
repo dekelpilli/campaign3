@@ -57,8 +57,8 @@
        (reduce
          (fn [_ [kw req]]
            (let [base-value (kw base)]
-             (if (cond
-                   (coll? base-value) (some req base-value)
+             (if (if (coll? base-value)
+                   (some req base-value)
                    (req base-value))
                false
                (reduced true))))
@@ -72,7 +72,7 @@
 (defn find-valid-enchants [base base-type]
   (filterv #(compatible? base base-type %) enchants))
 
-(defn find-valid-enchants-memo (memoize find-valid-enchants))
+(def find-valid-enchants-memo (memoize find-valid-enchants))
 
 (defn add-enchants [base type points-target]
   (let [valid-enchants (find-valid-enchants-memo base type)]
