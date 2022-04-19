@@ -21,7 +21,7 @@
 (defn get-rand-amount [coll]
   (-> (r/sample coll)
       (update :amount #(%))
-      (fill-randoms))) ;TODO move to amounts ns(?)
+      (fill-randoms)))
 
 (defn assoc-by [f coll]
   (into {} (map (juxt f identity)) coll))

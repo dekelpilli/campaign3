@@ -8,7 +8,7 @@
 
            ;TODO clojars
            io.github.dekelpilli/randy       {:git/url "https://github.com/dekelpilli/randy.git"
-                                             :sha     "83b477af715960057c730e71f62321c22e4b92e7"}
+                                             :sha     "94a63399c7b6a95a978deaa3fbb313d685fad29d"}
 
            yogthos/config                   {:mvn/version "1.2.0"}
 

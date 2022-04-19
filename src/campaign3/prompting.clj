@@ -38,7 +38,6 @@
   ([coll] (>>item "Choose one from these:" coll))
   ([prompt coll & {:keys [sorted?]
                    :as   opts}]
-   ;TODO add "none of the above"/nil option
    ;TODO when (count coll) is above a certain number (10?), use input + autocomplete instead of list
    (let [prompt-builder (.getPromptBuilder console-prompt)
          m (if (map? coll)
@@ -52,7 +51,7 @@
                                        (.text %2)
                                        (.add)))
                          builder
-                         (keys m)))
+                         (-> m (keys) (conj "\u001B[31mNone\u001B[0m"))))
          (.addPrompt))
      (-> (.prompt console-prompt (.build prompt-builder))
          ^ListResult (get prompt)
