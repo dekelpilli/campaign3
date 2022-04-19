@@ -12,18 +12,15 @@
              [encounters :as encounter]
              [dice :as dice]
              [rings :as rings]
-             [uniques :as unique]
-             [riddle :as riddle]]
+             [uniques :as unique]]
             [randy.core :as r]
-            [randy.rng :as rng]
-            [clojure.tools.logging :as log]))
+            [randy.rng :as rng]))
 
 (def loot-actions
-  {-1 {:name "Exit"}
-   1  {:name   "1-10 gold"
-       :action #(str (inc (rand-int 10)) " gold")}
-   2  {:name   "Riddle"
-       :action riddle/new!}
+  {1  {:name   "1-10 gold"
+       :action #(str (rng/next-int r/default-rng 1 11) " gold")}
+   2  {:name   "???"
+       :action (constantly "TODO")}
    3  {:name   "Mundane item"
        :action (comp :base mundane/new)}
    5  {:name   "Consumable"
@@ -57,11 +54,11 @@
    22 {:name   "Add modifiers to an existing items with the given total"
        :action e/>>add-totalling}
    23 {:name   "Perform a ring sacrifice"
-       :action rings/&sacrifice}
+       :action rings/>>sacrifice}
    24 {:name   "Sell a relic"
        :action relics/>>sell!}
    25 {:name   "Travel"
-       :action encounter/&travel}
+       :action encounter/>>travel}
    26 {:name   "Calculate loot rewards"
        :action encounter/>>rewards}
    27 {:name   "Positive encounter"

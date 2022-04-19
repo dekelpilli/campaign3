@@ -28,7 +28,8 @@
                      (reset! had-random? true)
                      :random)))]))
        (into (sorted-map))))
-(defn &travel
+
+(defn >>travel
   ([]
    (some-> (p/>>input "How many days?") (parse-long) (travel))))
 

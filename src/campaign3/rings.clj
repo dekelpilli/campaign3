@@ -28,25 +28,21 @@
        (r/sample)
        (u/fill-randoms)))
 
-(defn &sacrifice []
-  (println "Which rings are being sacrificed?")
-  (let [ban-opts (as-> all-rings $
-                       (map :name $)
-                       (u/make-options $ {:sort? true})
-                       (u/display-pairs $ {:sort? true :v "Name"}))
-        input (read-line) ;TODO replace
-        catalysts-used (or (some-> (p/>>input "How many catalysts were used in this ring sacrifice?")
-                                   (parse-long))
-                           0)]
-    (when-let [sacrificed (->> (str/split input #",")
-                               (map #(Integer/parseInt %))
-                               (map ban-opts)
-                               (filter identity)
-                               (not-empty))]
-      (let [sacrificed? (set sacrificed)
-            num-options (* (count sacrificed) (inc catalysts-used))]
-        (->> all-rings
-             (remove #(sacrificed? (:name %)))
-             (shuffle)
-             (take num-options)
-             (map u/fill-randoms))))))
+(defn >>sacrifice []
+  (when-let [sacrificed-rings (->> all-rings
+                                   (map :name)
+                                   (p/>>checkbox "Which rings are being sacrificed?")
+                                   (not-empty))]
+    (let [additional-rings (-> (p/>>input "How many non-distinct rings were sacrificed?")
+                               (parse-long)
+                               (or 0))
+          catalysts-used (or (some-> (p/>>input "How many catalysts were used in this ring sacrifice?")
+                                     (parse-long))
+                             0)
+          num-options (-> (count sacrificed-rings)
+                          (+ additional-rings)
+                          (* (inc catalysts-used))
+                          (max (count all-rings)))]
+      (->> all-rings
+           (r/sample-without-replacement num-options)
+           (map u/fill-randoms)))))

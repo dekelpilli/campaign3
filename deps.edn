@@ -6,8 +6,6 @@
 
            metosin/jsonista                 {:mvn/version "0.3.5"}
 
-           table/table                      {:mvn/version "0.5.0"}
-
            ;TODO clojars
            io.github.dekelpilli/randy       {:git/url "https://github.com/dekelpilli/randy.git"
                                              :sha     "83b477af715960057c730e71f62321c22e4b92e7"}

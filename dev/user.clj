@@ -1,7 +1,7 @@
 (ns user
   (:require [clojure.tools.namespace.repl :as nsrepl]
-    ;[puget.printer :refer [cprint pprint]]
             [hawk.core :as hawk]
+            [clojure.string :as str]
             [randy.core :as r]
             [campaign3
              [db-data :as dbd]
@@ -18,7 +18,6 @@
              [dice :as dice]
              [rings :as rings]
              [uniques :as unique]
-             [riddle :as riddle]
              [core :as core]]))
 
 ;https://asciinema.org/a/296507
@@ -32,7 +31,6 @@
     [clojure.pprint :as pprint :refer (pp pprint)]
     [clojure.stacktrace :as stacktrace :refer (e)]
     [clojure.set :as set]
-    [clojure.string :as str]
     [[io.aviso.repl :as aviso]
      ((resolve 'aviso/install-pretty-exceptions))]
     [[puget.printer :as puget :refer (cprint)]

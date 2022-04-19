@@ -5,35 +5,6 @@
 (defn jsonb-lift [x]
   (when x [:lift x]))
 
-(defn- table [out]
-  (binding [table.width/*width* (delay 9999)]
-    (t/table out :style :unicode-3d))) ;TODO pretty print instead? ansi-coloured?
-
-(defn display-multi-value [coll]
-  (table (if (sequential? coll) coll [coll]))
-  coll)
-
-(defn display-pairs
-  ([m] (display-pairs m nil))
-  ([m {:keys [sort? k v]
-       :or   {sort? false
-              k     "Key"
-              v     "Value"}}]
-   (table
-     (as-> m $
-           (into [] $)
-           (if sort? (sort $) $)
-           (concat [[k v]] $)))
-   m))
-
-(defn make-options
-  ([coll] (make-options coll nil))
-  ([coll {:keys [sort?] :or {sort? false}}]
-   (as-> (if (map? coll) (keys coll) coll) $
-         (if sort? (sort $) $)
-         (map-indexed (fn [i option] [i option]) $)
-         (into {} $))))
-
 (defn rand-enabled [coll]
   (as-> coll $
         (remove (comp false? :enabled?) $)
@@ -41,12 +12,8 @@
         (when $ (dissoc $ :enabled?))))
 
 (defn fill-randoms [{:keys [randoms] :as item-modifier}]
-  (try
-    (cond-> (dissoc item-modifier :randoms)
-            randoms (update :effect #(apply format % (randoms))))
-    (catch Exception e
-      (println "Error: " item-modifier
-               (randoms)))))
+  (cond-> (dissoc item-modifier :randoms)
+          randoms (update :effect #(apply format % (randoms)))))
 
 (defn occurred? [likelihood-probability]
   (< (rand) likelihood-probability))
