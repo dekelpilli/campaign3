@@ -66,7 +66,7 @@
    28 {:name   "Generate dungeon template"
        :action encounter/new-dungeon}
    29 {:name   "Use a crafting item"
-       :action crafting/&use}})
+       :action crafting/>>use}})
 
 (defn loot [n]
   (when-let [{:keys [action]} (get loot-actions n)]

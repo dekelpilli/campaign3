@@ -1,6 +1,6 @@
 (ns campaign3.util
-  (:require [table.core :as t]
-            [randy.core :as r]))
+  (:require [randy.core :as r]
+            [randy.rng :as rng]))
 
 (defn jsonb-lift [x]
   (when x [:lift x]))
@@ -16,7 +16,7 @@
           randoms (update :effect #(apply format % (randoms)))))
 
 (defn occurred? [likelihood-probability]
-  (< (rand) likelihood-probability))
+  (< (rng/next-double r/default-rng) likelihood-probability))
 
 (defn get-rand-amount [coll]
   (-> (r/sample coll)
