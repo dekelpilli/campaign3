@@ -10,9 +10,11 @@
 (defn- rand-from [vs]
   #(r/sample vs))
 
+(def random->values-vec (comp randoms-preset keyword-type))
+
 (defn randoms->fn [randoms]
   (cond
-    (vector? randoms) (apply juxt (map (comp rand-from randoms-preset keyword-type) randoms))
+    (vector? randoms) (apply juxt (map (comp rand-from random->values-vec) randoms))
     (map? randoms) (randoms-preset randoms)))
 
 (defmethod randoms-preset :languages [_]
@@ -73,5 +75,5 @@
    "Vicious Mockery", "Word of Radiance"]) ;TODO update list, generify for level x spell, school?
 
 (defmethod randoms-preset :without-replacement [{:keys [amount from]}]
-  (let [vs (randoms-preset from)]
+  (let [vs (random->values-vec from)]
     #(r/sample-without-replacement amount vs)))

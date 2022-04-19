@@ -1,12 +1,13 @@
 (ns campaign3.crafting
   (:require
     [campaign3
-     [util :as util]
+     [util :as u]
      [enchants :as enchant]
      [db :as db]
      [amounts :as amounts]
      [prompting :as p]
-     [mundanes :as mundane]]))
+     [mundanes :as mundane]]
+    [randy.core :as r]))
 
 (def crafting-items (->> (db/execute! {:select [:*] :from [:crafting-items]})
                          (map #(update % :amount amounts/amount->fn "1d3"))))
@@ -32,15 +33,16 @@
    :annexation  (fn []
                   (when-let [{:keys [base type]} (mundane/>>base)]
                     (-> (enchant/find-valid-enchants-memo base type)
-                        (util/rand-enabled)
-                        (util/fill-randoms))))
+                        (r/sample)
+                        (u/fill-randoms))))
    :exalted     (fn []
                   (let [{:keys [base type]} (mundane/>>base)]
                     (->> (enchant/find-valid-enchants-memo base type)
-                         (util/rand-enabled))))})
+                         (r/sample)
+                         (u/fill-randoms))))})
 
 (defn new []
-  (util/get-rand-amount crafting-items))
+  (u/get-rand-amount crafting-items))
 
 (defn &use []
   (when-let [choice (p/>>item crafting-actions)]

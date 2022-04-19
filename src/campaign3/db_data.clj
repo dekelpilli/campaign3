@@ -2,7 +2,8 @@
   (:require [clojure.java.io :as io]
             [campaign3.db :as db]
             [campaign3.util :as u]
-            [clojure.set :as set])
+            [clojure.set :as set]
+            [clojure.string :as str])
   (:import (java.io PushbackReader)))
 
 (defn- load-data [type]
@@ -157,6 +158,25 @@
                                        :upgradeable upgradeable?
                                        :upgrade-points (or upgrade-points points))))))}))
 
+(defn create-rings! []
+  (db/execute! {:create-table :rings
+                :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:effect :text [:not nil]]
+                               [:points :integer [:not nil]]
+                               [:randoms :jsonb]
+                               [:synergy :boolean [:not nil]]]}))
+
+(defn insert-rings! []
+  (drop! :rings)
+  (create-rings!)
+  (db/execute! {:insert-into [:rings]
+                :values
+                (->> (load-data "ring")
+                     (map (fn [{:keys [name] :as ring}]
+                            (-> ring
+                                (update :randoms u/jsonb-lift)
+                                (assoc :synergy (str/starts-with? name "The"))))))}))
+
 (defn insert-data! []
   (db/in-transaction
     (insert-armours!)
@@ -165,7 +185,8 @@
     (insert-crafting-items!)
     (insert-consumables!)
     (insert-positive-encounters!)
-    (insert-enchants!)))
+    (insert-enchants!)
+    (insert-rings!)))
 
 (defn backup-data! []
   ;TODO write any mutable data to db/current-state to keep log of changes by session

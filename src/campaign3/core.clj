@@ -14,6 +14,8 @@
              [rings :as rings]
              [uniques :as unique]
              [riddle :as riddle]]
+            [randy.core :as r]
+            [randy.rng :as rng]
             [clojure.tools.logging :as log]))
 
 (def loot-actions
@@ -31,7 +33,7 @@
    7  {:name   "Low value enchanted item (10 points)"
        :action #(e/random-enchanted 10)}
    8  {:name   "100-150 gold"
-       :action #(str (+ 100 (rand-int 51)) " gold")}
+       :action #(str (rng/next-int r/default-rng 100 151) " gold")}
    9  {:name   "Non-synergy ring"
        :action rings/new-non-synergy}
    10 {:name   "Synergy ring"
@@ -68,6 +70,13 @@
        :action encounter/new-dungeon}
    29 {:name   "Use a crafting item"
        :action crafting/&use}})
+
+(defn loot [n]
+  (when-let [{:keys [action]} (get loot-actions n)]
+    (action)))
+
+(defn loots [& ns]
+  (map loot ns))
 
 (defn start []
   #_(let [loot-action-names (->> loot-actions

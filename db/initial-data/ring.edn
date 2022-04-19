@@ -61,7 +61,7 @@
   :effect "When attempting to discern truthfulness, you have advantage on Insight checks when the person is lying and disadvantage when they're being fully truthful."
   :points 3}
  {:name    "Divergent"
-  :effect  "You take %s damage as %s damage instead. Reroll second in case of duplicates: %s %s %s"
+  :effect  "You take %s damage as %s damage instead."
   :randoms {:preset :without-replacement
             :amount 2
             :from   {:preset :damage-types

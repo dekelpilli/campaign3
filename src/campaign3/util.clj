@@ -41,11 +41,12 @@
         (when $ (dissoc $ :enabled?))))
 
 (defn fill-randoms [{:keys [randoms] :as item-modifier}]
-  (if randoms
-    (-> item-modifier
-        (update :effect #(apply format % (randoms)))
-        (dissoc :randoms))
-    item-modifier))
+  (try
+    (cond-> (dissoc item-modifier :randoms)
+            randoms (update :effect #(apply format % (randoms))))
+    (catch Exception e
+      (println "Error: " item-modifier
+               (randoms)))))
 
 (defn occurred? [likelihood-probability]
   (< (rand) likelihood-probability))
