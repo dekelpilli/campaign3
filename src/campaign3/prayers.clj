@@ -2,13 +2,14 @@
   (:require
     [campaign3
      [db :as db]
-     [util :as util]]))
+     [util :as util]]
+    [randy.core :as r]))
 
 (def prayer-paths #_(db/execute! {:select [:*] :from [:prayer-paths]}))
 
 
 (defn new-stone []
-  (-> prayer-paths util/rand-enabled :name))
+  (-> prayer-paths r/sample :name))
 
 (defn- update-progress! [{:keys [character path] :as new-progression}]
   ;TODO

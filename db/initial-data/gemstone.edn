@@ -1,0 +1,16 @@
+[{:name "Stone of Power"
+  :tag "damage"}
+ {:name "Stone of Devastation"
+  :tag  "critical"}
+ {:name "Stone of Inevitability"
+  :tag "accuracy"}
+ {:name "Stone of Fortitude"
+  :tag  "survivability"}
+ {:name "Stone of Weakness"
+  :tag  "control"}
+ {:name "Stone of Arcana"
+  :tag  "magic"}
+ {:name "Stone of Serendipity"
+  :tag "wealth"}
+ {:name "Stone of Sundry"
+  :tag "utility"}]

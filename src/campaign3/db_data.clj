@@ -138,6 +138,7 @@
                                [:requires :jsonb]
                                [:prohibits :jsonb]
                                [:randoms :jsonb]
+                               [:tags :jsonb] ;TODO weighted enchants
                                [[:primary-key :effect :points :upgrade-points]]]}))
 
 (defn insert-enchants! []
@@ -153,6 +154,7 @@
                                 (update :requires u/jsonb-lift)
                                 (update :randoms u/jsonb-lift)
                                 (update :prohibits u/jsonb-lift)
+                                (update :tags u/jsonb-lift)
                                 (dissoc :upgradeable?)
                                 (assoc :points points
                                        :upgradeable upgradeable?
