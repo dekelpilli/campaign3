@@ -8,16 +8,17 @@
              [util :as u]
              [prompting :as p]
              [db :as db]
+             [curios :as curios]
              [relics :as relics]
-             [mundanes :as mundane]
+             [mundanes :as mundanes]
              [enchants :as enchants]
              [crafting :as crafting]
              [consumables :as consumables]
              [prayers :as prayers]
-             [encounters :as encounter]
+             [encounters :as encounters]
              [dice :as dice]
              [rings :as rings]
-             [uniques :as unique]
+             [uniques :as uniques]
              [core :as core]]))
 
 ;https://asciinema.org/a/296507

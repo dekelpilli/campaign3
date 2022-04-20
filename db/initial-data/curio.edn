@@ -1,0 +1,30 @@
+#_(reduce
+    (fn [acc {:keys [tags weighting]}]
+      (reduce (fn [acc tag] (update acc tag (fnil #(+ % weighting) 0))) acc tags))
+    {}
+    enchants/enchants)
+
+[{:name       "Curio of Power"
+  :tag        "damage"
+  :multiplier 5}
+ {:name       "Curio of Devastation"
+  :tag        "critical"
+  :multiplier 33}
+ {:name       "Curio of Inevitability"
+  :tag        "accuracy"
+  :multiplier 15}
+ {:name       "Curio of Fortitude"
+  :tag        "survivability"
+  :multiplier 4}
+ {:name       "Curio of Weakness"
+  :tag        "control"
+  :multiplier 44}
+ {:name       "Curio of Arcana"
+  :tag        "magic"
+  :multiplier 11}
+ {:name       "Curio of Serendipity"
+  :tag        "wealth"
+  :multiplier 65}
+ {:name       "Curio of Sundry"
+  :tag        "utility"
+  :multiplier 3}]
