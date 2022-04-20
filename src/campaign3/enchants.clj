@@ -32,7 +32,7 @@
   (when (some? req)
     (= req (some? actual))))
 
-(defn is-allowed? [base base-type prohibits? reqs]
+(defn- is-allowed? [base base-type prohibits? reqs]
   (reduce
     (fn [_ [kw req]]
       (let [match? (case kw
@@ -49,7 +49,7 @@
     true
     reqs))
 
-(defn compatible? [base base-type {:keys [requires prohibits]}]
+(defn- compatible? [base base-type {:keys [requires prohibits]}]
   (and (is-allowed? base base-type true prohibits)
        (is-allowed? base base-type false requires)))
 

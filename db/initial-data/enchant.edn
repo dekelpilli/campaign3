@@ -1,6 +1,6 @@
 [{:effect "+1 AC."
   :points 30
-  :tags   #{"defence"}}
+  :tags   #{"survivability"}}
  {:effect "You have an additional spell slot of your second highest spell slot where you have at least one spell slot available."
   :points 20
   :tags   #{"magic"}}
@@ -127,7 +127,7 @@
   :tags         #{"utility"}
   :upgradeable? false}
  {:effect "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."
-  :tags   #{"survivability" "defence" "utility"}}
+  :tags   #{"survivability" "survivability" "utility"}}
  {:effect "+1 global damage."
   :tags   #{"damage"}
   :points 15}
@@ -207,6 +207,8 @@
  {:effect         "This item sells for an extra [1]d100 gold. You only roll after the item is sold."
   :tags           #{"wealth"}
   :upgrade-points 0}
+ {:effect "You find loot as if your Investigation and Survival check results are 1 point higher."
+  :tags   #{"wealth"}}
  {:effect   "Missed attacks with this weapon have a 20% chance to be critical hits instead while you are below 20% hit points."
   :tags     #{"critical"}
   :requires {:base-type "weapon"}}
@@ -347,7 +349,7 @@
  {:effect "5% chance to refund the spell slot used for a spell cast outside of your turn."
   :tags   #{"magic"}}
  {:effect "Regain 2 hits points when you, or allies within [5] feet of you, take a critical hit and remains conscious."
-  :tags   #{"defence"}}
+  :tags   #{"survivability"}}
  {:effect   "This armour no longer causes Stealth checks to be made with disadvantage."
   :tags     #{"utility"}
   :requires {:base-type             "armour"
