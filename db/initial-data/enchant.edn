@@ -30,8 +30,7 @@
   :points   20
   :tags     #{"damage"}
   :requires {:base-type "weapon"}
-  :randoms  [{:preset :damage-types
-              :type   :non-physical}]}
+  :randoms  [{:preset :damage-types}]}
  {:effect "+1 spell save and special feature DCs"
   :tags   #{"accuracy"}
   :points 35}
@@ -84,12 +83,6 @@
   :tags      #{"accuracy"}
   :prohibits {:base-type "weapon"}
   :points    25}
- {:effect   "+1d4 %s damage with attacks with this weapon."
-  :tags     #{"damage"}
-  :points   20
-  :randoms  [{:preset :damage-types
-              :type   :physical}]
-  :requires {:base-type "weapon"}}
  {:effect   "+1 to %s saving throws"
   :randoms  [{:preset :attributes
               :type   :uncommon}]

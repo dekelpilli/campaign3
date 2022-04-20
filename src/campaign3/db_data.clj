@@ -154,7 +154,7 @@
                                 (update :requires u/jsonb-lift)
                                 (update :randoms u/jsonb-lift)
                                 (update :prohibits u/jsonb-lift)
-                                (update :tags u/jsonb-lift)
+                                (update :tags (comp u/jsonb-lift vec))
                                 (dissoc :upgradeable?)
                                 (assoc :points points
                                        :upgradeable upgradeable?

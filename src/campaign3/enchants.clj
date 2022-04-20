@@ -19,6 +19,7 @@
 (def enchants (->> (db/execute! {:select [:*] :from [:enchants]})
                    (map (fn [e]
                           (-> e
+                              (update :tags set)
                               (update :randoms randoms/randoms->fn)
                               (update :requires prep-matcher)
                               (update :prohibits prep-matcher))))))
@@ -31,43 +32,26 @@
   (when (some? req)
     (= req (some? actual))))
 
-(defn- prohibits? [{:keys [range] :as base}
-                  given-base-type
-                  {:keys [base-type ranged?] :as prohibits}]
-  (or (false? (equality-match? given-base-type base-type))
-      (false? (equality-match? (:disadvantaged-stealth base) (:disadvantaged-stealth prohibits)))
-      (false? (presence-match? range ranged?))
-      (reduce
-        (fn [_ [kw req]]
-          (let [base-value (kw base)]
-            (if (if (coll? base-value)
-                  (some req base-value)
-                  (req base-value))
-              (reduced true)
-              false)))
-        false
-        (dissoc prohibits :base-type :ranged? :disadvantaged-stealth))))
+(defn is-allowed? [base base-type prohibits? reqs]
+  (reduce
+    (fn [_ [kw req]]
+      (let [match? (case kw
+                     :base-type (equality-match? base-type req)
+                     :disadvantaged-stealth (equality-match? (:disadvantaged-stealth base) req)
+                     :ranged? (presence-match? (:range base) req)
+                     (let [base-value (kw base)]
+                       (if (coll? base-value)
+                         (some req base-value)
+                         (req base-value))))]
+        (if (= prohibits? match?)
+          (reduced false)
+          true)))
+    true
+    reqs))
 
-(defn- meets-requirements? [{:keys [range] :as base}
-                           given-base-type
-                           {:keys [base-type ranged?] :as requires}]
-  (and (not (false? (equality-match? given-base-type base-type)))
-       (not (false? (equality-match? (:disadvantaged-stealth base) (:disadvantaged-stealth requires))))
-       (not (false? (presence-match? range ranged?)))
-       (reduce
-         (fn [_ [kw req]]
-           (let [base-value (kw base)]
-             (if (if (coll? base-value)
-                   (some req base-value)
-                   (req base-value))
-               true
-               (reduced false))))
-         true
-         (dissoc requires :base-type :ranged? :disadvantaged-stealth))))
-
-(defn- compatible? [base base-type {:keys [requires prohibits]}]
-  (and (not (prohibits? base base-type prohibits))
-       (meets-requirements? base base-type requires)))
+(defn compatible? [base base-type {:keys [requires prohibits]}]
+  (and (is-allowed? base base-type true prohibits)
+       (is-allowed? base base-type false requires)))
 
 (defn find-valid-enchants [base base-type]
   (filterv #(compatible? base base-type %) enchants))
