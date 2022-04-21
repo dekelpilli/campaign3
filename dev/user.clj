@@ -8,6 +8,7 @@
              [util :as u]
              [prompting :as p]
              [db :as db]
+             [randoms :as randoms]
              [curios :as curios]
              [relics :as relics]
              [mundanes :as mundanes]

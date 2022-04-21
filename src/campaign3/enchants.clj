@@ -17,8 +17,9 @@
     matcher))
 
 (def enchants (->> (db/load-all :enchants)
-                   (map (fn [e]
-                          (-> e
+                   (map (fn [{:keys [randoms] :as enchant}]
+                          (-> enchant
+                              (assoc :weighting (randoms/randoms->weighting-multiplier randoms))
                               (update :tags set)
                               (update :randoms randoms/randoms->fn)
                               (update :requires prep-matcher)
@@ -53,16 +54,19 @@
   (and (is-allowed? base base-type true prohibits)
        (is-allowed? base base-type false requires)))
 
-(defn find-valid-enchants [base base-type]
-  (filterv #(compatible? base base-type %) enchants))
+(defn ->valid-enchant-fn [base base-type]
+  (let [valid-enchants (filterv #(compatible? base base-type %) enchants)]
+    (r/alias-method-sampler
+      (mapv #(dissoc % :weighting) valid-enchants)
+      (mapv :weighting valid-enchants))))
 
-(def find-valid-enchants-memo (memoize find-valid-enchants))
+(def ->valid-enchant-fn-memo (memoize ->valid-enchant-fn))
 
 (defn add-enchants [base type points-target]
-  (let [valid-enchants (find-valid-enchants-memo base type)]
+  (let [valid-enchant-fn (->valid-enchant-fn-memo base type)]
     (loop [points-sum 0
            enchants []]
-      (let [{:keys [points] :as e} (r/sample valid-enchants)
+      (let [{:keys [points] :as e} (valid-enchant-fn)
             new-points-sum (+ points points-sum)
             new-enchants (conj enchants e)]
         (if (> new-points-sum points-target)
@@ -76,8 +80,7 @@
 (defn >>add []
   (let [{:keys [base type]} (mundane/>>base)]
     (when (and base type)
-      (->> (find-valid-enchants-memo base type)
-           (r/sample)
+      (->> ((->valid-enchant-fn-memo base type))
            (u/fill-randoms)
            (:effect)))))
 

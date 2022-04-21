@@ -17,6 +17,17 @@
     (vector? randoms) (apply juxt (map (comp rand-from random->values-vec) randoms))
     (map? randoms) (randoms-preset randoms)))
 
+(defn- random->weighting-multiplier [{:keys [preset] :as random}]
+  (case preset
+    :without-replacement (* (:amount random) (random->weighting-multiplier random))
+    (count (random->values-vec random))))
+
+(defn randoms->weighting-multiplier [randoms]
+  (cond
+    (vector? randoms) (transduce (map random->weighting-multiplier) + 0 randoms)
+    (map? randoms) (random->weighting-multiplier randoms)
+    (nil? randoms) 1))
+
 (defmethod randoms-preset :languages [_]
   ["Common" "Dwarvish" "Elvish" "Giant" "Gnomish" "Goblin" "Halfling" "Orc"
    "Abyssal" "Celestial" "Draconic" "Deep Speech" "Infernal" "Primordial" "Sylvan" "Undercommon"])
