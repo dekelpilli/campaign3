@@ -10,7 +10,6 @@
              [consumables :as consumables]
              [prayers :as prayers]
              [encounters :as encounter]
-             [dice :as dice]
              [rings :as rings]
              [uniques :as unique]]
             [randy.core :as r]

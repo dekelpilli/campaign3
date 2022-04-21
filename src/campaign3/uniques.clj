@@ -5,7 +5,7 @@
      [db :as db]]
     [randy.core :as r]))
 
-(def uniques (db/execute! {:select [:*] :from [:uniques]}))
+(def uniques (db/load-all :uniques))
 
 (defn new []
   (-> (r/sample uniques)

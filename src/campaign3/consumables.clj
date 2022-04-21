@@ -5,7 +5,7 @@
      [amounts :as amounts]
      [db :as db]]))
 
-(def consumables (->> (db/execute! {:select [:*] :from [:consumables]})
+(def consumables (->> (db/load-all :consumables)
                       (map #(update % :amount amounts/amount->fn "1d4"))))
 
 (defn new []

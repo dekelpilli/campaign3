@@ -127,7 +127,7 @@
   :tags         #{"utility"}
   :upgradeable? false}
  {:effect "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."
-  :tags   #{"survivability" "survivability" "utility"}}
+  :tags   #{"survivability" "utility"}}
  {:effect "+1 global damage."
   :tags   #{"damage"}
   :points 15}

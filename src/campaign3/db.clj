@@ -6,7 +6,7 @@
             [config.core :refer [env]]
             [jsonista.core :as j])
   (:import (java.sql Connection PreparedStatement)
-           (org.postgresql.util PGobject)
+           (org.postgresql.util PGobject PSQLException)
            (clojure.lang IObj IPersistentMap IPersistentVector)))
 
 (def data-src (let [{:keys [db-host db-port db-user db-pass db-name]} env]
@@ -36,6 +36,11 @@
      (hsql/format statement)
      (cond-> {:builder-fn as-unqualified-kebab-maps}
              (seq return-keys) (assoc :return-keys (mapv (comp first hsql/format-expr) return-keys))))))
+
+(defn load-all [table]
+  (try
+    (execute! {:select [:*] :from [table]})
+    (catch PSQLException _ [])))
 
 (defn- ->pgobject  [x]
   (let [pg-type (or (:pg-type (meta x)) "jsonb")]

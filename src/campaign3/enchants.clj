@@ -16,7 +16,7 @@
               x))
     matcher))
 
-(def enchants (->> (db/execute! {:select [:*] :from [:enchants]})
+(def enchants (->> (db/load-all :enchants)
                    (map (fn [e]
                           (-> e
                               (update :tags set)

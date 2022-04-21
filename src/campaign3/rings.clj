@@ -3,20 +3,12 @@
     [campaign3
      [util :as u]
      [prompting :as p]
-     [randoms :as randoms]
      [db :as db]]
-    [randy.core :as r]
-    [clojure.string :as str]))
+    [randy.core :as r]))
 
-(def synergy-rings (->> (db/execute! {:select [:*]
-                                      :from   [:rings]
-                                      :where  [:is :synergy true]})
-                        (map #(update % :randoms randoms/randoms->fn))))
-(def regular-rings (->> (db/execute! {:select [:*]
-                                      :from   [:rings]
-                                      :where  [:is :synergy false]})
-                        (map #(update % :randoms randoms/randoms->fn))))
-(def all-rings (into synergy-rings regular-rings))
+(def all-rings (db/load-all :rings))
+(def synergy-rings (filterv :synergy all-rings))
+(def regular-rings (filterv (complement :synergy) all-rings))
 
 (defn new-non-synergy []
   (->> regular-rings

@@ -5,8 +5,8 @@
              [prompting :as p]]
             [randy.core :as r]))
 
-(def weapons (db/execute! {:select [:*] :from [:weapons]}))
-(def armours (db/execute! {:select [:*] :from [:armours]}))
+(def weapons (db/load-all :weapons))
+(def armours (db/load-all :armours))
 (def armours-by-slot (group-by :slot armours))
 
 (def base-types {"weapon" weapons "armour" armours})

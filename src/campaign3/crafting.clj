@@ -5,7 +5,7 @@
      [db :as db]
      [amounts :as amounts]]))
 
-(def crafting-items (->> (db/execute! {:select [:*] :from [:crafting-items]})
+(def crafting-items (->> (db/load-all :crafting-items)
                          (map #(update % :amount amounts/amount->fn "1d3"))))
 
 (defn new []

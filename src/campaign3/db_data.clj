@@ -179,6 +179,18 @@
                                 (update :randoms u/jsonb-lift)
                                 (assoc :synergy (str/starts-with? name "The"))))))}))
 
+(defn create-curios! []
+  (db/execute! {:create-table :curios
+                :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:tag :text [:not nil]]
+                               [:multiplier :integer [:not nil]]]}))
+
+(defn insert-curios! []
+  (drop! :curios)
+  (create-curios!)
+  (db/execute! {:insert-into [:curios]
+                :values (load-data "curio")}))
+
 (defn insert-data! []
   (db/in-transaction
     (insert-armours!)
@@ -188,7 +200,8 @@
     (insert-consumables!)
     (insert-positive-encounters!)
     (insert-enchants!)
-    (insert-rings!)))
+    (insert-rings!)
+    (insert-curios!)))
 
 (defn backup-data! []
   ;TODO write any mutable data to db/current-state to keep log of changes by session
