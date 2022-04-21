@@ -1,23 +1,17 @@
-[{:name   "Chaos Orb(s)"
-  :effect "Remove all mods on a magical item and replace them with new ones (3d20 points, min 10)."}
- {:name   "Orb(s) of Destruction"
-  :effect "Remove a random mod from a magic item or relic."}
- {:name   "Orb(s) of Creation"
-  :effect "Convert a mundane item into a magical item (2d20 total enchant points, min 5)"}
- {:name   "Orb(s) of Flux"
+[{:name   "Orb(s) of Flux"
   :effect "Swap magical properties between compatible items, including simply moving enchantments to mundane items."}
- {:name   "Exalted Orb(s)"
+ {:name   "Orb(s) of Annexation"
   :effect "Add a mod to a magical item"
   :amount [:disadvantaged [:default]]}
  {:name   "Orb(s) of Balance"
   :effect "Remove a mod from a magical item and replace it with mods at least equal in point value."}
- {:name   "Divine Orb(s)"
-  :effect "Reroll the randomised values of one mod, or of all mods on an item."}
+ {:name   "Orb(s) of Refinement"
+  :effect "Replace one random value from one modifier on an item with any possible random value of your choice."}
  {:name   "Mythic Orb(s)"
   :effect "Transform a unique item into another random unique item."
   :amount [:advantaged [:default]]}
  {:name   "Orb of Mulligan"
-  :effect "Completely level down a relic or artefact, then level it back up to its current level. Before levelling it back up, you can let go of your attunement to it.",
+  :effect "Completely level down a relic then level it back up to its current level. Before levelling it back up, you can let go of your attunement to it.",
   :amount [:constant 1]}
  {:name   "Sacrificial Orb"
   :effect "Use when performing a ring sacrifice increase the amount of options by an amount equal to the number of rings sacrificed."}

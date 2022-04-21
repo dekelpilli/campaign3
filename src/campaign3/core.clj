@@ -19,8 +19,6 @@
 (def loot-actions
   {1  {:name   "1-10 gold"
        :action #(str (rng/next-int r/default-rng 1 11) " gold")}
-   2  {:name   "???"
-       :action (constantly "TODO")}
    3  {:name   "Mundane item"
        :action (comp :base mundane/new)}
    5  {:name   "Consumable"
@@ -64,9 +62,7 @@
    27 {:name   "Positive encounter"
        :action encounter/new-positive}
    28 {:name   "Generate dungeon template"
-       :action encounter/new-dungeon}
-   29 {:name   "Use a crafting item"
-       :action crafting/>>use}})
+       :action encounter/new-dungeon}})
 
 (defn loot [n]
   (when-let [{:keys [action]} (get loot-actions n)]
