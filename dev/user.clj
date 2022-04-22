@@ -1,6 +1,5 @@
 (ns user
-  (:require [clojure.tools.namespace.repl :as nsrepl]
-            [hawk.core :as hawk]
+  (:require [clojure.tools.namespace.repl :refer [refresh]]
             [clojure.string :as str]
             [randy.core :as r]
             [campaign3
@@ -117,6 +116,6 @@
                 '()
                 (update-vals default-aliases (comp symbol str)))))
 
-(hawk/watch! [{:paths   ["src"]
-               :handler (fn [ctx e]
-                          (future (nsrepl/refresh)))}])
+(defn rr []
+  (refresh)
+  (reload))
