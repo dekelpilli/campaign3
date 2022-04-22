@@ -81,16 +81,14 @@
    "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"])
 
 (defmethod randoms-preset :cantrips [_]
-  ["Acid Splash", "Blade Ward", "Booming Blade", "Chill Touch", "Control Flames",
-   "Create Bonfire", "Dancing Lights", "Druidcraft", "Eldritch Blast",
-   "Encode Thoughts", "Fire Bolt", "Friends", "Frostbite", "Green-Flame Blade",
-   "Guidance", "Gust", "Infestation", "Light", "Lightning Lure", "Mage Hand",
-   "Magic Stone", "Mending", "Message", "Mind Sliver", "Minor Illusion",
-   "Mold Earth", "Poison Spray", "Prestidigitation", "Primal Savagery",
-   "Produce Flame", "Ray of Frost", "Resistance", "Sacred Flame", "Sapping Sting",
-   "Shape Water", "Shillelagh", "Shocking Grasp", "Spare the Dying", "Sword Burst",
-   "Thaumaturgy", "Thorn Whip", "Thunderclap", "Toll the Dead", "True Strike",
-   "Vicious Mockery", "Word of Radiance"]) ;TODO update list, generify for level x spell, school?
+  ["Acid Splash" "Altered Strike" "Arcane Muscles" "Blade Ward" "Booming Blade" "Calculate" "Chill Touch"
+   "Circular Breathing" "Control Flames" "Create Bonfire" "Dancing Lights" "Druidcraft" "Eldritch Blast"
+   "Encode Thoughts" "Fire Bolt" "Friends" "Frostbite" "Grapevine" "Green-Flame Blade" "Guidance" "Gust"
+   "Infestation" "Light" "Lightning Lure" "Mage Hand" "Magic Stone" "Mending" "Message" "Mind Sliver"
+   "Minor Illusion" "Mold Earth" "Pestilence" "Poison Spray" "Prestidigitation" "Primal Savagery" "Produce Flame"
+   "Ray of Frost" "Resistance" "Sacred Flame" "Sapping Sting" "Shape Water" "Shillelagh" "Shocking Grasp"
+   "Spare the Dying" "Sword Burst" "Thaumaturgy" "Thorn Whip" "Thunderclap" "Toll the Dead" "True Strike"
+   "Vicious Mockery" "Word of Radiance"])
 
 (defmethod randoms-preset :without-replacement [{:keys [amount from]}]
   (let [vs (random->values-vec from)]
