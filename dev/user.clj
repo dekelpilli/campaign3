@@ -111,7 +111,8 @@
   (cons 'do
         (reduce (fn [l [alias-sym ns-sym]]
                   (->> l
-                       (cons (list `alias `'~alias-sym `'~ns-sym))
+                       (cons (list `require [`'~ns-sym :as `'~alias-sym]))
+                       #_(cons (list `alias `'~alias-sym `'~ns-sym))
                        (cons (list `ns-unalias `*ns* `'~alias-sym))))
                 '()
                 (update-vals default-aliases (comp symbol str)))))

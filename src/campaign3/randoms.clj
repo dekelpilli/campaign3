@@ -23,10 +23,17 @@
     (count (random->values-vec random))))
 
 (defn randoms->weighting-multiplier [randoms]
-  (cond
-    (vector? randoms) (transduce (map random->weighting-multiplier) + 0 randoms)
-    (map? randoms) (random->weighting-multiplier randoms)
-    (nil? randoms) 1))
+  (let [approx-num-options (cond
+                             (vector? randoms) (transduce (map random->weighting-multiplier) + 0 randoms)
+                             (map? randoms) (random->weighting-multiplier randoms)
+                             (nil? randoms) 1)]
+    (if (> approx-num-options 10)
+      (->> (- approx-num-options 10)
+           (double)
+           (Math/sqrt)
+           (int)
+           (+ 10))
+      approx-num-options)))
 
 (defmethod randoms-preset :languages [_]
   ["Common" "Dwarvish" "Elvish" "Giant" "Gnomish" "Goblin" "Halfling" "Orc"

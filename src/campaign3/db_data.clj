@@ -138,7 +138,7 @@
                                [:requires :jsonb]
                                [:prohibits :jsonb]
                                [:randoms :jsonb]
-                               [:tags :jsonb] ;TODO weighted enchants
+                               [:tags :jsonb]
                                [[:primary-key :effect :points :upgrade-points]]]}))
 
 (defn insert-enchants! []
