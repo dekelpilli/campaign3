@@ -7,7 +7,7 @@
 
 (def ^:private console-prompt (ConsolePrompt.))
 
-(defrecord CommaSeparatedStringCompleter [lowers-set lowers-regular-map once?]
+(defrecord CommaSeparatedStringsCompleter [lowers-set lowers-regular-map once?]
   Completer
   (complete [_ buffer cursor candidates]
     (let [listed (when-not (str/blank? buffer)
@@ -29,6 +29,18 @@
         (cond-> (- cursor (count current-listed-raw))
                 (and (some? listed) (> (count listed) 1)) inc)))))
 
+(defrecord CaseInsensitiveStringsCompleter [lowers-set lowers-regular-map]
+  Completer
+  (complete [_ buffer _cursor candidates]
+    (if buffer
+      (let [buffer-lower (str/lower-case buffer)
+            matching-uppers (for [potential-candidate-lower (subseq lowers-set >= buffer-lower)
+                                  :while (str/starts-with? potential-candidate-lower buffer-lower)]
+                              (get lowers-regular-map potential-candidate-lower))]
+        (.addAll candidates matching-uppers))
+      (.addAll candidates (vals lowers-regular-map)))
+    (if (empty? candidates) -1 0)))
+
 (defn- stringify [x]
   (if (keyword? x) (name x) (str x)))
 
@@ -48,6 +60,7 @@
   ([prompt valid-inputs & {:keys [completer]
                            :or   {completer :regular}}]
    (let [prompt-builder (.getPromptBuilder console-prompt)
+         valid-inputs (set valid-inputs)
          m (into {} (map (juxt str/lower-case identity)) valid-inputs)
          s (into (sorted-set) (keys m))]
      (-> prompt-builder
@@ -56,16 +69,15 @@
          (.name prompt)
          (cond-> valid-inputs (.addCompleter
                                 (case completer
-                                  :regular (StringsCompleter. ^Collection valid-inputs) ;TODO make case insensitive
-                                  :comma-separated (CommaSeparatedStringCompleter. s m false)
-                                  :comma-separated-once (CommaSeparatedStringCompleter. s m true))))
+                                  :regular (CaseInsensitiveStringsCompleter. s m)
+                                  :comma-separated (CommaSeparatedStringsCompleter. s m false)
+                                  :comma-separated-once (CommaSeparatedStringsCompleter. s m true))))
          (.addPrompt))
      (when-let [input (-> (.prompt console-prompt (.build prompt-builder))
                           ^InputResult (get prompt)
                           (.getInput))]
        (case completer
-         :regular (cond-> (str/trimr input)
-                          valid-inputs (valid-inputs)) ;TODO valid-inputs (m) once case-insensitive
+         :regular (m (str/lower-case (str/trimr input)))
          (:comma-separated :comma-separated-once) (->> (str/split input #",")
                                                        (into #{} (comp (map (comp m str/lower-case str/trim))
                                                                        (filter identity)))))))))
