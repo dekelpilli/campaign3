@@ -4,30 +4,30 @@
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Bludgeoning"],
-  :range        "10/15",
-  :traits       ["Thrown"]}
+  :range        "20/60",
+  :traits       ["Deadly" "Thrown"]}
  {:category     "Knife",
   :proficiency  "Simple",
   :name         "Dagger",
   :type         "Melee",
   :damage       "1d4",
-  :damage-types ["Piercing" "Slashing"],
-  :range        "10/15",
-  :traits       ["Light" "Finesse" "Thrown" "Flexible"]}
+  :damage-types ["Piercing"],
+  :range        "20/60",
+  :traits       ["Dual-wielding" "Finesse" "Thrown"]}
  {:category     "Brawling",
   :proficiency  "Simple",
   :name         "Gauntlet",
   :type         "Melee",
   :damage       "1d4",
-  :damage-types ["Bludgeoning"],
-  :traits       ["Light" "Unarmed"]}
+  :damage-types ["Bludgeoning" "Slashing"],
+  :traits       ["Concealable" "Dual-wielding" "Unarmed" "Flexible"]}
  {:category     "Club",
   :proficiency  "Simple",
   :name         "Light Mace",
   :type         "Melee",
   :damage       "1d4",
   :damage-types ["Bludgeoning"],
-  :traits       ["Light" "Finesse" "Shove"]}
+  :traits       ["Dual-wielding" "Finesse" "Shove"]}
  {:category     "Spear",
   :proficiency  "Simple",
   :name         "Longspear",
@@ -41,128 +41,113 @@
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Bludgeoning"],
-  :traits       ["Shove"]}
+  :traits       ["Deadly" "Shove"]}
  {:category     "Club",
   :proficiency  "Simple",
   :name         "Morningstar",
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Bludgeoning" "Piercing"],
-  :traits       ["Flexible"]}
+  :traits       ["Deadly" "Flexible"]}
  {:category     "Knife",
   :proficiency  "Simple",
   :name         "Sickle",
   :type         "Melee",
   :damage       "1d4",
   :damage-types ["Slashing"],
-  :traits       ["Light" "Finesse" "Trip"]}
+  :traits       ["Dual-wielding" "Finesse" "Trip"]}
  {:category     "Spear",
   :proficiency  "Simple",
   :name         "Spear",
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Piercing"],
-  :range        "20/30",
+  :range        "30/80",
   :traits       ["Thrown"]}
- {:category     "Brawling",
+ {:category     "Caster",
   :proficiency  "Simple",
-  :name         "Spiked Gauntlet",
+  :name         "Staff",
   :type         "Melee",
-  :damage       "1d4",
-  :damage-types ["Piercing"],
-  :traits       ["Light" "Unarmed"]}
+  :damage       "1d8",
+  :damage-types ["Bludgeoning"],
+  :traits       ["Two-handed" "Conduit"]}
  {:category     "Dart",
   :proficiency  "Simple",
   :name         "Blowgun",
   :type         "Ranged",
   :damage       1,
   :damage-types ["Piercing"],
-  :range        "20/40",
-  :traits       ["Light" "Non-lethal"]}
+  :range        "20/60",
+  :traits       ["Dual-wielding" "Forceful" "Non-lethal" "Rapid"]}
  {:category     "Bow",
   :proficiency  "Simple",
   :name         "Crossbow",
   :type         "Ranged",
   :damage       "1d8",
   :damage-types ["Piercing"],
-  :range        "120/240",
-  :traits       ["Two-handed"]}
- {:category     "Dart",
-  :proficiency  "Simple",
-  :name         "Dart",
-  :type         "Ranged",
-  :damage       "1d4",
-  :damage-types ["Piercing"],
-  :range        "20/30",
-  :traits       ["Light" "Thrown"]}
+  :range        "120/400",
+  :traits       ["Two-handed" "Loading"]}
  {:category     "Bow",
   :proficiency  "Simple",
   :name         "Hand Crossbow",
   :type         "Ranged",
-  :damage       "1d6",
+  :damage       "1d8",
   :damage-types ["Piercing"],
-  :range        "60/120",
-  :traits       []}
+  :range        "30/80",
+  :traits       ["Loading"]}
  {:category     "Bow",
   :proficiency  "Simple",
   :name         "Heavy Crossbow",
   :type         "Ranged",
   :damage       "1d10",
   :damage-types ["Piercing"],
-  :range        "120/240",
-  :traits       ["Two-handed" "Reload"]}
- {:category     "Dart",
-  :proficiency  "Simple",
-  :name         "Javelin",
-  :type         "Ranged",
-  :damage       "1d6",
-  :damage-types ["Piercing"],
-  :range        "30/45",
-  :traits       ["Thrown"]}
+  :range        "120/400",
+  :traits       ["Two-handed" "Heavy" "Loading"]}
  {:category     "Sling",
   :proficiency  "Simple",
   :name         "Sling",
   :type         "Ranged",
   :damage       "1d6",
   :damage-types ["Bludgeoning"],
-  :range        "50/100",
+  :range        "30/80",
   :traits       ["Propulsive"]}
+ {:category     "Magic",
+  :proficiency  "Simple",
+  :name         "Wand",
+  :type         "Ranged",
+  :damage       1,
+  :damage-types ["Force"],
+  :range        "20/60",
+  :traits       ["Conduit" "Dual-wielding" "Mental"]}
  {:category     "Sword",
   :proficiency  "Martial",
   :name         "Bastard Sword",
   :type         "Melee",
-  :damage       "1d8",
-  :damage-types ["Piercing"],
-  :traits       ["Versatile"]}
+  :damage       "1d10",
+  :damage-types ["Slashing"],
+  :traits       ["Two-handed" "Grapple" "Responsive"]}
  {:category     "Axe",
   :proficiency  "Martial",
   :name         "Battle Axe",
   :type         "Melee",
   :damage       "1d8",
   :damage-types ["Slashing"],
-  :traits       ["Sweep"]}
- #_{:category     "Sword",
-  :proficiency  "Martial",
-  :name         "Bastard Sword",
-  :type         "Melee",
-  :damage       "1d10",
-  :damage-types ["Slashing"],
-  :traits       ["Two-handed" "Grapple"]} ;TODO duplicate item, need to redo weapons anyway
- {:category     "Club",
-  :proficiency  "Martial",
-  :name         "Bo Staff",
-  :type         "Melee",
-  :damage       "1d8",
-  :damage-types ["Bludgeoning"],
-  :traits       ["Two-handed" "Parry" "Reach" "Trip"]}
+  :traits       ["Disarm" "Sweep"]}
  {:category     "Club",
   :proficiency  "Martial",
   :name         "Boomerang",
   :type         "Melee",
   :damage       "1d4",
   :damage-types ["Slashing"],
-  :range        "20/30",
-  :traits       ["Thrown" "Returning"]}
+  :range        "20/60",
+  :traits       ["Deadly" "Thrown" "Returning"]}
+ {:category     "Club",
+  :proficiency  "Martial",
+  :name         "Bo Staff",
+  :type         "Melee",
+  :damage       "1d4",
+  :damage-types ["Bludgeoning"],
+  :traits       ["Two-handed" "Parrying" "Reach" "Trip"]}
  {:category     "Sword",
   :proficiency  "Martial",
   :name         "Falchion",
@@ -176,14 +161,14 @@
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Bludgeoning"],
-  :traits       ["Disarm" "Sweep" "Trip"]}
+  :traits       ["Disarm" "Responsive" "Sweep" "Trip"]}
  {:category     "Polearm",
   :proficiency  "Martial",
   :name         "Glaive",
   :type         "Melee",
   :damage       "1d8",
   :damage-types ["Slashing"],
-  :traits       ["Two-handed" "Deadly" "Forceful" "Reach"]}
+  :traits       ["Two-handed" "Deadly" "Forceful" "Heavy" "Reach"]}
  {:category     "Axe",
   :proficiency  "Martial",
   :name         "Greataxe",
@@ -197,14 +182,14 @@
   :type         "Melee",
   :damage       "1d10",
   :damage-types ["Bludgeoning"],
-  :traits       ["Two-handed" "Backswing" "Heavy" "Shove"]}
+  :traits       ["Two-handed" "Deadly" "Heavy" "Rapid" "Shove"]}
  {:category     "Pick",
   :proficiency  "Martial",
   :name         "Greatpick",
   :type         "Melee",
   :damage       "1d10",
   :damage-types ["Piercing"],
-  :traits       ["Two-handed" "Fatal" "Heavy"]}
+  :traits       ["Two-handed" "Deadly" "Fatal" "Heavy"]}
  {:category     "Sword",
   :proficiency  "Martial",
   :name         "Greatsword",
@@ -212,20 +197,6 @@
   :damage       "1d12",
   :damage-types ["Slashing" "Piercing"],
   :traits       ["Two-handed" "Flexible" "Heavy"]}
- {:category     "Shield",
-  :proficiency  "Martial",
-  :name         "Tower Shield",
-  :type         "Melee",
-  :damage       "1d6",
-  :damage-types ["Bludgeoning"],
-  :traits       ["Heavy" "Shove" "Targe" "Two-handed"]}
- {:category     "Shield",
-  :proficiency  "Martial",
-  :name         "Spiked Tower Shield",
-  :type         "Melee",
-  :damage       "1d6",
-  :damage-types ["Piercing"],
-  :traits       ["Heavy" "Shove" "Targe" "Two-handed"]}
  {:category     "Polearm",
   :proficiency  "Martial",
   :name         "Guisarme",
@@ -246,8 +217,8 @@
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Slashing"],
-  :range        "10/15",
-  :traits       ["Light" "Sweep" "Thrown"]}
+  :range        "20/60",
+  :traits       ["Disarm" "Dual-wielding" "Sweep" "Thrown"]}
  {:category     "Spear",
   :proficiency  "Martial",
   :name         "Lance",
@@ -259,31 +230,31 @@
   :proficiency  "Martial",
   :name         "Light Hammer",
   :type         "Melee",
-  :damage       "1d6",
+  :damage       "1d8",
   :damage-types ["Bludgeoning"],
-  :range        "20/30",
-  :traits       ["Light" "Thrown"]}
+  :range        "20/60",
+  :traits       ["Dual-wielding" "Thrown"]}
  {:category     "Pick",
   :proficiency  "Martial",
   :name         "Light Pick",
   :type         "Melee",
-  :damage       "1d4",
+  :damage       "1d6",
   :damage-types ["Piercing"],
-  :traits       ["Light" "Fatal"]}
+  :traits       ["Dual-wielding" "Fatal"]}
  {:category     "Sword",
   :proficiency  "Martial",
   :name         "Longsword",
   :type         "Melee",
   :damage       "1d8",
   :damage-types ["Slashing" "Piercing"],
-  :traits       ["Flexible"]}
+  :traits       ["Flexible" "Responsive"]}
  {:category     "Knife",
   :proficiency  "Martial",
   :name         "Main-gauche",
   :type         "Melee",
   :damage       "1d4",
-  :damage-types ["Piercing" "Slashing"],
-  :traits       ["Light" "Disarm" "Finesse" "Parry" "Flexible"]}
+  :damage-types ["Piercing"],
+  :traits       ["Dual-wielding" "Finesse" "Parrying"]}
  {:category     "Hammer",
   :proficiency  "Martial",
   :name         "Maul",
@@ -304,7 +275,7 @@
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Piercing"],
-  :traits       ["Fatal"]}
+  :traits       ["Deadly" "Fatal"]}
  {:category     "Polearm",
   :proficiency  "Martial",
   :name         "Ranseur",
@@ -318,28 +289,28 @@
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Piercing"],
-  :traits       ["Deadly" "Disarm" "Finesse"]}
+  :traits       ["Disarm" "Fatal" "Finesse"]}
  {:category     "Sword",
   :proficiency  "Martial",
   :name         "Ring Blade",
   :type         "Melee",
-  :damage       ["1d10"],
+  :damage       ["1d8"],
   :damage-types ["Slashing"],
   :traits       ["Two-handed" "Disarm" "Finesse" "Sweep"]}
  {:category     "Club",
   :proficiency  "Martial",
   :name         "Sap",
   :type         "Melee",
-  :damage       "1d6",
+  :damage       "1d8",
   :damage-types ["Bludgeoning"],
-  :traits       ["Light" "Non-lethal"]}
+  :traits       ["Concealable" "Dual-wielding" "Non-lethal"]}
  {:category     "Sword",
   :proficiency  "Martial",
   :name         "Scimitar",
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Slashing"],
-  :traits       ["Forceful" "Sweep"]}
+  :traits       ["Forceful" "Responsive" "Sweep"]}
  {:category     "Polearm",
   :proficiency  "Martial",
   :name         "Scythe",
@@ -353,36 +324,36 @@
   :type         "Melee",
   :damage       "1d6",
   :damage-types ["Piercing" "Slashing"],
-  :traits       ["Light" "Finesse" "Flexible"]}
+  :traits       ["Dual-wielding" "Finesse" "Flexible"]}
  {:category     "Shield",
   :proficiency  "Martial",
   :name         "Small Shield",
   :type         "Melee",
-  :damage       "1d4",
-  :damage-types ["Bludgeoning"],
-  :traits       ["Light" "Targe"]}
- {:category     "Shield",
-  :proficiency  "Martial",
-  :name         "Small Spiked Shield",
-  :type         "Melee",
-  :damage       "1d4",
-  :damage-types ["Piercing"],
-  :traits       ["Light" "Targe"]}
+  :damage       "1d6",
+  :damage-types ["Bludgeoning" "Slashing"],
+  :traits       ["Dual-wielding" "Flexible" "Targe"]}
  {:category     "Knife",
   :proficiency  "Martial",
   :name         "Starknife",
   :type         "Melee",
   :damage       "1d4",
-  :damage-types ["Piercing" "Slashing"],
-  :range        "20/30",
-  :traits       ["Light" "Fatal" "Finesse" "Thrown" "Flexible"]}
+  :damage-types ["Piercing"],
+  :range        "20/60",
+  :traits       ["Dual-wielding" "Fatal" "Finesse" "Thrown"]}
+ {:category     "Shield",
+  :proficiency  "Martial",
+  :name         "Tower Shield",
+  :type         "Melee",
+  :damage       "1d8",
+  :damage-types ["Bludgeoning"],
+  :traits       ["Two-handed" "Heavy" "Shove" "Targe"]}
  {:category     "Spear",
   :proficiency  "Martial",
   :name         "Trident",
   :type         "Melee",
   :damage       "1d8",
   :damage-types ["Piercing"],
-  :range        "20/30",
+  :range        "30/80",
   :traits       ["Thrown"]}
  {:category     "Flail",
   :proficiency  "Martial",
@@ -397,7 +368,7 @@
   :type         "Melee",
   :damage       "1d8",
   :damage-types ["Bludgeoning"],
-  :traits       ["Shove"]}
+  :traits       ["Deadly" "Shove"]}
  {:category     "Flail",
   :proficiency  "Martial",
   :name         "Whip",
@@ -407,48 +378,17 @@
   :traits       ["Disarm" "Finesse" "Non-lethal" "Reach" "Trip"]}
  {:category     "Bow",
   :proficiency  "Martial",
-  :name         "Composite Longbow",
-  :type         "Ranged",
-  :damage       "1d8",
-  :damage-types ["Piercing"],
-  :range        "100/200",
-  :traits       ["Fatal" "Propulsive" "Volley"]}
- {:category     "Bow",
-  :proficiency  "Martial",
-  :name         "Composite Shortbow",
-  :type         "Ranged",
-  :damage       "1d6",
-  :damage-types ["Piercing"],
-  :range        "60/120",
-  :traits       ["Fatal" "Propulsive"]}
- {:category     "Bow",
-  :proficiency  "Martial",
   :name         "Longbow",
   :type         "Ranged",
   :damage       "1d8",
   :damage-types ["Piercing"],
-  :range        "100/200",
-  :traits       ["Fatal" "Volley"]}
+  :range        "150/600",
+  :traits       ["Two-handed" "Fatal" "Heavy"]}
  {:category     "Bow",
   :proficiency  "Martial",
   :name         "Shortbow",
   :type         "Ranged",
   :damage       "1d6",
   :damage-types ["Piercing"],
-  :range        "60/120",
-  :traits       ["Fatal"]}
- {:category     "Magic",
-  :proficiency  "Simple",
-  :name         "Wand",
-  :type         "Ranged",
-  :damage       "1d4",
-  :damage-types ["Force"],
-  :range        "30/60",
-  :traits       ["Conduit" "Light" "Mental"]}
- {:category     "Caster",
-  :proficiency  "Simple",
-  :name         "Staff",
-  :type         "Melee",
-  :damage       "1d8",
-  :damage-types ["Bludgeoning"],
-  :traits       ["Conduit" "Two-Handed"]}]
+  :range        "80/320",
+  :traits       ["Two-handed" "Fatal"]}]
