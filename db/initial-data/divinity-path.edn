@@ -43,7 +43,7 @@
             :tags   #{"utility"}}
            {:effect "You may roll an additional die to attempt a critical hit after hitting a creature with an attack. Similarly, creatures that fail a save against a spell of yours must roll again and use the lowest result."
             :tags   #{"critical"}}
-           {:effect "You find divine dust with advantage (favouring refined dust)." ;TODO rename prayer stones
+           {:effect "You find divine dust with advantage (favouring refined dust)."
             :tags   #{"wealth"}}
            {:effect "The cost of levelling relics attuned to you is reduced by 10%."
             :tags   #{"wealth"}}
@@ -66,7 +66,7 @@
            {:effect "Gain 15 temporary hit points when you land a killing blow against marked enemy."
             :tags   #{"survivability"}}
            {:effect "Your attacks and spells deal +1d4 radiant damage against marked enemies."
-            :tags   #{"damage"}} ;TODO separate utility and out of combat (with overlap)?
+            :tags   #{"damage"}}
            {:effect "Enemies are marked with BoV if they damage you or an ally, instead of just you."
             :tags   #{"utility"}}
            {:effect "You have -1 critical strike requirement against marked enemies."
@@ -109,9 +109,9 @@
            {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed), you may make Constitution saving throw against a DC of 8 + twice the spell slot level used. On a success, you regain the consumed spell slot."
             :tags   #{"magic"}}]}
  {:name   "Touch of the Elements"
-  :levels [{:effect "You have +1 resistance to cold, fire, and lightning damage."
+  :levels [{}
+           {:effect "You have +1 resistance to cold, fire, and lightning damage."
             :tags   #{"survivability"}}
-           {}
            {:effect "You can cast Absorb Elements an amount of times equal to your attribute modifier of choice, to a minimum of once, per long rest."
             :tags   #{"magic" "damage" "survivability"}}
            {:effect "When you score a critical strike, your die sizes for cold, fire, and lightning damage increase by two."
@@ -136,4 +136,21 @@
            "When within 5 feet of one of your pillars, you have full visibility from the perspectives of any of your pillars. Additionally, you may choose to make any spell or attack you use originate from another pillar you have created in the same plane. For example, a pillar 500 feet away might make a sword attack against an adjacent creature, or cast Fireball into a room you would otherwise not be able to see."
            "You may cast Temple of The Gods once per long rest. When cast in this way, the temple must be dedicated to Eion. While in a Temple of the Gods dedicated to Eion, you may cast Conjuration spells at two levels above its regular spell level (normally the spell slot level used)."
            "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks."
-           "You may cast Create Magen once per long rest. When cast in this way, the maximum hit point reduction is instead 4 times the CR of the Magen summoned, but the reduction only lasts as long as the Magen is alive. You may desummon any of your Magens at will."]}]
+           "You may cast Create Magen once per long rest. When cast in this way, the maximum hit point reduction is instead 4 times the CR of the Magen summoned, but the reduction only lasts as long as the Magen is alive. You may desummon any of your Magens at will."]}
+ {:name   "Touch of Wilderness"
+  :levels [{:effect "+1 expertise die with Survival when in nature and when foraging materials from creatures."
+            :tags   #{"utility" "wealth"}}
+           {:effect "You are permanently under the effects of the Speak with Animals spell."
+            :tags   #{"magic" "utility"}}
+           {:effect "Aspects allow you to take one certain traits of a creature, but are mutually exclusive with one another. You may enter and exit Aspects as a free action. You learn Aspect of the Moorbounder and may use it once per combat; while this is active, but you gain the Moorbounder's speed and Standing Leap feature. You revert back to your regular form at the end of your turn."
+            :tags   #{"utility"}}
+           {:effect "Gain 5 temporary hit points hit points at the start of each turn in combat if within 60 feet of a plant at least Large in size."
+            :tags   #{"survivability"}}
+           {}
+           {:effect "You learn the Aspect of the Spider; while this is active, your spells and attacks have +1d4 poison damage, and you are are under the effect of the Spider Climb spell."
+            :tags   #{"damage" "magic" "utility"}}
+           {}
+           {:effect "You develop a thick hide, granting you +1 AC and +1 resistance to physical damage from weapons."
+            :tags   #{"survivability"}}
+           {}
+           {}]}]
