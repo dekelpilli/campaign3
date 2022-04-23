@@ -8,8 +8,9 @@
              [enchants :as e]
              [crafting :as crafting]
              [consumables :as consumables]
-             [prayers :as prayers]
+             [paths :as paths]
              [encounters :as encounter]
+             [curios :as curios]
              [rings :as rings]
              [uniques :as unique]]
             [randy.core :as r]
@@ -20,48 +21,32 @@
        :action #(str (rng/next-int r/default-rng 1 11) " gold")}
    3  {:name   "Mundane item"
        :action (comp :base mundane/new)}
-   5  {:name   "Consumable"
+   4  {:name   "Consumable"
        :action consumables/new}
-   6  {:name   "Unique"
+   5  {:name   "Unique"
        :action unique/new}
-   7  {:name   "Low value enchanted item (10 points)"
+   6  {:name   "Low value enchanted item (10 points)"
        :action #(e/random-enchanted 10)}
-   8  {:name   "100-150 gold"
+   7  {:name   "100-150 gold"
        :action #(str (rng/next-int r/default-rng 100 151) " gold")}
-   9  {:name   "Non-synergy ring"
+   8  {:name   "Non-synergy ring"
        :action rings/new-non-synergy}
-   10 {:name   "Synergy ring"
+   9  {:name   "Synergy ring"
        :action rings/new-synergy}
-   11 {:name   "Enchanted item (20 points)"
+   10 {:name   "Enchanted item (20 points)"
        :action #(e/random-enchanted 20)}
-   12 {:name   "High value enchanted item (30 points)"
+   11 {:name   "High value enchanted item (30 points)"
        :action #(e/random-enchanted 30)}
-   13 {:name   "Crafting item"
+   12 {:name   "Crafting item"
        :action crafting/new}
+   13 {:name   "Curios"
+       :action curios/new}
+   14 {:name   "Amulet"
+       :action (constantly "TODO")}
    15 {:name   "Prayer stone"
-       :action prayers/new-stone}
+       :action paths/new-divine-dust}
    16 {:name   "New relic"
-       :action relics/&new!}
-   18 {:name   "Level a relic"
-       :action relics/&level-relic!}
-   19 {:name   "Progress a prayer path"
-       :action prayers/&progress-path!}
-   21 {:name   "Add a modifier to an existing item"
-       :action e/>>add}
-   22 {:name   "Add modifiers to an existing items with the given total"
-       :action e/>>add-totalling}
-   23 {:name   "Perform a ring sacrifice"
-       :action rings/>>sacrifice}
-   24 {:name   "Sell a relic"
-       :action relics/>>sell!}
-   25 {:name   "Travel"
-       :action encounter/>>travel}
-   26 {:name   "Calculate loot rewards"
-       :action encounter/>>rewards}
-   27 {:name   "Positive encounter"
-       :action encounter/new-positive}
-   28 {:name   "Generate dungeon template"
-       :action encounter/new-dungeon}})
+       :action relics/&new!}})
 
 (defn loot [n]
   (when-let [{:keys [action]} (get loot-actions n)]

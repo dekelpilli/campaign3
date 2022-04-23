@@ -1,4 +1,4 @@
-(ns campaign3.prayers
+(ns campaign3.paths
   (:require
     [campaign3
      [db :as db]
@@ -8,7 +8,7 @@
 (def prayer-paths #_(db/execute! {:select [:*] :from [:prayer-paths]}))
 
 
-(defn new-stone []
+(defn new-divine-dust []
   (-> prayer-paths r/sample :name))
 
 (defn- update-progress! [{:keys [character path] :as new-progression}]

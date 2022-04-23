@@ -14,7 +14,7 @@
              [enchants :as enchants]
              [crafting :as crafting]
              [consumables :as consumables]
-             [prayers :as prayers]
+             [paths :as paths]
              [encounters :as encounters]
              [dice :as dice]
              [rings :as rings]
