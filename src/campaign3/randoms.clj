@@ -56,7 +56,7 @@
                "nature" "religion" "animal handling" "intimidation" "performance"]
     :all ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"
           "arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
-          "nature" "religion" "animal handling" "intimidation" "performance"])) ;TODO ensure none were missed
+          "nature" "religion" "animal handling" "intimidation" "performance"]))
 
 (defmethod randoms-preset :range [{:keys [args]}]
   (vec (apply range args)))

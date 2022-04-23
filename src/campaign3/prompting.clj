@@ -1,9 +1,7 @@
 (ns campaign3.prompting
-  (:require [clojure.string :as str]
-            [clojure.set :as set])
+  (:require [clojure.string :as str])
   (:import (de.codeshelf.consoleui.prompt ConsolePrompt CheckboxResult InputResult ListResult)
-           (jline.console.completer StringsCompleter Completer)
-           (java.util Collection)))
+           (jline.console.completer Completer)))
 
 (def ^:private console-prompt (ConsolePrompt.))
 

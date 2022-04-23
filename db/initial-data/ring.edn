@@ -67,9 +67,6 @@
             :from   {:preset :damage-types
                      :type   :non-physical}}
   :points  1}
- {:name   "Bloodthirsty"
-  :effect "You may immediately use a healing surge as a free action upon landing a killing blow."
-  :points 3}
  {:name    "Multilingual"
   :effect  "You can speak, read, and write %s if worn for at least 24 hours."
   :randoms [{:preset :languages}]

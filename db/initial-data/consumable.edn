@@ -1,5 +1,5 @@
 [{:name    "Level x health potion(s)"
-  :effect  "Equivalent to receiving healing from %d healing surge(s)."
+  :effect  "Heal %d hit dice worth of HP."
   :randoms [{:preset :range
              :args   [1 5]}]}
  {:name   "Potion(s) of Fortune"
