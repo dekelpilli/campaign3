@@ -11,7 +11,7 @@
     (let [listed (when-not (str/blank? buffer)
                    (cond-> (str/split buffer #",")
                            (str/ends-with? (str/trimr buffer) ",") (conj "")))
-          current-listed-raw (when listed (nth listed (dec (count listed))))
+          current-listed-raw (peek listed)
           current-listed-lower (when current-listed-raw (-> current-listed-raw str/trim str/lower-case))
           current-listed-complete? (lowers-set current-listed-lower)
           current-listed (if current-listed-complete? nil current-listed-lower)

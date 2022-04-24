@@ -142,10 +142,10 @@
             :tags   #{"utility" "wealth"}}
            {:effect "You are permanently under the effects of the Speak with Animals spell."
             :tags   #{"magic" "utility"}}
-           {:effect "Aspects allow you to take one certain traits of a creature, but are mutually exclusive with one another. You may enter and exit Aspects as a free action. You learn Aspect of the Moorbounder and may use it once per combat; while this is active, but you gain the Moorbounder's speed and Standing Leap feature. You revert back to your regular form at the end of your turn."
-            :tags   #{"utility"}}
-           {:effect "Gain 5 temporary hit points hit points at the start of each turn in combat if within 60 feet of a plant at least Large in size."
+           {:effect "Gain 3 temporary hit points hit points at the start of each turn in combat if within 60 feet of a plant at least Large in size, or while in direct sunlight."
             :tags   #{"survivability"}}
+           {:effect "Aspects allow you to take one certain traits of a creature, but you may only have one active at a time. You may enter and exit Aspects as a free action. You learn Aspect of the Moorbounder and may use it once per combat; while this is active, but you gain the Moorbounder's speed and Standing Leap feature."
+            :tags   #{"utility"}}
            {}
            {:effect "You learn the Aspect of the Spider; while this is active, your spells and attacks have +1d4 poison damage, and you are are under the effect of the Spider Climb spell."
             :tags   #{"damage" "magic" "utility"}}
