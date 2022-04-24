@@ -184,16 +184,7 @@
  {:effect  "+1 expertise die with %s."
   :tags    #{"utility"}
   :randoms [{:preset :skills
-             :type   :uncommon}]
-  :points  15}
- {:effect  "+1 to non-proficient %s checks."
-  :tags    #{"utility"}
-  :randoms [{:preset :skills}]}
- {:effect  "+1 %s."
-  :tags    #{"utility"}
-  :randoms [{:preset :skills
-             :type   :common}]
-  :points  15}
+             :type   :common}]}
  {:effect   "+20 feet to both range options on ranged weapons."
   :tags     #{"utility"}
   :points   20

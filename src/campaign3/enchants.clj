@@ -72,7 +72,7 @@
      (let [{:keys [points] :as e} (enchants-fn)
            new-points-sum (+ points points-sum)
            new-enchants (conj enchants e)]
-       (if (> new-points-sum points-target)
+       (if (>= new-points-sum points-target)
          (map (comp :effect u/fill-randoms) new-enchants)
          (recur new-points-sum new-enchants))))))
 

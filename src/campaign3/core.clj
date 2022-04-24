@@ -9,7 +9,6 @@
              [crafting :as crafting]
              [consumables :as consumables]
              [paths :as paths]
-             [encounters :as encounter]
              [curios :as curios]
              [rings :as rings]
              [uniques :as uniques]]
@@ -37,10 +36,10 @@
        :action #(e/random-enchanted 20)}
    11 {:name   "High value enchanted item (30 points)"
        :action #(e/random-enchanted 30)}
-   12 {:name   "Crafting item"
+   12 {:name   "Curios"
+       :action #(repeatedly 3 curios/new)}
+   13 {:name   "Crafting item"
        :action crafting/new}
-   13 {:name   "Curios"
-       :action curios/new}
    14 {:name   "Amulet"
        :action (constantly "TODO")}
    15 {:name   "Prayer stone"

@@ -6,20 +6,20 @@
              [db-data :as dbd]
              [util :as u]
              [prompting :as p]
+             [core :as c]
+             [enchants :as e]
              [db :as db]
              [randoms :as randoms]
              [curios :as curios]
              [relics :as relics]
              [mundanes :as mundanes]
-             [enchants :as enchants]
              [crafting :as crafting]
              [consumables :as consumables]
              [paths :as paths]
              [encounters :as encounters]
              [dice :as dice]
              [rings :as rings]
-             [uniques :as uniques]
-             [core :as core]]))
+             [uniques :as uniques]]))
 
 ;https://asciinema.org/a/296507
 (def safe-requires

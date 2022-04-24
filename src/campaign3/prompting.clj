@@ -58,7 +58,8 @@
   ([] (>>input "Enter text: "))
   ([prompt] (>>input prompt nil))
   ([prompt valid-inputs & {:as opts}]
-   (let [{:keys [completer]} (merge default-opts opts)
+   (let [console-prompt (ConsolePrompt.)
+         {:keys [completer]} (merge default-opts opts)
          prompt-builder (.getPromptBuilder console-prompt)
          valid-inputs (set valid-inputs)
          m (into {} (map (juxt str/lower-case identity)) valid-inputs)
@@ -107,7 +108,6 @@
   ([coll] (>>item "Choose one from these:" coll))
   ([prompt coll & {:as opts}]
    (let [{:keys [sorted?]} (merge default-opts opts)
-         prompt-builder (.getPromptBuilder console-prompt)
          m (if (map? coll)
              (stringify-keys opts coll)
              (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
@@ -115,7 +115,7 @@
        (->> (keys m)
             (>>input prompt)
             (get m))
-       (do
+       (let [prompt-builder (.getPromptBuilder console-prompt)]
          (-> prompt-builder
              (.createListPrompt)
              (.message prompt)

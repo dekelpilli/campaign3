@@ -18,22 +18,26 @@
 (defn new []
   (let [curio (r/sample curios)
         inversed? (u/occurred? 1/3)]
-    (cond-> curio
-            inversed? (->inversed))))
+    (-> curio
+        (cond-> inversed? (->inversed))
+        (dissoc :multiplier))))
 
 (defn >>use []
   (when-let [{:keys [base type]} (mundanes/>>base)]
-    (when-let [curios-used (->> (into curios (map ->inversed) curios)
-                                (u/assoc-by :name)
-                                (p/>>checkbox "Curios used:")
-                                (not-empty))]
+    (when-let [curios-used (let [curios-by-name (u/assoc-by :name (into curios (map ->inversed) curios))]
+                             (some->> (p/>>input "Curios used:"
+                                                 (keys curios-by-name)
+                                                 :completer :comma-separated)
+                                      (not-empty)
+                                      (map curios-by-name)))]
       (let [weightings (reduce
                          (fn [acc {:keys [multiplier tag]}]
                            (if (zero? multiplier)
                              (assoc acc tag 0)
                              (if-let [existing-multiplier (get acc tag)]
-                               (update acc tag (* 2 existing-multiplier))
+                               (assoc acc tag (* 2 existing-multiplier))
                                (assoc acc tag multiplier))))
+                         {}
                          curios-used)
             enchants-fn (->> (e/valid-enchants base type)
                              (map (fn [{:keys [tags weighting] :as e}]

@@ -15,7 +15,7 @@
 (defn randoms->fn [randoms]
   (cond
     (vector? randoms) (apply juxt (map (comp rand-from random->values-vec) randoms))
-    (map? randoms) (randoms-preset randoms)))
+    (map? randoms) (random->values-vec randoms)))
 
 (defn- random->weighting-multiplier [{:keys [preset] :as random}]
   (case preset
@@ -89,6 +89,8 @@
    "Ray of Frost" "Resistance" "Sacred Flame" "Sapping Sting" "Shape Water" "Shillelagh" "Shocking Grasp"
    "Spare the Dying" "Sword Burst" "Thaumaturgy" "Thorn Whip" "Thunderclap" "Toll the Dead" "True Strike"
    "Vicious Mockery" "Word of Radiance"])
+
+(defmethod randoms-preset :literal [{:keys [values]}] values)
 
 (defmethod randoms-preset :without-replacement [{:keys [amount from]}]
   (let [vs (random->values-vec from)]
