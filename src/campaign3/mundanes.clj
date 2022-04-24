@@ -27,8 +27,7 @@
         :type choice})))
   ([type]
    (p/>>item "Base type:"
-             (u/assoc-by :name (base-types type))
-             :sorted? true)))
+             (u/assoc-by :name (base-types type)))))
 
 (defn new []
   (let [type (new-base-type)

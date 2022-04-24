@@ -2,7 +2,7 @@
   (:require [campaign3
              [util :as u]
              [prompting :as p]
-             [mundanes :as mundane]]))
+             [mundanes :as mundanes]]))
 
 (def ^:private points-per-level 10)
 
@@ -115,7 +115,7 @@
       (if relic
         (util/display-multi-value (dissoc relic :available :found? :level))
         (throw (Exception. "Out of relics :(")))
-      (let [base (mundane/>>base (:type relic))
+      (let [base (mundanes/>>base (:type relic))
             owner (when base (util/&choose (keys @character-enchants)))]
         (when (and base owner)
           (update-relic! (assoc relic :found? true

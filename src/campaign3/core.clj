@@ -4,7 +4,7 @@
              [util :as u]
              [prompting :as p]
              [relics :as relics]
-             [mundanes :as mundane]
+             [mundanes :as mundanes]
              [enchants :as e]
              [crafting :as crafting]
              [consumables :as consumables]
@@ -12,7 +12,7 @@
              [encounters :as encounter]
              [curios :as curios]
              [rings :as rings]
-             [uniques :as unique]]
+             [uniques :as uniques]]
             [randy.core :as r]
             [randy.rng :as rng]))
 
@@ -20,11 +20,11 @@
   {1  {:name   "1-10 gold"
        :action #(str (rng/next-int r/default-rng 1 11) " gold")}
    3  {:name   "Mundane item"
-       :action (comp :base mundane/new)}
+       :action (comp :base mundanes/new)}
    4  {:name   "Consumable"
        :action consumables/new}
    5  {:name   "Unique"
-       :action unique/new}
+       :action uniques/new}
    6  {:name   "Low value enchanted item (10 points)"
        :action #(e/random-enchanted 10)}
    7  {:name   "100-150 gold"

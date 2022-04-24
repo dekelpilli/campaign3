@@ -49,7 +49,7 @@
             :tags   #{"wealth"}}
            {:effect "When you roll 7 or lower on a loot roll, you have advantage on the result of the roll (you get two options, choose one)."
             :tags   #{"wealth"}}
-           {:effect "You obtain an additional item from crafting and consumable loot rolls."
+           {:effect "The quantity of crafting and consumable items you find from loot rolls is increased by 1."
             :tags   #{"wealth"}}
            {}
            {:effect "You may cast Fortune's Favour at any spell level as a bonus action. You can use no more than 10 spell slot levels on this per long rest."

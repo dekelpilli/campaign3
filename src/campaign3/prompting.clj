@@ -4,6 +4,8 @@
            (jline.console.completer Completer)))
 
 (def ^:private console-prompt (ConsolePrompt.))
+(def default-opts {:completer :regular
+                   :sorted?   true})
 
 (defrecord CommaSeparatedStringsCompleter [lowers-set lowers-regular-map once?]
   Completer
@@ -55,9 +57,9 @@
 (defn >>input
   ([] (>>input "Enter text: "))
   ([prompt] (>>input prompt nil))
-  ([prompt valid-inputs & {:keys [completer]
-                           :or   {completer :regular}}]
-   (let [prompt-builder (.getPromptBuilder console-prompt)
+  ([prompt valid-inputs & {:as opts}]
+   (let [{:keys [completer]} (merge default-opts opts)
+         prompt-builder (.getPromptBuilder console-prompt)
          valid-inputs (set valid-inputs)
          m (into {} (map (juxt str/lower-case identity)) valid-inputs)
          s (into (sorted-set) (keys m))]
@@ -82,9 +84,9 @@
 
 (defn >>checkbox
   ([coll] (>>checkbox "Choose all that apply:" coll))
-  ([prompt coll & {:keys [sorted?]
-                   :as   opts}]
-   (let [prompt-builder (.getPromptBuilder console-prompt)
+  ([prompt coll & {:as opts}]
+   (let [opts (merge default-opts opts)
+         prompt-builder (.getPromptBuilder console-prompt)
          m (->stringified-map coll opts)]
      (-> prompt-builder
          (.createCheckboxPrompt)
@@ -99,13 +101,13 @@
      (-> (.prompt console-prompt (.build prompt-builder))
          ^CheckboxResult (get prompt)
          (.getSelectedIds)
-         (->> (into (if sorted? (sorted-set) #{}) (map m)))))))
+         (->> (into #{} (map m)))))))
 
 (defn >>item
   ([coll] (>>item "Choose one from these:" coll))
-  ([prompt coll & {:keys [sorted?]
-                   :as   opts}]
-   (let [prompt-builder (.getPromptBuilder console-prompt)
+  ([prompt coll & {:as opts}]
+   (let [{:keys [sorted?]} (merge default-opts opts)
+         prompt-builder (.getPromptBuilder console-prompt)
          m (if (map? coll)
              (stringify-keys opts coll)
              (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]

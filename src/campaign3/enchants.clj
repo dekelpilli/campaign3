@@ -3,7 +3,7 @@
     [campaign3
      [db :as db]
      [util :as u]
-     [mundanes :as mundane]
+     [mundanes :as mundanes]
      [randoms :as randoms]
      [prompting :as p]]
     [randy.core :as r]
@@ -54,31 +54,34 @@
   (and (is-allowed? base base-type true prohibits)
        (is-allowed? base base-type false requires)))
 
-(defn ->valid-enchant-fn [base base-type]
-  (let [valid-enchants (filterv #(compatible? base base-type %) enchants)]
-    (r/alias-method-sampler
-      (mapv #(dissoc % :weighting) valid-enchants)
-      (mapv :weighting valid-enchants))))
+(defn valid-enchants [base base-type]
+  (filterv #(compatible? base base-type %) enchants))
 
-(def ->valid-enchant-fn-memo (memoize ->valid-enchant-fn))
+(defn ->valid-enchant-fn [valid-enchants]
+  (r/alias-method-sampler
+    (mapv #(dissoc % :weighting) valid-enchants)
+    (mapv :weighting valid-enchants)))
 
-(defn add-enchants [base type points-target]
-  (let [valid-enchant-fn (->valid-enchant-fn-memo base type)]
-    (loop [points-sum 0
-           enchants []]
-      (let [{:keys [points] :as e} (valid-enchant-fn)
-            new-points-sum (+ points points-sum)
-            new-enchants (conj enchants e)]
-        (if (> new-points-sum points-target)
-          (map (comp :effect u/fill-randoms) new-enchants)
-          (recur new-points-sum new-enchants))))))
+(def ->valid-enchant-fn-memo (memoize (comp ->valid-enchant-fn valid-enchants)))
+
+(defn add-enchants
+  ([base type points-target] (add-enchants points-target (->valid-enchant-fn-memo base type)))
+  ([points-target enchants-fn]
+   (loop [points-sum 0
+          enchants []]
+     (let [{:keys [points] :as e} (enchants-fn)
+           new-points-sum (+ points points-sum)
+           new-enchants (conj enchants e)]
+       (if (> new-points-sum points-target)
+         (map (comp :effect u/fill-randoms) new-enchants)
+         (recur new-points-sum new-enchants))))))
 
 (defn random-enchanted [points-target]
-  (let [{:keys [base type]} (mundane/new)]
+  (let [{:keys [base type]} (mundanes/new)]
     [base (add-enchants base type points-target)]))
 
 (defn >>add []
-  (let [{:keys [base type]} (mundane/>>base)]
+  (let [{:keys [base type]} (mundanes/>>base)]
     (when (and base type)
       (->> ((->valid-enchant-fn-memo base type))
            (u/fill-randoms)
@@ -86,6 +89,6 @@
 
 (defn >>add-totalling []
   (let [points (some-> (p/>>input "Desired points total:") (parse-long))
-        {:keys [base type]} (when points (mundane/>>base))]
+        {:keys [base type]} (when points (mundanes/>>base))]
     [base
      (add-enchants base type points)]))

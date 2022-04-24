@@ -6,25 +6,25 @@
 
 [{:name       "Curio of Power"
   :tag        "damage"
-  :multiplier 5}
+  :multiplier 3}
  {:name       "Curio of Devastation"
   :tag        "critical"
-  :multiplier 33}
+  :multiplier 50}
  {:name       "Curio of Inevitability"
   :tag        "accuracy"
-  :multiplier 15}
+  :multiplier 10}
  {:name       "Curio of Fortitude"
   :tag        "survivability"
-  :multiplier 4}
+  :multiplier 3}
  {:name       "Curio of Weakness"
   :tag        "control"
-  :multiplier 44}
+  :multiplier 50}
  {:name       "Curio of Arcana"
   :tag        "magic"
-  :multiplier 11}
+  :multiplier 10}
  {:name       "Curio of Abundance"
   :tag        "wealth"
-  :multiplier 65}
+  :multiplier 100}
  {:name       "Curio of Sundry"
   :tag        "utility"
   :multiplier 3}]
