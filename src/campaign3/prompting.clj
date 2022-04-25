@@ -17,13 +17,15 @@
           current-listed-lower (when current-listed-raw (-> current-listed-raw str/trim str/lower-case))
           current-listed-complete? (lowers-set current-listed-lower)
           current-listed (if current-listed-complete? nil current-listed-lower)
-          options (when listed (apply disj lowers-set (map (comp str/lower-case str/trim) listed)))]
-      (if current-listed
+          options (if (and once? listed)
+                    (apply disj lowers-set (map (comp str/lower-case str/trim) listed))
+                    lowers-set)]
+      (if (str/blank? current-listed)
+        (.addAll candidates (map lowers-regular-map options))
         (let [matching-uppers (for [potential-candidate-lower (subseq options >= current-listed)
                                     :while (str/starts-with? potential-candidate-lower current-listed)]
                                 (get lowers-regular-map potential-candidate-lower))]
-          (.addAll candidates matching-uppers))
-        (.addAll candidates (map lowers-regular-map options)))
+          (.addAll candidates matching-uppers)))
       (if current-listed-complete?
         cursor
         (cond-> (- cursor (count current-listed-raw))
@@ -57,7 +59,7 @@
 (defn >>input
   ([] (>>input "Enter text: "))
   ([prompt] (>>input prompt nil))
-  ([prompt valid-inputs & {:as opts}]
+  ([prompt valid-inputs & {:as opts}] ;TODO accept map for valid-inputs?
    (let [console-prompt (ConsolePrompt.)
          {:keys [completer]} (merge default-opts opts)
          prompt-builder (.getPromptBuilder console-prompt)
@@ -80,29 +82,32 @@
        (case completer
          :regular (m (str/lower-case (str/trimr input)))
          (:comma-separated :comma-separated-once) (->> (str/split input #",")
-                                                       (into #{} (comp (map (comp m str/lower-case str/trim))
+                                                       (sequence (comp (map (comp m str/lower-case str/trim))
                                                                        (filter identity)))))))))
 
-(defn >>checkbox
-  ([coll] (>>checkbox "Choose all that apply:" coll))
+(defn >>distinct-items
+  ([coll] (>>distinct-items "Choose all that apply:" coll))
   ([prompt coll & {:as opts}]
    (let [opts (merge default-opts opts)
-         prompt-builder (.getPromptBuilder console-prompt)
          m (->stringified-map coll opts)]
-     (-> prompt-builder
-         (.createCheckboxPrompt)
-         (.message prompt)
-         (as-> builder (reduce
-                         #(doto %1 (-> (.newItem %2)
-                                       (.text %2)
-                                       (.add)))
-                         builder
-                         (keys m)))
-         (.addPrompt))
-     (-> (.prompt console-prompt (.build prompt-builder))
-         ^CheckboxResult (get prompt)
-         (.getSelectedIds)
-         (->> (into #{} (map m)))))))
+     (if (> (count m) 10)
+       (->> (>>input prompt (keys m) :completer :comma-separated-once)
+            (into #{} (map m)))
+       (let [prompt-builder (.getPromptBuilder console-prompt)]
+         (-> prompt-builder
+             (.createCheckboxPrompt)
+             (.message prompt)
+             (as-> builder (reduce
+                             #(doto %1 (-> (.newItem %2)
+                                           (.text %2)
+                                           (.add)))
+                             builder
+                             (keys m)))
+             (.addPrompt))
+         (-> (.prompt console-prompt (.build prompt-builder))
+             ^CheckboxResult (get prompt)
+             (.getSelectedIds)
+             (->> (into #{} (map m)))))))))
 
 (defn >>item
   ([coll] (>>item "Choose one from these:" coll))
