@@ -37,7 +37,9 @@
    11 {:name   "High value enchanted item (30 points)"
        :action #(e/random-enchanted 30)}
    12 {:name   "Curios"
-       :action #(repeatedly 3 curios/new)}
+       :action #(cons
+                  (mundanes/new)
+                  (repeatedly 3 curios/new))}
    13 {:name   "Crafting item"
        :action crafting/new}
    14 {:name   "Amulet"

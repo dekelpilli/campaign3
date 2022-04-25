@@ -4,6 +4,7 @@
            (jline.console.completer Completer)))
 
 (def ^:private console-prompt (ConsolePrompt.))
+(def ^:private input-threshold 10)
 (def default-opts {:completer :regular
                    :sorted?   true})
 
@@ -29,7 +30,7 @@
       (if current-listed-complete?
         cursor
         (cond-> (- cursor (count current-listed-raw))
-                (and (some? listed) (> (count listed) 1)) inc)))))
+                (> (count listed) 1) inc)))))
 
 (defrecord CaseInsensitiveStringsCompleter [lowers-set lowers-regular-map]
   Completer
@@ -57,7 +58,7 @@
     (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll)))
 
 (defn >>input
-  ([] (>>input "Enter text: "))
+  ([] (>>input "Enter text:"))
   ([prompt] (>>input prompt nil))
   ([prompt valid-inputs & {:as opts}] ;TODO accept map for valid-inputs?
    (let [console-prompt (ConsolePrompt.)
@@ -90,7 +91,7 @@
   ([prompt coll & {:as opts}]
    (let [opts (merge default-opts opts)
          m (->stringified-map coll opts)]
-     (if (> (count m) 10)
+     (if (> (count m) input-threshold)
        (->> (>>input prompt (keys m) :completer :comma-separated-once)
             (into #{} (map m)))
        (let [prompt-builder (.getPromptBuilder console-prompt)]
@@ -116,7 +117,7 @@
          m (if (map? coll)
              (stringify-keys opts coll)
              (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
-     (if (> (count m) 10)
+     (if (> (count m) input-threshold)
        (->> (keys m)
             (>>input prompt)
             (get m))

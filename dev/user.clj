@@ -70,5 +70,7 @@
                 (update-vals default-aliases (comp symbol str)))))
 
 (defn rr []
-  (when (= :ok (refresh))
-    (reload)))
+  (let [refreshed (refresh)]
+    (if (= :ok (refresh))
+      (reload)
+      refreshed)))

@@ -5,8 +5,7 @@
              [util :as u]
              [prompting :as p]
              [enchants :as e]
-             [mundanes :as mundanes]]
-            [clojure.set :as set]))
+             [mundanes :as mundanes]]))
 
 (def curios (db/load-all :curios))
 
@@ -49,5 +48,5 @@
                                            tags)
                                          (assoc e :weighting))))
                              (e/->valid-enchant-fn))]
-        (e/add-enchants (* 10 (count curios-used))
+        (e/add-enchants (* 10 (count curios-used)) ;TODO reduce number of curios found and make this a static 30?
                         enchants-fn)))))

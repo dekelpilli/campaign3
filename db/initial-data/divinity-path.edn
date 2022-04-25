@@ -77,14 +77,19 @@
             :tags   #{"damage"}}
            {:effect "You have advantage on attacks against marked enemies."
             :tags   #{"accuracy"}}]}
- {:name   "Thetia"
-  :levels ["You and your allies gain +1 damage in battle while outnumbered (>0hp only)."
-           "When using a consumable in combat, you have a 25% chance for that consumable to be refunded immediately."
-           "You gain proficiency in Charisma (Intimidation). Additionally, your proficiency bonus is doubled for any ability check you make with this skill when attempting to get information from a vanquished foe (e.g. non-lethaled)."
-           "When you land a Killing Blow, all allies of the killed creature within 60 feet that saw the kill suffer a -2 penalty to their mental attributes (min 1) for the next 12 seconds (does not stack). Additionally, you gain 5 temporary hit points for each enemy affected."
-           "You have +1 AB and +1 to spell save DCs against enemies within 5 feet of two or more of your allies, including yourself."
-           "You and your allies may choose to use the highest initiative result from rolled among the group, and decide the order within the team. If more than once party member has this ability, the party has +3 to initiative checks."
-           "You gain proficiency in saving throws of types you've failed in the last 12 seconds."
+ {:name   "Touch of the Warrior"
+  :levels [{:effect "You and your allies gain +1 damage in battle while outnumbered (>0hp only)."
+            :tags   #{"damage"}}
+           {:effect "When using a consumable in combat, you have a 25% chance for that consumable to be refunded immediately."
+            :tags   #{"wealth"}}
+           {:effect "When you land a Killing Blow, all allies of the killed creature within 60 feet that saw the kill suffer a -2 penalty to their mental attributes (min 1) for the next 12 seconds (does not stack). Additionally, you gain 5 temporary hit points for each enemy affected."
+            :tags   #{"control" "survivability"}}
+           {}
+           {}
+           {:effect "You have +1 AB and +1 to spell save DCs against enemies within 5 feet of two or more of your allies, including yourself."
+            :tags   #{"accuracy"}}
+           {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds."
+            :tags   #{"survivability"}}
            "Once per minute, when an enemy recovers from a condition you caused in battle (e.g. breaking a grapple, succeeding on a spell save, you lose concentration), you may force it to gain 3 points of exhaustion until the end of its next turn."
            "Once per long rest, when you would otherwise go down, you may instead remain on 1 hit point. Until the end of your next turn, you cannot be reduced to be below 1 hit point. At the end of your next turn, if you are on 1 hit point, you go down and have one failed death saving throw."
            "You gain the Inspiring Leader feat. If you already have the Inspiring Leader feat, you may gain a different feat instead. Additionally, instead of temporary hit points, you may choose to grant inspiration instead (decision is per creature). This inspiration point expires after 10 minutes."]}
