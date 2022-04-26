@@ -15,11 +15,10 @@
   :amount [:constant 1]}
  {:name   "Sacrificial Orb"
   :effect "Use when performing a ring sacrifice increase the amount of options by an amount equal to the number of rings sacrificed."}
+ {:name   "Orb(s) of Favouritism"
+  :effect "Reroll the monster & trait, forcing a specific monster type. If none are available of that type in the appropriate CR, you may roll with a lower CR."}
  {:name     "Orb(s) of Purification"
   :effect   "Apply to an amulet and roll 1d6. If you roll above its current CR capacity, you may increase its CR capacity by 1. Contained creature does not change."
-  :enabled? false}
- {:name     "Orb(s) of Favouritism"
-  :effect   "Reroll the monster contained inside an amulet, forcing a specific monster type. If none are available of that type in the appropriate CR, you may roll with a lower CR."
   :enabled? false}
  {:name     "Orb(s) of Disavowment"
   :effect   "You lose all progress from your current prayer path and all effects it granted, then gain an equivalent amount of levels (but without any level skipping) in another pray path of your choice."

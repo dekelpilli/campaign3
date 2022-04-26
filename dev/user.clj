@@ -9,6 +9,7 @@
              [core :as c]
              [enchants :as e]
              [db :as db]
+             [amulets :as amulets]
              [randoms :as randoms]
              [curios :as curios]
              [relics :as relics]
@@ -71,6 +72,6 @@
 
 (defn rr []
   (let [refreshed (refresh)]
-    (if (= :ok (refresh))
+    (if (= :ok refreshed)
       (reload)
       refreshed)))

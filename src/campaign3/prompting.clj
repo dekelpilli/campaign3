@@ -60,12 +60,16 @@
 (defn >>input
   ([] (>>input "Enter text:"))
   ([prompt] (>>input prompt nil))
-  ([prompt valid-inputs & {:as opts}] ;TODO accept map for valid-inputs?
+  ([prompt coll & {:as opts}]
    (let [console-prompt (ConsolePrompt.)
          {:keys [completer]} (merge default-opts opts)
          prompt-builder (.getPromptBuilder console-prompt)
-         valid-inputs (set valid-inputs)
+         valid-inputs (if (map? coll)
+                        (set (keys coll)) ;TODO stringify
+                        (set coll))
          m (into {} (map (juxt str/lower-case identity)) valid-inputs)
+         value-mapper (cond->> m
+                               (map? coll) (comp coll))
          s (into (sorted-set) (keys m))]
      (-> prompt-builder
          (.createInputPrompt)
@@ -81,10 +85,9 @@
                           ^InputResult (get prompt)
                           (.getInput))]
        (case completer
-         :regular (m (str/lower-case (str/trimr input)))
+         :regular (value-mapper (str/lower-case (str/trimr input)))
          (:comma-separated :comma-separated-once) (->> (str/split input #",")
-                                                       (sequence (comp (map (comp m str/lower-case str/trim))
-                                                                       (filter identity)))))))))
+                                                       (keep (comp value-mapper str/lower-case str/trim))))))))
 
 (defn >>distinct-items
   ([coll] (>>distinct-items "Choose all that apply:" coll))
@@ -92,8 +95,8 @@
    (let [opts (merge default-opts opts)
          m (->stringified-map coll opts)]
      (if (> (count m) input-threshold)
-       (->> (>>input prompt (keys m) :completer :comma-separated-once)
-            (into #{} (map m)))
+       (->> (>>input prompt m :completer :comma-separated-once)
+            (set))
        (let [prompt-builder (.getPromptBuilder console-prompt)]
          (-> prompt-builder
              (.createCheckboxPrompt)
@@ -118,9 +121,7 @@
              (stringify-keys opts coll)
              (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
      (if (> (count m) input-threshold)
-       (->> (keys m)
-            (>>input prompt)
-            (get m))
+       (>>input prompt m)
        (let [prompt-builder (.getPromptBuilder console-prompt)]
          (-> prompt-builder
              (.createListPrompt)

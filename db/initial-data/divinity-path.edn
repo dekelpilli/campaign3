@@ -19,7 +19,7 @@
             :tags   #{"magic"}}
            {:effect "You have 30 feet of Truesight, and may automatically discern illusions from reality at any distance (including non-visual illusions)."
             :tags   #{"magic"}}]}
- {:name   "Touch of Vigour",
+ {:name   "Touch of Eternal Vigour",
   :levels [{:effect "Your hit recover one additional hit point."
             :tags   #{"survivability"}}
            {:effect "You have advantage on saves against poisons and diseases."
@@ -38,7 +38,7 @@
            {:effect "You gain the Healer feat. If you already have the Healer feat, you may gain a different feat instead."
             :tags   #{"utility"}} ;TODO - change depending on what happens with the Healer feat
            {}]}
- {:name   "Touch of Fortune",
+ {:name   "Touch of Unrelenting Fortune",
   :levels [{:effect "Your skill checks have a minimum result (after bonuses) equal to the total number of relics and rings you are wearing, to a maximum of 14."
             :tags   #{"utility"}}
            {:effect "You may roll an additional die to attempt a critical hit after hitting a creature with an attack. Similarly, creatures that fail a save against a spell of yours must roll again and use the lowest result."
@@ -54,9 +54,10 @@
            {}
            {:effect "You may cast Fortune's Favour at any spell level as a bonus action. You can use no more than 10 spell slot levels on this per long rest."
             :tags   #{"magic"}}
-           {}
+           {:effect "Your amulet's trait is always active."
+            :tags   #{"utility"}}
            {}]}
- {:name   "Touch of Vengeance",
+ {:name   "Touch of Wrathful Judgement",
   :levels [{:effect "Enemies that damage you become marked by Brand of Vengeance for a minute. Creatures marked with BoV have +1 damage taken from you."
             :tags   #{"damage"}}
            {:effect "You may cast Hellish Rebuke as a first level spell. You can do this an amount of times equal to an attribute of your choice (min 1) every long rest. If skipped 1, enemies that damage you become marked by BoV for a minute (no +1 damage)."
@@ -71,10 +72,10 @@
             :tags   #{"utility"}}
            {:effect "You have -1 critical strike requirement against marked enemies."
             :tags   #{"critical"}}
-           {:effect "Enemies marked by BoV have -1AB and -1AC."
-            :tags   #{"accuracy" "control"}}
            {:effect "+5 radiant thorns."
             :tags   #{"damage"}}
+           {:effect "Enemies marked by BoV have -1AB and -1AC."
+            :tags   #{"accuracy" "control"}}
            {:effect "You have advantage on attacks against marked enemies."
             :tags   #{"accuracy"}}]}
  {:name   "Touch of the Warrior"
@@ -90,9 +91,10 @@
             :tags   #{"accuracy"}}
            {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds."
             :tags   #{"survivability"}}
-           "Once per minute, when an enemy recovers from a condition you caused in battle (e.g. breaking a grapple, succeeding on a spell save, you lose concentration), you may force it to gain 3 points of exhaustion until the end of its next turn."
            "Once per long rest, when you would otherwise go down, you may instead remain on 1 hit point. Until the end of your next turn, you cannot be reduced to be below 1 hit point. At the end of your next turn, if you are on 1 hit point, you go down and have one failed death saving throw."
-           "You gain the Inspiring Leader feat. If you already have the Inspiring Leader feat, you may gain a different feat instead. Additionally, instead of temporary hit points, you may choose to grant inspiration instead (decision is per creature). This inspiration point expires after 10 minutes."]}
+           "You gain the Inspiring Leader feat. If you already have the Inspiring Leader feat, you may gain a different feat instead. Additionally, instead of temporary hit points, you may choose to grant inspiration instead (decision is per creature). This inspiration point expires after 10 minutes."
+           {:effect "One of your weapons has an additional enchantment slot."
+            :tags   #{"utility"}}]}
  {:name   "Touch of Unbound Arcana"
   :levels [{:effect "You have an additional first level spell slot, assuming you already have at least one."
             :tags   #{"magic"}}
@@ -110,10 +112,11 @@
             :tags   #{"magic"}}
            {:effect "[Prof mod] times per long rest, when an enemy succeeds a saving throw against a spell you cast this turn, or when it uses its Legendary resistance to force a success, you may consume another equivalent spell slot to instead force a failure. Legendary Resistance cannot be used to override this."
             :tags   #{"accuracy"}}
-           {}
+           {:effect "You are considered to be proficient in all saving throws against magical effects."
+            :tags   #{"survivability"}}
            {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed), you may make Constitution saving throw against a DC of 8 + twice the spell slot level used. On a success, you regain the consumed spell slot."
             :tags   #{"magic"}}]}
- {:name   "Touch of the Elements"
+ {:name   "Touch of Elemental Mastery"
   :levels [{}
            {:effect "You have +1 resistance to cold, fire, and lightning damage."
             :tags   #{"survivability"}}
@@ -131,7 +134,7 @@
             :tags   #{"accuracy"}}
            {}
            {}]}
- {:name   "Eion"
+ {:name   "Touch of Volatile Presence"
   :levels ["You may conjure a piece of Adventuring Gear worth between 1cp and 10gp (inclusive). Items conjured in this way dissipate after 10 minutes. You may do this 5 times per long rest. (For items not on the list, you can ask me an I might be willing to let you conjure anyway)."
            "When you make an opportunity attack, you may make a proficient spell attack against that target instead (attribute of choice). On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
            "You learn the Mage Hand cantrip. This does not count towards your limit of known cantrips. You may cast Mage Hand requiring no verbal or somatic components, as well as dismiss and control it as a bonus action. Additionally, it is no longer restricted to 10 pounds - you may make checks with an attribute of choice equivalent to strength checks to determine the hand's power. This cannot be used for creature interactions (e.g. shoves)."

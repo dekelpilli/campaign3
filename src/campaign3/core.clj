@@ -1,11 +1,10 @@
 (ns campaign3.core
   (:gen-class)
   (:require [campaign3
-             [util :as u]
-             [prompting :as p]
-             [relics :as relics]
-             [mundanes :as mundanes]
              [enchants :as e]
+             [relics :as relics]
+             [amulets :as amulets]
+             [mundanes :as mundanes]
              [crafting :as crafting]
              [consumables :as consumables]
              [paths :as paths]
@@ -43,7 +42,7 @@
    13 {:name   "Crafting item"
        :action crafting/new}
    14 {:name   "Amulet"
-       :action (constantly "TODO")}
+       :action amulets/new}
    15 {:name   "Prayer stone"
        :action paths/new-divine-dust}
    16 {:name   "New relic"
