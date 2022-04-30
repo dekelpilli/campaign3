@@ -115,7 +115,7 @@
   :tags     #{"damage"}
   :requires {:base-type "armour"}}
  {:effect "Roll again, making that result a negative enchant. Then roll again, empowering that result."}
- {:effect "+1 DC for ongoing effects"
+ {:effect "+1 DC for saves made to end your ongoing effects"
   :tags   #{"accuracy"}
   :points 20}
  {:effect "Once per long rest, as an action, you can make a Persuasion check contested by a non-hostile creature's Wisdom save. The creature must be within 60 feet of you. On a success, you can give them a command as per the Command spell."
@@ -140,15 +140,18 @@
  {:effect "+10ft darkvision."
   :tags   #{"utility"}
   :points 15}
- {:effect "+5ft blindsight."
-  :tags   #{"utility"}}
- {:effect "+5ft tremorsense."
-  :tags   #{"utility"}}
+ {:effect  "+5ft %s."
+  :randoms [{:preset :literal
+             :values ["blindsight" "tremorsense"]}]
+  :tags    #{"utility"}}
  {:effect "You cannot be deafened."
   :tags   #{"utility"}
   :points 4}
  {:effect       "When you score a critical strike with an attack of opportunity, the target is staggered until the end of their turn."
-  :tags         #{"critical"}
+  :tags         #{"accuracy" "critical"}
+  :upgradeable? false}
+ {:effect       "You may take an additional action the end of an action where you landed a killing blow with a critical strike."
+  :tags         #{"critical" "utility"}
   :upgradeable? false}
  {:effect       "When you hit a creature with an attack with this weapon, they are silenced until the end of their next turn."
   :tags         #{"control"}
@@ -157,8 +160,6 @@
  {:effect       "First wearer chooses a language in which this item grants proficiency."
   :tags         #{"utility"}
   :upgradeable? false}
- {:effect "+1 passive perception."
-  :tags   #{"utility"}}
  {:effect "+2 passive perception while asleep."
   :tags   #{"utility"}}
  {:effect "+10 feet speed in all of your available speed types."
@@ -167,8 +168,11 @@
   :tags   #{"survivability"}}
  {:effect "+1 to initiative rolls."
   :tags   #{"utility"}}
- {:effect "+1 damage with spells."
-  :tags   #{"damage"}}
+ {:effect   "+1 damage with %s."
+  :randoms  [{:preset :literal
+              :values ["spells" "weapons"]}]
+  :tags     #{"damage"}
+  :requires {:base-type "weapon"}}
  {:effect "+5ft fly speed."
   :tags   #{"utility"}}
  {:effect "+10ft climb speed."
@@ -224,9 +228,6 @@
  {:effect   "At the start of your turn in combat, if you haven't taken damage since the start of your last turn, gain 1 temporary hit point. This stacks with any existing temporary hit points."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
- {:effect   "+1 damage with weapon attacks."
-  :tags     #{"damage"}
-  :requires {:base-type "weapon"}}
  {:effect   "Once per long rest, you can choose a target you can see as an action and then cast a random 1st-level spell on that target, ignoring range restrictions.",
   :tags     #{"magic"}
   :requires {:base-type "weapon"}}
@@ -257,8 +258,10 @@
   :randoms [{:preset :monster-types}]}
  {:effect "+2 damage against enemies you are flanking."
   :tags   #{"damage"}}
- {:effect "+2 global damage against creatures behind you in the initiative tracker."
-  :tags   #{"damage"}}
+ {:effect  "+2 global damage against creatures %s in the initiative tracker."
+  :randoms [[{:preset :literal
+              :values ["behind you" "ahead of you"]}]]
+  :tags    #{"damage"}}
  {:effect "Heal 5 hit points when you roll for initiative."
   :tags   #{"survivability"}}
  {:effect       "All of your damage type-seeks to maximise damage against %s creatures."
@@ -297,7 +300,7 @@
   :tags     #{"utility"}
   :points   15
   :requires {:base-type "weapon"
-             :traits    #{"Disarm"}}}
+             :traits    #{"Disarm"}}} ;TODO remove when/if disarm is removed
  {:effect       "Enemies are considered to enter and leave your reach at both 5 and 10 feet."
   :tags         #{"utility"}
   :points       25

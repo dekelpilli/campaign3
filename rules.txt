@@ -6,9 +6,7 @@ Prayer Stones:
     You can use any prayer stone to pray to any Deity, but when using the appropriate prayer stone, you get the option of skipping a step
 
 Moving mods:
-    Between weapons, so long as all mods are compatible with new weapon. Incompatible mods can be removed as part of the transfer.
-    Between rings
-    Between armours
+    Between any items so long as all mods are compatible with new item. Incompatible mods can be removed as part of the transfer.
 
 Enchant rules:
     Double flat, dice additions, and die size enchants on single attackers (don't have extra attack, not dual wielding).
