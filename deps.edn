@@ -6,9 +6,7 @@
 
            metosin/jsonista                 {:mvn/version "0.3.5"}
 
-           ;TODO clojars
-           io.github.dekelpilli/randy       {:git/url "https://github.com/dekelpilli/randy.git"
-                                             :sha     "72579f2a6d36662ba8d9f7bd11b1f48f34e558e7"}
+           com.github.dekelpilli/randy      {:mvn/version "0.0.30"}
 
            yogthos/config                   {:mvn/version "1.2.0"}
 
@@ -19,13 +17,13 @@
            org.postgresql/postgresql        {:mvn/version "42.3.4"}
            seancorfield/next.jdbc           {:mvn/version "1.2.659"}}
 
- :aliases {:dev      {:extra-deps  {com.bhauman/rebel-readline                 {:mvn/version "0.1.4"}
-                                    org.clojure/tools.namespace                {:mvn/version "1.2.0"}
+ :aliases {:dev      {:extra-deps  {com.bhauman/rebel-readline  {:mvn/version "0.1.4"}
+                                    org.clojure/tools.namespace {:mvn/version "1.2.0"}
 
-                                    org.slf4j/slf4j-simple                     {:mvn/version "1.7.36"}
+                                    org.slf4j/slf4j-simple      {:mvn/version "1.7.36"}
 
-                                    io.aviso/pretty                            {:mvn/version "1.1.1"}
-                                    mvxcvi/puget                               {:mvn/version "1.3.2"}}
+                                    io.aviso/pretty             {:mvn/version "1.1.1"}
+                                    mvxcvi/puget                {:mvn/version "1.3.2"}}
                       :extra-paths ["dev"]
                       :main-opts   ["-m" "rebel-readline.main"]}
            :outdated {:extra-deps {olical/depot {:mvn/version "2.3.0"}}
