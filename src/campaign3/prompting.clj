@@ -64,12 +64,13 @@
    (let [console-prompt (ConsolePrompt.)
          {:keys [completer]} (merge default-opts opts)
          prompt-builder (.getPromptBuilder console-prompt)
-         valid-inputs (if (map? coll)
-                        (set (keys coll)) ;TODO stringify
-                        (set coll))
+         stringified-map (->stringified-map coll opts)
+         valid-inputs (set (keys stringified-map))
          m (into {} (map (juxt str/lower-case identity)) valid-inputs)
-         value-mapper (cond->> m
-                               (map? coll) (comp coll))
+         value-mapper (cond->> identity
+                               coll (comp m)
+                               (map? coll) (comp coll)
+                               coll (comp stringified-map))
          s (into (sorted-set) (keys m))]
      (-> prompt-builder
          (.createInputPrompt)
