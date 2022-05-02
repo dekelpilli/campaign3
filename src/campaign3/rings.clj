@@ -1,10 +1,10 @@
 (ns campaign3.rings
   (:require
-    [campaign3
-     [util :as u]
-     [prompting :as p]
-     [randoms :as randoms]
-     [db :as db]]
+    (campaign3
+      [db :as db]
+      [prompting :as p]
+      [randoms :as randoms]
+      [util :as u])
     [randy.core :as r]))
 
 (def all-rings (->> (db/load-all :rings)

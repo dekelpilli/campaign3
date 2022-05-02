@@ -1,13 +1,13 @@
 (ns campaign3.db
-  (:require [honey.sql :as hsql]
+  (:require [config.core :refer [env]]
+            [honey.sql :as hsql]
+            [jsonista.core :as j]
             [next.jdbc :as jdbc]
-            [next.jdbc.result-set :refer [ReadableColumn as-unqualified-kebab-maps]]
             [next.jdbc.prepare :refer [SettableParameter]]
-            [config.core :refer [env]]
-            [jsonista.core :as j])
-  (:import (java.sql Connection PreparedStatement)
-           (org.postgresql.util PGobject PSQLException)
-           (clojure.lang IObj IPersistentMap IPersistentVector)))
+            [next.jdbc.result-set :refer [ReadableColumn as-unqualified-kebab-maps]])
+  (:import (clojure.lang IObj IPersistentMap IPersistentVector)
+           (java.sql Connection PreparedStatement)
+           (org.postgresql.util PGobject PSQLException)))
 
 (def data-src (let [{:keys [db-host db-port db-user db-pass db-name]} env]
                 (jdbc/get-datasource {:host     db-host

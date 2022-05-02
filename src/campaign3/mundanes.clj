@@ -1,8 +1,8 @@
 (ns campaign3.mundanes
-  (:require [campaign3
-             [db :as db]
-             [util :as u]
-             [prompting :as p]]
+  (:require (campaign3
+              [db :as db]
+              [prompting :as p]
+              [util :as u])
             [randy.core :as r]))
 
 (def weapons (db/load-all :weapons))

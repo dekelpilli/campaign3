@@ -3,6 +3,7 @@ Amulets:
     As a free action at the start or end of a turn in combat, once per long rest, you can activate the trait contained by the amulet for a duration, granting you its effects.
     The duration of amulet effects is 2 rounds + 1 round for each amulet CR (not effect CR) above 1.
     When upgrading amulets, or rerolling with crafting items, you may choose to keep the existing effect instead of the new one.
+    Upgrading: Feed an amulet other amulets totalling at least its current CR capacity to get +1 CR tier.
 
 Prayer Stones:
     You can use any prayer stone to pray to any Deity, but when using the appropriate prayer stone, you get the option of skipping a step

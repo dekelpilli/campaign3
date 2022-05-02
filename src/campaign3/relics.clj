@@ -1,8 +1,8 @@
 (ns campaign3.relics
-  (:require [campaign3
-             [util :as u]
-             [prompting :as p]
-             [mundanes :as mundanes]]))
+  (:require (campaign3
+              [mundanes :as mundanes]
+              [prompting :as p]
+              [util :as u])))
 
 (def ^:private points-per-level 10)
 

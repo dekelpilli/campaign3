@@ -1,13 +1,13 @@
 (ns campaign3.enchants
   (:require
-    [campaign3
-     [db :as db]
-     [util :as u]
-     [mundanes :as mundanes]
-     [randoms :as randoms]
-     [prompting :as p]]
-    [randy.core :as r]
-    [clojure.walk :as walk]))
+    (campaign3
+      [db :as db]
+      [mundanes :as mundanes]
+      [prompting :as p]
+      [randoms :as randoms]
+      [util :as u])
+    [clojure.walk :as walk]
+    [randy.core :as r]))
 
 (defn prep-matcher [matcher]
   (walk/prewalk

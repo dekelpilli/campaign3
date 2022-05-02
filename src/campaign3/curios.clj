@@ -1,11 +1,11 @@
 (ns campaign3.curios
-  (:require [randy.core :as r]
-            [campaign3
-             [db :as db]
-             [util :as u]
-             [prompting :as p]
-             [enchants :as e]
-             [mundanes :as mundanes]]))
+  (:require (campaign3
+              [db :as db]
+              [enchants :as e]
+              [mundanes :as mundanes]
+              [prompting :as p]
+              [util :as u])
+            [randy.core :as r]))
 
 (def curios (db/load-all :curios))
 

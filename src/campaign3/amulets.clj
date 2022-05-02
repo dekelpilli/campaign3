@@ -1,7 +1,7 @@
 (ns campaign3.amulets
-  (:require [randy.core :as r]
-            [campaign3.db :as db]
-            [campaign3.prompting :as p]))
+  (:require [campaign3.db :as db]
+            [campaign3.prompting :as p]
+            [randy.core :as r]))
 
 (def cr-weightings
   {0M     5

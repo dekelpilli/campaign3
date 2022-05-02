@@ -1,10 +1,11 @@
 (ns campaign3.encounters
-  (:require [randy.core :as r]
-            [clojure.string :as str]
+  (:require (campaign3
+              [db :as db]
+              [prompting :as p]
+              [util :as u])
             [clojure.core.match :refer [match]]
-            [campaign3.util :as util]
-            [campaign3.db :as db]
-            [campaign3.prompting :as p]))
+            [clojure.string :as str]
+            [randy.core :as r]))
 
 (def ^:private extra-loot-threshold 13)
 (def ^:private extra-loot-step 6)
@@ -21,8 +22,8 @@
   (->> (range 1 (inc days))
        (map (fn [i]
               [i
-               (when (util/occurred? (if @had-random? 0.10 0.25))
-                 (if (util/occurred? 0.2)
+               (when (u/occurred? (if @had-random? 0.10 0.25))
+                 (if (u/occurred? 0.2)
                    :positive
                    (do
                      (reset! had-random? true)
@@ -106,6 +107,9 @@
 
 ;d100 + this for a positive random encounter, with result being the total points of a magic item?
 ; could also give nothing if they go above the number, or a low loot roll
+(defn- num-char->num [c]
+  (- (int c) 48))
+
 (defn cheiro-sum [word maximum]
   (let [char-values {\a 1 \b 2 \c 3 \d 4 \e 5
                      \f 8 \g 3 \h 5 \i 1 \j 1
@@ -116,4 +120,4 @@
     (loop [sum sum]
       (if (or (<= sum maximum) (< sum 10))
         sum
-        (recur (transduce (map #(- (int %) 48)) + 0 (str sum)))))))
+        (recur (transduce (map num-char->num) + 0 (str sum)))))))

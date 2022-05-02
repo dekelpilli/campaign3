@@ -1,16 +1,16 @@
 (ns campaign3.core
   (:gen-class)
-  (:require [campaign3
-             [enchants :as e]
-             [relics :as relics]
-             [amulets :as amulets]
-             [mundanes :as mundanes]
-             [crafting :as crafting]
-             [consumables :as consumables]
-             [paths :as paths]
-             [curios :as curios]
-             [rings :as rings]
-             [uniques :as uniques]]
+  (:require (campaign3
+              [amulets :as amulets]
+              [consumables :as consumables]
+              [crafting :as crafting]
+              [curios :as curios]
+              [enchants :as e]
+              [mundanes :as mundanes]
+              [paths :as paths]
+              [relics :as relics]
+              [rings :as rings]
+              [uniques :as uniques])
             [randy.core :as r]
             [randy.rng :as rng]))
 

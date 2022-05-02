@@ -1,9 +1,9 @@
 (ns campaign3.crafting
   (:require
-    [campaign3
-     [util :as u]
-     [db :as db]
-     [amounts :as amounts]]))
+    (campaign3
+      [amounts :as amounts]
+      [db :as db]
+      [util :as u])))
 
 (def crafting-items (->> (db/load-all :crafting-items)
                          (map #(update % :amount amounts/amount->fn "1d3"))))

@@ -145,7 +145,7 @@
            "You may cast Temple of The Gods once per long rest. When cast in this way, the temple must be dedicated to Eion. While in a Temple of the Gods dedicated to Eion, you may cast Conjuration spells at two levels above its regular spell level (normally the spell slot level used)."
            "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks."
            "You may cast Create Magen once per long rest. When cast in this way, the maximum hit point reduction is instead 4 times the CR of the Magen summoned, but the reduction only lasts as long as the Magen is alive. You may desummon any of your Magens at will."]}
- {:name   "Touch of Wilderness"
+ {:name   "Touch of Nature's Influence"
   :levels [{:effect "+1 expertise die with Survival when in nature and when foraging materials from creatures."
             :tags   #{"utility" "wealth"}}
            {:effect "You are permanently under the effects of the Speak with Animals spell."

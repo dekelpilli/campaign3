@@ -1,15 +1,17 @@
 (ns campaign3.paths
   (:require
-    [campaign3
-     [db :as db]
-     [util :as util]]
+    (campaign3
+      [db :as db]
+      [util :as u])
+    [clojure.string :as str]
     [randy.core :as r]))
 
-(def prayer-paths #_(db/execute! {:select [:*] :from [:prayer-paths]}))
+(def prayer-paths (db/load-all :prayer-paths))
 
 
 (defn new-divine-dust []
-  (-> prayer-paths r/sample :name))
+  (cond->> (-> prayer-paths r/sample :name (str/replace #"^Touch of" "Dust of"))
+           (u/occurred? 1/5) (str "Refined ")))
 
 (defn- update-progress! [{:keys [character path] :as new-progression}]
   ;TODO
@@ -21,9 +23,9 @@
         unfinished-paths (filter #(and (not (done? %)) (:enabled? % true)) @prayer-progressions)
         player-paths (group-by :character unfinished-paths)
         path-options (->> player-paths
-                          (util/make-options)
-                          (util/display-pairs))
-        current-progression (->> (util/&num)
+                          (u/make-options)
+                          (u/display-pairs))
+        current-progression (->> (u/&num)
                                  (path-options)
                                  (player-paths)
                                  (first))
@@ -36,8 +38,8 @@
                                         (map (fn [i] [i (nth (prayer-path :levels) i)]))
                                         (map (fn [[k v]] [(inc k) v]))
                                         (into {})
-                                        (util/display-pairs))
-            new-latest (util/&num)
+                                        (u/display-pairs))
+            new-latest (u/&num)
             valid (and new-latest (contains? progress-index-options new-latest))]
         (when valid
           (update-progress!
