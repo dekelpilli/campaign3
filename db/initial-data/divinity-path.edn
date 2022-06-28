@@ -1,4 +1,4 @@
-[{:name   "Touch of Subjective Truth",
+[{:name   "Touch of Subjective Truth"
   :levels [{:effect "You are considered to be proficient in Deception and Insight if you have used a non-cantrip Illusion spell since your last long rest."
             :tags   #{"magic" "utility"}}
            {:effect "Creatures that currently believe one of your illusions are real have disadvantage when attacking you."
@@ -9,28 +9,29 @@
             :tags   #{"magic"}}
            {:effect "+2 to the DCs of Illusion spells."
             :tags   #{"accuracy"}}
-           {:effect "You have +1 AC, and become proficient in Intelligence, Charisma, and Wisdom saving throws, while concentrating on an illusion spell."
+           {:effect "You have +1 AC, and become proficient in Intelligence, Charisma, and Wisdom saving throws, while concentrating on anon-cantrip illusion spell."
             :tags   #{"survivability" "magic"}}
-           {:effect "You may cast Zone of Truth once per short rest. When cast in this way, the spell is centered on you and lasts for 1 hour."
-            :tags   #{"magic"}}
+           {}
            {:effect "You have 30 feet of Truesight, and may automatically discern illusions from reality at any distance (including non-visual illusions)."
             :tags   #{"magic"}}]}
  {:name   "Touch of Eternal Vigour"
   :levels [{:effect "Gain an additional 5 temporary hit points whenever you gain temporary hit points."
             :tags   #{"survivability"}}
-           {:effect "+1 resistance to damage for each previous time you've been hit per turn."
+           {:effect "-3 critical strike requirement for death saving throws."
             :tags   #{"survivability"}}
-           {}
+           {:effect "+1 resistance to damage for each previous time you've been hit per round."
+            :tags   #{"survivability"}}
            {:effect "You have +3 to maximum hit points, and you have +1 maximum per armour relic level."
+            :tags   #{"survivability"}}
+           {:effect "You take half damage from attacks that hit you within 2 points of your AC."
             :tags   #{"survivability"}}
            {:effect "You take no additional damage from critical hits."
             :tags   #{"survivability"}}
            {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat."
             :tags   #{"utility"}}
-           {:effect "As a reaction when failing a saving throw against an effect that would cause a condition, you may attempt the save again."
-            :tags   #{"survivability"}}
-           {}]}
- {:name   "Touch of Unrelenting Fortune",
+           {:effect "Once per round when you fail a saving throw against an effect that would cause a condition, you may attempt the save again."
+            :tags   #{"survivability"}}]}
+ {:name   "Touch of Unrelenting Fortune"
   :levels [{:effect "You find divine dust with advantage (favouring refined dust)."
             :tags   #{"wealth"}}
            {:effect "You may roll an additional die to attempt a critical hit after hitting a creature with an attack. Similarly, creatures that fail a save against a spell of yours must roll again and use the lowest result."
@@ -47,39 +48,37 @@
             :tags   #{"magic"}}
            {:effect "Your amulet's trait is always active."
             :tags   #{"utility"}}]}
- {:name   "Touch of Wrathful Judgement",
+ {:name   "Touch of Wrathful Judgement"
   :levels [{:effect "Enemies that damage you become marked by Brand of Vengeance for a minute. Creatures marked with BoV have +1 damage taken from you."
             :tags   #{"damage"}}
            {:effect "Creatures marked by you now have -1 global damage. If skipped 1, enemies that damage you become marked by BoV for a minute (no +1 damage)."
             :tags   #{"control"}}
+           {}
+           {:effect "Enemies are marked with BoV if they land a killing blow against an ally of yours."
+            :tags   #{"utility"}}
            {:effect "Your attacks and spells deal +1d4 radiant damage against marked enemies."
             :tags   #{"damage"}}
-           {:effect "Enemies are marked with BoV if they damage you or an ally, instead of just you."
-            :tags   #{"utility"}}
            {:effect "You have -1 critical strike requirement against marked enemies."
             :tags   #{"critical"}}
            {:effect "+5 radiant thorns."
             :tags   #{"damage"}}
            {:effect "Enemies marked by BoV have -1AB and -1AC."
-            :tags   #{"accuracy" "control"}}
-           {:effect "You have advantage on attacks against marked enemies."
-            :tags   #{"accuracy"}}]}
+            :tags   #{"accuracy" "control"}}]}
  {:name   "Touch of Vicious Combat"
   :levels [{:effect "You and your allies gain +1 damage in battle while outnumbered (>0hp only)."
             :tags   #{"damage"}}
            {:effect "When using a consumable in combat, you have a 25% chance for that consumable to be refunded immediately."
             :tags   #{"wealth"}}
-           {:effect "When you land a Killing Blow, all allies of the killed creature within 60 feet that saw the kill suffer a -2 penalty to their mental attributes (min 1) for the next 12 seconds (does not stack). Additionally, you gain 5 temporary hit points for each enemy affected."
+           {:effect "Once per combat, as a reaction to an ally within 10 feet of you going down, you may choose for them to remain on 1 hit point, and for you to go down instead."
+            :tags   #{"utility"}}
+           {:effect "When you land a Killing Blow, all allies of the killed creature within 60 feet that saw the kill suffer a -2 penalty to their mental attributes (min 1) for the next 12 seconds (does not stack). Additionally, for the same duration, you gain 5 temporary hit points for each enemy affected."
             :tags   #{"control" "survivability"}}
-           {}
-           {}
-           {:effect "You have +1 AB and +1 to spell save DCs against enemies within 5 feet of two or more of your allies, including yourself."
-            :tags   #{"accuracy"}}
            {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds."
             :tags   #{"survivability"}}
            {:effect "Creatures of your choice within 10 feet of you are rattled while you are not incapacitated or unconscious."
             :tags   #{"control"}}
-           "Once per long rest, when you would otherwise go down, you may instead remain on 1 hit point. Until the end of your next turn, you cannot be reduced to be below 1 hit point. At the end of your next turn, if you are on 1 hit point, you go down and have one failed death saving throw."
+           {:effect "You have +1 AB and +1 to spell save DCs against enemies within 5 feet of two or more of your allies, including yourself."
+            :tags   #{"accuracy"}}
            {:effect "One of your weapons has an additional enchantment slot."
             :tags   #{"utility"}}]}
  {:name   "Touch of Unbound Arcana"
