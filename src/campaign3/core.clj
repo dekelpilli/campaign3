@@ -35,6 +35,7 @@
        :action #(e/random-enchanted 20)}
    11 {:name   "High value enchanted item (30 points)"
        :action #(e/random-enchanted 30)}
+   ;TODO add helmets for character enchants? limit relics per char to 2 (max 1 weap) & keep attunement levels per char rather than per item?
    12 {:name   "Curios"
        :action #(cons
                   (mundanes/new)
@@ -43,7 +44,7 @@
        :action crafting/new}
    14 {:name   "Amulet"
        :action amulets/new}
-   15 {:name   "Prayer stone"
+   15 {:name   "Prayer stone" ;TODO reduce to 8 per path
        :action paths/new-divine-dust}
    16 {:name   "New relic"
        :action relics/&new!}})

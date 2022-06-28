@@ -1,9 +1,8 @@
 (ns campaign3.uniques
-  (:require
-    (campaign3
-      [db :as db]
-      [util :as u])
-    [randy.core :as r]))
+  (:require (campaign3
+              [db :as db]
+              [util :as u])
+            [randy.core :as r]))
 
 (def uniques (db/load-all :uniques))
 

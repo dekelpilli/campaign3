@@ -1,11 +1,10 @@
 (ns campaign3.rings
-  (:require
-    (campaign3
-      [db :as db]
-      [prompting :as p]
-      [randoms :as randoms]
-      [util :as u])
-    [randy.core :as r]))
+  (:require (campaign3
+              [db :as db]
+              [prompting :as p]
+              [randoms :as randoms]
+              [util :as u])
+            [randy.core :as r]))
 
 (def all-rings (->> (db/load-all :rings)
                     (mapv #(update % :randoms randoms/randoms->fn))))

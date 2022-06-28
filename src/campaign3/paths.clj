@@ -1,10 +1,9 @@
 (ns campaign3.paths
-  (:require
-    (campaign3
-      [db :as db]
-      [util :as u])
-    [clojure.string :as str]
-    [randy.core :as r]))
+  (:require (campaign3
+              [db :as db]
+              [util :as u])
+            [clojure.string :as str]
+            [randy.core :as r]))
 
 (def prayer-paths (db/load-all :prayer-paths))
 

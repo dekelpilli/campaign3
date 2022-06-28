@@ -1,9 +1,5 @@
 [{:name   "Touch of Subjective Truth",
-  :levels [{:effect "You learn the Minor Illusion cantrip. This does not count towards your limit of known cantrips."
-            :tags   #{"magic"}}
-           {:effect "You become proficient in Persuasion. If you are already proficient, gain an expertise die instead instead. You may choose to use persuasion instead of deception when communicating something true in a misleading way."
-            :tags   #{"utility"}}
-           {:effect "You are considered to be proficient in Deception and Insight if you have used a non-cantrip Illusion spell since your last long rest."
+  :levels [{:effect "You are considered to be proficient in Deception and Insight if you have used a non-cantrip Illusion spell since your last long rest."
             :tags   #{"magic" "utility"}}
            {:effect "Creatures that currently believe one of your illusions are real have disadvantage when attacking you."
             :tags   #{"survivability" "magic"}}
@@ -19,54 +15,43 @@
             :tags   #{"magic"}}
            {:effect "You have 30 feet of Truesight, and may automatically discern illusions from reality at any distance (including non-visual illusions)."
             :tags   #{"magic"}}]}
- {:name   "Touch of Eternal Vigour",
-  :levels [{:effect "You have advantage on saves against poisons and diseases."
-            :tags   #{"survivability"}}
-           {:effect "You recover 5 hit point when an attack you made or spell you cast hits at least one enemy, no more than once per round."
-            :tags   #{"survivability"}}
-           {:effect "You have +3 to maximum hit points, and you have +1 maximum hit points per relic armour you are wearing."
-            :tags   #{"survivability"}}
-           {:effect "Gain an additional 5 temporary hit points whenever you gain temporary hit points."
-            :tags   #{"survivability"}}
-           {:effect "You take no additional damage from critical hits."
+ {:name   "Touch of Eternal Vigour"
+  :levels [{:effect "Gain an additional 5 temporary hit points whenever you gain temporary hit points."
             :tags   #{"survivability"}}
            {:effect "+1 resistance to damage for each previous time you've been hit per turn."
             :tags   #{"survivability"}}
+           {}
+           {:effect "You have +3 to maximum hit points, and you have +1 maximum per armour relic level."
+            :tags   #{"survivability"}}
+           {:effect "You take no additional damage from critical hits."
+            :tags   #{"survivability"}}
            {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat."
             :tags   #{"utility"}}
-           {:effect "As a reaction when failing a Wisdom saving throw against an effect that would cause a condition, you may attempt the save again."
+           {:effect "As a reaction when failing a saving throw against an effect that would cause a condition, you may attempt the save again."
             :tags   #{"survivability"}}
-           {:effect "You gain the Healer feat. If you already have the Healer feat, you may gain a different feat instead."
-            :tags   #{"utility"}} ;TODO - change depending on what happens with the Healer feat
            {}]}
  {:name   "Touch of Unrelenting Fortune",
-  :levels [{:effect "Your skill checks have a minimum result (after bonuses) equal to the total number of relics and rings you are wearing, to a maximum of 14."
-            :tags   #{"utility"}}
+  :levels [{:effect "You find divine dust with advantage (favouring refined dust)."
+            :tags   #{"wealth"}}
            {:effect "You may roll an additional die to attempt a critical hit after hitting a creature with an attack. Similarly, creatures that fail a save against a spell of yours must roll again and use the lowest result."
             :tags   #{"critical"}}
-           {:effect "You find divine dust with advantage (favouring refined dust)."
+           {:effect "The quantity of crafting and consumable items you find from loot rolls is increased by 1."
             :tags   #{"wealth"}}
-           {:effect "The cost of levelling relics attuned to you is reduced by 10%."
+           {:effect "The cost of levelling your relics is reduced by 10%."
             :tags   #{"wealth"}}
            {:effect "When you roll 7 or lower on a loot roll, you have advantage on the result of the roll (you get two options, choose one)."
             :tags   #{"wealth"}}
-           {:effect "The quantity of crafting and consumable items you find from loot rolls is increased by 1."
+           {:effect "You may sacrifice a relic to create a level 1 duplicate of another relic of yours, then level the duplicate to match the sacrificed relic. Duplicate and duplicated relics cannot be duplicated again."
             :tags   #{"wealth"}}
-           {}
-           {:effect "You may cast Fortune's Favour at any spell level as a bonus action. You can use no more than 10 spell slot levels on this per long rest."
+           {:effect "You may cast Fortune's Favour at any spell level as a free action on your turn once per round. You can use no more than 10 spell slot levels on this per long rest."
             :tags   #{"magic"}}
            {:effect "Your amulet's trait is always active."
-            :tags   #{"utility"}}
-           {}]}
+            :tags   #{"utility"}}]}
  {:name   "Touch of Wrathful Judgement",
   :levels [{:effect "Enemies that damage you become marked by Brand of Vengeance for a minute. Creatures marked with BoV have +1 damage taken from you."
             :tags   #{"damage"}}
-           {:effect "You may cast Hellish Rebuke as a first level spell. You can do this an amount of times equal to an attribute of your choice (min 1) every long rest. If skipped 1, enemies that damage you become marked by BoV for a minute (no +1 damage)."
-            :tags   #{"magic"}}
-           {:effect "Creatures marked with BoV now have -1 global damage."
+           {:effect "Creatures marked by you now have -1 global damage. If skipped 1, enemies that damage you become marked by BoV for a minute (no +1 damage)."
             :tags   #{"control"}}
-           {:effect "Gain 15 temporary hit points when you land a killing blow against marked enemy."
-            :tags   #{"survivability"}}
            {:effect "Your attacks and spells deal +1d4 radiant damage against marked enemies."
             :tags   #{"damage"}}
            {:effect "Enemies are marked with BoV if they damage you or an ally, instead of just you."
@@ -119,17 +104,16 @@
            {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed), you may make Constitution saving throw against a DC of 8 + twice the spell slot level used. On a success, you regain the consumed spell slot."
             :tags   #{"magic"}}]}
  {:name   "Touch of Elemental Mastery"
-  :levels [{}
-           {:effect "You have +1 resistance to cold, fire, and lightning damage."
+  :levels [{:effect "When you score a critical strike, your die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by one."
+            :tags   #{"critical"}}
+           {:effect "You have +1 resistance to elemental damage."
             :tags   #{"survivability"}}
            {:effect "You can cast Absorb Elements an amount of times equal to your attribute modifier of choice, to a minimum of once, per long rest."
             :tags   #{"magic" "damage" "survivability"}}
-           {:effect "When you score a critical strike, your die sizes for cold, fire, and lightning damage increase by two."
-            :tags   #{"critical"}}
-           {:effect "As a reaction to being targeted by a melee attack, you emit a thunderous burst (same effect as Thunderwave but not magical) CON Mod (min 1) times per short rest. Attribute of your choice."
-            :tags   #{"magic" "damage"}}
            {:effect "You may cast Fire Shield as a bonus action once per short rest. When cast in this way, you may also target other willing creatures you can see within 30 feet."
             :tags   #{"magic" "damage"}}
+           {:effect "-1 critical strike requirement for attacks that would deal elemental damage."
+            :tags   #{"critical"}}
            {:effect "You may cast Elemental Weapon once per long rest. When cast in this way, the spell lasts for 4 hours, and does not require concentration."
             :tags   #{"magic" "damage"}}
            {:effect "+1 AB with attacks that would deal fire, cold, or lightning damage, and +1 spell save DC to spells that would deal fire, cold, or lightning damage."
@@ -148,7 +132,7 @@
            "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks."
            "You may cast Create Magen once per long rest. When cast in this way, the maximum hit point reduction is instead 4 times the CR of the Magen summoned, but the reduction only lasts as long as the Magen is alive. You may desummon any of your Magens at will."]}
  {:name   "Touch of Nature's Influence"
-  :levels [{:effect "+1 expertise die with Survival when in nature and when foraging materials from creatures."
+  :levels [{:effect "+1 expertise die with Survival when in nature or when foraging materials from creatures."
             :tags   #{"utility" "wealth"}}
            {:effect "You are permanently under the effects of the Speak with Animals spell."
             :tags   #{"magic" "utility"}}

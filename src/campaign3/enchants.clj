@@ -1,13 +1,12 @@
 (ns campaign3.enchants
-  (:require
-    (campaign3
-      [db :as db]
-      [mundanes :as mundanes]
-      [prompting :as p]
-      [randoms :as randoms]
-      [util :as u])
-    [clojure.walk :as walk]
-    [randy.core :as r]))
+  (:require (campaign3
+              [db :as db]
+              [mundanes :as mundanes]
+              [prompting :as p]
+              [randoms :as randoms]
+              [util :as u])
+            [clojure.walk :as walk]
+            [randy.core :as r]))
 
 (defn prep-matcher [matcher]
   (walk/prewalk
@@ -33,7 +32,7 @@
   (when (some? req)
     (= req (some? actual))))
 
-(defn- is-allowed? [base base-type prohibits? reqs]
+(defn- allowed? [base base-type prohibits? reqs]
   (reduce
     (fn [_ [kw req]]
       (let [match? (case kw
@@ -51,8 +50,8 @@
     reqs))
 
 (defn- compatible? [base base-type {:keys [requires prohibits]}]
-  (and (is-allowed? base base-type true prohibits)
-       (is-allowed? base base-type false requires)))
+  (and (allowed? base base-type true prohibits)
+       (allowed? base base-type false requires)))
 
 (defn valid-enchants [base base-type]
   (filterv #(compatible? base base-type %) enchants))
@@ -81,14 +80,13 @@
     [base (add-enchants base type points-target)]))
 
 (defn >>add []
-  (let [{:keys [base type]} (mundanes/>>base)]
-    (when (and base type)
-      (->> ((->valid-enchant-fn-memo base type))
-           (u/fill-randoms)
-           (:effect)))))
+  (when-let [{:keys [base type]} (mundanes/>>base)]
+    (->> ((->valid-enchant-fn-memo base type))
+         (u/fill-randoms)
+         (:effect))))
 
 (defn >>add-totalling []
-  (let [points (some-> (p/>>input "Desired points total:") (parse-long))
-        {:keys [base type]} (when points (mundanes/>>base))]
-    [base
-     (add-enchants base type points)]))
+  (let [points (some-> (p/>>input "Desired points total:") (parse-long))]
+    (when-let [{:keys [base type]} (when points (mundanes/>>base))]
+      [base
+       (add-enchants base type points)])))
