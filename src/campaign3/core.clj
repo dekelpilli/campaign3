@@ -6,6 +6,7 @@
               [crafting :as crafting]
               [curios :as curios]
               [enchants :as e]
+              [helmets :as helmets]
               [mundanes :as mundanes]
               [paths :as paths]
               [relics :as relics]
@@ -17,33 +18,34 @@
 (def loot-actions
   {1  {:name   "1-10 gold"
        :action #(str (rng/next-int r/default-rng 1 11) " gold")}
-   3  {:name   "Mundane item"
+   2  {:name   "Mundane item"
        :action (comp :base mundanes/new)}
+   3  {:name   "Unique"
+       :action uniques/new}
    4  {:name   "Consumable"
        :action consumables/new}
-   5  {:name   "Unique"
-       :action uniques/new}
-   6  {:name   "Low value enchanted item (10 points)"
-       :action #(e/random-enchanted 10)}
-   7  {:name   "100-150 gold"
+   5  {:name   "100-150 gold"
        :action #(str (rng/next-int r/default-rng 100 151) " gold")}
-   8  {:name   "Non-synergy ring"
+   6  {:name   "Enchanted item (15 points)"
+       :action #(e/random-enchanted 15)}
+   7  {:name   "Non-synergy ring"
        :action rings/new-non-synergy}
-   9  {:name   "Synergy ring"
+   8  {:name   "Synergy ring"
        :action rings/new-synergy}
-   10 {:name   "Enchanted item (20 points)"
-       :action #(e/random-enchanted 20)}
-   11 {:name   "High value enchanted item (30 points)"
+   9  {:name   "High value enchanted item (30 points)"
        :action #(e/random-enchanted 30)}
-   ;TODO add helmets for character enchants? limit relics per char to 2 (max 1 weap) & keep attunement levels per char rather than per item?
+   10 {:name   "Amulet"
+       :action amulets/new}
+   11 {:name   "Helmet"
+       :action helmets/new}
    12 {:name   "Curios"
        :action #(cons
                   (mundanes/new)
-                  (repeatedly 3 curios/new))}
+                  (repeatedly 4 curios/new))}
    13 {:name   "Crafting item"
        :action crafting/new}
-   14 {:name   "Amulet"
-       :action amulets/new}
+   14 {:name   "Relic fragment" ; TODO some dream mirror replacement
+       :action (constantly nil)}
    15 {:name   "Prayer stone" ;TODO reduce to 8 per path
        :action paths/new-divine-dust}
    16 {:name   "New relic"

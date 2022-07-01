@@ -7,11 +7,12 @@
             :tags   #{"magic" "wealth"}}
            {:effect "When casting non-cantrip Illusion spells, you may choose to use the spell slot level below that spell's natural casting requirement, to a minimum of 1."
             :tags   #{"magic"}}
-           {:effect "+2 to the DCs of Illusion spells."
+           {:effect "+2 to the DCs of Illusion spells." ;TODO busty?
             :tags   #{"accuracy"}}
            {:effect "You have +1 AC, and become proficient in Intelligence, Charisma, and Wisdom saving throws, while concentrating on anon-cantrip illusion spell."
             :tags   #{"survivability" "magic"}}
-           {}
+           {:effect "No more than once per minute, when you tell a lie, you may immediately learn if one person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
+            :tags   #{"utility"}}
            {:effect "You have 30 feet of Truesight, and may automatically discern illusions from reality at any distance (including non-visual illusions)."
             :tags   #{"magic"}}]}
  {:name   "Touch of Eternal Vigour"

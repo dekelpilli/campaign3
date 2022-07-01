@@ -61,7 +61,7 @@
                      :points (min points 10)
                      :upgrade-points (or upgrade-points points)))))
 
-(defn &level-relic!
+(defn &level-relic! ;TODO relic levelling process needs to be saved per-character
   ([] (when-let [relic (&upgradeable)]
         (&level-relic! relic)))
   ([{:keys [level existing base type available progressed owner] :as relic}]

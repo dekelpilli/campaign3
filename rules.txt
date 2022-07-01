@@ -32,30 +32,41 @@ Vials:
 
 Relics:
     Relics related to a specific personality are unlocked at a certain quest state.
-    Relics can only be attuned to one person (old attunements need to be let go).
     Last relic level (10) is a choice of level (new random mod from list of mods available on artifact, upgrade existing mod of choice, new random mod)
-    Costs:
-        1:  0 (attunement),
-        2:  100,
-        3:  200,
-        4:  300,
-        5:  400,
-        6:  500,
-        7:  600,
-        8:  700,
-        9:  800,
-        10: 1500
+    Characters have one armour relic slot, and one weapon relic slot. Any relic they put on will automatically get levelled to that level, but those levels are static once defined (can't de-attune and re-attune).
+    Characters can level up their relic slots (separately) at the following costs:
+        1:  0 (start),
+        2:  200,
+        3:  300,
+        4:  400,
+        5:  550,
+        6:  700,
+        7:  850,
+        8:  1000,
+        9:  1000,
+        10: 1000
+
+Helmets:
+    Character enchants only, spawn with 20 points of mods
+    Can be destroyed for 2 orbs of personality, regardless of mods
+    Players can attempt to mend a fractured helmet:
+        Each mod has 40% chance to stay the same, 30% to upgrade (or progress), 30% chance to remove the mod completely
+
+Orb of personality:
+    Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
+    After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable), chance equal to (1 - 10/{points total on helmet})
 
 Vendor valuations:
+    Helmets: N/A
     Mundane: 25
     Ring: 15
     Unique: 50
-    Magical: 100/200/250 (low/medium/high value)
+    Magical: 200
     Amulets: 50 * CR capacity
     Crafting items: 40
     Prayer stones: 100
-    Relics: 300 + half of money spent on levelling
-    Other potions: 10
+    Relics: 300
+    Potions/vials: 5
 
 Sales and services:
     Orbs of Flux: 200

@@ -29,11 +29,6 @@
   :slot                   "gloves"
   :disadvantaged-stealth? false}
  {:ac                     0,
-  :name                   "Unarmoured helmet",
-  :type                   "Unarmoured",
-  :slot                   "helmet"
-  :disadvantaged-stealth? false}
- {:ac                     0,
   :name                   "Unarmoured body armour (shirt)",
   :type                   "Unarmoured",
   :slot                   "body"

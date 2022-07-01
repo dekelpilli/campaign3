@@ -78,12 +78,12 @@
             {:effect "You cannot gain temporary hit points."}
             {:effect "You take 5 true damage when you dash."}]}
  {:name    "Unreserved"
-  :base    "any gloves"
+  :base    "any boots"
   :effects [{:effect "+2 global damage."}
             {:effect "+1 incoming healing."}
             {:effect "+1 damage vulnerability."}]}
  {:name    "Relentless"
-  :base    "any helmet"
+  :base    "any gloves"
   :effects [{:effect "Gain temporary hit points equal to twice your level when you roll for initiative and do not have full health."}
             {:effect "You cannot critically succeed or critically fail death saves."}
             {:effect "You immediately count as having failed 1 death save when you go down to 0 points."}
@@ -95,7 +95,7 @@
             {:effect "Your physical damage is halved."}
             {:effect "Physical damage you would deal is dealt as cold damage instead."}]}
  {:name    "Cryomancer's Obsession"
-  :base    "any helmet"
+  :base    "any gloves"
   :effects [{:effect "+1d4 cold damage with attacks and spells."}
             {:effect "Enemies you score a critical strike against are frozen."}
             {:effect "Enemies that score a natural critical strike against are frozen."}
@@ -120,13 +120,13 @@
             {:effect "You may force enemies that take thunder damage from a critical strike from this weapon to make a STR save (DC: 8+AB) or be knocked back 5feet."}
             {:effect "You are vulnerable to lightning damage."}]}
  {:name    "Flame's Embrace"
-  :base    "any helmet"
+  :base    "any boots"
   :effects [{:effect "You cannot become vulnerable, resistant, or immune to fire."}
             {:effect "You may choose to ignite yourself as a bonus action, taking 1d4 fire damage at the end of your turn while burning. This lasts as long as you are conscious, or until you use an action to stop it."}
             {:effect "While burning: your hits deal no fire damage, but instead burn for 50% of hit's fire damage every round for 3 rounds."}
             {:effect "While burning: Your non-fire damage is halved."}]}
  {:name    "Dominion"
-  :base    "any helmet"
+  :base    "any gloves"
   :effects [{:effect "+1 resistance to physical damage per minion you control, max 3."}
             {:effect "Your minion's hit point maximum is increased by twice the spell level used to create them."}
             {:effect "Your minions' damage is halved."}]}

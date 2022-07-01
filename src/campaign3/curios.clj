@@ -24,7 +24,7 @@
 (defn >>use []
   (when-let [{:keys [base type]} (mundanes/>>base)]
     (when-let [curios-used (let [curios-by-name (u/assoc-by :name (into curios (map ->inversed) curios))]
-                             (some->> (p/>>input "Curios used:"
+                             (some->> (p/>>input "Curios used (maximum 4):"
                                                  (keys curios-by-name)
                                                  :completer :comma-separated)
                                       (not-empty)
@@ -48,5 +48,5 @@
                                            tags)
                                          (assoc e :weighting))))
                              (e/->valid-enchant-fn))]
-        (e/add-enchants (* 10 (count curios-used)) ;TODO reduce number of curios found and make this a static 30?
+        (e/add-enchants (* 10 (count curios-used))
                         enchants-fn)))))

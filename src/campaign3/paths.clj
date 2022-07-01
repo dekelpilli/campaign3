@@ -7,7 +7,6 @@
 
 (def prayer-paths (db/load-all :prayer-paths))
 
-
 (defn new-divine-dust []
   (cond->> (-> prayer-paths r/sample :name (str/replace #"^Touch of" "Dust of"))
            (u/occurred? 1/5) (str "Refined ")))
