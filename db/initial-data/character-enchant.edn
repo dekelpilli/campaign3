@@ -1,1 +1,3 @@
-{}
+{:test [{:effect "A" :points 10}
+        {:effect "B" :points 20}
+        {:effect "C" :points 10}]}

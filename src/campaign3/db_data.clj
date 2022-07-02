@@ -239,7 +239,6 @@
                                   (map #(update % :levels u/jsonb-lift)))}))
 
 (defn create-monsters! []
-  [:name :source :page :type :cr :trait]
   (db/execute! {:create-table :monsters
                 :with-columns [[:name :text [:not nil]]
                                [:book :text [:not nil]]
@@ -254,13 +253,31 @@
   (create-monsters!)
   (db/execute! {:insert-into [:monsters]
                 :values      (->> (load-monsters)
-                                  (map (fn [{:keys [trait source type] :as monster}]
-                                         (when-not (string? type)
-                                           (println monster))
+                                  (map (fn [{:keys [trait source] :as monster}]
                                          (-> monster
                                              (dissoc :source :trait)
                                              (assoc :book source
                                                     :traits (u/jsonb-lift trait))))))}))
+
+(defn create-character-enchants! []
+  (db/execute! {:create-table :character-enchants
+                :with-columns [[:effect :text [:not nil]]
+                               [:character :text [:not nil]]
+                               [:points :integer [:not nil]]
+                               [[:primary-key :effect :character]]]}))
+
+(defn insert-character-enchants! []
+  (drop! :character-enchants)
+  (create-character-enchants!)
+  (db/execute! {:insert-into [:character-enchants]
+                :values      (->> (load-data "character-enchant")
+                                  (reduce
+                                    (fn [acc [character enchants]]
+                                      (into acc
+                                            (map (fn [enchant]
+                                                   (assoc enchant :character (name character))))
+                                            enchants))
+                                    []))}))
 
 (defn insert-data! []
   (db/in-transaction
@@ -273,7 +290,8 @@
     (insert-enchants!)
     (insert-rings!)
     (insert-curios!)
-    (insert-divinity-paths!)))
+    (insert-divinity-paths!)
+    (insert-character-enchants!)))
 
 (defn backup-data! []
   ;TODO write any mutable data to db/current-state to keep log of changes by session
