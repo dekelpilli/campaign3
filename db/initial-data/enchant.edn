@@ -296,11 +296,6 @@
   :tags     #{"survivability"}
   :points   5
   :requires {:base-type "armour"}}
- {:effect   "If you successfully disarm an enemy with this weapon, you may use a bonus action in the same turn to make an attack against the creature you disarmed."
-  :tags     #{"utility"}
-  :points   15
-  :requires {:base-type "weapon"
-             :traits    #{"Disarm"}}} ;TODO remove when/if disarm is removed
  {:effect       "Enemies are considered to enter and leave your reach at both 5 and 10 feet."
   :tags         #{"utility"}
   :points       25

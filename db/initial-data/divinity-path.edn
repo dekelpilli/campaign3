@@ -5,9 +5,9 @@
             :tags   #{"survivability" "magic"}}
            {:effect "You may cast Distort Value once per long rest. When cast in this way, you may target any non-relic object, instead of being size limited."
             :tags   #{"magic" "wealth"}}
-           {:effect "When casting non-cantrip Illusion spells, you may choose to use the spell slot level below that spell's natural casting requirement, to a minimum of 1."
+           {:effect "When casting non-cantrip Illusion spells, you may choose to use the spell slot level below that spell's regular casting requirement, including any upcasting, to a minimum of 1."
             :tags   #{"magic"}}
-           {:effect "+2 to the DCs of Illusion spells." ;TODO busty?
+           {:effect "+1 to the DCs of Illusion spells."
             :tags   #{"accuracy"}}
            {:effect "You have +1 AC, and become proficient in Intelligence, Charisma, and Wisdom saving throws, while concentrating on anon-cantrip illusion spell."
             :tags   #{"survivability" "magic"}}
@@ -41,7 +41,7 @@
             :tags   #{"wealth"}}
            {:effect "The cost of upgrading your relic levels is reduced by 10%."
             :tags   #{"wealth"}}
-           {:effect "" ;TODO something to do with helmets, probably
+           {:effect "Orbs of Purification's chance to fracture helmets is halved."
             :tags   #{"wealth"}}
            {:effect "When you roll 7 or lower on a loot roll, you have advantage on the result of the roll (you get two options, choose one)."
             :tags   #{"wealth"}}
@@ -52,9 +52,10 @@
  {:name   "Touch of Wrathful Judgement"
   :levels [{:effect "Enemies that damage you become marked by Brand of Vengeance for a minute. Creatures marked with BoV have +1 damage taken from you."
             :tags   #{"damage"}}
+           {:effect "When you land a killing blow against an enemy marked by BoV, you gain hit points equal to your level."
+            :tags   #{"survivability"}}
            {:effect "Creatures marked by you now have -1 global damage. If skipped 1, enemies that damage you become marked by BoV for a minute (no +1 damage)."
             :tags   #{"control"}}
-           {}
            {:effect "Enemies are marked with BoV if they land a killing blow against an ally of yours."
             :tags   #{"utility"}}
            {:effect "Your attacks and spells deal +1d4 radiant damage against marked enemies."
@@ -99,8 +100,11 @@
             :tags   #{"survivability"}}
            {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed), you may make Constitution saving throw against a DC of 10 + twice the spell slot level used. On a success, you regain the consumed spell slot."
             :tags   #{"magic"}}]}
- {:name   "Touch of Elemental Mastery"
-  :levels [{:effect "When you score a critical strike, your die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by one."
+ {:name   "Touch of Elemental Mastery" ;TODO too strong
+  :levels [{:effect "When you score a critical strike, your critical die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by two."
+            :tags   #{"critical"}}
+           {}
+           {:effect "-1 critical strike requirement for attacks that would deal elemental damage."
             :tags   #{"critical"}}
            {:effect "You have +1 resistance to elemental damage."
             :tags   #{"survivability"}}
@@ -108,9 +112,6 @@
             :tags   #{"magic" "damage" "survivability"}}
            {:effect "You may cast Fire Shield as a bonus action once per short rest. When cast in this way, you may also target other willing creatures you can see within 30 feet."
             :tags   #{"magic" "damage"}}
-           {}
-           {:effect "-1 critical strike requirement for attacks that would deal elemental damage."
-            :tags   #{"critical"}}
            {:effect "+1 AB with attacks that would deal elemental damage damage, and +1 spell save DC to spells that would deal elemental damage."
             :tags   #{"accuracy"}}
            {}]}

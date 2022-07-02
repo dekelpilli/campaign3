@@ -4,7 +4,7 @@
  {:cost         "100g (each)"
   :participants "everyone"
   :rules        "Guess a number from 1 to 100. Closest player gets 10x 1d16 loot rolls, -1 for each distance from actual number, second closest 10x 2d8, third 10x 1d12, fourth 10x 2d6. All min 1, all max 5, but if would have been above 5 then all are with advantage."}
- {:cost         "200g (each)" ;TODO decide on amulets - remove Orbs of Purification?
+ {:cost         "200g (each)"
   :participants "any"
   :rules        "Roll 1d4: 1. Advantage 1d16 loot roll. 2. 2x Orbs of Purification, or random amulet if you have none. 3. Prayerstone for current path or prayerstone of choice if you have none. 4. +1 level to a chosen worn relic, or a new relic if you have none."}
  {:cost         "300g (party)"
