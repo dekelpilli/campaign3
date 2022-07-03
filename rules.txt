@@ -45,6 +45,25 @@ Relics:
         9:  1000,
         10: 1000
 
+TODO reconsider relic prices/vendor valuations?
+    current average values of loot rolls: 5.5
+                                          25
+                                          50
+                                          10
+                                          100
+                                          125
+                                          0
+                                          0
+                                          200
+                                          0
+                                          0
+                                          200
+                                          100
+                                          0
+                                          0
+                                          300
+    This means ~170 loot rolls for 2x level 10 relics
+
 Helmets:
     Character enchants only, spawn with 20 points of mods
     Can be destroyed for 2 orbs of personality, regardless of mods
@@ -55,6 +74,7 @@ Orb of personality:
     Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
     After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable), chance equal to (1 - 10/{points total on helmet})
 
+TODO divide all gold values by 5?
 Vendor valuations:
     Helmets: N/A
     Mundane bases: 25

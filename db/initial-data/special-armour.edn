@@ -13,6 +13,9 @@
  {:name   "Hale"
   :effect "+1 to the values of all modifiers on this item that relate to healing, regeneration, and temporary hit points."
   :slot   "boots"}
+ {:name   "Defensive"
+  :effect "+1 global damage for each 'survivability' tagged mod while this item only has 'survivability' tagged modifiers on it."
+  :slot   "boots"}
  {:name   "Bramblejack"
   :effect "Modifiers on this item that grant flat resistances also grant equivalent piercing damage thorns that triggers when that resistance applies."
   :slot   "body"}
@@ -48,4 +51,7 @@
   :slot   "gloves"}
  {:name   "Consistent"
   :effect "Effects granted to you by modifiers on this item on killing blow can also be gained as a free action on your turn no more than once per long rest."
+  :slot   "gloves"}
+ {:name   "Amplified"
+  :effect "Relics on this item are one level higher, to a maximum of 10. Relics removed from this item lose their last gained level."
   :slot   "gloves"}]
