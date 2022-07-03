@@ -7,7 +7,7 @@
  {:name   "Traceur"
   :effect "+15 to each of your speeds (0+) while this item has at least one modifier that relates to jumping."
   :slot   "boots"}
- {:name   "Hale"
+ {:name   "Hardy"
   :effect "+1 damage resistance while this item has at least one modifier that grants AC to the wearer, including conditional modifiers regardless of if they apply."
   :slot   "boots"}
  {:name   "Hale"

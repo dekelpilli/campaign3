@@ -25,7 +25,6 @@ Rings:
 
 Uniques:
     Unique items are, lore-wise, failed attempts creating relics, or at replicating items from myths/folk stories
-    Sell for 50g
 
 Vials:
     As a bonus action, can be drunk or thrown at willing target within 20 feet.
@@ -58,10 +57,11 @@ Orb of personality:
 
 Vendor valuations:
     Helmets: N/A
-    Mundane: 25
+    Mundane bases: 25
+    Special bases: 125
     Ring: 15
-    Unique: 50
-    Magical: 200
+    Unique: 25 + base price
+    Magical: 75/175 (low/high) + base price. Crafted items are high value if they have more than 10 points of enchants.
     Amulets: 50 * CR capacity
     Crafting items: 40
     Prayer stones: 100

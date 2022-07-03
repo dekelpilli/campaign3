@@ -24,15 +24,15 @@
        :action uniques/new}
    4  {:name   "Consumable"
        :action consumables/new}
-   5  {:name   "100-150 gold"
-       :action #(str (rng/next-int r/default-rng 100 151) " gold")}
-   6  {:name   "Enchanted item (15 points)"
-       :action #(e/random-enchanted 15)}
+   5  {:name   "Enchanted item (low value, 10 points)"
+       :action #(e/random-enchanted 10)}
+   6  {:name   "Special mundane armour"
+       :action mundanes/new-special-armour}
    7  {:name   "Non-synergy ring"
        :action rings/new-non-synergy}
    8  {:name   "Synergy ring"
        :action rings/new-synergy}
-   9  {:name   "High value enchanted item (30 points)"
+   9  {:name   "Enchanted item (high value, 30 points)"
        :action #(e/random-enchanted 30)}
    10 {:name   "Amulet"
        :action amulets/new}

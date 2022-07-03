@@ -7,6 +7,8 @@
 
 (def weapons (db/load-all :weapons))
 (def armours (db/load-all :armours))
+(def special-armour-by-slot (->> (db/load-all :special-armours)
+                                 (group-by :slot)))
 (def armours-by-slot (group-by :slot armours))
 
 (def base-types {"weapon" weapons "armour" armours})
@@ -38,3 +40,8 @@
                              (r/sample)))]
     {:base base
      :type type}))
+
+(defn new-special-armour []
+  (->> (r/sample ["body" "boots" "gloves"])
+       (special-armour-by-slot)
+       (r/sample)))

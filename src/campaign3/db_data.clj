@@ -46,7 +46,7 @@
                           (filter (comp seq :trait)))))]
     mons))
 
-(defn- drop! [table]
+(defn drop! [table]
   (db/execute! {:drop-table [:if-exists table]}))
 
 (defn create-armours! []
@@ -238,26 +238,6 @@
                 :values      (->> (load-data "divinity-path")
                                   (map #(update % :levels u/jsonb-lift)))}))
 
-(defn create-monsters! []
-  (db/execute! {:create-table :monsters
-                :with-columns [[:name :text [:not nil]]
-                               [:book :text [:not nil]]
-                               [:page :integer [:not nil]]
-                               [:type :text [:not nil]]
-                               [:cr :real [:not nil]]
-                               [:traits :jsonb [:not nil]]
-                               [[:primary-key :cr :name]]]}))
-
-(defn insert-monsters! []
-  (drop! :monsters)
-  (create-monsters!)
-  (db/execute! {:insert-into [:monsters]
-                :values      (->> (load-monsters)
-                                  (map (fn [{:keys [trait source] :as monster}]
-                                         (-> monster
-                                             (dissoc :source :trait)
-                                             (assoc :book source
-                                                    :traits (u/jsonb-lift trait))))))}))
 
 (defn create-character-enchants! []
   (db/execute! {:create-table :character-enchants
@@ -279,6 +259,40 @@
                                             enchants))
                                     []))}))
 
+
+(defn create-special-armours! []
+  (db/execute! {:create-table :special-armours
+                :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:effect :text [:not nil]]
+                               [:slot :text [:not nil]]]}))
+
+(defn insert-special-armours! []
+  (drop! :special-armours)
+  (create-special-armours!)
+  (db/execute! {:insert-into [:special-armours]
+                :values      (load-data "special-armour")}))
+
+(defn create-monsters! []
+  (db/execute! {:create-table :monsters
+                :with-columns [[:name :text [:not nil]]
+                               [:book :text [:not nil]]
+                               [:page :integer [:not nil]]
+                               [:type :text [:not nil]]
+                               [:cr :real [:not nil]]
+                               [:traits :jsonb [:not nil]]
+                               [[:primary-key :cr :name]]]}))
+
+(defn insert-monsters! []
+  (drop! :monsters)
+  (create-monsters!)
+  (db/execute! {:insert-into [:monsters]
+                :values      (->> (load-monsters)
+                                  (map (fn [{:keys [trait source] :as monster}]
+                                         (-> monster
+                                             (dissoc :source :trait)
+                                             (assoc :book source
+                                                    :traits (u/jsonb-lift trait))))))}))
+
 (defn insert-data! []
   (db/in-transaction
     (insert-armours!)
@@ -291,7 +305,8 @@
     (insert-rings!)
     (insert-curios!)
     (insert-divinity-paths!)
-    (insert-character-enchants!)))
+    (insert-character-enchants!)
+    (insert-special-armours!)))
 
 (defn backup-data! []
   ;TODO write any mutable data to db/current-state to keep log of changes by session
