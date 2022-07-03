@@ -1,0 +1,51 @@
+[{:name   "Talaria"
+  :effect "Modifiers to non-global speed on this item are instead applied to flying speed. +5 flying speed while this item has at least one modifier relating to speed."
+  :slot   "boots"}
+ {:name   "Unbound"
+  :effect "+1 to saves for ending and avoiding ailments while this item has at least one modifier that relates to grapples or restrains."
+  :slot   "boots"}
+ {:name   "Traceur"
+  :effect "+15 to each of your speeds (0+) while this item has at least one modifier that relates to jumping."
+  :slot   "boots"}
+ {:name   "Hale"
+  :effect "+1 damage resistance while this item has at least one modifier that grants AC to the wearer, including conditional modifiers regardless of if they apply."
+  :slot   "boots"}
+ {:name   "Hale"
+  :effect "+1 to the values of all modifiers on this item that relate to healing, regeneration, and temporary hit points."
+  :slot   "boots"}
+ {:name   "Bramblejack"
+  :effect "Modifiers on this item that grant flat resistances also grant equivalent piercing damage thorns that triggers when that resistance applies."
+  :slot   "body"}
+ {:name   "Bellmarian"
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both radiant and necrotic damage types."
+  :slot   "body"}
+ {:name   "Intangible"
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both psychic and force damage types."
+  :slot   "body"}
+ {:name   "Stormweaver"
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both lightning and thunder damage types."
+  :slot   "body"}
+ {:name   "Apocalyptic"
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both cold and fire damage types."
+  :slot   "body"}
+ {:name   "Impactful"
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to all physical damage types."
+  :slot   "body"}
+ {:name   "Apothecary"
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both acid and poison damage types."
+  :slot   "body"}
+ {:name   "Sovereignty"
+  :effect "+2 to concentration saves for minion spells and effects while this item has at least one modifier that affects your minions."
+  :slot   "gloves"}
+ {:name   "Trickster"
+  :effect "Modifiers to skills on this item also apply to Sleight of Hand."
+  :slot   "gloves"}
+ {:name   "Maleficarum"
+  :effect "Creatures affected by your marks or curses have -1 to damage resistance while this item has at least one modifier that relates to marks or curses."
+  :slot   "gloves"}
+ {:name   "Aggressive"
+  :effect "Your AC is always exactly 14 while this item only has 'damage' tagged modifiers on it, and has at least 2 modifiers."
+  :slot   "gloves"}
+ {:name   "Consistent"
+  :effect "Effects granted to you by modifiers on this item on killing blow can also be gained as a free action on your turn no more than once per long rest."
+  :slot   "gloves"}]

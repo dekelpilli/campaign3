@@ -33,13 +33,13 @@
   :effects [{:effect "+3 fire damage with spells."}
             {:effect "-1 critical strike requirement with spells."}
             {:effect "You may cast spells that require a saving throw that would deal fire damage as spell attacks instead."}
-            {:effect "You are vulnerable to all spell damage if you have expended your spell slots at any level."}
+            {:effect "-1 resistance to all spell damage for each spell slot level where you have expended all of your spell slots."}
             {:effect "Takes at least 1 minute to be donned or doffed."}]}
  {:name    "Werebear's Pelt"
   :base    "any body armour"
   :effects [{:effect "Your hit die size is increased by 2. This increases your maximum hit points."}
             {:effect "At the start of your turn, while conscious, if you have been damaged in the last round, regenerate 2 hit points."}
-            {:effect "You have advantage on physical damage dice rolls with melee attacks."}
+            {:effect "You have +3 physical damage with melee attacks."}
             {:effect "You cannot cast spells."}
             {:effect "You can wear a maximum of 1 relic."}]}
  {:name    "Garb of the Unhinged"
@@ -276,5 +276,4 @@
  {:name     "Template"
   :base     "string"
   :effects  [{:effect "description"}]
-  :enabled? false}
- ]
+  :enabled? false}]

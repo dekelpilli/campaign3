@@ -204,7 +204,7 @@
   :upgrade-points 0}
  {:effect "You find loot as if your Investigation and Survival check results are 1 point higher."
   :tags   #{"wealth"}}
- {:effect   "Missed attacks with this weapon have a 20% chance to be critical hits instead while you are below 20% hit points."
+ {:effect   "Missed attacks with this weapon have a [20]% chance to be critical hits instead while you are below 20% hit points."
   :tags     #{"critical"}
   :requires {:base-type "weapon"}}
  {:effect "+1 incoming healing."
@@ -247,7 +247,7 @@
  {:effect   "+2 resistance to damage from projectiles."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
- {:effect "When you deliver a Killing Blow, gain 10 temporary hit points."
+ {:effect "Gain 10 temporary hit points when you deliver a Killing Blow."
   :tags   #{"survivability"}}
  {:effect "Whenever you grant a buff with a duration to a creature, gain outgoing healing +1 until the end of thee buff."
   :tags   #{"magic"}}
