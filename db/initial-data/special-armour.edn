@@ -5,13 +5,16 @@
   :effect "+1 to saves for ending and avoiding ailments while this item has at least one modifier that relates to grapples or restrains."
   :slot   "boots"}
  {:name   "Traceur"
-  :effect "+15 to each of your speeds (0+) while this item has at least one modifier that relates to jumping."
+  :effect "+15 feet to each of your speeds (0+) while this item has at least one modifier that relates to jumping."
   :slot   "boots"}
  {:name   "Hardy"
   :effect "+1 damage resistance while this item has at least one modifier that grants AC to the wearer, including conditional modifiers regardless of if they apply."
   :slot   "boots"}
  {:name   "Hale"
   :effect "+1 to the values of all modifiers on this item that relate to healing, regeneration, and temporary hit points."
+  :slot   "boots"}
+ {:name   "Selfish"
+  :effect "Outgoing healing modifiers on this item are converted to incoming healing. Incoming healing modifiers on this item, including converted modifiers, have +1 to their values."
   :slot   "boots"}
  {:name   "Defensive"
   :effect "+1 global damage for each 'survivability' tagged mod while this item only has 'survivability' tagged modifiers on it."
@@ -37,6 +40,12 @@
  {:name   "Apothecary"
   :effect "Modifiers on this item that relate to a specific damage type instead apply to both acid and poison damage types."
   :slot   "body"}
+ {:name   "Abundant"
+  :effect "'Wealth' tagged modifiers on this item have no effect. +1 to each of your attributes, to a maximum of 20, for each wealth modifier on this item."
+  :slot   "body"}
+ {:name   "Precise"
+  :effect "-1 to your critical strike requirement strike for each 'critical' tagged modifier on this item. Your critical strikes deal no additional damage."
+  :slot   "body"}
  {:name   "Sovereignty"
   :effect "+2 to concentration saves for minion spells and effects while this item has at least one modifier that affects your minions."
   :slot   "gloves"}
@@ -54,4 +63,10 @@
   :slot   "gloves"}
  {:name   "Amplified"
   :effect "Relics on this item are one level higher, to a maximum of 10. Relics removed from this item lose their last gained level."
+  :slot   "gloves"}
+ {:name   "Sniper"
+  :effect "Modifiers related to attacks, melee attacks, or spell attacks now apply to all projectile attacks instead."
+  :slot   "gloves"}
+ {:name   "Confrontational"
+  :effect "Modifiers related to attacks, ranged attacks, or spell attacks now apply to all melee weapon attacks and touch attacks instead."
   :slot   "gloves"}]
