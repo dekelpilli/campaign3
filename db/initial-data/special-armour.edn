@@ -16,6 +16,9 @@
  {:name   "Selfish"
   :effect "Outgoing healing modifiers on this item are converted to incoming healing. Incoming healing modifiers on this item, including converted modifiers, have +1 to their values."
   :slot   "boots"}
+ {:name   "Egalitarian"
+  :effect "Modifiers on this item that grant resistances apply to all damage types and damage source types, and are no longer conditional if they were originally."
+  :slot   "boots"}
  {:name   "Defensive"
   :effect "+1 global damage for each 'survivability' tagged mod while this item only has 'survivability' tagged modifiers on it."
   :slot   "boots"}
@@ -44,7 +47,7 @@
   :effect "'Wealth' tagged modifiers on this item have no effect. +1 to each of your attributes, to a maximum of 20, for each wealth modifier on this item."
   :slot   "body"}
  {:name   "Precise"
-  :effect "-1 to your critical strike requirement strike for each 'critical' tagged modifier on this item. Your critical strikes deal no additional damage."
+  :effect "-1 to your critical strike requirement for each 'critical' tagged modifier on this item. Your critical strikes deal no additional damage if this item has at least one 'critical' tagged modifier."
   :slot   "body"}
  {:name   "Sovereignty"
   :effect "+2 to concentration saves for minion spells and effects while this item has at least one modifier that affects your minions."

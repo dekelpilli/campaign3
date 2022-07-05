@@ -133,25 +133,6 @@
                                   (dissoc :enabled?)
                                   (update :amount u/jsonb-lift)))))})))
 
-(defn create-consumables! []
-  (db/execute! {:create-table :consumables
-                :with-columns [[:name :text [:primary-key] [:not nil]]
-                               [:effect :text [:not nil]]
-                               [:amount :jsonb]
-                               [:randoms :jsonb]]}))
-
-(defn insert-consumables! []
-  (drop! :consumables)
-  (create-consumables!)
-  (let [consumables (load-data "consumable")]
-    (db/execute! {:insert-into [:consumables]
-                  :values
-                  (map (fn [consumable]
-                         (-> consumable
-                             (update :amount u/jsonb-lift)
-                             (update :randoms u/jsonb-lift)))
-                       consumables)})))
-
 (defn create-positive-encounters! []
   (db/execute! {:create-table :positive-encounters
                 :with-columns [[:rules :text [:primary-key] [:not nil]]
@@ -299,7 +280,6 @@
     (insert-weapons!)
     (insert-uniques!)
     (insert-crafting-items!)
-    (insert-consumables!)
     (insert-positive-encounters!)
     (insert-enchants!)
     (insert-rings!)

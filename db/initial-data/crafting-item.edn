@@ -1,24 +1,24 @@
-[{:name   "Orb(s) of Flux"
-  :effect "Swap magical properties between compatible items, including simply moving enchantments to mundane items."}
- {:name   "Orb(s) of Annexation"
+[{:name   "Orb(s) of Annexation"
   :effect "Add a mod to a magical item"
   :amount [:disadvantaged [:default]]}
  {:name   "Orb(s) of Balance"
-  :effect "Remove a mod from a magical item and replace it with mods at least equal in point value."}
+  :effect "Remove a mod from a magical item and replace it with new random mods at least equal in point value."}
  {:name   "Orb(s) of Refinement"
-  :effect "Replace one random value from one modifier on an item with any possible random value of your choice."}
+  :effect "Replace a random value, or grouping of values, from a chosen modifier on an item with any possible random value of your choice."}
  {:name   "Mythic Orb(s)"
   :effect "Transform a unique item into another random unique item."
   :amount [:advantaged [:default]]}
- {:name   "Orb of Mulligan"
-  :effect "Completely level down a relic then level it back up to its current level. Before levelling it back up, you can let go of your attunement to it.",
-  :amount [:constant 1]}
- {:name   "Sacrificial Orb"
-  :effect "Use when performing a ring sacrifice increase the amount of options by an amount equal to the number of rings sacrificed."}
+ {:name   "Sacrificial Orb(s)"
+  :effect "Use when performing a ring sacrifice increase the amount of generated options by an amount equal to the number of rings sacrificed."}
  {:name   "Orb(s) of Favouritism"
   :effect "Reroll the monster & trait in an amulet, forcing a specific monster type. If none are available of that type in the appropriate CR, you may roll with a lower CR."}
  {:name   "Orb(s) of Discovery"
   :effect "Reroll the monster & trait in an amulet 1d8 times, guaranteeing unique results where possible."}
+ {:name   "Orb(s) of Regrading"
+  :effect "Change a body armour, boots, or gloves into a new random special base on the same slot."}
+ {:name     "Orb(s) of Flux"
+  :effect   "Swap magical properties between compatible enchantment slots, including moving enchantments to slots without enchantments."
+  :enabled? false}
  {:name     "Orb(s) of Purification"
   :effect   "Apply to an amulet and roll 1d6. If you roll above its current CR capacity, you may increase its CR capacity by 1. Contained creature does not change."
   :enabled? false}

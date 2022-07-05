@@ -26,27 +26,24 @@ Rings:
 Uniques:
     Unique items are, lore-wise, failed attempts creating relics, or at replicating items from myths/folk stories
 
-Vials:
-    As a bonus action, can be drunk or thrown at willing target within 20 feet.
-
 Relics:
     Relics related to a specific personality are unlocked at a certain quest state.
     Last relic level (10) is a choice of level (new random mod from list of mods available on artifact, upgrade existing mod of choice, new random mod)
     Characters have one armour relic slot, and one weapon relic slot. Any relic they put on will automatically get levelled to that level, but those levels are static once defined (can't de-attune and re-attune).
     Characters can level up their relic slots (separately) at the following costs:
         1:  0 (start),
-        2:  200,
-        3:  300,
-        4:  400,
-        5:  550,
-        6:  700,
-        7:  850,
-        8:  1000,
-        9:  1000,
-        10: 1000
+        2:  40,
+        3:  60,
+        4:  80,
+        5:  110,
+        6:  140,
+        7:  170,
+        8:  200,
+        9:  200,
+        10: 200
 
 TODO reconsider relic prices/vendor valuations?
-    current average values of loot rolls: 5.5
+    current average values of loot rolls: 5.5 (all outdated)
                                           25
                                           50
                                           10
@@ -74,26 +71,24 @@ Orb of personality:
     Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
     After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable), chance equal to (1 - 10/{points total on helmet})
 
-TODO divide all gold values by 5?
 Vendor valuations:
     Helmets: N/A
-    Mundane bases: 25
-    Special bases: 125
-    Ring: 15
-    Unique: 25 + base price
-    Magical: 75/175 (low/high) + base price. Crafted items are high value if they have more than 10 points of enchants.
-    Amulets: 50 * CR capacity
-    Crafting items: 40
-    Prayer stones: 100
-    Relics: 300
-    Potions/vials: 5
+    Mundane bases: 5
+    Special bases: 25
+    Ring: N/A
+    Unique: 15 + base price
+    Magical: 15/35 (low/high) + base price. Crafted items are high value if they have more than 10 points of enchants.
+    Amulets: 10 * CR capacity
+    Crafting items: 8
+    Prayer stones: 20
+    Relics: 60 + base price
+    Potions/vials: 1
 
 Sales and services:
-    Orbs of Flux: 200
-    Orb of Balance: 200
-    Orbs of Disavowment: 50
-    Mundanes: 50
-    Loot: 2d8 unsellable loot roll - 150
+    Orbs of Flux: 5
+    Orb of Balance: 40
+    Orbs of Disavowment: 10
+    Mundanes: 10
 
 Tags:
     Damage: Directly increases or grants damage (such as with an aura or thorns), either with flat additions or modifiers to the damage itself, ignore res/imm, minion damage
