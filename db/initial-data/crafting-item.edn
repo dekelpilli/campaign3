@@ -3,11 +3,17 @@
   :amount [:disadvantaged [:default]]}
  {:name   "Orb(s) of Balance"
   :effect "Remove a mod from a magical item and replace it with new random mods at least equal in point value."}
- {:name   "Orb(s) of Refinement"
+ {:name   "Orb(s) of Perfection"
   :effect "Replace a random value, or grouping of values, from a chosen modifier on an item with any possible random value of your choice."}
- {:name   "Mythic Orb(s)"
+ {:name   "Ancient Orb(s)"
   :effect "Transform a unique item into another random unique item."
   :amount [:advantaged [:default]]}
+ {:name   "Orb of Blunting"
+  :effect "Reduce a non-caster weapon's base damage die size by 1 to add a random modifier, doubled. Increases sell value by 10."
+  :amount [:advantaged [:default]]}
+ {:name   "Orb of Destruction"
+  :effect "Remove a relic's powers from an item to have a 50% chance to replace it with a new relic on that base. Regardless, the base remains unchanged."
+  :amount [:constant 1]}
  {:name   "Sacrificial Orb(s)"
   :effect "Use when performing a ring sacrifice increase the amount of generated options by an amount equal to the number of rings sacrificed."}
  {:name   "Orb(s) of Favouritism"
@@ -24,4 +30,7 @@
   :enabled? false}
  {:name     "Orb(s) of Disavowment"
   :effect   "You lose all progress from your current prayer path and all effects it granted, then gain an equivalent amount of levels (but without any level skipping) in another pray path of your choice."
+  :enabled? false}
+ {:name     "Orb(s) of Personality"
+  :effect   "Upgrades a helmet, potentially causing it to fracture as a result."
   :enabled? false}]

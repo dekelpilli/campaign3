@@ -43,23 +43,19 @@ Relics:
         10: 200
 
 TODO reconsider relic prices/vendor valuations?
-    current average values of loot rolls: 5.5 (all outdated)
+    current average values of loot rolls: 25.5
+                                          20
+                                          0
+                                          0
+                                          0
+                                          40
                                           25
-                                          50
-                                          10
-                                          100
-                                          125
                                           0
+                                          40
+                                          20
                                           0
-                                          200
-                                          0
-                                          0
-                                          200
-                                          100
-                                          0
-                                          0
-                                          300
-    This means ~170 loot rolls for 2x level 10 relics
+                                          65
+    This means ~122 loot rolls for 2x level 10 relics, not accounting for sold amulets + wealth mods
 
 Helmets:
     Character enchants only, spawn with 20 points of mods
@@ -69,7 +65,7 @@ Helmets:
 
 Orb of personality:
     Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
-    After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable), chance equal to (1 - 10/{points total on helmet})
+    After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable), chance equal to (1 - 20/{points total on helmet})
 
 Vendor valuations:
     Helmets: N/A
@@ -77,12 +73,11 @@ Vendor valuations:
     Special bases: 25
     Ring: N/A
     Unique: 15 + base price
-    Magical: 15/35 (low/high) + base price. Crafted items are high value if they have more than 10 points of enchants.
+    Magical: 35 + base price. Crafted items are full value if they have more than 10 points of enchants, otherwise 15 + base.
     Amulets: 10 * CR capacity
     Crafting items: 8
     Prayer stones: 20
     Relics: 60 + base price
-    Potions/vials: 1
 
 Sales and services:
     Orbs of Flux: 5

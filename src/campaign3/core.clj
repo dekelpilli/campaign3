@@ -19,13 +19,13 @@
        :action #(str (rng/next-int r/default-rng 20 31) " gold")}
    2  {:name   "Unique"
        :action uniques/new}
-   3  {:name   "Amulet"
+   3  {:name   "Amulet" ;TODO swap unique and amulet?
        :action amulets/new}
    4  {:name   "Non-synergy ring"
        :action rings/new-non-synergy}
    5  {:name   "Synergy ring"
        :action rings/new-synergy}
-   6  {:name   "Enchanted item (high value, 30 points)"
+   6  {:name   "Enchanted item (high value, 30 points)" ;TODO swap enchanted + special base?
        :action #(e/random-enchanted 30)}
    7  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
