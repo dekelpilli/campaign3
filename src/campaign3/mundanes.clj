@@ -45,3 +45,9 @@
   (->> (r/sample ["body" "boots" "gloves"])
        (special-armour-by-slot)
        (r/sample)))
+
+(defn new-special-of-slot []
+  (when-let [slot (p/>>item ["body" "boots" "gloves"])]
+    (->> slot
+         (special-armour-by-slot)
+         (r/sample))))
