@@ -242,7 +242,7 @@
   :tags   #{"damage"}}
  {:effect "+1 to Damage Over Time."
   :tags   #{"damage"}}
- {:effect "When you hit a creature with this weapon, they get a non-stacking -1 resistance to all damage dealt by creatures other than yourself for [1] minute."
+ {:effect "When you hit a creature with this weapon, they are marked to take +1 damage from creatures other than yourself for [1] minute."
   :tags   #{"damage"}}
  {:effect   "+2 resistance to damage from projectiles."
   :tags     #{"survivability"}
@@ -259,8 +259,8 @@
  {:effect "+2 damage against enemies you are flanking."
   :tags   #{"damage"}}
  {:effect  "+2 global damage against creatures %s in the initiative tracker."
-  :randoms [[{:preset :literal
-              :values ["behind you" "ahead of you"]}]]
+  :randoms [{:preset :literal
+             :values ["behind you" "ahead of you"]}]
   :tags    #{"damage"}}
  {:effect "Heal 5 hit points when you roll for initiative."
   :tags   #{"survivability"}}
@@ -335,7 +335,7 @@
   :tags     #{"utility"}
   :requires {:base-type "weapon"
              :traits    #{"Non-lethal"}}}
- {:effect "5% chance to refund the spell slot used for a spell cast outside of your turn."
+ {:effect "5% chance to refund the spell slots used for spells cast outside of your turn."
   :tags   #{"magic"}}
  {:effect "Regain 2 hits points when you, or allies within [5] feet of you, take a critical hit and remains conscious."
   :tags   #{"survivability"}}

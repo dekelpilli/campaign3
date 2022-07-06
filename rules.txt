@@ -1,5 +1,6 @@
 Amulets:
     Amulets contain a random trait from a random monster from a given CR.
+    The trait is standardised to not be tied to the creature. For example, "If the derro hits a target within 30 feet of it with a ranged attack with its aklys, it can use its bonus action to retrieve the aklys and make another attack against the same target" -> "If you hit a target within 30 feet of you with a ranged attack, you can use your bonus action to make another attack against the same target"
     As a free action at the start or end of a turn in combat, once per long rest, you can activate the trait contained by the amulet for a duration, granting you its effects.
     The duration of amulet effects is 2 rounds + 1 round for each amulet CR (not effect CR) above 1.
     When upgrading amulets, or rerolling with crafting items, you may choose to keep the existing effect instead of the new one.
@@ -11,7 +12,7 @@ Prayer Stones:
 Moving mods:
     Between any items so long as all mods are compatible with new item. Incompatible mods can be removed as part of the transfer.
 
-Enchant rules:
+Enchant rules: TODO these are wrong/outdated
     Double flat, dice additions, and die size enchants on single attackers (don't have extra attack, not dual wielding).
     Double flat, dice additions, and die size enchants for cantrips targeting a single creature, including AoE cantrips that happen to only hit one creature..
     Multiply flat, dice additions, and die size enchants by the spell slot level for spells targeting a single creature, including AoE spells that happen to only hit one creature..
@@ -39,8 +40,8 @@ Relics:
         6:  140,
         7:  170,
         8:  200,
-        9:  200,
-        10: 200
+        9:  250,
+        10: 300
 
 TODO reconsider relic prices/vendor valuations?
     current average values of loot rolls: 25.5
@@ -52,20 +53,20 @@ TODO reconsider relic prices/vendor valuations?
                                           25
                                           0
                                           40
-                                          20
+                                          65
                                           0
                                           65
-    This means ~122 loot rolls for 2x level 10 relics, not accounting for sold amulets + wealth mods
+    This means ~115 loot rolls for 2x level 10 relics, not accounting for sold amulets + wealth mods
 
 Helmets:
     Character enchants only, spawn with 20 points of mods
     Can be destroyed for 2 orbs of personality, regardless of mods
     Players can attempt to mend a fractured helmet:
-        Each mod has 40% chance to stay the same, 30% to upgrade (or progress), 30% chance to remove the mod completely
+        Each mod has 40% chance to stay the same, 30% to upgrade (to the next level), 30% chance to remove the mod completely
 
 Orb of personality:
     Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
-    After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable), chance equal to (1 - 20/{points total on helmet})
+    After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable) based on point value on the helmet
 
 Vendor valuations:
     Helmets: N/A
@@ -74,6 +75,7 @@ Vendor valuations:
     Ring: N/A
     Unique: 15 + base price
     Magical: 35 + base price. Crafted items are full value if they have more than 10 points of enchants, otherwise 15 + base.
+    Curios: 15
     Amulets: 10 * CR capacity
     Crafting items: 8
     Prayer stones: 20

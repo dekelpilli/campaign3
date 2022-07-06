@@ -11,7 +11,7 @@
             :tags   #{"accuracy"}}
            {:effect "You have +1 AC, and become proficient in Intelligence, Charisma, and Wisdom saving throws, while concentrating on anon-cantrip illusion spell."
             :tags   #{"survivability" "magic"}}
-           {:effect "No more than once per minute, when you tell a lie, you may immediately learn if one person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
+           {:effect "No more than once per conversation, when you tell a lie, you may immediately learn if one person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
             :tags   #{"utility"}}
            {:effect "You have 30 feet of Truesight, and may automatically discern illusions from reality at any distance (including non-visual illusions)."
             :tags   #{"magic"}}]}
@@ -101,7 +101,7 @@
            {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed), you may make Constitution saving throw against a DC of 10 + twice the spell slot level used. On a success, you regain the consumed spell slot."
             :tags   #{"magic"}}]}
  {:name   "Touch of Elemental Mastery" ;TODO too strong
-  :levels [{:effect "When you score a critical strike, your critical die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by two."
+  :levels [{:effect "Your critical die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by two."
             :tags   #{"critical"}}
            {}
            {:effect "-1 critical strike requirement for attacks that would deal elemental damage."

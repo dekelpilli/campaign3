@@ -43,7 +43,7 @@
                        (if (coll? base-value)
                          (some req base-value)
                          (req base-value))))]
-        (if (= prohibits? match?)
+        (if (= prohibits? (boolean match?))
           (reduced false)
           true)))
     true

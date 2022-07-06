@@ -19,7 +19,7 @@
        :action #(str (rng/next-int r/default-rng 20 31) " gold")}
    2  {:name   "Unique"
        :action uniques/new}
-   3  {:name   "Amulet" ;TODO swap unique and amulet?
+   3  {:name   "Amulet"
        :action amulets/new}
    4  {:name   "Non-synergy ring"
        :action rings/new-non-synergy}
@@ -37,10 +37,10 @@
                   (repeatedly 4 curios/new))}
    10 {:name   "Crafting item"
        :action crafting/new}
-   11 {:name   "Prayer stone" ;TODO reduce to 8 per path
-       :action paths/new-divine-dust}
-   12 {:name   "New relic"
-       :action relics/&new!}})
+   11 {:name   "New relic"
+       :action relics/&new!}
+   12 {:name   "Prayer stone" ;TODO reduce to 5 per path
+       :action paths/new-divine-dust}})
 
 (defn loot [n]
   (when-let [{:keys [action]} (get loot-actions n)]

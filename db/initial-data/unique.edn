@@ -84,11 +84,10 @@
             {:effect "+1 incoming healing."}
             {:effect "+1 damage vulnerability."}]}
  {:name    "Relentless"
-  :base    "any gloves"
+  :base    "any boots"
   :effects [{:effect "Gain temporary hit points equal to twice your level when you roll for initiative and do not have full health."}
             {:effect "You cannot critically succeed or critically fail death saves."}
-            {:effect "You immediately count as having failed 1 death save when you go down to 0 points."}
-            {:effect "You always gain 1 hit point when medicine is applied to you while you are down."}]}
+            {:effect "You always gain exactly 1 hit point when medicine is applied to you while you are down."}]}
  {:name    "Mitts of the Frostbitten"
   :base    "any gloves"
   :effects [{:effect "+1 cold thorns."}
@@ -98,8 +97,8 @@
  {:name    "Cryomancer's Obsession"
   :base    "any gloves"
   :effects [{:effect "+1d4 cold damage with attacks and spells."}
-            {:effect "Enemies you score a critical strike against are frozen."}
-            {:effect "Enemies that score a natural critical strike against are frozen."}
+            {:effect "Enemies you score a critical strike against are frozen for up to a minute."}
+            {:effect "Enemies that score a natural melee critical strike against you are frozen until the end of your next turn, or until they save out or take fire damage."}
             {:effect "You can only land killing blows against frozen enemies (including non-frozen enemies you have just hit with a crit)."}]
   :frozen  "+2 cold vulnerability, fire resistance, restrained. CON save at end of turn (8+prof+att) to end, or until taking fire damage."}
  {:name    "Corrosion"
@@ -120,12 +119,6 @@
             {:effect "+20 temporary hit points when you take thunder damage."}
             {:effect "You may force enemies that take thunder damage from a critical strike from this weapon to make a STR save (DC: 8+AB) or be knocked back 5feet."}
             {:effect "You are vulnerable to lightning damage."}]}
- {:name    "Flame's Embrace"
-  :base    "any boots"
-  :effects [{:effect "You cannot become vulnerable, resistant, or immune to fire."}
-            {:effect "You may choose to ignite yourself as a bonus action, taking 1d4 fire damage at the end of your turn while burning. This lasts as long as you are conscious, or until you use an action to stop it."}
-            {:effect "While burning: your hits deal no fire damage, but instead burn for 50% of hit's fire damage every round for 3 rounds."}
-            {:effect "While burning: Your non-fire damage is halved."}]}
  {:name    "Dominion"
   :base    "any gloves"
   :effects [{:effect "+1 resistance to physical damage per minion you control, max 3."}
@@ -204,18 +197,18 @@
   :base    "any shield weapon"
   :effects [{:effect "+2 damage while dual wielding."}
             {:effect "+1 reactions while wielding a club."}
-            {:effect "-1 to all Strength and Dexterity skill checks, and -1 to Concentration checks."}]}
+            {:effect "-1 to all Strength and Dexterity skill checks, and -1 to Concentration saves."}]}
  {:name    "Unyielding"
   :base    "any weapon"
   :effects [{:effect "+1 AC if you have cast a spell since the beginning of your previous turn."}
             {:effect "+1 damage with cantrips if you haven't cast any non-cantrip spells since the beginning of your previous turn."}
-            {:effect "-2 to concentration checks if you haven't cast any non-cantrip spells since the beginning of your previous turn."}]}
+            {:effect "-2 to concentration saves if you haven't cast any non-cantrip spells since the beginning of your previous turn."}]}
  {:name    "Hidden"
   :base    "any knife"
   :effects [{:effect "You are invisible if you haven't attacked or cast a spell in the last 18 seconds."}
             {:effect "Gain 5 temporary hit points when you critically strike with this weapon."}
             {:effect "-5 critical strike requirement with this weapon while you are invisible."}
-            {:effect "Creatures that can see you take no damage from attacks with this weapon."}]}
+            {:effect "Creatures that can see you take no extra damage from critical strikes from attacks with this weapon."}]}
  {:name    "The Resilient"
   :base    "shield"
   :effects [{:effect "You are resistant to all damage from attacks whose attack roll total was below your AC+5."}
@@ -231,7 +224,7 @@
   :effects [{:effect "+1d6 necrotic damage with this weapon."}
             {:effect "When you damage a creature with this weapon, its maximum hit points are reduced by an amount equal to the necrotic damage dealt."}
             {:effect "When you remove more than half of a creature's remaining hit points with an attack with this weapon, the creature is killed. This supersedes non-lethal."}
-            {:effect "Take damage equal to your level when you end a combat without landing a killing blow."}
+            {:effect "Take damage equal to your level when you end a combat without landing a killing blow. This damage cannot reduce you to 0 hit points."}
             {:effect "-2 slashing resistance."}]}
  {:name    "Amenonuhoko"
   :base    "any polearm"
@@ -265,7 +258,9 @@
             {:effect "+5 to Medicine checks for healing downed allies."}
             {:effect "+1 incoming healing."}
             {:effect "+1 outgoing healing."}
+            {:effect "Your outgoing healing increases the life gained by downed allies you heal with Medicine checks."}
             {:effect "You are large."}
+            {:effect "+2 bludgeoning damage against creatures smaller than you in size."}
             {:effect "-2 Intelligence."}
             {:effect "-2 Charisma."}]}
  {:name    "Miner's Greed"

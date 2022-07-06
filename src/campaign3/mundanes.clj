@@ -16,7 +16,6 @@
 (def new-base-type (r/alias-method-sampler {"armour" 2
                                             "weapon" 1}))
 (def new-armour-slot (r/alias-method-sampler {"body"   3
-                                              "helmet" 3
                                               "gloves" 3
                                               "boots"  3
                                               "shield" 1}))

@@ -8,7 +8,7 @@
  {:name   "Ancient Orb(s)"
   :effect "Transform a unique item into another random unique item."
   :amount [:advantaged [:default]]}
- {:name   "Orb of Blunting"
+ {:name   "Orb(s) of Consumption"
   :effect "Reduce a non-caster weapon's base damage die size by 1 to add a random modifier, doubled. Increases sell value by 10."
   :amount [:advantaged [:default]]}
  {:name   "Orb of Destruction"
