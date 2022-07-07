@@ -1,15 +1,15 @@
-[{:cost         "100g (each)"
+[{:cost         "20g (each)"
   :participants "any"
   :rules        "Each paying player gets a disadvantaged d16 loot roll, granting the reward twice."}
- {:cost         "100g (each)"
+ {:cost         "20g (each)"
   :participants "everyone"
   :rules        "Guess a number from 1 to 100. Closest player gets 10x 1d16 loot rolls, -1 for each distance from actual number, second closest 10x 2d8, third 10x 1d12, fourth 10x 2d6. All min 1, all max 5, but if would have been above 5 then all are with advantage."}
- {:cost         "200g (each)"
+ {:cost         "30g (each)"
   :participants "any"
-  :rules        "Roll 1d4: 1. Advantage 1d16 loot roll. 2. 2x Orbs of Purification, or random amulet if you have none. 3. Prayerstone for current path or prayerstone of choice if you have none. 4. +1 level to a chosen worn relic, or a new relic if you have none."}
- {:cost         "300g (party)"
+  :rules        "Roll 1d4: 1. Advantage 1d12 loot roll. 2. 1d12 loot roll with advantaged result. 3. 4x Orbs of Personality 4. Divine Dust."}
+ {:cost         "60g (party)"
   :participants "everyone"
   :rules        "Give all crafting items in the party. For each item, the party gains a Crafting Item loot roll result."}
- {:cost         "75 (each)"
+ {:cost         "25g (each)"
   :participants "any"
   :rules        "Choose a word and roll d100 and feed into Cheiro sum algorithm. Get a magic item on a base of player's choice with that many enchant points."}]

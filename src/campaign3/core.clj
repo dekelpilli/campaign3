@@ -38,7 +38,7 @@
    10 {:name   "Crafting item"
        :action crafting/new}
    11 {:name   "New relic"
-       :action relics/&new!}
+       :action relics/new!}
    12 {:name   "Prayer stone" ;TODO reduce to 5 per path
        :action paths/new-divine-dust}})
 

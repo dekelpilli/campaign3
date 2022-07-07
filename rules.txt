@@ -74,7 +74,7 @@ Vendor valuations:
     Special bases: 25
     Ring: N/A
     Unique: 15 + base price
-    Magical: 35 + base price. Crafted items are full value if they have more than 10 points of enchants, otherwise 15 + base.
+    Magical: base price + 35 if over 10 points of mods, otherwise base price + 15.
     Curios: 15
     Amulets: 10 * CR capacity
     Crafting items: 8
@@ -87,9 +87,9 @@ Sales and services:
     Orbs of Disavowment: 10
     Mundanes: 10
 
-Tags:
-    Damage: Directly increases or grants damage (such as with an aura or thorns), either with flat additions or modifiers to the damage itself, ignore res/imm, minion damage
-    Critical: Inflicts staggered, reduces crit req, adds crit dice
+Tags (drawbacks/negative mods have no tags):
+    Damage: Directly increases or grants damage (such as with an aura or thorns), either with flat additions or modifiers to the damage itself, ignore res/imm, minion damage, damage conversion
+    Critical: Inflicts staggered, reduces crit req, improves crit damage (e.g. via adding crit dice)
     Accuracy: Grants AB, grants attacks advantage, grants enemies disadvantaged defence (dazed, staggered, blinded, restrained), grants DCs bonuses, lower enemy AC/saves
     Survivability: Grants AC, spell save bonuses/adv, advantaged defence, health regen, incoming healing, max HP, minion defences, change incoming damage
     Control: On enemies; Inflicts dazed/debilitated/frightened/rattled/slowed/sluggish/taunted/charmed/blinded/restrained/grappled, reduces speed, reduces accuracy, reduces damage, reduces attacks/actions

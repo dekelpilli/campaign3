@@ -112,9 +112,18 @@
             :tags   #{"utility" "wealth"}}
            {:effect "You are permanently under the effects of the Speak with Animals spell."
             :tags   #{"magic" "utility"}}
-           {:effect "Aspects allow you to take on certain traits of a creature, but you may only have one active at a time. You may enter and exit Aspects as a free action. You learn Aspect of the Moorbounder and may use it once per combat; while this is active you gain the Moorbounder's speed and Standing Leap feature."
+           {:effect "Aspects allow you to take on certain traits of a creature, but you may only have one active at a time. You may enter and exit Aspects as a free action no more than once per turn. You learn Aspect of the Moorbounder and may use it once per combat; while this is active you gain the Moorbounder's speed and Standing Leap feature."
             :tags   #{"utility"}}
            {:effect "You learn the Aspect of the Spider; while this is active, your spells and attacks have +1d4 poison damage, and you are are under the effect of the Spider Climb spell."
             :tags   #{"damage" "magic" "utility"}}
-           {:effect "When land a natural critical strike and deal poison damage, force the target to make a Constitution saving throw, becoming poisoned for 1 minute on a failed save (repeat on turn ends)."
-            :tags   #{"control"}}]}]
+           {:effect "When you land a natural critical strike and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
+            :tags   #{"control"}}]}
+ {:name   "Touch of Controlled Morbidity"
+  :levels [{:effect "You and your undead minions are at least resistant to necrotic damage and have +1d6 necrotic damage while you have an Undead creature's amulet effect active."
+            :tags   #{"damage" "survivability"}}
+           {:effect "You are proficient in Constitution saving throws while concentrating on a non-cantrip Necromancy spell."
+            :tags   #{"magic" "survivability"}}
+           {}
+           {:effect "You learn the Finger of Death spell with the Cyneburg’s Shadowed Finger of Death variation and may cast it on yourself once per long rest. If this spell kills a living creature, If this spell kills a creature, you may cast Soul Cage to capture its soul."
+            :tags   #{"magic" "survivability"}}
+           {}]}]
