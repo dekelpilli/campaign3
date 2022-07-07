@@ -258,7 +258,7 @@
             {:effect "+5 to Medicine checks for healing downed allies."}
             {:effect "+1 incoming healing."}
             {:effect "+1 outgoing healing."}
-            {:effect "Your outgoing healing increases the life gained by downed allies you heal with Medicine checks."}
+            {:effect "Add your outgoing healing bonus to the life gained by downed allies you heal with Medicine checks."}
             {:effect "You are large."}
             {:effect "+2 bludgeoning damage against creatures smaller than you in size."}
             {:effect "-2 Intelligence."}

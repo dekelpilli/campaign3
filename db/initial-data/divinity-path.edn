@@ -3,26 +3,22 @@
             :tags   #{"magic" "utility"}}
            {:effect "Creatures that currently believe one of your illusions are real have disadvantage when attacking you."
             :tags   #{"survivability" "magic"}}
-           {:effect "You may cast Distort Value once per long rest. When cast in this way, you may target any non-relic object, instead of being size limited."
-            :tags   #{"magic" "wealth"}}
            {:effect "When casting non-cantrip Illusion spells, you may choose to use the spell slot level below that spell's regular casting requirement, including any upcasting, to a minimum of 1."
             :tags   #{"magic"}}
            {:effect "+1 to the DCs of Illusion spells."
             :tags   #{"accuracy"}}
-           {:effect "You have +1 AC, and become proficient in Intelligence, Charisma, and Wisdom saving throws, while concentrating on anon-cantrip illusion spell."
-            :tags   #{"survivability" "magic"}}
            {:effect "No more than once per conversation, when you tell a lie, you may immediately learn if one person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
-            :tags   #{"utility"}}
-           {:effect "You have 30 feet of Truesight, and may automatically discern illusions from reality at any distance (including non-visual illusions)."
-            :tags   #{"magic"}}]}
- {:name "Touch of Distributed Rejuvenation"
-  :levels [{:effect "You and allies within 15 feet of you have -2 critical strike requirement for death saving throws."
+            :tags   #{"utility"}}]}
+ {:name   "Touch of Distributed Rejuvenation"
+  :levels [{:effect "You and allies within 15 feet of you have -2 critical strike requirement for death saving throws, and gain temporary hit points equal to your level when they critically succeed on a death saving throw."
             :tags   #{"survivability"}}
-           {}
-           {}
-           {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat."
+           {:effect "Creatures you have healed with the use of a spell or a Medicine check in the last minute regain 1 hit point at the start of their turns."
+            :tags   #{"survivability" "magic"}}
+           {:effect "When you heal a creature with the use of a spell, that creature also gains temporary hit points equal to 50% of the hit points granted by the spell, including any bonuses to outgoing healing you have."
+            :tags   #{"magic"}}
+           {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat. Additionally, add your outgoing healing bonus to the life gained by downed allies you heal with Medicine checks.."
             :tags   #{"utility"}}
-           {}]}
+           {:effect "When you cast a spell that grants hit points, you may choose to cause the spell to be upcast by up to 3 spell levels, to a maximum of 6th level. The spell consumes resources as if it had been cast normally."}]}
  {:name   "Touch of Eternal Vigour"
   :levels [{:effect "+1 resistance to damage for each previous time you've been hit per round."
             :tags   #{"survivability"}}
@@ -72,7 +68,7 @@
             :tags   #{"magic"}}
            {:effect "When you upcast a spell, you may cast it at a level one above the spell slot consumed."
             :tags   #{"magic"}}
-           {:effect "You may cast spells with a range that isn't Self as if they had a range of Touch instead. Creatures you hit with spells cast with a range of Touch cannot make opportunity attacks until the start of their next turn."
+           {:effect "You may cast spells with a range that isn't Self as if they had a range of Touch instead. Creatures you hit with spells cast with a range of Touch become rattled until the start of their next turn."
             :tags   #{"magic" "control"}}
            {:effect "Once per long rest, when you fail a Concentration Save, you may choose to succeed instead."
             :tags   #{"magic"}}

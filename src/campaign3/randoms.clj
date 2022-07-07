@@ -7,14 +7,11 @@
   (cond-> conf
           (some? type) (update :type keyword)))
 
-(defn- rand-from [vs]
-  #(r/sample vs))
-
 (def random->values-vec (comp randoms-preset keyword-type))
 
 (defn randoms->fn [randoms]
   (cond
-    (vector? randoms) (apply juxt (map (comp rand-from random->values-vec) randoms))
+    (vector? randoms) (apply juxt (map (comp r/sample random->values-vec) randoms))
     (map? randoms) (random->values-vec randoms)))
 
 (defn- random->weighting-multiplier [{:keys [preset] :as random}]
