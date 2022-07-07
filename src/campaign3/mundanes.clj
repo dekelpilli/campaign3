@@ -20,11 +20,11 @@
                                               "boots"  3
                                               "shield" 1}))
 
-(defn >>base
+(defn choose-base
   ([]
    (let [choice (p/>>item "Base category:" (keys base-types))]
      (when choice
-       {:base (>>base choice)
+       {:base (choose-base choice)
         :type choice})))
   ([type]
    (p/>>item "Base type:"

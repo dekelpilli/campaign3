@@ -18,21 +18,20 @@
 
 (def positive-encounters (db/load-all :positive-encounters))
 
-(defn travel [^long days]
-  (->> (range 1 (inc days))
-       (map (fn [i]
-              [i
-               (when (u/occurred? (if @had-random? 0.10 0.25))
-                 (if (u/occurred? 0.2)
-                   :positive
-                   (do
-                     (reset! had-random? true)
-                     :random)))]))
-       (into (sorted-map))))
-
-(defn >>travel
+(defn travel
   ([]
-   (some-> (p/>>input "How many days?") (parse-long) (travel))))
+   (some-> (p/>>input "How many days?") (parse-long) (travel)))
+  ([^long days]
+   (->> (range 1 (inc days))
+        (map (fn [i]
+               [i
+                (when (u/occurred? (if @had-random? 0.10 0.25))
+                  (if (u/occurred? 0.2)
+                    :positive
+                    (do
+                      (reset! had-random? true)
+                      :random)))]))
+        (into (sorted-map)))))
 
 (defn- add-loot [extra-loot-factor base-loot]
   (let [extra-loot? (pos? extra-loot-factor)
@@ -63,7 +62,7 @@
          (frequencies)
          (sort-by {"1d16" 1 "2d8" 2 "1d12" 3}))))
 
-(defn >>rewards
+(defn rewards
   ([]
    (when-let [difficulty (p/>>item [:easy :medium :hard :deadly])]
      (when-let [investigations (some-> (p/>>input "List investigations:")

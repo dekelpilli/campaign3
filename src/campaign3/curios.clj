@@ -1,4 +1,5 @@
 (ns campaign3.curios
+  (:refer-clojure :exclude [use])
   (:require (campaign3
               [db :as db]
               [enchants :as e]
@@ -21,8 +22,8 @@
         (cond-> inversed? (->inversed))
         (dissoc :multiplier))))
 
-(defn >>use []
-  (when-let [{:keys [base type]} (mundanes/>>base)]
+(defn use []
+  (when-let [{:keys [base type]} (mundanes/choose-base)]
     (when-let [curios-used (let [curios-by-name (u/assoc-by :name (into curios (map ->inversed) curios))]
                              (some->> (p/>>input "Curios used (maximum 4):"
                                                  (keys curios-by-name)

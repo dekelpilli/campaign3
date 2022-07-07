@@ -79,14 +79,14 @@
   (let [{:keys [base type]} (mundanes/new)]
     [base (add-enchants base type points-target)]))
 
-(defn >>add []
-  (when-let [{:keys [base type]} (mundanes/>>base)]
+(defn add []
+  (when-let [{:keys [base type]} (mundanes/choose-base)]
     (->> ((->valid-enchant-fn-memo base type))
          (u/fill-randoms)
          (:effect))))
 
-(defn >>add-totalling []
+(defn add-totalling []
   (let [points (some-> (p/>>input "Desired points total:") (parse-long))]
-    (when-let [{:keys [base type]} (when points (mundanes/>>base))]
+    (when-let [{:keys [base type]} (when points (mundanes/choose-base))]
       [base
        (add-enchants base type points)])))

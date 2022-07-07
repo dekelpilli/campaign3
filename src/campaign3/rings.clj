@@ -21,7 +21,7 @@
        (r/sample)
        (u/fill-randoms)))
 
-(defn >>sacrifice []
+(defn sacrifice []
   (when-let [sacrificed-rings (-> (p/>>input "Which rings are being sacrificed?"
                                              (map :name all-rings)
                                              :completer :comma-separated)

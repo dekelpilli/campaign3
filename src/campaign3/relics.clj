@@ -8,7 +8,7 @@
 
 (def upgrade-prices [0 100 200 300 400 500 600 700 800 1500])
 
-(defn &choose-relic [relics]
+(defn choose-relic [relics]
   (some->> (not-empty relics)
            (u/assoc-by :name)
            (p/>>item "Relic:")))
@@ -18,14 +18,14 @@
                        :or   {enabled? true}}] (and found? enabled?))]
       (->> @relics
            (filter owned?)
-           (&choose-relic))))
+           (choose-relic))))
 
-(defn- &upgradeable []
+(defn- upgradeable []
   #_(let [upgradeable? (fn [{:keys [found? enabled? level]
                              :or   {enabled? true}}] (and found? enabled? (<= level 10)))]
       (->> @relics
            (filter upgradeable?)
-           (&choose-relic))))
+           (choose-relic))))
 
 (defn- update-relic! [{:keys [name] :as relic}]
   )
@@ -61,9 +61,9 @@
                      :points (min points 10)
                      :upgrade-points (or upgrade-points points)))))
 
-(defn &level-relic! ;TODO relic levelling process needs to be saved per-character
-  ([] (when-let [relic (&upgradeable)]
-        (&level-relic! relic)))
+(defn level-relic! ;TODO relic levelling process needs to be saved per-character
+  ([] (when-let [relic (upgradeable)]
+        (level-relic! relic)))
   ([{:keys [level existing base type available progressed owner] :as relic}]
    #_(let [points-remaining (- (* points-per-level (inc level))
                                (->> existing
@@ -108,22 +108,19 @@
              (update :level inc)
              (update-relic!))))))
 
-(defn &new! []
+(defn new! []
   #_(let [relic (->> @relics
                      (remove :found?)
                      (util/rand-enabled))]
       (if relic
         (util/display-multi-value (dissoc relic :available :found? :level))
         (throw (Exception. "Out of relics :(")))
-      (let [base (mundanes/>>base (:type relic))
+      (let [base (mundanes/choose-base (:type relic))
             owner (when base (util/&choose (keys @character-enchants)))]
         (when (and base owner)
           (update-relic! (assoc relic :found? true
                                       :base base
                                       :owner owner))))))
 
-(defn >>sell! []
-  (when-let [{:keys [name level] :as relic} (&owned)]
-    (when (p/>>item (str "Sell" name "for" (int (+ 300 (/ (reduce + (take level upgrade-prices)) 2))) "?")
-                    [true false])
-      (update-relic! (assoc relic :enabled? false)))))
+(defn sell! []
+  )

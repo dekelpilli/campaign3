@@ -2,7 +2,7 @@
   :effect "Modifiers to non-global speed on this item are instead applied to flying speed. +5 flying speed while this item has at least one modifier relating to speed."
   :slot   "boots"}
  {:name   "Unbound"
-  :effect "+1 to saves for ending and avoiding ailments while this item has at least one modifier that relates to grapples or restrains."
+  :effect "+1 to saves for ending and avoiding conditions while this item has at least one modifier that relates to grapples or restrains."
   :slot   "boots"}
  {:name   "Traceur"
   :effect "+15 feet to each of your speeds (0+) while this item has at least one modifier that relates to jumping."

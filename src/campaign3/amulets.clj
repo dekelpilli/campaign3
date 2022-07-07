@@ -34,16 +34,16 @@
 (def cr->output (comp r/sample monster-traits-by-cr))
 (def new (comp cr->output new-amulet-cr))
 
-(defn- >>cr []
+(defn- cr []
   (p/>>input "Amulet CR:" (keys cr-weightings)))
 
-(defn >>sample-n []
-  (when-let [cr (>>cr)]
+(defn sample-n []
+  (when-let [cr (cr)]
     (when-let [amount (some-> (p/>>input "Amount of monster traits:") (parse-long))]
       (let [monster-traits (monster-traits-by-cr cr)]
         (cond->> monster-traits
                  (> (count monster-traits) amount) (r/sample-without-replacement amount))))))
 
-(defn >>from-cr []
-  (some-> (>>cr)
+(defn from-cr []
+  (some-> (cr)
           (cr->output)))

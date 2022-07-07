@@ -329,8 +329,6 @@
   :tags   #{"survivability"}}
  {:effect "+[2] damage with attacks that are at least your third during that turn."
   :tags   #{"damage"}}
- {:effect "+[1] to contested Athletics and Acrobatics checks."
-  :tags   #{"utility" "control"}}
  {:effect   "Your critical strikes with this weapon are also non-lethal."
   :tags     #{"utility"}
   :requires {:base-type "weapon"
