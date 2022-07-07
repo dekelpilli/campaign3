@@ -5,6 +5,7 @@
             [clojure.java.io :as io]
             [clojure.set :as set]
             [clojure.string :as str]
+            [config.core :refer [env]]
             [jsonista.core :as j])
   (:import (java.io File PushbackReader)))
 
@@ -288,6 +289,15 @@
     (insert-character-enchants!)
     (insert-special-armours!)))
 
-(defn backup-data! []
-  ;TODO write any mutable data to db/current-state to keep log of changes by session
-  )
+(defn backup-data! [] ;TODO backup with data for easier traceability?
+  (let [{:keys [db-host db-port db-user db-pass db-name]} env
+        command (cond-> (str "pg_dump -t relics -t divinity_progress -a " db-name)
+                        db-host (str " -h " db-host)
+                        db-user (str " -U " db-user)
+                        db-user (str " -U " db-user)
+                        db-port (str " -p " db-port))
+        command (cond->> command
+                         db-pass (str "yes " db-pass " | "))]
+    (-> (ProcessBuilder. ["/bin/sh" "-c" (str command " > db/dump.sql")])
+        (.inheritIO)
+        (.start))))

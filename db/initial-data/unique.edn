@@ -1,4 +1,3 @@
-;TODO add tags to effects for interaction with special bases
 [{:name    "Pacifist's Vow"
   :base    "Blowgun"
   :effects [{:effect "Non-damaging spells have a 50% chance consume a spell slot 1 level lower."
