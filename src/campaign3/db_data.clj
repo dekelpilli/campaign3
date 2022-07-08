@@ -5,14 +5,18 @@
             [clojure.java.io :as io]
             [clojure.set :as set]
             [clojure.string :as str]
-            [config.core :refer [env]]
-            [jsonista.core :as j])
+            [jsonista.core :as j]
+            [clojure.pprint :as pprint])
   (:import (java.io File PushbackReader)))
 
 (defn- load-data [type]
   (with-open [r (PushbackReader. (io/reader (str "db/initial-data/" type ".edn")))]
     (binding [*read-eval* false]
       (filter #(:enabled? % true) (read r)))))
+
+(defn write-data! [path x]
+  (with-open [writer (io/writer path)]
+    (pprint/pprint x writer)))
 
 (defn find-cr [cr]
   (when-let [cr (edn/read-string (if (map? cr) (:cr cr) cr))]
@@ -277,27 +281,22 @@
 
 (defn insert-data! []
   (db/in-transaction
-    (insert-armours!)
-    (insert-weapons!)
-    (insert-uniques!)
-    (insert-crafting-items!)
-    (insert-positive-encounters!)
-    (insert-enchants!)
-    (insert-rings!)
-    (insert-curios!)
-    (insert-divinity-paths!)
-    (insert-character-enchants!)
-    (insert-special-armours!)))
+    (transduce (map (comp :next.jdbc/update-count first)) + 0
+               [(insert-armours!)
+                (insert-weapons!)
+                (insert-uniques!)
+                (insert-crafting-items!)
+                (insert-positive-encounters!)
+                (insert-enchants!)
+                (insert-rings!)
+                (insert-curios!)
+                (insert-divinity-paths!)
+                (insert-character-enchants!)
+                (insert-special-armours!)])))
 
-(defn backup-data! [] ;TODO backup with data for easier traceability?
-  (let [{:keys [db-host db-port db-user db-pass db-name]} env
-        command (cond-> (str "pg_dump -t relics -t divinity_progress -a " db-name)
-                        db-host (str " -h " db-host)
-                        db-user (str " -U " db-user)
-                        db-user (str " -U " db-user)
-                        db-port (str " -p " db-port))
-        command (cond->> command
-                         db-pass (str "yes " db-pass " | "))]
-    (-> (ProcessBuilder. ["/bin/sh" "-c" (str command " > db/dump.sql")])
-        (.inheritIO)
-        (.start))))
+(defn backup-table! [table]
+  (->> (db/load-all table)
+       (write-data! (str "db/current-state/" (name table) ".edn"))))
+
+(defn backup-data! []
+  (run! backup-table! [:divinity-progress :relics]))

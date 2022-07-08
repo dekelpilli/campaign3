@@ -59,7 +59,7 @@
             :tags   #{"survivability"}}
            {:effect "Creatures of your choice within 10 feet of you are rattled while you are not incapacitated or unconscious."
             :tags   #{"control"}}
-           {:effect "You have +1 AB and +1 to spell save DCs against enemies within 5 feet of two or more of your allies, including yourself."
+           {:effect "You have +1 AB and +1 to your DCs against enemies within 5 feet of two or more of your allies, including yourself."
             :tags   #{"accuracy"}}
            {:effect "One of your weapons has an additional enchantment slot."
             :tags   #{"utility"}}]}
@@ -77,7 +77,7 @@
  {:name   "Touch of Arcane Combat"
   :levels [{:effect "All weapons you use are considered to have the Conduit trait."
             :tags   #{"magic"}}
-           {:effect "You may cast spells and cantrips you know that have a casting time of 1 action or 1 bonus action as a reaction instead of making a regular opportunity attack."
+           {:effect "You may cast spells and cantrips you know that have a casting time of 1 action or 1 bonus action as a reaction instead of making an opportunity attack."
             :tags   #{"magic"}}
            {:effect "You are considered to be proficient in all saving throws against magical effects."
             :tags   #{"survivability"}}
@@ -112,18 +112,20 @@
             :tags   #{"utility" "wealth"}}
            {:effect "You are permanently under the effects of the Speak with Animals spell."
             :tags   #{"magic" "utility"}}
-           {:effect "Aspects allow you to take on certain traits of a creature, but you may only have one active at a time. You may enter and exit Aspects as a free action no more than once per turn. You learn Aspect of the Moorbounder and may use it once per combat; while this is active you gain the Moorbounder's speed and Standing Leap feature."
+           {:effect "You harness the powers of a Moorbounder. Once per combat, as a free action, you gain the Moorbounder's speed and Standing Leap feature for the remainder of your turn."
             :tags   #{"utility"}}
-           {:effect "You learn the Aspect of the Spider; while this is active, your spells and attacks have +1d4 poison damage, and you are are under the effect of the Spider Climb spell."
+           {:effect "You harness the powers of spiders; your spells and attacks have +1d4 poison damage, and you are are under the effect of the Spider Climb spell."
             :tags   #{"damage" "magic" "utility"}}
-           {:effect "When you land a natural critical strike and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
-            :tags   #{"control"}}]}
+           {:effect "You have -1 critical strike requirement against enemies under the effect of a non-magical condition, and when you land a natural critical strike and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
+            :tags   #{"critical" "control"}}]}
  {:name   "Touch of Controlled Morbidity"
   :levels [{:effect "You and your undead minions are at least resistant to necrotic damage and have +1d6 necrotic damage while you have an Undead creature's amulet effect active."
             :tags   #{"damage" "survivability"}}
+           {:effect "You gain +1 necrotic damage for a minute (stacking) whenever you cast a Necromancy spell."
+            :tags   #{"damage" "damage"}}
            {:effect "You are proficient in Constitution saving throws while concentrating on a non-cantrip Necromancy spell."
             :tags   #{"magic" "survivability"}}
-           {}
-           {:effect "You learn the Finger of Death spell with the Cyneburg’s Shadowed Finger of Death variation and may cast it on yourself once per long rest. If this spell kills a living creature, If this spell kills a creature, you may cast Soul Cage to capture its soul."
+           {:effect "You learn the Finger of Death spell with the Cyneburg’s Shadowed Finger of Death variation. In addition to regular casting you may be permitted to do with this spell, you may cast it on yourself once per long rest without consuming a spell slot. If this spell kills a living creature, If a creature is killed by a Finger of Death sell you cast, you may cast Soul Cage to capture its soul."
             :tags   #{"magic" "survivability"}}
-           {}]}]
+           {:effect "You may choose to convert any damage you deal to Necrotic damage. Additionally, no more than {Prof} times per long rest, you may convert incoming damage to Necrotic damage."
+            :tags   #{"damage" "survivability"}}]}]

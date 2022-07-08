@@ -120,8 +120,6 @@
   :points 20}
  {:effect "Creatures that start their turn within [5] feet of you have their speed reduced by 10 feet, to a minimum of 5 feet."
   :tags   #{"control"}}
- {:effect "Creatures that start their turn within [5] feet of you have their speed reduced by 10 feet, to a minimum of 5 feet."
-  :tags   #{"control"}}
  {:effect "Once per long rest, as an action, you can make a Persuasion check contested by a non-hostile creature's Wisdom save. The creature must be within 60 feet of you. On a success, you can give them a command as per the Command spell."
   :tags   #{"control"}}
  {:effect       "If you take damage exceeding 25% of your maximum hit points in one turn and do not reach 0 hit points by its end, heal hit points equal to your level."
