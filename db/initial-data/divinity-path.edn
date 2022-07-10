@@ -55,11 +55,11 @@
  {:name   "Touch of Vicious Combat"
   :levels [{:effect "You and your allies gain +1 damage in battle while outnumbered (>0hp only)."
             :tags   #{"damage"}}
-           {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds."
+           {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds. Creatures of your choice within 10 feet of you also gain this proficiency."
             :tags   #{"survivability"}}
            {:effect "Creatures of your choice within 10 feet of you are rattled while you are not incapacitated or unconscious."
             :tags   #{"control"}}
-           {:effect "You have +1 AB and +1 to your DCs against enemies within 5 feet of two or more of your allies, including yourself."
+           {:effect "You have +1 AB and +1 to your DCs against enemies within 5 feet of two or more of your allies, including yourself. +2 damage against flanked enemies."
             :tags   #{"accuracy"}}
            {:effect "One of your weapons has an additional enchantment slot."
             :tags   #{"utility"}}]}
@@ -122,7 +122,7 @@
   :levels [{:effect "You and your undead minions are at least resistant to necrotic damage and have +1d6 necrotic damage while you have an Undead creature's amulet effect active."
             :tags   #{"damage" "survivability"}}
            {:effect "You gain +1 necrotic damage for a minute (stacking) whenever you cast a Necromancy spell."
-            :tags   #{"damage" "damage"}}
+            :tags   #{"damage" "magic"}}
            {:effect "You are proficient in Constitution saving throws while concentrating on a non-cantrip Necromancy spell."
             :tags   #{"magic" "survivability"}}
            {:effect "You learn the Finger of Death spell with the Cyneburg’s Shadowed Finger of Death variation. In addition to regular casting you may be permitted to do with this spell, you may cast it on yourself once per long rest without consuming a spell slot. If this spell kills a living creature, If a creature is killed by a Finger of Death sell you cast, you may cast Soul Cage to capture its soul."

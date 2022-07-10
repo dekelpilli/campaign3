@@ -279,6 +279,13 @@
                                              (assoc :book source
                                                     :traits (u/jsonb-lift trait))))))}))
 
+(defn create-loot-analytics! []
+  (db/execute! {:create-table :loot-analytics
+                :with-columns [[:roll :integer [:not nil]]
+                               [:session :integer [:not nil]]
+                               [:amount :integer [:not nil]]
+                               [[:primary-key :roll :session]]]}))
+
 (defn insert-data! []
   (db/in-transaction
     (transduce (map (comp :next.jdbc/update-count first)) + 0
@@ -299,4 +306,4 @@
        (write-data! (str "db/current-state/" (name table) ".edn"))))
 
 (defn backup-data! []
-  (run! backup-table! [:divinity-progress :relics]))
+  (run! backup-table! [:divinity-progress :relics :loot-analytics]))

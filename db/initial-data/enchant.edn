@@ -120,6 +120,9 @@
   :points 20}
  {:effect "Creatures that start their turn within [5] feet of you have their speed reduced by 10 feet, to a minimum of 5 feet."
   :tags   #{"control"}}
+ {:effect "Creatures of your choice under the effect of a spell or condition of yours have -1 to saving throws against spells and conditions."
+  :points 20
+  :tags   #{"magic" "accuracy" "control"}}
  {:effect "Once per long rest, as an action, you can make a Persuasion check contested by a non-hostile creature's Wisdom save. The creature must be within 60 feet of you. On a success, you can give them a command as per the Command spell."
   :tags   #{"control"}}
  {:effect       "If you take damage exceeding 25% of your maximum hit points in one turn and do not reach 0 hit points by its end, heal hit points equal to your level."
@@ -175,8 +178,10 @@
               :values ["spells" "weapons"]}]
   :tags     #{"damage"}
   :requires {:base-type "weapon"}}
- {:effect "+5ft fly speed."
-  :tags   #{"utility"}}
+ {:effect  "+5ft %s speed."
+  :randoms [{:preset :literal
+             :values ["burrow" "fly"]}]
+  :tags    #{"utility"}}
  {:effect "+10ft climb speed."
   :tags   #{"utility"}}
  {:effect "+10ft swimming speed, and you can breath under water."
@@ -201,9 +206,15 @@
   :tags    #{"magic"}}
  {:effect "+2 to deception in languages other than Common."
   :tags   #{"utility"}}
- {:effect         "This item sells for an extra [1]d100 gold. You only roll after the item is sold."
-  :tags           #{"wealth"}
-  :upgrade-points 0}
+ {:effect "This item sells for an extra [1]d20 gold. You only roll after the item is sold."
+  :tags   #{"wealth"}}
+ {:effect "+5 to gold found."
+  :tags   #{"wealth"}}
+ {:effect "You loot rolls always grant you 1 additional gold (even from non-gold results)."
+  :points 20
+  :tags   #{"wealth"}}
+ {:effect "Helmets you destroy have a 25% chance to grant [1] additional Orb of Personality."
+  :tags   #{"wealth"}}
  {:effect "You find loot as if your Investigation and Survival check results are 1 point higher."
   :tags   #{"wealth"}}
  {:effect   "Missed attacks with this weapon have a [20]% chance to be critical hits instead while you are below 20% hit points."

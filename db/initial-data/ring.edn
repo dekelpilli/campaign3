@@ -23,7 +23,7 @@
   :effect "+5 feet to all of your speed types for each 'The Speedster' ring worn."
   :points 5}
  {:name   "The Prosperous"
-  :effect "+5 gold found for each 'The Prosperous' ring worn."
+  :effect "+1 gold found for each 'The Prosperous' ring worn."
   :points 1}
  {:name   "The Simpleton"
   :effect "Your non-synergy rings' cost decreases by 1 point and no longer count towards your ring limit. Your synergy rings' cost increases by 2."

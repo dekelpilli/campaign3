@@ -9,9 +9,12 @@
 
 (def random->values-vec (comp randoms-preset keyword-type))
 
+(defn- rand-from [vs]
+  #(r/sample vs))
+
 (defn randoms->fn [randoms]
   (cond
-    (vector? randoms) (apply juxt (map (comp r/sample random->values-vec) randoms))
+    (vector? randoms) (apply juxt (map (comp rand-from random->values-vec) randoms))
     (map? randoms) (random->values-vec randoms)))
 
 (defn- random->weighting-multiplier [{:keys [preset] :as random}]
@@ -77,7 +80,7 @@
   ["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
    "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"])
 
-(defmethod randoms-preset :cantrips [_]
+(defmethod randoms-preset :cantrips [_] ;TODO add Tome of Heroes cantrips
   ["Acid Splash" "Altered Strike" "Arcane Muscles" "Blade Ward" "Booming Blade" "Calculate" "Chill Touch"
    "Circular Breathing" "Control Flames" "Create Bonfire" "Dancing Lights" "Druidcraft" "Eldritch Blast"
    "Encode Thoughts" "Fire Bolt" "Friends" "Frostbite" "Grapevine" "Green-Flame Blade" "Guidance" "Gust"
