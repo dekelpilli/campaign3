@@ -279,12 +279,12 @@
                                              (assoc :book source
                                                     :traits (u/jsonb-lift trait))))))}))
 
-(defn create-loot-analytics! []
-  (db/execute! {:create-table :loot-analytics
-                :with-columns [[:roll :integer [:not nil]] ;TODO make this [:type :text [:not nil]] and use `loot:1`, `loot:12`, `encounter:random`, `encounter:positive`?
+(defn create-analytics! []
+  (db/execute! {:create-table :analytics
+                :with-columns [[:type :text [:not nil]]
                                [:session :integer [:not nil]]
                                [:amount :integer [:not nil]]
-                               [[:primary-key :roll :session]]]}))
+                               [[:primary-key :type :session]]]}))
 
 (defn insert-data! []
   (db/in-transaction

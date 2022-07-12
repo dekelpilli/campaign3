@@ -11,11 +11,10 @@
               [paths :as paths]
               [relics :as relics]
               [rings :as rings]
-              [uniques :as uniques])
+              [uniques :as uniques]
+              [util :as u])
             [randy.core :as r]
             [randy.rng :as rng]))
-
-(def session)
 
 (def loot-actions
   {1  {:name   "20-30 gold"
@@ -28,7 +27,7 @@
        :action rings/new-non-synergy}
    5  {:name   "Synergy ring"
        :action rings/new-synergy}
-   6  {:name   "Enchanted item (high value, 30 points)" ;TODO swap enchanted + special base?
+   6  {:name   "Enchanted item (high value, 30 points)"
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
    7  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
@@ -43,18 +42,13 @@
    12 {:name   "Prayer stone" ;TODO reduce to 5 per path
        :action paths/new-divine-dust}})
 
-(defn set-session! [n]
-  (alter-var-root #'session (constantly n))
-  (db/execute! {:insert-into :loot-analytics
-                :values      (map (fn [roll] {:session n :roll roll :amount 0}) (keys loot-actions))}))
-
 (defn loot [n]
-  (when (bound? #'session)
-    (db/execute! {:update :loot-analytics
+  (when (bound? #'u/session)
+    (db/execute! {:update :analytics
                   :set    {:amount [:+ :amount 1]}
                   :where  [:and
-                           [:= :session session]
-                           [:= :roll n]]}))
+                           [:= :session u/session]
+                           [:= :type (str "loot:" n)]]}))
   (when-let [{:keys [action]} (get loot-actions n)]
     (action)))
 

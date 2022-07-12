@@ -1,6 +1,21 @@
 (ns campaign3.util
-  (:require [randy.core :as r]
+  (:require [campaign3.db :as db]
+            [randy.core :as r]
             [randy.rng :as rng]))
+
+(def session)
+
+(defn set-session! [n]
+  (alter-var-root #'session (constantly n))
+  (db/execute! {:insert-into :analytics
+                :values      (map (fn [roll] {:session n :type (str "loot:" roll) :amount 0}) (range 1 13))
+                :on-conflict {}
+                :do-nothing  true})
+  (db/execute! {:insert-into :analytics
+                :values      (map (fn [encounter-type] {:session n :type (str "encounter:" encounter-type) :amount 0})
+                                  ["random" "positive"])
+                :on-conflict {}
+                :do-nothing  true}))
 
 (defn jsonb-lift [x]
   (when x [:lift x]))

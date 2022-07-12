@@ -14,24 +14,35 @@
                       "Kalashtar" "Kenku" "Kobold" "Lizardfolk" "Loxodon" "Minotaur" "Orc" "Satyr" "Shifter" "Tabaxi"
                       "Tiefling" "Tortle" "Triton" "Vedalken" "Yuan-Ti Pureblood"])
 (def ^:private sexes ["female" "male"])
-(def ^:private had-random? (atom false)) ;TODO use DB for per-session random encounter tracking?
 
 (def positive-encounters (db/load-all :positive-encounters))
 
-(defn travel
-  ([]
-   (some-> (p/>>input "How many days?") (parse-long) (travel)))
-  ([^long days]
-   (->> (range 1 (inc days))
-        (map (fn [i]
-               [i
-                (when (u/occurred? (if @had-random? 0.10 0.25)) ;TODO adjust numbers once world map is done
-                  (if (u/occurred? 0.2)
-                    :positive
-                    (do
-                      (reset! had-random? true)
-                      :random)))]))
-        (into (sorted-map)))))
+(defn- add-encounter! [type]
+  (when u/session
+    (db/execute! {:update :analytics
+                  :set    {:amount [:+ :amount 1]}
+                  :where  [:and
+                           [:= :session u/session]
+                           [:= :type (str "encounter" :positive)]]}))
+  type)
+
+(defn travel [^long days]
+  (let [had-random? (when (bound? #'u/session)
+                      (-> (db/execute! {:select [:amount]
+                                        :from   [:analytics]
+                                        :where  [:and
+                                                 [:= :session u/session]
+                                                 [:= :type "encounter:random"]]})
+                          (first)
+                          (:amount)
+                          (> 0)))
+        random-encounter-prob (if had-random? 0.10 0.25)] ;TODO adjust numbers once world map is done
+    (into (sorted-map)
+          (map (fn [i]
+                 [i
+                  (when (u/occurred? random-encounter-prob)
+                    (add-encounter! (if (u/occurred? 0.2) :positive :random)))]))
+          (range 1 (inc days)))))
 
 (defn- add-loot [extra-loot-factor base-loot]
   (let [extra-loot? (pos? extra-loot-factor)

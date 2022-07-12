@@ -1,6 +1,7 @@
 (ns user
   (:require [clojure.tools.namespace.repl :refer [refresh]]
             [clojure.string :as str]
+            [honey.sql :as hsql]
             [randy.core :as r]
             (campaign3
               [amulets :as amulets]
