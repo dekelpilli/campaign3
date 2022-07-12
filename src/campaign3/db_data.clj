@@ -228,6 +228,7 @@
                 :with-columns [[:effect :text [:not nil]]
                                [:character :text [:not nil]]
                                [:points :integer [:not nil]]
+                               [:upgradeable :boolean [:not nil]]
                                [[:primary-key :effect :character]]]}))
 
 (defn insert-character-enchants! []
