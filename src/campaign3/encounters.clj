@@ -14,7 +14,7 @@
                       "Kalashtar" "Kenku" "Kobold" "Lizardfolk" "Loxodon" "Minotaur" "Orc" "Satyr" "Shifter" "Tabaxi"
                       "Tiefling" "Tortle" "Triton" "Vedalken" "Yuan-Ti Pureblood"])
 (def ^:private sexes ["female" "male"])
-(def ^:private had-random? (atom false))
+(def ^:private had-random? (atom false)) ;TODO use DB for per-session random encounter tracking?
 
 (def positive-encounters (db/load-all :positive-encounters))
 
@@ -25,7 +25,7 @@
    (->> (range 1 (inc days))
         (map (fn [i]
                [i
-                (when (u/occurred? (if @had-random? 0.10 0.25))
+                (when (u/occurred? (if @had-random? 0.10 0.25)) ;TODO adjust numbers once world map is done
                   (if (u/occurred? 0.2)
                     :positive
                     (do
@@ -62,17 +62,16 @@
          (frequencies)
          (sort-by {"1d16" 1 "2d8" 2 "1d12" 3}))))
 
-(defn rewards
-  ([]
-   (when-let [difficulty (p/>>item [:easy :medium :hard :deadly])]
-     (when-let [investigations (some-> (p/>>input "List investigations:")
-                                       (str/split #","))]
-       {:xp   (case difficulty
-                :easy (+ 6 (rand-int 2))
-                :medium (+ 8 (rand-int 3))
-                :hard (+ 11 (rand-int 3))
-                :deadly (+ 13 (rand-int 4)))
-        :loot (calculate-loot difficulty investigations)}))))
+(defn rewards [] ;TODO adjust for 1d12 format, reduce values, account for one-off vs in-dungeon fights? add boss tier?
+  (when-let [difficulty (p/>>item [:easy :medium :hard :deadly])]
+    (when-let [investigations (some-> (p/>>input "List investigations:")
+                                      (str/split #","))]
+      {:xp   (case difficulty
+               :easy (+ 6 (rand-int 2))
+               :medium (+ 8 (rand-int 3))
+               :hard (+ 11 (rand-int 3))
+               :deadly (+ 13 (rand-int 4)))
+       :loot (calculate-loot difficulty investigations)})))
 
 (defn new-positive []
   {:race      (r/sample races)

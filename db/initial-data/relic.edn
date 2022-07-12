@@ -2,12 +2,12 @@
   :type     "weapon/armour",
   :existing
   [{:effect         "effect",
-    :upgradeable?   false,
+    :upgradeable   false,
     :level          1,
     :upgrade-points 10}],
   :available
   [{:effect         "upgradeableEffect",
-    :upgradeable?   true,
+    :upgradeable   true,
     :level          1,
     :upgrade-points 10}],
   :enabled? false,

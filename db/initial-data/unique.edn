@@ -31,10 +31,14 @@
  {:name    "Garb of the Divine"
   :base    "any body armour"
   :effects [{:effect "You gain Divinity until the end of your next turn when you hit a creature with an attack while you do not have Divinity."}
-            {:effect "+10 fire, radiant, cold, and lightning damage while you have Divinity."}
-            {:effect "You may convert any physical damage you deal to fire, radiant, cold, or lightning damage while you have Divinity."}
-            {:effect "You are immune to curses."}
-            {:effect "You take no extra damage from critical strikes from creatures within 5 feet of you."}
+            {:effect "+10 fire, radiant, cold, and lightning damage while you have Divinity."
+             :tags   #{"damage"}}
+            {:effect "You may convert any physical damage you deal to fire, radiant, cold, or lightning damage while you have Divinity."
+             :tags   #{"damage"}}
+            {:effect "You are immune to curses."
+             :tags   #{"survivability"}}
+            {:effect "You take no extra damage from critical strikes from creatures within 5 feet of you."
+             :tags   #{"survivability"}}
             {:effect "May only be worn if you have at least 20 strength and intelligence."}
             {:effect "You may not add your intelligence or strength to any damage you deal."}]}
  {:name    "Infernal Mantle"
@@ -65,7 +69,8 @@
              :tags   #{"critical"}}
             {:effect "+3 resistance to all damage while mad."
              :tags   #{"survivability"}}
-            {:effect "+3 incoming healing while mad."}
+            {:effect "+3 incoming healing while mad."
+             :tags   #{"survivability"}}
             {:effect "Healing you receive while mad is applied as if the maximum value was rolled."
              :tags   #{"survivability"}}
             {:effect "Roll a d20 at the start of each turn in combat where you are conscious. If you roll 10 or lower, roll a d100 on the short term madness table. You are afflicted by the matching effect until the start of your next turn."}]

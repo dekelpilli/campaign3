@@ -4,18 +4,18 @@
  {:effect "You have an additional spell slot of your second highest spell slot where you have at least one spell slot available."
   :points 20
   :tags   #{"magic"}}
- {:effect       "On your turn, your melee attacks have a reach of 10 feet."
-  :points       30
-  :upgradeable? false
-  :tags         #{"utility"}}
- {:effect "Stone's Endurance (if you already have it, you get another use per long/short rest) (Volo's p109),"
-  :points 16
-  :tags   #{"survivability"}}
- {:effect       "This weapon is considered magical for the purposes of overcoming resistances and immunities.",
-  :requires     {:base-type "weapon"}
-  :points       25
-  :tags         #{"damage"}
-  :upgradeable? false}
+ {:effect      "On your turn, your melee attacks have a reach of 10 feet."
+  :points      30
+  :upgradeable false
+  :tags        #{"utility"}}
+ {:effect      "Stone's Endurance (if you already have it, you get another use per long/short rest) (Volo's p109)."
+  :upgradeable false
+  :tags        #{"survivability"}}
+ {:effect      "This weapon is considered magical for the purposes of overcoming resistances and immunities.",
+  :requires    {:base-type "weapon"}
+  :points      25
+  :tags        #{"damage"}
+  :upgradeable false}
  {:effect "+1 to global AB."
   :tags   #{"accuracy"}
   :points 35}
@@ -26,12 +26,13 @@
   :tags   #{"magic"}}
  {:effect "Recover 10% of your maximum class points (minimum 1) when you roll for initiative."
   :tags   #{"utility"}}
- {:effect   "+1d4 %s damage with attacks with this weapon."
-  :points   20
-  :tags     #{"damage"}
-  :requires {:base-type "weapon"}
-  :randoms  [{:preset :damage-types}]}
- {:effect "+1 spell save and special feature DCs"
+ {:effect         "+1d[4] %s damage with attacks with this weapon."
+  :points         20
+  :upgrade-points 10
+  :tags           #{"damage"}
+  :requires       {:base-type "weapon"}
+  :randoms        [{:preset :damage-types}]}
+ {:effect "+1 spell save and special feature DCs."
   :tags   #{"accuracy"}
   :points 35}
  {:effect    "+1 AC while unarmoured and not using a Shield or Targe weapons."
@@ -44,11 +45,12 @@
   :points 25}
  {:effect "Gain resistance to physical damage equal to half the CR total of your highest CR active minion."
   :tags   #{"survivability"}}
- {:effect  "+2 %s damage."
-  :tags    #{"damage"}
-  :randoms [{:preset :damage-types
-             :type   :physical}]
-  :points  20}
+ {:effect         "+2 %s damage."
+  :tags           #{"damage"}
+  :randoms        [{:preset :damage-types
+                    :type   :physical}]
+  :points         20
+  :upgrade-points 10}
  {:effect         "+[2] %s damage."
   :randoms        [{:preset :damage-types
                     :type   :non-physical}]
@@ -72,9 +74,9 @@
  {:effect "+1 weapon attack AB with attacks that deal non-physical damage."
   :tags   #{"accuracy"}
   :points 30}
- {:effect       "You have advantage on initiative rolls."
-  :tags         #{"utility"}
-  :upgradeable? false}
+ {:effect      "You have advantage on initiative rolls."
+  :tags        #{"utility"}
+  :upgradeable false}
  {:effect "No more than once per minute, when you score a critical strike, recover a 1st-level spell slot."
   :tags   #{"magic"}}
  {:effect "No more than once per minute, when you score a critical strike, recover a 10% of your maximum class points (minimum 1)."
@@ -111,26 +113,28 @@
  {:effect   "Once per round, when you take damage from a melee or touch attack, the attacker takes true damage equal to half your level, rounded down."
   :tags     #{"damage"}
   :requires {:base-type "armour"}}
- {:effect   "When a melee or touch fails to hit you, the attacker takes true damage equal to half your level (rounded up).",
+ {:effect   "When a melee or touch attack fails to hit you, the attacker takes true damage equal to half your level, rounded down.",
   :tags     #{"damage"}
   :requires {:base-type "armour"}}
  {:effect "Roll again, making that result a negative enchant. Then roll again, empowering that result."}
- {:effect "+1 DC for saves made to end your ongoing effects"
+ {:effect "+1 DC for saves made to end your ongoing effects."
   :tags   #{"accuracy"}
   :points 20}
  {:effect "Creatures that start their turn within [5] feet of you have their speed reduced by 10 feet, to a minimum of 5 feet."
   :tags   #{"control"}}
- {:effect "Creatures of your choice under the effect of a spell or condition of yours have -1 to saving throws against spells and conditions."
-  :points 20
+ {:effect "Creatures that have hit you with an opportunity attack in the last minute have disadvantage on opportunity attacks."
+  :tags   #{"control"}}
+ {:effect "Creatures of your choice under the effect of a spell of yours or a condition upi caused have -[1] to saving throws against spells and conditions."
+  :points 30
   :tags   #{"magic" "accuracy" "control"}}
  {:effect "Once per long rest, as an action, you can make a Persuasion check contested by a non-hostile creature's Wisdom save. The creature must be within 60 feet of you. On a success, you can give them a command as per the Command spell."
   :tags   #{"control"}}
- {:effect       "If you take damage exceeding 25% of your maximum hit points in one turn and do not reach 0 hit points by its end, heal hit points equal to your level."
-  :tags         #{"survivability"}
-  :upgradeable? false}
- {:effect       "If you take damage exceeding 25% of your maximum hit points in one round and do not reach 0 hit points by its end, you may move up one place in the initiative tracker, if possible."
-  :tags         #{"utility"}
-  :upgradeable? false}
+ {:effect      "If you take damage exceeding 25% of your maximum hit points in one turn and do not reach 0 hit points by its end, heal hit points equal to your level."
+  :tags        #{"survivability"}
+  :upgradeable false}
+ {:effect      "If you take damage exceeding 25% of your maximum hit points in one round and do not reach 0 hit points by its end, you may move up one place in the initiative tracker, if possible."
+  :tags        #{"utility"}
+  :upgradeable false}
  {:effect "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."
   :tags   #{"survivability" "utility"}}
  {:effect "+1 global damage."
@@ -149,25 +153,45 @@
   :randoms [{:preset :literal
              :values ["blindsight" "tremorsense"]}]
   :tags    #{"utility"}}
+ {:effect  "+1 AB with opportunity attacks while you %s."
+  :randoms [{:preset :literal
+             :values ["have temporary HP"
+                      "are on 100% HP"
+                      "are flanked"
+                      "are flanking the target"]}]
+  :tags    #{"accuracy"}}
+ {:effect   "+1 AB with opportunity attacks while you %s."
+  :randoms  [{:preset :literal
+              :values ["have temporary HP"
+                       "are on 100% HP"
+                       "are flanked"
+                       "are flanking the target"]}]
+  :tags     #{"accuracy"}
+  :requires {:ranged?   false
+             :base-type "weapon"}}
+ {:effect "Creatures that have hit you with a critical strike in the last minute have -[1]AB."
+  :tags   #{"control"}}
  {:effect "You cannot be deafened."
   :tags   #{"utility"}
   :points 4}
- {:effect       "When you score a critical strike with an attack of opportunity, the target is staggered until the end of their turn."
-  :tags         #{"accuracy" "critical"}
-  :upgradeable? false}
- {:effect       "You may take an additional action the end of an action where you landed a killing blow with a critical strike."
-  :tags         #{"critical" "utility"}
-  :upgradeable? false}
- {:effect       "When you hit a creature with an attack with this weapon, they are silenced until the end of their next turn."
-  :tags         #{"control"}
-  :requires     {:base-type "weapon"}
-  :upgradeable? false}
- {:effect       "First wearer chooses a language in which this item grants proficiency."
-  :tags         #{"utility"}
-  :upgradeable? false}
+ {:effect      "When you score a critical strike with an attack of opportunity, the target is staggered until the end of their turn."
+  :tags        #{"accuracy" "critical"}
+  :upgradeable false}
+ {:effect      "You may take an additional action the end of an action where you landed a killing blow with a critical strike."
+  :tags        #{"critical" "utility"}
+  :upgradeable false}
+ {:effect      "When you hit a creature with an attack with this weapon, they are silenced until the end of their next turn."
+  :tags        #{"control"}
+  :requires    {:base-type "weapon"}
+  :upgradeable false}
+ {:effect      "First wearer chooses a language in which this item grants proficiency."
+  :tags        #{"utility"}
+  :upgradeable false}
  {:effect "+2 passive perception while asleep."
   :tags   #{"utility"}}
- {:effect "+10 feet speed in all of your available speed types."
+ {:effect "+5 feet speed in all of your available speed types."
+  :tags   #{"utility"}}
+ {:effect "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."
   :tags   #{"utility"}}
  {:effect "+1 to hit die size for regaining health during short rests."
   :tags   #{"survivability"}}
@@ -186,9 +210,9 @@
   :tags   #{"utility"}}
  {:effect "+10ft swimming speed, and you can breath under water."
   :tags   #{"utility"}}
- {:effect       "You can jump without a run-up as if you had taken a run-up."
-  :tags         #{"utility"}
-  :upgradeable? false}
+ {:effect      "You can jump without a run-up as if you had taken a run-up."
+  :tags        #{"utility"}
+  :upgradeable false}
  {:effect  "+4 damage against %s creatures."
   :tags    #{"damage"}
   :randoms [{:preset :monster-types}]}
@@ -229,9 +253,9 @@
  {:effect   "+1 to saving throws made to end an ongoing condition if your HP is above 0."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
- {:effect       "You have resistance to all damage while taking the Dodge action."
-  :tags         #{"survivability"}
-  :upgradeable? false}
+ {:effect      "You have resistance to all damage while taking the Dodge action."
+  :tags        #{"survivability"}
+  :upgradeable false}
  {:effect "+1 damage to melee and touch attacks."
   :tags   #{"damage"}}
  {:effect "[Once] per short rest, recover a 1st-level spell slot on Killing Blow."
@@ -277,10 +301,10 @@
   :tags    #{"damage"}}
  {:effect "Heal 5 hit points when you roll for initiative."
   :tags   #{"survivability"}}
- {:effect       "All of your damage type-seeks to maximise damage against %s creatures."
-  :tags         #{"damage"}
-  :randoms      [{:preset :monster-types}]
-  :upgradeable? false}
+ {:effect      "All of your damage type-seeks to maximise damage against %s creatures."
+  :tags        #{"damage"}
+  :randoms     [{:preset :monster-types}]
+  :upgradeable false}
  {:effect  "+2 resistance to damage from %s creatures."
   :randoms [{:preset :monster-types}]
   :tags    #{"survivability"}}
@@ -309,28 +333,28 @@
   :tags     #{"survivability"}
   :points   5
   :requires {:base-type "armour"}}
- {:effect       "Enemies are considered to enter and leave your reach at both 5 and 10 feet."
-  :tags         #{"utility"}
-  :points       25
-  :requires     {:base-type "weapon"
-                 :traits    #{"Reach"}}
-  :upgradeable? false}
- {:effect       "This weapon only requires 10 strength instead of 15. It is still considered heavy for the purpose of dual wielding."
-  :tags         #{"utility"}
-  :points       5
-  :requires     {:base-type "weapon"
-                 :traits    #{"Heavy"}}
-  :upgradeable? false}
+ {:effect      "Enemies are considered to enter and leave your reach at both 5 and 10 feet."
+  :tags        #{"utility"}
+  :points      25
+  :requires    {:base-type "weapon"
+                :traits    #{"Reach"}}
+  :upgradeable false}
+ {:effect      "This weapon only requires 10 strength instead of 15. It is still considered heavy for the purpose of dual wielding."
+  :tags        #{"utility"}
+  :points      5
+  :requires    {:base-type "weapon"
+                :traits    #{"Heavy"}}
+  :upgradeable false}
  {:effect "+1 damage die size from marks you caused."
   :tags   #{"damage"}
   :points 15}
  {:effect "+1 damage against marked enemies."
   :tags   #{"damage"}}
- {:effect       "Ranged attacks with this weapon do not suffer disadvantage from enemies being within 5 feet of you if the target of the attack is within 5 feet of you."
-  :tags         #{"accuracy"}
-  :requires     {:ranged? true}
-  :points       13
-  :upgradeable? false}
+ {:effect      "Ranged attacks with this weapon do not suffer disadvantage from enemies being within 5 feet of you if the target of the attack is within 5 feet of you."
+  :tags        #{"accuracy"}
+  :requires    {:ranged? true}
+  :points      13
+  :upgradeable false}
  {:effect "Upon cursing a creature, you may ask one question about it."
   :tags   #{"utility"}}
  {:effect         "Creatures that were cursed by you in the last minute but no longer are have -[1] to saving throws against your curses."
@@ -359,16 +383,21 @@
  {:effect   "When you hit a temporarily invisible creature with this weapon, they become visible."
   :tags     #{"utility"}
   :requires {:base-type "weapon"}}
- {:effect       "Long range thrown attacks with this weapon have a 50% chance to not incur disadvantage due to the range."
-  :tags         #{"accuracy"}
-  :upgradeable? false
-  :requires     {:base-type "weapon"
-                 :traits    #{"Thrown"}}}
- {:effect       "+1 resistance to bludgeoning, piercing, and slashing damage if wearing a heavy body armour and a shield."
-  :upgradeable? false
-  :requires     {:base-type "armour"
-                 :type      #{"Heavy"}}
-  :tags         #{"survivability"}}
+ {:effect      "Long range thrown attacks with this weapon have a 50% chance to not incur disadvantage due to the range."
+  :tags        #{"accuracy"}
+  :upgradeable false
+  :requires    {:base-type "weapon"
+                :traits    #{"Thrown"}}}
+ {:effect      "+1 resistance to bludgeoning, piercing, and slashing damage if wearing a heavy body armour."
+  :upgradeable false
+  :requires    {:base-type "armour"
+                :type      #{"Heavy"}}
+  :tags        #{"survivability"}}
+ {:effect      "+1 resistance to non-physical damage if wearing medium armour."
+  :upgradeable false
+  :requires    {:base-type "armour"
+                :type      #{"Medium"}}
+  :tags        #{"survivability"}}
  {:effect   "+1 to Dexterity saving throws if wearing a light or unarmoured body armour and not using a shield."
   :requires {:base-type "armour"
              :type      #{"Light" "Unarmoured"}}

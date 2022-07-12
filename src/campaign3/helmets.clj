@@ -31,7 +31,7 @@
 (defn- fractured? [points-total]
   (u/occurred? (- 1 (/ 30 points-total))))
 
-(defn upgrade []
+(defn upgrade [] ;TODO add option of adding new random mod...
   (when-let [present-enchants (get-present-enchants-levels)]
     (let [{:keys [points] :as upgraded-enchant} (r/sample present-enchants)
           points-total (reduce sum-enchant-points 10 present-enchants)
@@ -43,8 +43,11 @@
 
 (defn finish-progress-upgrade []
   (when-let [present-enchants (get-present-enchants-levels)]
-    (when-let [enchant-levels (map #(assoc % :level
-                                             (parse-long (p/>>input (str "What is the level of '" (:effect %) "'"))))
+    (when-let [enchant-levels (map (fn [{:keys [upgradeable effect] :as enchant}]
+                                     (assoc enchant
+                                       :level (if upgradeable
+                                                (parse-long (p/>>input (str "What is the level of '" effect "'")))
+                                                1)))
                                    present-enchants)]
       (let [points-total (reduce sum-enchant-points 0 enchant-levels)]
         {:fractured? (fractured? points-total)}))))

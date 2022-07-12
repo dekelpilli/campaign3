@@ -72,7 +72,7 @@
                                (->> progressed
                                     (map :committed)
                                     (reduce +)))
-           upgradeable-mods (filter #(:upgradeable? % true) existing)
+           upgradeable-mods (filter #(:upgradeable % true) existing)
            possible-options (cond-> [:new-relic-mod :new-random-mod :new-character-mod]
                                     (seq upgradeable-mods) (conj :upgrade-existing-mod))
            upgrade-options (concat [:none]

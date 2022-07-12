@@ -14,9 +14,9 @@
     (binding [*read-eval* false]
       (filter #(:enabled? % true) (read r)))))
 
-(defn write-data! [path x]
+(defn write-data! [path coll]
   (with-open [writer (io/writer path)]
-    (pprint/pprint x writer)))
+    (pprint/pprint coll writer)))
 
 (defn find-cr [cr]
   (when-let [cr (edn/read-string (if (map? cr) (:cr cr) cr))]
@@ -168,17 +168,15 @@
   (db/execute! {:insert-into [:enchants]
                 :values
                 (->> (load-data "enchant")
-                     (map (fn [{:keys [points upgrade-points upgradeable?]
-                                :or   {points 10 upgradeable? true}
+                     (map (fn [{:keys [points upgrade-points upgradeable]
+                                :or   {points 10 upgradeable true}
                                 :as   enchant}]
                             (-> enchant
                                 (update :requires u/jsonb-lift)
                                 (update :randoms u/jsonb-lift)
                                 (update :prohibits u/jsonb-lift)
                                 (update :tags (comp u/jsonb-lift vec))
-                                (dissoc :upgradeable?)
                                 (assoc :points points
-                                       :upgradeable upgradeable?
                                        :upgrade-points (or upgrade-points points))))))}))
 
 (defn create-rings! []
@@ -241,7 +239,9 @@
                                     (fn [acc [character enchants]]
                                       (into acc
                                             (map (fn [enchant]
-                                                   (assoc enchant :character (name character))))
+                                                   (-> enchant
+                                                       (assoc :character (name character))
+                                                       (update :upgradeable (complement false?)))))
                                             enchants))
                                     []))}))
 
@@ -281,7 +281,7 @@
 
 (defn create-loot-analytics! []
   (db/execute! {:create-table :loot-analytics
-                :with-columns [[:roll :integer [:not nil]]
+                :with-columns [[:roll :integer [:not nil]] ;TODO make this [:type :text [:not nil]] and use `loot:1`, `loot:12`, `encounter:random`, `encounter:positive`?
                                [:session :integer [:not nil]]
                                [:amount :integer [:not nil]]
                                [[:primary-key :roll :session]]]}))

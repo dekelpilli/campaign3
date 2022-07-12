@@ -4,6 +4,7 @@
               [amulets :as amulets]
               [crafting :as crafting]
               [curios :as curios]
+              [db :as db]
               [enchants :as e]
               [helmets :as helmets]
               [mundanes :as mundanes]
@@ -12,8 +13,7 @@
               [rings :as rings]
               [uniques :as uniques])
             [randy.core :as r]
-            [randy.rng :as rng]
-            [campaign3.db :as db]))
+            [randy.rng :as rng]))
 
 (def session)
 
@@ -32,10 +32,10 @@
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
    7  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
-   8  {:name   "Helmet"
+   8  {:name   "Curios"
+       :action (fn curios-loot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
+   9  {:name   "Helmet"
        :action helmets/new}
-   9  {:name   "Curios"
-       :action (fn curios-looot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
    10 {:name   "Crafting item"
        :action crafting/new}
    11 {:name   "New relic"

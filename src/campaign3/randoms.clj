@@ -9,13 +9,13 @@
 
 (def random->values-vec (comp randoms-preset keyword-type))
 
-(defn- rand-from [vs]
-  #(r/sample vs))
+(defn- sample-fn [vs]
+  (fn sample-random [] (r/sample vs)))
 
 (defn randoms->fn [randoms]
   (cond
-    (vector? randoms) (apply juxt (map (comp rand-from random->values-vec) randoms))
-    (map? randoms) (random->values-vec randoms)))
+    (vector? randoms) (apply juxt (map (comp sample-fn random->values-vec) randoms))
+    (map? randoms) (random->values-vec randoms))) ;TODO does map also need to call sample-fn?
 
 (defn- random->weighting-multiplier [{:keys [preset] :as random}]
   (case preset

@@ -16,7 +16,7 @@
             :tags   #{"survivability" "magic"}}
            {:effect "When you heal a creature with the use of a spell, that creature also gains temporary hit points equal to 50% of the hit points granted by the spell, including any bonuses to outgoing healing you have."
             :tags   #{"magic"}}
-           {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat. Additionally, add your outgoing healing bonus to the life gained by downed allies you heal with Medicine checks.."
+           {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat. Additionally, add your outgoing healing bonus to the life gained by downed allies you heal with Medicine checks."
             :tags   #{"utility"}}
            {:effect "When you cast a spell that grants hit points, you may choose to cause the spell to be upcast by up to 3 spell levels, to a maximum of 6th level. The spell consumes resources as if it had been cast normally."}]}
  {:name   "Touch of Eternal Vigour"
@@ -30,6 +30,13 @@
             :tags   #{"survivability"}}
            {:effect "Once per round when you fail a saving throw against an effect that would cause a condition, you may attempt the save again."
             :tags   #{"survivability"}}]}
+ {:name   "Touch of Perpetual Learning" ;TODO
+  :levels [{:effect "Whenever you cast a divination spell, you gain a number of questions about a creature you can see equal to the spell's level (including upcasts), or 1 for cantrips."
+            :tags   #{"utility" "magic"}}
+           {}
+           {}
+           {}
+           {}]}
  {:name   "Touch of Unrelenting Fortune"
   :levels [{:effect "The quantity of crafting items and curios you find from loot rolls is increased by 1."
             :tags   #{"wealth"}}
@@ -96,7 +103,7 @@
             :tags   #{"magic" "damage"}}
            {:effect "+1 AB with attacks that would deal elemental damage damage, and +1 spell save DC to spells that would deal elemental damage."
             :tags   #{"accuracy"}}]}
- {:name   "Touch of Volatile Presence"
+ {:name   "Touch of Volatile Presence" ;TODO
   :levels ["You may conjure a piece of Adventuring Gear worth between 1cp and 10gp (inclusive). Items conjured in this way dissipate after 10 minutes. You may do this 5 times per long rest. (For items not on the list, you can ask me an I might be willing to let you conjure anyway)."
            "When you make an opportunity attack, you may make a proficient spell attack against that target instead (attribute of choice). On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
            "You learn the Mage Hand cantrip. This does not count towards your limit of known cantrips. You may cast Mage Hand requiring no verbal or somatic components, as well as dismiss and control it as a bonus action. Additionally, it is no longer restricted to 10 pounds - you may make checks with an attribute of choice equivalent to strength checks to determine the hand's power. This cannot be used for creature interactions (e.g. shoves)."
