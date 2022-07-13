@@ -10,7 +10,7 @@
            {:effect "No more than once per conversation, when you tell a lie, you may immediately learn if one person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
             :tags   #{"utility"}}]}
  {:name   "Touch of Distributed Rejuvenation"
-  :levels [{:effect "You and allies within 15 feet of you have -2 critical strike requirement for death saving throws, and gain temporary hit points equal to your level when they critically succeed on a death saving throw."
+  :levels [{:effect "You and allies within 15 feet of you have -2 critical hit requirement for death saving throws, and gain temporary hit points equal to your level when they critically succeed on a death saving throw."
             :tags   #{"survivability"}}
            {:effect "Creatures you have healed with the use of a spell or a Medicine check in the last minute regain 1 hit point at the start of their turns."
             :tags   #{"survivability" "magic"}}
@@ -55,7 +55,7 @@
             :tags   #{"control"}}
            {:effect "Your attacks and spells deal +1d4 radiant damage against marked enemies."
             :tags   #{"damage"}}
-           {:effect "You have -1 critical strike requirement against marked enemies."
+           {:effect "You have -1 critical hit requirement against marked enemies."
             :tags   #{"critical"}}
            {:effect "Creatures that attack you or cast a spell that forces you to make a save take thorns of 5 radiant damage."
             :tags   #{"damage"}}]}
@@ -97,7 +97,7 @@
             :tags   #{"critical"}}
            {:effect "You can cast Absorb Elements an amount of times equal to your attribute modifier of choice, to a minimum of once, per long rest."
             :tags   #{"magic"}}
-           {:effect "-1 critical strike requirement for attacks that would deal elemental damage."
+           {:effect "-1 critical hit requirement for attacks that would deal elemental damage."
             :tags   #{"critical"}}
            {:effect "You may cast Fire Shield as a bonus action once per short rest. When cast in this way, you may also target other willing creatures you can see within 30 feet."
             :tags   #{"magic" "damage"}}
@@ -123,7 +123,7 @@
             :tags   #{"utility"}}
            {:effect "You harness the powers of spiders; your spells and attacks have +1d4 poison damage, and you are are under the effect of the Spider Climb spell."
             :tags   #{"damage" "magic" "utility"}}
-           {:effect "You have -1 critical strike requirement against enemies under the effect of a non-magical condition, and when you land a natural critical strike and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
+           {:effect "You have -1 critical hit requirement against enemies under the effect of a non-magical condition, and when you land a natural critical hit and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
             :tags   #{"critical" "control"}}]}
  {:name   "Touch of Controlled Morbidity"
   :levels [{:effect "You and your undead minions are at least resistant to necrotic damage and have +1d6 necrotic damage while you have an Undead creature's amulet effect active."

@@ -68,7 +68,7 @@
  {:effect "You have an additional second level spell slot (only if you already had at least 1)."
   :tags   #{"magic"}
   :points 15}
- {:effect "-1 critical strike requirement with attacks."
+ {:effect "-1 critical hit requirement with attacks."
   :tags   #{"critical"}
   :points 20}
  {:effect "+1 weapon attack AB with attacks that deal non-physical damage."
@@ -77,10 +77,10 @@
  {:effect      "You have advantage on initiative rolls."
   :tags        #{"utility"}
   :upgradeable false}
- {:effect "No more than once per minute, when you score a critical strike, recover a 1st-level spell slot."
-  :tags   #{"magic"}}
- {:effect "No more than once per minute, when you score a critical strike, recover a 10% of your maximum class points (minimum 1)."
-  :tags   #{"utility"}}
+ {:effect "No more than once per minute, when you score a critical hit, recover a 1st-level spell slot."
+  :tags   #{"magic" "critical"}}
+ {:effect "No more than once per minute, when you score a critical hit, recover a 10% of your maximum class points (minimum 1)."
+  :tags   #{"utility" "critical"}}
  {:effect    "+1 AB with unarmed attacks."
   :tags      #{"accuracy"}
   :prohibits {:base-type "weapon"}
@@ -102,7 +102,7 @@
   :tags   #{"utility"}}
  {:effect "+1 question when learning creature stats (must have earned at least one question)"
   :tags   #{"utility"}}
- {:effect "Your critical strikes add 1 additional damage die from the source's base damage."
+ {:effect "Your critical hits add 1 additional damage die from the source's base damage."
   :tags   #{"critical"}}
  {:effect "You can use your reaction to change any damage you deal into a damage type of your choice. This is visually noticeable."
   :tags   #{"survivability"}}
@@ -136,7 +136,7 @@
   :tags        #{"utility"}
   :upgradeable false}
  {:effect "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."
-  :tags   #{"survivability" "utility"}}
+  :tags   #{"survivability" "utility" "critical"}}
  {:effect "+1 global damage."
   :tags   #{"damage"}
   :points 15}
@@ -160,24 +160,15 @@
                       "are flanked"
                       "are flanking the target"]}]
   :tags    #{"accuracy"}}
- {:effect   "+1 AB with opportunity attacks while you %s."
-  :randoms  [{:preset :literal
-              :values ["have temporary HP"
-                       "are on 100% HP"
-                       "are flanked"
-                       "are flanking the target"]}]
-  :tags     #{"accuracy"}
-  :requires {:ranged?   false
-             :base-type "weapon"}}
- {:effect "Creatures that have hit you with a critical strike in the last minute have -[1]AB."
+ {:effect "Creatures that have hit you with a critical hit in the last minute have -[1]AB."
   :tags   #{"control"}}
  {:effect "You cannot be deafened."
   :tags   #{"utility"}
   :points 4}
- {:effect      "When you score a critical strike with an attack of opportunity, the target is staggered until the end of their turn."
+ {:effect      "When you score a critical hit with an attack of opportunity, the target is staggered until the end of their turn."
   :tags        #{"accuracy" "critical"}
   :upgradeable false}
- {:effect      "You may take an additional action the end of an action where you landed a killing blow with a critical strike."
+ {:effect      "You may take an additional action the end of an action where you landed a killing blow with a critical hit."
   :tags        #{"critical" "utility"}
   :upgradeable false}
  {:effect      "When you hit a creature with an attack with this weapon, they are silenced until the end of their next turn."
@@ -308,7 +299,7 @@
  {:effect  "+2 resistance to damage from %s creatures."
   :randoms [{:preset :monster-types}]
   :tags    #{"survivability"}}
- {:effect   "+25% chance to ignore bonus damage from incoming critical strikes."
+ {:effect   "+25% chance to ignore bonus damage from incoming critical hits."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
  {:effect "+2 global damage while your hit points are below 50% of your hit point maximum."
@@ -366,8 +357,8 @@
   :tags   #{"survivability"}}
  {:effect "+[2] damage with attacks that are at least your third during that turn."
   :tags   #{"damage"}}
- {:effect   "Your critical strikes with this weapon are also non-lethal."
-  :tags     #{"utility"}
+ {:effect   "Your critical hits with this weapon are also non-lethal."
+  :tags     #{"utility" "critical"}
   :requires {:base-type "weapon"
              :traits    #{"Non-lethal"}}}
  {:effect "5% chance to refund the spell slots used for spells cast outside of your turn."

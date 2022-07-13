@@ -37,7 +37,7 @@
              :tags   #{"damage"}}
             {:effect "You are immune to curses."
              :tags   #{"survivability"}}
-            {:effect "You take no extra damage from critical strikes from creatures within 5 feet of you."
+            {:effect "You take no extra damage from critical hits from creatures within 5 feet of you."
              :tags   #{"survivability"}}
             {:effect "May only be worn if you have at least 20 strength and intelligence."}
             {:effect "You may not add your intelligence or strength to any damage you deal."}]}
@@ -45,7 +45,7 @@
   :base    "any body armour"
   :effects [{:effect "+3 fire damage with spells."
              :tags   #{"damage"}}
-            {:effect "-1 critical strike requirement with spells."
+            {:effect "-1 critical hit requirement with spells."
              :tags   #{"critical"}}
             {:effect "You may cast spells that require a saving throw that would deal fire damage as spell attacks instead."
              :tags   #{"magic"}}
@@ -65,7 +65,7 @@
   :base    "any body armour"
   :effects [{:effect "+2 to all attributes."
              :tags   #{"utility"}}
-            {:effect "Your critical strike requirement is 13 while you are not mad."
+            {:effect "Your critical hit requirement is 13 while you are not mad."
              :tags   #{"critical"}}
             {:effect "+3 resistance to all damage while mad."
              :tags   #{"survivability"}}
@@ -133,9 +133,9 @@
   :base    "any gloves"
   :effects [{:effect "+1d4 cold damage with attacks and spells."
              :tags   #{"damage"}}
-            {:effect "Enemies you score a critical strike against are frozen for up to a minute. Frozen enemies have +2 cold vulnerability, gain fire resistance, and are restrained. CON save at end of turn (8+prof+att) to end, or until taking fire damage."
-             :tags   #{"control"}}
-            {:effect "Enemies that score a natural melee critical strike against you are frozen until the end of your next turn, or until they save out or take fire damage."
+            {:effect "Enemies you score a critical hit against are frozen for up to a minute. Frozen enemies have +2 cold vulnerability, gain fire resistance, and are restrained. CON save at end of turn (8+prof+att) to end, or until taking fire damage."
+             :tags   #{"control" "critical"}}
+            {:effect "Enemies that score a natural melee critical hit against you are frozen until the end of your next turn, or until they save out or take fire damage."
              :tags   #{"control"}}
             {:effect "You can only land killing blows against frozen enemies (including non-frozen enemies you have just hit with a crit)."}]}
  {:name    "Corrosion"
@@ -220,13 +220,13 @@
             {:effect "+1 critical strike requirement with this weapon."}]}
  {:name    "Pasha"
   :base    "any flail"
-  :effects [{:effect "Enemies you critically strike with this weapon become restrained until they use an action to end the effect."
+  :effects [{:effect "Enemies you critically hit with this weapon become restrained until they use an action to end the effect."
              :tags   #{"control"}}
             {:effect "-2 critical strike requirement with this weapon."
              :tags   #{"critical"}}
             {:effect "+2 damage with this weapon against grappled and restrained enemies."
              :tags   #{"damage"}}
-            {:effect "You cannot critically strike restrained enemies."}
+            {:effect "You cannot critically hit restrained enemies."}
             {:effect "When you would otherwise land a killing blow with this weapon, the enemy instead dies at the end of their next turn. You know when this happens."}]}
  {:name    "Overcharged"
   :base    "any gloves"
@@ -244,9 +244,9 @@
              :tags   #{"damage"}}
             {:effect "-1 critical strike requirement against non-blind enemies."
              :tags   #{"critical"}}
-            {:effect "Non-blind enemies you critically strike become blinded for a minute, or until you do not damage them during your turn, CON save at turn end to end, mental attribute of choice."
+            {:effect "Non-blind enemies you critically hit become blinded for a minute, or until you do not damage them during your turn, CON save at turn end to end, mental attribute of choice."
              :tags   #{"control" "accuracy"}}
-            {:effect "You cannot critically strike blinded enemies."}]}
+            {:effect "You cannot critically hit blinded enemies."}]}
  {:name    "The Sentinel"
   :base    "any shield or shield weapon"
   :effects [{:effect "+1 bludgeoning, slashing, and piercing resistance."
@@ -295,7 +295,7 @@
   :base    "any knife"
   :effects [{:effect "While this weapon is unsheathed, you are invisible if you haven't attacked or cast a spell in the last 18 seconds."
              :tags   #{"survivability" "damage" "accuracy"}}
-            {:effect "Gain 5 temporary hit points when you critically strike with this weapon."
+            {:effect "Gain 5 temporary hit points when you critically hit with this weapon."
              :tags   #{"survivability"}}
             {:effect "-5 critical strike requirement with this weapon while you are invisible."
              :tags   #{"critical"}}

@@ -8,7 +8,7 @@
   :effect "+1 physical damage reduction for each non-synergy ring worn."
   :points 5}
  {:name   "The Lone Wolf"
-  :effect "-1 critical strike requirement while not wearing any synergy rings that are not The Lone Wolf."
+  :effect "-1 critical hit requirement while not wearing any synergy rings that are not The Lone Wolf."
   :points 6}
  {:name   "The Conduit"
   :effect "+1 to maximum number of rings."

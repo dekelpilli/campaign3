@@ -168,14 +168,15 @@
   (db/execute! {:insert-into [:enchants]
                 :values
                 (->> (load-data "enchant")
-                     (map (fn [{:keys [points upgrade-points upgradeable]
-                                :or   {points 10 upgradeable true}
+                     (map (fn [{:keys [points upgrade-points]
+                                :or   {points 10}
                                 :as   enchant}]
                             (-> enchant
                                 (update :requires u/jsonb-lift)
                                 (update :randoms u/jsonb-lift)
                                 (update :prohibits u/jsonb-lift)
                                 (update :tags (comp u/jsonb-lift vec))
+                                (update :upgradeable (complement false?))
                                 (assoc :points points
                                        :upgrade-points (or upgrade-points points))))))}))
 
