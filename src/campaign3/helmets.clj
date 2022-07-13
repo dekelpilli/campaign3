@@ -1,19 +1,24 @@
 (ns campaign3.helmets
   (:require (campaign3
               [db :as db]
-              [enchants :as e]
-              [prompting :as p]
-              [util :as u])
+              [prompting :as p])
             [randy.core :as r]))
 
 (def ^:private mod-mending-result (r/alias-method-sampler {:upgrade 3 :remove 3 :nothing 4}))
 
-(def character-enchants (->> (db/load-all :character-enchants)
-                             (group-by :character)))
+(def character-enchants (as-> (db/load-all :character-enchants) $
+                              (group-by :character $)
+                              (update-vals $ #(mapv (fn [e] (dissoc e :character)) %))))
 
 (defn new []
   (when-let [enchants (p/>>item "Character name:" character-enchants)]
-    (e/add-enchants 20 #(r/sample enchants))))
+    (loop [total 0
+           chosen []
+           [{:keys [points] :as enchant} & enchants] (r/shuffle enchants)]
+      (let [total (+ points total)]
+        (if (>= total 20)
+          (conj chosen enchant)
+          (recur total (conj chosen enchant) enchants))))))
 
 (defn- select-enchants [character-enchants]
   (not-empty (p/>>distinct-items "Present enchants:" character-enchants)))
@@ -36,23 +41,26 @@
 (defn- sum-enchant-points [total {:keys [level points]}]
   (+ total (* level points)))
 
-(defn- fractured? [points-total] ;TODO more fun to let players roll d100 instead of doing it on the backend? if so, round chance to nearest %
-  (u/occurred? (- 1 (/ 30 points-total))))
+(defn- fractured-chance [points-total]
+  (->> (- 120 points-total)
+       (min 100)
+       (max 25)
+       (- 100)))
 
 (defn- upgrade-helm-mod [present-enchants]
   (let [{:keys [points] :as upgraded-enchant} (r/sample present-enchants)
         points-total (reduce sum-enchant-points 10 present-enchants)
         fractured? (and
                      (<= points 10)
-                     (fractured? points-total))]
-    {:enchant    upgraded-enchant
-     :fractured? fractured?}))
+                     (fractured-chance points-total))]
+    {:enchant         upgraded-enchant
+     :fracture-chance fractured?}))
 
 (defn- add-helm-mod [present-enchants not-present-enchants]
   (let [{:keys [points] :as added-enchant} (r/sample not-present-enchants)
         points-total (reduce sum-enchant-points points present-enchants)]
-    {:enchant    added-enchant
-     :fractured? (fractured? points-total)}))
+    {:enchant         added-enchant
+     :fracture-chance (fractured-chance points-total)}))
 
 (defn apply-personality []
   (when-let [character-enchants (p/>>item "Character name:" character-enchants)]
@@ -74,7 +82,7 @@
   (when-let [present-enchants (get-present-enchants-levels)]
     (when-let [enchant-levels (enchant-levels present-enchants)]
       (let [points-total (reduce sum-enchant-points 0 enchant-levels)]
-        {:fractured? (fractured? points-total)}))))
+        {:fracture-chance (fractured-chance points-total)}))))
 
 (defn mend []
   (when-let [present-enchants (get-present-enchants-levels)]

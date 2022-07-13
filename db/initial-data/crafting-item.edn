@@ -19,7 +19,7 @@
  {:name   "Orb(s) of Favouritism"
   :effect "Reroll the monster & trait in an amulet, forcing a specific monster type. If none are available of that type in the appropriate CR, you may roll with a lower CR."}
  {:name   "Orb(s) of Discovery"
-  :effect "Reroll the monster & trait in an amulet 1d8 times, guaranteeing unique results where possible."}
+  :effect "Reroll the monster & trait in an amulet 1d8 times, guaranteeing unique results where possible, player then chooses one of the results."}
  {:name   "Orb(s) of Regrading"
   :effect "Change a body armour, boots, or gloves into a new random special base on the same slot."}
  {:name     "Orb(s) of Flux"

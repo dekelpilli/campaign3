@@ -6,14 +6,12 @@
 
 (def ^:private points-per-level 10)
 
-(def upgrade-prices [0 100 200 300 400 500 600 700 800 1500])
-
 (defn choose-relic [relics]
   (some->> (not-empty relics)
            (u/assoc-by :name)
            (p/>>item "Relic:")))
 
-(defn- &owned []
+(defn- owned []
   #_(let [owned? (fn [{:keys [found? enabled?]
                        :or   {enabled? true}}] (and found? enabled?))]
       (->> @relics
