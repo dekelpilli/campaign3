@@ -26,7 +26,7 @@
                            [:= :type (str "encounter" :positive)]]}))
   type)
 
-(defn travel [^long days]
+(defn travel [^long days] ; TODO track total days spent (travelling or otherwise), could have campaign things happen on certain dates?
   (let [had-random? (when (bound? #'u/session)
                       (-> (db/execute! {:select [:amount]
                                         :from   [:analytics]
