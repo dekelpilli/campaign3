@@ -25,9 +25,9 @@
   (when-let [sacrificed-rings (-> (p/>>input "Which rings are being sacrificed?"
                                              (map :name all-rings)
                                              :completer :comma-separated)
-                                  (not-empty))]
+                                  not-empty)]
     (let [catalysts-used (or (some-> (p/>>input "How many catalysts were used in this ring sacrifice?")
-                                     (parse-long))
+                                     parse-long)
                              0)
           remaining-rings (remove (comp (set sacrificed-rings) :name) all-rings)
           num-options (-> (count sacrificed-rings)

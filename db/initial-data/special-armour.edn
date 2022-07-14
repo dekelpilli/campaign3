@@ -26,22 +26,22 @@
   :effect "Modifiers on this item that grant flat resistances also grant equivalent piercing damage thorns that triggers when that resistance applies."
   :slot   "body"}
  {:name   "Bellmarian"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both radiant and necrotic damage types."
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both radiant and necrotic damage types (separately)."
   :slot   "body"}
  {:name   "Intangible"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both psychic and force damage types."
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both psychic and force damage types (separately)."
   :slot   "body"}
  {:name   "Stormweaver"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both lightning and thunder damage types."
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both lightning and thunder damage types (separately)."
   :slot   "body"}
  {:name   "Apocalyptic"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both cold and fire damage types."
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both cold and fire damage types (separately)."
   :slot   "body"}
  {:name   "Impactful"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to all physical damage types."
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to physical damage types."
   :slot   "body"}
  {:name   "Apothecary"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both acid and poison damage types."
+  :effect "Modifiers on this item that relate to a specific damage type instead apply to both acid and poison damage types (separately)."
   :slot   "body"}
  {:name   "Abundant"
   :effect "'Wealth' tagged modifiers on this item have no effect. +1 to each of your attributes for each wealth modifier on this item."

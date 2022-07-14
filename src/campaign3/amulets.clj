@@ -45,5 +45,4 @@
                  (> (count monster-traits) amount) (r/sample-without-replacement amount))))))
 
 (defn from-cr []
-  (some-> (cr)
-          (cr->output)))
+  (some-> (cr) cr->output))

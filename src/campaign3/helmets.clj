@@ -24,7 +24,7 @@
   (not-empty (p/>>distinct-items "Present enchants:" character-enchants)))
 
 (defn- get-present-enchants []
-  (some-> (p/>>item "Character name:" character-enchants) (select-enchants)))
+  (some-> (p/>>item "Character name:" character-enchants) select-enchants))
 
 (defn- enchant-levels [enchants]
   (->> enchants
@@ -36,7 +36,7 @@
        (not-empty)))
 
 (defn- get-present-enchants-levels []
-  (some-> (get-present-enchants) (enchant-levels)))
+  (some-> (get-present-enchants) enchant-levels))
 
 (defn- sum-enchant-points [total {:keys [level points]}]
   (+ total (* level points)))
@@ -64,7 +64,7 @@
 
 (defn apply-personality []
   (when-let [character-enchants (p/>>item "Character name:" character-enchants)]
-    (when-let [present-enchants (some-> (select-enchants character-enchants) (enchant-levels))]
+    (when-let [present-enchants (some-> (select-enchants character-enchants) enchant-levels)]
       (let [upgradeable-enchants (filterv :upgradeable present-enchants)
             has-upgrades? (seq upgradeable-enchants)
             present-enchant-effects (into #{} (map :effect) present-enchants)

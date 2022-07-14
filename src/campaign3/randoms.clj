@@ -15,7 +15,7 @@
 (defn randoms->fn [randoms]
   (cond
     (vector? randoms) (apply juxt (map (comp sample-fn random->values-vec) randoms))
-    (map? randoms) (random->values-vec randoms))) ;TODO does map also need to call sample-fn?
+    (map? randoms) (random->values-vec randoms)))
 
 (defn- random->weighting-multiplier [{:keys [preset] :as random}]
   (case preset
@@ -29,8 +29,8 @@
                          (nil? randoms) 1)]
     (-> (if (> options-factor 5)
           (->> (- options-factor 5)
-               (double)
-               (Math/sqrt)
+               double
+               Math/sqrt
                (+ 5))
           options-factor)
         (max 1))))
@@ -39,7 +39,7 @@
   ["Common" "Dwarvish" "Elvish" "Giant" "Gnomish" "Goblin" "Halfling" "Orc"
    "Abyssal" "Celestial" "Draconic" "Deep Speech" "Infernal" "Primordial" "Sylvan" "Undercommon"])
 
-(defmethod randoms-preset :feats [_]
+(defmethod randoms-preset :feats [_] ;TODO update
   ["Alert" "Athlete" "Actor" "Brawler" "Charger" "Chef" "Crossbow Expert" "Defensive Duelist"
    "Dual Wielder" "Dungeon Delver" "Durable" "Eldritch Adept" "Grappler" "Fighting Initiate"
    "Great Weapon Master" "Healer" "Heavy Armor Master" "Inspiring Leader" "Keen Mind" "Light Armor Master"

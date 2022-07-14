@@ -32,7 +32,7 @@
   :effect "You emit bright light in a radius of 5 feet from you for each ring worn."
   :points 2}
  {:name    "The Trained"
-  :effect  "If all of your worn synergy rings are 'The Trained', with a minimum of 3, you may choose to gain a feat from one of your rings. This rings grants the option of `%s`. You may change the chosen ring during a long rest."
+  :effect  "If all of your worn synergy rings are 'The Trained', with a minimum of 3, you may choose to gain a feat from one of your rings. This ring grants the option of `%s`. You may change the chosen ring during a long rest."
   :randoms [{:preset :feats}]
   :points  2}
  {:name    "The Able"

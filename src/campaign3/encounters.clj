@@ -47,11 +47,10 @@
 (defn- add-loot [extra-loot-factor base-loot]
   (let [extra-loot? (pos? extra-loot-factor)
         loot (if extra-loot?
-               (concat base-loot (repeat (-> extra-loot-factor (/ extra-loot-step) (int)) "1d16"))
+               (concat base-loot (repeat (-> extra-loot-factor (/ extra-loot-step) int) "1d16"))
                base-loot)
         remainder (mod extra-loot-factor extra-loot-step)
-        remainder-above-half-step? (-> remainder
-                                       (> (int (/ extra-loot-step 2))))
+        remainder-above-half-step? (> remainder (int (/ extra-loot-step 2)))
         bonus-loot (match [extra-loot? remainder remainder-above-half-step?]
                           [false _ _] []
                           [_ 0 _] []

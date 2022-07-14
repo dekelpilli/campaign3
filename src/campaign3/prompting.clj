@@ -111,7 +111,7 @@
              (.addPrompt))
          (-> (.prompt console-prompt (.build prompt-builder))
              ^CheckboxResult (get prompt)
-             (.getSelectedIds)
+             .getSelectedIds
              (->> (into #{} (map m)))))))))
 
 (defn >>item
@@ -124,17 +124,16 @@
      (if (> (count m) input-threshold)
        (>>input prompt m)
        (let [prompt-builder (.getPromptBuilder console-prompt)]
-         (-> prompt-builder
-             (.createListPrompt)
+         (-> (.createListPrompt prompt-builder)
              (.message prompt)
              (as-> builder (reduce
                              #(doto %1 (-> (.newItem %2)
                                            (.text %2)
-                                           (.add)))
+                                           .add))
                              builder
-                             (-> m (keys) (conj "\u001B[31mNone\u001B[0m"))))
-             (.addPrompt))
+                             (-> (keys m) (conj "\u001B[31mNone\u001B[0m"))))
+             .addPrompt)
          (-> (.prompt console-prompt (.build prompt-builder))
              ^ListResult (get prompt)
-             (.getSelectedId)
-             (m)))))))
+             .getSelectedId
+             m))))))

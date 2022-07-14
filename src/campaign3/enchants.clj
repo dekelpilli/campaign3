@@ -86,7 +86,7 @@
          (:effect))))
 
 (defn add-totalling []
-  (let [points (some-> (p/>>input "Desired points total:") (parse-long))]
+  (let [points (some-> (p/>>input "Desired points total:") parse-long)]
     (when-let [{:keys [base type]} (when points (mundanes/choose-base))]
       [base
        (add-enchants base type points)])))
