@@ -308,4 +308,4 @@
        (write-data! (str "db/current-state/" (name table) ".edn"))))
 
 (defn backup-data! []
-  (run! backup-table! [:divinity-progress :relics :loot-analytics]))
+  (run! backup-table! [:divinity-progress :relics :analytics]))

@@ -5,17 +5,17 @@
 
 (def session)
 
+(defn record! [event amount]
+  (when (bound? #'session)
+    (db/execute! {:insert-into   :analytics
+                  :values        [{:type    event
+                                   :session session
+                                   :amount  amount}]
+                  :on-conflict   [:type :session]
+                  :do-update-set {:amount [:+ :EXCLUDED.amount amount]}})))
+
 (defn set-session! [n]
-  (alter-var-root #'session (constantly n))
-  (db/execute! {:insert-into :analytics
-                :values      (map (fn [roll] {:session n :type (str "loot:" roll) :amount 0}) (range 1 13))
-                :on-conflict {}
-                :do-nothing  true})
-  (db/execute! {:insert-into :analytics
-                :values      (map (fn [encounter-type] {:session n :type (str "encounter:" encounter-type) :amount 0})
-                                  ["random" "positive"])
-                :on-conflict {}
-                :do-nothing  true}))
+  (alter-var-root #'session (constantly n)))
 
 (defn jsonb-lift [x]
   (when x [:lift x]))

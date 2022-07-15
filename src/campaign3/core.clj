@@ -4,7 +4,6 @@
               [amulets :as amulets]
               [crafting :as crafting]
               [curios :as curios]
-              [db :as db]
               [enchants :as e]
               [helmets :as helmets]
               [mundanes :as mundanes]
@@ -24,10 +23,10 @@
    3  {:name   "Amulet"
        :action amulets/new}
    4  {:name   "Non-synergy ring"
-       :action rings/new-non-synergy}
+       :action rings/new-non-synergy} ;TODO reconsider having two loot rolls for rings
    5  {:name   "Synergy ring"
        :action rings/new-synergy}
-   6  {:name   "Enchanted item (high value, 30 points)"
+   6  {:name   "Enchanted item"
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
    7  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
@@ -43,14 +42,15 @@
        :action paths/new-divine-dust}})
 
 (defn loot [n]
-  (when (bound? #'u/session)
-    (db/execute! {:update :analytics
-                  :set    {:amount [:+ :amount 1]}
-                  :where  [:and
-                           [:= :session u/session]
-                           [:= :type (str "loot:" n)]]}))
+  (u/record! (str "loot:" n) 1)
   (when-let [{:keys [action]} (get loot-actions n)]
     (action)))
 
 (defn loots [& ns]
-  (mapv loot ns))
+  (doseq [[n amount] (frequencies ns)]
+    (u/record! (str "loot:" n) amount))
+  (mapv (fn collect-loot [n]
+          (let [{:keys [name action]} (get loot-actions n)]
+            {:name   (str name " (" n ")")
+             :result (when action (action))}))
+        ns))

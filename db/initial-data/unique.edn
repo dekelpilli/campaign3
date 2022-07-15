@@ -1,9 +1,13 @@
 [{:name    "Pacifist's Vow"
-  :base    "Blowgun"
+  :base    "any weapon"
   :effects [{:effect "Non-damaging spells have a 50% chance consume a spell slot 1 level lower."
              :tags   #{"magic"}}
+            {:effect "+1 to your DC with effects that cannot deal damage."
+             :tags   #{"accuracy"}}
             {:effect "You may forego dealing damage with a spell to make it count as a non-damaging spell."
              :tags   #{"magic" "utility"}}
+            {:effect "This weapon gains the Non-lethal trait"
+             :tags   #{"utility"}}
             {:effect "You cannot upcast damaging spells."}
             {:effect "You cannot cast damaging spells on consecutive turns in combat."}
             {:effect "The damage you deal with cantrips is halved."}]}
@@ -74,6 +78,7 @@
             {:effect "Healing you receive while mad is applied as if the maximum value was rolled."
              :tags   #{"survivability"}}
             {:effect "Roll a d20 at the start of each turn in combat where you are conscious. If you roll 10 or lower, roll a d100 on the short term madness table. You are afflicted by the matching effect until the start of your next turn."}]
+  ;TODO update old conditions to new conditions
   :madness {"01-20"  "The character retreats into his or her mind and becomes paralyzed. The effect ends if the character takes any damage."
             "21-30"  "The character becomes incapacitated and spends the duration screaming, laughing, or weeping."
             "31-40"  "The character becomes frightened and must use his or her action and movement each round to flee from the source of the fear. (source is a random enemy in combat)"
@@ -103,7 +108,7 @@
   :base    "any boots"
   :effects [{:effect "You gain 3 hit points when hitting enemies cursed by you, no more than once per turn."
              :tags   #{"survivability"}}
-            {:effect "Allies gain 3 hit points on hitting enemies cursed by you."
+            {:effect "Allies gain 3 hit points on hitting enemies cursed by you, no more than once per turn.."
              :tags   #{"survivability"}}
             {:effect "You cannot gain temporary hit points."}
             {:effect "You take 5 true damage when you dash."}]}
@@ -133,11 +138,11 @@
   :base    "any gloves"
   :effects [{:effect "+1d4 cold damage with attacks and spells."
              :tags   #{"damage"}}
-            {:effect "Enemies you score a critical hit against are frozen for up to a minute. Frozen enemies have +2 cold vulnerability, gain fire resistance, and are restrained. CON save at end of turn (8+prof+att) to end, or until taking fire damage."
+            {:effect "Enemies you score a natural critical hit against are frozen for up to a minute. Frozen enemies have +2 cold vulnerability, gain fire resistance, and are restrained. CON save at end of turn (8+prof+attribute) to end, or until taking fire damage."
              :tags   #{"control" "critical"}}
             {:effect "Enemies that score a natural melee critical hit against you are frozen until the end of your next turn, or until they save out or take fire damage."
              :tags   #{"control"}}
-            {:effect "You can only land killing blows against frozen enemies (including non-frozen enemies you have just hit with a crit)."}]}
+            {:effect "You can only land killing blows against frozen enemies (including non-frozen enemies you have just hit with a crit). Other enemies remain on 1 HP when they would otherwise go down. You know when this happens."}]}
  {:name    "Corrosion"
   :base    "any 1h weapon"
   :effects [{:effect "Physical damage you would deal with this weapon is dealt as acid damage instead."
@@ -382,7 +387,7 @@
              :tags   #{"critical"}}
             {:effect "Picks you wield are considered to have the Dual Wielding trait."
              :tags   #{"utility"}}
-            {:effect "When you deal a natural critical strike, you take true damage equal to thrice the difference between your natural roll and 20 (e.g. take 6 damage after critting with an 18, 0 with a 20)."}]}
+            {:effect "When you score a natural critical strike, you take true damage equal to thrice the difference between your natural roll and 20 (e.g. take 6 damage after critting with an 18, 0 with a 20)."}]}
  {:name     "Template"
   :base     "string"
   :effects  [{:effect "description"}]

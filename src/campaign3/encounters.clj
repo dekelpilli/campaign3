@@ -18,24 +18,22 @@
 (def positive-encounters (db/load-all :positive-encounters))
 
 (defn- add-encounter! [type]
-  (when u/session
-    (db/execute! {:update :analytics
-                  :set    {:amount [:+ :amount 1]}
-                  :where  [:and
-                           [:= :session u/session]
-                           [:= :type (str "encounter" :positive)]]}))
+  (u/record! (str "encounter" type) 1)
   type)
 
-(defn travel [^long days] ; TODO track total days spent (travelling or otherwise), could have campaign things happen on certain dates?
+(defn pass-time [days]
+  (u/record! "days:other" days))
+
+(defn travel [days]
+  (u/record! "days:travel" days)
   (let [had-random? (when (bound? #'u/session)
-                      (-> (db/execute! {:select [:amount]
+                      (-> (db/execute! {:select [[[:> :amount 0] :had-random]]
                                         :from   [:analytics]
                                         :where  [:and
                                                  [:= :session u/session]
                                                  [:= :type "encounter:random"]]})
                           (first)
-                          (:amount)
-                          (> 0)))
+                          (:had-random)))
         random-encounter-prob (if had-random? 0.10 0.25)] ;TODO adjust numbers once world map is done
     (into (sorted-map)
           (map (fn [i]
