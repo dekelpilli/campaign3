@@ -2,9 +2,24 @@
             {:effect "B" :points 20}
             {:effect "C" :points 10}
             {:effect "+1 to your Strength maximum." :upgradeable false :points 20}]
- :lawrence [{:effect "+5 feet to each of your speeds per level of exhaustion on you." :points 10}
-            {:effect "+1 to saves and attacks you have disadvantage on while exhausted." :points 10}
-            {:effect "+1AB for attacks targeting an enemy other than the first enemy you targeted on that turn." :points 10}
-            {:effect "+20% to not gain exhaustion when your Frenzy ends." :upgradeable false :points 10}
-            {:effect "Your weapon gains the Forceful trait." :upgradeable false :points 10}
-            {:effect "+1 to your maximum Dexterity." :upgradeable false :points 30}]}
+ :lawrence [{:effect "+5 feet to each of your speeds per level of fatigue on you."
+             :points 10
+             :tags   #{"utility"}}
+            {:effect "+1 to saves and attacks you have disadvantage on while fatigued."
+             :points 10
+             :tags   #{"survivability"}}
+            {:effect "+1AB for attacks targeting an enemy other than the first enemy you targeted on that turn."
+             :points 10
+             :tags   #{"accuracy"}}
+            {:effect      "+20% to not gain fatigue when your Frenzy ends."
+             :upgradeable false
+             :points      10
+             :tags        #{"utility"}}
+            {:effect      "Your weapon gains the Forceful trait."
+             :upgradeable false
+             :points      10
+             :tags        #{"damage"}}
+            {:effect      "+1 to your maximum Dexterity."
+             :upgradeable false
+             :points      30
+             :tags        #{"utility"}}]}

@@ -230,6 +230,7 @@
                                [:character :text [:not nil]]
                                [:points :integer [:not nil]]
                                [:upgradeable :boolean [:not nil]]
+                               [:tags :jsonb]
                                [[:primary-key :effect :character]]]}))
 
 (defn insert-character-enchants! []
@@ -243,10 +244,10 @@
                                             (map (fn [enchant]
                                                    (-> enchant
                                                        (assoc :character (name character))
-                                                       (update :upgradeable (complement false?)))))
+                                                       (update :upgradeable (complement false?))
+                                                       (update :tags (comp u/jsonb-lift vec)))))
                                             enchants))
                                     []))}))
-
 
 (defn create-special-armours! []
   (db/execute! {:create-table :special-armours
@@ -259,6 +260,23 @@
   (create-special-armours!)
   (db/execute! {:insert-into [:special-armours]
                 :values      (load-data "special-armour")}))
+
+(defn create-tarot-cards! []
+  (db/execute! {:create-table :tarot-cards
+                :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:effect :text [:not nil]]
+                               [:random :jsonb]
+                               [:weighting :integer [:not nil]]]}))
+
+(defn insert-tarot-cards! []
+  (drop! :tarot-cards)
+  (create-tarot-cards!)
+  (db/execute! {:insert-into [:tarot-cards]
+                :values      (map
+                               (fn [card] (-> card
+                                              (update :weighting (fnil identity 1))
+                                              (update :random u/jsonb-lift)))
+                               (load-data "tarot"))}))
 
 (defn create-monsters! []
   (db/execute! {:create-table :monsters
@@ -301,7 +319,8 @@
                 (insert-curios!)
                 (insert-divinity-paths!)
                 (insert-character-enchants!)
-                (insert-special-armours!)])))
+                (insert-special-armours!)
+                (insert-tarot-cards!)])))
 
 (defn backup-table! [table]
   (->> (db/load-all table)

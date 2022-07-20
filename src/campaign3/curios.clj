@@ -48,6 +48,6 @@
                                            weighting
                                            tags)
                                          (assoc e :weighting))))
-                             (e/->valid-enchant-fn))]
+                             (u/weighted-sampler))]
         (e/add-enchants (* 10 (count curios-used))
                         enchants-fn)))))

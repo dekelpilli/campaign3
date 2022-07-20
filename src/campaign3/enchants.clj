@@ -56,12 +56,7 @@
 (defn valid-enchants [base base-type]
   (filterv #(compatible? base base-type %) enchants))
 
-(defn ->valid-enchant-fn [valid-enchants]
-  (r/alias-method-sampler
-    (mapv #(dissoc % :weighting) valid-enchants)
-    (mapv :weighting valid-enchants)))
-
-(def ->valid-enchant-fn-memo (memoize (comp ->valid-enchant-fn valid-enchants)))
+(def ->valid-enchant-fn-memo (memoize (comp u/weighted-sampler valid-enchants)))
 
 (defn add-enchants
   ([base type points-target] (add-enchants points-target (->valid-enchant-fn-memo base type)))

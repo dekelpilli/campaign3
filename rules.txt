@@ -24,6 +24,8 @@ Rings:
 
 Uniques:
     Unique items are, lore-wise, failed attempts creating relics, or at replicating items from myths/folk stories
+    Uniques on 2H weapons still only take up one enchantment slot
+    Uniques cannot be moved to other gear slots, but can be moved within the slot + restriction
 
 Relics:
     Relics related to a specific personality are unlocked at a certain quest state.
@@ -61,6 +63,7 @@ Helmets:
     Can be destroyed for 2 orbs of personality, regardless of mods
     Players can attempt to mend a fractured helmet:
         Each mod has 40% chance to stay the same, 30% to upgrade (to the next level), 30% chance to remove the mod completely
+        Only character enchants are affected by this (non-char enchants can be added on creation via tarot cards)
 
 Orb of personality:
     Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)

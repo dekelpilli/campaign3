@@ -8,18 +8,9 @@
 
 (def all-rings (->> (db/load-all :rings)
                     (mapv #(update % :randoms randoms/randoms->fn))))
-(def synergy-rings (filterv :synergy all-rings))
-(def regular-rings (filterv (complement :synergy) all-rings))
 
-(defn new-non-synergy []
-  (->> regular-rings
-       (r/sample)
-       (u/fill-randoms)))
-
-(defn new-synergy []
-  (->> synergy-rings
-       (r/sample)
-       (u/fill-randoms)))
+(defn new-rings [n]
+  (r/sample-without-replacement n all-rings))
 
 (defn sacrifice []
   (when-let [sacrificed-rings (-> (p/>>input "Which rings are being sacrificed?"

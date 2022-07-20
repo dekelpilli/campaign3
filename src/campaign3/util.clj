@@ -34,3 +34,8 @@
 
 (defn assoc-by [f coll]
   (into {} (map (juxt f identity)) coll))
+
+(defn weighted-sampler [coll]
+  (r/alias-method-sampler
+    (mapv #(dissoc % :weighting) coll)
+    (mapv :weighting coll)))

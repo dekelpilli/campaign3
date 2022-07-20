@@ -8,7 +8,10 @@
 
 (def character-enchants (as-> (db/load-all :character-enchants) $
                               (group-by :character $)
-                              (update-vals $ #(mapv (fn [e] (dissoc e :character)) %))))
+                              (update-vals $ #(mapv (fn [e] (-> e
+                                                                (dissoc :character)
+                                                                (update :tags set)))
+                                                    %))))
 
 (defn new []
   (when-let [enchants (p/>>item "Character name:" character-enchants)]

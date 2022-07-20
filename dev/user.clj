@@ -21,6 +21,7 @@
               [randoms :as randoms]
               [relics :as relics]
               [rings :as rings]
+              [tarot :as tarot]
               [uniques :as uniques]
               [util :as u])))
 

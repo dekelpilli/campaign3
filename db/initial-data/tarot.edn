@@ -1,0 +1,98 @@
+[{:name   "The Fool"
+  :effect "This turn in uses four random cards instead of the ones actually turned in."}
+ {:name   "The Magician"
+  :effect "The resulting item also contains a modifier that grants +1 Intelligence. This does not affect the permanent version of the item."}
+ {:name   "The High Priestess"
+  :effect "In addition to the regular rewards of this set, you may also choose a theme for which a new Divinity Path will be created, factoring in suits used in this turn in."}
+ {:name   "The Empress"
+  :effect "The resulting item also contains a modifier that grants +1 Charisma. This does not affect the permanent version of the item."}
+ {:name   "The Emperor"
+  :effect "The resulting item also contains a modifier that grants +1 Wisdom. This does not affect the permanent version of the item."}
+ {:name   "The Hierophant"
+  :effect "You also gain Divine Dust when turning in this set."}
+ {:name   "The Lovers"
+  :effect "This card turn in only requires 2 cards."}
+ {:name   "The Chariot"
+  :effect "The resulting item also contains a modifier that grants +5 feet to each of your speeds. This does not affect the permanent version of the item."}
+ {:name   "Strength"
+  :effect "The resulting item also contains a modifier that grants +1 Strength. This does not affect the permanent version of the item."}
+ {:name   "Hermit"
+  :effect "You also gain one Orb of Personality when turning in this set."}
+ {:name   "Wheel of Fortune"
+  :effect "You also gain one loot roll when turning in this set."}
+ {:name   "Justice"
+  :effect "You also gain four Tarot cards when turning in this set."}
+ {:name   "The Hanged Man"
+  :effect "The resulting item also contains a modifier that grants +1 Dexterity. This does not affect the permanent version of the item."}
+ {:name   "Death"
+  :effect "You can burn this card to obtain two new Tarot cards."}
+ {:name   "Temperance"
+  :effect "Cup cards increase the value of this item by twice as much."}
+ {:name   "Devil"
+  :effect "The resulting item also contains a modifier that grants +1 global damage. This does not affect the permanent version of the item."}
+ {:name   "Tower"
+  :effect "25% for the result(s) of this set to be destroyed, 75% for the result(s) of this set to be duplicated."}
+ {:name   "Star"
+  :effect "The resulting item will be an armour item on a random special base."}
+ {:name   "Moon"
+  :effect "You also gain two non-synergy rings when turning in this set."}
+ {:name   "Sun"
+  :effect "You also gain two synergy rings when turning in this set."}
+ {:name   "Judgement"
+  :effect "One card of your choice from this set is refunded on turn in."}
+ {:name   "World"
+  :effect "You also gain an advantaged CR amulet when turning in this set."}
+ {:name   "%s of Swords"
+  :effect "You gain %s additional gold when turning in this set. +1 minimum modifiers with the 'damage' or 'accuracy' tags."
+  :random {:preset :range
+           :args   [1 11]}}
+ {:name   "%s of Wands"
+  :effect "You gain %s additional gold when turning in this set. +1 minimum modifiers with the 'magic' or 'critical' tags."
+  :random {:preset :range
+           :args   [1 11]}}
+ {:name   "%s of Cups"
+  :effect "You gain %s additional gold when turning in this set. +1 minimum modifiers with the 'survivability' or 'control' tags."
+  :random {:preset :range
+           :args   [1 11]}}
+ {:name   "%s of Pentacles"
+  :effect "You gain %s additional gold when turning in this set. +1 minimum modifiers with the 'utility' or 'wealth' tags."
+  :random {:preset :range
+           :args   [1 11]}}
+
+ {:name   "Queen of Swords"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
+ {:name   "King of Swords"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
+ {:name   "Queen of Wands"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'magic' or 'critical' tags."}
+ {:name   "King of Wands"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'magic' or 'critical' tags."}
+ {:name   "Queen of Cups"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'survivability' or 'control' tags."}
+ {:name   "King of Cups"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'survivability' or 'control' tags."}
+ {:name   "Queen of Pentacles"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
+ {:name   "King of Pentacles"
+  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
+
+ {:name   "Page of Swords"
+  :effect "The resulting item is a helmet and you design one modifier to be added to your helmet enchant pool. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
+ {:name   "Page of Wands"
+  :effect "The resulting item is a helmet and you design one modifier to be added to your helmet enchant pool. +1 minimum modifiers with the 'magic' or 'critical' tags."}
+ {:name   "Page of Cups"
+  :effect "The resulting item is a helmet and you design one modifier to be added to your helmet enchant pool. +1 minimum modifiers with the 'survivability' or 'control' tags."}
+ {:name   "Page of Pentacles"
+  :effect "The resulting item is a helmet and you design one modifier to be added to your helmet enchant pool. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
+
+ {:name   "Knight of Swords"
+  :effect "The resulting item is a relic. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
+ {:name   "Knight of Wands"
+  :effect "The resulting item is a relic. +1 minimum modifiers with the 'magic' or 'critical' tags."}
+ {:name   "Knight of Cups"
+  :effect "The resulting item is a relic. +1 minimum modifiers with the 'survivability' or 'control' tags."}
+ {:name   "Knight of Pentacles"
+  :effect "The resulting item is a relic. +1 minimum modifiers with the 'utility' or 'wealth' tags."}]
+
+;TODO weightings
+;     differentiate king and queen somehow? weapon vs armour unique?

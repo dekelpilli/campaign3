@@ -12,9 +12,12 @@
 (defn- sample-fn [vs]
   (fn sample-random [] (r/sample vs)))
 
+(defn random->fn [random]
+  (-> random random->values-vec sample-fn))
+
 (defn randoms->fn [randoms]
   (cond
-    (vector? randoms) (apply juxt (map (comp sample-fn random->values-vec) randoms))
+    (vector? randoms) (apply juxt (map random->fn randoms))
     (map? randoms) (random->values-vec randoms)))
 
 (defn- random->weighting-multiplier [{:keys [preset] :as random}]

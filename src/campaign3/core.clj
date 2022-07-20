@@ -10,6 +10,7 @@
               [paths :as paths]
               [relics :as relics]
               [rings :as rings]
+              [tarot :as tarot]
               [uniques :as uniques]
               [util :as u])
             [randy.core :as r]
@@ -22,12 +23,12 @@
        :action uniques/new}
    3  {:name   "Amulet"
        :action amulets/new}
-   4  {:name   "Non-synergy ring"
-       :action rings/new-non-synergy} ;TODO reconsider having two loot rolls for rings
-   5  {:name   "Synergy ring"
-       :action rings/new-synergy}
-   6  {:name   "Enchanted item"
+   4  {:name   "Rings"
+       :action #(rings/new-rings 2)}
+   5  {:name   "Enchanted item"
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
+   6  {:name   "Tarot card"
+       :action (fn tarot-loot [] (repeatedly 2 tarot/new))}
    7  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
    8  {:name   "Curios"
