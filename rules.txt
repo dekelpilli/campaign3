@@ -65,6 +65,11 @@ Helmets:
         Each mod has 40% chance to stay the same, 30% to upgrade (to the next level), 30% chance to remove the mod completely
         Only character enchants are affected by this (non-char enchants can be added on creation via tarot cards)
 
+Tarot:
+    Tarot set turn ins must include exactly 4 cards unless specified otherwise
+    Unless specified otherwise, the base result of a tarot turn in is a 20 point magic item on a random base
+    Minimum enchant tags add random enchants from the general pool until the minimum is met. Major arcana/trump cards are applied last.
+
 Orb of personality:
     Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
     After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable) based on point value on the helmet

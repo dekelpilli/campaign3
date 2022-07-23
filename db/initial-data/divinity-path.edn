@@ -1,4 +1,4 @@
-[{:name   "Touch of Subjective Truth"
+[{:name   "Subjective Truth"
   :levels [{:effect "You are considered to be proficient in Deception and Insight if you have used a non-cantrip Illusion spell since your last long rest."
             :tags   #{"magic" "utility"}}
            {:effect "Creatures that currently believe one of your illusions are real have disadvantage when attacking you."
@@ -9,7 +9,7 @@
             :tags   #{"accuracy"}}
            {:effect "No more than once per conversation, when you tell a lie, you may immediately learn if one person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
             :tags   #{"utility"}}]}
- {:name   "Touch of Distributed Rejuvenation"
+ {:name   "Distributed Rejuvenation"
   :levels [{:effect "You and allies within 15 feet of you have -2 critical hit requirement for death saving throws, and gain temporary hit points equal to your level when they critically succeed on a death saving throw."
             :tags   #{"survivability"}}
            {:effect "Creatures you have healed with the use of a spell or a Medicine check in the last minute regain 1 hit point at the start of their turns."
@@ -19,7 +19,7 @@
            {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat. Additionally, add your outgoing healing bonus to the life gained by downed allies you heal with Medicine checks."
             :tags   #{"utility"}}
            {:effect "When you cast a spell that grants hit points, you may choose to cause the spell to be upcast by up to 3 spell levels, to a maximum of 6th level. The spell consumes resources as if it had been cast normally."}]}
- {:name   "Touch of Eternal Vigour"
+ {:name   "Eternal Vigour"
   :levels [{:effect "+1 resistance to damage for each previous time you've been hit per round."
             :tags   #{"survivability"}}
            {:effect "You have +3 to maximum hit points, and you have +1 maximum per armour relic level."
@@ -30,14 +30,14 @@
             :tags   #{"survivability"}}
            {:effect "Once per round when you fail a saving throw against an effect that would cause a condition, you may attempt the save again."
             :tags   #{"survivability"}}]}
- {:name   "Touch of Perpetual Learning" ;TODO
+ {:name   "Perpetual Learning" ;TODO
   :levels [{:effect "Whenever you cast a divination spell, you gain a number of questions about a creature you can see equal to the spell's level (including upcasts), or 1 for cantrips."
             :tags   #{"utility" "magic"}}
            {}
            {}
            {}
            {}]}
- {:name   "Touch of Unrelenting Fortune"
+ {:name   "Unrelenting Fortune"
   :levels [{:effect "The quantity of crafting items and curios you find from loot rolls is increased by 1."
             :tags   #{"wealth"}}
            {:effect "The cost of upgrading your relic levels is reduced by 10%."
@@ -48,7 +48,7 @@
             :tags   #{"magic"}}
            {:effect "Your amulet's trait is always active."
             :tags   #{"utility"}}]}
- {:name   "Touch of Wrathful Judgement"
+ {:name   "Wrathful Judgement"
   :levels [{:effect "Enemies that damage you, or land a killing blow against an ally of yours, become marked by Brand of Vengeance for a minute. Creatures marked with BoV have +1 damage taken from you."
             :tags   #{"damage"}}
            {:effect "Creatures marked by you now have -1 global damage."
@@ -59,7 +59,7 @@
             :tags   #{"critical"}}
            {:effect "Creatures that attack you or cast a spell that forces you to make a save take thorns of 5 radiant damage."
             :tags   #{"damage"}}]}
- {:name   "Touch of Vicious Combat"
+ {:name   "Vicious Combat"
   :levels [{:effect "You and your allies gain +1 damage in battle while outnumbered (>0hp only)."
             :tags   #{"damage"}}
            {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds. Creatures of your choice within 10 feet of you also gain this proficiency."
@@ -70,7 +70,7 @@
             :tags   #{"accuracy"}}
            {:effect "One of your weapons has an additional enchantment slot."
             :tags   #{"utility"}}]}
- {:name   "Touch of Unbound Arcana"
+ {:name   "Unbound Arcana"
   :levels [{:effect "You have an additional first level spell slot, assuming you already have at least one."
             :tags   #{"magic"}}
            {:effect "When you upcast a spell, you may cast it at a level one above the spell slot consumed."
@@ -81,7 +81,7 @@
             :tags   #{"magic"}}
            {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed), you may make Constitution saving throw against a DC of 10 + twice the spell slot level used. On a success, you regain the consumed spell slot."
             :tags   #{"magic"}}]}
- {:name   "Touch of Arcane Combat"
+ {:name   "Arcane Combat"
   :levels [{:effect "All weapons you use are considered to have the Conduit trait."
             :tags   #{"magic"}}
            {:effect "You may cast spells and cantrips you know that have a casting time of 1 action or 1 bonus action as a reaction instead of making an opportunity attack."
@@ -92,7 +92,7 @@
             :tags   #{"accuracy"}}
            {:effect "You have +3 spell damage if you have made a weapon attacked in the last 18 seconds. You have +3 weapon damage if you have used a spell slot in the last 18 seconds."
             :tags   #{"accuracy"}}]}
- {:name   "Touch of Elemental Mastery"
+ {:name   "Elemental Mastery"
   :levels [{:effect "Your critical die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by two."
             :tags   #{"critical"}}
            {:effect "You can cast Absorb Elements an amount of times equal to your attribute modifier of choice, to a minimum of once, per long rest."
@@ -103,7 +103,7 @@
             :tags   #{"magic" "damage"}}
            {:effect "+1 AB with attacks that would deal elemental damage damage, and +1 spell save DC to spells that would deal elemental damage."
             :tags   #{"accuracy"}}]}
- {:name   "Touch of Volatile Presence" ;TODO
+ {:name   "Volatile Presence" ;TODO
   :levels ["You may conjure a piece of Adventuring Gear worth between 1cp and 10gp (inclusive). Items conjured in this way dissipate after 10 minutes. You may do this 5 times per long rest. (For items not on the list, you can ask me an I might be willing to let you conjure anyway)."
            "When you make an opportunity attack, you may make a proficient spell attack against that target instead (attribute of choice). On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
            "You learn the Mage Hand cantrip. This does not count towards your limit of known cantrips. You may cast Mage Hand requiring no verbal or somatic components, as well as dismiss and control it as a bonus action. Additionally, it is no longer restricted to 10 pounds - you may make checks with an attribute of choice equivalent to strength checks to determine the hand's power. This cannot be used for creature interactions (e.g. shoves)."
@@ -114,7 +114,7 @@
            "You may cast Temple of The Gods once per long rest. When cast in this way, the temple must be dedicated to Eion. While in a Temple of the Gods dedicated to Eion, you may cast Conjuration spells at two levels above its regular spell level (normally the spell slot level used)."
            "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks."
            "You may cast Create Magen once per long rest. When cast in this way, the maximum hit point reduction is instead 4 times the CR of the Magen summoned, but the reduction only lasts as long as the Magen is alive. You may desummon any of your Magens at will."]}
- {:name   "Touch of Nature's Influence"
+ {:name   "Nature's Influence"
   :levels [{:effect "+1 expertise die with Survival when in nature or when foraging materials from creatures."
             :tags   #{"utility" "wealth"}}
            {:effect "You are permanently under the effects of the Speak with Animals spell."
@@ -125,7 +125,7 @@
             :tags   #{"damage" "magic" "utility"}}
            {:effect "You have -1 critical hit requirement against enemies under the effect of a non-magical condition, and when you land a natural critical hit and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
             :tags   #{"critical" "control"}}]}
- {:name   "Touch of Controlled Morbidity"
+ {:name   "Controlled Morbidity"
   :levels [{:effect "You and your undead minions are at least resistant to necrotic damage and have +1d6 necrotic damage while you have an Undead creature's amulet effect active."
             :tags   #{"damage" "survivability"}}
            {:effect "You gain +1 necrotic damage for a minute (stacking) whenever you cast a Necromancy spell."
@@ -133,6 +133,6 @@
            {:effect "You are proficient in Constitution saving throws while concentrating on a non-cantrip Necromancy spell."
             :tags   #{"magic" "survivability"}}
            {:effect "You learn the Finger of Death spell with the Cyneburg’s Shadowed Finger of Death variation. In addition to regular casting you may be permitted to do with this spell, you may cast it on yourself once per long rest without consuming a spell slot. If this spell kills a living creature, If a creature is killed by a Finger of Death sell you cast, you may cast Soul Cage to capture its soul."
-            :tags   #{"magic" "survivability"}}
+            :tags   #{"magic"}}
            {:effect "You may choose to convert any damage you deal to Necrotic damage. Additionally, no more than {Prof} times per long rest, you may convert incoming damage to Necrotic damage."
             :tags   #{"damage" "survivability"}}]}]

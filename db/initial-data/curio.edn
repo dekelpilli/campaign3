@@ -4,27 +4,27 @@
     {}
     enchants/enchants)
 ;TODO add more modifiers of tags where multiplier is 50+, update multipliers accordingly
-[{:name       "Curio of Power"
+[{:name       "Power"
   :tag        "damage"
   :multiplier 3}
- {:name       "Curio of Devastation"
+ {:name       "Devastation"
   :tag        "critical"
   :multiplier 50}
- {:name       "Curio of Inevitability"
+ {:name       "Inevitability"
   :tag        "accuracy"
   :multiplier 10}
- {:name       "Curio of Fortitude"
+ {:name       "Fortitude"
   :tag        "survivability"
   :multiplier 3}
- {:name       "Curio of Weakness"
+ {:name       "Weakness"
   :tag        "control"
   :multiplier 50}
- {:name       "Curio of Arcana"
+ {:name       "Arcana"
   :tag        "magic"
   :multiplier 10}
- {:name       "Curio of Abundance"
+ {:name       "Abundance"
   :tag        "wealth"
   :multiplier 100}
- {:name       "Curio of Sundry"
+ {:name       "Sundry"
   :tag        "utility"
   :multiplier 3}]

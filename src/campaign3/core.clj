@@ -7,7 +7,6 @@
               [enchants :as e]
               [helmets :as helmets]
               [mundanes :as mundanes]
-              [paths :as paths]
               [relics :as relics]
               [rings :as rings]
               [tarot :as tarot]
@@ -39,19 +38,25 @@
        :action crafting/new}
    11 {:name   "New relic"
        :action relics/new!}
-   12 {:name   "Prayer stone" ;TODO reduce to 5 per path
-       :action paths/new-divine-dust}})
+   12 {:name   "Divine dust" ;TODO reduce to 5 per path
+       :action (constantly "Divine dust")}})
 
-(defn loot [n]
-  (u/record! (str "loot:" n) 1)
+(defn loot* [n]
   (when-let [{:keys [action]} (get loot-actions n)]
     (action)))
 
-(defn loots [& ns]
-  (doseq [[n amount] (frequencies ns)]
-    (u/record! (str "loot:" n) amount))
+(defn loot [n]
+  (u/record! (str "loot:" n) 1)
+  (loot* n))
+
+(defn loots* [ns]
   (mapv (fn collect-loot [n]
           (let [{:keys [name action]} (get loot-actions n)]
             {:name   (str name " (" n ")")
              :result (when action (action))}))
         ns))
+
+(defn loots [& ns]
+  (doseq [[n amount] (frequencies ns)]
+    (u/record! (str "loot:" n) amount))
+  (loots* ns))

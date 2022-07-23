@@ -11,7 +11,7 @@
  {:name   "The Hierophant"
   :effect "You also gain Divine Dust when turning in this set."}
  {:name   "The Lovers"
-  :effect "This card turn in only requires 2 cards."}
+  :effect "This card turn in only requires 3 cards."}
  {:name   "The Chariot"
   :effect "The resulting item also contains a modifier that grants +5 feet to each of your speeds. This does not affect the permanent version of the item."}
  {:name   "Strength"

@@ -1,44 +1,29 @@
 (ns campaign3.paths
   (:require (campaign3
               [db :as db]
-              [util :as u])
-            [clojure.string :as str]
-            [randy.core :as r]))
+              [helmets :as helmets]
+              [prompting :as p]
+              [util :as u])))
 
-(def prayer-paths (db/load-all :prayer-paths))
+(def divinity-paths (->> (db/load-all :divinity-paths)
+                         (u/assoc-by :name)))
 
-(defn new-divine-dust []
-  (cond->> (-> prayer-paths r/sample :name (str/replace #"^Touch of" "Dust of"))
-           (u/occurred? 1/5) (str "Refined ")))
+(defn- new-path-progress [character]
+  (when-let [{:keys [name]} (p/>>item "New path:" divinity-paths)]
+    {:progress  0
+     :path      name
+     :character character}))
 
-(defn- update-progress! [{:keys [character path] :as new-progression}]
-  ;TODO
-  )
-
-(defn &progress-path! []
-  ;TODO
-  #_(let [done? #(contains? (:taken %) 10)
-        unfinished-paths (filter #(and (not (done? %)) (:enabled? % true)) @prayer-progressions)
-        player-paths (group-by :character unfinished-paths)
-        path-options (->> player-paths
-                          (u/make-options)
-                          (u/display-pairs))
-        current-progression (->> (u/&num)
-                                 (path-options)
-                                 (player-paths)
-                                 (first))
-        prayer-path (->> @prayer-paths
-                         (filter #(= (:path current-progression) (:name %)))
-                         (first))]
-    (when prayer-path
-      (let [progress-index-options (->> (range (reduce max (current-progression :taken)) 10)
-                                        (take 2)
-                                        (map (fn [i] [i (nth (prayer-path :levels) i)]))
-                                        (map (fn [[k v]] [(inc k) v]))
-                                        (into {})
-                                        (u/display-pairs))
-            new-latest (u/&num)
-            valid (and new-latest (contains? progress-index-options new-latest))]
-        (when valid
-          (update-progress!
-            (update current-progression :taken #(conj % new-latest))))))))
+(defn use-dust []
+  (when-let [character (p/>>input "Character:" (keys helmets/character-enchants))]
+    (when-let [{:keys [path progress] :as current-path} (-> (db/execute! {:select [:*]
+                                                                          :from   [:divinity-progress]
+                                                                          :where  [:< :progress 5]})
+                                                            first
+                                                            (or (new-path-progress character)))]
+      (db/execute! {:insert-into   :divinity-progress
+                    :values        [(update current-path :progress inc)]
+                    :on-conflict   [:character :path]
+                    :do-update-set {:progress :EXCLUDED.progress}})
+      {:modifier (get-in divinity-paths [path :levels progress])
+       :tier     (inc progress)})))

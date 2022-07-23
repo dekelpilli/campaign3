@@ -326,5 +326,12 @@
   (->> (db/load-all table)
        (write-data! (str "db/current-state/" (name table) ".edn"))))
 
+(defn create-divinity-progress! []
+  (db/execute! {:create-table :divinity-progress
+                :with-columns [[:character :text [:not nil]]
+                               [:path :text [:not nil]]
+                               [:progress :integer [:not nil]]
+                               [[:primary-key :character :path]]]}))
+
 (defn backup-data! []
   (run! backup-table! [:divinity-progress :relics :analytics]))

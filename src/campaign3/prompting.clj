@@ -66,21 +66,20 @@
          prompt-builder (.getPromptBuilder console-prompt)
          stringified-map (->stringified-map coll opts)
          valid-inputs (set (keys stringified-map))
-         m (into {} (map (juxt str/lower-case identity)) valid-inputs)
-         value-mapper (cond->> identity
-                               coll (comp m)
-                               (map? coll) (comp coll)
-                               coll (comp stringified-map))
-         s (into (sorted-set) (keys m))]
+         lowers->uppers (into {} (map (juxt str/lower-case identity)) valid-inputs)
+         value-mapper (->> (cond->> identity
+                               coll (comp lowers->uppers))
+                           (comp (if (map? coll) coll stringified-map)))
+         s (into (sorted-set) (keys lowers->uppers))]
      (-> prompt-builder
          (.createInputPrompt)
          (.message prompt)
          (.name prompt)
          (cond-> valid-inputs (.addCompleter
                                 (case completer
-                                  :regular (CaseInsensitiveStringsCompleter. s m)
-                                  :comma-separated (CommaSeparatedStringsCompleter. s m false)
-                                  :comma-separated-once (CommaSeparatedStringsCompleter. s m true))))
+                                  :regular (CaseInsensitiveStringsCompleter. s lowers->uppers)
+                                  :comma-separated (CommaSeparatedStringsCompleter. s lowers->uppers false)
+                                  :comma-separated-once (CommaSeparatedStringsCompleter. s lowers->uppers true))))
          (.addPrompt))
      (when-let [input (-> (.prompt console-prompt (.build prompt-builder))
                           ^InputResult (get prompt)
