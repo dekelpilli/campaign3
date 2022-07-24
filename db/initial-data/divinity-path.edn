@@ -1,5 +1,5 @@
 [{:name   "Subjective Truth"
-  :info   "Focuses on improving deceptive conversations out of combat, and illusions spells in combat."
+  :info   "Focuses on improving deceptive conversations out of combat, and illusions spells both in and out of combat."
   :levels [{:effect "You are considered to be proficient in Deception and Insight if you have used a non-cantrip Illusion spell since your last long rest."
             :tags   #{"magic" "utility"}}
            {:effect "Creatures that currently believe one of your illusions are real have disadvantage when attacking you."
@@ -34,14 +34,18 @@
             :tags   #{"survivability"}}
            {:effect "Once per round when you fail a saving throw against an effect that would cause a condition, you may attempt the save again."
             :tags   #{"survivability"}}]}
- {:name   "Perpetual Learning" ;TODO
-  :info   ""
-  :levels [{:effect "Whenever you cast a divination spell, you gain a number of questions about a creature you can see equal to the spell's level (including upcasts), or 1 for cantrips."
-            :tags   #{"utility" "magic"}}
-           {}
-           {}
-           {}
-           {}]}
+ {:name   "Perpetual Learning"
+  :info   "Improves your ability to acquire knowledge through skill checks, and improves Diviniation spells."
+  :levels [{:effect "Any text within line of sight within 50 metres of you becomes readable to you regardless of its language, distance/size, legibility, and lighting."
+            :tags   #{"utility"}}
+           {:effect "When you make a Nature, Investigation, History, or Religion check, you may choose to treat the roll as though you had rolled an 11."
+            :tags   #{"utility"}}
+           {:effect "You may learn any Divination spell as if it were on your class' spell list."
+            :tags   #{"magic"}}
+           {:effect "You gain one question about a creature you can see at the start of each round in combat while under the effect of a Divination spell. You have +1AC against attacks from creatures you've learned about directly via a question. Your non-cantrip Divination spells no longer require concentration."
+            :tags   #{"magic" "utility" "survivability"}}
+           {:effect "At the start of each of your turns in combat while conscious, you have a percent chance to be affected by Warrior's Instincts until the start of your next turn equal to double the number of Divination spells you have prepared, to a minimum of 10%."
+            :tags   #{"magic" "survivability" "utility" "accuracy"}}]}
  {:name   "Unrelenting Fortune"
   :info   "Improves your luck and your ability to acquire better items."
   :levels [{:effect "The quantity of crafting items and curios you find from loot rolls is increased by 1."
