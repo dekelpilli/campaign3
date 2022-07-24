@@ -5,10 +5,11 @@
               [util :as u])
             [clojure.core.match :refer [match]]
             [clojure.string :as str]
-            [randy.core :as r]))
+            [randy.core :as r]
+            [randy.rng :as rng]))
 
 (def ^:private extra-loot-threshold 13)
-(def ^:private extra-loot-step 6)
+(def ^:private extra-loot-step 2)
 (def ^:private races ["Aarakocra" "Aasimar" "Bugbear" "Centaur" "Changeling" "Dragonborn" "Dwarf" "Elf" "Firbolg"
                       "Genasi" "Gith" "Gnome" "Goblin" "Goliath" "Half-Elf" "Half-Orc" "Halfling" "Hobgoblin" "Human"
                       "Kalashtar" "Kenku" "Kobold" "Lizardfolk" "Loxodon" "Minotaur" "Orc" "Satyr" "Shifter" "Tabaxi"
@@ -45,43 +46,29 @@
           (map (fn [i] [i (r/weighted-sample random-encounter-prob)]))
           (range 1 (inc days)))))
 
-(defn- add-loot [extra-loot-factor base-loot]
-  (let [extra-loot? (pos? extra-loot-factor)
-        loot (if extra-loot?
-               (concat base-loot (repeat (-> extra-loot-factor (/ extra-loot-step) int) "1d16"))
-               base-loot)
-        remainder (mod extra-loot-factor extra-loot-step)
-        remainder-above-half-step? (> remainder (int (/ extra-loot-step 2)))
-        bonus-loot (match [extra-loot? remainder remainder-above-half-step?]
-                          [false _ _] []
-                          [_ 0 _] []
-                          [true _ true] ["2d8"]
-                          [true _ false] ["1d12"])]
-    (concat loot bonus-loot)))
-
 (defn- calculate-loot [difficulty investigations]
-  (let [sum (transduce (map parse-long) + 0 investigations)
-        extra-loot-minimum (* extra-loot-threshold (count investigations))
-        extra-loot-factor (- sum extra-loot-minimum)
+  (let [extra-loot-sum (transduce (map (fn [s] (- (parse-long s) extra-loot-threshold))) + 0 investigations)
         base-loot (case difficulty
-                    :easy ["2d8"]
-                    :medium ["2d8" "1d12"]
-                    :hard ["1d16" "1d16"]
-                    :deadly ["1d16" "1d16" "1d12"])]
-    (->> base-loot
-         (add-loot extra-loot-factor)
-         (frequencies)
-         (sort-by {"1d16" 1 "2d8" 2 "1d12" 3}))))
+                    (:easy :medium) 0 ;TODO reduce values if dungeon fight
+                    :hard 1
+                    :deadly 2
+                    :boss 4)]
+    (->> (count investigations)
+         (* extra-loot-step)
+         (/ extra-loot-sum)
+         int
+         (+ base-loot))))
 
-(defn rewards [] ;TODO adjust for 1d12 format, reduce values, account for one-off vs in-dungeon fights? add boss tier?
-  (when-let [difficulty (p/>>item [:easy :medium :hard :deadly])]
+(defn rewards []
+  (when-let [difficulty (p/>>item [:easy :medium :hard :deadly :boss])]
     (when-let [investigations (some-> (p/>>input "List investigations:")
                                       (str/split #","))]
       {:xp   (case difficulty
-               :easy (+ 6 (rand-int 2))
-               :medium (+ 8 (rand-int 3))
-               :hard (+ 11 (rand-int 3))
-               :deadly (+ 13 (rand-int 4)))
+               :easy (+ 6 (rng/next-int r/default-rng 2))
+               :medium (+ 8 (rng/next-int r/default-rng 3))
+               :hard (+ 11 (rng/next-int r/default-rng 3))
+               :deadly (+ 13 (rng/next-int r/default-rng 4))
+               :boss (+ 15 (rng/next-int r/default-rng 4)))
        :loot (calculate-loot difficulty investigations)})))
 
 (defn new-positive []

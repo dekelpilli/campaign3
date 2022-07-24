@@ -38,7 +38,7 @@
        :action crafting/new}
    11 {:name   "New relic"
        :action relics/new!}
-   12 {:name   "Divine dust" ;TODO reduce to 5 per path
+   12 {:name   "Divine dust"
        :action (constantly "Divine dust")}})
 
 (defn loot* [n]

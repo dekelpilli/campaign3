@@ -307,7 +307,7 @@
                                [:amount :integer [:not nil]]
                                [[:primary-key :type :session]]]}))
 
-(defn insert-data! []
+(defn reload-data! []
   (db/in-transaction
     (transduce (map (comp :next.jdbc/update-count first)) + 0
                [(insert-armours!)
