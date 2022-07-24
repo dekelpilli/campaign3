@@ -46,3 +46,5 @@
 
 (defn from-cr []
   (some-> (cr) cr->output))
+
+;TODO get by CR+monster type

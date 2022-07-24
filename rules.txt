@@ -17,10 +17,9 @@ Enchant rules:
     Die size increases increase the size of a single die (2d6 -> 1d6 + 1d8, 8d6 -> 5d6 + 1d8).
 
 Rings:
-    Max number of rings worn = prof bonus
-    Max number of ring points used = char level + highest attribute modifier
+    Max number of ring points used = char level + prof bonus
     Sacrifice: Smash n rings together (n > 1) to get a choice of 1 from n unique new rings that can't be of the same type as any of the inputs.
-    Synergy rings = rings whose name starts with "The" = rings whose purpose is to interact with other rings.
+    Synergy rings = rings whose name starts with "The" = rings whose modifier interacts with other rings.
 
 Uniques:
     Unique items are, lore-wise, failed attempts creating relics, or at replicating items from myths/folk stories

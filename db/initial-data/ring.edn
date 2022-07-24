@@ -10,15 +10,9 @@
  {:name   "The Lone Wolf"
   :effect "-1 critical hit requirement while not wearing any synergy rings that are not The Lone Wolf."
   :points 6}
- {:name   "The Conduit"
-  :effect "+1 to maximum number of rings."
-  :points 1}
  {:name   "The Joker"
   :effect "This ring has no effect, but may count as any ring type you choose. It can only count as one ring type at one time."
   :points 1}
- {:name   "The Investment"
-  :effect "-1 to maximum number of rings worn."
-  :points -4} ;TODO remove rings worn cap?
  {:name   "The Speedster"
   :effect "+5 feet to all of your speed types for each 'The Speedster' ring worn."
   :points 5}

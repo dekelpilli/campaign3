@@ -42,16 +42,15 @@
   ["Common" "Dwarvish" "Elvish" "Giant" "Gnomish" "Goblin" "Halfling" "Orc"
    "Abyssal" "Celestial" "Draconic" "Deep Speech" "Infernal" "Primordial" "Sylvan" "Undercommon"])
 
-(defmethod randoms-preset :feats [_] ;TODO update
-  ["Alert" "Athlete" "Actor" "Brawler" "Charger" "Chef" "Crossbow Expert" "Defensive Duelist"
-   "Dual Wielder" "Dungeon Delver" "Durable" "Eldritch Adept" "Grappler" "Fighting Initiate"
-   "Great Weapon Master" "Healer" "Heavy Armor Master" "Inspiring Leader" "Keen Mind" "Light Armor Master"
-   "Mage Slayer" "Magic Initiate" "Martial Adept" "Medium Armor Master" "Metamagic Adept"
-   "Mobile" "Mounted Combatant" "Polearm Master" "Resilient" "Ritual Caster" "Savage Attacker"
-   "Sentinel" "Sharpshooter" "Shield Master" "Skilled" "Skulker" "Specialist" "Spell Sniper"
-   "Spell Touched" "Telekinetic" "Telepathic" "War Caster"])
+(defmethod randoms-preset :feats [_]
+  ["Alert" "Athlete" "Actor" "Blinktouched" "Brawler" "Charger" "Crossbow Expert" "Defensive Duelist" "Dual Wielder"
+   "Dungeon Delver" "Durable" "Eldritch Adept" "Empathic" "Grappler" "Fighting Initiate" "Great Weapon Master"
+   "Healer" "Heavy Armor Master" "Inspiring Leader" "Keen Mind" "Light Armor Master" "Magic Initiate"
+   "Martial Scholar" "Medium Armor Master" "Metamagic Adept" "Mobile" "Mounted Combatant" "Polearm Master"
+   "Resilient" "Ritual Caster" "Sentinel" "Sharpshooter" "Shield Master" "Skilled" "Skulker" "Specialist"
+   "Spell Touched" "Summoner" "Survivor" "Tactician" "Telekinetic" "Telepathic" "War Caster" "Warlord"])
 
-(defmethod randoms-preset :skills [{:keys [type]
+(defmethod randoms-preset :skills [{:keys [type] ;TODO revise due to journey activities?
                                     :or   {type :all}}]
   (case type
     :common ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"]
@@ -83,15 +82,15 @@
   ["Abberation" "Beast" "Celestial" "Construct" "Dragon" "Elemental" "Fey"
    "Fiend" "Giant" "Humanoid" "Monstrosity" "Ooze" "Plant" "Undead"])
 
-(defmethod randoms-preset :cantrips [_] ;TODO add Tome of Heroes cantrips
+(defmethod randoms-preset :cantrips [_]
   ["Acid Splash" "Altered Strike" "Arcane Muscles" "Blade Ward" "Booming Blade" "Calculate" "Chill Touch"
    "Circular Breathing" "Control Flames" "Create Bonfire" "Dancing Lights" "Druidcraft" "Eldritch Blast"
    "Encode Thoughts" "Fire Bolt" "Friends" "Frostbite" "Grapevine" "Green-Flame Blade" "Guidance" "Gust"
-   "Infestation" "Light" "Lightning Lure" "Mage Hand" "Magic Stone" "Mending" "Message" "Mind Sliver"
+   "Hypnic Jerk" "Infestation" "Light" "Lightning Lure" "Mage Hand" "Magic Stone" "Mending" "Message" "Mind Sliver"
    "Minor Illusion" "Mold Earth" "Pestilence" "Poison Spray" "Prestidigitation" "Primal Savagery" "Produce Flame"
    "Ray of Frost" "Resistance" "Sacred Flame" "Sapping Sting" "Shape Water" "Shillelagh" "Shocking Grasp"
-   "Spare the Dying" "Sword Burst" "Thaumaturgy" "Thorn Whip" "Thunderclap" "Toll the Dead" "True Strike"
-   "Vicious Mockery" "Word of Radiance"])
+   "Spare the Dying" "Sword Burst" "Thaumaturgy" "Thorn Whip" "Thunderclap" "Toll the Dead"
+   "Tree Heal" "True Strike" "Vicious Mockery" "Word of Radiance"])
 
 (defmethod randoms-preset :literal [{:keys [values]}] values)
 

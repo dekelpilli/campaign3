@@ -214,6 +214,7 @@
 (defn create-divinity-paths! []
   (db/execute! {:create-table :divinity-paths
                 :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:info :text [:not nil]]
                                [:levels :jsonb [:not nil]]]}))
 
 (defn insert-divinity-paths! []

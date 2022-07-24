@@ -24,6 +24,11 @@
 (defn pass-time [days]
   (u/record! "days:other" days))
 
+;TODO adjust numbers depending on journey activities
+(def default-travel-weightings {nil       75
+                                :positive 5
+                                :random   20})
+
 (defn travel [days]
   (u/record! "days:travel" days)
   (let [had-random? (when (bound? #'u/session)
@@ -34,12 +39,10 @@
                                                  [:= :type "encounter:random"]]})
                           (first)
                           (:had-random)))
-        random-encounter-prob (if had-random? 0.10 0.25)] ;TODO adjust numbers once world map is done
+        random-encounter-prob (cond-> default-travel-weightings
+                                      had-random? (update :random #(- % 10)))]
     (into (sorted-map)
-          (map (fn [i]
-                 [i
-                  (when (u/occurred? random-encounter-prob)
-                    (add-encounter! (if (u/occurred? 0.2) :positive :random)))]))
+          (map (fn [i] [i (r/weighted-sample random-encounter-prob)]))
           (range 1 (inc days)))))
 
 (defn- add-loot [extra-loot-factor base-loot]
