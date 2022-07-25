@@ -118,18 +118,18 @@
             :tags   #{"magic" "damage"}}
            {:effect "+1 AB with attacks that would deal elemental damage damage, and +1 spell save DC to spells that would deal elemental damage."
             :tags   #{"accuracy"}}]}
- {:name   "Volatile Presence" ;TODO
-  :info   ""
-  :levels ["You may conjure a piece of Adventuring Gear worth between 1cp and 10gp (inclusive). Items conjured in this way dissipate after 10 minutes. You may do this 5 times per long rest. (For items not on the list, you can ask me an I might be willing to let you conjure anyway)."
-           "When you make an opportunity attack, you may make a proficient spell attack against that target instead (attribute of choice). On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
-           "You learn the Mage Hand cantrip. This does not count towards your limit of known cantrips. You may cast Mage Hand requiring no verbal or somatic components, as well as dismiss and control it as a bonus action. Additionally, it is no longer restricted to 10 pounds - you may make checks with an attribute of choice equivalent to strength checks to determine the hand's power. This cannot be used for creature interactions (e.g. shoves)."
-           "Using your movement action, you may prepare teleportation to a space you can see within range of your movement speed. If you also prepare an action on the same turn, the action must have the same trigger, and you may use the same reaction to perform the action and the movement in the order of your choice."
-           "You may cast Summon Construct once per long rest. When cast in this way, you may spend a bonus action to conjure fixes to flaws in the Construct, restoring its hit points by up to twice your level. You may do this no more than twice per minute."
-           "As a bonus action, you may conjure up to 5 stone pillars (5 feet squared each) from the ground on spaces you can see within 60 feet of you. These pillars are 20 feet tall or the height of the ceiling, whichever is shorter. Creatures on those spaces are pushed to a surrounding empty space of your choice, then make a Dex save (ment att of choice) or take 1d10 bludgeoning damage. These pillars last for 10 minutes, and have 17AC and 100HP, disappearing when reaching 0 life. Max 15 active pillars at one time."
-           "When within 5 feet of one of your pillars, you have full visibility from the perspectives of any of your pillars. Additionally, you may choose to make any spell or attack you use originate from another pillar you have created in the same plane. For example, a pillar 500 feet away might make a sword attack against an adjacent creature, or cast Fireball into a room you would otherwise not be able to see."
-           "You may cast Temple of The Gods once per long rest. When cast in this way, the temple must be dedicated to Eion. While in a Temple of the Gods dedicated to Eion, you may cast Conjuration spells at two levels above its regular spell level (normally the spell slot level used)."
-           "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks."
-           "You may cast Create Magen once per long rest. When cast in this way, the maximum hit point reduction is instead 4 times the CR of the Magen summoned, but the reduction only lasts as long as the Magen is alive. You may desummon any of your Magens at will."]}
+ {:name   "Volatile Presence"
+  :info   "Specialises in teleportation and conjuration, without a focus on spellcasting, granting greater control of the battlefield."
+  :levels [{:effect "When you make an opportunity attack, you may make a proficient spell attack against that target instead (attribute of choice). On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
+            :tags   #{"control"}}
+           {:effect "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks."
+            :tags   #{"utility"}}
+           {:effect "Once per turn, as a free action, you may conjure up to 5 stone pillars (5x5 feet each) from the ground on unoccupied spaces you can see within 60 feet of you. These pillars are up to 20 feet tall. These pillars last for 10 minutes, and have 17AC and have HP equal to twice your level, disappearing when reaching 0 life. Max 15 active pillars at one time."
+            :tags   #{"utility"}}
+           {:effect "When within 5 feet of one of your pillars, you have full visibility from the perspectives of any of your pillars. Additionally, you may choose to cause any spell or attack you use originate from another pillar you have created in the same plane. For example, a pillar 500 feet away might make a sword attack against an adjacent creature, or cast Fireball into a room you would otherwise not be able to see. At the end of your turn, any pillar from which an effect originated is destroyed."
+            :tags   #{"utility"}}
+           {:effect "Using your entire movement action, you may prepare teleportation to a space you can see within a range equal to your walking speed. If you also prepare an action on the same turn, the action must have the same trigger, and you may use the same reaction to perform the action and the movement in the order of your choice."
+            :tags   #{"utility"}}]}
  {:name   "Nature's Influence"
   :info   "Provides various in combat and out of combat boons relating to nature."
   :levels [{:effect "+1 expertise die with Survival and Nature when in nature or when foraging materials from creatures."
