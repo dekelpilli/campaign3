@@ -60,21 +60,22 @@
            :args   [1 11]}}
 
  {:name   "Queen of Swords"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
- {:name   "King of Swords"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
  {:name   "Queen of Wands"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'magic' or 'critical' tags."}
- {:name   "King of Wands"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'magic' or 'critical' tags."}
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'magic' or 'critical' tags."}
  {:name   "Queen of Cups"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'survivability' or 'control' tags."}
- {:name   "King of Cups"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'survivability' or 'control' tags."}
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'survivability' or 'control' tags."}
  {:name   "Queen of Pentacles"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
+
+ {:name   "King of Swords"
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
+ {:name   "King of Wands"
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'magic' or 'critical' tags."}
+ {:name   "King of Cups"
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'survivability' or 'control' tags."}
  {:name   "King of Pentacles"
-  :effect "The resulting item is a unique which is added to the pool of uniques. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
+  :effect "The resulting item is a unique item. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
 
  {:name   "Page of Swords"
   :effect "The resulting item is a helmet and you design one modifier to be added to your helmet enchant pool. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}

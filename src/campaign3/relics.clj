@@ -4,6 +4,8 @@
               [prompting :as p]
               [util :as u])))
 
+;TODO entire relic feature
+
 (def ^:private points-per-level 10)
 
 (defn choose-relic [relics]
