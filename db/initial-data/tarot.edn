@@ -95,4 +95,4 @@
   :effect "The resulting item is a relic. +1 minimum modifiers with the 'utility' or 'wealth' tags."}]
 
 ;TODO weightings
-;     differentiate king and queen somehow? weapon vs armour unique?
+;TODO differentiate king and queen somehow? weapon vs armour unique?

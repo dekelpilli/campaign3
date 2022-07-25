@@ -1,5 +1,5 @@
 [{:name   "Subjective Truth"
-  :info   "Focuses on improving deceptive conversations out of combat, and illusions spells both in and out of combat."
+  :info   "Focuses on improving deceptive conversations out of combat, and Illusion spells both in and out of combat."
   :levels [{:effect "You are considered to be proficient in Deception and Insight if you have used a non-cantrip Illusion spell since your last long rest."
             :tags   #{"magic" "utility"}}
            {:effect "Creatures that currently believe one of your illusions are real have disadvantage when attacking you."

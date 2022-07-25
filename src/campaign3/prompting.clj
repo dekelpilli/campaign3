@@ -6,7 +6,8 @@
 (def ^:private console-prompt (ConsolePrompt.))
 (def ^:private input-threshold 10)
 (def default-opts {:completer :regular
-                   :sorted?   true})
+                   :sorted?   true
+                   :none-opt? true})
 
 (defrecord CommaSeparatedStringsCompleter [lowers-set lowers-regular-map once?]
   Completer
@@ -65,21 +66,21 @@
          {:keys [completer]} (merge default-opts opts)
          prompt-builder (.getPromptBuilder console-prompt)
          stringified-map (->stringified-map coll opts)
-         valid-inputs (set (keys stringified-map))
-         lowers->uppers (into {} (map (juxt str/lower-case identity)) valid-inputs)
-         value-mapper (->> (cond->> identity
-                               coll (comp lowers->uppers))
-                           (comp (if (map? coll) coll stringified-map)))
-         s (into (sorted-set) (keys lowers->uppers))]
+         valid-inputs (when (seq stringified-map) (set (keys stringified-map)))
+         lowers->original (into {} (map (juxt str/lower-case identity)) valid-inputs)
+         value-mapper (if valid-inputs
+                        (comp stringified-map lowers->original)
+                        identity)
+         s (into (sorted-set) (keys lowers->original))]
      (-> prompt-builder
          (.createInputPrompt)
          (.message prompt)
          (.name prompt)
          (cond-> valid-inputs (.addCompleter
                                 (case completer
-                                  :regular (CaseInsensitiveStringsCompleter. s lowers->uppers)
-                                  :comma-separated (CommaSeparatedStringsCompleter. s lowers->uppers false)
-                                  :comma-separated-once (CommaSeparatedStringsCompleter. s lowers->uppers true))))
+                                  :regular (CaseInsensitiveStringsCompleter. s lowers->original)
+                                  :comma-separated (CommaSeparatedStringsCompleter. s lowers->original false)
+                                  :comma-separated-once (CommaSeparatedStringsCompleter. s lowers->original true))))
          (.addPrompt))
      (when-let [input (-> (.prompt console-prompt (.build prompt-builder))
                           ^InputResult (get prompt)
@@ -116,7 +117,7 @@
 (defn >>item
   ([coll] (>>item "Choose one from these:" coll))
   ([prompt coll & {:as opts}]
-   (let [{:keys [sorted?]} (merge default-opts opts)
+   (let [{:keys [sorted? none-opt?]} (merge default-opts opts)
          m (if (map? coll)
              (stringify-keys opts coll)
              (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
@@ -130,7 +131,8 @@
                                            (.text %2)
                                            .add))
                              builder
-                             (-> (keys m) (conj "\u001B[31mNone\u001B[0m"))))
+                             (cond-> (keys m)
+                                     none-opt? (conj "\u001B[31mNone\u001B[0m"))))
              .addPrompt)
          (-> (.prompt console-prompt (.build prompt-builder))
              ^ListResult (get prompt)

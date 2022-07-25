@@ -11,9 +11,9 @@
 (def ^:private extra-loot-threshold 13)
 (def ^:private extra-loot-step 2)
 (def ^:private races ["Aarakocra" "Aasimar" "Bugbear" "Centaur" "Changeling" "Dragonborn" "Dwarf" "Elf" "Firbolg"
-                      "Genasi" "Gith" "Gnome" "Goblin" "Goliath" "Half-Elf" "Half-Orc" "Halfling" "Hobgoblin" "Human"
-                      "Kalashtar" "Kenku" "Kobold" "Lizardfolk" "Loxodon" "Minotaur" "Orc" "Satyr" "Shifter" "Tabaxi"
-                      "Tiefling" "Tortle" "Triton" "Vedalken" "Yuan-Ti Pureblood"])
+                      "Genasi" "Gith" "Gnome" "Goblin" "Goliath" "Half-Elf" "Half-Orc" "Halfling" "Harengon" "Hobgoblin"
+                      "Human" "Kalashtar" "Kenku" "Kobold" "Leonin" "Lizardfolk" "Loxodon" "Minotaur" "Orc" "Owlin"
+                      "Satyr" "Shifter" "Tabaxi" "Tiefling" "Tortle" "Triton" "Vedalken" "Yuan-Ti Pureblood"])
 (def ^:private sexes ["female" "male"])
 
 (def positive-encounters (db/load-all :positive-encounters))
@@ -48,11 +48,13 @@
 
 (defn- calculate-loot [difficulty investigations]
   (let [extra-loot-sum (transduce (map (fn [s] (- (parse-long s) extra-loot-threshold))) + 0 investigations)
+        dungeon? (when-not (#{:easy :medium} difficulty)
+                   (p/>>item "In a dungeon?" [true false] {:none-opt? false}))
         base-loot (case difficulty
-                    (:easy :medium) 0 ;TODO reduce values if dungeon fight
-                    :hard 1
-                    :deadly 2
-                    :boss 4)]
+                    (:easy :medium) 0
+                    :hard (if dungeon? 1 0)
+                    :deadly (if dungeon? 2 1)
+                    :boss (if dungeon? 4 2))]
     (->> (count investigations)
          (* extra-loot-step)
          (/ extra-loot-sum)
@@ -60,7 +62,7 @@
          (+ base-loot))))
 
 (defn rewards []
-  (when-let [difficulty (p/>>item [:easy :medium :hard :deadly :boss])]
+  (when-let [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] {:sorted? false})]
     (when-let [investigations (some-> (p/>>input "List investigations:")
                                       (str/split #","))]
       {:xp   (case difficulty
