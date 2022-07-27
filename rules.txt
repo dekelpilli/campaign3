@@ -1,10 +1,10 @@
 Amulets:
     Amulets contain a random trait from a random monster from a given CR.
-    The trait is standardised to not be tied to the creature. For example, "If the derro hits a target within 30 feet of it with a ranged attack with its aklys, it can use its bonus action to retrieve the aklys and make another attack against the same target" -> "If you hit a target within 30 feet of you with a ranged attack, you can use your bonus action to make another attack against the same target"
+    The trait is standardised to not be tied to the creature or its specific actions/items. For example, "If the derro hits a target within 30 feet of it with a ranged attack with its aklys, it can use its bonus action to retrieve the aklys and make another attack against the same target" -> "If you hit a target within 30 feet of you with a ranged attack, you can use your bonus action to make another attack against the same target"
     As a free action at the start or end of a turn in combat, once per long rest, you can activate the trait contained by the amulet for a duration, granting you its effects.
-    The duration of amulet effects is 2 rounds + 1 round for each amulet CR (not effect CR) above 1.
+    The duration of amulet effects is 1 round + 1 round for each amulet CR (not monster CR) above 1.
     When upgrading amulets, or rerolling with crafting items, you may choose to keep the existing effect instead of the new one.
-    Upgrading: Feed an amulet other amulets totalling at least its current CR capacity to get +1 CR tier.
+    Upgrading: Feed an amulet other amulets totalling at least its current CR capacity + 1 to get +1 CR tier.
 
 Prayer Stones:
     You can use any prayer stone to pray to any Deity, but when using the appropriate prayer stone, you get the option of skipping a step
@@ -17,7 +17,7 @@ Enchant rules:
     Die size increases increase the size of a single die (2d6 -> 1d6 + 1d8, 8d6 -> 5d6 + 1d8).
 
 Rings:
-    Max number of ring points used = char level + prof bonus
+    Max number of ring points used = char level + prof bonus (TODO - too low at low level?)
     Sacrifice: Smash n rings together (n > 1) to get a choice of 1 from n unique new rings that can't be of the same type as any of the inputs.
     Synergy rings = rings whose name starts with "The" = rings whose modifier interacts with other rings.
 

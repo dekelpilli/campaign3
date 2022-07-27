@@ -12,7 +12,7 @@
   :effect "Reduce a non-caster weapon's base damage die size by 1 to add a random modifier, doubled. Increases sell value by 10."
   :amount [:advantaged [:default]]}
  {:name   "Orb of Destruction"
-  :effect "Remove a relic's powers from an item to have a 50% chance to replace it with a new relic on that base. Regardless, the base remains unchanged."
+  :effect "Remove a relic's powers from an item to have a 75% chance to replace it with a new relic on that base. Regardless, the base remains unchanged."
   :amount [:constant 1]}
  {:name   "Sacrificial Orb(s)"
   :effect "Use when performing a ring sacrifice increase the amount of generated options by an amount equal to the number of rings sacrificed."}
@@ -26,7 +26,7 @@
   :effect   "Swap magical properties between compatible enchantment slots, including moving enchantments to slots without enchantments."
   :enabled? false}
  {:name     "Orb(s) of Purification"
-  :effect   "Apply to an amulet and roll 1d6. If you roll above its current CR capacity, you may increase its CR capacity by 1. Contained creature does not change."
+  :effect   "Apply to an amulet and roll 1d8. If you roll above its current CR capacity, you may increase its CR capacity by 1. Contained creature does not change."
   :enabled? false}
  {:name     "Orb(s) of Disavowment"
   :effect   "You lose all progress from your current prayer path and all effects it granted, then gain an equivalent amount of levels (but without any level skipping) in another pray path of your choice."

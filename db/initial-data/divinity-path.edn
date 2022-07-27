@@ -48,11 +48,11 @@
             :tags   #{"magic" "survivability" "utility" "accuracy"}}]}
  {:name   "Unrelenting Fortune"
   :info   "Improves your luck and your ability to acquire better items."
-  :levels [{:effect "The quantity of crafting items and curios you find from loot rolls is increased by 1."
+  :levels [{:effect "The quantity of crafting items and tarot cards you find from loot rolls is increased by 1."
             :tags   #{"wealth"}}
            {:effect "The cost of upgrading your relic levels is reduced by 10%."
             :tags   #{"wealth"}}
-           {:effect "Your chance to fracture helmets with Orbs of Purification is halved. When mending helmets: -5% chance to keep modifiers the same, +5% chance to upgrade."
+           {:effect "Your chance to fracture helmets with Orbs of Personality is halved. When mending helmets: -5% chance to keep modifiers the same, +5% chance to upgrade."
             :tags   #{"wealth"}}
            {:effect "You may cast Fortune's Favour at any spell level as a free action on your turn once per round. You can use no more than 10 spell slot levels on this per long rest."
             :tags   #{"magic"}}
@@ -84,7 +84,7 @@
             :tags   #{"utility"}}]}
  {:name   "Unbound Arcana"
   :info   "Improves you general spellcasting prowess."
-  :levels [{:effect "You have an additional first level spell slot, assuming you already have at least one."
+  :levels [{:effect "You have an additional first, second, and third level spell slot, assuming you already have at least one."
             :tags   #{"magic"}}
            {:effect "When you upcast a spell, you may cast it at a level one above the spell slot consumed."
             :tags   #{"magic"}}
