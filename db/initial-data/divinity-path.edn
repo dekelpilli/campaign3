@@ -1,6 +1,6 @@
 [{:name   "Subjective Truth"
   :info   "Focuses on improving deceptive conversations out of combat, and Illusion spells both in and out of combat."
-  :levels [{:effect "You are considered to be proficient in Deception and Insight if you have used a non-cantrip Illusion spell since your last long rest."
+  :levels [{:effect "You gain proficiency or +1 expertise die in Deception and Insight."
             :tags   #{"magic" "utility"}}
            {:effect "Creatures that currently believe one of your illusions are real have disadvantage when attacking you."
             :tags   #{"survivability" "magic"}}
@@ -12,7 +12,7 @@
             :tags   #{"utility"}}]}
  {:name   "Distributed Rejuvenation"
   :info   "Improves healing you grant via spells and Medicine checks."
-  :levels [{:effect "You and allies within 15 feet of you have -2 critical hit requirement for death saving throws, and gain temporary hit points equal to your level when they critically succeed on a death saving throw."
+  :levels [{:effect "You and allies within 15 feet of you have -2 critical requirement for death saving throws, and gain temporary hit points equal to your level on critically succeeding on a death saving throw."
             :tags   #{"survivability"}}
            {:effect "Creatures you have healed with the use of a spell or a Medicine check in the last minute regain 1 hit point at the start of their turns while conscious."
             :tags   #{"survivability" "magic"}}
@@ -24,7 +24,7 @@
             :tags   #{"magic"}}]}
  {:name   "Eternal Vigour"
   :info   "Improves your longevity in combat through various avenues."
-  :levels [{:effect "+1 resistance to damage for each previous time you've been hit per round."
+  :levels [{:effect "+1 resistance to damage, and +1 resistance to damage for each previous time you've been hit per round."
             :tags   #{"survivability"}}
            {:effect "You have +3 to maximum hit points, and you have +1 maximum per armour relic level."
             :tags   #{"survivability"}}
@@ -35,10 +35,10 @@
            {:effect "Once per round when you fail a saving throw against an effect that would cause a condition, you may attempt the save again."
             :tags   #{"survivability"}}]}
  {:name   "Perpetual Learning"
-  :info   "Improves your ability to acquire knowledge through skill checks, and improves Diviniation spells."
-  :levels [{:effect "Any text within line of sight within 50 metres of you becomes readable to you regardless of its language, distance/size, legibility, and lighting."
+  :info   "Improves your ability to acquire knowledge through skill checks, and improves Divination spellcasting."
+  :levels [{:effect "Any text within line of sight within 50 metres of you becomes readable to you regardless of its language, distance/size, legibility, and lighting. Additionally, you gain +2 expertise dice for Investigation checks relating to reading."
             :tags   #{"utility"}}
-           {:effect "When you make a Nature, Investigation, History, or Religion check, you may choose to treat the roll as though you had rolled an 11."
+           {:effect "When you make a Nature, Investigation, History, or Religion check, you may choose to treat the d20 roll as though you had rolled an 11."
             :tags   #{"utility"}}
            {:effect "You may learn any Divination spell as if it were on your class' spell list."
             :tags   #{"magic"}}
@@ -72,7 +72,7 @@
             :tags   #{"damage"}}]}
  {:name   "Aggressive Combat"
   :info   "Grants bonuses that make you a more competent close combatant."
-  :levels [{:effect "You and your allies gain +1 damage in battle while outnumbered (>0hp only)."
+  :levels [{:effect "You gain +1 damage for each enemy in battle (>0 hp only)."
             :tags   #{"damage"}}
            {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds. Creatures of your choice within 10 feet of you also gain this proficiency."
             :tags   #{"survivability"}}
@@ -132,7 +132,7 @@
             :tags   #{"utility"}}]}
  {:name   "Nature's Influence"
   :info   "Provides various in combat and out of combat boons relating to nature."
-  :levels [{:effect "+1 expertise die with Survival and Nature when in nature or when foraging materials from creatures."
+  :levels [{:effect "You gain proficiency or +1 expertise die with Survival and Nature when in nature or when foraging materials from creatures."
             :tags   #{"utility" "wealth"}}
            {:effect "You are permanently under the effects of the Speak with Animals spell." ;TODO make this less bad
             :tags   #{"magic" "utility"}}

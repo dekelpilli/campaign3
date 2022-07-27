@@ -23,7 +23,7 @@
  {:name   "Justice"
   :effect "You also gain four Tarot cards when turning in this set."}
  {:name   "The Hanged Man"
-  :effect "You also gain four Inversed curios when turning in this set."}k
+  :effect "You also gain four Inversed curios when turning in this set."}
  {:name   "Death"
   :effect "You can discard this card to obtain two new Tarot cards."}
  {:name   "Temperance"
