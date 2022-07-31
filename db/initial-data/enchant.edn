@@ -86,7 +86,7 @@
  {:effect    "+1 AB with unarmed attacks."
   :tags      #{"accuracy"}
   :prohibits {:base-type "weapon"}
-  :points    25}
+  :points    30}
  {:effect   "+1 to %s saving throws"
   :randoms  [{:preset :attributes
               :type   :uncommon}]
@@ -96,7 +96,7 @@
   :randoms  [{:preset :attributes
               :type   :common}]
   :tags     #{"survivability"}
-  :points   18
+  :points   20
   :requires {:base-type "armour"}}
  {:effect   "This weapon deals no base damage. Roll another modifier and empower it twice.",
   :requires {:base-type "weapon"}}
@@ -123,6 +123,10 @@
   :points 20}
  {:effect "Creatures that start their turn within [5] feet of you have their speed reduced by 10 feet, to a minimum of 5 feet."
   :tags   #{"control"}}
+ {:effect      "When you cause a condition on a creature, +10% chance to replace that condition with debilitation."
+  :points      20
+  :upgradeable false
+  :tags        #{"control"}}
  {:effect "Creatures that have hit you with an opportunity attack in the last minute have disadvantage on opportunity attacks."
   :tags   #{"control"}}
  {:effect "When you score a natural critical hit against an enemy with at least one condition, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."
@@ -141,8 +145,7 @@
  {:effect "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."
   :tags   #{"survivability" "utility" "critical"}}
  {:effect "+1 global damage."
-  :tags   #{"damage"}
-  :points 15}
+  :tags   #{"damage"}}
  {:effect "+1 to death saves."
   :tags   #{"survivability"}}
  {:effect "Gain temporary hit points equal to your lowest ability score (not bonus) at the beginning of each combat."
@@ -151,7 +154,7 @@
   :tags   #{"magic"}}
  {:effect "+10ft darkvision."
   :tags   #{"utility"}
-  :points 15}
+  :points 20}
  {:effect  "+5ft %s."
   :randoms [{:preset :literal
              :values ["blindsight" "tremorsense"]}]
@@ -231,8 +234,18 @@
   :tags   #{"utility"}}
  {:effect "This item sells for an extra [1]d20 gold. You only roll after the item is sold."
   :tags   #{"wealth"}}
+ {:effect "+1 to your loot rolls on loot rolls obtained via positive random encounters."
+  :tags   #{"wealth"}}
+ {:effect "+10% chance to trade your creature parts for two loot rolls instead of one."
+  :tags   #{"wealth"}}
  {:effect "+5 to gold found."
   :tags   #{"wealth"}}
+ {:effect "+1 to journey activity checks."
+  :tags   #{"wealth" "utility"}}
+ {:effect "+10% chance to avoid gaining a level of fatigue when you would normally gain one."
+  :tags   #{"utility"}}
+ {:effect "+10% chance to lose one level of strife when you would normally gain one."
+  :tags   #{"utility"}}
  {:effect "You loot rolls always grant you 1 additional gold (even from non-gold results)."
   :points 20
   :tags   #{"wealth"}}
@@ -308,9 +321,8 @@
   :tags   #{"survivability"}}
  {:effect "+3 to maximum HP."
   :tags   #{"survivability"}}
- {:effect "+3 to minion damage."
-  :tags   #{"damage"}
-  :points 15}
+ {:effect "+2 to minion damage."
+  :tags   #{"damage"}}
  {:effect "+5 feet range for applying stabilising Medicine checks."
   :tags   #{"utility"}
   :points 20}
@@ -318,8 +330,10 @@
   :tags    #{"utility"}
   :points  20
   :randoms [{:preset :attributes}]}
- {:effect   "+1 to death saves in sunlight."
+ {:effect   "+1 to death saves in %s."
   :tags     #{"survivability"}
+  :randoms  [{:preset :literal
+              :values "sunlight" "non-magical darkness" "magical darkness"}]
   :points   5
   :requires {:base-type "armour"}}
  {:effect      "Enemies are considered to enter and leave your reach at both 5 and 10 feet."
@@ -335,20 +349,17 @@
                 :traits    #{"Heavy"}}
   :upgradeable false}
  {:effect "+1 damage die size from marks you caused."
-  :tags   #{"damage"}
-  :points 15}
+  :tags   #{"damage"}}
  {:effect "+1 damage against marked enemies."
   :tags   #{"damage"}}
- {:effect      "Ranged attacks with this weapon do not suffer disadvantage from enemies being within 5 feet of you if the target of the attack is within 5 feet of you."
+ {:effect      "Ranged attacks with this weapon do not suffer disadvantage from enemies being within 5 feet of you if the target of the attack is the only creature imposing disadvantage on you."
   :tags        #{"accuracy"}
   :requires    {:ranged? true}
-  :points      13
   :upgradeable false}
  {:effect "Upon cursing a creature, you may ask one question about it."
   :tags   #{"utility"}}
- {:effect         "Creatures that were cursed by you in the last minute but no longer are have -[1] to saving throws against your curses."
-  :tags           #{"accuracy"}
-  :upgrade-points 15}
+ {:effect "Creatures that were cursed by you in the last minute but no longer are have -[1] to saving throws against your curses."
+  :tags   #{"accuracy"}}
  {:effect "+[1] to initiative rolls when at least one of the enemies you can see is of size Large or greater."
   :tags   #{"utility"}}
  {:effect "+[2] to saving throws against effects that can petrify."

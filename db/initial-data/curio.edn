@@ -2,7 +2,7 @@
     (fn [acc {:keys [tags weighting]}]
       (reduce (fn [acc tag] (update acc tag (fnil #(+ % weighting) 0))) acc tags))
     {}
-    enchants/enchants)
+    e/enchants)
 ;TODO add more modifiers of tags where multiplier is 50+, update multipliers accordingly
 [{:name       "Power"
   :tag        "damage"
