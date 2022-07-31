@@ -32,18 +32,12 @@
  {:name    "The Able"
   :effect  "+1 %s while not wearing any synergy rings that are not 'The Able'"
   :randoms [{:preset :attributes}]
-  :points  5}
+  :points  3}
  {:name   "Vengeful"
   :effect "Once per short rest, as a reaction to being damaged, you may cast Hex on the creature that damaged you. Normal range/visibility/concentration restrictions apply."
   :points 4}
  {:name   "Jack of All Trades"
   :effect "None of your attributes can be below 10. Any ability scores below 10 are considered to be 10 instead."
-  :points 5}
- {:name   "Ready"
-  :effect "You have advantage on attacks and skill checks with readied actions."
-  :points 5}
- {:name   "Stable"
-  :effect "You cannot critically fail death saves. You only need two failed death saves to die, and two successful ones to stabilise."
   :points 2}
  {:name   "Watchful"
   :effect "You may trance instead of sleeping during long rests, but must still rest for 8 hours (by default) to achieve a long rest."

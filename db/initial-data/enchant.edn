@@ -71,6 +71,8 @@
  {:effect "-1 critical hit requirement with attacks."
   :tags   #{"critical"}
   :points 20}
+ {:effect "-1 critical hit requirement with your first attack on your turn."
+  :tags   #{"critical"}}
  {:effect "+1 weapon attack AB with attacks that deal non-physical damage."
   :tags   #{"accuracy"}
   :points 30}
@@ -116,7 +118,6 @@
  {:effect   "When a melee or touch attack fails to hit you, the attacker takes true damage equal to half your level, rounded down.",
   :tags     #{"damage"}
   :requires {:base-type "armour"}}
- {:effect "Roll again, making that result a negative enchant. Then roll again, empowering that result."}
  {:effect "+1 DC for saves made to end your ongoing effects."
   :tags   #{"accuracy"}
   :points 20}
@@ -124,6 +125,8 @@
   :tags   #{"control"}}
  {:effect "Creatures that have hit you with an opportunity attack in the last minute have disadvantage on opportunity attacks."
   :tags   #{"control"}}
+ {:effect "When you score a natural critical hit against an enemy with at least one condition, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."
+  :tags   #{"control" "critical"}}
  {:effect "Creatures of your choice under the effect of a spell of yours or a condition upi caused have -[1] to saving throws against spells and conditions."
   :points 30
   :tags   #{"magic" "accuracy" "control"}}
@@ -204,9 +207,14 @@
  {:effect      "You can jump without a run-up as if you had taken a run-up."
   :tags        #{"utility"}
   :upgradeable false}
- {:effect  "+4 damage against %s creatures."
-  :tags    #{"damage"}
-  :randoms [{:preset :monster-types}]}
+ {:effect   "+4 damage against %s creatures."
+  :tags     #{"damage"}
+  :randoms  [{:preset :monster-types}]
+  :requires {:base-type "weapon"}}
+ {:effect   "+2 resistance to damage from %s creatures."
+  :randoms  [{:preset :monster-types}]
+  :tags     #{"survivability"}
+  :requires {:base-type "armour"}}
  {:effect  "+1 expertise die with %s."
   :tags    #{"utility"}
   :randoms [{:preset :skills
@@ -281,9 +289,6 @@
   :tags   #{"magic"}}
  {:effect "Every third spell you cast deals +[5] damage, across any amount of time."
   :tags   #{"damage"}}
- {:effect  "+2 global AB against %s creatures."
-  :tags    #{"accuracy"}
-  :randoms [{:preset :monster-types}]}
  {:effect "+2 damage against enemies you are flanking."
   :tags   #{"damage"}}
  {:effect  "+2 global damage against creatures %s in the initiative tracker."
@@ -292,13 +297,6 @@
   :tags    #{"damage"}}
  {:effect "Heal 5 hit points when you roll for initiative."
   :tags   #{"survivability"}}
- {:effect      "All of your damage type-seeks to maximise damage against %s creatures."
-  :tags        #{"damage"}
-  :randoms     [{:preset :monster-types}]
-  :upgradeable false}
- {:effect  "+2 resistance to damage from %s creatures."
-  :randoms [{:preset :monster-types}]
-  :tags    #{"survivability"}}
  {:effect   "+25% chance to ignore bonus damage from incoming critical hits."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
@@ -361,6 +359,25 @@
   :tags     #{"utility" "critical"}
   :requires {:base-type "weapon"
              :traits    #{"Non-lethal"}}}
+ {:effect      "Damage dice added due to critical hits with this weapon are automatically rolled at their maximum."
+  :tags        #{"critical"}
+  :points      30
+  :upgradeable false
+  :requires    {:base-type "weapon"
+                :traits    #{"Deadly"}}}
+ {:effect      "If all creatures targeted by a spell you cast received a natural critical hit, the spell slot used for that cast is refunded."
+  :tags        #{"critical" "magic"}
+  :upgradeable false
+  :requires    {:base-type "weapon"
+                :traits    #{"Conduit"}}}
+ {:effect   "+2 damage with attacks with other weapons."
+  :tags     #{"damage"}
+  :requires {:base-type "weapon"
+             :traits    #{"Dual-wielding"}}}
+ {:effect "You and your minions have +3 damage with critical hits."
+  :tags   #{"critical"}}
+ {:effect "Damage from your critical hits ignores resistances and immunities."
+  :tags   #{"critical"}}
  {:effect "5% chance to refund the spell slots used for spells cast outside of your turn."
   :tags   #{"magic"}}
  {:effect "Regain 2 hits points when you, or allies within [5] feet of you, take a critical hit and remains conscious."

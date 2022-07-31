@@ -5,8 +5,7 @@
               [prompting :as p]
               [randoms :as randoms]
               [util :as u])
-            [clojure.walk :as walk]
-            [randy.core :as r]))
+            [clojure.walk :as walk]))
 
 (defn prep-matcher [matcher]
   (walk/prewalk
