@@ -123,13 +123,15 @@
   :points 20}
  {:effect "Creatures that start their turn within [5] feet of you have their speed reduced by 10 feet, to a minimum of 5 feet."
   :tags   #{"control"}}
+ {:effect "+1 damage against creatures for each condition on them that you caused."
+  :tags   #{"damage"}}
  {:effect      "When you cause a condition on a creature, +10% chance to replace that condition with debilitation."
   :points      20
   :upgradeable false
   :tags        #{"control"}}
  {:effect "Creatures that have hit you with an opportunity attack in the last minute have disadvantage on opportunity attacks."
   :tags   #{"control"}}
- {:effect "When you score a natural critical hit against an enemy with at least one condition, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."
+ {:effect "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."
   :tags   #{"control" "critical"}}
  {:effect "Creatures of your choice under the effect of a spell of yours or a condition upi caused have -[1] to saving throws against spells and conditions."
   :points 30

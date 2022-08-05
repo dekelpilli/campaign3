@@ -22,9 +22,9 @@
 
 (defn choose-base
   ([]
-   (let [choice (p/>>item "Base category:" (keys base-types))]
-     (when choice
-       {:base (choose-base choice)
+   (when-let [choice (p/>>item "Base category:" (keys base-types))]
+     (when-let [base (choose-base choice)]
+       {:base base
         :type choice})))
   ([type]
    (p/>>item "Base type:"

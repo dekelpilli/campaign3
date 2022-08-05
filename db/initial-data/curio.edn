@@ -3,28 +3,27 @@
       (reduce (fn [acc tag] (update acc tag (fnil #(+ % weighting) 0))) acc tags))
     {}
     e/enchants)
-;TODO add more modifiers of tags where multiplier is 50+, update multipliers accordingly
 [{:name       "Power"
   :tag        "damage"
   :multiplier 3}
  {:name       "Devastation"
   :tag        "critical"
-  :multiplier 50}
+  :multiplier 10}
  {:name       "Inevitability"
   :tag        "accuracy"
-  :multiplier 10}
+  :multiplier 11}
  {:name       "Fortitude"
   :tag        "survivability"
   :multiplier 3}
  {:name       "Weakness"
   :tag        "control"
-  :multiplier 50}
+  :multiplier 19}
  {:name       "Arcana"
   :tag        "magic"
-  :multiplier 10}
+  :multiplier 6}
  {:name       "Abundance"
   :tag        "wealth"
-  :multiplier 100}
+  :multiplier 19}
  {:name       "Sundry"
   :tag        "utility"
   :multiplier 3}]

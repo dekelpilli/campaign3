@@ -28,7 +28,7 @@
                              (some->> (p/>>input "Curios used (maximum 4):"
                                                  (keys curios-by-name)
                                                  :completer :comma-separated)
-                                      (not-empty)
+                                      not-empty
                                       (map curios-by-name)))]
       (let [weightings (reduce
                          (fn [acc {:keys [multiplier tag]}]
@@ -48,6 +48,6 @@
                                            weighting
                                            tags)
                                          (assoc e :weighting))))
-                             (u/weighted-sampler))]
+                             u/weighted-sampler)]
         (e/add-enchants (* 10 (count curios-used))
                         enchants-fn)))))
