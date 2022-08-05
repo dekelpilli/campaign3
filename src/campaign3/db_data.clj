@@ -327,7 +327,6 @@
   (db/execute! {:create-table :relics
                 :with-columns [[:name :text [:primary-key] [:not nil]]
                                [:found :boolean [:not nil]]
-                               [:enabled :boolean [:not nil]]
                                [:base-type :text [:not nil]]
                                [:base :text]
                                [:start :jsonb [:not nil]]
@@ -336,7 +335,12 @@
 
 (defn insert-relics! []
   (db/execute! {:insert-into :relics
-                :values      [] ;TODO load relics
+                :values      (->> (load-data "relic")
+                                  (filter :enabled)
+                                  (map #(-> %
+                                            (update :start u/jsonb-lift)
+                                            (update :mods u/jsonb-lift)
+                                            (update :attunements u/jsonb-lift))))
                 :on-conflict []
                 :do-nothing  {}}))
 
