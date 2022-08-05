@@ -1,6 +1,7 @@
 (ns user
   (:require [clojure.tools.namespace.repl :refer [refresh]]
             [clojure.string :as str]
+            [org.fversnel.dnddice.core :as d]
             [honey.sql :as hsql]
             [randy.core :as r]
             (campaign3
@@ -77,3 +78,7 @@
     (if (= :ok refreshed)
       (reload)
       refreshed)))
+
+(defn roll [n x]
+  (-> (str n \d x)
+      d/roll))
