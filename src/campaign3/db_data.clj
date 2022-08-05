@@ -300,13 +300,6 @@
                                              (assoc :book source
                                                     :traits (u/jsonb-lift trait))))))}))
 
-(defn create-analytics! []
-  (db/execute! {:create-table :analytics
-                :with-columns [[:type :text [:not nil]]
-                               [:session :integer [:not nil]]
-                               [:amount :integer [:not nil]]
-                               [[:primary-key :type :session]]]}))
-
 (defn reload-data! []
   (db/in-transaction
     (transduce (map (comp :next.jdbc/update-count first)) + 0
@@ -322,6 +315,30 @@
                 (insert-character-enchants!)
                 (insert-special-armours!)
                 (insert-tarot-cards!)])))
+
+(defn create-analytics! []
+  (db/execute! {:create-table :analytics
+                :with-columns [[:type :text [:not nil]]
+                               [:session :integer [:not nil]]
+                               [:amount :integer [:not nil]]
+                               [[:primary-key :type :session]]]}))
+
+(defn create-relics! []
+  (db/execute! {:create-table :relics
+                :with-columns [[:name :text [:primary-key] [:not nil]]
+                               [:found :boolean [:not nil]]
+                               [:enabled :boolean [:not nil]]
+                               [:base-type :text [:not nil]]
+                               [:base :text]
+                               [:start :jsonb [:not nil]]
+                               [:mods :jsonb [:not nil]]
+                               [:attunements :jsonb]]}))
+
+(defn insert-relics! []
+  (db/execute! {:insert-into :relics
+                :values      [] ;TODO load relics
+                :on-conflict []
+                :do-nothing  {}}))
 
 (defn backup-table! [table]
   (->> (db/load-all table)

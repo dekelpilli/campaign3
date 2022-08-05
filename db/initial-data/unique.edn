@@ -166,7 +166,7 @@
              :tags   #{"damage"}}
             {:effect "+20 temporary hit points when you take thunder damage."
              :tags   #{"survivability"}}
-            {:effect "You may force enemies that take thunder damage from a critical strike from this weapon to make a STR save (DC: 8+AB) or be knocked back 5feet."
+            {:effect "You may force enemies that take thunder damage from a critical hit from this weapon to make a STR save (DC: 8+AB) or be knocked back 5feet."
              :tags   #{"control"}}
             {:effect "You are vulnerable to lightning damage."}]}
  {:name    "Dominion"
@@ -182,7 +182,7 @@
              :tags   #{"damage"}}
             {:effect "This weapon's base damage is radiant."
              :tags   #{"damage"}}
-            {:effect "When you score a critical strike with this weapon, all creatures of your choice within 30 feet of the target take 10 radiant damage."
+            {:effect "When you score a critical hit with this weapon, all creatures of your choice within 30 feet of the target take 10 radiant damage."
              :tags   #{"damage"}}
             {:effect "You cannot attack more than once per round."}
             {:effect "Attacks with this weapon have advantage if you would otherwise be able to make more than one attack."
@@ -221,12 +221,12 @@
              :tags   #{"utility"}}
             {:effect "This weapon becomes a dual-wielding weapon."
              :tags   #{"utility"}}
-            {:effect "+1 critical strike requirement with this weapon."}]}
+            {:effect "+1 critical hit requirement with this weapon."}]}
  {:name    "Pasha"
   :base    "any flail"
   :effects [{:effect "Enemies you critically hit with this weapon become restrained until they use an action to end the effect."
              :tags   #{"control"}}
-            {:effect "-2 critical strike requirement with this weapon."
+            {:effect "-2 critical hit requirement with this weapon."
              :tags   #{"critical"}}
             {:effect "+2 damage with this weapon against grappled and restrained enemies."
              :tags   #{"damage"}}
@@ -246,7 +246,7 @@
   :base    "any knife"
   :effects [{:effect "+1d4 damage against blinded enemies."
              :tags   #{"damage"}}
-            {:effect "-1 critical strike requirement against non-blind enemies."
+            {:effect "-1 critical hit requirement against non-blind enemies."
              :tags   #{"critical"}}
             {:effect "Non-blind enemies you critically hit become blinded for a minute, or until you do not damage them during your turn, CON save at turn end to end, mental attribute of choice."
              :tags   #{"control" "accuracy"}}
@@ -273,7 +273,7 @@
              :tags   #{"damage"}}
             {:effect "+1 AB with this weapon while wielding a pick."
              :tags   #{"accuracy"}}
-            {:effect "+1 critical strike requirement."}]}
+            {:effect "+1 critical hit requirement."}]}
  {:name    "Tankie"
   :base    "any one handed knife"
   :effects [{:effect "+2 damage while dual wielding."
@@ -301,9 +301,9 @@
              :tags   #{"survivability" "damage" "accuracy"}}
             {:effect "Gain 5 temporary hit points when you critically hit with this weapon."
              :tags   #{"survivability"}}
-            {:effect "-5 critical strike requirement with this weapon while you are invisible."
+            {:effect "-5 critical hit requirement with this weapon while you are invisible."
              :tags   #{"critical"}}
-            {:effect "Creatures that can see you take no extra damage from critical strikes from attacks with this weapon."}]}
+            {:effect "Creatures that can see you take no extra damage from critical hits from attacks with this weapon."}]}
  {:name    "The Resilient"
   :base    "shield"
   :effects [{:effect "You are resistant to all damage from attacks whose attack roll total was below your AC+5."
@@ -380,13 +380,13 @@
             {:effect "-2 to your two lowest mental attributes (choose if equal)."}]}
  {:name    "Miner's Greed"
   :base    "any pick"
-  :effects [{:effect "-2 critical strike requirement."
+  :effects [{:effect "-2 critical hit requirement."
              :tags   #{"critical"}}
             {:effect "This weapon gains the Deadly trait."
              :tags   #{"critical"}}
             {:effect "Picks you wield are considered to have the Dual Wielding trait."
              :tags   #{"utility"}}
-            {:effect "When you score a natural critical strike, you take true damage equal to thrice the difference between your natural roll and 20 (e.g. take 6 damage after critting with an 18, 0 with a 20)."}]}
+            {:effect "When you score a natural critical hit, you take true damage equal to thrice the difference between your natural roll and 20 (e.g. take 6 damage after critting with an 18, 0 with a 20)."}]}
  {:name     "Template"
   :base     "string"
   :effects  [{:effect "description"}]

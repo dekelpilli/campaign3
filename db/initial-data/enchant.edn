@@ -26,7 +26,7 @@
   :tags   #{"magic"}}
  {:effect "Recover 10% of your maximum class points (minimum 1) when you roll for initiative."
   :tags   #{"utility"}}
- {:effect         "+1d[4] %s damage with attacks with this weapon."
+ {:effect         "+1d[4] %s damage with weapon attacks."
   :points         20
   :upgrade-points 10
   :tags           #{"damage"}
@@ -98,8 +98,6 @@
   :tags     #{"survivability"}
   :points   20
   :requires {:base-type "armour"}}
- {:effect   "This weapon deals no base damage. Roll another modifier and empower it twice.",
-  :requires {:base-type "weapon"}}
  {:effect "You gain telepathy with a range of 10 feet."
   :tags   #{"utility"}}
  {:effect "+1 question when learning creature stats (must have earned at least one question)"
@@ -179,7 +177,7 @@
  {:effect      "You may take an additional action the end of an action where you landed a killing blow with a critical hit."
   :tags        #{"critical" "utility"}
   :upgradeable false}
- {:effect      "When you hit a creature with an attack with this weapon, they are silenced until the end of their next turn."
+ {:effect      "When you hit a creature with a a weapon attack, they are silenced until the end of their next turn."
   :tags        #{"control"}
   :requires    {:base-type "weapon"}
   :upgradeable false}
@@ -255,7 +253,7 @@
   :tags   #{"wealth"}}
  {:effect "You find loot as if your Investigation and Survival check results are 1 point higher."
   :tags   #{"wealth"}}
- {:effect   "Missed attacks with this weapon have a [20]% chance to be critical hits instead while you are below 20% hit points."
+ {:effect   "Missed weapon attacks have a [20]% chance to be critical hits instead while you are below 20% hit points."
   :tags     #{"critical"}
   :requires {:base-type "weapon"}}
  {:effect "+1 incoming healing."
@@ -293,7 +291,7 @@
   :tags   #{"damage"}}
  {:effect "+1 to Damage Over Time."
   :tags   #{"damage"}}
- {:effect "When you hit a creature with this weapon, they are marked to take +1 damage from creatures other than yourself for [1] minute."
+ {:effect "When you hit a creature with a weapon attack, they are marked to take +1 damage from creatures other than yourself for [1] minute."
   :tags   #{"damage"}}
  {:effect   "+2 resistance to damage from projectiles."
   :tags     #{"survivability"}
@@ -354,7 +352,7 @@
   :tags   #{"damage"}}
  {:effect "+1 damage against marked enemies."
   :tags   #{"damage"}}
- {:effect      "Ranged attacks with this weapon do not suffer disadvantage from enemies being within 5 feet of you if the target of the attack is the only creature imposing disadvantage on you."
+ {:effect      "Your ranged weapon attacks do not suffer disadvantage from enemies being within 5 feet of you if the target of the attack is the only creature imposing disadvantage on you."
   :tags        #{"accuracy"}
   :requires    {:ranged? true}
   :upgradeable false}
@@ -372,7 +370,7 @@
   :tags     #{"utility" "critical"}
   :requires {:base-type "weapon"
              :traits    #{"Non-lethal"}}}
- {:effect      "Damage dice added due to critical hits with this weapon are automatically rolled at their maximum."
+ {:effect      "Damage dice added due to critical hits with weapon attacks are automatically rolled at their maximum."
   :tags        #{"critical"}
   :points      30
   :upgradeable false
@@ -401,10 +399,10 @@
              :disadvantaged-stealth true}}
  {:effect "You have an additional first level spell slot (only if you already had at least 1)."
   :tags   #{"magic"}}
- {:effect   "When you hit a temporarily invisible creature with this weapon, they become visible."
+ {:effect   "When you hit a temporarily invisible creature with a weapon attack, they become visible."
   :tags     #{"utility"}
   :requires {:base-type "weapon"}}
- {:effect      "Long range thrown attacks with this weapon have a 50% chance to not incur disadvantage due to the range."
+ {:effect      "Long range thrown weapon attacks have a 50% chance to not incur disadvantage due to the range."
   :tags        #{"accuracy"}
   :upgradeable false
   :requires    {:base-type "weapon"
