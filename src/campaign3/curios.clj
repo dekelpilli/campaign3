@@ -19,7 +19,7 @@
   (let [curio (r/sample curios)
         inversed? (u/occurred? 1/3)]
     (-> curio
-        (cond-> inversed? (->inversed))
+        (cond-> inversed? ->inversed)
         (dissoc :multiplier))))
 
 (defn use []

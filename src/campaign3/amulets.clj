@@ -21,15 +21,18 @@
       (dissoc :traits)
       (assoc :trait trait)))
 
+(defn monsters->traits [monsters]
+  (reduce
+    (fn [acc {:keys [traits] :as monster}]
+      (into acc (map #(->output monster %)) traits))
+    []
+    monsters))
+
 (defn monster-traits-by-cr [cr]
-  (let [monsters (db/execute! {:select [:*]
-                               :from   [:monsters]
-                               :where  [:= :cr cr]})]
-    (reduce
-      (fn [acc {:keys [traits] :as monster}]
-        (into acc (map #(->output monster %)) traits))
-      []
-      monsters)))
+  (-> (db/execute! {:select [:*]
+                    :from   [:monsters]
+                    :where  [:= :cr cr]})
+      monsters->traits))
 
 (def cr->output (comp r/sample monster-traits-by-cr))
 (def new (comp cr->output new-amulet-cr))
@@ -47,4 +50,11 @@
 (defn from-cr []
   (some-> (cr) cr->output))
 
-;TODO get by CR+monster type
+(defn type-from-cr []
+  (when-let [cr (cr)]
+    (when-let [monsters (->> (db/execute! {:select [:*]
+                                           :from   [:monsters]
+                                           :where  [:= :cr cr]})
+                             (group-by :type)
+                             (p/>>item "Choose monster type:"))]
+      (-> monsters monsters->traits r/sample))))

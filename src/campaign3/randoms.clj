@@ -50,7 +50,7 @@
    "Resilient" "Ritual Caster" "Sentinel" "Sharpshooter" "Shield Master" "Skilled" "Skulker" "Specialist"
    "Spell Touched" "Summoner" "Survivor" "Tactician" "Telekinetic" "Telepathic" "War Caster" "Warlord"])
 
-(defmethod randoms-preset :skills [{:keys [type] ;TODO revise due to journey activities?
+(defmethod randoms-preset :skills [{:keys [type]
                                     :or   {type :all}}]
   (case type
     :common ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"]
