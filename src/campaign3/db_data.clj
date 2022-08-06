@@ -344,6 +344,10 @@
                 :on-conflict []
                 :do-nothing  {}}))
 
+(defn -reload-relics! []
+  (db/execute! {:delete-from :relics})
+  (insert-relics!))
+
 (defn backup-table! [table]
   (->> (db/load-all table)
        (write-data! (str "db/current-state/" (name table) ".edn"))))

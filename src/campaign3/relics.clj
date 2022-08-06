@@ -30,36 +30,38 @@
                             (update :attunements u/jsonb-lift))
                 :where  [:= :name name]}))
 
-(defn- upgrade-mod [{:keys [committed points upgrade-points effect]
-                     :or   {committed 0} :as modifier}
-                    points-remaining relic]
-  #_(let [upgrade-points (or upgrade-points points 10)
-          selected-mod-effect effect]
-      (if (>= (+ committed points-remaining) upgrade-points)
-        (-> relic
-            (update :progressed #(filterv (fn [{:keys [effect]}]
-                                            (not= selected-mod-effect effect)) %))
-            (update :existing #(mapv (fn [{:keys [effect] :as existing-mod}]
-                                       (if (= selected-mod-effect effect)
-                                         (-> existing-mod
-                                             (update :points (fn [points] (+ upgrade-points points)))
-                                             (update :level inc))
-                                         existing-mod)) %)))
-        (update relic :progressed
-                #(as-> % $
-                       (filterv (fn [{:keys [effect]}]
-                                  (not= selected-mod-effect effect)) $)
-                       (conj $ (assoc modifier :committed (+ committed points-remaining))))))))
+(defn- upgrade-mod [attunement {:keys [effect upgrade-points] :as mod}]
+  (if (> upgrade-points 10)
+    (update attunement :progressed conj (assoc mod :committed 10))
+    (update attunement :existing
+            #(map (fn [{existing-effect :effect :as existing-mod}]
+                    (if (= existing-effect effect)
+                      (update mod :level + (-> (/ upgrade-points 10) int))
+                      existing-mod))
+                  %))))
 
-(defn- attach-new-mod [{:keys [points upgrade-points]
-                        :or   {points 10} :as modifier}
-                       relic]
+(defn- prep-new-mod [{:keys [points upgrade-points]
+                      :or   {points 10}
+                      :as   mod}]
+  (assoc mod
+    :level 1
+    :points (min points 10)
+    :upgrade-points (or upgrade-points points 10)))
+
+(defn- attach-new-mod [attunement mod]
   ;new random/player mods are always added as if they have max 10 points
-  #_(update relic :existing
-            #(conj % (assoc modifier
-                       :level 1
-                       :points (min points 10)
-                       :upgrade-points (or upgrade-points points)))))
+  (update attunement :existing conj (prep-new-mod mod)))
+
+#_{:level      1
+   :existing   (map #(assoc % :level 1) start)
+   :progressed []}
+
+(defn add-mod-choice [attunement {:keys [type mod]}]
+  (case type
+    (:new-random-mod :new-relic-mod) (attach-new-mod attunement mod)
+    :progress nil
+    :upgrade-mod (upgrade-mod attunement mod)
+    :none attunement))
 
 (defn unique-levelling-options [n upgradeable relic-mods random-gen option-types]
   (if (zero? n)
@@ -76,7 +78,8 @@
                          (-> (update opts :new-relic-mod dec)
                              (update new-type (fnil inc 0)))
                          types
-                         (conj checks new-type))))
+                         (conj checks new-type)))
+                     (recur opts types checks))
                    :upgrade-mod
                    (if (> (:upgrade-mod opts 0) (count upgradeable))
                      (let [types (dissoc types :upgrade-mod)
@@ -85,23 +88,24 @@
                          (-> (update opts :upgrade-mod dec)
                              (update new-type (fnil inc 0)))
                          types
-                         (conj checks new-type))))
+                         (conj checks new-type)))
+                     (recur opts types checks))
                    :new-random-mod (recur opts types checks)
                    nil opts))]
       (mapcat (fn [[type amount]]
                 (let [mods (case type
-                            :new-relic-mod (r/sample-without-replacement amount relic-mods)
-                            :upgrade-mod (r/sample-without-replacement amount upgradeable)
-                            :new-random-mod (repeatedly amount random-gen))]
+                             :new-relic-mod (r/sample-without-replacement amount relic-mods)
+                             :upgrade-mod (r/sample-without-replacement amount upgradeable)
+                             :new-random-mod (repeatedly amount random-gen))]
                   (map (fn [mod] {:type type :mod mod}) mods)))
               opts))))
 
 (defn single-relic-level [{:keys [attunements base-type start mods] :as relic} character base]
   (let [{:keys [existing progressed] :as attunement} (or (character attunements)
                                                          {:level      1
-                                                          :existing   (map #(assoc % :level 1) start)
+                                                          :existing   (map prep-new-mod start)
                                                           :progressed []})
-        relic (assoc relic :attunements character attunement)
+        relic (assoc-in relic [:attunements character] attunement)
         upgradeable (-> (remove (comp false? :upgradeable) existing)
                         seq)
         existing-effects (into #{} (map :effect) existing)
@@ -115,10 +119,11 @@
                                              :mod  progressed}) progressed)
                       (unique-levelling-options
                         (- 2 (count progressed))
-                        upgradeable available-relic-mods gen-random-mod levelling-option-types))
-        ]
-    (when-let [choice (p/>>item "Choose relic levelling option:" (conj options {:type :no-change}))]
-      (update-in relic [:attunements character :level] inc)))) ;TODO attach choice results to relic
+                        upgradeable available-relic-mods gen-random-mod levelling-option-types))]
+    (when-let [choice (p/>>item "Choose relic levelling option:" (conj options {:type :no-change}) :sorted? false)]
+      (-> relic
+          (update-in [:attunements character :level] inc)
+          (update-in [:attunements character] add-mod-choice choice)))))
 
 (defn level-relic! []
   (u/when-let* [{:keys [attunements base-type base] :as relic} (choose-found-relic)
@@ -131,13 +136,13 @@
                                                       (range 2 11))
                                             dec))]
     (let [base (mundanes/name->base base-type base)
-          levelled-relic (reduce (fn [relic _]
-                                   (or (single-relic-level relic character base)
-                                       (reduced relic)))
-                                 relic
-                                 (range additional-levels))]
+          {:keys [attunements] :as levelled-relic} (reduce (fn [relic _]
+                                                             (or (single-relic-level relic character base)
+                                                                 (reduced relic)))
+                                                           relic
+                                                           (range additional-levels))]
       (update-relic! levelled-relic)
-      levelled-relic)))
+      (character attunements))))
 
 (defn new! []
   (let [{:keys [base-type] :as relic} (-> (db/execute! {:select [:*]
