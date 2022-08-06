@@ -1,6 +1,7 @@
 (ns campaign3.amulets
   (:require [campaign3.db :as db]
             [campaign3.prompting :as p]
+            [campaign3.util :as u]
             [randy.core :as r]))
 
 (def cr-weightings
@@ -41,20 +42,20 @@
   (p/>>input "Amulet CR:" (keys cr-weightings)))
 
 (defn sample-n []
-  (when-let [cr (cr)]
-    (when-let [amount (some-> (p/>>input "Amount of monster traits:") (parse-long))]
-      (let [monster-traits (monster-traits-by-cr cr)]
-        (cond->> monster-traits
-                 (> (count monster-traits) amount) (r/sample-without-replacement amount))))))
+  (u/when-let* [cr (cr)
+                amount (some-> (p/>>input "Amount of monster traits:") (parse-long))]
+    (let [monster-traits (monster-traits-by-cr cr)]
+      (cond->> monster-traits
+               (> (count monster-traits) amount) (r/sample-without-replacement amount)))))
 
 (defn from-cr []
   (some-> (cr) cr->output))
 
 (defn type-from-cr []
-  (when-let [cr (cr)]
-    (when-let [monsters (->> (db/execute! {:select [:*]
-                                           :from   [:monsters]
-                                           :where  [:= :cr cr]})
-                             (group-by :type)
-                             (p/>>item "Choose monster type:"))]
-      (-> monsters monsters->traits r/sample))))
+  (u/when-let* [cr (cr)
+                monsters (->> (db/execute! {:select [:*]
+                                            :from   [:monsters]
+                                            :where  [:= :cr cr]})
+                              (group-by :type)
+                              (p/>>item "Choose monster type:"))]
+    (-> monsters monsters->traits r/sample)))

@@ -1,11 +1,12 @@
 (ns campaign3.relics
   (:require (campaign3
               [db :as db]
+              [helmets :as helmets]
               [mundanes :as mundanes]
               [prompting :as p]
               [util :as u])
-            [randy.core :as r]
-            [puget.printer :as puget]))
+            [puget.printer :as puget]
+            [randy.core :as r]))
 
 (def ^:private points-per-level 10)
 
@@ -37,36 +38,41 @@
                      :or   {committed 0} :as modifier}
                     points-remaining relic]
   #_(let [upgrade-points (or upgrade-points points 10)
-        selected-mod-effect effect]
-    (if (>= (+ committed points-remaining) upgrade-points)
-      (-> relic
-          (update :progressed #(filterv (fn [{:keys [effect]}]
-                                          (not= selected-mod-effect effect)) %))
-          (update :existing #(mapv (fn [{:keys [effect] :as existing-mod}]
-                                     (if (= selected-mod-effect effect)
-                                       (-> existing-mod
-                                           (update :points (fn [points] (+ upgrade-points points)))
-                                           (update :level inc))
-                                       existing-mod)) %)))
-      (update relic :progressed
-              #(as-> % $
-                     (filterv (fn [{:keys [effect]}]
-                                (not= selected-mod-effect effect)) $)
-                     (conj $ (assoc modifier :committed (+ committed points-remaining))))))))
+          selected-mod-effect effect]
+      (if (>= (+ committed points-remaining) upgrade-points)
+        (-> relic
+            (update :progressed #(filterv (fn [{:keys [effect]}]
+                                            (not= selected-mod-effect effect)) %))
+            (update :existing #(mapv (fn [{:keys [effect] :as existing-mod}]
+                                       (if (= selected-mod-effect effect)
+                                         (-> existing-mod
+                                             (update :points (fn [points] (+ upgrade-points points)))
+                                             (update :level inc))
+                                         existing-mod)) %)))
+        (update relic :progressed
+                #(as-> % $
+                       (filterv (fn [{:keys [effect]}]
+                                  (not= selected-mod-effect effect)) $)
+                       (conj $ (assoc modifier :committed (+ committed points-remaining))))))))
 
 (defn- attach-new-mod [{:keys [points upgrade-points]
                         :or   {points 10} :as modifier}
                        relic]
   ;new random/player mods are always added as if they have max 10 points
   #_(update relic :existing
-          #(conj % (assoc modifier
-                     :level 1
-                     :points (min points 10)
-                     :upgrade-points (or upgrade-points points)))))
+            #(conj % (assoc modifier
+                       :level 1
+                       :points (min points 10)
+                       :upgrade-points (or upgrade-points points)))))
 
 ;TODO relic levelling process needs to be saved per-character
 (defn level-relic! []
-  #_(let [relic (choose-found-relic)
+  (u/when-let* [relic (choose-found-relic)
+                character (->> (keys helmets/character-enchants)
+                               (p/>>input "Character:")
+                               keyword)]
+    111)
+  #_(let [
           points-remaining (- (* points-per-level (inc level))
                               (->> existing
                                    (map #(:points % 10))
@@ -120,6 +126,6 @@
       (-> relic (assoc :found true :base name) update-relic!))))
 
 (defn change-relic-base! []
-  (when-let [{:keys [base-type] :as relic} (choose-found-relic)]
-    (when-let [{:keys [name]} (mundanes/choose-base base-type)]
-      (-> relic (assoc :base name) update-relic!))))
+  (u/when-let* [{:keys [base-type] :as relic} (choose-found-relic)
+                {:keys [name]} (mundanes/choose-base base-type)]
+    (-> relic (assoc :base name) update-relic!)))

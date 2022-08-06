@@ -17,8 +17,7 @@
                  :tags        #{"damage"}}
                 {:effect      "You may redirect healing targeted at you to a creature of your choice. This counts as your outgoing healing."
                  :upgradeable false
-                 :tags        #{"survivability" "utility"}}]
-  :attunements {}}
+                 :tags        #{"survivability" "utility"}}]}
  {:name        "Filipo's Melody"
   :found       false
   :enabled     true
@@ -40,8 +39,7 @@
                  :upgrade-points 30}
                 {:effect      "You have an additional action on your turn on the fourth round of combat."
                  :tags        #{"utility"}
-                 :upgradeable false}]
-  :attunements {}}
+                 :upgradeable false}]}
  {:name        "Eva's Control"
   :found       false
   :enabled     true
@@ -62,5 +60,4 @@
                  :upgrade-points 30
                  :tags           #{"damage"}}
                 {:effect "[Once] per short rest, you may swap positions with one of your minions that you can see as a free action."
-                 :tags   #{"utility"}}]
-  :attunements {}}]
+                 :tags   #{"utility"}}]}]

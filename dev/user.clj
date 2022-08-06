@@ -6,7 +6,6 @@
             [randy.core :as r]
             (campaign3
               [amulets :as amulets]
-              [consumables :as consumables]
               [core :as c]
               [crafting :as crafting]
               [curios :as curios]

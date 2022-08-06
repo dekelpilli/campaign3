@@ -22,10 +22,10 @@
 
 (defn choose-base
   ([]
-   (when-let [choice (p/>>item "Base category:" (keys base-types))]
-     (when-let [base (choose-base choice)]
-       {:base base
-        :type choice})))
+   (u/when-let* [choice (p/>>item "Base category:" (keys base-types))
+                 base (choose-base choice)]
+     {:base base
+      :type choice}))
   ([type]
    (p/>>item "Base type:"
              (u/assoc-by :name (base-types type)))))

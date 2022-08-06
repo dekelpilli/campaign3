@@ -1,7 +1,8 @@
 (ns campaign3.helmets
   (:require (campaign3
               [db :as db]
-              [prompting :as p])
+              [prompting :as p]
+              [util :as u])
             [randy.core :as r]))
 
 (def ^:private mod-mending-result (r/alias-method-sampler {:upgrade 3 :remove 3 :nothing 4}))
@@ -66,26 +67,26 @@
      :fracture-chance (fractured-chance points-total)}))
 
 (defn apply-personality []
-  (when-let [character-enchants (p/>>item "Character name:" character-enchants)]
-    (when-let [present-enchants (some-> (select-enchants character-enchants) enchant-levels)]
-      (let [upgradeable-enchants (filterv :upgradeable present-enchants)
-            has-upgrades? (seq upgradeable-enchants)
-            present-enchant-effects (into #{} (map :effect) present-enchants)
-            remaining-mods (filterv (comp not present-enchant-effects :effect) character-enchants)
-            has-available-mods? (seq remaining-mods)
-            action (r/sample (cond-> []
-                                     has-available-mods? (conj :add)
-                                     has-upgrades? (conj :upgrade)))
-            result (case action
-                     :upgrade (upgrade-helm-mod upgradeable-enchants)
-                     :add (add-helm-mod present-enchants remaining-mods))]
-        (assoc result :action action)))))
+  (u/when-let* [character-enchants (p/>>item "Character name:" character-enchants)
+                present-enchants (some-> (select-enchants character-enchants) enchant-levels)]
+    (let [upgradeable-enchants (filterv :upgradeable present-enchants)
+          has-upgrades? (seq upgradeable-enchants)
+          present-enchant-effects (into #{} (map :effect) present-enchants)
+          remaining-mods (filterv (comp not present-enchant-effects :effect) character-enchants)
+          has-available-mods? (seq remaining-mods)
+          action (r/sample (cond-> []
+                                   has-available-mods? (conj :add)
+                                   has-upgrades? (conj :upgrade)))
+          result (case action
+                   :upgrade (upgrade-helm-mod upgradeable-enchants)
+                   :add (add-helm-mod present-enchants remaining-mods))]
+      (assoc result :action action))))
 
 (defn finish-progress-upgrade []
-  (when-let [present-enchants (get-present-enchants-levels)]
-    (when-let [enchant-levels (enchant-levels present-enchants)]
-      (let [points-total (reduce sum-enchant-points 0 enchant-levels)]
-        {:fracture-chance (fractured-chance points-total)}))))
+  (u/when-let* [present-enchants (get-present-enchants-levels)
+                enchant-levels (enchant-levels present-enchants)]
+    {:fracture-chance (-> (reduce sum-enchant-points 0 enchant-levels)
+                          fractured-chance)}))
 
 (defn mend []
   (when-let [present-enchants (get-present-enchants-levels)]

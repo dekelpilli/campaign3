@@ -62,16 +62,16 @@
          (+ base-loot))))
 
 (defn rewards []
-  (when-let [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] {:sorted? false})]
-    (when-let [investigations (some-> (p/>>input "List investigations:")
-                                      (str/split #","))]
-      {:xp   (case difficulty
-               :easy (+ 6 (rng/next-int r/default-rng 2))
-               :medium (+ 8 (rng/next-int r/default-rng 3))
-               :hard (+ 11 (rng/next-int r/default-rng 3))
-               :deadly (+ 13 (rng/next-int r/default-rng 4))
-               :boss (+ 15 (rng/next-int r/default-rng 4)))
-       :loot (calculate-loot difficulty investigations)})))
+  (u/when-let* [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] {:sorted? false})
+                investigations (some-> (p/>>input "List investigations:")
+                                       (str/split #","))]
+    {:xp   (case difficulty
+             :easy (+ 6 (rng/next-int r/default-rng 2))
+             :medium (+ 8 (rng/next-int r/default-rng 3))
+             :hard (+ 11 (rng/next-int r/default-rng 3))
+             :deadly (+ 13 (rng/next-int r/default-rng 4))
+             :boss (+ 15 (rng/next-int r/default-rng 4)))
+     :loot (calculate-loot difficulty investigations)}))
 
 (defn new-positive []
   {:race      (r/sample races)
