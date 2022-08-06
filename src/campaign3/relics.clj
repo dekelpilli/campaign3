@@ -40,6 +40,22 @@
                       existing-mod))
                   %))))
 
+(defn- progress-mod [attunement {:keys [committed upgrade-points effect] :as mod}]
+  (if (> (+ committed 10) upgrade-points)
+    (-> attunement
+        (update :progressed #(remove (comp #{effect} :effect) %))
+        (update :existing #(map (fn [{existing-effect :effect :as existing-mod}]
+                                  (if (= existing-effect effect)
+                                    (update mod :level inc)
+                                    existing-mod))
+                                %)))
+    (-> attunement
+        (update :progressed #(map (fn [{progressed-effect :effect :as progressed-mod}]
+                                    (if (= progressed-effect effect)
+                                      (update progressed-mod :committed + 10)
+                                      progressed-mod))
+                                  %)))))
+
 (defn- prep-new-mod [{:keys [points upgrade-points]
                       :or   {points 10}
                       :as   mod}]
@@ -49,17 +65,12 @@
     :upgrade-points (or upgrade-points points 10)))
 
 (defn- attach-new-mod [attunement mod]
-  ;new random/player mods are always added as if they have max 10 points
   (update attunement :existing conj (prep-new-mod mod)))
-
-#_{:level      1
-   :existing   (map #(assoc % :level 1) start)
-   :progressed []}
 
 (defn add-mod-choice [attunement {:keys [type mod]}]
   (case type
     (:new-random-mod :new-relic-mod) (attach-new-mod attunement mod)
-    :progress nil
+    :progress (progress-mod attunement mod)
     :upgrade-mod (upgrade-mod attunement mod)
     :none attunement))
 
