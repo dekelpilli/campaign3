@@ -61,6 +61,41 @@
                        :points (min points 10)
                        :upgrade-points (or upgrade-points points)))))
 
+(defn unique-levelling-options [n upgradeable relic-mods random-gen option-types]
+  (if (zero? n)
+    []
+    (let [opts (loop [opts (-> (repeatedly n #(r/weighted-sample option-types)) frequencies)
+                      types option-types
+                      [check-kw & checks] [:new-relic-mod :upgrade-mod]]
+                 (case check-kw
+                   :new-relic-mod
+                   (if (> (:new-relic-mod opts 0) (count relic-mods))
+                     (let [types (dissoc types :new-relic-mod)
+                           new-type (r/weighted-sample types)]
+                       (recur
+                         (-> (update opts :new-relic-mod dec)
+                             (update new-type (fnil inc 0)))
+                         types
+                         (conj checks new-type))))
+                   :upgrade-mod
+                   (if (> (:upgrade-mod opts 0) (count upgradeable))
+                     (let [types (dissoc types :upgrade-mod)
+                           new-type (r/weighted-sample types)]
+                       (recur
+                         (-> (update opts :upgrade-mod dec)
+                             (update new-type (fnil inc 0)))
+                         types
+                         (conj checks new-type))))
+                   :new-random-mod (recur opts types checks)
+                   nil opts))]
+      (mapcat (fn [[type amount]]
+                (let [mods (case type
+                            :new-relic-mod (r/sample-without-replacement amount relic-mods)
+                            :upgrade-mod (r/sample-without-replacement amount upgradeable)
+                            :new-random-mod (repeatedly amount random-gen))]
+                  (map (fn [mod] {:type type :mod mod}) mods)))
+              opts))))
+
 (defn single-relic-level [{:keys [attunements base-type start mods] :as relic} character base]
   (let [{:keys [existing progressed] :as attunement} (or (character attunements)
                                                          {:level      1
@@ -78,15 +113,11 @@
                                        upgradeable (assoc :upgrade-mod 1))
         options (into (map (fn [progressed] {:type :progress
                                              :mod  progressed}) progressed)
-                      (map (fn [option-type]
-                             {:type option-type
-                              :mod  (case option-type
-                                      :new-random-mod (gen-random-mod)
-                                      :new-relic-mod (r/sample available-relic-mods)
-                                      :upgrade-mods (r/sample upgradeable))}))
-                      (repeatedly (- 2 (count progressed)) #(r/weighted-sample levelling-option-types))) ;TODO generate unique options without impacting weighting for second option
+                      (unique-levelling-options
+                        (- 2 (count progressed))
+                        upgradeable available-relic-mods gen-random-mod levelling-option-types))
         ]
-    (when-let [choice (p/>>item "Choose relic levelling option:" (conj options :none) :none-opt? false)]
+    (when-let [choice (p/>>item "Choose relic levelling option:" (conj options {:type :no-change}))]
       (update-in relic [:attunements character :level] inc)))) ;TODO attach choice results to relic
 
 (defn level-relic! []
