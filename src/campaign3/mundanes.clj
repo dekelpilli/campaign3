@@ -30,6 +30,11 @@
    (p/>>item "Base type:"
              (u/assoc-by :name (base-types type)))))
 
+(defn name->base [type name]
+  (->> (get base-types type)
+       (filter (comp #{name} :name))
+       first))
+
 (defn new []
   (let [type (new-base-type)
         base (case type

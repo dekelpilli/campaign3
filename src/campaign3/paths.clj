@@ -15,7 +15,7 @@
      :character character}))
 
 (defn use-dust []
-  (u/when-let* [character (p/>>input "Character:" (keys helmets/character-enchants))
+  (u/when-let* [character (p/>>item "Character:" (keys helmets/character-enchants))
                 {:keys [path progress] :as current-path} (-> (db/execute! {:select [:*]
                                                                            :from   [:divinity-progress]
                                                                            :where  [:< :progress 5]})

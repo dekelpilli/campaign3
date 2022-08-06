@@ -10,9 +10,9 @@
                  :tags   #{"critical"}}
                 {:effect "When you deal a natural critical hit with a weapon, heal hit points equal to the radiant damage dealt."
                  :tags   #{"critical" "survivability"}}
-                {:effect "+1d[4] fire damage weapon attacks."
+                {:effect "+1d[4] fire damage with melee attacks."
                  :tags   #{"damage"}}
-                {:effect      "Your weapon attacks deal radiant damage instead of physical."
+                {:effect      "Your melee attacks' non-fire damage is converted to radiant."
                  :upgradeable false
                  :tags        #{"damage"}}
                 {:effect      "You may redirect healing targeted at you to a creature of your choice. This counts as your outgoing healing."

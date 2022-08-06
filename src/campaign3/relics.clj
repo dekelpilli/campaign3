@@ -6,7 +6,8 @@
               [prompting :as p]
               [util :as u])
             [puget.printer :as puget]
-            [randy.core :as r]))
+            [randy.core :as r]
+            [campaign3.enchants :as e]))
 
 (def ^:private points-per-level 10)
 
@@ -22,16 +23,11 @@
        (u/assoc-by :name)
        (p/>>item "Choose relic:")))
 
-(defn- upgradeable []
-  #_(let [upgradeable? (fn [{:keys [found? enabled? level]
-                             :or   {enabled? true}}] (and found? enabled? (<= level 10)))]
-      (->> @relics
-           (filter upgradeable?)
-           (choose-relic))))
-
 (defn- update-relic! [{:keys [name] :as relic}]
   (db/execute! {:update [:relics]
-                :set    (-> relic (select-keys [:attunements :base :found]) (update :attunements u/jsonb-lift))
+                :set    (-> relic
+                            (select-keys [:attunements :base :found])
+                            (update :attunements u/jsonb-lift))
                 :where  [:= :name name]}))
 
 (defn- upgrade-mod [{:keys [committed points upgrade-points effect]
@@ -65,56 +61,52 @@
                        :points (min points 10)
                        :upgrade-points (or upgrade-points points)))))
 
-;TODO relic levelling process needs to be saved per-character
+(defn single-relic-level [{:keys [attunements base-type start mods] :as relic} character base]
+  (let [{:keys [existing progressed] :as attunement} (or (character attunements)
+                                                         {:level      1
+                                                          :existing   (map #(assoc % :level 1) start)
+                                                          :progressed []})
+        relic (assoc relic :attunements character attunement)
+        upgradeable (-> (remove (comp false? :upgradeable) existing)
+                        seq)
+        existing-effects (into #{} (map :effect) existing)
+        available-relic-mods (-> (remove (comp existing-effects :effect) mods)
+                                 seq)
+        gen-random-mod (e/->valid-enchant-fn-memo base base-type)
+        levelling-option-types (cond-> {:new-random-mod 1}
+                                       available-relic-mods (assoc :new-relic-mod 1)
+                                       upgradeable (assoc :upgrade-mod 1))
+        options (into (map (fn [progressed] {:type :progress
+                                             :mod  progressed}) progressed)
+                      (map (fn [option-type]
+                             {:type option-type
+                              :mod  (case option-type
+                                      :new-random-mod (gen-random-mod)
+                                      :new-relic-mod (r/sample available-relic-mods)
+                                      :upgrade-mods (r/sample upgradeable))}))
+                      (repeatedly (- 2 (count progressed)) #(r/weighted-sample levelling-option-types))) ;TODO generate unique options without impacting weighting for second option
+        ]
+    (when-let [choice (p/>>item "Choose relic levelling option:" (conj options :none) :none-opt? false)]
+      (update-in relic [:attunements character :level] inc)))) ;TODO attach choice results to relic
+
 (defn level-relic! []
-  (u/when-let* [relic (choose-found-relic)
+  (u/when-let* [{:keys [attunements base-type base] :as relic} (choose-found-relic)
                 character (->> (keys helmets/character-enchants)
-                               (p/>>input "Character:")
-                               keyword)]
-    111)
-  #_(let [
-          points-remaining (- (* points-per-level (inc level))
-                              (->> existing
-                                   (map #(:points % 10))
-                                   (reduce + 0))
-                              (->> progressed
-                                   (map :committed)
-                                   (reduce +)))
-          upgradeable-mods (filter #(:upgradeable % true) existing)
-          possible-options (cond-> [:new-relic-mod :new-random-mod :new-character-mod]
-                                   (seq upgradeable-mods) (conj :upgrade-existing-mod))
-          upgrade-options (concat [:none]
-                                  (repeat (count progressed) :continue-progress)
-                                  (repeatedly #(r/sample possible-options)))
-          valid-enchants (e/find-valid-enchants base type)
-          rand-filled #(->> % util/rand-enabled util/fill-randoms)
-          mod-options (->> upgrade-options
-                           (map (fn [o]
-                                  [o (rand-filled
-                                       (case o
-                                         :continue-progress progressed
-                                         :none [nil]
-                                         :new-character-mod (@character-enchants owner)
-                                         :new-relic-mod available
-                                         :upgrade-existing-mod upgradeable-mods
-                                         :new-random-mod valid-enchants))]))
-                           (dedupe)
-                           (take 3)
-                           (map-indexed #(into [%1] %2))
-                           (into [["Key" "Type" "Value"]])
-                           (util/display-multi-value))
-          choice (util/&num)
-          [_ option-type modifier] (when (and choice (>= choice 0)) (nth mod-options (inc choice)))]
-      (when option-type
-        (-> (case option-type
-              (:new-character-mod :new-random-mod) (attach-new-mod modifier relic)
-              (:continue-progress :upgrade-existing-mod) (upgrade-mod modifier points-remaining relic)
-              :new-relic-mod (-> relic
-                                 (update :available #(filterv (fn [m] (not= modifier m)) %))
-                                 (update :existing #(conj % modifier)))
-              :none relic)
-            (update :level inc)
-            (update-relic!)))))
+                               (p/>>item "Character:")
+                               keyword)
+                additional-levels (if (character attunements)
+                                    1
+                                    (some-> (p/>>item (format "What is %s's %s relic level?" (name character) base-type)
+                                                      (range 2 11))
+                                            dec))]
+    (let [base (mundanes/name->base base-type base)
+          levelled-relic (reduce (fn [relic _]
+                                   (or (single-relic-level relic character base)
+                                       (reduced relic)))
+                                 relic
+                                 (range additional-levels))]
+      (update-relic! levelled-relic)
+      levelled-relic)))
 
 (defn new! []
   (let [{:keys [base-type] :as relic} (-> (db/execute! {:select [:*]

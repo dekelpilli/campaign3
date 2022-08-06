@@ -37,7 +37,7 @@
                 :level (if upgradeable
                          (parse-long (p/>>input (str "What is the level of '" effect "'")))
                          1))))
-       (not-empty)))
+       not-empty))
 
 (defn- get-present-enchants-levels []
   (some-> (get-present-enchants) enchant-levels))
