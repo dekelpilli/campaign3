@@ -9,13 +9,6 @@
             [randy.core :as r]
             [campaign3.enchants :as e]))
 
-(def ^:private points-per-level 10)
-
-(defn choose-relic [relics]
-  (some->> (not-empty relics)
-           (u/assoc-by :name)
-           (p/>>item "Relic:")))
-
 (defn- choose-found-relic []
   (->> (db/execute! {:select [:*]
                      :from   [:relics]
@@ -41,20 +34,20 @@
                   %))))
 
 (defn- progress-mod [attunement {:keys [committed upgrade-points effect] :as mod}]
-  (if (> (+ committed 10) upgrade-points)
-    (-> attunement
-        (update :progressed #(remove (comp #{effect} :effect) %))
-        (update :existing #(map (fn [{existing-effect :effect :as existing-mod}]
-                                  (if (= existing-effect effect)
-                                    (update mod :level inc)
-                                    existing-mod))
-                                %)))
-    (-> attunement
-        (update :progressed #(map (fn [{progressed-effect :effect :as progressed-mod}]
-                                    (if (= progressed-effect effect)
-                                      (update progressed-mod :committed + 10)
-                                      progressed-mod))
-                                  %)))))
+  (let [committed (+ committed 10)]
+    (if (>= committed upgrade-points)
+      (-> attunement
+          (update :progressed #(remove (comp #{effect} :effect) %))
+          (update :existing #(map (fn [{existing-effect :effect :as existing-mod}]
+                                    (if (= existing-effect effect)
+                                      (update mod :level inc)
+                                      existing-mod))
+                                  %)))
+      (-> attunement
+          (update :progressed #(map (fn [{progressed-effect :effect :as progressed-mod}]
+                                      (cond-> progressed-mod
+                                              (= progressed-effect effect) (assoc :committed committed)))
+                                    %))))))
 
 (defn- prep-new-mod [{:keys [points upgrade-points]
                       :or   {points 10}
@@ -155,14 +148,25 @@
       (update-relic! levelled-relic)
       (character attunements))))
 
+(defn find-relic! [{:keys [base-type] :as relic}]
+  (when-let [{:keys [name]} (mundanes/choose-base base-type)]
+    (-> relic (assoc :found true :base name) update-relic!)))
+
 (defn new! []
-  (let [{:keys [base-type] :as relic} (-> (db/execute! {:select [:*]
-                                                        :from   [:relics]
-                                                        :where  [:= :found false]})
-                                          r/sample)]
+  (let [relic (-> (db/execute! {:select [:*]
+                                :from   [:relics]
+                                :where  [:= :found false]})
+                  r/sample)]
     (-> relic (select-keys [:name :start :base-type]) puget/cprint)
-    (when-let [{:keys [name]} (mundanes/choose-base base-type)]
-      (-> relic (assoc :found true :base name) update-relic!))))
+    (find-relic! relic)))
+
+(defn reveal-relic! []
+  (when-let [relic (->> (db/execute! {:select [:*]
+                                      :from   [:relics]
+                                      :where  [:= :found false]})
+                        (u/assoc-by :name)
+                        (p/>>item "Relic:"))]
+    (find-relic! relic)))
 
 (defn change-relic-base! []
   (u/when-let* [{:keys [base-type] :as relic} (choose-found-relic)
