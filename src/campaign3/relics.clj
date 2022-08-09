@@ -115,7 +115,7 @@
         existing-effects (into #{} (map :effect) existing)
         available-relic-mods (-> (remove (comp existing-effects :effect) mods)
                                  seq)
-        gen-random-mod (e/->valid-enchant-fn-memo base base-type)
+        gen-random-mod (comp u/fill-randoms (e/->valid-enchant-fn-memo base base-type))
         levelling-option-types (cond-> {:new-random-mod 1}
                                        available-relic-mods (assoc :new-relic-mod 1)
                                        upgradeable (assoc :upgrade-mod 1))
@@ -166,6 +166,7 @@
                                       :where  [:= :found false]})
                         (u/assoc-by :name)
                         (p/>>item "Relic:"))]
+    (-> relic (select-keys [:name :start :base-type]) puget/cprint)
     (find-relic! relic)))
 
 (defn change-relic-base! []

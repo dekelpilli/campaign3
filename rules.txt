@@ -41,6 +41,7 @@ Relics:
         8:  200,
         9:  250,
         10: 300
+TODO add solution for avoiding relic merry-go-round? De-attunement cost?
 
 TODO reconsider relic prices/vendor valuations?
     current average values of loot rolls: 25.5

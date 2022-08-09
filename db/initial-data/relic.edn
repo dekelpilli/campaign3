@@ -6,6 +6,7 @@
                  :tags   #{"damage"}}
                 {:effect "+2 radiant damage with melee attacks."
                  :tags   #{"damage"}}]
+  ;TODO have 9 mods for each relic
   :mods        [{:effect "-1 critical hit requirement while bloodied, or while an ally is on 0 hit points."
                  :tags   #{"critical"}}
                 {:effect "When you deal a natural critical hit with a weapon, heal hit points equal to the radiant damage dealt."
