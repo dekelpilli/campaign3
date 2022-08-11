@@ -52,7 +52,7 @@
 (defn- calculate-loot [difficulty investigations]
   (let [extra-loot-sum (transduce (map (fn [s] (- (parse-long s) extra-loot-threshold))) + 0 investigations)
         dungeon? (when-not (#{:easy :medium} difficulty)
-                   (p/>>item "In a dungeon?" [true false] {:none-opt? false}))
+                   (p/>>item "In a dungeon?" [true false] :none-opt? false))
         base-loot (case difficulty
                     (:easy :medium) 0
                     :hard (if dungeon? 1 0)
@@ -62,12 +62,14 @@
          (* extra-loot-step)
          (/ extra-loot-sum)
          int
+         (max 0)
          (+ base-loot))))
 
 (defn rewards []
-  (u/when-let* [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] {:sorted? false})
+  (u/when-let* [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] :sorted? false)
                 investigations (some-> (p/>>input "List investigations:")
                                        (str/split #","))]
+    ;TODO XP too high?
     {:xp   (case difficulty
              :easy (+ 6 (rng/next-int r/default-rng 2))
              :medium (+ 8 (rng/next-int r/default-rng 3))
@@ -122,3 +124,15 @@
       (if (or (<= sum maximum) (< sum 10))
         sum
         (recur (transduce (map num-char->num) + 0 (str sum)))))))
+
+;https://www.gmbinder.com/share/-N4m46K77hpMVnh7upYa
+(def level-power [11 14 18 23 32 35 41 44 49 53 62 68 71 74 82 84 103 119 131 141])
+(def cr-power {0  1 1/8 5 1/4 10 1/2 16 1 22 2 28 3 37 4 48 5 60 6 65 7 70 8 85 9 85
+               10 95 11 105 12 115 13 120 14 125 15 130 16 140 17 150 18 160 19 165
+               20 180 21 200 22 225 23 250 24 275 25 300 26 325 27 350 28 375 29 400
+               30 425}) ;CR8=CR9?
+(def encounter-difficulties [{:tier "Mild" :multiplier 0.40 :cost 2}
+                             {:tier "Bruising" :multiplier 0.60 :cost 4}
+                             {:tier "Bloody" :multiplier 0.75 :cost 6}
+                             {:tier "Brutal" :multiplier 0.90 :cost 8}
+                             {:tier "Oppressive" :multiplier 1.00 :cost 10}])
