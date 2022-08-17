@@ -1,64 +1,31 @@
-[{:name        "Solarmane's Legacy"
-  :found       false
-  :enabled     true
-  :base-type   "weapon"
-  :start       [{:effect "+2 fire damage with melee attacks."
-                 :tags   #{"damage"}}
-                {:effect "+2 radiant damage with melee attacks."
-                 :tags   #{"damage"}}]
-  ;TODO have 9 mods for each relic
-  :mods        [{:effect "-1 critical hit requirement while bloodied, or while an ally is on 0 hit points."
-                 :tags   #{"critical"}}
-                {:effect "When you deal a natural critical hit with a weapon, heal hit points equal to the radiant damage dealt."
-                 :tags   #{"critical" "survivability"}}
-                {:effect "+1d[4] fire damage with melee attacks."
-                 :tags   #{"damage"}}
-                {:effect      "Your melee attacks' non-fire damage is converted to radiant."
-                 :upgradeable false
-                 :tags        #{"damage"}}
-                {:effect      "You may redirect healing targeted at you to a creature of your choice. This counts as your outgoing healing."
-                 :upgradeable false
-                 :tags        #{"survivability" "utility"}}]}
- {:name        "Filipo's Melody"
-  :found       false
-  :enabled     true
-  :base-type   "armour"
-  :start       [{:effect         "Whenever you roll for initiative, choose [1] creature you can see to gain temporary hit points equal to your level."
-                 :tags           #{"survivability"}
-                 :upgrade-points 20}]
-  :mods        [{:effect      "Once per long rest, when you cast a spell with a non-instant duration that affects one or more of your allies, you may choose to regain the spell slot used for that spell."
-                 :tags        #{"survivability"}
-                 :upgradeable false}
-                {:effect         "Creatures you have consumed a spell slot to apply a buff to have +[1] AC for 2 rounds."
-                 :tags           #{"survivability"}
-                 :upgrade-points 30}
-                {:effect      "You have advantage on Arcana checks."
-                 :tags        #{"utility"}
-                 :upgradeable false}
-                {:effect         "Creatures of your choice have +[1]AC while within 5 feet of you."
-                 :tags           #{"survivability"}
-                 :upgrade-points 30}
-                {:effect      "You have an additional action on your turn on the fourth round of combat."
-                 :tags        #{"utility"}
-                 :upgradeable false}]}
- {:name        "Eva's Control"
-  :found       false
-  :enabled     true
-  :base-type   "armour"
-  :start       [{:effect         "+2 resistance to damage while within 10 feet of at least one of your minions."
-                 :upgrade-points 20
-                 :tags           #{"survivability"}}]
-  :mods        [{:effect         "You and your minions have +[1] damage for each of your active minions."
-                 :upgrade-points 20
-                 :tags           #{"damage"}}
-                {:effect      "Your minions have advantage on opportunity attacks."
-                 :upgradeable false
-                 :tags        #{"accuracy"}}
-                {:effect         "Creatures of your choice within 30 feet of at least one of your minions have additional incoming healing equal to [1x] your proficiency."
-                 :upgrade-points 50
-                 :tags           #{"survivability"}}
-                {:effect         "Creatures within 5 feet of your minions are marked to take [1] additional psychic damage from each instance of damage."
-                 :upgrade-points 30
-                 :tags           #{"damage"}}
-                {:effect "[Once] per short rest, you may swap positions with one of your minions that you can see as a free action."
-                 :tags   #{"utility"}}]}]
+[{:name      "Solarmane's Legacy"
+  :found     false
+  :enabled   true
+  :base-type "weapon"
+  :start     [{:effect "+2 fire damage with melee attacks."
+               :tags   #{"damage"}}
+              {:effect "+2 radiant damage with melee attacks."
+               :tags   #{"damage"}}]
+  :mods      [{:effect "-1 critical hit requirement while bloodied, or while an ally is on 0 hit points."
+               :tags   #{"critical"}}
+              {:effect "When you deal a natural critical hit with a weapon, heal hit points equal to the radiant damage dealt."
+               :tags   #{"critical" "survivability"}}
+              {:effect "+1d[4] fire damage with melee attacks."
+               :tags   #{"damage"}}
+              {:effect      "Your melee attacks' non-fire damage is converted to radiant."
+               :upgradeable false
+               :tags        #{"damage"}}
+              {:effect      "You may redirect healing targeted at you to a creature of your choice. This counts as your outgoing healing."
+               :upgradeable false
+               :tags        #{"survivability" "utility"}}
+              {:effect "Creatures grappled or restrained by you are marked to take [1] additional fire damage from each instance of melee damage."
+               :tags   #{"damage"}}
+              {:effect      "Healing actions you use do not consume resources if you have landed a killing blow with radiant damage in the last 6 seconds."
+               :upgradeable false
+               :tags        #{"magic"}}
+              {:effect         "You and creatures of your choice within [5] feet of you are immune to the frightened condition."
+               :upgrade-points 20
+               :tags           #{"utility"}}
+              {:effect      "Modifiers to your slashing damage apply to your fire damage instead."
+               :upgradeable false
+               :tags        #{"damage"}}]}]
