@@ -130,6 +130,7 @@
           (update-in [:attunements character] add-mod-choice choice)))))
 
 (defn level-relic! []
+  ;TODO store levels per level instead of per character
   (u/when-let* [{:keys [attunements base-type base] :as relic} (choose-found-relic)
                 character (->> (keys helmets/character-enchants)
                                (p/>>item "Character:")

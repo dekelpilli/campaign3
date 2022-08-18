@@ -8,17 +8,17 @@
             :tags   #{"magic"}}
            {:effect "+1 to the DCs of Illusion spells."
             :tags   #{"accuracy"}}
-           {:effect "No more than once per conversation, when you tell a lie, you may immediately learn if one person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
+           {:effect "No more than once per conversation, when you tell a lie, you may immediately learn if each person that heard that lie believed, disbelieved, or was unsure about the veracity of your statement."
             :tags   #{"utility"}}]}
  {:name   "Distributed Rejuvenation"
   :info   "Improves healing you grant via spells and Medicine checks."
-  :levels [{:effect "You and allies within 15 feet of you have -2 critical requirement for death saving throws, and gain temporary hit points equal to your level on critically succeeding on a death saving throw."
+  :levels [{:effect "When creatures you have healed in the last minute go down, they immediately gain one successful death saving throw."
             :tags   #{"survivability"}}
            {:effect "Creatures you have healed with the use of a spell or a Medicine check in the last minute regain 1 hit point at the start of their turns while conscious."
             :tags   #{"survivability" "magic"}}
            {:effect "When you heal a creature with the use of a spell, that creature also gains temporary hit points equal to 50% of the hit points granted by the spell, including any bonuses to outgoing healing you have."
             :tags   #{"magic"}}
-           {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat. Additionally, add your outgoing healing bonus to the life gained by downed allies you heal with Medicine checks."
+           {:effect "You may make Wisdom (Medicine) checks to heal downed creatures as a bonus action. You may do this no more than once per combat. Additionally, add twice your outgoing healing bonus, instead of just once, to the life gained by downed allies you heal with Medicine checks."
             :tags   #{"utility"}}
            {:effect "When you cast a spell that grants hit points, you may choose to cause the spell to be upcast by up to 3 spell levels, to a maximum of 6th level. The spell consumes resources as if it had been cast normally."
             :tags   #{"magic"}}]}
@@ -26,7 +26,7 @@
   :info   "Improves your longevity in combat through various avenues."
   :levels [{:effect "+1 resistance to damage, and +1 resistance to damage for each previous time you've been hit per round."
             :tags   #{"survivability"}}
-           {:effect "You have +3 to maximum hit points, and you have +1 maximum per armour relic level."
+           {:effect "You have +3 to maximum hit points, and you have +1 maximum hit points per armour relic level."
             :tags   #{"survivability"}}
            {:effect "You take half damage from attacks that hit you within 1 point of your AC (i.e. equal or one above)."
             :tags   #{"survivability"}}
@@ -72,7 +72,7 @@
             :tags   #{"damage"}}]}
  {:name   "Aggressive Combat"
   :info   "Grants bonuses that make you a more competent close combatant."
-  :levels [{:effect "You gain +1 damage for each enemy in battle (>0 hp only)."
+  :levels [{:effect "You gain +1 global damage for each enemy in battle (>0 hp only)."
             :tags   #{"damage"}}
            {:effect "You gain proficiency in saving throws of types you've failed in the last 12 seconds. Creatures of your choice within 10 feet of you also gain this proficiency."
             :tags   #{"survivability"}}
@@ -80,7 +80,7 @@
             :tags   #{"control"}}
            {:effect "You have +1 AB and +1 to your DCs against enemies within 5 feet of two or more of your allies, including yourself. +2 damage against flanked enemies."
             :tags   #{"accuracy"}}
-           {:effect "One of your weapons has an additional enchantment slot."
+           {:effect "One of your weapons has an additional enchantment slot. You gain 4 curios of your choice upon receiving this benefit."
             :tags   #{"utility"}}]}
  {:name   "Unbound Arcana"
   :info   "Improves you general spellcasting prowess."
@@ -90,9 +90,9 @@
             :tags   #{"magic"}}
            {:effect "You may cast spells with a range that isn't Self as if they had a range of Touch instead. Creatures you hit with spells cast with a range of Touch become rattled until the start of their next turn."
             :tags   #{"magic" "control"}}
-           {:effect "Once per long rest, when you fail a Concentration Save, you may choose to succeed instead."
+           {:effect "Once per short rest, when you fail a Concentration Save, you may choose to succeed instead."
             :tags   #{"magic"}}
-           {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed), you may make Constitution saving throw against a DC of 10 + twice the spell slot level used. On a success, you regain the consumed spell slot."
+           {:effect "Whenever you cast a spell that was ineffective (e.g. a spell attack that missed, but not a spell that dealt half damage due to a successful save), you may make Constitution saving throw against a DC of 10 + twice the spell slot level used. On a success, you regain the consumed spell slot."
             :tags   #{"magic"}}]}
  {:name   "Arcane Combat"
   :info   "Improves spellcasting and weapon attacks for characters that utilise both."
@@ -104,7 +104,7 @@
             :tags   #{"survivability"}}
            {:effect "You have +1 AB while you are concentrating on a spell or are under the effect of a spell."
             :tags   #{"accuracy"}}
-           {:effect "You have +3 spell damage if you have made a weapon attacked in the last 18 seconds. You have +3 weapon damage if you have used a spell slot in the last 18 seconds."
+           {:effect "You have +4 spell damage if you have made a weapon attacked in the last 18 seconds. You have +4 weapon damage if you have used a spell slot or finished casting a spell with a duration of at least an action in the last 18 seconds."
             :tags   #{"accuracy"}}]}
  {:name   "Elemental Mastery"
   :info   "Improves your prowess with and against elemental damage (acid, cold, fire, lightning, or thunder damage) from weapon attacks as well as spells."
@@ -122,9 +122,9 @@
   :info   "Specialises in teleportation and conjuration, without a focus on spellcasting, granting greater control of the battlefield."
   :levels [{:effect "When you make an opportunity attack, you may make a proficient spell attack against that target instead (attribute of choice). On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
             :tags   #{"control"}}
-           {:effect "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks."
+           {:effect "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks. Teleporting any distance consumes your entire regular movement for the turn."
             :tags   #{"utility"}}
-           {:effect "Once per turn, as a free action, you may conjure up to 5 stone pillars (5x5 feet each) from the ground on unoccupied spaces you can see within 60 feet of you. These pillars are up to 20 feet tall. These pillars last for 10 minutes, and have 17AC and have HP equal to twice your level, disappearing when reaching 0 life. Max 15 active pillars at one time."
+           {:effect "Once per turn, as a free action, you may conjure or remove up to 5 stone pillars (5x5 feet each) from the ground on unoccupied spaces you can see within 60 feet of you. These pillars are up to 20 feet tall. These pillars last for 10 minutes, and have 17AC and have HP equal to twice your level, disappearing when reaching 0 life. Max 15 active pillars at one time."
             :tags   #{"utility"}}
            {:effect "When within 5 feet of one of your pillars, you have full visibility from the perspectives of any of your pillars. Additionally, you may choose to cause any spell or attack you use originate from another pillar you have created in the same plane. For example, a pillar 500 feet away might make a sword attack against an adjacent creature, or cast Fireball into a room you would otherwise not be able to see. At the end of your turn, any pillar from which an effect originated is destroyed."
             :tags   #{"utility"}}
@@ -134,11 +134,11 @@
   :info   "Provides various in combat and out of combat boons relating to nature."
   :levels [{:effect "You gain proficiency or +1 expertise die with Survival and Nature when in nature or when foraging materials from creatures."
             :tags   #{"utility" "wealth"}}
-           {:effect "You are permanently under the effects of the Speak with Animals spell." ;TODO make this less bad
+           {:effect "You are permanently under the effects of the Speak with Animals spell, granting you an expertise die on checks made for the Befriend Creature journey activity. You also learn all of the native Mogothan races' languages and Mogothan."
             :tags   #{"magic" "utility"}}
            {:effect "You harness the powers of a Moorbounder. Once per combat, as a free action, you gain the Moorbounder's speed and Standing Leap feature for the remainder of your turn."
             :tags   #{"utility"}}
-           {:effect "You harness the powers of spiders; your spells and attacks have +1d4 poison damage, and you are are under the effect of the Spider Climb spell."
+           {:effect "You harness the powers of spiders; your spells and attacks have +1d4 poison damage, and you are always under the effect of the Spider Climb spell."
             :tags   #{"damage" "magic" "utility"}}
            {:effect "You have -1 critical hit requirement against enemies under the effect of a non-magical condition, and when you land a natural critical hit and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
             :tags   #{"critical" "control"}}]}
@@ -146,11 +146,11 @@
   :info   "Focuses on Necromancy and Necromany spells, with some buffs also applying to undead minions."
   :levels [{:effect "You and your undead minions are at least resistant to necrotic damage and have +1d6 necrotic damage while you have an Undead creature's amulet effect active."
             :tags   #{"damage" "survivability"}}
-           {:effect "You and your undead minions gain +1 necrotic damage for a minute (stacking) whenever you cast a Necromancy spell."
+           {:effect "You and your undead minions gain +1 necrotic damage for a minute (stacking) whenever you cast a Necromancy spell as an action."
             :tags   #{"damage" "magic"}}
-           {:effect "You and your undead minions are proficient in Constitution saving throws while concentrating on a non-cantrip Necromancy spell."
+           {:effect "You and your undead minions are proficient in Constitution saving throws while you are concentrating on a non-cantrip Necromancy spell."
             :tags   #{"magic" "survivability"}}
-           {:effect "You learn the Finger of Death spell with the Cyneburg’s Shadowed Finger of Death variation. In addition to regular casting you may be permitted to do with this spell, you may cast it on yourself once per long rest without consuming a spell slot. If this spell kills a living creature, If a creature is killed by a Finger of Death sell you cast, you may cast Soul Cage to capture its soul."
+           {:effect "You learn the Finger of Death spell with the Cyneburg’s Shadowed Finger of Death variation. In addition to regular casting you may be permitted with this spell, you may cast it on yourself once per long rest without consuming a spell slot. If this spell kills a living creature, you may cast Soul Cage to capture its soul."
             :tags   #{"magic"}}
            {:effect "You and your undead minions may choose to convert any damage you deal to Necrotic damage. Additionally, no more than {Prof} times per long rest, you may convert incoming damage to Necrotic damage."
             :tags   #{"damage" "survivability"}}]}]

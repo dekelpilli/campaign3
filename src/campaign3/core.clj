@@ -26,12 +26,12 @@
        :action #(rings/new-rings 2)}
    5  {:name   "Enchanted item"
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
-   6  {:name   "Tarot card"
-       :action (fn tarot-loot [] (repeatedly 2 tarot/new))}
-   7  {:name   "Special mundane armour"
-       :action mundanes/new-special-armour}
-   8  {:name   "Curios"
+   6  {:name   "Curios"
        :action (fn curios-loot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
+   7  {:name   "Tarot card"
+       :action (fn tarot-loot [] (repeatedly 2 tarot/new))}
+   8  {:name   "Special mundane armour"
+       :action mundanes/new-special-armour}
    9  {:name   "Helmet"
        :action helmets/new}
    10 {:name   "Crafting item"

@@ -18,8 +18,4 @@
             {:effect      "Your weapon gains the Forceful trait."
              :upgradeable false
              :points      10
-             :tags        #{"damage"}}
-            {:effect      "+1 to your maximum Dexterity."
-             :upgradeable false
-             :points      30
-             :tags        #{"utility"}}]}
+             :tags        #{"damage"}}]}
