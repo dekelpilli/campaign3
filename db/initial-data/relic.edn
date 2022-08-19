@@ -81,4 +81,32 @@
                :tags   #{"wealth"}}
               {:effect "You loot rolls always grant you [2:1] additional gold while this relic is on a special base (even from non-gold results)."
                :points 20
-               :tags   #{"wealth"}}]}]
+               :tags   #{"wealth"}}]}
+ {:name      "Essence of Eion"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."
+               :tags        #{"utility"}
+               :upgradeable false}]
+  :mods      [{:effect "You learn the Ensnaring Strike spell and may cast it with any attribute [once] per short rest."
+               :tags   #{"magic" "control" "damage" "accuracy"}}
+              {:effect "You have +1AB with weapon attacks if you have cast a Conjuration spell in the last 18 seconds."
+               :points 20
+               :tags   #{"accuracy"}}
+              {:effect "+[3:1] weapon damage while under the effect of a Conjuration spell."
+               :tags   #{"accuracy"}}
+              {:effect "When you land a critical strike while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."
+               :tags   #{"critical" "magic"}}
+              {:effect "Enemies you have teleported in the last [6] seconds are rattled."
+               :tags   #{"control"}}
+              {:effect      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect      "You may immediately teleport to a location you can see within 30 feet of you and within 5 feet of an enemy upon rolling for initiative when not surprised."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, if the attack kills the enemy."
+               :tags   #{"utility"}}
+              {:effect "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."
+               :points 20
+               :tags   #{"damage"}}]}]

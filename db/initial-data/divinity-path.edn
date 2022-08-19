@@ -124,7 +124,7 @@
             :tags   #{"control"}}
            {:effect "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks. Teleporting any distance consumes your entire regular movement for the turn."
             :tags   #{"utility"}}
-           {:effect "Once per turn, as a free action, you may conjure or remove up to 5 stone pillars (5x5 feet each) from the ground on unoccupied spaces you can see within 60 feet of you. These pillars are up to 20 feet tall. These pillars last for 10 minutes, and have 17AC and have HP equal to twice your level, disappearing when reaching 0 life. Max 15 active pillars at one time."
+           {:effect "Once per turn, as a free action, you may either conjure or remove up to 5 stone pillars (5x5 feet each) from the ground on unoccupied spaces you can see within 60 feet of you. These pillars are up to 20 feet tall. These pillars last for 10 minutes, and have 17AC and have HP equal to twice your level, disappearing when reaching 0 life. Max 15 active pillars at one time."
             :tags   #{"utility"}}
            {:effect "When within 5 feet of one of your pillars, you have full visibility from the perspectives of any of your pillars. Additionally, you may choose to cause any spell or attack you use originate from another pillar you have created in the same plane. For example, a pillar 500 feet away might make a sword attack against an adjacent creature, or cast Fireball into a room you would otherwise not be able to see. At the end of your turn, any pillar from which an effect originated is destroyed."
             :tags   #{"utility"}}
