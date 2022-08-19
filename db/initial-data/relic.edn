@@ -79,7 +79,7 @@
                :upgradeable false}
               {:effect "Whenever you find curios, you may replace [1] found curio with a Curio of Abundance."
                :tags   #{"wealth"}}
-              {:effect "You loot rolls always grant you [2:1] additional gold while this relic is on a special base (even from non-gold results)."
+              {:effect "Your loot rolls always grant you [2:1] additional gold while this modifier is on a special base (even from non-gold results)."
                :points 20
                :tags   #{"wealth"}}]}
  {:name      "Essence of Eion"
@@ -105,8 +105,38 @@
               {:effect      "You may immediately teleport to a location you can see within 30 feet of you and within 5 feet of an enemy upon rolling for initiative when not surprised."
                :upgradeable false
                :tags        #{"utility"}}
-              {:effect "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, if the attack kills the enemy."
+              {:effect "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, even if the attack kills the enemy."
                :tags   #{"utility"}}
               {:effect "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."
                :points 20
-               :tags   #{"damage"}}]}]
+               :tags   #{"damage"}}]}
+ {:name      "Essence of Esher"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect "Your gain maximum hit points equal to the [number of modifiers] on this item."
+               :points 20
+               :tags   #{"survivability"}}]
+  :mods      [{:effect "You have +[3:1] resistance to Necrotic damage, and your maximum hit points cannot be reduced as a result of taking Necrotic damage."
+               :tags   #{"survivability"}}
+              {:effect "You have +[1]AC if you have been down during the current combat."
+               :tags   #{"survivability"}
+               :points 20}
+              {:effect "You regenerate [2:1] hit points at the end of your turn while bloodied."
+               :tags   #{"survivability"}}
+              {:effect      "As an action, once per combat, you may cause yourself to gain incoming healing equal to half your level for the remainder of the combat."
+               :tags        #{"survivability"}
+               :upgradeable false}
+              {:effect      "When you fail a death saving throw, one death saving throw failure point is only counted at the beginning of your next turn."
+               :tags        #{"survivability"}
+               :upgradeable false}
+              {:effect "+[1] outgoing healing for each of your enchantment slots holding a unique item effect."
+               :tags   #{"magic"}
+               :points 20}
+              {:effect "Your medicine checks, and medicine checks targeting you, are always treated as if the roll was at least an [8:1]."
+               :tags   #{"utility" "survivability"}}
+              {:effect "You learn the [Lesser:Greater] Restoration spell and may cast it once per short rest."
+               :tags   #{"magic" "survivability"}
+               :points 20}
+              {:effect      "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."
+               :tags        #{"survivability"}
+               :upgradeable false}]}]
