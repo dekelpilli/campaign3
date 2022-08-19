@@ -336,7 +336,7 @@
 (defn insert-relics! []
   (db/execute! {:insert-into :relics
                 :values      (->> (load-data "relic")
-                                  (filter (comp false? :enabled))
+                                  (remove (comp false? :enabled))
                                   (map #(-> %
                                             (dissoc :enabled)
                                             (update :start u/jsonb-lift)
