@@ -1,6 +1,31 @@
-[{:name      "Solarmane's Legacy"
+[{:name      "Essence of Cerasil"
   :found     false
-  :enabled   true
+  :base-type "armour"
+  :start     [{:effect         "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."
+               :upgrade-points 20
+               :tags           #{"utility"}}]
+  :mods      [{:effect "+[2] to initiative rolls while in nature."
+               :tags   #{"utility"}}
+              {:effect "+1 to Nature expertise dice for journey activities."
+               :tags   #{"utility"}}
+              {:effect      "When you use an Orb of Favouritism to target Beast or Plant type creatures, you have a 50% chance to not consume the orb."
+               :upgradeable false
+               :tags        #{"wealth"}}
+              {:effect "+[4:1] resistance to poison damage."
+               :tags   #{"survivability"}}
+              {:effect "+[3:2] incoming healing while in direct sunlight."
+               :tags   #{"survivability"}}
+              {:effect      "Your incoming healing affects passive regeneration while in direct sunlight."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "+[2] to non-magical damage from non-metallic weapons attacks or from unarmed weapon attacks."
+               :tags   #{"damage"}}
+              {:effect "You learn the Plant Growth spell and may cast it [once] per long rest."
+               :tags   #{"magic"}}
+              {:effect "While you have a Plant-type amulet active, +[1d6] melee poison thorns. While you have a Beast-type amulet active, +[1d6] melee piercing thorns."
+               :tags   #{"damage"}}]}
+ {:name      "Solarmane's Legacy"
+  :found     false
   :base-type "weapon"
   :start     [{:effect "+2 fire damage with melee attacks."
                :tags   #{"damage"}}
@@ -10,7 +35,7 @@
                :tags   #{"critical"}}
               {:effect "When you deal a natural critical hit with a weapon, heal hit points equal to the radiant damage dealt."
                :tags   #{"critical" "survivability"}}
-              {:effect "+1d[4] fire damage with melee attacks."
+              {:effect "+[1d4] fire damage with melee attacks."
                :tags   #{"damage"}}
               {:effect      "Your melee attacks' non-fire damage is converted to radiant."
                :upgradeable false
@@ -28,4 +53,32 @@
                :tags           #{"utility"}}
               {:effect      "Modifiers to your slashing damage apply to your fire damage instead."
                :upgradeable false
-               :tags        #{"damage"}}]}]
+               :tags        #{"damage"}}]}
+ {:name      "Essence of Ateus"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect      "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."
+               :tags        #{"wealth"}
+               :upgradeable false}]
+  :mods      [{:effect "Gain 15 temporary hit points when a creature within [10:5] feet of you scores or receives a natural critical hit."
+               :tags   #{"survivability"}}
+              {:effect "Natural critical hits against you have a [25:5]% chance to miss you instead."
+               :tags   #{"survivability"}}
+              {:effect "When a creature of your choice within 30 feet of you takes the dash action, they have a [10:5]% chance to trip, causing them to fall prone. A creature that has fallen prone in this way immediately ends its turn."
+               :tags   #{"control"}}
+              {:effect "When you miss with an attack where your roll was less than 4, you have a [50:10]% chance to attempt the attack again."
+               :tags   #{"accuracy"}}
+              {:effect      "The cost of each of your rings is reduced by 1. This cannot reduce a ring's to less than 1."
+               :tags        #{"utility"}
+               :upgradeable false}
+              {:effect      "When finding unique items, you instead reveal two and choose one."
+               :tags        #{"wealth"}
+               :upgradeable false}
+              {:effect      "When drawing tarot cards, you may draw one additional card and return one of the cards you drew to a random place in the deck."
+               :tags        #{"wealth"}
+               :upgradeable false}
+              {:effect "Whenever you find curios, you may replace [1] found curio with a Curio of Abundance."
+               :tags   #{"wealth"}}
+              {:effect "You loot rolls always grant you [2:1] additional gold while this relic is on a special base (even from non-gold results)."
+               :points 20
+               :tags   #{"wealth"}}]}]

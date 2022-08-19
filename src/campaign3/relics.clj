@@ -1,13 +1,12 @@
 (ns campaign3.relics
   (:require (campaign3
               [db :as db]
-              [helmets :as helmets]
+              [enchants :as e]
               [mundanes :as mundanes]
               [prompting :as p]
               [util :as u])
             [puget.printer :as puget]
-            [randy.core :as r]
-            [campaign3.enchants :as e]))
+            [randy.core :as r]))
 
 (defn- choose-found-relic []
   (->> (db/execute! {:select [:*]
@@ -19,8 +18,8 @@
 (defn- update-relic! [{:keys [name] :as relic}]
   (db/execute! {:update [:relics]
                 :set    (-> relic
-                            (select-keys [:attunements :base :found])
-                            (update :attunements u/jsonb-lift))
+                            (select-keys [:levels :base :found])
+                            (update :levels u/jsonb-lift))
                 :where  [:= :name name]}))
 
 (defn- upgrade-mod [attunement {:keys [effect upgrade-points] :as mod}]
@@ -33,21 +32,20 @@
                       existing-mod))
                   %))))
 
-(defn- progress-mod [attunement {:keys [committed upgrade-points effect] :as mod}]
+(defn- progress-mod [level {:keys [committed upgrade-points effect] :as mod}]
   (let [committed (+ committed 10)]
     (if (>= committed upgrade-points)
-      (-> attunement
+      (-> level
           (update :progressed #(remove (comp #{effect} :effect) %))
           (update :existing #(map (fn [{existing-effect :effect :as existing-mod}]
                                     (if (= existing-effect effect)
                                       (update mod :level inc)
                                       existing-mod))
                                   %)))
-      (-> attunement
-          (update :progressed #(map (fn [{progressed-effect :effect :as progressed-mod}]
-                                      (cond-> progressed-mod
-                                              (= progressed-effect effect) (assoc :committed committed)))
-                                    %))))))
+      (update level :progressed #(map (fn [{progressed-effect :effect :as progressed-mod}]
+                                        (cond-> progressed-mod
+                                                (= progressed-effect effect) (assoc :committed committed)))
+                                      %)))))
 
 (defn- prep-new-mod [{:keys [points upgrade-points]
                       :or   {points 10}
@@ -104,13 +102,9 @@
                   (map (fn [mod] {:type type :mod mod}) mods)))
               opts))))
 
-(defn single-relic-level [{:keys [attunements base-type start mods] :as relic} character base]
-  (let [{:keys [existing progressed] :as attunement} (or (character attunements)
-                                                         {:level      1
-                                                          :existing   (map prep-new-mod start)
-                                                          :progressed []})
-        relic (assoc-in relic [:attunements character] attunement)
-        upgradeable (-> (remove (comp false? :upgradeable) existing)
+(defn single-relic-level [{:keys [base-type mods]}
+                          {:keys [existing progressed] :as previous-level} base]
+  (let [upgradeable (-> (remove (comp false? :upgradeable) existing)
                         seq)
         existing-effects (into #{} (map :effect) existing)
         available-relic-mods (-> (remove (comp existing-effects :effect) mods)
@@ -125,29 +119,35 @@
                         (- 2 (count progressed))
                         upgradeable available-relic-mods gen-random-mod levelling-option-types))]
     (when-let [choice (p/>>item "Choose relic levelling option:" (conj options {:type :no-change}) :sorted? false)]
-      (-> relic
-          (update-in [:attunements character :level] inc)
-          (update-in [:attunements character] add-mod-choice choice)))))
+      (-> previous-level
+          (add-mod-choice choice)
+          (update :level inc)))))
 
-(defn level-relic! []
-  ;TODO store levels per level instead of per character
-  (u/when-let* [{:keys [attunements base-type base] :as relic} (choose-found-relic)
-                character (->> (keys helmets/character-enchants)
-                               (p/>>item "Character:")
-                               keyword)
-                additional-levels (if (character attunements)
-                                    1
-                                    (some-> (p/>>item (format "What is %s's %s relic level?" (name character) base-type)
-                                                      (range 2 11))
-                                            dec))]
-    (let [base (mundanes/name->base base-type base)
-          {:keys [attunements] :as levelled-relic} (reduce (fn [relic _]
-                                                             (or (single-relic-level relic character base)
-                                                                 (reduced relic)))
-                                                           relic
-                                                           (range additional-levels))]
-      (update-relic! levelled-relic)
-      (character attunements))))
+(defn set-relic-level! []
+  (u/when-let* [{:keys [levels base-type base start] :as relic} (choose-found-relic)
+                target-level (p/>>item "What is the relic's new level?" (range 2 11))]
+    (let [levels (or (not-empty levels)
+                     [{:level      1
+                       :existing   (map prep-new-mod start)
+                       :progressed []}])
+          current-max-level (-> levels peek :level)
+          additional-levels (- target-level current-max-level)]
+      (if (pos? additional-levels)
+        (let [base (mundanes/name->base base-type base)
+              new-levels (reduce (fn [levels _]
+                                   (if-let [new-level (single-relic-level relic (peek levels) base)]
+                                     (conj levels new-level)
+                                     (reduced levels)))
+                                 levels
+                                 (range additional-levels))]
+          (update-relic! (assoc relic :levels new-levels))
+          (peek new-levels))
+        (nth levels (dec target-level))))))
+
+(defn reset-relic! []
+  (when-let [relic (choose-found-relic)]
+    (update-relic!
+      (update relic :levels (comp u/jsonb-lift vector first)))))
 
 (defn find-relic! [{:keys [base-type] :as relic}]
   (when-let [{:keys [name]} (mundanes/choose-base base-type)]

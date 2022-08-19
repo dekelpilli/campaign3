@@ -17,12 +17,12 @@
                                              (map :name all-rings)
                                              :completer :comma-separated)
                                   not-empty)]
-    (let [catalysts-used (or (some-> (p/>>input "How many catalysts were used in this ring sacrifice?")
-                                     parse-long)
-                             0)
+    (let [sacrificials-used (or (some-> (p/>>input "How many Sacrificial Orbs were used in this ring sacrifice?")
+                                        parse-long)
+                                0)
           remaining-rings (remove (comp (set sacrificed-rings) :name) all-rings)
           num-options (-> (count sacrificed-rings)
-                          (* (inc catalysts-used))
+                          (* (inc sacrificials-used))
                           (min (count remaining-rings)))]
       (->> remaining-rings
            (r/sample-without-replacement num-options)

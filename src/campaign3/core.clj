@@ -23,7 +23,7 @@
    3  {:name   "Amulet"
        :action amulets/new}
    4  {:name   "Rings"
-       :action #(rings/new-rings 2)}
+       :action #(rings/new-rings 2)} ;TODO rings balance pass
    5  {:name   "Enchanted item"
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
    6  {:name   "Curios"

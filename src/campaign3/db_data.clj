@@ -331,16 +331,17 @@
                                [:base :text]
                                [:start :jsonb [:not nil]]
                                [:mods :jsonb [:not nil]]
-                               [:attunements :jsonb]]}))
+                               [:levels :jsonb]]}))
 
 (defn insert-relics! []
   (db/execute! {:insert-into :relics
                 :values      (->> (load-data "relic")
-                                  (filter :enabled)
+                                  (filter (comp false? :enabled))
                                   (map #(-> %
+                                            (dissoc :enabled)
                                             (update :start u/jsonb-lift)
                                             (update :mods u/jsonb-lift)
-                                            (update :attunements u/jsonb-lift))))
+                                            (update :levels u/jsonb-lift))))
                 :on-conflict []
                 :do-nothing  {}}))
 

@@ -11,11 +11,6 @@
  {:effect      "Stone's Endurance (if you already have it, you get another use per long/short rest) (Volo's p109)."
   :upgradeable false
   :tags        #{"survivability"}}
- {:effect      "This weapon is considered magical for the purposes of overcoming resistances and immunities.",
-  :requires    {:base-type "weapon"}
-  :points      25
-  :tags        #{"damage"}
-  :upgradeable false}
  {:effect "+1 to global AB."
   :tags   #{"accuracy"}
   :points 35}
@@ -26,7 +21,7 @@
   :tags   #{"magic"}}
  {:effect "Recover 10% of your maximum class points (minimum 1) when you roll for initiative."
   :tags   #{"utility"}}
- {:effect         "+1d[4] %s damage with weapon attacks."
+ {:effect         "+[1d4] %s damage with weapon attacks."
   :points         20
   :upgrade-points 10
   :tags           #{"damage"}
@@ -51,7 +46,7 @@
                     :type   :physical}]
   :points         20
   :upgrade-points 10}
- {:effect         "+[2] %s damage."
+ {:effect         "+[2:1] %s damage."
   :randoms        [{:preset :damage-types
                     :type   :non-physical}]
   :points         15
@@ -253,7 +248,7 @@
   :tags   #{"wealth"}}
  {:effect "You find loot as if your Investigation and Survival check results are 1 point higher."
   :tags   #{"wealth"}}
- {:effect   "Missed weapon attacks have a [20]% chance to be critical hits instead while you are below 20% hit points."
+ {:effect   "Missed weapon attacks have a [20:5]% chance to be critical hits instead while you are below 20% hit points."
   :tags     #{"critical"}
   :requires {:base-type "weapon"}}
  {:effect "+1 incoming healing."
@@ -300,7 +295,7 @@
   :tags   #{"survivability"}}
  {:effect "Whenever you grant a buff with a duration to a creature, gain outgoing healing +1 until the end of thee buff."
   :tags   #{"magic"}}
- {:effect "Every third spell you cast deals +[5] damage, across any amount of time."
+ {:effect "Every third spell you cast deals +[5:2] damage, across any amount of time."
   :tags   #{"damage"}}
  {:effect "+2 damage against enemies you are flanking."
   :tags   #{"damage"}}
@@ -363,8 +358,9 @@
  {:effect "+[1] to initiative rolls when at least one of the enemies you can see is of size Large or greater."
   :tags   #{"utility"}}
  {:effect "+[2] to saving throws against effects that can petrify."
+  :points 5
   :tags   #{"survivability"}}
- {:effect "+[2] damage with attacks that are at least your third during that turn."
+ {:effect "+[2:1] damage with attacks that are at least your third during that turn."
   :tags   #{"damage"}}
  {:effect   "Your critical hits with this weapon are also non-lethal."
   :tags     #{"utility" "critical"}

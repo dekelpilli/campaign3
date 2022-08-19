@@ -22,6 +22,8 @@
   :effect "Reroll the monster & trait in an amulet 1d8 times, guaranteeing unique results where possible, player then chooses one of the results."}
  {:name   "Orb(s) of Regrading"
   :effect "Change a body armour, boots, or gloves into a new random special base on the same slot."}
+ {:name   "Orb(s) of Mulligan"
+  :effect "Resets a relic to before it was levelled, allowing it to be re-levelled again."}
  {:name     "Orb(s) of Flux"
   :effect   "Swap magical properties between compatible enchantment slots, including moving enchantments to slots without enchantments."
   :enabled? false}
