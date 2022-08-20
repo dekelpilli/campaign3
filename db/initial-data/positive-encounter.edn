@@ -9,7 +9,7 @@
   :rules        "Give all crafting items in the party. For each item, the party gains a Crafting Item loot roll result."}
  {:cost         "25g (each)"
   :participants "any"
-  :rules        "Choose a word and roll d100 and feed into Cheiro sum algorithm. Get a magic item on a base of player's choice with that many enchant points."}
+  :rules        "Choose a word and roll d100 and feed into Cheiro sum algorithm. Get a magic item on a regular base of player's choice with that many enchant points."}
  {:cost         "15g (each)"
   :participants "any"
   :rules        "Players may choose to replace the effect in their amulet with any other effect granted by that monster."}
