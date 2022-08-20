@@ -136,7 +136,11 @@
                              {:tier "Bruising" :multiplier 0.60 :cost 4}
                              {:tier "Bloody" :multiplier 0.75 :cost 6}
                              {:tier "Brutal" :multiplier 0.90 :cost 8}
-                             {:tier "Oppressive" :multiplier 1.00 :cost 10}])
+                             {:tier "Oppressive" :multiplier 1.00 :cost 10}
+                             {:tier "Overwhelming" :multiplier 1.10 :cost 13}
+                             {:tier "Crushing" :multiplier 1.30 :cost 17}
+                             {:tier "Devastating" :multiplier 1.60 :cost 25}
+                             {:tier "Impossible" :multiplier 2.25 :cost 50}])
 (def players 3)
 (def max-enemies 6)
 
@@ -163,15 +167,14 @@
           crs (keep (fn [[cr power]]
                       (when (and (>= cr min-cr) (<= power player-power))
                         cr))
-                    cr-power)
-          combinations (reduce (fn [acc n]
-                                 (if-let [legal-cr-combos (->> (unordered-selections crs n)
-                                                               (filter #(legal-cr-set? % target-monster-power-lower target-monster-power-upper))
-                                                               not-empty)]
-                                   (into acc legal-cr-combos)
-                                   (if (empty? acc)
-                                     acc
-                                     (reduced acc))))
-                               []
-                               (range 1 (inc max-enemies)))]
-      (group-by count combinations))))
+                    cr-power)]
+      (reduce (fn [acc n]
+                (if-let [legal-cr-combos (->> (unordered-selections crs n)
+                                              (filterv #(legal-cr-set? % target-monster-power-lower target-monster-power-upper))
+                                              not-empty)]
+                  (assoc acc n legal-cr-combos)
+                  (if (empty? acc)
+                    acc
+                    (reduced acc))))
+              {}
+              (range 1 (inc max-enemies))))))
