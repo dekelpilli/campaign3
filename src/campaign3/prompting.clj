@@ -56,7 +56,7 @@
 (defn- ->stringified-map [coll opts]
   (if (map? coll)
     (stringify-keys opts coll)
-    (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll)))
+    (into (if sorted? (sorted-map) (sorted-map-by (constantly 1))) (map (juxt stringify identity)) coll)))
 
 (defn >>input
   ([] (>>input "Enter text:"))
@@ -117,10 +117,8 @@
 (defn >>item
   ([coll] (>>item "Choose one from these:" coll))
   ([prompt coll & {:as opts}]
-   (let [{:keys [sorted? none-opt?]} (merge default-opts opts)
-         m (if (map? coll)
-             (stringify-keys opts coll)
-             (into (if sorted? (sorted-map) {}) (map (juxt stringify identity)) coll))]
+   (let [{:keys [none-opt?] :as opts} (merge default-opts opts)
+         m (->stringified-map coll opts)]
      (if (> (count m) input-threshold)
        (>>input prompt m)
        (let [prompt-builder (.getPromptBuilder console-prompt)]

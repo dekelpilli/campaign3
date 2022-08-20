@@ -15,11 +15,6 @@
               (constantly "Hard: 2 mobs")
               (constantly "Puzzle/trap")])))
 
-(defn- unordered-selections [coll n]
-  (sequence (comp (map sort) (distinct))
-            (combo/selections coll n)))
-
-
 (defn new-dungeon []
   (loop [remaining 3
          rooms []]
@@ -35,6 +30,10 @@
       (as-> (new-room-dimensions) $
             (conj rooms {:x (first $) :y (second $) :contents "Boss"})))))
 
+(defn- unordered-selections [coll n]
+  (sequence (comp (map sort) (distinct))
+            (combo/selections coll n)))
+
 ;https://www.gmbinder.com/share/-N4m46K77hpMVnh7upYa
 (def ^:private encounter-difficulties [{:tier "Mild" :multiplier 0.40 :cost 2}
                                        {:tier "Bruising" :multiplier 0.60 :cost 4}
@@ -44,7 +43,15 @@
                                        {:tier "Overwhelming" :multiplier 1.10 :cost 13}
                                        {:tier "Crushing" :multiplier 1.30 :cost 17}
                                        {:tier "Devastating" :multiplier 1.60 :cost 25}
-                                       {:tier "Impossible" :multiplier 2.25 :cost 50}])
+                                       {:tier "Impossible" :multiplier 2.25 :cost 50}
+                                       {:tier "Custom" :multiplier :custom :cost :custom}])
+
+(defn- select-multiplier []
+  (when-let [{:keys [multiplier]} (p/>>item "What is the target difficulty of this encounter?" encounter-difficulties :sorted? false)]
+    (if (= :custom multiplier)
+      (some-> (p/>>input "What is the difficulty multiplier?") parse-double)
+      multiplier)))
+
 (def ^:private players 3)
 (def ^:private max-enemies 6)
 
@@ -62,8 +69,7 @@
   (u/when-let* [level (some-> (p/>>input "What level are the players?") parse-long)
                 min-cr (p/>>item "What is the minimum CR of monsters in this encounter?"
                                  (keys basic-cr-power))
-                {:keys [multiplier]} (p/>>item "What is the target difficulty of this encounter?"
-                                               (u/assoc-by :tier encounter-difficulties))]
+                multiplier (select-multiplier)]
     (let [player-power (->> (dec level)
                             (nth basic-level-power)
                             (* players))
@@ -99,7 +105,7 @@
   (u/when-let* [level (some-> (p/>>input "What level are the players?") parse-long)
                 min-cr (p/>>item "What is the minimum CR of monsters in this encounter?"
                                  (keys adv-cr->power-tiers))
-                {:keys [multiplier]} (p/>>item "What is the target difficulty of this encounter?" encounter-difficulties :sorted? false)]
+                multiplier (select-multiplier)]
     (let [player-power (->> (dec level)
                             (nth adv-level-power)
                             (nth adv-player-power)
