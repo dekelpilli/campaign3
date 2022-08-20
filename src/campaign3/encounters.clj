@@ -5,6 +5,7 @@
               [util :as u])
             [clojure.core.match :refer [match]]
             [clojure.string :as str]
+            [clojure.math.combinatorics :as combo]
             [randy.core :as r]
             [randy.rng :as rng]))
 
@@ -136,3 +137,41 @@
                              {:tier "Bloody" :multiplier 0.75 :cost 6}
                              {:tier "Brutal" :multiplier 0.90 :cost 8}
                              {:tier "Oppressive" :multiplier 1.00 :cost 10}])
+(def players 3)
+(def max-enemies 6)
+
+(defn- legal-cr-set? [crs lower upper]
+  (let [total (transduce (map cr-power) + crs)]
+    (<= lower total upper)))
+
+(defn- unordered-selections [coll n]
+  (sequence (comp (map sort) (distinct))
+            (combo/selections coll n)))
+
+(defn generate-encounter []
+  (u/when-let* [level (some-> (p/>>input "What level are the players?") parse-long)
+                min-cr (p/>>item "What is the minimum CR of monsters in this encounter?"
+                                 (keys cr-power))
+                {:keys [multiplier]} (p/>>item "What is the target difficulty of this encounter?"
+                                               (u/assoc-by :tier encounter-difficulties))]
+    (let [player-power (->> (dec level)
+                            (nth level-power)
+                            (* players))
+          target-monster-power (* multiplier player-power)
+          target-monster-power-lower (* 0.95 target-monster-power)
+          target-monster-power-upper (* 1.05 target-monster-power)
+          crs (keep (fn [[cr power]]
+                      (when (and (>= cr min-cr) (<= power player-power))
+                        cr))
+                    cr-power)
+          combinations (reduce (fn [acc n]
+                                 (if-let [legal-cr-combos (->> (unordered-selections crs n)
+                                                               (filter #(legal-cr-set? % target-monster-power-lower target-monster-power-upper))
+                                                               not-empty)]
+                                   (into acc legal-cr-combos)
+                                   (if (empty? acc)
+                                     acc
+                                     (reduced acc))))
+                               []
+                               (range 1 (inc max-enemies)))]
+      (group-by count combinations))))
