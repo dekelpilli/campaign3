@@ -27,9 +27,7 @@
  {:name      "Solarmane's Legacy"
   :found     false
   :base-type "weapon"
-  :start     [{:effect "+2 fire damage with melee attacks."
-               :tags   #{"damage"}}
-              {:effect "+2 radiant damage with melee attacks."
+  :start     [{:effect "+[2:1] fire and radiant damage with melee attacks."
                :tags   #{"damage"}}]
   :mods      [{:effect "-1 critical hit requirement while bloodied, or while an ally is on 0 hit points."
                :tags   #{"critical"}}
@@ -134,9 +132,36 @@
                :points 20}
               {:effect "Your medicine checks, and medicine checks targeting you, are always treated as if the roll was at least an [8:1]."
                :tags   #{"utility" "survivability"}}
-              {:effect "You learn the [Lesser:Greater] Restoration spell and may cast it once per short rest."
+              {:effect "You learn the [Lesser:Greater:more casts] Restoration spell and may cast it once per short rest."
                :tags   #{"magic" "survivability"}
                :points 20}
               {:effect      "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."
                :tags        #{"survivability"}
-               :upgradeable false}]}]
+               :upgradeable false}]}
+ {:name      "Essence of Ketis"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."
+               :upgradeable false
+               :tags        #{"damage"}}]
+  :mods      [{:effect "At the end of a turn of yours where you have dealt elemental damage, you gain +1 resistance to elemental damage until the end of the combat, to a maximum of [5:1] from this modifier."
+               :tags   #{"survivability"}}
+              {:effect      "Acid damage from attacks that have critically hit is always rolled at its maximum value."
+               :upgradeable false
+               :tags        #{"critical"}}
+              {:effect "+[2:1] die size with cold damage."
+               :tags   #{"damage"}}
+              {:effect "+[1d4] fire damage with weapons and spells."
+               :tags   #{"damage"}}
+              {:effect "Your spells and weapon attacks always deal a minimum of [3:1] thunder damage."
+               :tags   #{"damage"}}
+              {:effect "+[2:1] acid block thorns."
+               :tags   #{"damage"}}
+              {:effect "Creatures of your choice within [5] feet of creature you deal lightning damage to also take 1 lightning damage from the same source (i.e. would benefit from the same damage bonuses as the original damage dealer). This does not chain."
+               :points 20
+               :tags   #{"damage"}}
+              {:effect "+[2:1] damage with spells and attacks that only deal elemental damage."
+               :tags   #{"damage"}}
+              {:effect "+[1] AB with attacks that would deal elemental damage."
+               :points 30
+               :tags   #{"accuracy"}}]}]
