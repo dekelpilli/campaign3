@@ -15,12 +15,12 @@
   :points 1}
  {:name   "The Speedster"
   :effect "+5 feet to all of your speed types for each 'The Speedster' ring worn."
-  :points 5}
+  :points 4}
  {:name   "The Prosperous"
   :effect "+1 gold found for each 'The Prosperous' ring worn."
   :points 1}
  {:name   "The Simpleton"
-  :effect "Your non-synergy rings' cost decreases by 1 point and no longer count towards your ring limit. Your synergy rings' cost increases by 2."
+  :effect "Your non-synergy rings' cost decreases by 1 point. Your synergy rings' cost increases by 2."
   :points 0} ;2 if you include the ring's effect once
  {:name   "The Beacon"
   :effect "You emit bright light in a radius of 5 feet from you for each ring worn."
@@ -68,7 +68,7 @@
   :effect "Your strength is considered to be 15 for the purpose of wearing armour."
   :points 5}
  {:name   "Acrobat"
-  :effect "You make take high and long jumps without a run-up."
+  :effect "You may take high and long jumps without a run-up."
   :points 1}
  {:name   "Scapegoat"
   :effect "When a creature within 5 feet of you takes damage, you may choose for them to take no damage instead. You then take an equal amount of true damage."

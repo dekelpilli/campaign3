@@ -12,6 +12,8 @@
            yogthos/config                   {:mvn/version "1.2.0"}
 
            org.fversnel/dnddice             {:mvn/version "4.1.0"}
+
+           org.flatland/ordered             {:mvn/version "1.15.10"}
            de.codeshelf.consoleui/consoleui {:mvn/version "0.0.13"}
 
            com.github.seancorfield/honeysql {:mvn/version "2.3.911"}
