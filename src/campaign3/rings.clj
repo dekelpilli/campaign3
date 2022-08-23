@@ -10,7 +10,8 @@
                     (map #(update % :randoms randoms/randoms->fn))))
 
 (defn new-rings [n]
-  (r/sample-without-replacement n all-rings))
+  (->> (r/sample-without-replacement n all-rings)
+       (map u/fill-randoms)))
 
 (defn sacrifice []
   (when-let [sacrificed-rings (-> (p/>>input "Which rings are being sacrificed?"

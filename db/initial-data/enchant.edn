@@ -82,12 +82,12 @@
   :tags      #{"accuracy"}
   :prohibits {:base-type "weapon"}
   :points    30}
- {:effect   "+1 to %s saving throws"
+ {:effect   "+1 to %s saving throws."
   :randoms  [{:preset :ability-scores
               :type   :uncommon}]
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
- {:effect   "+1 to %s saving throws"
+ {:effect   "+1 to %s saving throws."
   :randoms  [{:preset :ability-scores
               :type   :common}]
   :tags     #{"survivability"}
@@ -328,7 +328,7 @@
  {:effect   "+1 to death saves in %s."
   :tags     #{"survivability"}
   :randoms  [{:preset :literal
-              :values "sunlight" "non-magical darkness" "magical darkness"}]
+              :values ["sunlight" "non-magical darkness" "magical darkness"]}]
   :points   5
   :requires {:base-type "armour"}}
  {:effect      "Enemies are considered to enter and leave your reach at both 5 and 10 feet."

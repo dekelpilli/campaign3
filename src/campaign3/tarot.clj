@@ -7,4 +7,7 @@
                 (u/assoc-by :name)))
 
 (defn lookup []
-  (p/>>item "What is the Tarot card?" cards))
+  (-> (p/>>item "What is the Tarot card?" cards)
+      :effect))
+
+;TODO generate enchants with tags

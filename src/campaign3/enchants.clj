@@ -66,7 +66,7 @@
            new-points-sum (+ points points-sum)
            new-enchants (conj enchants e)]
        (if (>= new-points-sum points-target)
-         (mapv (comp :effect u/fill-randoms) new-enchants)
+         (mapv u/fill-randoms new-enchants)
          (recur new-points-sum new-enchants))))))
 
 (defn random-enchanted [points-target]
@@ -75,9 +75,7 @@
 
 (defn add []
   (when-let [{:keys [base type]} (mundanes/choose-base)]
-    (->> ((->valid-enchant-fn-memo base type))
-         (u/fill-randoms)
-         (:effect))))
+    (->> ((->valid-enchant-fn-memo base type)) u/fill-randoms :effect)))
 
 (defn add-totalling []
   (u/when-let* [points (some-> (p/>>input "Desired points total:") parse-long)
