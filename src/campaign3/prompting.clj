@@ -1,6 +1,6 @@
 (ns campaign3.prompting
   (:require [clojure.string :as str]
-            [flatland.ordered.map :as om])
+            [flatland.ordered.map :refer [ordered-map]])
   (:import (de.codeshelf.consoleui.prompt CheckboxResult ConsolePrompt InputResult ListResult)
            (jline.console.completer Completer)))
 
@@ -50,14 +50,14 @@
   (if (keyword? x) (name x) (str x)))
 
 (defn- stringify-keys [{:keys [sorted?]} m]
-  (into (if sorted? (sorted-map) (om/ordered-map))
+  (into (if sorted? (sorted-map) (ordered-map))
         (map (juxt (comp stringify key) val))
         m))
 
-(defn ->stringified-map [coll {:keys [sorted?] :as opts}]
+(defn- ->stringified-map [coll {:keys [sorted?] :as opts}]
   (if (map? coll)
     (stringify-keys opts coll)
-    (into (if sorted? (sorted-map) (om/ordered-map)) (map (juxt stringify identity)) coll)))
+    (into (if sorted? (sorted-map) (ordered-map)) (map (juxt stringify identity)) coll)))
 
 (defn >>input
   ([] (>>input "Enter text:"))

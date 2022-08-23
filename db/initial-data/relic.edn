@@ -86,7 +86,7 @@
   :start     [{:effect      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."
                :tags        #{"utility"}
                :upgradeable false}]
-  :mods      [{:effect "You learn the Ensnaring Strike spell and may cast it with any attribute [once] per short rest."
+  :mods      [{:effect "You learn the Ensnaring Strike spell and may cast it [once] per short rest."
                :tags   #{"magic" "control" "damage" "accuracy"}}
               {:effect "You have +1AB with weapon attacks if you have cast a Conjuration spell in the last 18 seconds."
                :points 20

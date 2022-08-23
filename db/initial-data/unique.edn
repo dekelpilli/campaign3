@@ -13,14 +13,14 @@
             {:effect "The damage you deal with cantrips is halved."}]}
  {:name    "Researcher's Power"
   :base    "Staff"
-  :effects [{:effect "Mental attributes are capped at 26."
+  :effects [{:effect "Your mental ability score are capped at 26."
              :tags   #{"utility"}}
             {:effect "+4 intelligence."
              :tags   #{"utility"}}
-            {:effect "+2 to non-highest mental attribute (choose if equal)."
+            {:effect "+2 to non-highest mental ability score (choose if equal)."
              :tags   #{"utility"}}
             {:effect "You cannot use intelligence to cast spells."}
-            {:effect "You can use a different mental attribute for spells that you would normally cast with intelligence."}]}
+            {:effect "You can use a different mental ability score for spells that you would normally cast with intelligence."}]}
  {:name    "Wrestler's Perseverance"
   :base    "any body armour"
   :effects [{:effect "You have advantage with melee attacks while grappled or restrained. You do not suffer disadvantage on melee attacks while restrained."
@@ -67,7 +67,7 @@
             {:effect "You can wear a maximum of 1 relic."}]}
  {:name    "Garb of the Unhinged"
   :base    "any body armour"
-  :effects [{:effect "+2 to all attributes."
+  :effects [{:effect "+2 to all ability scores."
              :tags   #{"utility"}}
             {:effect "Your critical hit requirement is 13 while you are not mad."
              :tags   #{"critical"}}
@@ -137,7 +137,7 @@
   :base    "any gloves"
   :effects [{:effect "+1d4 cold damage with attacks and spells."
              :tags   #{"damage"}}
-            {:effect "Enemies you score a natural critical hit against are frozen for up to a minute. Frozen enemies have +2 cold vulnerability, gain fire resistance, and are restrained. CON save at end of turn (8+prof+attribute) to end, or until taking fire damage."
+            {:effect "Enemies you score a natural critical hit against are frozen for up to a minute. Frozen enemies have +2 cold vulnerability, gain fire resistance, and are restrained. CON save at end of turn to end, or until taking fire damage."
              :tags   #{"control" "critical"}}
             {:effect "Enemies that score a natural melee critical hit against you are frozen until the end of your next turn, or until they save out or take fire damage."
              :tags   #{"control"}}
@@ -248,7 +248,7 @@
              :tags   #{"damage"}}
             {:effect "-1 critical hit requirement against non-blind enemies."
              :tags   #{"critical"}}
-            {:effect "Non-blind enemies you critically hit become blinded for a minute, or until you do not damage them during your turn, CON save at turn end to end, mental attribute of choice."
+            {:effect "Non-blind enemies you critically hit become blinded for a minute, or until you do not damage them during your turn, CON save at turn end."
              :tags   #{"control" "accuracy"}}
             {:effect "You cannot critically hit blinded enemies."}]}
  {:name    "The Sentinel"
@@ -330,7 +330,7 @@
             {:effect "-2 slashing resistance."}]}
  {:name    "Amenonuhoko"
   :base    "any polearm"
-  :effects [{:effect "The first time on your turn that you hit a creature with this weapon, you cast Earth Tremor as a first level spell. DC based mental attribute of choice."
+  :effects [{:effect "The first time on your turn that you hit a creature with this weapon, you cast Earth Tremor as a first level spell."
              :tags   #{"magic"}}
             {:effect "You cannot be knocked prone by the Earth Tremor and Earthquake spells."
              :tags   #{"defence"}}
@@ -377,7 +377,7 @@
             {:effect "+2 bludgeoning damage against creatures smaller than you in size."
              :tags   #{"damage"}}
             {:effect "You are large."}
-            {:effect "-2 to your two lowest mental attributes (choose if equal)."}]}
+            {:effect "-2 to your two lowest mental ability scores (choose if equal)."}]}
  {:name    "Miner's Greed"
   :base    "any pick"
   :effects [{:effect "-2 critical hit requirement."

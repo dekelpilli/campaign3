@@ -7,7 +7,7 @@
             [randy.core :as r]))
 
 (def all-rings (->> (db/load-all :rings)
-                    (mapv #(update % :randoms randoms/randoms->fn))))
+                    (map #(update % :randoms randoms/randoms->fn))))
 
 (defn new-rings [n]
   (r/sample-without-replacement n all-rings))

@@ -71,7 +71,7 @@
     :elemental ["cold" "fire" "lightning"]
     :all ["acid" "bludgeoning" "cold" "fire" "force" "lightning" "necrotic" "piercing" "poison" "psychic" "radiant" "slashing" "thunder"]))
 
-(defmethod randoms-preset :attributes [{:keys [type]
+(defmethod randoms-preset :ability-scores [{:keys [type]
                                         :or   {type :all}}]
   (case type
     :common ["Constitution" "Dexterity" "Wisdom"]

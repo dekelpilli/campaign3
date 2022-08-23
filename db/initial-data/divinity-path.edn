@@ -110,7 +110,7 @@
   :info   "Improves your prowess with and against elemental damage (acid, cold, fire, lightning, or thunder damage) from weapon attacks as well as spells."
   :levels [{:effect "Your critical die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by two."
             :tags   #{"critical"}}
-           {:effect "You can cast Absorb Elements an amount of times equal to your attribute modifier of choice, to a minimum of once, per long rest."
+           {:effect "You can cast Absorb Elements an amount of times equal to an ability score modifier of your choice, to a minimum of once, per long rest."
             :tags   #{"magic"}}
            {:effect "-1 critical hit requirement for attacks that would deal elemental damage."
             :tags   #{"critical"}}
@@ -120,7 +120,7 @@
             :tags   #{"accuracy"}}]}
  {:name   "Volatile Presence"
   :info   "Specialises in teleportation and conjuration, without a focus on spellcasting, granting greater control of the battlefield."
-  :levels [{:effect "When you make an opportunity attack, you may make a proficient spell attack against that target instead (attribute of choice). On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
+  :levels [{:effect "When you make an opportunity attack, you may make a proficient spell attack against that target instead. On a hit, teleport the target to a random safe and unoccupied space you can see within 20 feet of them (2d9, where 5/5 is no effect). Note that you can make opportunity attacks with ranged weapons as improvised weapons."
             :tags   #{"control"}}
            {:effect "You may replace your movement with teleportation (limited to spaces you can see), allowing you to move across otherwise uncrossable/difficult terrain, move vertically, and always avoid opportunity attacks. Teleporting any distance consumes your entire regular movement for the turn."
             :tags   #{"utility"}}

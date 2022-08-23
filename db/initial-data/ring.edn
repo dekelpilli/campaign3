@@ -1,7 +1,4 @@
-[{:name   "The Matchmaker"
-  :effect "+1 Charisma for each ring type you are wearing more than one of."
-  :points 4}
- {:name   "The Doctor"
+[{:name   "The Doctor"
   :effect "+2 to Medicine checks for stabilising allies for each ring the ally is wearing."
   :points 4}
  {:name   "The Hardened"
@@ -9,7 +6,7 @@
   :points 5}
  {:name   "The Lone Wolf"
   :effect "-1 critical hit requirement while not wearing any synergy rings that are not The Lone Wolf."
-  :points 6}
+  :points 5}
  {:name   "The Joker"
   :effect "This ring has no effect, but may count as any ring type you choose. It can only count as one ring type at one time."
   :points 1}
@@ -31,22 +28,19 @@
   :points  2}
  {:name    "The Able"
   :effect  "+1 %s while not wearing any synergy rings that are not 'The Able'"
-  :randoms [{:preset :attributes}]
+  :randoms [{:preset :ability-scores}]
   :points  3}
  {:name   "Vengeful"
   :effect "Once per short rest, as a reaction to being damaged, you may cast Hex on the creature that damaged you. Normal range/visibility/concentration restrictions apply."
   :points 4}
  {:name   "Jack of All Trades"
-  :effect "None of your attributes can be below 10. Any ability scores below 10 are considered to be 10 instead."
+  :effect "None of your ability scores can be below 10. Any ability scores below 10 are considered to be 10 instead."
   :points 2}
  {:name   "Watchful"
   :effect "You may trance instead of sleeping during long rests, but must still rest for 8 hours (by default) to achieve a long rest."
   :points 2}
  {:name   "Restless"
-  :effect "You do not suffer disadvantage on perception checks while asleep."
-  :points 3}
- {:name   "Paranoid"
-  :effect "When attempting to discern truthfulness, you have advantage on Insight checks when the person is lying and disadvantage when they're being fully truthful."
+  :effect "You do not suffer disadvantage on Perception checks while asleep."
   :points 3}
  {:name    "Divergent"
   :effect  "You take %s damage as %s damage instead."
@@ -61,7 +55,7 @@
   :points  1}
  {:name    "Protected"
   :effect  "You lose proficiency in a saving throw of your choice. You gain proficiency in %s saving throws."
-  :randoms [{:preset :attributes
+  :randoms [{:preset :ability-scores
              :type   :uncommon}]
   :points  1}
  {:name   "Powerful"
@@ -75,4 +69,4 @@
   :points 2}
  {:name   "Persistent"
   :effect "You need 4 failed death save points to die, instead of 3."
-  :points 7}]
+  :points 6}]

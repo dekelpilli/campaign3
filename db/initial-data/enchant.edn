@@ -58,7 +58,7 @@
              :type   :non-physical}]}
  {:effect  "+1 %s."
   :tags    #{"utility"}
-  :randoms [{:preset :attributes}]
+  :randoms [{:preset :ability-scores}]
   :points  20}
  {:effect "You have an additional second level spell slot (only if you already had at least 1)."
   :tags   #{"magic"}
@@ -83,12 +83,12 @@
   :prohibits {:base-type "weapon"}
   :points    30}
  {:effect   "+1 to %s saving throws"
-  :randoms  [{:preset :attributes
+  :randoms  [{:preset :ability-scores
               :type   :uncommon}]
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
  {:effect   "+1 to %s saving throws"
-  :randoms  [{:preset :attributes
+  :randoms  [{:preset :ability-scores
               :type   :common}]
   :tags     #{"survivability"}
   :points   20
@@ -222,7 +222,7 @@
   :points   20
   :requires {:ranged?   true
              :base-type "weapon"}}
- {:effect  "While wearing this item, you may cast %s once per long rest (mental attribute of your choice)."
+ {:effect  "While wearing this item, you may cast %s once per long rest."
   :randoms [{:preset :cantrips}]
   :tags    #{"magic"}}
  {:effect "+2 to deception in languages other than Common."
@@ -324,7 +324,7 @@
  {:effect  "+1 to your %s maximum."
   :tags    #{"utility"}
   :points  20
-  :randoms [{:preset :attributes}]}
+  :randoms [{:preset :ability-scores}]}
  {:effect   "+1 to death saves in %s."
   :tags     #{"survivability"}
   :randoms  [{:preset :literal
