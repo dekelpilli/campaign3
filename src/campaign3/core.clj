@@ -9,7 +9,6 @@
               [mundanes :as mundanes]
               [relics :as relics]
               [rings :as rings]
-              [tarot :as tarot]
               [uniques :as uniques]
               [util :as u])
             [randy.core :as r]
@@ -29,7 +28,7 @@
    6  {:name   "Curios"
        :action (fn curios-loot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
    7  {:name   "Tarot card"
-       :action (fn tarot-loot [] (repeatedly 2 tarot/new))}
+       :action (constantly "Draw 2 tarot cards")}
    8  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
    9  {:name   "Helmet"
@@ -39,7 +38,7 @@
    11 {:name   "New relic"
        :action relics/new!}
    12 {:name   "Divine dust"
-       :action (constantly "Divine dust")}})
+       :action (constantly "Divine Dust")}})
 
 (defn loot* [n]
   (when-let [{:keys [action]} (get loot-actions n)]

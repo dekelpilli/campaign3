@@ -17,7 +17,7 @@ Enchant rules:
     Die size increases increase the size of a single die (2d6 -> 1d6 + 1d8, 8d6 -> 5d6 + 1d8).
 
 Rings:
-    Max number of ring points used = char level + prof bonus (TODO - too low at low level?)
+    Max number of ring points used = char level + prof bonus
     Sacrifice: Smash n rings together (n > 1) to get a choice of 1 from n unique new rings that can't be of the same type as any of the inputs.
     Synergy rings = rings whose name starts with "The" = rings whose modifier interacts with other rings.
 
@@ -29,7 +29,7 @@ Uniques:
 Relics:
     Relics related to a specific personality are unlocked at a certain quest state.
     Last relic level (10) is a choice of level (new random mod from list of mods available on artifact, upgrade existing mod of choice, new random mod)
-    Characters have one armour relic slot, and one weapon relic slot. Any relic they put on will automatically get levelled to that level, but those levels are static once defined (can't de-attune and re-attune).
+    Characters have one armour relic slot, and one weapon relic slot. Any relic they put on will automatically get levelled to that level, but those levels are static once defined
     Characters can level up their relic slots (separately) at the following costs:
         1:  0 (start),
         2:  40,
@@ -41,7 +41,6 @@ Relics:
         8:  200,
         9:  250,
         10: 300
-TODO add solution for avoiding relic merry-go-round? De-attunement cost?
 
 TODO reconsider relic prices/vendor valuations?
     current average values of loot rolls: 25.5

@@ -265,19 +265,13 @@
 (defn create-tarot-cards! []
   (db/execute! {:create-table :tarot-cards
                 :with-columns [[:name :text [:primary-key] [:not nil]]
-                               [:effect :text [:not nil]]
-                               [:random :jsonb]
-                               [:weighting :integer [:not nil]]]}))
+                               [:effect :text [:not nil]]]}))
 
 (defn insert-tarot-cards! []
   (drop! :tarot-cards)
   (create-tarot-cards!)
   (db/execute! {:insert-into [:tarot-cards]
-                :values      (map
-                               (fn [card] (-> card
-                                              (update :weighting (fnil identity 1))
-                                              (update :random u/jsonb-lift)))
-                               (load-data "tarot"))}))
+                :values      (load-data "tarot")}))
 
 (defn create-monsters! []
   (db/execute! {:create-table :monsters
