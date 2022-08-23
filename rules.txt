@@ -42,21 +42,6 @@ Relics:
         9:  250,
         10: 300
 
-TODO reconsider relic prices/vendor valuations?
-    current average values of loot rolls: 25.5
-                                          20
-                                          0
-                                          0
-                                          0
-                                          40
-                                          25
-                                          0
-                                          40
-                                          65
-                                          0
-                                          65
-    This means ~115 loot rolls for 2x level 10 relics, not accounting for sold amulets + wealth mods + journey activities
-
 Helmets:
     Character enchants only, spawn with 20 points of mods
     Can be destroyed for 2 orbs of personality, regardless of mods

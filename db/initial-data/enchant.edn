@@ -331,7 +331,7 @@
               :values ["sunlight" "non-magical darkness" "magical darkness"]}]
   :points   5
   :requires {:base-type "armour"}}
- {:effect      "Enemies are considered to enter and leave your reach at both 5 and 10 feet."
+ {:effect      "Enemies are considered to enter and leave your reach at 5 feet, as well as at your regular reach."
   :tags        #{"utility"}
   :points      25
   :requires    {:base-type "weapon"

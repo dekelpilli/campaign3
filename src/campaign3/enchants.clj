@@ -75,7 +75,7 @@
 
 (defn add []
   (when-let [{:keys [base type]} (mundanes/choose-base)]
-    (->> ((->valid-enchant-fn-memo base type)) u/fill-randoms :effect)))
+    (->> ((->valid-enchant-fn-memo base type)) u/fill-randoms)))
 
 (defn add-totalling []
   (u/when-let* [points (some-> (p/>>input "Desired points total:") parse-long)
