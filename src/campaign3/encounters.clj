@@ -53,10 +53,13 @@
         dungeon? (when-not (#{:easy :medium} difficulty)
                    (p/>>item "In a dungeon?" [true false] :none-opt? false))
         base-loot (case difficulty
-                    (:easy :medium) 0
-                    :hard (if dungeon? 1 0)
-                    :deadly (if dungeon? 2 1)
-                    :boss (if dungeon? 4 2))]
+                    (:mild :bruising) 0
+                    :bloody (if dungeon? 1 0)
+                    :brutal (if dungeon? 2 1)
+                    (:boss :oppressive) (if dungeon? 4 2)
+                    :overwhelming (if dungeon? 5 3)
+                    :crushing (if dungeon? 6 4)
+                    :devastating (if dungeon? 8 5))]
     (->> (count investigations)
          (* extra-loot-step)
          (/ extra-loot-sum)
@@ -68,13 +71,15 @@
   (u/when-let* [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] :sorted? false)
                 investigations (some-> (p/>>input "List investigations:")
                                        (str/split #","))]
-    ;TODO XP too high?
     {:xp   (case difficulty
-             :easy (+ 6 (rng/next-int r/default-rng 2))
-             :medium (+ 8 (rng/next-int r/default-rng 3))
-             :hard (+ 11 (rng/next-int r/default-rng 3))
-             :deadly (+ 13 (rng/next-int r/default-rng 4))
-             :boss (+ 15 (rng/next-int r/default-rng 4)))
+             :mild (+ 6 (rng/next-int r/default-rng 2))
+             :bruising (+ 7 (rng/next-int r/default-rng 2))
+             :bloody (+ 8 (rng/next-int r/default-rng 2))
+             :brutal (+ 10 (rng/next-int r/default-rng 3))
+             :oppressive (+ 13 (rng/next-int r/default-rng 3))
+             (:boss :overwhelming) (+ 14 (rng/next-int r/default-rng 3))
+             :crushing (+ 16 (rng/next-int r/default-rng 3))
+             :devastating (+ 18 (rng/next-int r/default-rng 3)))
      :loot (calculate-loot difficulty investigations)}))
 
 (defn new-positive []

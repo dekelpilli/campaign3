@@ -9,3 +9,5 @@
 (defn new []
   (-> (r/sample uniques)
       (update :effects #(map (comp :effect u/fill-randoms) %))))
+
+;TODO random weapon unique
