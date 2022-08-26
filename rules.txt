@@ -68,12 +68,10 @@ Vendor valuations:
     Curios: 15
     Amulets: 10 * CR capacity
     Crafting items: 8
-    Prayer stones: 20
     Relics: 60 + base price
 
 Sales and services:
     Orbs of Flux: 5
-    Orb of Balance: 40
     Orbs of Disavowment: 10
     Mundanes: 10
 

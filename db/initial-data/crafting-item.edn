@@ -31,7 +31,7 @@
   :effect   "Apply to an amulet and roll 1d8. If you roll above its current CR capacity, you may increase its CR capacity by 1. Contained creature does not change."
   :enabled? false}
  {:name     "Orb(s) of Disavowment"
-  :effect   "You lose all progress from your current prayer path and all effects it granted, then gain an equivalent amount of levels (but without any level skipping) in another pray path of your choice."
+  :effect   "You lose all progress from your current divinity path and all effects it granted, then gain an equivalent amount of levels in another pray path of your choice."
   :enabled? false}
  {:name     "Orb(s) of Personality"
   :effect   "Upgrades a helmet, potentially causing it to fracture as a result."
