@@ -25,16 +25,28 @@
                                        {:tier "Impossible" :multiplier 2.25 :cost 50}
                                        {:tier "Custom" :multiplier :custom :cost :custom}])
 
-;~15seconds for 11/3/oppressive
-;might be faster with a more fit-for-purpose combinations solution? combinations_with_replacement from https://docs.python.org/2/library/itertools.html#itertools.combinations_with_replacement
+(defn- combinations-without-replacement [coll r]
+  "Uses algorithm from https://docs.python.org/2/library/itertools.html#itertools.combinations_with_replacement"
+  (let [pool (vec coll)
+        n (count pool)]
+    (loop [indices (vec (repeat r 0))
+           result [(mapv pool indices)]]
+      (if-let [i (reduce (fn [_ i]
+                           (when-not (= (get indices i) (dec n))
+                             (reduced i)))
+                         nil (range (dec r) -1 -1))]
+        (let [indices (-> (subvec indices 0 i)
+                          (into (repeat (- r i) (inc (get indices i)))))]
+          (recur indices
+                 (conj result (mapv pool indices))))
+        result))))
+
 (defn- unordered-legal-selections [crs n lower upper]
   (sequence (comp
               (map (fn [crs] {:crs   crs
                               :total (transduce (map cr-power) + crs)}))
-              (filter #(<= lower (:total %) upper))
-              (medley/distinct-by (comp frequencies :crs))
-              (map #(update % :crs vec)))
-            (Lists/cartesianProduct ^List (repeat n crs))))
+              (filter #(<= lower (:total %) upper)))
+            (combinations-without-replacement crs n)))
 
 (defn- select-multiplier []
   (when-let [{:keys [multiplier]} (p/>>item "What is the target difficulty of this encounter?" encounter-difficulties :sorted? false)]
@@ -59,17 +71,19 @@
           crs (keep (fn [[cr power]]
                       (when (and (>= cr min-cr) (<= power player-power))
                         cr))
-                    cr-power)]
-      (reduce (fn [acc n]
-                (if-let [legal-cr-combos (-> (unordered-legal-selections
-                                               crs n target-monster-power-lower target-monster-power-upper)
-                                             not-empty)]
-                  (assoc acc n legal-cr-combos)
-                  (if (empty? acc)
-                    acc
-                    (reduced acc))))
-              {}
-              (range 1 (inc max-enemies))))))
+                    cr-power)
+          cr-options (time (reduce (fn [acc n]
+                                     (if-let [legal-cr-combos (-> (unordered-legal-selections
+                                                                    crs n target-monster-power-lower target-monster-power-upper)
+                                                                  not-empty)]
+                                       (assoc acc n legal-cr-combos)
+                                       (if (empty? acc)
+                                         acc
+                                         (reduced acc))))
+                                   {}
+                                   (range 1 (inc max-enemies))))]
+      {:target  target-monster-power
+       :options cr-options})))
 
 (defn- new-room-dimensions []
   (vec (repeatedly 2 #(+ 4 (rand-int 6)))))
