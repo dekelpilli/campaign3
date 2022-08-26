@@ -2,10 +2,8 @@
   (:require [campaign3.prompting :as p]
             [campaign3.util :as u]
             [clojure.core.match :refer [match]]
-            [medley.core :as medley]
-            [randy.core :as r])
-  (:import (com.google.common.collect Lists)
-           (java.util List)))
+            [randy.core :as r]
+            [randy.rng :as rng]))
 
 (def ^:private players 3)
 (def ^:private max-enemies 6)
@@ -72,26 +70,26 @@
                       (when (and (>= cr min-cr) (<= power player-power))
                         cr))
                     cr-power)
-          cr-options (time (reduce (fn [acc n]
-                                     (if-let [legal-cr-combos (-> (unordered-legal-selections
-                                                                    crs n target-monster-power-lower target-monster-power-upper)
-                                                                  not-empty)]
-                                       (assoc acc n legal-cr-combos)
-                                       (if (empty? acc)
-                                         acc
-                                         (reduced acc))))
-                                   {}
-                                   (range 1 (inc max-enemies))))]
+          cr-options (reduce (fn [acc n]
+                               (if-let [legal-cr-combos (-> (unordered-legal-selections
+                                                              crs n target-monster-power-lower target-monster-power-upper)
+                                                            not-empty)]
+                                 (assoc acc n legal-cr-combos)
+                                 (if (empty? acc)
+                                   acc
+                                   (reduced acc))))
+                             {}
+                             (range 1 (inc max-enemies)))]
       {:target  target-monster-power
        :options cr-options})))
 
 (defn- new-room-dimensions []
-  (vec (repeatedly 2 #(+ 4 (rand-int 6)))))
+  (vec (repeatedly 2 #(+ 4 (rng/next-int r/default-rng 6)))))
 
 (defn- new-room-contents []
-  ((r/sample [#(format "Easy: %s mobs" (+ 2 (rand-int 5)))
-              #(format "Medium: %s mobs" (+ 2 (rand-int 4)))
-              #(format "Hard: %s mobs" (+ 4 (rand-int 3)))
+  ((r/sample [#(format "Easy: %s mobs" (+ 2 (rng/next-int r/default-rng 5)))
+              #(format "Medium: %s mobs" (+ 2 (rng/next-int r/default-rng 4)))
+              #(format "Hard: %s mobs" (+ 4 (rng/next-int r/default-rng 3)))
               (constantly "Hard: 2 mobs")
               (constantly "Puzzle/trap")])))
 
