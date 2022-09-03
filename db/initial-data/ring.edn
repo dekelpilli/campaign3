@@ -59,7 +59,7 @@
              :type   :uncommon}]
   :points  1}
  {:name   "Powerful"
-  :effect "Your strength is considered to be 15 for the purpose of wearing armour."
+  :effect "Your strength is considered to be 15 for the purpose of wearing armour and wielding weapons."
   :points 5}
  {:name   "Acrobat"
   :effect "You may take high and long jumps without a run-up."

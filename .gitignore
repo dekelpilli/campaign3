@@ -5,7 +5,6 @@
 .cpcache
 target
 .DS_Store
-node_modules
 pom.xml
 resources/config.edn
 .rebel_readline_history
