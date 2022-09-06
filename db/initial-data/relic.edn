@@ -29,7 +29,7 @@
   :base-type "weapon"
   :start     [{:effect "+[2:1] fire and radiant damage with melee attacks."
                :tags   #{"damage"}}]
-  :mods      [{:effect "-1 critical hit requirement while bloodied, or while an ally is on 0 hit points."
+  :mods      [{:effect "+1 critical hit range while bloodied, or while an ally is on 0 hit points."
                :tags   #{"critical"}}
               {:effect "When you deal a natural critical hit with a weapon, heal hit points equal to the radiant damage dealt."
                :tags   #{"critical" "survivability"}}

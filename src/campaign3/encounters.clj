@@ -15,38 +15,150 @@
                       "Satyr" "Shifter" "Tabaxi" "Tiefling" "Tortle" "Triton" "Vedalken" "Yuan-Ti Pureblood"])
 (def ^:private sexes ["female" "male"])
 
+(def ^:private activities [:befriend-creature :busk :chronicle :entertain :force-march :gather-components
+                           :gossip :harvest :pray :rob :scout])
+(def ^:private weather-dc-mods ;TODO
+  {:rain         {:busk 1 :befriend-creature -1}
+   :clear        {:chronicle -1}
+   :frigid       {}
+   :sweltering   {}
+   :snow         {}
+   :hail         {:busk 2}
+   :fog          {:chronicle 2}
+   :overcast     {}
+   :sandstorm    {:all               3
+                  :force-march       2
+                  :befriend-creature -1
+                  :pray              0
+                  :rob               -1}
+   :acid-rain    {:all               4
+                  :pray              0
+                  :force-march       2
+                  :befriend-creature -2
+                  :force-march       2}
+   :thunderstorm {}})
+(def ^:private weather-fns
+  (-> {:rain         {:rain         15
+                      :frigid       8
+                      :clear        6
+                      :snow         2
+                      :hail         2
+                      :fog          4
+                      :overcast     10
+                      :thunderstorm 6}
+       :clear        {:rain         8
+                      :clear        15
+                      :frigid       2
+                      :sweltering   12
+                      :fog          1
+                      :overcast     10
+                      :sandstorm    1
+                      :thunderstorm 1}
+       :snow         {:rain         4
+                      :clear        2
+                      :frigid       6
+                      :snow         6
+                      :hail         5
+                      :fog          1
+                      :overcast     2
+                      :thunderstorm 1}
+       :hail         {:rain         10
+                      :clear        2
+                      :frigid       10
+                      :snow         3
+                      :hail         8
+                      :fog          3
+                      :overcast     6
+                      :thunderstorm 6}
+       :fog          {:rain         8
+                      :clear        2
+                      :frigid       8
+                      :snow         1
+                      :hail         2
+                      :fog          8
+                      :overcast     10
+                      :thunderstorm 3}
+       :overcast     {:rain         10
+                      :clear        6
+                      :sweltering   2
+                      :frigid       8
+                      :hail         1
+                      :fog          7
+                      :overcast     15
+                      :thunderstorm 2}
+       :sandstorm    {:rain       1
+                      :clear      6
+                      :sweltering 6
+                      :frigid     1
+                      :fog        1
+                      :overcast   2
+                      :sandstorm  3
+                      :acid-rain  1}
+       :acid-rain    {:rain       1
+                      :sweltering 4
+                      :frigid     1
+                      :clear      2
+                      :overcast   4
+                      :sandstorm  2
+                      :acid-rain  3}
+       :thunderstorm {:rain         15
+                      :clear        4
+                      :sweltering   1
+                      :frigid       6
+                      :snow         2
+                      :hail         4
+                      :fog          2
+                      :overcast     8
+                      :thunderstorm 10}}
+      (update-vals r/alias-method-sampler)))
+
+(def ^:private default-travel-weightings {nil       75
+                                          :positive 5
+                                          :random   20})
+
 (def positive-encounters (db/load-all :positive-encounters))
 
 (defn- add-encounter! [type]
   (u/record! (str "encounter" type) 1)
   type)
 
-(defn pass-time [days]
-  (u/record! "days:other" days))
+(defn activity-mod []
+  (u/when-let* [mods (p/>>item "What's the weather?" weather-dc-mods)
+                activities (p/>>item "What are activities are being performed?" activities)]
+    (reduce (fn [acc activity] (assoc acc activity (get mods activity (get mod :all 0)))) {} activities)))
 
-(def default-travel-weightings {nil       75
-                                :positive 5
-                                :random   20})
+(defn pass-time [days]
+  (when-let [initial-weather (p/>>item "What was the weather yesterday?" (keys weather-fns))]
+    (u/record! "days:other" days)
+    (reduce (fn [weather _]
+              ((get weather-fns weather)))
+            initial-weather
+            (range days))))
 
 (defn travel [days]
-  (u/record! "days:travel" days)
-  (let [had-random? (when (bound? #'u/session)
-                      (-> (db/execute! {:select [[[:> :amount 0] :had-random]]
-                                        :from   [:analytics]
-                                        :where  [:and
-                                                 [:= :session u/session]
-                                                 [:= :type "encounter:random"]]})
-                          first
-                          :had-random))
-        random-encounter-prob (cond-> default-travel-weightings
-                                      had-random? (update :random #(- % 10)))]
-    (into (sorted-map)
-          (map (fn [i]
-                 (let [encounter (r/weighted-sample random-encounter-prob)]
-                   (when encounter
-                     (add-encounter! encounter))
-                   [i encounter])))
-          (range 1 (inc days)))))
+  (when-let [initial-weather-fn (p/>>item "What was the weather yesterday?" weather-fns)]
+    (u/record! "days:travel" days)
+    (let [had-random? (when (bound? #'u/session)
+                        (-> (db/execute! {:select [[[:> :amount 0] :had-random]]
+                                          :from   [:analytics]
+                                          :where  [:and
+                                                   [:= :session u/session]
+                                                   [:= :type "encounter:random"]]})
+                            first
+                            :had-random))
+          random-encounter-prob (cond-> default-travel-weightings
+                                        had-random? (update :random #(- % 10)))]
+      (loop [acc (sorted-map)
+             previous-weather-fn initial-weather-fn
+             [day & days] (range 1 (inc days))]
+        (let [encounter (r/weighted-sample random-encounter-prob)
+              weather (previous-weather-fn)
+              acc (assoc acc day {:encounter encounter :weather weather})]
+          (when encounter
+            (add-encounter! encounter))
+          (if (seq days)
+            (recur acc (get weather-fns weather) days)
+            acc))))))
 
 (defn- calculate-loot [difficulty investigations]
   (let [extra-loot-sum (transduce (map (fn [s] (- (parse-long s) extra-loot-threshold))) + 0 investigations)

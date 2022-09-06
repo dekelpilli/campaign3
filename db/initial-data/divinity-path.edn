@@ -66,7 +66,7 @@
             :tags   #{"control"}}
            {:effect "Your attacks and spells deal +1d4 radiant damage against marked enemies."
             :tags   #{"damage"}}
-           {:effect "You have -1 critical hit requirement against marked enemies, and a further -1 to critical hit requirement with opportunity attacks against marked enemies."
+           {:effect "You have +1 critical hit range against marked enemies, and a further +1 to critical hit range with opportunity attacks against marked enemies."
             :tags   #{"critical"}}
            {:effect "Creatures of your choice that attack you or cast a spell that forces you to make a save become marked with BoV and take thorns of 5 radiant damage."
             :tags   #{"damage"}}]}
@@ -112,7 +112,7 @@
             :tags   #{"critical"}}
            {:effect "You can cast Absorb Elements an amount of times equal to an ability score modifier of your choice, to a minimum of once, per long rest."
             :tags   #{"magic"}}
-           {:effect "-1 critical hit requirement for attacks that would deal elemental damage."
+           {:effect "+1 critical hit range for attacks that would deal elemental damage."
             :tags   #{"critical"}}
            {:effect "You may cast Fire Shield as a bonus action once per short rest. When cast in this way, you may also target other willing creatures you can see within 30 feet."
             :tags   #{"magic" "damage"}}
@@ -140,7 +140,7 @@
             :tags   #{"utility"}}
            {:effect "You harness the powers of spiders; your spells and attacks have +1d4 poison damage, and you are always under the effect of the Spider Climb spell."
             :tags   #{"damage" "magic" "utility"}}
-           {:effect "You have -1 critical hit requirement against enemies under the effect of a non-magical condition, and when you land a natural critical hit and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
+           {:effect "You have +1 critical hit range against enemies under the effect of a non-magical condition, and when you land a natural critical hit and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
             :tags   #{"critical" "control"}}]}
  {:name   "Controlled Morbidity"
   :info   "Focuses on Necromancy and Necromany spells, with some buffs also applying to undead minions."

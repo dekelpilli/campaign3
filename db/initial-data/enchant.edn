@@ -63,10 +63,10 @@
  {:effect "You have an additional second level spell slot (only if you already had at least 1)."
   :tags   #{"magic"}
   :points 15}
- {:effect "-1 critical hit requirement with attacks."
+ {:effect "+1 critical hit range with attacks."
   :tags   #{"critical"}
   :points 20}
- {:effect "-1 critical hit requirement with your first attack on your turn."
+ {:effect "+1 critical hit range with your first attack on your turn."
   :tags   #{"critical"}}
  {:effect "+1 weapon attack AB with attacks that deal non-physical damage."
   :tags   #{"accuracy"}

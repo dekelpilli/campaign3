@@ -47,7 +47,7 @@
   :effect "'Wealth' tagged modifiers on this item have no effect. +1 to each of your ability score for each wealth modifier on this item."
   :slot   "body"}
  {:name   "Precise"
-  :effect "-1 to your critical hit requirement for each 'critical' tagged modifier on this item. Your critical hits deal no additional damage if this item has at least one 'critical' tagged modifier."
+  :effect "+1 to your critical hit range for each 'critical' tagged modifier on this item. Your critical hits deal no additional damage if this item has at least one 'critical' tagged modifier, and your natural criticals are always hits."
   :slot   "body"}
  {:name   "Sovereignty"
   :effect "+2 to concentration saves for minion spells and effects while this item has at least one modifier that affects your minions."
