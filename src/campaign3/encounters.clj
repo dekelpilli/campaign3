@@ -33,7 +33,6 @@
                   :rob               -1}
    :acid-rain    {:all               4
                   :pray              0
-                  :force-march       2
                   :befriend-creature -2
                   :force-march       2}
    :thunderstorm {}})

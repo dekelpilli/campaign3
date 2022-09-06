@@ -213,7 +213,7 @@
             {:effect "Requires 22 strength to wield."}]}
  {:name    "Excalibur"
   :base    "any sword"
-  :effects [{:effect "This weapon becomes dual-wielding".
+  :effects [{:effect "This weapon becomes dual-wielding"
              :tags   #{"utility"}}
             {:effect "If this weapon was previously tagged with Heavy, it loses that tag."
              :tags   #{"utility"}}
