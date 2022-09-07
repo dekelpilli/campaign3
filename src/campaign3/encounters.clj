@@ -95,31 +95,45 @@
                   :entertain 0
                   :busk      1}})
 (def ^:private weather-fns
-  (-> {:rain         {:rain         15
-                      :frigid       8
-                      :clear        6
+  (-> {:rain         {:rain         12
+                      :frigid       12
+                      :clear        10
                       :snow         2
                       :hail         2
                       :fog          4
                       :overcast     10
                       :thunderstorm 6}
        :clear        {:rain         8
-                      :clear        15
-                      :frigid       2
-                      :sweltering   12
+                      :clear        18
+                      :frigid       4
+                      :sweltering   16
                       :fog          1
                       :overcast     10
                       :sandstorm    1
                       :thunderstorm 1}
-       :snow         {:rain         4
-                      :clear        2
+       :frigid       {:rain         6
+                      :clear        4
+                      :frigid       8
+                      :snow         5
+                      :hail         6
+                      :fog          3
+                      :overcast     3
+                      :thunderstorm 2}
+       :sweltering   {:rain         2
+                      :clear        12
+                      :sweltering   15
+                      :overcast     4
+                      :thunderstorm 1
+                      :sandstorm    2}
+       :snow         {:rain         3
+                      :clear        4
                       :frigid       6
                       :snow         6
                       :hail         5
                       :fog          1
                       :overcast     2
                       :thunderstorm 1}
-       :hail         {:rain         10
+       :hail         {:rain         6
                       :clear        2
                       :frigid       10
                       :snow         3
@@ -130,14 +144,15 @@
        :fog          {:rain         8
                       :clear        2
                       :frigid       8
+                      :sweltering   8
                       :snow         1
                       :hail         2
                       :fog          8
                       :overcast     10
                       :thunderstorm 3}
        :overcast     {:rain         10
-                      :clear        6
-                      :sweltering   2
+                      :clear        9
+                      :sweltering   4
                       :frigid       8
                       :hail         1
                       :fog          7
@@ -145,20 +160,20 @@
                       :thunderstorm 2}
        :sandstorm    {:rain       1
                       :clear      6
-                      :sweltering 6
+                      :sweltering 10
                       :frigid     1
                       :fog        1
                       :overcast   2
-                      :sandstorm  3
+                      :sandstorm  4
                       :acid-rain  1}
        :acid-rain    {:rain       1
-                      :sweltering 4
+                      :sweltering 6
                       :frigid     1
                       :clear      2
                       :overcast   4
                       :sandstorm  2
                       :acid-rain  3}
-       :thunderstorm {:rain         15
+       :thunderstorm {:rain         10
                       :clear        4
                       :sweltering   1
                       :frigid       6
@@ -187,6 +202,14 @@
             (if (chosen-activities :all)
               activities
               chosen-activities))))
+
+(defn weathers [n]
+  (when-let [initial-weather (p/>>item "What was the weather yesterday?" (keys weather-fns))]
+    (frequencies
+      (reduce (fn [weathers _]
+                (conj weathers ((get weather-fns (peek weathers)))))
+              [initial-weather]
+              (range n)))))
 
 (defn pass-time [days]
   (when-let [initial-weather (p/>>item "What was the weather yesterday?" (keys weather-fns))]
