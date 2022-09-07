@@ -15,7 +15,11 @@
              :upgradeable false
              :points      10
              :tags        #{"utility"}}
-            {:effect      "Your weapon gains the Forceful trait."
+            {:effect      "You have an additional available level of fatigue, between 4 and 5, that does nothing."
+             :upgradeable false
+             :points      20
+             :tags        #{"utility"}}
+            {:effect      "Your weapons gain the Forceful trait."
              :upgradeable false
              :points      10
              :tags        #{"damage"}}]}

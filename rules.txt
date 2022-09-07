@@ -21,7 +21,6 @@ Rings:
     Sacrifice: Smash n rings together (n > 1) to get a choice of 1 from n unique new rings that can't be of the same type as any of the inputs.
     Synergy rings = rings whose name starts with "The" = rings whose modifier interacts with other rings.
 
-TODO review "with this weapon" mods
 Uniques:
     Unique items are, lore-wise, failed attempts creating relics, or at replicating items from myths/folk stories
     Uniques on 2H weapons still only take up one enchantment slot

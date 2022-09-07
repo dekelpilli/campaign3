@@ -53,7 +53,6 @@
       multiplier)))
 
 ;TODO change to customised max amount of monsters, then derive min CR based on that
-;TODO export as standalone executable. Graal or JAR?
 ;https://www.gmbinder.com/share/-N4m46K77hpMVnh7upYa
 (defn cr2-encounter []
   (u/when-let* [level (some-> (p/>>input "What level are the players?") parse-long)
