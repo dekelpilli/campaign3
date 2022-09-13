@@ -203,14 +203,6 @@
               activities
               chosen-activities))))
 
-(defn weathers [n]
-  (when-let [initial-weather (p/>>item "What was the weather yesterday?" (keys weather-fns))]
-    (frequencies
-      (reduce (fn [weathers _]
-                (conj weathers ((get weather-fns (peek weathers)))))
-              [initial-weather]
-              (range n)))))
-
 (defn pass-time [days]
   (when-let [initial-weather (p/>>item "What was the weather yesterday?" (keys weather-fns))]
     (u/record! "days:other" days)
