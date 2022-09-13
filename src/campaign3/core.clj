@@ -9,6 +9,7 @@
               [mundanes :as mundanes]
               [relics :as relics]
               [rings :as rings]
+              [tarot :as tarot]
               [uniques :as uniques]
               [util :as u])
             [randy.core :as r]
@@ -28,7 +29,7 @@
    6  {:name   "Curios"
        :action (fn curios-loot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
    7  {:name   "Tarot card"
-       :action (constantly "Draw 2 tarot cards")}
+       :action (fn tarot-loot [] (repeatedly 2 tarot/lookup))}
    8  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
    9  {:name   "Helmet"
