@@ -1,25 +1,48 @@
-{:test     [{:effect "A" :points 10}
-            {:effect "B" :points 20}
-            {:effect "C" :points 10}
-            {:effect "+1 to your Strength maximum." :upgradeable false :points 20}]
- :lawrence [{:effect "+5 feet to each of your speeds per level of fatigue on you."
-             :points 10
-             :tags   #{"utility"}}
-            {:effect "+1 to saves and attacks you have disadvantage on while fatigued."
-             :points 10
-             :tags   #{"survivability"}}
-            {:effect "+1AB for attacks targeting an enemy other than the first enemy you targeted on that turn."
-             :points 10
-             :tags   #{"accuracy"}}
-            {:effect      "+20% to not gain fatigue when your Frenzy ends."
-             :upgradeable false
-             :points      10
-             :tags        #{"utility"}}
-            {:effect      "You have an additional available level of fatigue, between 4 and 5, that does nothing."
-             :upgradeable false
-             :points      20
-             :tags        #{"utility"}}
-            {:effect      "Your weapons gain the Forceful trait."
-             :upgradeable false
-             :points      10
-             :tags        #{"damage"}}]}
+{:zed    [{:effect "1 Conjuration cantrip you know does not count towards your cantrips known limit."
+           :points 10
+           :tags   #{"magic"}}
+          {:effect "-[2:1] to Concentration saving throw DC minimum."
+           :points 10
+           :tags   #{"magic"}}
+          {:effect "Creatures of your choice that are under the effect of a spell you cast have +1 to all saving throws."
+           :points 10
+           :tags   #{"magic" "survivability"}}
+          {:effect      "You can consume spell slots one level below the required level if you have failed a concentration save since the end of your last turn."
+           :upgradeable false
+           :points      10
+           :tags        #{"magic"}}
+          {:effect      "If one of your consumed spell slots was used to cast a Conjuration spell, your Arcane recovery feature grants spell slots level equal to your Wizard level, instead of half."
+           :points      20
+           :upgradeable false
+           :tags        #{"magic"}}
+          {:effect      "You and your minions deal additional damage equal to half of the number of mods on this item, rounded up."
+           :points      10
+           :upgradeable false
+           :tags        #{"damage"}}]
+ :urian  []
+ :fiore  [{:effect      "Your sword weapons gain the Parrying trait."
+           :upgradeable false
+           :points      20
+           :tags        #{"survivability"}}
+          ]
+ :truvat [{:effect "+5 feet to each of your speeds per level of fatigue on you."
+           :points 10
+           :tags   #{"utility"}}
+          {:effect "+1 to saves and attacks you have disadvantage on while fatigued."
+           :points 10
+           :tags   #{"survivability"}}
+          {:effect "+1AB for attacks targeting an enemy other than the first enemy you targeted on that turn."
+           :points 10
+           :tags   #{"accuracy"}}
+          {:effect      "+20% to not gain fatigue when your Frenzy ends."
+           :upgradeable false
+           :points      10
+           :tags        #{"utility"}}
+          {:effect      "You have an additional available level of fatigue, between 4 and 5, that does nothing."
+           :upgradeable false
+           :points      20
+           :tags        #{"utility"}}
+          {:effect      "Your weapons gain the Forceful trait."
+           :upgradeable false
+           :points      10
+           :tags        #{"damage"}}]}
