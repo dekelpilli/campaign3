@@ -36,10 +36,21 @@
     (repeatedly num-mods (comp u/fill-randoms enchant-sampler))))
 
 (defn add-enchants []
-  (u/when-let* [suit-tags (p/>>item "What Suit exceeded the minimum?" suit-tags)
-                num-mods (some-> (p/>>input "How any mods to add?") parse-long)
+  (u/when-let* [suits (-> (p/>>distinct-items "What Suit exceeded the minimum?" (keys suit-tags))
+                          not-empty)
+                num-mods (-> (into {} (comp
+                                        (map (fn [suit] [suit
+                                                         (or (some-> (p/>>input (format "How any mods to add for '%s'?"
+                                                                                        (name suit)))
+                                                                     parse-long)
+                                                             0)]))
+                                        (filter second))
+                                   suits)
+                             not-empty)
                 base (mundanes/choose-base)]
-    (get-minimum-enchants suit-tags num-mods base)))
+    (mapcat (fn [[suit amount]]
+              (get-minimum-enchants (get suit-tags suit) amount base))
+            num-mods)))
 
 (defn new-blank-relic! []
   (u/when-let* [suits (-> (p/>>distinct-items "What Suits were used in this turn in?" (keys suit-tags))

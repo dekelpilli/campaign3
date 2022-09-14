@@ -29,16 +29,16 @@
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
    6  {:name   "Curios"
        :action (fn curios-loot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
-   7  {:name   "Tarot card"
+   7  {:name   "Special mundane armour"
+       :action mundanes/new-special-armour}
+   8  {:name   "Crafting item"
+       :action crafting/new}
+   9  {:name   "Helmet"
+       :action helmets/new}
+   10 {:name   "Tarot card"
        :action (fn tarot-loot []
                  (dotimes [_ 3] (when-let [card (tarot/lookup)]
                                   (puget/cprint card))))}
-   8  {:name   "Special mundane armour"
-       :action mundanes/new-special-armour}
-   9  {:name   "Helmet"
-       :action helmets/new}
-   10 {:name   "Crafting item"
-       :action crafting/new}
    11 {:name   "New relic"
        :action relics/new!}
    12 {:name   "Divine dust"

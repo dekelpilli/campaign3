@@ -76,7 +76,7 @@
   :upgradeable false}
  {:effect "No more than once per minute, when you score a critical hit, recover a 1st-level spell slot."
   :tags   #{"magic" "critical"}}
- {:effect "No more than once per minute, when you score a critical hit, recover a 10% of your maximum class points (minimum 1)."
+ {:effect "No more than once per minute, when you score a critical hit, recover 10% of your maximum class points (minimum 1)."
   :tags   #{"utility" "critical"}}
  {:effect    "+1 AB with unarmed attacks."
   :tags      #{"accuracy"}

@@ -7,7 +7,7 @@
           {:effect "Creatures of your choice that are under the effect of a spell you cast have +1 to all saving throws."
            :points 10
            :tags   #{"magic" "survivability"}}
-          {:effect      "You can consume spell slots one level below the required level if you have failed a concentration save since the end of your last turn."
+          {:effect      "When casting a spell that requires concentration, you can consume spell slots one level below the required level if you have failed a concentration save since the end of your last turn."
            :upgradeable false
            :points      10
            :tags        #{"magic"}}
@@ -24,6 +24,13 @@
            :upgradeable false
            :points      20
            :tags        #{"survivability"}}
+          {:effect "+[2:1] to your maximum exertion points."
+           :points 20
+           :tags   #{"utility"}}
+          {:effect      "Add the lower of your Constitution, Charisma, and Dexterity modifiers to your number of Maneuvers known."
+           :upgradeable false
+           :points      10
+           :tags        #{"utility"}}
           ]
  :truvat [{:effect "+5 feet to each of your speeds per level of fatigue on you."
            :points 10
