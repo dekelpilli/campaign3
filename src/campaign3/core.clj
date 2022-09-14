@@ -13,7 +13,8 @@
               [uniques :as uniques]
               [util :as u])
             [randy.core :as r]
-            [randy.rng :as rng]))
+            [randy.rng :as rng]
+            [puget.printer :as puget]))
 
 (def loot-actions
   {1  {:name   "20-30 gold"
@@ -29,7 +30,9 @@
    6  {:name   "Curios"
        :action (fn curios-loot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
    7  {:name   "Tarot card"
-       :action (fn tarot-loot [] (repeatedly 2 tarot/lookup))}
+       :action (fn tarot-loot []
+                 (dotimes [_ 3] (when-let [card (tarot/lookup)]
+                                  (puget/cprint card))))}
    8  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
    9  {:name   "Helmet"

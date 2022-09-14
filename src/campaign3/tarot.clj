@@ -19,6 +19,14 @@
   (-> (p/>>item "What is the Tarot card?" cards)
       :effect))
 
+(comment
+  "Probabilities of count of court cards"
+  "4 cards, only ace of x"
+  {0 0.15036, 1 0.38744, 2 0.3337, 3 0.11511, 4 0.01339}
+
+  "6 cards, added numerics to deck"
+  {0 0.2399, 1 0.40295, 2 0.25985, 3 0.08296, 4 0.01301, 5 0.00129, 6 4.0E-5})
+
 (defn- get-minimum-enchants [suit-tags num-mods {:keys [type base]}]
   (let [enchant-sampler (->> (e/valid-enchants base type)
                              (filterv (fn [{:keys [tags]}]
