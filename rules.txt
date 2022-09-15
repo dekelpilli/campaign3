@@ -50,9 +50,11 @@ Helmets:
         Only character enchants are affected by this (non-char enchants can be added on creation via tarot cards)
 
 Tarot:
-    Tarot set turn ins must include exactly 4 cards unless specified otherwise
-    Unless specified otherwise, the base result of a tarot turn in is a 20 point magic item on a random base
-    Minimum enchant tags add random enchants from the general pool until the minimum is met. Major arcana/trump cards are applied last.
+    Players may turn in tarot sets with 5 or 6 cards, unless specified otherwise.
+    Unless specified otherwise, the base result of a tarot turn in is a 20 point magic item on a random base.
+    Minimum enchant tags add random enchants from the general pool until the minimum is met.
+    Uniques forced to roll on a specific base type will reroll until a compatible unique is rolled.
+    Players draw 3 cards per loot result.
 
 Orb of personality:
     Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
