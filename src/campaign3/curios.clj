@@ -15,7 +15,7 @@
       (assoc :multiplier 0)
       (update :name #(str "Inversed " %))))
 
-(defn new []
+(defn new-curios []
   (let [curio (r/sample curios)
         inversed? (u/occurred? 1/3)]
     (-> curio

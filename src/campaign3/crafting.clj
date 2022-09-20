@@ -7,5 +7,5 @@
 (def crafting-items (->> (db/load-all :crafting-items)
                          (map #(update % :amount amounts/amount->fn "1d3"))))
 
-(defn new []
+(defn new-crafting-items []
   (u/get-rand-amount crafting-items))

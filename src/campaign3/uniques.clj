@@ -4,5 +4,5 @@
 
 (def uniques (db/load-all :uniques))
 
-(defn new []
+(defn new-unique []
   (r/sample uniques))

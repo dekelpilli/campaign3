@@ -35,7 +35,7 @@
        (filter (comp #{name} :name))
        first))
 
-(defn new []
+(defn new-mundane []
   (let [type (new-base-type)
         base (case type
                "weapon" (r/sample weapons)

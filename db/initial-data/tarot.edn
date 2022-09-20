@@ -45,13 +45,10 @@
 
  {:name   "X of Swords"
   :effect "You gain X additional gold when turning in this set. +1 minimum modifiers with the 'damage' or 'accuracy' tags."}
-
  {:name   "X of Wands"
   :effect "You gain {X} additional gold when turning in this set. +1 minimum modifiers with the 'magic' or 'critical' tags."}
-
  {:name   "X of Cups"
   :effect "You gain {X} additional gold when turning in this set. +1 minimum modifiers with the 'survivability' or 'control' tags."}
-
  {:name   "X of Pentacles"
   :effect "You gain {X} additional gold when turning in this set. +1 minimum modifiers with the 'utility' or 'wealth' tags."}
 

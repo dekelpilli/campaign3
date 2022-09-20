@@ -70,7 +70,7 @@
          (recur new-points-sum new-enchants))))))
 
 (defn random-enchanted [points-target]
-  (let [{:keys [base type]} (mundanes/new)]
+  (let [{:keys [base type]} (mundanes/new-mundane)]
     [base (add-enchants base type points-target)]))
 
 (defn add []

@@ -1,11 +1,13 @@
 (ns campaign3.tarot
   (:require (campaign3
-              [enchants :as e]
               [db :as db]
+              [enchants :as e]
+              [helmets :as helmets]
               [mundanes :as mundanes]
               [prompting :as p]
               [util :as u])
-            [clojure.set :as set]))
+            [clojure.set :as set]
+            [randy.core :as r]))
 
 (def suit-tags {:swords    #{"accuracy" "damage"}
                 :wands     #{"magic" "critical"}
@@ -51,6 +53,11 @@
     (mapcat (fn [[suit amount]]
               (get-minimum-enchants (get suit-tags suit) amount base))
             num-mods)))
+
+(defn add-character-enchants []
+  (u/when-let* [character-enchants (p/>>item "Character name:" helmets/character-enchants)
+                amount (p/>>item "How many enchants should be added to the item?" (range 1 (inc (count character-enchants))))]
+    (r/sample-without-replacement amount character-enchants )))
 
 (defn new-blank-relic! []
   (u/when-let* [suits (-> (p/>>distinct-items "What Suits were used in this turn in?" (keys suit-tags))

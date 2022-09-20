@@ -14,7 +14,7 @@
                                                                 (update :tags set)))
                                                     %))))
 
-(defn new []
+(defn new-helmet []
   (when-let [enchants (p/>>item "Character name:" character-enchants)]
     (loop [total 0
            chosen []
@@ -24,7 +24,7 @@
           (conj chosen enchant)
           (recur total (conj chosen enchant) enchants))))))
 
-(defn- select-enchants [character-enchants]
+(defn select-enchants [character-enchants]
   (not-empty (p/>>distinct-items "Present enchants:" character-enchants)))
 
 (defn- get-present-enchants []

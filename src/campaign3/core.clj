@@ -20,7 +20,7 @@
   {1  {:name   "20-30 gold"
        :action (fn gold-loot [] (str (rng/next-int r/default-rng 20 31) " gold"))}
    2  {:name   "Unique"
-       :action uniques/new}
+       :action uniques/new-unique}
    3  {:name   "Amulet"
        :action amulets/new}
    4  {:name   "Rings"
@@ -28,13 +28,13 @@
    5  {:name   "Enchanted item"
        :action (fn enchanted-loot [] (e/random-enchanted 30))}
    6  {:name   "Curios"
-       :action (fn curios-loot [] (cons (mundanes/new) (repeatedly 4 curios/new)))}
+       :action (fn curios-loot [] (cons (mundanes/new-mundane) (repeatedly 4 curios/new-curios)))}
    7  {:name   "Special mundane armour"
        :action mundanes/new-special-armour}
    8  {:name   "Crafting item"
-       :action crafting/new}
+       :action crafting/new-crafting-items}
    9  {:name   "Helmet"
-       :action helmets/new}
+       :action helmets/new-helmet}
    10 {:name   "Tarot card"
        :action (fn tarot-loot []
                  (dotimes [_ 3] (when-let [card (tarot/lookup)]
