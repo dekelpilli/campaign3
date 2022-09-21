@@ -2,7 +2,7 @@
   (:require [campaign3.db :as db]
             [randy.core :as r]))
 
-(def uniques (db/load-all :uniques))
+(def ^:private uniques (db/load-all :uniques))
 
 (defn new-unique []
   (r/sample uniques))

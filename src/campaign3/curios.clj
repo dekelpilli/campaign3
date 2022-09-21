@@ -8,21 +8,21 @@
               [util :as u])
             [randy.core :as r]))
 
-(def curios (db/load-all :curios))
+(def ^:private curios (db/load-all :curios))
 
 (defn- ->inversed [curio]
   (-> curio
       (assoc :multiplier 0)
       (update :name #(str "Inversed " %))))
 
-(defn new-curios []
+(defn new-curio []
   (let [curio (r/sample curios)
         inversed? (u/occurred? 1/3)]
     (-> curio
         (cond-> inversed? ->inversed)
         (dissoc :multiplier))))
 
-(defn use []
+(defn use-curios []
   (u/when-let* [{:keys [base type]} (mundanes/choose-base)
                 curios-used (let [curios-by-name (u/assoc-by :name (into curios (map ->inversed) curios))]
                               (some->> (p/>>input "Curios used (maximum 4):"
@@ -49,5 +49,5 @@
                                          tags)
                                        (assoc e :weighting))))
                            u/weighted-sampler)]
-      (e/add-enchants (* 10 (count curios-used))
-                      enchants-fn))))
+      (e/add-enchants-totalling (* 10 (count curios-used))
+                                enchants-fn))))

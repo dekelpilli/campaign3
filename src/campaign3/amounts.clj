@@ -1,14 +1,22 @@
 (ns campaign3.amounts
-  (:require [campaign3.dice :as dice]
-            [clojure.walk :as walk]))
+  (:require [clojure.walk :as walk]
+            [org.fversnel.dnddice.core :as d]))
 
 (defn- disadv [f] #(min (f) (f)))
 (defn- adv [f] #(max (f) (f)))
 
 (declare ^:private parse-amount-unit)
 
-(defn dice->fn [s]
-  (comp :total (dice/->roll-fn s)))
+(defn- ->roll-fn [roll-string]
+  (when roll-string
+    (let [parsed (d/parse roll-string)]
+      (if-not (string? parsed)
+        #(d/roll parsed)
+        (throw (ex-info "Failed to parse roll" {:roll-string roll-string
+                                                :error       parsed}))))))
+
+(defn- dice->fn [s]
+  (comp :total (->roll-fn s)))
 
 (defn- parse-amount-vec [amount default-fn]
   (let [[f & args] (map #(parse-amount-unit % default-fn) amount)]

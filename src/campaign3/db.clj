@@ -17,7 +17,7 @@
                                       :dbtype   "postgres"
                                       :dbname   db-name})))
 
-(defn connect ^Connection [] (jdbc/get-connection data-src))
+(defn- connect ^Connection [] (jdbc/get-connection data-src))
 
 (def ^:private c (connect))
 (def ^:dynamic *txn* nil)

@@ -24,7 +24,7 @@
           (conj chosen enchant)
           (recur total (conj chosen enchant) enchants))))))
 
-(defn select-enchants [character-enchants]
+(defn- select-enchants [character-enchants]
   (not-empty (p/>>distinct-items "Present enchants:" character-enchants)))
 
 (defn- get-present-enchants []
@@ -82,13 +82,13 @@
                    :add (add-helm-mod present-enchants remaining-mods))]
       (assoc result :action action))))
 
-(defn finish-progress-upgrade []
+(defn finish-helmet-progress-upgrade []
   (u/when-let* [present-enchants (get-present-enchants-levels)
                 enchant-levels (enchant-levels present-enchants)]
     {:fracture-chance (-> (reduce sum-enchant-points 0 enchant-levels)
                           fractured-chance)}))
 
-(defn mend []
+(defn mend-helmet []
   (when-let [present-enchants (get-present-enchants-levels)]
     {:enchants (keep (fn [enchant]
                        (case (mod-mending-result)

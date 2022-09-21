@@ -11,7 +11,6 @@
               [curios :as curios]
               [db :as db]
               [db-data :as dbd]
-              [dice :as dice]
               [enchants :as e]
               [encounters :as encounters]
               [helmets :as helmets]
@@ -24,7 +23,27 @@
               [rings :as rings]
               [tarot :as tarot]
               [uniques :as uniques]
-              [util :as u])))
+              [util :as u]))
+  (:use (campaign3
+          [amulets]
+          [core]
+          [crafting]
+          [curios]
+          [db]
+          [db-data]
+          [enchants]
+          [encounters]
+          [helmets]
+          [mundanes]
+          [paths]
+          [prep]
+          [prompting]
+          [randoms]
+          [relics]
+          [rings]
+          [tarot]
+          [uniques]
+          [util])))
 
 ;https://asciinema.org/a/296507
 (def safe-requires
@@ -69,6 +88,7 @@
         (reduce (fn [l [alias-sym ns-sym]]
                   (->> l
                        (cons (list `require [`'~ns-sym :as `'~alias-sym]))
+                       (cons (list `use [`'~ns-sym :as `'~alias-sym]))
                        (cons (list `ns-unalias `*ns* `'~alias-sym))))
                 '()
                 (update-vals default-aliases (comp symbol str)))))

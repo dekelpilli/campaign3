@@ -9,15 +9,15 @@
             [clojure.set :as set]
             [randy.core :as r]))
 
-(def suit-tags {:swords    #{"accuracy" "damage"}
-                :wands     #{"magic" "critical"}
-                :cups      #{"survivability" "control"}
-                :pentacles #{"utility" "wealth"}})
+(def ^:private suit-tags {:swords    #{"accuracy" "damage"}
+                          :wands     #{"magic" "critical"}
+                          :cups      #{"survivability" "control"}
+                          :pentacles #{"utility" "wealth"}})
 
-(def cards (->> (db/load-all :tarot-cards)
-                (u/assoc-by :name)))
+(def ^:private cards (->> (db/load-all :tarot-cards)
+                          (u/assoc-by :name)))
 
-(defn lookup []
+(defn lookup-card []
   (-> (p/>>item "What is the Tarot card?" cards)
       :effect))
 
@@ -37,7 +37,7 @@
                              u/weighted-sampler)]
     (repeatedly num-mods (comp u/fill-randoms enchant-sampler))))
 
-(defn add-enchants []
+(defn add-tarot-enchants []
   (u/when-let* [suits (-> (p/>>distinct-items "What Suit exceeded the minimum?" (keys suit-tags))
                           not-empty)
                 num-mods (-> (into {} (comp
@@ -57,7 +57,7 @@
 (defn add-character-enchants []
   (u/when-let* [character-enchants (p/>>item "Character name:" helmets/character-enchants)
                 amount (p/>>item "How many enchants should be added to the item?" (range 1 (inc (count character-enchants))))]
-    (r/sample-without-replacement amount character-enchants )))
+    (r/sample-without-replacement amount character-enchants)))
 
 (defn new-blank-relic! []
   (u/when-let* [suits (-> (p/>>distinct-items "What Suits were used in this turn in?" (keys suit-tags))

@@ -14,24 +14,24 @@
     (binding [*read-eval* false]
       (filter #(:enabled? % true) (read r)))))
 
-(defn write-data! [path coll]
+(defn- write-data! [path coll]
   (with-open [writer (io/writer path)]
     (pprint/pprint coll writer)))
 
-(defn find-cr [cr]
+(defn- find-cr [cr]
   (when-let [cr (edn/read-string (if (map? cr) (:cr cr) cr))]
     (double cr)))
 
-(defn find-type [type]
+(defn- find-type [type]
   (if (map? type) (:type type) type))
 
-(defn prepare-monster [mon]
+(defn- prepare-monster [mon]
   (-> mon
       (update :cr find-cr)
       (update :type find-type)
       (select-keys [:name :source :page :type :cr :trait])))
 
-(defn load-json-file [file]
+(defn- load-json-file [file]
   (-> (slurp file)
       (j/read-value j/keyword-keys-object-mapper)))
 
@@ -51,7 +51,7 @@
                           (filter (comp seq :trait)))))]
     mons))
 
-(defn drop! [table]
+(defn- drop! [table]
   (db/execute! {:drop-table [:if-exists table]}))
 
 (defn create-armours! []
@@ -343,7 +343,7 @@
   (db/execute! {:delete-from :relics})
   (insert-relics!))
 
-(defn backup-table! [table]
+(defn- backup-table! [table]
   (->> (db/load-all table)
        (write-data! (str "db/current-state/" (name table) ".edn"))))
 

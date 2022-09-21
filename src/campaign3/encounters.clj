@@ -188,7 +188,7 @@
                                           :positive 5
                                           :random   20})
 
-(def positive-encounters (db/load-all :positive-encounters))
+(def ^:private positive-encounters (db/load-all :positive-encounters))
 
 (defn- add-encounter! [type]
   (u/record! (str "encounter" type) 1)
@@ -214,11 +214,11 @@
 (defn travel [days]
   (when-let [initial-weather-fn (p/>>item "What was the weather yesterday?" weather-fns)]
     (u/record! "days:travel" days)
-    (let [had-random? (when (bound? #'u/session)
+    (let [had-random? (when (bound? #'u/current-session)
                         (-> (db/execute! {:select [[[:> :amount 0] :had-random]]
                                           :from   [:analytics]
                                           :where  [:and
-                                                   [:= :session u/session]
+                                                   [:= :session u/current-session]
                                                    [:= :type "encounter:random"]]})
                             first
                             :had-random))
@@ -255,7 +255,7 @@
          (max 0)
          (+ base-loot))))
 
-(defn rewards []
+(defn encounter-rewards []
   (u/when-let* [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] :sorted? false)
                 investigations (some-> (p/>>input "List investigations:")
                                        (str/split #","))]
@@ -270,7 +270,7 @@
              :devastating (+ 18 (rng/next-int r/default-rng 3)))
      :loot (calculate-loot difficulty investigations)}))
 
-(defn new-positive []
+(defn new-positive-encounter []
   {:race      (r/sample races)
    :sex       (r/sample sexes)
    :encounter (r/sample positive-encounters)})

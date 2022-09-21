@@ -58,14 +58,14 @@
 (defn- attach-new-mod [attunement mod]
   (update attunement :existing conj (prep-new-mod mod)))
 
-(defn add-mod-choice [attunement {:keys [type mod]}]
+(defn- add-mod-choice [attunement {:keys [type mod]}]
   (case type
     (:new-random-mod :new-relic-mod) (attach-new-mod attunement mod)
     :progress (progress-mod attunement mod)
     :upgrade-mod (upgrade-mod attunement mod)
     :none attunement))
 
-(defn unique-levelling-options [n upgradeable relic-mods random-gen option-types]
+(defn- unique-levelling-options [n upgradeable relic-mods random-gen option-types]
   (if (zero? n)
     []
     (let [opts (loop [opts (-> (repeatedly n #(r/weighted-sample option-types)) frequencies)
@@ -102,7 +102,7 @@
                   (map (fn [mod] {:type type :mod mod}) mods)))
               opts))))
 
-(defn single-relic-level [{:keys [base-type mods]}
+(defn- single-relic-level [{:keys [base-type mods]}
                           {:keys [existing progressed] :as previous-level} base]
   (let [upgradeable (-> (remove (comp false? :upgradeable) existing)
                         seq)
@@ -153,7 +153,7 @@
   (when-let [{:keys [name]} (mundanes/choose-base base-type)]
     (-> relic (assoc :found true :base name) update-relic!)))
 
-(defn new! []
+(defn new-relic! []
   (let [relic (-> (db/execute! {:select [:*]
                                 :from   [:relics]
                                 :where  [:= :found false]})

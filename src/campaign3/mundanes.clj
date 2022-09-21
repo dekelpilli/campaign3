@@ -5,20 +5,20 @@
               [util :as u])
             [randy.core :as r]))
 
-(def weapons (db/load-all :weapons))
-(def armours (db/load-all :armours))
-(def special-armour-by-slot (->> (db/load-all :special-armours)
-                                 (group-by :slot)))
-(def armours-by-slot (group-by :slot armours))
+(def ^:private weapons (db/load-all :weapons))
+(def ^:private armours (db/load-all :armours))
+(def ^:private special-armour-by-slot (->> (db/load-all :special-armours)
+                                           (group-by :slot)))
+(def ^:private armours-by-slot (group-by :slot armours))
 
-(def base-types {"weapon" weapons "armour" armours})
+(def ^:private base-types {"weapon" weapons "armour" armours})
 
-(def new-base-type (r/alias-method-sampler {"armour" 2
-                                            "weapon" 1}))
-(def new-armour-slot (r/alias-method-sampler {"body"   3
-                                              "gloves" 3
-                                              "boots"  3
-                                              "shield" 1}))
+(def ^:private new-base-type (r/alias-method-sampler {"armour" 2
+                                                      "weapon" 1}))
+(def ^:private new-armour-slot (r/alias-method-sampler {"body"   3
+                                                        "gloves" 3
+                                                        "boots"  3
+                                                        "shield" 1}))
 
 (defn choose-base
   ([]
