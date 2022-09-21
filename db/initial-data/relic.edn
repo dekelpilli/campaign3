@@ -93,7 +93,7 @@
                :tags   #{"accuracy"}}
               {:effect "+[3:1] weapon damage while under the effect of a Conjuration spell."
                :tags   #{"accuracy"}}
-              {:effect "When you land a critical strike while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."
+              {:effect "When you land a critical hit while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."
                :tags   #{"critical" "magic"}}
               {:effect "Enemies you have teleported in the last [6] seconds are rattled."
                :tags   #{"control"}}

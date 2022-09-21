@@ -24,12 +24,23 @@
            :tags   #{"survivability" "utility"}}
           {:effect "The number of spells you can prepare is increase by 1."
            :points 10
-           :tags   #{"magic"}}]
- :fiore  [{:effect      "You have one additional Duelist feature unlocked (e.g. at level 3, you would also know 'Parry and Thrust')."
+           :tags   #{"magic"}}
+          {:effect "+1 uses of Channel Divinity."
+           :points 30
+           :tags   #{"control" "accuracy"}}
+          {:effect      "When you use your Guided Strike feature to improve the roll of an attack that would have hit anyway, the attack becomes a critical hit."
            :upgradeable false
-           :points      30
-           :tags        #{"utility"}}
-          {:effect "+[2:1] to your maximum exertion points."
+           :points      20
+           :tags        #{"critical"}}
+          {:effect      "Once per turn, when you attack a creature currently frightened by your Conquering Presence feature, you may Divine Smite against it without consuming a use."
+           :upgradeable false
+           :points      20
+           :tags        #{"damage"}}
+          {:effect      "If you start a long rest with points remaining in your exertion pool, and have been in combat since your last long rest, you retain half of those exertion points."
+           :upgradeable false
+           :points      10
+           :tags        #{"utility"}}]
+ :fiore  [{:effect "+[2:1] to your maximum exertion points."
            :points 20
            :tags   #{"utility"}}
           {:effect "+[2:1] damage against enemies whose AC is lower than yours."
@@ -38,6 +49,10 @@
           {:effect "You have 1 additional use of your Panache feature."
            :points 10
            :tags   #{"utility"}}
+          {:effect      "You have one additional Duelist feature unlocked (e.g. at level 3, you would also know 'Parry and Thrust')."
+           :upgradeable false
+           :points      30
+           :tags        #{"utility"}}
           {:effect      "Add the lowest of your Constitution, Charisma, and Dexterity modifiers to your number of Maneuvers known."
            :upgradeable false
            :points      10
