@@ -104,6 +104,7 @@
 
 (defn- single-relic-level [{:keys [base-type mods]}
                           {:keys [existing progressed] :as previous-level} base]
+  ;TODO handle level 9->10 difference
   (let [upgradeable (-> (remove (comp false? :upgradeable) existing)
                         seq)
         existing-effects (into #{} (map :effect) existing)

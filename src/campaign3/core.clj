@@ -12,9 +12,9 @@
               [tarot :as tarot]
               [uniques :as uniques]
               [util :as u])
+            [puget.printer :as puget]
             [randy.core :as r]
-            [randy.rng :as rng]
-            [puget.printer :as puget]))
+            [randy.rng :as rng]))
 
 (def loot-actions
   {1  {:name   "20-30 gold"

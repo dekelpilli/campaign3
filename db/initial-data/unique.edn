@@ -236,9 +236,9 @@
   :base    "any gloves"
   :effects [{:effect "You have an additional first level spell slot, if you already have at least one."
              :tags   #{"magic"}}
-            {:effect "You regain 1 first level spell slot when rolling for initiative."
+            {:effect "You have an additional spell slot from each spell level in which you have a spell slot unlocked, up to 5th level."
              :tags   #{"magic"}}
-            {:effect "You gain an additional spell slot from each spell level in which you have a spell slot unlocked, up to 5th level."
+            {:effect "You regain 1 first level spell slot when rolling for initiative."
              :tags   #{"magic"}}
             {:effect "When using the final spell slot in a given spell level, you take damage equal to 5 times the spell slot level used."}
             {:effect "-1 Wisdom, Charisma, and Intelligence."}]}

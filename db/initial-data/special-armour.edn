@@ -68,7 +68,7 @@
   :effect "Relics on this item are one level higher, to a maximum of 10. Relics removed from this item lose their last gained level."
   :slot   "gloves"}
  {:name   "Sniper"
-  :effect "Modifiers related to attacks, melee attacks, or spell attacks now apply to all projectile attacks instead."
+  :effect "Modifiers related to attacks, melee attacks, or spell attacks now apply to all ranged attacks instead."
   :slot   "gloves"}
  {:name   "Confrontational"
   :effect "Modifiers related to attacks, ranged attacks, or spell attacks now apply to all melee weapon attacks and touch attacks instead."

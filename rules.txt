@@ -1,13 +1,14 @@
 Amulets:
     Amulets contain a random trait from a random monster from a given CR.
-    The trait is standardised to not be tied to the creature or its specific actions/items. For example, "If the derro hits a target within 30 feet of it with a ranged attack with its aklys, it can use its bonus action to retrieve the aklys and make another attack against the same target" -> "If you hit a target within 30 feet of you with a ranged attack, you can use your bonus action to make another attack against the same target"
     As a free action at the start or end of a turn in combat, once per long rest, you can activate the trait contained by the amulet for a duration, granting you its effects.
-    The duration of amulet effects is 1 round + 1 round for each amulet CR (not monster CR) above 1.
-    When upgrading amulets, or rerolling with crafting items, you may choose to keep the existing effect instead of the new one.
+    The duration of amulet equal to the amulet CR (not monster CR), to a minimum of 1.
     Upgrading: Feed an amulet other amulets totalling at least its current CR capacity + 1 to get +1 CR tier.
+    When upgrading amulets, or rerolling with crafting items, you may choose to keep the existing effect instead of the new one.
+    The trait is standardised to not be tied to the creature or its specific actions/items. For example, "If the derro hits a target within 30 feet of it with a ranged attack with its aklys, it can use its bonus action to retrieve the aklys and make another attack against the same target" -> "If you hit a target within 30 feet of you with a ranged attack, you can use your bonus action to make another attack against the same target"
+    The DCs of any effects granted by amulets are as listed, rather than standardised to the player's attributes.
 
-Prayer Stones:
-    You can use any prayer stone to pray to any Deity, but when using the appropriate prayer stone, you get the option of skipping a step
+Divinity Dust:
+    You can use divinity dust to progress your progress in a divinity path you have started, or start a new one if you haven't started one/have finished all you have started.
 
 Moving mods:
     Between any items so long as all mods are compatible with new item. Incompatible mods can be removed as part of the transfer.
@@ -28,7 +29,10 @@ Uniques:
 
 Relics:
     Relics related to a specific personality are unlocked at a certain quest state.
-    Last relic level (10) is a choice of level (new random mod from list of mods available on artifact, upgrade existing mod of choice, new random mod)
+    Last relic level (10) is a choice:
+      New random mod from list of mods available on relic (rolled before choosing this option)
+      Upgrade existing mod of choice
+      New random mod (rolled before choosing this option)
     Characters have one armour relic slot, and one weapon relic slot. Any relic they put on will automatically get levelled to that level, but those levels are static once defined
     Characters can level up their relic slots (separately) at the following costs:
         1:  0 (start),
@@ -45,6 +49,9 @@ Relics:
 Helmets:
     Character enchants only, spawn with 20 points of mods
     Can be destroyed for 2 orbs of personality, regardless of mods
+    Orb of personality:
+        Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
+        After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable) based on point value on the helmet
     Players can attempt to mend a fractured helmet:
         Each mod has 40% chance to stay the same, 30% to upgrade (to the next level), 30% chance to remove the mod completely
         Only character enchants are affected by this (non-char enchants can be added on creation via tarot cards)
@@ -53,21 +60,17 @@ Tarot:
     Players may turn in tarot sets with 5 or 6 cards, unless specified otherwise.
     Unless specified otherwise, the base result of a tarot turn in is a 20 point magic item on a random base.
     Minimum enchant tags add random enchants from the general pool until the minimum is met.
-    Uniques forced to roll on a specific base type will reroll until a compatible unique is rolled.
+    Uniques/relics forced to roll on a specific base type will reroll until a compatible unique/relic is rolled.
     Players draw 3 cards per loot result.
-
-Orb of personality:
-    Applying orb of personality either adds a new character mod or upgrades existing mod (or progresses an upgrade)
-    After applying upgrade, if mod upgrade is not in progress, has chance to fracture (make unmodifiable) based on point value on the helmet
 
 Vendor valuations:
     Helmets: N/A
     Mundane bases: 5
     Special bases: 25
-    Ring: N/A
-    Unique: 15 + base price
-    Magical: base price + 35 if over 10 points of mods, otherwise base price + 15.
-    Curios: 15
+    Rings: N/A
+    Uniques: 15 + base price
+    Magical items: base price + 35 if over 10 points of mods, otherwise base price + 15.
+    Curios: N/A
     Amulets: 10 * CR capacity
     Crafting items: 8
     Relics: 60 + base price
@@ -84,5 +87,5 @@ Tags (drawbacks/negative mods have no tags):
     Survivability: Grants AC, spell save bonuses/adv, advantaged defence, health regen, incoming healing, max HP, minion defences, change incoming damage
     Control: On enemies; Inflicts dazed/debilitated/frightened/rattled/slowed/sluggish/taunted/charmed/blinded/restrained/grappled, reduces speed, reduces accuracy, reduces damage, reduces attacks/actions
     Magic: Grants bonuses to spell slots, concentration, spell levels, spells known, non-accuracy/damage buffs to spell behaviour
-    Wealth: Grants bonuses to loot found, sell value, improves loot searches directly (+investigation doesn't count)
+    Wealth: Grants bonuses to loot found, sell value, improves loot searches directly (+investigation doesn't count), improves journey activities
     Utility: Grants other bonuses such as skill proficiencies/bonuses, languages, senses, speed, class points

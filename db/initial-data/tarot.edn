@@ -1,7 +1,7 @@
 [{:name   "The Fool"
-  :effect "This turn in uses four random cards (drawn from the deck) instead of the ones actually turned in. The cards used are still discarded."}
+  :effect "This turn in uses random cards (drawn from the deck) instead of the ones actually turned in (same amount). The cards used are still discarded."}
  {:name   "The Magician"
-  :effect "The resulting item also contains a modifier that grants +1 Intelligence, Wisdom, and Charisma if it has at least one modifier with the 'magic' tag."}
+  :effect "The resulting item also contains a modifier that grants +1 Intelligence, Wisdom, and Charisma (for relics: 30 points, upgradeable) if it has at least one modifier with the 'magic' tag."}
  {:name   "The High Priestess"
   :effect "This card is converted into a random Court Card from the deck when you turn in this set. Cannot be turned in with other court cards."}
  {:name   "The Empress"

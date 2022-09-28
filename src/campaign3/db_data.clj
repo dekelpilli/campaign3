@@ -3,10 +3,10 @@
             [campaign3.util :as u]
             [clojure.edn :as edn]
             [clojure.java.io :as io]
+            [clojure.pprint :as pprint]
             [clojure.set :as set]
             [clojure.string :as str]
-            [jsonista.core :as j]
-            [clojure.pprint :as pprint])
+            [jsonista.core :as j])
   (:import (java.io File PushbackReader)))
 
 (defn- load-data [type]
