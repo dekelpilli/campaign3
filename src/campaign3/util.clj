@@ -35,6 +35,9 @@
 (defn assoc-by [f coll]
   (into {} (map (juxt f identity)) coll))
 
+(defn filter-vals [m]
+  (into {} (filter (comp some? val)) m))
+
 (defn weighted-sampler [coll]
   (r/alias-method-sampler
     (mapv #(dissoc % :weighting) coll)

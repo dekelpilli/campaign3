@@ -22,7 +22,7 @@
  :urian  [{:effect "Your of Lay of Hands pool increases by 5."
            :points 10
            :tags   #{"survivability" "utility"}}
-          {:effect "The number of spells you can prepare is increase by 1."
+          {:effect "The number of spells you can prepare is increased by 1."
            :points 10
            :tags   #{"magic"}}
           {:effect "+1 uses of Channel Divinity."

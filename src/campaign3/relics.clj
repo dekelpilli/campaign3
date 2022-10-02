@@ -158,9 +158,11 @@
   (let [relic (-> (db/execute! {:select [:*]
                                 :from   [:relics]
                                 :where  [:= :found false]})
-                  r/sample)]
-    (-> relic (select-keys [:name :start :base-type]) puget/cprint)
-    (find-relic! relic)))
+                  r/sample)
+        start-relic (select-keys relic [:name :start :base-type])]
+    (puget/cprint start-relic)
+    (find-relic! relic)
+    start-relic))
 
 (defn reveal-relic! []
   (when-let [relic (->> (db/execute! {:select [:*]

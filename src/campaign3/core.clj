@@ -37,8 +37,13 @@
        :action helmets/new-helmet}
    10 {:name   "Tarot card"
        :action (fn tarot-loot []
-                 (dotimes [_ 3] (when-let [card (tarot/lookup-card)]
-                                  (puget/cprint card))))}
+                 (reduce (fn [acc _]
+                           (if-let [card (tarot/lookup-card)]
+                             (do (puget/cprint card)
+                                 (conj acc card))
+                             acc))
+                         []
+                         (range 3)))}
    11 {:name   "New relic"
        :action relics/new-relic!}
    12 {:name   "Divine dust"

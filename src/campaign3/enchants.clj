@@ -58,6 +58,8 @@
 
 (def ->valid-enchant-fn-memo (memoize (comp u/weighted-sampler valid-enchants)))
 
+(def prep-enchant (comp u/filter-vals u/fill-randoms))
+
 (defn add-enchants-totalling
   ([base type points-target] (add-enchants-totalling points-target (->valid-enchant-fn-memo base type)))
   ([points-target enchants-fn]
@@ -67,7 +69,7 @@
            new-points-sum (+ points points-sum)
            new-enchants (conj enchants e)]
        (if (>= new-points-sum points-target)
-         (mapv u/fill-randoms new-enchants)
+         (mapv prep-enchant new-enchants)
          (recur new-points-sum new-enchants))))))
 
 (defn random-enchanted [points-target]
@@ -76,7 +78,7 @@
 
 (defn add-enchants []
   (when-let [{:keys [base type]} (mundanes/choose-base)]
-    (->> ((->valid-enchant-fn-memo base type)) u/fill-randoms)))
+    (->> ((->valid-enchant-fn-memo base type)) prep-enchant)))
 
 (defn add-enchants-to []
   (u/when-let* [points (some-> (p/>>input "Desired points total:") parse-long)

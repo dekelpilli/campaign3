@@ -35,7 +35,7 @@
                                         (-> (set/intersection tags suit-tags)
                                             seq)))
                              u/weighted-sampler)]
-    (repeatedly num-mods (comp u/fill-randoms enchant-sampler))))
+    (repeatedly num-mods (comp e/prep-enchant enchant-sampler))))
 
 (defn add-tarot-enchants []
   (u/when-let* [suits (-> (p/>>distinct-items "What Suit exceeded the minimum?" (keys suit-tags))

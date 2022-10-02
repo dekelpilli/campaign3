@@ -171,9 +171,11 @@
             {:effect "You are vulnerable to lightning damage."}]}
  {:name    "Dominion"
   :base    "any gloves"
-  :effects [{:effect "+1 resistance to physical damage per minion you control, max 3."
+  :effects [{:effect "+1 resistance to physical damage per minion you control, to a maximum 3."
              :tags   #{"survivability"}}
-            {:effect "Your minion's hit point maximum is increased by twice the spell level used to create them."
+            {:effect "No more than once per combat, when you have at least one minion at the end of your turn, gain temporary hit points equal to your level."
+             :tags   #{"survivability"}}
+            {:effect "Your minion's hit point maximum is increased by twice the spell level used to create or summon them."
              :tags   #{"survivability"}}
             {:effect "Your minions' damage is halved."}]}
  {:name    "Pashupatastra"
