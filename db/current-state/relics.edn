@@ -1,1 +1,239 @@
-[]
+[
+ {:name "Essence of Cerasil",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:tags ["utility"],
+    :upgrade-points 20,
+    :effect
+    "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."}],
+  :mods
+  [{:tags ["utility"],
+    :effect "+[2] to initiative rolls while in nature."}
+   {:tags ["utility"],
+    :effect "+1 to Nature expertise dice for journey activities."}
+   {:upgradeable false,
+    :tags ["wealth"],
+    :effect
+    "When you use an Orb of Favouritism to target Beast or Plant type creatures, you have a 50% chance to not consume the orb."}
+   {:tags ["survivability"],
+    :effect "+[4:1] resistance to poison damage."}
+   {:tags ["survivability"],
+    :effect "+[3:2] incoming healing while in direct sunlight."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your incoming healing affects passive regeneration while in direct sunlight."}
+   {:tags ["damage"],
+    :effect
+    "+[2] to non-magical damage from non-metallic weapons attacks or from unarmed weapon attacks."}
+   {:tags ["magic"],
+    :effect
+    "You learn the Plant Growth spell and may cast it [once] per long rest."}
+   {:tags ["damage"],
+    :effect
+    "While you have a Plant-type amulet active, +[1d6] melee poison thorns. While you have a Beast-type amulet active, +[1d6] melee piercing thorns."}],
+  :levels nil}
+ {:name "Solarmane's Legacy",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:tags ["damage"],
+    :effect "+[2:1] fire and radiant damage with melee attacks."}],
+  :mods
+  [{:tags ["critical"],
+    :effect
+    "+1 critical hit range while bloodied, or while an ally is on 0 hit points."}
+   {:tags ["survivability" "critical"],
+    :effect
+    "When you deal a natural critical hit with a weapon, heal hit points equal to the radiant damage dealt."}
+   {:tags ["damage"], :effect "+[1d4] fire damage with melee attacks."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "Your melee attacks' non-fire damage is converted to radiant."}
+   {:upgradeable false,
+    :tags ["survivability" "utility"],
+    :effect
+    "You may redirect healing targeted at you to a creature of your choice. This counts as your outgoing healing."}
+   {:tags ["damage"],
+    :effect
+    "Creatures grappled or restrained by you are marked to take [1] additional fire damage from each instance of melee damage."}
+   {:upgradeable false,
+    :tags ["magic"],
+    :effect
+    "Healing actions you use do not consume resources if you have landed a killing blow with radiant damage in the last 6 seconds."}
+   {:tags ["utility"],
+    :upgrade-points 20,
+    :effect
+    "You and creatures of your choice within [5] feet of you are immune to the frightened condition."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "Modifiers to your slashing damage apply to your fire damage instead."}],
+  :levels nil}
+ {:name "Essence of Eion",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
+  :mods
+  [{:tags ["magic" "control" "accuracy" "damage"],
+    :effect
+    "You learn the Ensnaring Strike spell and may cast it [once] per short rest."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "You have +1AB with weapon attacks if you have cast a Conjuration spell in the last 18 seconds."}
+   {:tags ["accuracy"],
+    :effect
+    "+[3:1] weapon damage while under the effect of a Conjuration spell."}
+   {:tags ["magic" "critical"],
+    :effect
+    "When you land a critical hit while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."}
+   {:tags ["control"],
+    :effect
+    "Enemies you have teleported in the last [6] seconds are rattled."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "You may immediately teleport to a location you can see within 30 feet of you and within 5 feet of an enemy upon rolling for initiative when not surprised."}
+   {:tags ["utility"],
+    :effect
+    "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, even if the attack kills the enemy."}
+   {:tags ["damage"],
+    :points 20,
+    :effect
+    "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."}],
+  :levels nil}
+ {:name "Essence of Esher",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:tags ["survivability"],
+    :points 20,
+    :effect
+    "Your gain maximum hit points equal to the [number of modifiers] on this item."}],
+  :mods
+  [{:tags ["survivability"],
+    :effect
+    "You have +[3:1] resistance to Necrotic damage, and your maximum hit points cannot be reduced as a result of taking Necrotic damage."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "You have +[1]AC if you have been down during the current combat."}
+   {:tags ["survivability"],
+    :effect
+    "You regenerate [2:1] hit points at the end of your turn while bloodied."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "As an action, once per combat, you may cause yourself to gain incoming healing equal to half your level for the remainder of the combat."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "When you fail a death saving throw, one death saving throw failure point is only counted at the beginning of your next turn."}
+   {:tags ["magic"],
+    :points 20,
+    :effect
+    "+[1] outgoing healing for each of your enchantment slots holding a unique item effect."}
+   {:tags ["survivability" "utility"],
+    :effect
+    "Your medicine checks, and medicine checks targeting you, are always treated as if the roll was at least an [8:1]."}
+   {:tags ["survivability" "magic"],
+    :points 20,
+    :effect
+    "You learn the [Lesser:Greater:more casts] Restoration spell and may cast it once per short rest."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."}],
+  :levels nil}
+ {:name "Essence of Ketis",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
+  :mods
+  [{:tags ["survivability"],
+    :effect
+    "At the end of a turn of yours where you have dealt elemental damage, you gain +1 resistance to elemental damage until the end of the combat, to a maximum of [5:1] from this modifier."}
+   {:upgradeable false,
+    :tags ["critical"],
+    :effect
+    "Acid damage from attacks that have critically hit is always rolled at its maximum value."}
+   {:tags ["damage"], :effect "+[2:1] die size with cold damage."}
+   {:tags ["damage"],
+    :effect "+[1d4] fire damage with weapons and spells."}
+   {:tags ["damage"],
+    :effect
+    "Your spells and weapon attacks always deal a minimum of [3:1] thunder damage."}
+   {:tags ["damage"], :effect "+[2:1] acid block thorns."}
+   {:tags ["damage"],
+    :points 20,
+    :effect
+    "Creatures of your choice within [5] feet of creature you deal lightning damage to also take 1 lightning damage from the same source (i.e. would benefit from the same damage bonuses as the original damage dealer). This does not chain."}
+   {:tags ["damage"],
+    :effect
+    "+[2:1] damage with spells and attacks that only deal elemental damage."}
+   {:tags ["accuracy"],
+    :points 30,
+    :effect "+[1] AB with attacks that would deal elemental damage."}],
+  :levels nil}
+ {:name "Essence of Ateus",
+  :found true,
+  :base-type "armour",
+  :base "Unarmoured boots",
+  :start
+  [{:upgradeable false,
+    :tags ["wealth"],
+    :effect
+    "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
+  :mods
+  [{:tags ["survivability"],
+    :effect
+    "Gain 15 temporary hit points when a creature within [10:5] feet of you scores or receives a natural critical hit."}
+   {:tags ["survivability"],
+    :effect
+    "Natural critical hits against you have a [25:5]% chance to miss you instead."}
+   {:tags ["control"],
+    :effect
+    "When a creature of your choice within 30 feet of you takes the dash action, they have a [10:5]% chance to trip, causing them to fall prone. A creature that has fallen prone in this way immediately ends its turn."}
+   {:tags ["accuracy"],
+    :effect
+    "When you miss with an attack where your roll was less than 4, you have a [50:10]% chance to attempt the attack again."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "The cost of each of your rings is reduced by 1. This cannot reduce a ring's to less than 1."}
+   {:upgradeable false,
+    :tags ["wealth"],
+    :effect
+    "When finding unique items, you instead reveal two and choose one."}
+   {:upgradeable false,
+    :tags ["wealth"],
+    :effect
+    "When drawing tarot cards, you may draw one additional card and return one of the cards you drew to a random place in the deck."}
+   {:tags ["wealth"],
+    :effect
+    "Whenever you find curios, you may replace [1] found curio with a Curio of Abundance."}
+   {:tags ["wealth"],
+    :points 20,
+    :effect
+    "Your loot rolls always grant you [2:1] additional gold while this modifier is on a special base (even from non-gold results)."}],
+  :levels nil}]

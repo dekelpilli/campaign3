@@ -238,7 +238,7 @@
 
 (defn- calculate-loot [difficulty investigations]
   (let [extra-loot-sum (transduce (map (fn [s] (- (parse-long s) extra-loot-threshold))) + 0 investigations)
-        dungeon? (when-not (#{:easy :medium} difficulty)
+        dungeon? (when-not (#{:mild :bruising} difficulty)
                    (p/>>item "In a dungeon?" [true false] :none-opt? false))
         base-loot (case difficulty
                     (:mild :bruising) 0
@@ -256,7 +256,7 @@
          (+ base-loot))))
 
 (defn encounter-rewards []
-  (u/when-let* [difficulty (p/>>item "Difficulty:" [:easy :medium :hard :deadly :boss] :sorted? false)
+  (u/when-let* [difficulty (p/>>item "Difficulty:" [:mild :bruising :bloody :brutal :oppressive :overwhelming :crushing :devastating :boss] :sorted? false)
                 investigations (some-> (p/>>input "List investigations:")
                                        (str/split #","))]
     {:xp   (case difficulty
