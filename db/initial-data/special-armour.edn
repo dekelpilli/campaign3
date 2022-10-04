@@ -20,7 +20,7 @@
   :effect "Modifiers on this item that grant resistances apply to all damage types and damage source types, and are no longer conditional if they were originally."
   :slot   "boots"}
  {:name   "Defensive"
-  :effect "+1 global damage for each 'survivability' tagged mod while this item only has 'survivability' tagged modifiers on it."
+  :effect "If this item only has 'survivability' tagged modifiers on it, +1 global damage for each 'survivability' tagged mod on this item."
   :slot   "boots"}
  {:name   "Bramblejack"
   :effect "Modifiers on this item that grant flat resistances also grant equivalent piercing damage thorns that triggers when that resistance applies."
@@ -44,7 +44,8 @@
   :effect "Modifiers on this item that relate to a specific damage type instead apply to both acid and poison damage types (separately)."
   :slot   "body"}
  {:name   "Abundant"
-  :effect "'Wealth' tagged modifiers on this item have no effect. +1 to each of your ability scores other than Constitution for each wealth modifier on this item."
+  :effect "'Wealth' tagged modifiers on this item have no effect. +1 to your %s for each wealth modifier on this item."
+  :randoms [{:preset :ability-scores}]
   :slot   "body"}
  {:name   "Precise"
   :effect "+1 to your critical hit range for each 'critical' tagged modifier on this item. Your critical hits deal no additional damage if this item has at least one 'critical' tagged modifier, and your natural criticals are always hits."
@@ -52,8 +53,9 @@
  {:name   "Sovereignty"
   :effect "+2 to concentration saves for minion spells and effects while this item has at least one modifier that affects your minions."
   :slot   "gloves"}
- {:name   "Trickster"
-  :effect "Modifiers to skills on this item also apply to Sleight of Hand."
+ {:name   "Multi-talented"
+  :effect "Modifiers to skills on this item also apply to %1$s (this has no effect on modifiers that already apply to %1$s)."
+  :randoms [{:preset :skills}]
   :slot   "gloves"}
  {:name   "Maleficarum"
   :effect "Creatures affected by your marks or curses have -1 to damage resistance while this item has at least one modifier that relates to marks or curses."

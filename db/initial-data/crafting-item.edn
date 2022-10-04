@@ -6,7 +6,7 @@
  {:name   "Orb(s) of Perfection"
   :effect "Replace a random value, or grouping of values, from a chosen modifier on an item with any possible random value of your choice."}
  {:name   "Ancient Orb(s)"
-  :effect "Transform a unique item into another random unique item."
+  :effect "Transform a unique item into another random unique item on a random base."
   :amount [:advantaged [:default]]}
  {:name   "Orb(s) of Consumption"
   :effect "Reduce a non-caster weapon's base damage die size by 1 to add a random modifier, doubled. Increases sell value by 10."
@@ -19,7 +19,7 @@
  {:name   "Orb(s) of Favouritism"
   :effect "Reroll the monster & trait in an amulet, forcing a specific monster type. If none are available of that type in the appropriate CR, you may roll with a lower CR."}
  {:name   "Orb(s) of Discovery"
-  :effect "Reroll the monster & trait in an amulet 1d8 times, guaranteeing unique results where possible, player then chooses one of the results."}
+  :effect "Reroll the monster & trait in an amulet 1d8 times, guaranteeing unique results where possible, player then chooses one of the results, or to keep the current trait."}
  {:name   "Orb(s) of Regrading"
   :effect "Change a body armour, boots, or gloves into a new random special base on the same slot."}
  {:name   "Orb(s) of Mulligan"
@@ -31,7 +31,7 @@
   :effect   "Apply to an amulet and roll 1d8. If you roll above its current CR capacity, you may increase its CR capacity by 1. Contained creature does not change."
   :enabled? false}
  {:name     "Orb(s) of Disavowment"
-  :effect   "You lose all progress from your current divinity path and all effects it granted, then gain an equivalent amount of levels in another pray path of your choice."
+  :effect   "You lose all progress from your current divinity path and all effects it granted, then gain an equivalent amount of levels in another divinity path of your choice."
   :enabled? false}
  {:name     "Orb(s) of Personality"
   :effect   "Upgrades a helmet, potentially causing it to fracture as a result."

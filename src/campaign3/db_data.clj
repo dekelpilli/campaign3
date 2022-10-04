@@ -254,13 +254,15 @@
   (db/execute! {:create-table :special-armours
                 :with-columns [[:name :text [:primary-key] [:not nil]]
                                [:effect :text [:not nil]]
+                               [:randoms :jsonb]
                                [:slot :text [:not nil]]]}))
 
 (defn insert-special-armours! []
   (drop! :special-armours)
   (create-special-armours!)
   (db/execute! {:insert-into [:special-armours]
-                :values      (load-data "special-armour")}))
+                :values      (->> (load-data "special-armour")
+                                  (map #(update % :randoms u/jsonb-lift)))}))
 
 (defn create-tarot-cards! []
   (db/execute! {:create-table :tarot-cards

@@ -2,12 +2,14 @@
   (:require (campaign3
               [db :as db]
               [prompting :as p]
+              [randoms :as randoms]
               [util :as u])
             [randy.core :as r]))
 
 (def ^:private weapons (db/load-all :weapons))
 (def ^:private armours (db/load-all :armours))
 (def ^:private special-armour-by-slot (->> (db/load-all :special-armours)
+                                           (map #(update % :randoms randoms/randoms->fn))
                                            (group-by :slot)))
 (def ^:private armours-by-slot (group-by :slot armours))
 
@@ -46,12 +48,8 @@
      :type type}))
 
 (defn new-special-armour []
-  (->> (r/sample ["body" "boots" "gloves"])
-       (special-armour-by-slot)
-       (r/sample)))
+  (-> (r/sample ["body" "boots" "gloves"]) special-armour-by-slot r/sample u/fill-randoms))
 
 (defn new-special-of-slot []
   (when-let [slot (p/>>item ["body" "boots" "gloves"])]
-    (->> slot
-         (special-armour-by-slot)
-         (r/sample))))
+    (-> slot special-armour-by-slot r/sample u/fill-randoms)))
