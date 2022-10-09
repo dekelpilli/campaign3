@@ -30,12 +30,11 @@
                          (vector? randoms) (transduce (map random->weighting-multiplier) + 0 randoms)
                          (map? randoms) (random->weighting-multiplier randoms)
                          (nil? randoms) 1)]
-    (-> (if (> options-factor 5)
-          (->> (- options-factor 5)
-               double
-               Math/sqrt
-               (+ 5))
-          options-factor)
+    (-> options-factor
+        double
+        Math/sqrt
+        (+ (/ options-factor 2))
+        (/ 2)
         (max 1))))
 
 (defmethod randoms-preset :languages [_]
@@ -72,7 +71,7 @@
     :all ["acid" "bludgeoning" "cold" "fire" "force" "lightning" "necrotic" "piercing" "poison" "psychic" "radiant" "slashing" "thunder"]))
 
 (defmethod randoms-preset :ability-scores [{:keys [type]
-                                        :or   {type :all}}]
+                                            :or   {type :all}}]
   (case type
     :common ["Constitution" "Dexterity" "Wisdom"]
     :uncommon ["Strength" "Intelligence" "Charisma"]
