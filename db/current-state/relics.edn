@@ -1,5 +1,4 @@
-[
- {:name "Essence of Cerasil",
+[{:name "Essence of Cerasil",
   :found false,
   :base-type "armour",
   :base nil,
