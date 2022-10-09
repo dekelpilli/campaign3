@@ -41,13 +41,20 @@
                        curios-used)
           enchants-fn (->> (e/valid-enchants base type)
                            (map (fn [{:keys [tags weighting] :as e}]
-                                  (->> (transduce
-                                         (comp (map weightings)
-                                               (filter some?))
-                                         *
-                                         weighting
-                                         tags)
-                                       (assoc e :weighting))))
+                                  (let [new-weighting (transduce
+                                                        (comp (map weightings)
+                                                              (filter some?)
+                                                              (map (fn [multiplier]
+                                                                     (* multiplier weighting))))
+                                                        (fn
+                                                          ([x] x)
+                                                          ([x y] (if (and x
+                                                                          (or (zero? x) (zero? y)))
+                                                                   0
+                                                                   (+ (or x 0) y))))
+                                                        nil
+                                                        tags)]
+                                    (assoc e :weighting (or new-weighting weighting)))))
                            u/weighted-sampler)]
       (e/add-enchants-totalling (* 10 (count curios-used))
                                 enchants-fn))))
