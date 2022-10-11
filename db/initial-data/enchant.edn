@@ -1,7 +1,7 @@
 [{:effect "+1 AC."
   :points 30
   :tags   #{"survivability"}}
- {:effect "You have an additional spell slot of your second highest spell slot where you have at least one spell slot available."
+ {:effect "You have an additional spell slot of your second highest spell level where you have at least one spell slot available."
   :points 20
   :tags   #{"magic"}}
  {:effect      "On your turn, your melee attacks have a reach of 10 feet."
@@ -60,7 +60,7 @@
   :tags    #{"utility"}
   :randoms [{:preset :ability-scores}]
   :points  20}
- {:effect "You have an additional second level spell slot (only if you already had at least 1)."
+ {:effect "You have [1] additional second level spell slot."
   :tags   #{"magic"}
   :points 15}
  {:effect "+1 critical hit range with attacks."
@@ -74,9 +74,9 @@
  {:effect      "You have advantage on initiative rolls."
   :tags        #{"utility"}
   :upgradeable false}
- {:effect "No more than once per minute, when you score a critical hit, recover a 1st-level spell slot."
+ {:effect "No more than [once] per minute, when you score a critical hit, recover a 1st-level spell slot."
   :tags   #{"magic" "critical"}}
- {:effect "No more than once per minute, when you score a critical hit, recover 10% of your maximum class points (minimum 1)."
+ {:effect "No more than [once] per minute, when you score a critical hit, recover 10% of your maximum class points (minimum 1)."
   :tags   #{"utility" "critical"}}
  {:effect    "+1 AB with unarmed attacks."
   :tags      #{"accuracy"}
@@ -122,8 +122,9 @@
   :points      20
   :upgradeable false
   :tags        #{"control"}}
- {:effect "Creatures that have hit you with an opportunity attack in the last minute have disadvantage on opportunity attacks."
-  :tags   #{"control"}}
+ {:effect      "Creatures that have hit you with an opportunity attack in the last minute have disadvantage on opportunity attacks."
+  :upgradeable false
+  :tags        #{"control"}}
  {:effect "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."
   :tags   #{"control" "critical"}}
  {:effect "Creatures of your choice under the effect of a spell of yours or a condition upi caused have -[1] to saving throws against spells and conditions."
@@ -145,7 +146,7 @@
   :tags   #{"survivability"}}
  {:effect "Gain temporary hit points equal to your lowest ability score (not bonus) at the beginning of each combat."
   :tags   #{"survivability"}}
- {:effect "You have an additional first level spell slot."
+ {:effect "You have [1] additional first level spell slot."
   :tags   #{"magic"}}
  {:effect "+10ft darkvision."
   :tags   #{"utility"}
@@ -166,8 +167,8 @@
  {:effect "You cannot be deafened."
   :tags   #{"utility"}
   :points 4}
- {:effect      "When you score a critical hit with an attack of opportunity, the target is staggered until the end of their turn."
-  :tags        #{"accuracy" "critical"}
+ {:effect      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."
+  :tags        #{"control" "critical"}
   :upgradeable false}
  {:effect      "You may take an additional action the end of an action where you landed a killing blow with a critical hit."
   :tags        #{"critical" "utility"}
@@ -191,7 +192,8 @@
   :tags   #{"utility"}}
  {:effect   "+1 damage with %s."
   :randoms  [{:preset :literal
-              :values ["spells" "weapons"]}]
+              :values ["spells" "weapons"]
+              :factor 2}]
   :tags     #{"damage"}
   :requires {:base-type "weapon"}}
  {:effect  "+5ft %s speed."
@@ -297,9 +299,9 @@
   :tags   #{"magic"}}
  {:effect "Every third spell you cast deals +[5:2] damage, across any amount of time."
   :tags   #{"damage"}}
- {:effect "+2 damage against enemies you are flanking."
+ {:effect "+[2:1] damage against enemies you are flanking."
   :tags   #{"damage"}}
- {:effect  "+2 global damage against creatures %s in the initiative tracker."
+ {:effect  "+[2:1] global damage against creatures %s in the initiative tracker."
   :randoms [{:preset :literal
              :values ["behind you" "ahead of you"]}]
   :tags    #{"damage"}}
@@ -316,7 +318,7 @@
   :tags   #{"survivability"}}
  {:effect "+3 to maximum HP."
   :tags   #{"survivability"}}
- {:effect "+2 to minion damage."
+ {:effect "+[2:1] to minion damage."
   :tags   #{"damage"}}
  {:effect "+5 feet range for applying stabilising Medicine checks."
   :tags   #{"utility"}
@@ -328,7 +330,7 @@
  {:effect   "+1 to death saves in %s."
   :tags     #{"survivability"}
   :randoms  [{:preset :literal
-              :values ["sunlight" "non-magical darkness" "magical darkness"]}]
+              :values ["sunlight" "darkness"]}]
   :points   5
   :requires {:base-type "armour"}}
  {:effect      "Enemies are considered to enter and leave your reach at 5 feet, as well as at your regular reach."
@@ -387,14 +389,12 @@
   :tags   #{"critical"}}
  {:effect "5% chance to refund the spell slots used for spells cast outside of your turn."
   :tags   #{"magic"}}
- {:effect "Regain 2 hits points when you, or allies within [5] feet of you, take a critical hit and remains conscious."
+ {:effect "Regain 2 hits points when you, or allies within [5] feet of you, take a critical hit and remain conscious."
   :tags   #{"survivability"}}
  {:effect   "This armour no longer causes Stealth checks to be made with disadvantage."
   :tags     #{"utility"}
   :requires {:base-type             "armour"
              :disadvantaged-stealth true}}
- {:effect "You have an additional first level spell slot (only if you already had at least 1)."
-  :tags   #{"magic"}}
  {:effect   "When you hit a temporarily invisible creature with a weapon attack, they become visible."
   :tags     #{"utility"}
   :requires {:base-type "weapon"}}
