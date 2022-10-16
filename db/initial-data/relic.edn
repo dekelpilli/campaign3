@@ -164,4 +164,31 @@
                :tags   #{"damage"}}
               {:effect "+[1] AB with attacks that would deal elemental damage."
                :points 30
-               :tags   #{"accuracy"}}]}]
+               :tags   #{"accuracy"}}]}
+ {:name      "Desmond's Madness"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect "Your ranged attacks have +1 AB."
+               :points 30
+               :tags   #{"accuracy"}}]
+  :mods      [{:effect "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."
+               :tags   #{"damage"}}
+              {:effect "+[10:5] feet to your walking speed."
+               :tags   #{"utility"}}
+              {:effect      "Your improvised weapons gain the Finesse tag."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect      "You are immune to charms and frightens from spells."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "+[1] Strength, -[1] Wisdom."
+               :tags   #{"utility"}}
+              {:effect "+[1] Dexterity, -[1] Charisma."
+               :tags   #{"utility"}}
+              {:effect "+2 resistance to damage from non-magical terrain/area effects."
+               :tags   #{"survivability"}}
+              {:effect      "Your maximum hit points are increased by your level if your Strength is at least 20."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "+[2:1] damage with ranged attacks."
+               :tags   #{"damage"}}]}]

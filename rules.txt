@@ -69,7 +69,7 @@ Vendor valuations:
     Special bases: 25
     Rings: N/A
     Uniques: 15 + base price
-    Magical items: base price + 35 if over 10 points of mods, otherwise base price + 15.
+    Magical items: base price + (total mod points on the item, max 40)
     Curios: N/A
     Amulets: 10 * CR capacity
     Crafting items: 8

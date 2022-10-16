@@ -59,7 +59,7 @@
            {:effect "Your amulet's trait is always active. When rolling the trait in an amulet, you may choose for the trait to belong to a creature up to 2 CR higher."
             :tags   #{"utility"}}]}
  {:name   "Wrathful Judgement"
-  :info   "Grants a marks and improves your marks, with a focus on revenge."
+  :info   "Grants a mark and improves your marks, with a focus on revenge."
   :levels [{:effect "Creatures of your choice that damage you, or land a killing blow against an ally of yours, become marked by Brand of Vengeance for a minute. Creatures marked with BoV have +1 damage taken from you."
             :tags   #{"damage"}}
            {:effect "Creatures marked by you have -1 global damage."

@@ -14,6 +14,11 @@
      :path      name
      :character character}))
 
+(defn path-descriptions []
+  (->> (vals divinity-paths)
+       (mapv (fn [{:keys [name info]}]
+               (format "%s: %s" name info)))))
+
 (defn use-dust []
   (u/when-let* [character (p/>>item "Character:" (keys helmets/character-enchants))
                 {:keys [path progress] :as current-path} (-> (db/execute! {:select [:*]
