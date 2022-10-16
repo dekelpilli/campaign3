@@ -4,4 +4,7 @@
  {:type "loot:11", :session 1, :amount 1}
  {:type "days:other", :session 2, :amount 2}
  {:type "loot:3", :session 2, :amount 2}
- {:type "loot:6", :session 2, :amount 2}]
+ {:type "loot:6", :session 2, :amount 2}
+ {:type "loot:2", :session 3, :amount 1}
+ {:type "days:travel", :session 3, :amount 13}
+ {:type "days:travel", :session 4, :amount 2}]

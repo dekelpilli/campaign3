@@ -16,7 +16,7 @@
 (def ^:private sexes ["female" "male"])
 
 (def ^:private activities [:befriend-creature :busk :chronicle :entertain :force-march :gather-components
-                           :gossip :harvest :pray :rob :scout])
+                           :gossip :harvest :pray :rob :scout :seek-shelter])
 (def ^:private weather-dc-mods
   {:rain         {:busk              1
                   :seek-shelter      2

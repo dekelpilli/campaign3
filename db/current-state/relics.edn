@@ -235,4 +235,34 @@
     :points 20,
     :effect
     "Your loot rolls always grant you [2:1] additional gold while this modifier is on a special base (even from non-gold results)."}],
+  :levels nil}
+ {:name "Desmond's Madness",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:tags ["accuracy"],
+    :points 30,
+    :effect "Your ranged attacks have +1 AB."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."}
+   {:tags ["utility"], :effect "+[10:5] feet to your walking speed."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect "Your improvised weapons gain the Finesse tag."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect "You are immune to charms and frightens from spells."}
+   {:tags ["utility"], :effect "+[1] Strength, -[1] Wisdom."}
+   {:tags ["utility"], :effect "+[1] Dexterity, -[1] Charisma."}
+   {:tags ["survivability"],
+    :effect
+    "+2 resistance to damage from non-magical terrain/area effects."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your maximum hit points are increased by your level if your Strength is at least 20."}
+   {:tags ["damage"], :effect "+[2:1] damage with ranged attacks."}],
   :levels nil}]

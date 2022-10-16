@@ -295,7 +295,7 @@
   :requires {:base-type "armour"}}
  {:effect "Gain 10 temporary hit points when you deliver a Killing Blow."
   :tags   #{"survivability"}}
- {:effect "Whenever you grant a buff with a duration to a creature, gain outgoing healing +1 until the end of thee buff."
+ {:effect "Whenever you grant a buff with a duration to a creature, gain +1 outgoing healing until the end of the buff."
   :tags   #{"magic"}}
  {:effect "Every third spell you cast deals +[5:2] damage, across any amount of time."
   :tags   #{"damage"}}
