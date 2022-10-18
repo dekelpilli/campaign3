@@ -2,6 +2,7 @@
   (:require (campaign3
               [db :as db]
               [prompting :as p]
+              [helmets :as helmets]
               [util :as u])
             [clojure.string :as str]
             [randy.core :as r]
@@ -229,7 +230,10 @@
              [day & days] (range 1 (inc days))]
         (let [encounter (r/weighted-sample random-encounter-prob)
               weather (previous-weather-fn)
-              acc (assoc acc day {:encounter encounter :weather weather})]
+              acc (assoc acc day {:weather weather
+                                  :order   (-> (keys helmets/character-enchants)
+                                               (cond-> encounter (conj encounter))
+                                               r/shuffle)})]
           (when encounter
             (add-encounter! encounter))
           (if (seq days)
@@ -270,7 +274,7 @@
              :devastating (+ 18 (rng/next-int r/default-rng 3)))
      :loot (calculate-loot difficulty investigations)}))
 
-(defn new-positive-encounter []
+(defn positive-encounter []
   {:race      (r/sample races)
    :sex       (r/sample sexes)
    :encounter (r/sample positive-encounters)})
