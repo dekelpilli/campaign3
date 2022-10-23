@@ -5,10 +5,11 @@
               [helmets :as helmets]
               [mundanes :as mundanes]
               [prompting :as p]
+              [relics :as relics]
               [util :as u])
             [clojure.set :as set]
-            [randy.core :as r]
-            [puget.printer :as puget]))
+            [puget.printer :as puget]
+            [randy.core :as r]))
 
 (def ^:private suit-tags {:swords    #{"accuracy" "damage"}
                           :wands     #{"magic" "critical"}
@@ -38,7 +39,7 @@
                              u/weighted-sampler)]
     (repeatedly num-mods (comp e/prep-enchant enchant-sampler))))
 
-(defn add-tarot-enchants []
+(defn add-tarot-enchants! []
   (u/when-let* [suits (-> (p/>>distinct-items "What Suit exceeded the minimum?" (keys suit-tags))
                           not-empty)
                 num-mods (-> (into {} (comp
@@ -49,11 +50,24 @@
                                                              0)]))
                                         (filter second))
                                    suits)
-                             not-empty)
-                base (mundanes/choose-base)]
-    (mapcat (fn [[suit amount]]
-              (get-minimum-enchants (get suit-tags suit) amount base))
-            num-mods)))
+                             not-empty)]
+    (let [{:keys [base base-type] :as relic} (relics/choose-found-relic)]
+      (u/when-let* [base (if relic
+                           (mundanes/name->base base-type base)
+                           (mundanes/choose-base))
+                    mods (mapcat (fn [[suit amount]]
+                                   (get-minimum-enchants (get suit-tags suit) amount base))
+                                 num-mods)]
+        (if relic
+          (do
+            (-> relic
+                (update :start into mods)
+                (update :levels #(map (fn inject-relic-mods [level]
+                                        (update level :existing into mods))
+                                      %))
+                relics/update-relic!)
+            mods)
+          mods)))))
 
 (defn add-character-enchants []
   (u/when-let* [character-enchants (p/>>item "Character name:" helmets/character-enchants)

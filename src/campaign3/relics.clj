@@ -8,14 +8,16 @@
             [puget.printer :as puget]
             [randy.core :as r]))
 
-(defn- choose-found-relic []
+(defn choose-found-relic []
   (->> (db/execute! {:select [:*]
                      :from   [:relics]
-                     :where  [:= :found true]})
+                     :where  [:and
+                              [:= :found true]
+                              [:= :sold false]]})
        (u/assoc-by :name)
        (p/>>item "Choose relic:")))
 
-(defn- update-relic! [{:keys [name] :as relic}]
+(defn update-relic! [{:keys [name] :as relic}]
   (db/execute! {:update [:relics]
                 :set    (-> relic
                             (select-keys [:levels :base :found])
@@ -103,7 +105,7 @@
               opts))))
 
 (defn- single-relic-level [{:keys [base-type mods]}
-                          {:keys [existing progressed] :as previous-level} base]
+                           {:keys [existing progressed] :as previous-level} base]
   ;TODO handle level 9->10 difference
   (let [upgradeable (-> (remove (comp false? :upgradeable) existing)
                         seq)
@@ -177,3 +179,10 @@
   (u/when-let* [{:keys [base-type] :as relic} (choose-found-relic)
                 {:keys [name]} (mundanes/choose-base base-type)]
     (-> relic (assoc :base name) update-relic!)))
+
+(defn sell-relic! []
+  (when-let [{:keys [name] :as relic} (choose-found-relic)]
+    (db/execute! {:update [:relics]
+                  :set    {:sold true}
+                  :where  [:= :name name]})
+    (select-keys relic [:name :base-type :base])))

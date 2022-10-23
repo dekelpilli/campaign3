@@ -327,7 +327,8 @@
                                [:base :text]
                                [:start :jsonb [:not nil]]
                                [:mods :jsonb [:not nil]]
-                               [:levels :jsonb]]}))
+                               [:levels :jsonb]
+                               [:sold :boolean [:not nil]]]}))
 
 (defn insert-relics! []
   (db/execute! {:insert-into :relics
@@ -335,6 +336,7 @@
                                   (remove (comp false? :enabled))
                                   (map #(-> %
                                             (dissoc :enabled)
+                                            (assoc :sold false)
                                             (update :start u/jsonb-lift)
                                             (update :mods u/jsonb-lift)
                                             (update :levels u/jsonb-lift))))
