@@ -36,7 +36,7 @@
            :upgradeable false
            :points      20
            :tags        #{"damage"}}
-          {:effect      "If you start a long rest with points remaining in your exertion pool, and have been in combat since your last long rest, you retain half of those exertion points."
+          {:effect      "If you end a combat with points remaining in your exertion pool and then take a long rest, you retain half of those exertion points (rounded up)."
            :upgradeable false
            :points      10
            :tags        #{"utility"}}]

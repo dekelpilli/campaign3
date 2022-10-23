@@ -5,7 +5,7 @@
             [randy.core :as r]
             [randy.rng :as rng]))
 
-(def ^:private players 4)
+(def ^:private players 3)
 (def ^:private max-enemies 6)
 (def ^:private level-power [11 14 18 23 32 35 41 44 49 53 62 68 71 74 82 84 103 119 131 141])
 (def ^:private cr-power {0  1 1/8 5 1/4 10 1/2 16 1 22 2 28 3 37 4 48 5 60 6 65 7 70 8 85 9 85

@@ -40,7 +40,7 @@
 
 (defn sample-amulets []
   (u/when-let* [cr (cr)
-                amount (some-> (p/>>input "Amount of monster traits:") (parse-long))]
+                amount (some-> (p/>>input "Amount of monster traits:") parse-long)]
     (let [monster-traits (monster-traits-by-cr cr)]
       (cond->> monster-traits
                (> (count monster-traits) amount) (r/sample-without-replacement amount)))))

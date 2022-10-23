@@ -7,7 +7,8 @@
               [prompting :as p]
               [util :as u])
             [clojure.set :as set]
-            [randy.core :as r]))
+            [randy.core :as r]
+            [puget.printer :as puget]))
 
 (def ^:private suit-tags {:swords    #{"accuracy" "damage"}
                           :wands     #{"magic" "critical"}
@@ -64,23 +65,24 @@
                           seq)
                 suit-tag-freqs (reduce
                                  (fn [acc suit]
-                                   (if-let [amount (some-> (p/>>input (str "How many '" suit "' suit cards?")) parse-long)]
+                                   (if-let [amount (some-> (p/>>input (str "How many '" (name suit) "' suit cards?")) parse-long)]
                                      (assoc acc (get suit-tags suit) amount)
                                      (reduced nil)))
                                  {}
                                  suits)
-                relic-name (p/>>input "What is the relic's name?")
                 {:keys [base type] :as relic-base} (mundanes/choose-base)]
     (let [starting-mods (-> (mapcat (fn [[tags num]]
                                       (get-minimum-enchants tags num relic-base))
                                     suit-tag-freqs)
                             vec)]
-      (db/execute! {:insert-into :relics
-                    :values      [{:name      relic-name
-                                   :found     true
-                                   :base-type type
-                                   :base      (:name base)
-                                   :start     (u/jsonb-lift starting-mods)
-                                   :mods      (u/jsonb-lift [])
-                                   :levels    (u/jsonb-lift {})}]})
-      starting-mods)))
+      (puget/cprint starting-mods)
+      (when-let [relic-name (p/>>input "What is the relic's name?")]
+        (db/execute! {:insert-into :relics
+                      :values      [{:name      relic-name
+                                     :found     true
+                                     :base-type type
+                                     :base      (:name base)
+                                     :start     (u/jsonb-lift starting-mods)
+                                     :mods      (u/jsonb-lift [])
+                                     :levels    (u/jsonb-lift [])}]})
+        starting-mods))))

@@ -159,40 +159,35 @@
     :effect
     "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."}],
   :levels nil}
- {:name "Essence of Ketis",
+ {:name "Desmond's Madness",
   :found false,
-  :base-type "weapon",
+  :base-type "armour",
   :base nil,
   :start
-  [{:upgradeable false,
-    :tags ["damage"],
-    :effect
-    "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
-  :mods
-  [{:tags ["survivability"],
-    :effect
-    "At the end of a turn of yours where you have dealt elemental damage, you gain +1 resistance to elemental damage until the end of the combat, to a maximum of [5:1] from this modifier."}
-   {:upgradeable false,
-    :tags ["critical"],
-    :effect
-    "Acid damage from attacks that have critically hit is always rolled at its maximum value."}
-   {:tags ["damage"], :effect "+[2:1] die size with cold damage."}
-   {:tags ["damage"],
-    :effect "+[1d4] fire damage with weapons and spells."}
-   {:tags ["damage"],
-    :effect
-    "Your spells and weapon attacks always deal a minimum of [3:1] thunder damage."}
-   {:tags ["damage"], :effect "+[2:1] acid block thorns."}
-   {:tags ["damage"],
-    :points 20,
-    :effect
-    "Creatures of your choice within [5] feet of creature you deal lightning damage to also take 1 lightning damage from the same source (i.e. would benefit from the same damage bonuses as the original damage dealer). This does not chain."}
-   {:tags ["damage"],
-    :effect
-    "+[2:1] damage with spells and attacks that only deal elemental damage."}
-   {:tags ["accuracy"],
+  [{:tags ["accuracy"],
     :points 30,
-    :effect "+[1] AB with attacks that would deal elemental damage."}],
+    :effect "Your ranged attacks have +1 AB."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."}
+   {:tags ["utility"], :effect "+[10:5] feet to your walking speed."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect "Your improvised weapons gain the Finesse tag."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect "You are immune to charms and frightens from spells."}
+   {:tags ["utility"], :effect "+[1] Strength, -[1] Wisdom."}
+   {:tags ["utility"], :effect "+[1] Dexterity, -[1] Charisma."}
+   {:tags ["survivability"],
+    :effect
+    "+2 resistance to damage from non-magical terrain/area effects."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your maximum hit points are increased by your level if your Strength is at least 20."}
+   {:tags ["damage"], :effect "+[2:1] damage with ranged attacks."}],
   :levels nil}
  {:name "Essence of Ateus",
   :found true,
@@ -235,34 +230,229 @@
     :points 20,
     :effect
     "Your loot rolls always grant you [2:1] additional gold while this modifier is on a special base (even from non-gold results)."}],
-  :levels nil}
- {:name "Desmond's Madness",
-  :found false,
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Whenever you find curios, you may replace [1] found curio with a Curio of Abundance."}
+     {:upgradeable false,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
+    :progressed [],
+    :level 2}]}
+ {:name "Wandslinger's Grips",
+  :found true,
   :base-type "armour",
-  :base nil,
+  :base "Unarmoured gloves",
   :start
-  [{:tags ["accuracy"],
-    :points 30,
-    :effect "Your ranged attacks have +1 AB."}],
-  :mods
-  [{:tags ["damage"],
-    :effect
-    "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."}
-   {:tags ["utility"], :effect "+[10:5] feet to your walking speed."}
-   {:upgradeable false,
+  [{:upgradeable true,
     :tags ["utility"],
-    :effect "Your improvised weapons gain the Finesse tag."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect "You are immune to charms and frightens from spells."}
-   {:tags ["utility"], :effect "+[1] Strength, -[1] Wisdom."}
-   {:tags ["utility"], :effect "+[1] Dexterity, -[1] Charisma."}
-   {:tags ["survivability"],
+    :points 10,
+    :upgrade-points 10,
     :effect
-    "+2 resistance to damage from non-magical terrain/area effects."}
-   {:upgradeable false,
-    :tags ["survivability"],
+    "Once per long rest, when rolling a natural 1 on a d20, you may reroll."}
+   {:upgradeable true,
+    :tags ["survivability" "critical" "utility"],
+    :points 10,
+    :upgrade-points 10,
     :effect
-    "Your maximum hit points are increased by your level if your Strength is at least 20."}
-   {:tags ["damage"], :effect "+[2:1] damage with ranged attacks."}],
-  :levels nil}]
+    "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."}
+   {:upgradeable true,
+    :tags ["survivability"],
+    :points 10,
+    :upgrade-points 10,
+    :effect "+1 lightning resistance."}
+   {:upgradeable true,
+    :tags ["damage"],
+    :points 10,
+    :upgrade-points 10,
+    :effect "+1 to damage with light weapons."}],
+  :mods [],
+  :levels []}
+ {:name "Essence of Ketis",
+  :found true,
+  :base-type "weapon",
+  :base "Warhammer",
+  :start
+  [{:upgradeable true,
+    :tags ["wealth"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "You find loot as if your Investigation and Survival check results are 1 point higher."}
+   {:upgradeable true,
+    :tags ["survivability"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "While up, regenerate 1 hit point at the start of each round of combat."}
+   {:upgradeable true,
+    :tags ["critical"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "Damage from your critical hits ignores resistances and immunities."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
+  :mods
+  [{:tags ["survivability"],
+    :effect
+    "At the end of a turn of yours where you have dealt elemental damage, you gain +1 resistance to elemental damage until the end of the combat, to a maximum of [5:1] from this modifier."}
+   {:upgradeable false,
+    :tags ["critical"],
+    :effect
+    "Acid damage from attacks that have critically hit is always rolled at its maximum value."}
+   {:tags ["damage"], :effect "+[2:1] die size with cold damage."}
+   {:tags ["damage"],
+    :effect "+[1d4] fire damage with weapons and spells."}
+   {:tags ["damage"],
+    :effect
+    "Your spells and weapon attacks always deal a minimum of [3:1] thunder damage."}
+   {:tags ["damage"], :effect "+[2:1] acid block thorns."}
+   {:tags ["damage"],
+    :points 20,
+    :effect
+    "Creatures of your choice within [5] feet of creature you deal lightning damage to also take 1 lightning damage from the same source (i.e. would benefit from the same damage bonuses as the original damage dealer). This does not chain."}
+   {:tags ["damage"],
+    :effect
+    "+[2:1] damage with spells and attacks that only deal elemental damage."}
+   {:tags ["accuracy"],
+    :points 30,
+    :effect "+[1] AB with attacks that would deal elemental damage."}],
+  :levels
+  [{:existing
+    [{:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}],
+    :progressed [],
+    :level 3}]}]

@@ -281,7 +281,7 @@
   :tags   #{"damage"}}
  {:effect "+2 to physical resistance while taking Damage Over Time."
   :tags   #{"survivability"}}
- {:effect "+1 to damage with light weapons."
+ {:effect "+1 to damage with dual-wielding weapons."
   :tags   #{"damage"}}
  {:effect "Reroll, the resulting enchant is applied to minions instead of the wielder (10 points)."}
  {:effect "When an attack fails to hit you in combat, you can use your reaction to reduce your AC for the attack until it does hit you. Your next instance of damage in the next minute is then increased by 3 for each point of AC you dropped."

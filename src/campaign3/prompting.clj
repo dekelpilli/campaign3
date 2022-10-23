@@ -87,7 +87,8 @@
                           ^InputResult (get prompt)
                           (.getInput))]
        (case completer
-         :regular (value-mapper (str/lower-case (str/trimr input)))
+         :regular (cond-> (str/trimr input)
+                          (seq valid-inputs) (-> str/lower-case value-mapper))
          (:comma-separated :comma-separated-once) (->> (str/split input #",")
                                                        (keep (comp value-mapper str/lower-case str/trim))))))))
 
