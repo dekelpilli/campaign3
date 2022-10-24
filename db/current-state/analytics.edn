@@ -16,4 +16,4 @@
  {:type "loot:4", :session 4, :amount 1}
  {:type "days:other", :session 4, :amount 1}
  {:type "loot:3", :session 4, :amount 1}
- {:type "days:travel", :session 4, :amount 2}]
+ {:type "days:travel", :session 4, :amount 12}]
