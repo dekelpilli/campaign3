@@ -185,9 +185,10 @@
                       :thunderstorm 10}}
       (update-vals r/alias-method-sampler)))
 
-(def ^:private default-travel-weightings {nil       75
-                                          :positive 5
-                                          :random   20})
+(def ^:private generate-travel-event (r/alias-method-sampler
+                                       {nil       95
+                                        :positive 1
+                                        :random   4}))
 
 (def ^:private positive-encounters (db/load-all :positive-encounters))
 
@@ -215,30 +216,21 @@
 (defn travel [days]
   (when-let [initial-weather-fn (p/>>item "What was the weather yesterday?" weather-fns)]
     (u/record! "days:travel" days)
-    (let [had-random? (when (bound? #'u/current-session)
-                        (-> (db/execute! {:select [[[:> :amount 0] :had-random]]
-                                          :from   [:analytics]
-                                          :where  [:and
-                                                   [:= :session u/current-session]
-                                                   [:= :type "encounter:random"]]})
-                            first
-                            :had-random))
-          random-encounter-prob (cond-> default-travel-weightings
-                                        had-random? (update :random #(- % 10)))]
-      (loop [acc (sorted-map)
-             previous-weather-fn initial-weather-fn
-             [day & days] (range 1 (inc days))]
-        (let [encounter (r/weighted-sample random-encounter-prob)
-              weather (previous-weather-fn)
-              acc (assoc acc day {:weather weather
-                                  :order   (-> (keys helmets/character-enchants)
-                                               (cond-> encounter (conj encounter))
-                                               r/shuffle)})]
-          (when encounter
-            (add-encounter! encounter))
-          (if (seq days)
-            (recur acc (get weather-fns weather) days)
-            acc))))))
+    (loop [acc (sorted-map)
+           previous-weather-fn initial-weather-fn
+           [day & days] (range 1 (inc days))]
+      (let [encounters (->> (repeatedly 5 generate-travel-event)
+                            (take 2)
+                            (filterv identity))
+            weather (previous-weather-fn)
+            acc (assoc acc day {:weather weather
+                                :order   (->> (keys helmets/character-enchants)
+                                              (into encounters)
+                                              r/shuffle)})]
+        (run! add-encounter! encounters)
+        (if (seq days)
+          (recur acc (get weather-fns weather) days)
+          acc)))))
 
 (defn- calculate-loot [difficulty investigations]
   (let [extra-loot-sum (transduce (map (fn [s] (- (parse-long s) extra-loot-threshold))) + 0 investigations)
