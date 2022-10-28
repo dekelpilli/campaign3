@@ -12,7 +12,7 @@
             {:effect "You cannot cast damaging spells on consecutive turns in combat."}
             {:effect "The damage you deal with cantrips is halved."}]}
  {:name    "Researcher's Power"
-  :base    "Staff"
+  :base    "staff"
   :effects [{:effect "Your mental ability score are capped at 26."
              :tags   #{"utility"}}
             {:effect "+4 intelligence."
@@ -59,9 +59,11 @@
   :base    "any body armour"
   :effects [{:effect "Your hit die size is increased by 2. This increases your maximum hit points."
              :tags   #{"survivability"}}
-            {:effect "At the start of your turn, while conscious, if you have been damaged in the last round, regenerate 2 hit points."
+            {:effect "At the start of your turn, if you are conscious and have been damaged in the last round, regenerate 2 hit points."
              :tags   #{"survivability"}}
             {:effect "You have +3 physical damage with melee attacks."
+             :tags   #{"survivability"}}
+            {:effect "+2 to your Strength maximum."
              :tags   #{"survivability"}}
             {:effect "You cannot cast spells."}
             {:effect "You can wear a maximum of 1 relic."}]}
@@ -77,15 +79,14 @@
              :tags   #{"survivability"}}
             {:effect "Healing you receive while mad is applied as if the maximum value was rolled."
              :tags   #{"survivability"}}
-            {:effect "Roll a d20 at the start of each turn in combat where you are conscious. If you roll 10 or lower, roll a d100 on the short term madness table. You are afflicted by the matching effect until the start of your next turn."}]
+            {:effect "Roll a d20 at the start of each turn in combat where you are conscious. If you roll 10 or lower, roll a d100 on this modified short term madness table. You are afflicted by the matching effect until the start of your next turn."}]
   :madness {"01-20"  "The character retreats into his or her mind and becomes staggered. The effect ends if the character takes any damage."
             "21-30"  "The character becomes dazed and spends the duration screaming, laughing, or weeping."
             "31-40"  "The character becomes frightened and must use his or her action and movement each round to flee from the source of the fear. (source is a random enemy in combat)"
             "41-50"  "The character begins babbling and is incapable of normal speech or spellcasting."
             "51-60"  "The character must use his or her action each round to attack the nearest creature. (random if equal distance)"
-            "61-70"  "The character experiences vivid hallucinations and has disadvantage on ability checks."
-            "71-75"  "The character does whatever anyone tells him or her to do that isn't obviously self-destructive."
-            "76-80"  "The character experiences an overpowering urge to eat something strange such as dirt, slime, or offal (and must spend their action attempting to do so)."
+            "61-77"  "The character experiences vivid hallucinations and has disadvantage on attacks and ability checks."
+            "76-80"  "The character experiences an overpowering urge to eat something strange such as dirt, slime, or offal (and must spend go prone and spend their action attempting to do so)."
             "81-90"  "The character is debilitated."
             "91-100" "The character falls unconscious."}}
  {:name    "Slow and Steady"
@@ -324,11 +325,11 @@
   :base    "any sword"
   :effects [{:effect "+1d6 necrotic damage with weapons."
              :tags   #{"damage"}}
-            {:effect "When you damage a creature with a weapon attack, its maximum hit points are reduced by an amount equal to the necrotic damage dealt."
+            {:effect "When you damage a creature with a weapon attack, its maximum hit points are reduced by an amount equal to the necrotic damage dealt, until its next long rest."
              :tags   #{"utility"}}
             {:effect "When you remove more than half of a creature's remaining hit points with a weapon attack, the creature is killed. This supersedes non-lethal."
              :tags   #{"damage"}}
-            {:effect "Take damage equal to your level when you end a combat without landing a killing blow. This damage cannot reduce you to 0 hit points."}
+            {:effect "Take true damage equal to your level when you end a combat without landing a killing blow. This damage cannot reduce you to 0 hit points."}
             {:effect "-2 slashing resistance."}]}
  {:name    "Amenonuhoko"
   :base    "any polearm"
@@ -384,11 +385,27 @@
   :base    "any pick"
   :effects [{:effect "+2 critical hit range."
              :tags   #{"critical"}}
-            {:effect "This weapon gains the Deadly trait."
+            {:effect "On a critical hit with a pick weapon, add additional damage dice equal to the pick's base damage dice."
              :tags   #{"critical"}}
-            {:effect "Picks you wield are considered to have the Dual Wielding trait."
+            {:effect "One-handed picks you wield are considered to have the Dual Wielding trait. Two-handed picks you wield lose the Two-handed tag."
              :tags   #{"utility"}}
-            {:effect "When you score a natural critical hit, you take true damage equal to thrice the difference between your natural roll and 20 (e.g. take 6 damage after critting with an 18, 0 with a 20)."}]}
+            {:effect "When you score a natural critical hit with a pick, you take true damage equal to thrice the difference between your natural roll and 20 (e.g. take 6 damage after critting with an 18, 0 with a 20)."}]}
+ {:name    "Molten Fury"
+  :base    "any axe"
+  :effects [{:effect "You cannot deal more than 10 non-fire damage per turn. Any such damage beyond your 10th on a turn is converted to fire damage."
+             :tags   #{"damage"}}
+            {:effect "When you hit an enemy with a weapon attack that deals fire damage, you gain 1 point of Fury."
+             :tags   #{"damage"}}
+            {:effect "When you critically hit an enemy with a weapon attack that deals fire damage, you gain 1 additional point of Fury."
+             :tags   #{"critical" "damage"}}
+            {:effect "+4 maximum Fury."
+             :tags   #{"damage"}}
+            {:effect "Add 1 fire damage to your weapon attacks for each point of Fury you currently have."
+             :tags   #{"damage"}}
+            {:effect "Reduce non-fire damage from your weapon attacks by 1 for each point of Fury you currently have."}
+            {:effect "You lose all Fury points when you roll for initiative, and when you go down to 0 points."}
+            {:effect "You cannot deal non-physical, non-fire damage with weapon attacks."}
+            {:effect "You cannot have resistance to damage types other than fire."}]}
  {:name     "Template"
   :base     "string"
   :effects  [{:effect "description"}]

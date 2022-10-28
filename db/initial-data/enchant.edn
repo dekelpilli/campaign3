@@ -262,7 +262,7 @@
  {:effect   "+1 to saving throws made to end an ongoing condition if your HP is above 0."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
- {:effect      "You have resistance to all damage while taking the Dodge action."
+ {:effect      "You have resistance to all damage while affeced by the benefits of the Dodge action."
   :tags        #{"survivability"}
   :upgradeable false}
  {:effect "+1 damage to melee and touch attacks."
@@ -286,7 +286,7 @@
  {:effect "Reroll, the resulting enchant is applied to minions instead of the wielder (10 points)."}
  {:effect "When an attack fails to hit you in combat, you can use your reaction to reduce your AC for the attack until it does hit you. Your next instance of damage in the next minute is then increased by 3 for each point of AC you dropped."
   :tags   #{"damage"}}
- {:effect "+1 to Damage Over Time."
+ {:effect "+1 to damage over time."
   :tags   #{"damage"}}
  {:effect "When you hit a creature with a weapon attack, they are marked to take +1 damage from creatures other than yourself for [1] minute."
   :tags   #{"damage"}}
