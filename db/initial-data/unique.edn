@@ -403,7 +403,7 @@
             {:effect "Add 1 fire damage to your weapon attacks for each point of Fury you currently have."
              :tags   #{"damage"}}
             {:effect "Reduce non-fire damage from your weapon attacks by 1 for each point of Fury you currently have."}
-            {:effect "You lose all Fury points when you roll for initiative, and when you go down to 0 points."}
+            {:effect "You lose all Fury points when you roll for initiative, and when you go down to 0 hit points."}
             {:effect "You cannot deal non-physical, non-fire damage with weapon attacks."}
             {:effect "You cannot have resistance to damage types other than fire."}]}
  {:name     "Template"
