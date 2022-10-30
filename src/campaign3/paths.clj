@@ -23,7 +23,9 @@
   (u/when-let* [character (p/>>item "Character:" (keys helmets/character-enchants))
                 {:keys [path progress] :as current-path} (-> (db/execute! {:select [:*]
                                                                            :from   [:divinity-progress]
-                                                                           :where  [:< :progress 5]})
+                                                                           :where  [:and
+                                                                                    [:= :character character]
+                                                                                    [:< :progress 5]]})
                                                              first
                                                              (or (new-path-progress character)))]
     (db/execute! {:insert-into   :divinity-progress

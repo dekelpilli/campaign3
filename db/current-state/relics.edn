@@ -33,7 +33,8 @@
    {:tags ["damage"],
     :effect
     "While you have a Plant-type amulet active, +[1d6] melee poison thorns. While you have a Beast-type amulet active, +[1d6] melee piercing thorns."}],
-  :levels nil}
+  :levels nil,
+  :sold false}
  {:name "Solarmane's Legacy",
   :found false,
   :base-type "weapon",
@@ -72,7 +73,8 @@
     :tags ["damage"],
     :effect
     "Modifiers to your slashing damage apply to your fire damage instead."}],
-  :levels nil}
+  :levels nil,
+  :sold false}
  {:name "Essence of Eion",
   :found false,
   :base-type "weapon",
@@ -114,7 +116,8 @@
     :points 20,
     :effect
     "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."}],
-  :levels nil}
+  :levels nil,
+  :sold false}
  {:name "Essence of Esher",
   :found false,
   :base-type "armour",
@@ -158,7 +161,8 @@
     :tags ["survivability"],
     :effect
     "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."}],
-  :levels nil}
+  :levels nil,
+  :sold false}
  {:name "Desmond's Madness",
   :found false,
   :base-type "armour",
@@ -188,7 +192,8 @@
     :effect
     "Your maximum hit points are increased by your level if your Strength is at least 20."}
    {:tags ["damage"], :effect "+[2:1] damage with ranged attacks."}],
-  :levels nil}
+  :levels nil,
+  :sold false}
  {:name "Essence of Ateus",
   :found true,
   :base-type "armour",
@@ -256,7 +261,8 @@
       :effect
       "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
     :progressed [],
-    :level 2}]}
+    :level 2}],
+  :sold false}
  {:name "Wandslinger's Grips",
   :found true,
   :base-type "armour",
@@ -285,7 +291,8 @@
     :upgrade-points 10,
     :effect "+1 to damage with light weapons."}],
   :mods [],
-  :levels []}
+  :levels nil,
+  :sold false}
  {:name "Essence of Ketis",
   :found true,
   :base-type "weapon",
@@ -455,4 +462,5 @@
       :effect "+1 critical hit range with attacks.",
       :prohibits nil}],
     :progressed [],
-    :level 3}]}]
+    :level 3}],
+  :sold false}]

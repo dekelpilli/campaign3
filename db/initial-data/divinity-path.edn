@@ -81,7 +81,7 @@
            {:effect "You have +1 AB and +1 to your DCs against enemies within 5 feet of two or more of your allies, including yourself. +2 damage against flanked enemies."
             :tags   #{"accuracy"}}
            {:effect "One of your weapons has an additional enchantment slot. You gain 4 curios of your choice upon receiving this benefit."
-            :tags   #{"utility"}}]}
+            :tags   #{"utility" "wealth"}}]}
  {:name   "Unbound Arcana"
   :info   "Improves you general spellcasting prowess."
   :levels [{:effect "You have an additional first, second, and third level spell slot, assuming you already have at least one."
@@ -143,7 +143,7 @@
            {:effect "You have +1 critical hit range against enemies under the effect of a non-magical condition, and when you land a natural critical hit and deal poison damage, force the target to make a Constitution saving throw, causing it to become poisoned for 1 minute on a failed save (repeat on turn ends)."
             :tags   #{"critical" "control"}}]}
  {:name   "Controlled Morbidity"
-  :info   "Focuses on Necromancy and Necromany spells, with some buffs also applying to undead minions."
+  :info   "Focuses on Necromancy and Necromancy spells, with some buffs also applying to undead minions."
   :levels [{:effect "You and your undead minions are at least resistant to necrotic damage and have +1d6 necrotic damage while you have an Undead creature's amulet effect active."
             :tags   #{"damage" "survivability"}}
            {:effect "You and your undead minions gain +1 necrotic damage for a minute (stacking) whenever you cast a Necromancy spell as an action."
