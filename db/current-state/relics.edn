@@ -1,41 +1,4 @@
-[{:name "Essence of Cerasil",
-  :found false,
-  :base-type "armour",
-  :base nil,
-  :start
-  [{:tags ["utility"],
-    :upgrade-points 20,
-    :effect
-    "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."}],
-  :mods
-  [{:tags ["utility"],
-    :effect "+[2] to initiative rolls while in nature."}
-   {:tags ["utility"],
-    :effect "+1 to Nature expertise dice for journey activities."}
-   {:upgradeable false,
-    :tags ["wealth"],
-    :effect
-    "When you use an Orb of Favouritism to target Beast or Plant type creatures, you have a 50% chance to not consume the orb."}
-   {:tags ["survivability"],
-    :effect "+[4:1] resistance to poison damage."}
-   {:tags ["survivability"],
-    :effect "+[3:2] incoming healing while in direct sunlight."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "Your incoming healing affects passive regeneration while in direct sunlight."}
-   {:tags ["damage"],
-    :effect
-    "+[2] to non-magical damage from non-metallic weapons attacks or from unarmed weapon attacks."}
-   {:tags ["magic"],
-    :effect
-    "You learn the Plant Growth spell and may cast it [once] per long rest."}
-   {:tags ["damage"],
-    :effect
-    "While you have a Plant-type amulet active, +[1d6] melee poison thorns. While you have a Beast-type amulet active, +[1d6] melee piercing thorns."}],
-  :levels nil,
-  :sold false}
- {:name "Solarmane's Legacy",
+[{:name "Solarmane's Legacy",
   :found false,
   :base-type "weapon",
   :base nil,
@@ -73,6 +36,43 @@
     :tags ["damage"],
     :effect
     "Modifiers to your slashing damage apply to your fire damage instead."}],
+  :levels nil,
+  :sold false}
+ {:name "Essence of Cerasil",
+  :found true,
+  :base-type "armour",
+  :base "Unarmoured gloves",
+  :start
+  [{:tags ["utility"],
+    :upgrade-points 20,
+    :effect
+    "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."}],
+  :mods
+  [{:tags ["utility"],
+    :effect "+[2] to initiative rolls while in nature."}
+   {:tags ["utility"],
+    :effect "+1 to Nature expertise dice for journey activities."}
+   {:upgradeable false,
+    :tags ["wealth"],
+    :effect
+    "When you use an Orb of Favouritism to target Beast or Plant type creatures, you have a 50% chance to not consume the orb."}
+   {:tags ["survivability"],
+    :effect "+[4:1] resistance to poison damage."}
+   {:tags ["survivability"],
+    :effect "+[3:2] incoming healing while in direct sunlight."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your incoming healing affects passive regeneration while in direct sunlight."}
+   {:tags ["damage"],
+    :effect
+    "+[2] to non-magical damage from non-metallic weapons attacks or from unarmed weapon attacks."}
+   {:tags ["magic"],
+    :effect
+    "You learn the Plant Growth spell and may cast it [once] per long rest."}
+   {:tags ["damage"],
+    :effect
+    "While you have a Plant-type amulet active, +[1d6] melee poison thorns. While you have a Beast-type amulet active, +[1d6] melee piercing thorns."}],
   :levels nil,
   :sold false}
  {:name "Essence of Eion",
