@@ -63,8 +63,8 @@
                             (nth level-power)
                             (* players))
           target-monster-power (* multiplier player-power)
-          target-monster-power-lower (* 0.95 target-monster-power)
-          target-monster-power-upper (* 1.05 target-monster-power)
+          target-monster-power-lower (* 0.9 target-monster-power)
+          target-monster-power-upper (* 1.1 target-monster-power)
           crs (keep (fn [[cr power]]
                       (when (and (>= cr min-cr) (<= power player-power))
                         cr))

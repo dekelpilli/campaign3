@@ -165,9 +165,11 @@
   :base    "any brawling weapon"
   :effects [{:effect "+1d4 thunder damage with attacks."
              :tags   #{"damage"}}
-            {:effect "+20 temporary hit points when you take thunder damage."
+            {:effect "+20 temporary hit points when you take thunder damage, no more than once per minute."
              :tags   #{"survivability"}}
-            {:effect "You may force enemies that take thunder damage from a critical hit from your attacks to make a STR save (DC: 8+AB) or be knocked back 5feet."
+            {:effect "You cannot be deafened."
+             :tags   #{"survivability"}}
+            {:effect "You may force enemies that take thunder damage from a critical hit from your attacks to be affected by the Shove or Knockdown maneuvers (DC: 8+AB), but without the additional basic melee damage."
              :tags   #{"control"}}
             {:effect "You are vulnerable to lightning damage."}]}
  {:name    "Dominion"

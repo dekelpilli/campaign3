@@ -96,13 +96,13 @@
             :tags   #{"magic"}}]}
  {:name   "Arcane Combat"
   :info   "Improves spellcasting and weapon attacks for characters that utilise both."
-  :levels [{:effect "All weapons you use are considered to have the Conduit trait."
+  :levels [{:effect "All weapons you use are considered to have the Conduit trait. If this is already the case, you gain the ability to use Unique weapons on bases they otherwise could not use, and spell-specific modifiers on your weapons also apply to your weapons and maneuvers."
             :tags   #{"magic"}}
            {:effect "You may cast spells and cantrips you know that have a casting time of 1 action or 1 bonus action as a reaction instead of making an opportunity attack with your weapon if you have made a weapon attack in the last minute."
             :tags   #{"magic"}}
            {:effect "You are considered to be proficient in all saving throws against magical effects."
             :tags   #{"survivability"}}
-           {:effect "You have +1 AB while you are concentrating on a spell or are under the effect of a spell."
+           {:effect "You have +1 AB while you are concentrating on a spell or are under the effect of a non-cantrip spell."
             :tags   #{"accuracy"}}
            {:effect "You have +4 spell damage if you have made a weapon attacked in the last 18 seconds. You have +4 weapon damage if you have used a spell slot or finished casting a spell with a duration of at least an action in the last 18 seconds."
             :tags   #{"accuracy"}}]}
