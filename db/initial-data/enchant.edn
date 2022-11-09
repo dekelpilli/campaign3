@@ -288,7 +288,7 @@
   :tags   #{"damage"}}
  {:effect "+1 to damage over time."
   :tags   #{"damage"}}
- {:effect "When you hit a creature with a weapon attack, they are marked to take +1 damage from creatures other than yourself for [1] minute."
+ {:effect "When you hit a creature with a weapon attack, they are marked to take +1 damage from creatures other than yourself for [1] minute. This does not stack."
   :tags   #{"damage"}}
  {:effect   "+2 resistance to damage from projectiles."
   :tags     #{"survivability"}

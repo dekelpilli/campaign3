@@ -96,20 +96,20 @@
             :tags   #{"magic"}}]}
  {:name   "Arcane Combat"
   :info   "Improves spellcasting and weapon attacks for characters that utilise both."
-  :levels [{:effect "All weapons you use are considered to have the Conduit trait. If this is already the case, you gain the ability to use Unique weapons on bases they otherwise could not use, and spell-specific modifiers on your weapons also apply to your weapons and maneuvers."
-            :tags   #{"magic"}}
-           {:effect "You may cast spells and cantrips you know that have a casting time of 1 action or 1 bonus action as a reaction instead of making an opportunity attack with your weapon if you have made a weapon attack in the last minute."
-            :tags   #{"magic"}}
-           {:effect "You are considered to be proficient in all saving throws against magical effects."
+  :levels [{:effect "Weapon-specific affixes on your shield, boots, gloves, and body armour apply to your spells as well."
+            :tags   #{"utility"}}
+           {:effect "Enemies you have targeted with both a weapon attack and a spell in the last minute cannot make opportunity attacks against you, and do not impose disadvantage on your ranged attacks as a result of being within 5 feet of you."
+            :tags   #{"utility"}}
+           {:effect "You are considered to be proficient in all saving throws against magical effects when the source is a creature you have attacked with a weapon."
             :tags   #{"survivability"}}
-           {:effect "You have +1 AB while you are concentrating on a spell or are under the effect of a non-cantrip spell."
+           {:effect "You have +1 AB with weapon attacks while you are concentrating on a spell or are under the effect of a spell you have cast, and +1 AB and +1 DC with spells against enemies you have hit with a weapon attack."
             :tags   #{"accuracy"}}
-           {:effect "You have +4 spell damage if you have made a weapon attacked in the last 18 seconds. You have +4 weapon damage if you have used a spell slot or finished casting a spell with a duration of at least an action in the last 18 seconds."
-            :tags   #{"accuracy"}}]}
+           {:effect "You have +4 spell damage, and minions from your spells have +4 damage, if you have made a weapon attacked in the last 18 seconds. You have +4 weapon damage if you have used a spell slot or finished casting a spell with a duration of at least an action in the last 18 seconds."
+            :tags   #{"damage"}}]}
  {:name   "Elemental Mastery"
   :info   "Improves your prowess with and against elemental damage (acid, cold, fire, lightning, or thunder damage) from weapon attacks as well as spells."
-  :levels [{:effect "Your critical die sizes for elemental damage (acid, cold, fire, lightning, or thunder damage) increase by two."
-            :tags   #{"critical"}}
+  :levels [{:effect "Your die sizes with elemental damage (acid, cold, fire, lightning, or thunder damage) increase by one each. This can increase the die size of multiple parts of the same source of damage."
+            :tags   #{"damage"}}
            {:effect "You can cast Absorb Elements an amount of times equal to an ability score modifier of your choice, to a minimum of once, per long rest."
             :tags   #{"magic"}}
            {:effect "+1 critical hit range for attacks that would deal elemental damage."

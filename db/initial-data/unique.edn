@@ -237,16 +237,6 @@
              :tags   #{"damage"}}
             {:effect "You cannot critically hit restrained enemies."}
             {:effect "When you would otherwise land a killing blow with a weapon, the enemy instead dies at the end of their next turn. You know when this happens."}]}
- {:name    "Overcharged"
-  :base    "any gloves"
-  :effects [{:effect "You have an additional first level spell slot, if you already have at least one."
-             :tags   #{"magic"}}
-            {:effect "You have an additional spell slot from each spell level in which you have a spell slot unlocked, up to 5th level."
-             :tags   #{"magic"}}
-            {:effect "You regain 1 first level spell slot when rolling for initiative."
-             :tags   #{"magic"}}
-            {:effect "When using the final spell slot in a given spell level, you take damage equal to 5 times the spell slot level used."}
-            {:effect "-1 Wisdom, Charisma, and Intelligence."}]}
  {:name    "Raven's Talon"
   :base    "any knife"
   :effects [{:effect "+1d4 damage against blinded enemies."
@@ -338,8 +328,9 @@
   :effects [{:effect "The first time on your turn that you hit a creature with this weapon, you cast Earth Tremor as a first level spell."
              :tags   #{"magic"}}
             {:effect "You cannot be knocked prone by the Earth Tremor and Earthquake spells."
-             :tags   #{"defence"}}
-            {:effect "You must concentrate to hold this weapon. Whenever you lose concentration, you may either drop the weapon or immediately cast Earth Tremor, centred on you. When cast in this way, the spell also affects you, but does not invoke further concentration saves."}]}
+             :tags   #{"survivability"}}
+            {:effect "You must concentrate to hold this weapon. Whenever you lose concentration, you may either drop the weapon or immediately cast Earth Tremor, centred on you. When cast in this way, the spell also affects you, but does not invoke further concentration saves."}
+            {:effect "This weapon requires an action to pick up."}]}
  {:name    "Babr-e Bayan"
   :base    "any heavy body armour"
   :effects [{:effect "You are resistant to fire and cold damage."
@@ -354,7 +345,7 @@
  {:name    "Forceslinger"
   :base    "wand"
   :effects [{:effect "When you make an attack with a weapon, you may sacrifice a spell slot to add {spell slot level}d4 to the attack roll and damage of the attack."
-             :tags   #{"damage"}}
+             :tags   #{"accuracy" "damage"}}
             {:effect "You ignore resistances and immunities to force with weapons."
              :tags   #{"damage"}}
             {:effect "Wand attacks made during your bonus action have advantage."
@@ -364,7 +355,7 @@
   :base    "wand"
   :effects [{:effect "Creatures you attack gain one level of vulnerability (immune->resistant->regular->vulnerable) to damage types from this weapon."
              :tags   #{"damage"}}
-            {:effect "You cannot deal force damage."}
+            {:effect "You cannot deal force damage. Flat increases to your wand attacks apply to your highest non-force source of damage from that attack (based on average result)."}
             {:effect "You cannot make weapon attacks if you have cast a non-cantrip spell since the start of your last turn."}
             {:effect "-1 cantrips known."}]}
  {:name    "Lorg Mór"
