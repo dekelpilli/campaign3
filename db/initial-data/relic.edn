@@ -168,7 +168,7 @@
  {:name      "Desmond's Madness"
   :found     false
   :base-type "armour"
-  :start     [{:effect "Your ranged attacks have +1 AB."
+  :start     [{:effect "Your ranged weapon attacks have +1 AB."
                :points 30
                :tags   #{"accuracy"}}]
   :mods      [{:effect "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."
@@ -187,8 +187,38 @@
                :tags   #{"utility"}}
               {:effect "+2 resistance to damage from non-magical terrain/area effects."
                :tags   #{"survivability"}}
-              {:effect      "Your maximum hit points are increased by your level if your Strength is at least 20."
+              {:effect      "Your maximum hit points are increased by an amount equal to your level if your Strength is at least 20."
                :upgradeable false
                :tags        #{"survivability"}}
-              {:effect "+[2:1] damage with ranged attacks."
-               :tags   #{"damage"}}]}]
+              {:effect "+[2:1] damage with ranged weapon attacks."
+               :tags   #{"damage"}}]}
+ {:name      "Carl's Partnership"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect      "Physical damage from attacks made during your bonus action is converted to fire damage."
+               :upgradeable false
+               :tags        #{"damage"}}]
+  :mods      [{:effect      "Physical damage from attacks made during your action is converted to cold damage."
+               :upgradeable false
+               :tags        #{"damage"}}
+              {:effect      "You may disengage as a free action if you have made at least two attacks during your turn."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "+[3:1] fire damage with attacks that also deal cold damage."
+               :tags   #{"damage"}}
+              {:effect "+[3:1] cold damage with attacks that also deal fire damage."
+               :tags   #{"damage"}}
+              {:effect "+1d[4] poison damage with natural weapon attacks."
+               :tags   #{"damage"}}
+              {:effect      "Ranged attacks you make cannot have disadvantage if they would deal elemental damage."
+               :upgradeable false
+               :tags        #{"accuracy"}}
+              {:effect "+[1]AB with attacks made with Dexterity while wearing heavy armour."
+               :points 20
+               :tags   #{"accuracy"}}
+              {:effect      "Critical hits from your weapon attacks do not override non-lethal."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "-[1] damage taken while within 5 feet of an ally and within 5 feet of the enemy that caused the damage."
+               :points 20
+               :tags   #{"survivability"}}]}]
