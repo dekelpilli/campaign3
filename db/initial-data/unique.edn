@@ -156,9 +156,9 @@
   :base    "any gloves"
   :effects [{:effect "Poisons you inflict end one round after their regular duration (including being ended with a save)."
              :tags   #{"control"}}
-            {:effect "When attempt to deal poison damage to a poison-immune enemy, they become resistant to poison instead."
+            {:effect "When you attempt to deal poison damage to a poison-immune enemy, they become resistant to poison instead."
              :tags   #{"damage"}}
-            {:effect "When deal poison damage to a poison-resistant enemy, they lose their resistance to poison."
+            {:effect "When you deal poison damage to a poison-resistant enemy, they lose their resistance to poison."
              :tags   #{"damage"}}
             {:effect "-2 damage with non-poison damage types."}]}
  {:name    "Thunderfist"

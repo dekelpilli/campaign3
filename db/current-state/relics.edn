@@ -163,37 +163,6 @@
     "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."}],
   :levels nil,
   :sold false}
- {:name "Desmond's Madness",
-  :found false,
-  :base-type "armour",
-  :base nil,
-  :start
-  [{:tags ["accuracy"],
-    :points 30,
-    :effect "Your ranged attacks have +1 AB."}],
-  :mods
-  [{:tags ["damage"],
-    :effect
-    "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."}
-   {:tags ["utility"], :effect "+[10:5] feet to your walking speed."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect "Your improvised weapons gain the Finesse tag."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect "You are immune to charms and frightens from spells."}
-   {:tags ["utility"], :effect "+[1] Strength, -[1] Wisdom."}
-   {:tags ["utility"], :effect "+[1] Dexterity, -[1] Charisma."}
-   {:tags ["survivability"],
-    :effect
-    "+2 resistance to damage from non-magical terrain/area effects."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "Your maximum hit points are increased by your level if your Strength is at least 20."}
-   {:tags ["damage"], :effect "+[2:1] damage with ranged attacks."}],
-  :levels nil,
-  :sold false}
  {:name "Essence of Ateus",
   :found true,
   :base-type "armour",
@@ -291,6 +260,82 @@
     :upgrade-points 10,
     :effect "+1 to damage with light weapons."}],
   :mods [],
+  :levels nil,
+  :sold false}
+ {:name "Desmond's Madness",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:tags ["accuracy"],
+    :points 30,
+    :effect "Your ranged weapon attacks have +1 AB."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."}
+   {:tags ["utility"], :effect "+[10:5] feet to your walking speed."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect "Your improvised weapons gain the Finesse tag."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect "You are immune to charms and frightens from spells."}
+   {:tags ["utility"], :effect "+[1] Strength, -[1] Wisdom."}
+   {:tags ["utility"], :effect "+[1] Dexterity, -[1] Charisma."}
+   {:tags ["survivability"],
+    :effect
+    "+2 resistance to damage from non-magical terrain/area effects."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your maximum hit points are increased by an amount equal to your level if your Strength is at least 20."}
+   {:tags ["damage"],
+    :effect "+[2:1] damage with ranged weapon attacks."}],
+  :levels nil,
+  :sold false}
+ {:name "Carl's Partnership",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "Physical damage from attacks made during your bonus action is converted to fire damage."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "Physical damage from attacks made during your action is converted to cold damage."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "You may disengage as a free action if you have made at least two attacks during your turn."}
+   {:tags ["damage"],
+    :effect
+    "+[3:1] fire damage with attacks that also deal cold damage."}
+   {:tags ["damage"],
+    :effect
+    "+[3:1] cold damage with attacks that also deal fire damage."}
+   {:tags ["damage"],
+    :effect "+1d[4] poison damage with natural weapon attacks."}
+   {:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "Ranged attacks you make cannot have disadvantage if they would deal elemental damage."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "+[1]AB with attacks made with Dexterity while wearing heavy armour."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "Critical hits from your weapon attacks do not override non-lethal."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "-[1] damage taken while within 5 feet of an ally and within 5 feet of the enemy that caused the damage."}],
   :levels nil,
   :sold false}
  {:name "Essence of Ketis",
@@ -462,5 +507,52 @@
       :effect "+1 critical hit range with attacks.",
       :prohibits nil}],
     :progressed [],
-    :level 3}],
+    :level 3}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}],
+    :progressed [],
+    :level 4}],
   :sold false}]

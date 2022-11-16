@@ -127,7 +127,7 @@
   :tags        #{"control"}}
  {:effect "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."
   :tags   #{"control" "critical"}}
- {:effect "Creatures of your choice under the effect of a spell of yours or a condition upi caused have -[1] to saving throws against spells and conditions."
+ {:effect "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."
   :points 30
   :tags   #{"magic" "accuracy" "control"}}
  {:effect "Once per long rest, as an action, you can make a Persuasion check contested by a non-hostile creature's Wisdom save. The creature must be within 60 feet of you. On a success, you can give them a command as per the Command spell."
