@@ -1,6 +1,9 @@
 [{:cost         "20g (each)"
   :participants "any"
   :rules        "Each paying player gets a disadvantaged d12 loot roll, granting the reward twice."}
+ {:cost         "25g (each)"
+  :participants "any"
+  :rules        "Each paying player gets a d6+6 loot roll (i.e. 7-12)."}
  {:cost         "30g (each)"
   :participants "any"
   :rules        "Roll 1d4: 1. Advantage 1d12 loot roll. 2. 1d12 loot roll with advantaged result. 3. 4x Orbs of Personality 4. Divine Dust."}

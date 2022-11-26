@@ -97,7 +97,7 @@
                   :busk      1}})
 (def ^:private weather-fns
   (-> {:rain         {:rain         12
-                      :frigid       12
+                      :frigid       10
                       :clear        10
                       :snow         2
                       :hail         2
@@ -153,7 +153,7 @@
                       :thunderstorm 3}
        :overcast     {:rain         10
                       :clear        9
-                      :sweltering   4
+                      :sweltering   6
                       :frigid       8
                       :hail         1
                       :fog          7
@@ -161,11 +161,9 @@
                       :thunderstorm 2}
        :sandstorm    {:rain       1
                       :clear      6
-                      :sweltering 10
-                      :frigid     1
+                      :sweltering 12
                       :fog        1
-                      :overcast   2
-                      :sandstorm  4
+                      :sandstorm  6
                       :acid-rain  1}
        :acid-rain    {:rain       1
                       :sweltering 6
@@ -195,6 +193,18 @@
 (defn- add-encounter! [type]
   (u/record! (str "encounter" type) 1)
   type)
+
+(defn -weather-freqs [n]
+  (when-let [initial-weather (p/>>item "What was the weather yesterday?" weather-fns)]
+    (loop [freqs {}
+           weather-fn initial-weather
+           n n]
+      (if (pos? n)
+        (let [weather (weather-fn)]
+          (recur (update freqs weather (fnil inc 0))
+                 (get weather-fns weather)
+                 (dec n)))
+        freqs))))
 
 (defn activity-mod []
   (u/when-let* [mods (p/>>item "What's the weather?" weather-dc-mods)

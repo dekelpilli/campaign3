@@ -73,7 +73,32 @@
    {:tags ["damage"],
     :effect
     "While you have a Plant-type amulet active, +[1d6] melee poison thorns. While you have a Beast-type amulet active, +[1d6] melee piercing thorns."}],
-  :levels nil,
+  :levels
+  [{:existing
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."}],
+    :progressed
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect
+      "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."}],
+    :level 2}],
   :sold false}
  {:name "Essence of Eion",
   :found false,
@@ -163,6 +188,36 @@
     "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."}],
   :levels nil,
   :sold false}
+ {:name "Wandslinger's Grips",
+  :found true,
+  :base-type "armour",
+  :base "Unarmoured gloves",
+  :start
+  [{:upgradeable true,
+    :tags ["utility"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "Once per long rest, when rolling a natural 1 on a d20, you may reroll."}
+   {:upgradeable true,
+    :tags ["survivability" "critical" "utility"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."}
+   {:upgradeable true,
+    :tags ["survivability"],
+    :points 10,
+    :upgrade-points 10,
+    :effect "+1 lightning resistance."}
+   {:upgradeable true,
+    :tags ["damage"],
+    :points 10,
+    :upgrade-points 10,
+    :effect "+1 to damage with light weapons."}],
+  :mods [],
+  :levels nil,
+  :sold false}
  {:name "Essence of Ateus",
   :found true,
   :base-type "armour",
@@ -230,37 +285,23 @@
       :effect
       "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
     :progressed [],
-    :level 2}],
-  :sold false}
- {:name "Wandslinger's Grips",
-  :found true,
-  :base-type "armour",
-  :base "Unarmoured gloves",
-  :start
-  [{:upgradeable true,
-    :tags ["utility"],
-    :points 10,
-    :upgrade-points 10,
-    :effect
-    "Once per long rest, when rolling a natural 1 on a d20, you may reroll."}
-   {:upgradeable true,
-    :tags ["survivability" "critical" "utility"],
-    :points 10,
-    :upgrade-points 10,
-    :effect
-    "Once per long rest, when you need make an attack roll, ability check, or saving throw, you can use your reaction to replace it with a 50% chance to critically succeed and 50% chance to to critically fail."}
-   {:upgradeable true,
-    :tags ["survivability"],
-    :points 10,
-    :upgrade-points 10,
-    :effect "+1 lightning resistance."}
-   {:upgradeable true,
-    :tags ["damage"],
-    :points 10,
-    :upgrade-points 10,
-    :effect "+1 to damage with light weapons."}],
-  :mods [],
-  :levels nil,
+    :level 2}
+   {:existing
+    [{:tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "Whenever you find curios, you may replace [1] found curio with a Curio of Abundance."}
+     {:upgradeable false,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
+    :progressed [],
+    :level 3}],
   :sold false}
  {:name "Desmond's Madness",
   :found false,

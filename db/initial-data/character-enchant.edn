@@ -1,6 +1,6 @@
-{:zed    [{:effect "1 Conjuration cantrip you know does not count towards your cantrips known limit."
+{:zed    [{:effect "+1 die size with weapon attacks."
            :points 10
-           :tags   #{"magic"}}
+           :tags   #{"damage"}}
           {:effect "-[2:1] to your Concentration saving throw DC minimum."
            :points 10
            :tags   #{"magic"}}
@@ -19,7 +19,7 @@
            :points      10
            :upgradeable false
            :tags        #{"damage"}}]
- :urian  [{:effect "Your of Lay of Hands pool increases by 5."
+ :urian  [{:effect "Your of Lay of Hands pool increases by [5:5]."
            :points 10
            :tags   #{"survivability" "utility"}}
           {:effect "The number of spells you can prepare is increased by 1."
@@ -66,7 +66,7 @@
            :tags   #{"utility"}}
           {:effect "+1 to saves and attacks you have disadvantage on while fatigued."
            :points 10
-           :tags   #{"survivability"}}
+           :tags   #{"survivability" "accuracy"}}
           {:effect "+1AB for attacks targeting an enemy other than the first enemy you targeted on that turn."
            :points 10
            :tags   #{"accuracy"}}
