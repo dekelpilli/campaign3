@@ -83,12 +83,12 @@
        :options cr-options})))
 
 (defn- new-room-dimensions []
-  (vec (repeatedly 2 #(+ 4 (rng/next-int r/default-rng 6)))))
+  (vec (repeatedly 2 #(+ 4 (rng/next-int @r/default-rng 6)))))
 
 (defn- new-room-contents []
-  ((r/sample [#(format "Easy: %s mobs" (+ 2 (rng/next-int r/default-rng 5)))
-              #(format "Medium: %s mobs" (+ 2 (rng/next-int r/default-rng 4)))
-              #(format "Hard: %s mobs" (+ 4 (rng/next-int r/default-rng 3)))
+  ((r/sample [#(format "Easy: %s mobs" (+ 2 (rng/next-int @r/default-rng 5)))
+              #(format "Medium: %s mobs" (+ 2 (rng/next-int @r/default-rng 4)))
+              #(format "Hard: %s mobs" (+ 4 (rng/next-int @r/default-rng 3)))
               (constantly "Hard: 2 mobs")
               (constantly "Puzzle/trap")])))
 

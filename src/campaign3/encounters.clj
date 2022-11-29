@@ -266,14 +266,14 @@
                 investigations (some-> (p/>>input "List investigations:")
                                        (str/split #","))]
     {:xp   (case difficulty
-             :mild (+ 6 (rng/next-int r/default-rng 2))
-             :bruising (+ 7 (rng/next-int r/default-rng 2))
-             :bloody (+ 8 (rng/next-int r/default-rng 2))
-             :brutal (+ 10 (rng/next-int r/default-rng 3))
-             :oppressive (+ 13 (rng/next-int r/default-rng 3))
-             (:boss :overwhelming) (+ 14 (rng/next-int r/default-rng 3))
-             :crushing (+ 16 (rng/next-int r/default-rng 3))
-             :devastating (+ 18 (rng/next-int r/default-rng 3)))
+             :mild (+ 6 (rng/next-int @r/default-rng 2))
+             :bruising (+ 7 (rng/next-int @r/default-rng 2))
+             :bloody (+ 8 (rng/next-int @r/default-rng 2))
+             :brutal (+ 10 (rng/next-int @r/default-rng 3))
+             :oppressive (+ 13 (rng/next-int @r/default-rng 3))
+             (:boss :overwhelming) (+ 14 (rng/next-int @r/default-rng 3))
+             :crushing (+ 16 (rng/next-int @r/default-rng 3))
+             :devastating (+ 18 (rng/next-int @r/default-rng 3)))
      :loot (calculate-loot difficulty investigations)}))
 
 (defn positive-encounter []

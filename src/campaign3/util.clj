@@ -25,7 +25,7 @@
           randoms (update :effect #(apply format % (randoms)))))
 
 (defn occurred? [likelihood-probability]
-  (< (rng/next-double r/default-rng) likelihood-probability))
+  (< (rng/next-double @r/default-rng) likelihood-probability))
 
 (defn get-rand-amount [coll]
   (-> (r/sample coll)

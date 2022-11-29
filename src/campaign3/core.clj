@@ -18,7 +18,7 @@
 
 (def loot-actions
   {1  {:name   "20-30 gold"
-       :action (fn gold-loot [] (str (rng/next-int r/default-rng 20 31) " gold"))}
+       :action (fn gold-loot [] (str (rng/next-int @r/default-rng 20 31) " gold"))}
    2  {:name   "Unique"
        :action uniques/new-unique}
    3  {:name   "Amulet"
