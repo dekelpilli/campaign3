@@ -65,7 +65,7 @@
     (:new-random-mod :new-relic-mod) (attach-new-mod attunement mod)
     :progress (progress-mod attunement mod)
     :upgrade-mod (upgrade-mod attunement mod)
-    :none attunement))
+    :no-change attunement))
 
 (defn- unique-levelling-options [n upgradeable relic-mods random-gen option-types]
   (if (zero? n)

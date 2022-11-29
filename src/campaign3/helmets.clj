@@ -45,20 +45,20 @@
 (defn- sum-enchant-points [total {:keys [level points]}]
   (+ total (* level points)))
 
-(defn- fractured-chance [points-total]
+(defn fractured-chance [points-total]
   (->> (- 120 points-total)
        (min 100)
        (max 25)
        (- 100)))
 
-(defn- upgrade-helm-mod [present-enchants]
-  (let [{:keys [points] :as upgraded-enchant} (r/sample present-enchants)
+(defn- upgrade-helm-mod [present-enchants upgradeable-enchants]
+  (let [{:keys [points] :as upgraded-enchant} (r/sample upgradeable-enchants)
         points-total (reduce sum-enchant-points 10 present-enchants)
-        fractured? (and
-                     (<= points 10)
-                     (fractured-chance points-total))]
+        fracture-chance (if (<= points 10)
+                          (fractured-chance points-total)
+                          0)]
     {:enchant         upgraded-enchant
-     :fracture-chance fractured?}))
+     :fracture-chance fracture-chance}))
 
 (defn- add-helm-mod [present-enchants not-present-enchants]
   (let [{:keys [points] :as added-enchant} (r/sample not-present-enchants)
@@ -78,7 +78,7 @@
                                    has-available-mods? (conj :add)
                                    has-upgrades? (conj :upgrade)))
           result (case action
-                   :upgrade (upgrade-helm-mod upgradeable-enchants)
+                   :upgrade (upgrade-helm-mod present-enchants upgradeable-enchants)
                    :add (add-helm-mod present-enchants remaining-mods))]
       (assoc result :action action))))
 

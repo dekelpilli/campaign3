@@ -135,7 +135,7 @@
               {:effect "You learn the [Lesser:Greater:more casts] Restoration spell and may cast it once per short rest."
                :tags   #{"magic" "survivability"}
                :points 20}
-              {:effect      "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."
+              {:effect      "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true non-lethal damage."
                :tags        #{"survivability"}
                :upgradeable false}]}
  {:name      "Essence of Ketis"

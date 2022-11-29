@@ -243,7 +243,7 @@
   :tags   #{"utility"}}
  {:effect "+10% chance to lose one level of strife when you would normally gain one."
   :tags   #{"utility"}}
- {:effect "You loot rolls always grant you 1 additional gold (even from non-gold results)."
+ {:effect "Your loot rolls always grant you 1 additional gold (even from non-gold results)."
   :points 20
   :tags   #{"wealth"}}
  {:effect "Helmets you destroy have a 25% chance to grant [1] additional Orb of Personality."
@@ -269,8 +269,6 @@
   :tags   #{"damage"}}
  {:effect "[Once] per short rest, recover a 1st-level spell slot on Killing Blow."
   :tags   #{"magic"}}
- {:effect "Recover 10% of your maximum class points (minimum 1) on Killing Blow."
-  :tags   #{"utility"}}
  {:effect   "At the start of your turn in combat, if you haven't taken damage since the start of your last turn, gain 1 temporary hit point. This stacks with any existing temporary hit points."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
@@ -310,7 +308,7 @@
  {:effect   "+25% chance to ignore bonus damage from incoming critical hits."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
- {:effect "+2 global damage while your hit points are below 50% of your hit point maximum."
+ {:effect "+2 global damage while you are bloodied."
   :tags   #{"damage"}}
  {:effect "When you deliver a Killing Blow, heal 5 hit points."
   :tags   #{"survivability"}}

@@ -144,9 +144,9 @@
   :levels nil,
   :sold false}
  {:name "Essence of Esher",
-  :found false,
+  :found true,
   :base-type "armour",
-  :base nil,
+  :base "Unarmoured body armour (shirt)",
   :start
   [{:tags ["survivability"],
     :points 20,
@@ -186,7 +186,91 @@
     :tags ["survivability"],
     :effect
     "As a reaction to taking damage at least equal to half of your maximum hit points and surviving, your may immediately heal 1d20 hit points, then take 1d20 true damage."}],
-  :levels nil,
+  :levels
+  [{:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "Your gain maximum hit points equal to the [number of modifiers] on this item."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable false,
+      :tags ["critical" "utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You may take an additional action the end of an action where you landed a killing blow with a critical hit.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "Your gain maximum hit points equal to the [number of modifiers] on this item."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["critical" "utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You may take an additional action the end of an action where you landed a killing blow with a critical hit.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "Your gain maximum hit points equal to the [number of modifiers] on this item."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You regenerate [2:1] hit points at the end of your turn while bloodied."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable false,
+      :tags ["critical" "utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You may take an additional action the end of an action where you landed a killing blow with a critical hit.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "Your gain maximum hit points equal to the [number of modifiers] on this item."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You regenerate [2:1] hit points at the end of your turn while bloodied."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn.",
+      :prohibits nil}],
+    :progressed [],
+    :level 4}],
   :sold false}
  {:name "Wandslinger's Grips",
   :found true,
@@ -378,6 +462,123 @@
     :effect
     "-[1] damage taken while within 5 feet of an ally and within 5 feet of the enemy that caused the damage."}],
   :levels nil,
+  :sold false}
+ {:name "Blazing Glory",
+  :found true,
+  :base-type "weapon",
+  :base "Gauntlet",
+  :start
+  [{:upgradeable true,
+    :tags ["utility" "wealth"],
+    :points 10,
+    :upgrade-points 10,
+    :effect "+1 to journey activity checks."}
+   {:upgradeable true,
+    :tags ["utility"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+   {:upgradeable true,
+    :tags ["damage"],
+    :points 15,
+    :upgrade-points 10,
+    :effect "+[2:1] fire damage."}],
+  :mods [],
+  :levels
+  [{:existing
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 3}],
   :sold false}
  {:name "Essence of Ketis",
   :found true,
@@ -595,5 +796,60 @@
       :effect "+1 critical hit range with attacks.",
       :prohibits nil}],
     :progressed [],
-    :level 4}],
+    :level 4}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}],
+    :progressed [],
+    :level 5}],
   :sold false}]
