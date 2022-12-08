@@ -2,7 +2,7 @@
  :deps    {org.clojure/clojure              {:mvn/version "1.11.1"}
            org.clojure/core.match           {:mvn/version "1.0.0"}
 
-           metosin/jsonista                 {:mvn/version "0.3.6"}
+           metosin/jsonista                 {:mvn/version "0.3.7"}
 
            com.github.dekelpilli/randy      {:mvn/version "0.0.33"}
 

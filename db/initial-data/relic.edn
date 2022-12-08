@@ -198,7 +198,7 @@
   :start     [{:effect      "Physical damage from attacks made during your bonus action is converted to fire damage."
                :upgradeable false
                :tags        #{"damage"}}]
-  :mods      [{:effect      "Physical damage from attacks made during your action is converted to cold damage."
+  :mods      [{:effect      "Physical damage from attacks made during your standard action is converted to cold damage."
                :upgradeable false
                :tags        #{"damage"}}
               {:effect      "You may disengage as a free action if you have made at least two attacks during your turn."
@@ -221,4 +221,35 @@
                :tags        #{"utility"}}
               {:effect "-[1] damage taken while within 5 feet of an ally and within 5 feet of the enemy that caused the damage."
                :points 20
-               :tags   #{"survivability"}}]}]
+               :tags   #{"survivability"}}]}
+ {:name      "Essence of Bara"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect "+[2:1] damage resistance while you have an active stance."
+               :points 20
+               :tags   #{"survivability"}}]
+  :mods      [{:effect      "You have proficiency in Strength saving throws."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect      "At the end of your turn, gain physical damage resistance equal to the number of different physical damage types you dealt during your turn, until the end of your next turn."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "+1 to your maneuver DCs."
+               :points 20
+               :tags   #{"accuracy"}}
+              {:effect "Your weapon attacks have +1 bludgeoning damage, even if they normally deal no bludgeoning damage."
+               :tags   #{"damage"}}
+              {:effect "Your Strength and Dexterity become equal to the highest of your [Strength, Dexterity:, and Constitution]."
+               :points 30
+               :tags   #{"utility"}}
+              {:effect      "Gain weapon damage equal to the number of exertion points you have used since the start of your last turn."
+               :upgradeable false
+               :tags        #{"damage"}}
+              {:effect      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."
+               :upgradeable false
+               :tags        #{"accuracy"}}
+              {:effect      "The Staggered, Poisoned, Prone, and Restrained conditions do not grant advantage to weapon attacks made against you."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "When you make a Strength or Athletics check, you can replace the number you roll with a [12:+1]"
+               :tags   #{"utility"}}]}]
