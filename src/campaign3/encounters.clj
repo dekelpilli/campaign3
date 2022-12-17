@@ -248,16 +248,17 @@
                    (p/>>item "In a dungeon?" [true false] :none-opt? false))
         base-loot (case difficulty
                     (:mild :bruising) 0
-                    :bloody (if dungeon? 1 0)
-                    :brutal (if dungeon? 2 1)
-                    (:boss :oppressive) (if dungeon? 4 2)
-                    :overwhelming (if dungeon? 5 3)
-                    :crushing (if dungeon? 6 4)
-                    :devastating (if dungeon? 8 5))]
+                    :bloody (if dungeon? 0 1)
+                    :brutal (if dungeon? 1 2)
+                    (:boss :oppressive) (if dungeon? 2 4)
+                    :overwhelming (if dungeon? 3 5)
+                    :crushing (if dungeon? 4 6)
+                    :devastating (if dungeon? 5 8))]
     (->> (count investigations)
          (* extra-loot-step)
          (/ extra-loot-sum)
-         int
+         double
+         Math/round
          (max 0)
          (+ base-loot))))
 

@@ -245,11 +245,68 @@
               {:effect      "Gain weapon damage equal to the number of exertion points you have used since the start of your last turn."
                :upgradeable false
                :tags        #{"damage"}}
-              {:effect      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."
+              {:effect      "The Debilitated, Poisoned, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."
                :upgradeable false
                :tags        #{"accuracy"}}
-              {:effect      "The Staggered, Poisoned, Prone, and Restrained conditions do not grant advantage to weapon attacks made against you."
+              {:effect      "The Staggered, Prone, and Restrained conditions do not grant advantage to weapon attacks made against you."
                :upgradeable false
                :tags        #{"survivability"}}
               {:effect "When you make a Strength or Athletics check, you can replace the number you roll with a [12:+1]"
+               :tags   #{"utility"}}]}
+ {:name      "Brass Antler"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect "+1d[4] melee fire damage thorns, no more than once per turn."
+               :points 20
+               :tags   #{"damage"}}]
+  :mods      [{:effect "+1d[4] fire damage with melee attacks."
+               :tags   #{"damage"}}
+              {:effect "+[10:10] feet to each of your speeds during the first round of combat."
+               :tags   #{"utility"}}
+              {:effect      "Your movement does not provoke opportunity attacks with movement types where your speed is at last 50 feet."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "If you move at least 20 feet straight toward a target and then hits it with a melee attack on the same turn, +[2]d6 fire damage."
+               :points 20
+               :tags   #{"damage"}}
+              {:effect "+1d[4] bludgeoning damage against prone creatures."
+               :tags   #{"damage"}}
+              {:effect      "If you move at least 20 feet straight toward a target and then hits it with a melee attack on the same turn, they must make a Strength saving throw or be knocked prone."
+               :upgradeable false
+               :tags        #{"control"}}
+              {:effect "+[1] resistance to fire damage. Your resistance to fire damage also applies to physical damage if you have at least 2 resistance to fire damage."
+               :points 20
+               :tags   #{"survivability"}}
+              {:effect      "You gain advantage on saving throws made to resist the effects of hot weather as though you were wearing hot weather gear, but without the disadvantages in cold weather. This allows you to ignore the penalties of hot weather on your journey activities."
+               :upgradeable false
+               :tags        #{"utility" "wealth"}}
+              {:effect "+[5:5] feet walking speed."
+               :tags   #{"utility"}}]}
+ {:name      "Ouroboros"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."
+               :tags   #{"survivability"}}]
+  :mods      [{:effect      "While you have an amulet effect active, you gain access to any Recharge abilities by the monster in the amulet. These use your DCs/ABs, and you can use them at will (with the regular action cost)."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect      "While you have an amulet effect active, gain flying speed equal to that of the creature in the amulet."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect      "Whenever you find rings with a loot roll, you may replace one ring you find with a new (random) ring."
+               :upgradeable false
+               :tags        #{"wealth"}}
+              {:effect "[Once] per long rest, when a creature fails any saving throw against you, you may also Daze it for a minute (using a Wis save against the same DC at the end of each turn to end the effect)."
+               :tags   #{"control"}}
+              {:effect "While above 0 hit points, heal [5:3] hit points when an ally you can see makes a death saving throw."
+               :tags   #{"survivability"}}
+              {:effect "Whenever you go down, the enemy that dealt the killing blow takes necrotic damage equal to [twice:thrice] your level, and you may heal a creature you can see by an amount [equal:twice] to your level."
+               :points 20
+               :tags   #{"survivability" "damage"}}
+              {:effect "You may cast the Blinding Smite spell as a free action [once] per long rest."
+               :tags   #{"magic" "control" "damage"}}
+              {:effect "You may cast the Guiding Bolt spell [once] per long rest. [When cast in this way, you target one additional target with this spell.]"
+               :points 20
+               :tags   #{"magic" "control" "damage"}}
+              {:effect "You gain [two] expertise dice on knowledge checks regarding snakes and dragons."
                :tags   #{"utility"}}]}]
