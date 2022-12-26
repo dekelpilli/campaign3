@@ -1,4 +1,4 @@
-[{:character "fiore", :path "Aggressive Combat", :progress 1}
- {:character "truvat", :path "Wrathful Judgement", :progress 1}
+[{:character "truvat", :path "Wrathful Judgement", :progress 1}
  {:character "zed", :path "Arcane Combat", :progress 1}
- {:character "urian", :path "Volatile Presence", :progress 2}]
+ {:character "fiore", :path "Aggressive Combat", :progress 2}
+ {:character "urian", :path "Volatile Presence", :progress 3}]
