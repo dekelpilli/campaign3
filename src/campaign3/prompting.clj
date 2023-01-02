@@ -5,10 +5,10 @@
            (jline.console.completer Completer)))
 
 (def ^:private console-prompt (ConsolePrompt.))
-(def ^:private input-threshold 10)
-(def default-opts {:completer :regular
-                   :sorted?   true
-                   :none-opt? true})
+(def default-opts {:completer       :regular
+                   :input-threshold 10
+                   :sorted?         true
+                   :none-opt?       true})
 
 (defrecord CommaSeparatedStringsCompleter [lowers-set lowers-regular-map once?]
   Completer
@@ -95,7 +95,7 @@
 (defn >>distinct-items
   ([coll] (>>distinct-items "Choose all that apply:" coll))
   ([prompt coll & {:as opts}]
-   (let [opts (merge default-opts opts)
+   (let [{:keys [input-threshold] :as opts} (merge default-opts opts)
          m (->stringified-map coll opts)]
      (if (> (count m) input-threshold)
        (->> (>>input prompt m :completer :comma-separated-once)
@@ -119,7 +119,7 @@
 (defn >>item
   ([coll] (>>item "Choose one from these:" coll))
   ([prompt coll & {:as opts}]
-   (let [{:keys [none-opt?] :as opts} (merge default-opts opts)
+   (let [{:keys [none-opt? input-threshold] :as opts} (merge default-opts opts)
          m (->stringified-map coll opts)]
      (if (> (count m) input-threshold)
        (>>input prompt m)
