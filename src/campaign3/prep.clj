@@ -57,14 +57,16 @@
       multiplier)))
 
 (defn- select-max-enemies []
-  (if-let [max-enemies-str (p/>>input (str "What is the maximum number of enemies that should be allowed for this encounter (" default-max-enemies ")?"))]
-    (or (parse-long max-enemies-str) default-max-enemies)
-    default-max-enemies))
+  (parse-long
+    (p/>>input "What is the maximum number of enemies that should be allowed for this encounter?"
+               nil
+               :default default-max-enemies)))
 
 (defn- select-players-amount []
-  (if-let [players-amount-str (p/>>input (str "How many player characters are in this encounter (" default-players-amount ")?"))]
-    (or (parse-long players-amount-str) default-players-amount)
-    default-players-amount))
+  (parse-long
+    (p/>>input "How many player characters are in this encounter?"
+               nil
+               :default default-players-amount)))
 
 ;https://www.gmbinder.com/share/-N4m46K77hpMVnh7upYa
 (defn cr2-encounter []

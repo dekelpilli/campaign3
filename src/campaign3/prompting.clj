@@ -64,7 +64,7 @@
   ([prompt] (>>input prompt nil))
   ([prompt coll & {:as opts}]
    (let [console-prompt (ConsolePrompt.)
-         {:keys [completer]} (merge default-opts opts)
+         {:keys [completer default]} (merge default-opts opts)
          prompt-builder (.getPromptBuilder console-prompt)
          stringified-map (->stringified-map coll opts)
          valid-inputs (when (seq stringified-map) (set (keys stringified-map)))
@@ -77,6 +77,7 @@
          (.createInputPrompt)
          (.message prompt)
          (.name prompt)
+         (cond-> default (.defaultValue (str default)))
          (cond-> valid-inputs (.addCompleter
                                 (case completer
                                   :regular (CaseInsensitiveStringsCompleter. s lowers->original)
