@@ -254,7 +254,7 @@
              :tags   #{"survivability"}}
             {:effect "You may make an opportunity attack against creatures within 5 feet of you when you block their melee attacks."
              :tags   #{"damage"}}
-            {:effect "You take 2 damage whenever you make an attack on your turn."}]}
+            {:effect "You take 2 true damage whenever you make an attack on your turn."}]}
  {:name    "Savage"
   :base    "any one handed axe"
   :effects [{:effect "+2 damage while dual wielding."

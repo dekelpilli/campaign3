@@ -21,4 +21,4 @@
   :rules        "Players may choose to learn what each level of a divinity path of their choice grants, then obtain one divine dust."}
  {:cost         "15g per card (max 2 each)"
   :participants "any"
-  :rules        "Players may choose to buy tarot cards. Tarot sets turned in while immediately after this encounter also grant 2 XP to the party."}]
+  :rules        "Players may choose to buy tarot cards. Tarot sets turned in immediately after this encounter also grant 2 XP to the party."}]
