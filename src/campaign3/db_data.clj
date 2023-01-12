@@ -201,8 +201,7 @@
 
 (defn create-curios! []
   (db/execute! {:create-table :curios
-                :with-columns [[:name :text [:primary-key] [:not nil]]
-                               [:tag :text [:not nil]]
+                :with-columns [[:effect :text [:primary-key] [:not nil]]
                                [:multiplier :integer [:not nil]]]}))
 
 (defn insert-curios! []

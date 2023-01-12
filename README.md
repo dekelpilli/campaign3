@@ -89,7 +89,7 @@ You can use divinity dust to progress your progress in a divinity path you have 
   - Damage: Directly increases or grants damage (such as with an aura or thorns), either with flat additions or modifiers to the damage itself, ignore res/imm, minion damage, damage conversion
   - Critical: Inflicts staggered, reduces crit req, improves crit damage (e.g. via adding crit dice), triggers effect on crit
   - Accuracy: Grants AB, grants attacks advantage, grants enemies disadvantaged defence (dazed, staggered, blinded, restrained), grants DCs bonuses, lower enemy AC/saves
-  - Survivability: Grants AC, spell save bonuses/adv, advantaged defence, health regen, incoming healing, max HP, minion defences, change incoming damage
+  - Survivability: Grants AC, spell save bonuses/adv, advantaged defence, health regen, incoming healing, max HP, minion defences, change incoming damage, barrier
   - Control: On enemies; Inflicts dazed/debilitated/frightened/rattled/slowed/sluggish/taunted/charmed/blinded/restrained/grappled, reduces speed, reduces accuracy, reduces damage, reduces attacks/actions
   - Magic: Grants bonuses to spell slots, concentration, spell levels, spells known, non-accuracy/damage buffs to spell behaviour
   - Wealth: Grants bonuses to loot found, sell value, improves loot searches directly (+investigation doesn't count), improves journey activities
@@ -99,3 +99,8 @@ You can use divinity dust to progress your progress in a divinity path you have 
 - Which journey activity is performed is decided at the start of the day by each player, after learning the weather
 - If players short rest during a day they perform journey activities, half a day of travel is added, even if they short rest more than once
 - Journey activity DCs are increased by 1 for each short rest already performed that day
+
+### Barrier
+- Whenever you take damage, if it matches a barrier you have, it depletes the barrier before depleting your hit points. If it matches multiple barriers, you can choose which barrier is depleted first.
+- Your barrier values are set to their maximums at the end of your turn.
+- Whenever you gain/lose maximum barrier, you gain/lose an equal amount of barrier (min 0).

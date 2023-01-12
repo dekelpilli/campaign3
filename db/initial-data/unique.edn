@@ -53,7 +53,7 @@
              :tags   #{"critical"}}
             {:effect "You may cast spells that require a saving throw that would deal fire damage as spell attacks instead."
              :tags   #{"magic"}}
-            {:effect "-1 resistance to all spell damage for each spell slot level where you have expended all of your spell slots."}
+            {:effect "+1 damage taken from spells for each spell slot level where you have expended all of your spell slots."}
             {:effect "Takes at least 1 minute to be donned or doffed."}]}
  {:name    "Werebear's Pelt"
   :base    "any body armour"
@@ -73,7 +73,7 @@
              :tags   #{"utility"}}
             {:effect "Your critical hit range is 13-20 while you are not mad."
              :tags   #{"critical"}}
-            {:effect "+3 resistance to all damage while mad."
+            {:effect "+6 barrier while mad."
              :tags   #{"survivability"}}
             {:effect "+3 incoming healing while mad."
              :tags   #{"survivability"}}
@@ -174,7 +174,7 @@
             {:effect "You are vulnerable to lightning damage."}]}
  {:name    "Dominion"
   :base    "any gloves"
-  :effects [{:effect "+1 resistance to physical damage per minion you control, to a maximum 3."
+  :effects [{:effect "+2 physical damage barrier per minion you control, to a maximum 3."
              :tags   #{"survivability"}}
             {:effect "No more than once per combat, when you have at least one minion at the end of your turn, gain temporary hit points equal to your level."
              :tags   #{"survivability"}}
@@ -248,7 +248,7 @@
             {:effect "You cannot critically hit blinded enemies."}]}
  {:name    "The Sentinel"
   :base    "any shield or shield weapon"
-  :effects [{:effect "+1 bludgeoning, slashing, and piercing resistance."
+  :effects [{:effect "+2 physical barrier."
              :tags   #{"survivability"}}
             {:effect "Regenerate 1 hit point when you block an attack."
              :tags   #{"survivability"}}
@@ -322,7 +322,7 @@
             {:effect "When you remove more than half of a creature's remaining hit points with a weapon attack, the creature is killed. This supersedes non-lethal."
              :tags   #{"damage"}}
             {:effect "Take true damage equal to your level when you end a combat without landing a killing blow. This damage cannot reduce you to 0 hit points."}
-            {:effect "-2 slashing resistance."}]}
+            {:effect "Slashing damage you take is increased by 2."}]}
  {:name    "Amenonuhoko"
   :base    "any polearm"
   :effects [{:effect "The first time on your turn that you hit a creature with this weapon, you cast Earth Tremor as a first level spell."
@@ -346,7 +346,7 @@
   :base    "wand"
   :effects [{:effect "When you make an attack with a weapon, you may sacrifice a spell slot to add {spell slot level}d4 to the attack roll and damage of the attack."
              :tags   #{"accuracy" "damage"}}
-            {:effect "You ignore resistances and immunities to force with weapons."
+            {:effect "You ignore barriers, resistances and immunities to force with weapons."
              :tags   #{"damage"}}
             {:effect "Wand attacks made during your bonus action have advantage."
              :tags   #{"accuracy"}}
@@ -398,7 +398,7 @@
             {:effect "Reduce non-fire damage from your weapon attacks by 1 for each point of Fury you currently have."}
             {:effect "You lose all Fury points when you roll for initiative, and when you go down to 0 hit points."}
             {:effect "You cannot deal non-physical, non-fire damage with weapon attacks."}
-            {:effect "You cannot have resistance to damage types other than fire."}]}
+            {:effect "Your resistances and barriers cannot apply to damage types other than fire."}]}
  {:name     "Template"
   :base     "string"
   :effects  [{:effect "description"}]

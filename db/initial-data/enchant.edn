@@ -52,7 +52,7 @@
   :points         15
   :upgrade-points 10
   :tags           #{"damage"}}
- {:effect  "+1 %s resistance."
+ {:effect  "+[2:2] %s barrier."
   :tags    #{"survivability"}
   :randoms [{:preset :damage-types
              :type   :non-physical}]}
@@ -101,7 +101,7 @@
   :tags   #{"critical"}}
  {:effect "You can use your reaction to change any damage you deal into a damage type of your choice. This is visually noticeable."
   :tags   #{"survivability"}}
- {:effect   "+1 resistance to %s damage."
+ {:effect   "+2 %s barrier."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}
   :randoms  [{:preset :damage-types}]}
@@ -211,10 +211,6 @@
   :tags     #{"damage"}
   :randoms  [{:preset :monster-types}]
   :requires {:base-type "weapon"}}
- {:effect   "+2 resistance to damage from %s creatures."
-  :randoms  [{:preset :monster-types}]
-  :tags     #{"survivability"}
-  :requires {:base-type "armour"}}
  {:effect  "+1 expertise die with %s."
   :tags    #{"utility"}
   :randoms [{:preset :skills
@@ -262,7 +258,7 @@
  {:effect   "+1 to saving throws made to end an ongoing condition if your HP is above 0."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}}
- {:effect      "You have resistance to all damage while affeced by the benefits of the Dodge action."
+ {:effect      "You have resistance to all damage while affected by the benefits of the Dodge action."
   :tags        #{"survivability"}
   :upgradeable false}
  {:effect "+1 damage to melee and touch attacks."
@@ -277,7 +273,7 @@
   :requires {:base-type "weapon"}}
  {:effect "When you deliver a Killing Blow, gain +2 global damage for [1] minute."
   :tags   #{"damage"}}
- {:effect "+2 to physical resistance while taking Damage Over Time."
+ {:effect "+[4:4] physical barrier while taking Damage Over Time."
   :tags   #{"survivability"}}
  {:effect "+1 to damage with dual-wielding weapons."
   :tags   #{"damage"}}
@@ -288,9 +284,6 @@
   :tags   #{"damage"}}
  {:effect "When you hit a creature with a weapon attack, they are marked to take +1 damage from creatures other than yourself for [1] minute. This does not stack."
   :tags   #{"damage"}}
- {:effect   "+2 resistance to damage from projectiles."
-  :tags     #{"survivability"}
-  :requires {:base-type "armour"}}
  {:effect "Gain 10 temporary hit points when you deliver a Killing Blow."
   :tags   #{"survivability"}}
  {:effect "Whenever you grant a buff with a duration to a creature, gain +1 outgoing healing until the end of the buff."
@@ -383,7 +376,7 @@
              :traits    #{"Dual-wielding"}}}
  {:effect "You and your minions have +3 damage with critical hits."
   :tags   #{"critical"}}
- {:effect "Damage from your critical hits ignores resistances and immunities."
+ {:effect "Damage from your critical hits ignores barriers, resistances, and immunities."
   :tags   #{"critical"}}
  {:effect "5% chance to refund the spell slots used for spells cast outside of your turn."
   :tags   #{"magic"}}
@@ -401,12 +394,11 @@
   :upgradeable false
   :requires    {:base-type "weapon"
                 :traits    #{"Thrown"}}}
- {:effect      "+1 resistance to bludgeoning, piercing, and slashing damage if wearing a heavy body armour."
-  :upgradeable false
-  :requires    {:base-type "armour"
-                :type      #{"Heavy"}}
-  :tags        #{"survivability"}}
- {:effect      "+1 resistance to non-physical damage if wearing medium armour."
+ {:effect   "+[2:2] physical barrier."
+  :requires {:base-type "armour"
+             :type      #{"Heavy"}}
+  :tags     #{"survivability"}}
+ {:effect      "+[2:2] non-physical barrier."
   :upgradeable false
   :requires    {:base-type "armour"
                 :type      #{"Medium"}}

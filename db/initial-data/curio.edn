@@ -3,27 +3,19 @@
       (reduce (fn [acc tag] (update acc tag (fnil #(+ % weighting) 0))) acc tags))
     {}
     e/enchants)
-[{:name       "Power"
-  :tag        "damage"
+[{:effect    "damage"
   :multiplier 3}
- {:name       "Devastation"
-  :tag        "critical"
+ {:effect    "critical"
   :multiplier 10}
- {:name       "Inevitability"
-  :tag        "accuracy"
+ {:effect    "accuracy"
   :multiplier 11}
- {:name       "Fortitude"
-  :tag        "survivability"
+ {:effect    "survivability"
   :multiplier 3}
- {:name       "Weakness"
-  :tag        "control"
+ {:effect    "control"
   :multiplier 19}
- {:name       "Arcana"
-  :tag        "magic"
+ {:effect    "magic"
   :multiplier 6}
- {:name       "Abundance"
-  :tag        "wealth"
+ {:effect    "wealth"
   :multiplier 19}
- {:name       "Sundry"
-  :tag        "utility"
+ {:effect    "utility"
   :multiplier 3}]

@@ -11,7 +11,7 @@
               {:effect      "When you use an Orb of Favouritism to target Beast or Plant type creatures, you have a 50% chance to not consume the orb."
                :upgradeable false
                :tags        #{"wealth"}}
-              {:effect "+[4:1] resistance to poison damage."
+              {:effect "+[8:2] maximum poison barrier."
                :tags   #{"survivability"}}
               {:effect "+[3:2] incoming healing while in direct sunlight."
                :tags   #{"survivability"}}
@@ -75,7 +75,7 @@
               {:effect      "When drawing tarot cards, you may draw one additional card and return one of the cards you drew to a random place in the deck."
                :tags        #{"wealth"}
                :upgradeable false}
-              {:effect "Whenever you find curios, you may replace [1] found curio with a Curio of Abundance."
+              {:effect "Whenever you find curios, you may replace [1] found curio with a wealth curio."
                :tags   #{"wealth"}}
               {:effect "Your loot rolls always grant you [2:1] additional gold while this modifier is on a special base (even from non-gold results)."
                :points 20
@@ -114,7 +114,7 @@
   :start     [{:effect "Your gain maximum hit points equal to the [number of modifiers] on this item."
                :points 20
                :tags   #{"survivability"}}]
-  :mods      [{:effect "You have +[3:1] resistance to Necrotic damage, and your maximum hit points cannot be reduced as a result of taking Necrotic damage."
+  :mods      [{:effect "You have +[6:2] maximum necrotic barrier, and your maximum hit points cannot be reduced as a result of taking Necrotic damage."
                :tags   #{"survivability"}}
               {:effect "You have +[1]AC if you have been down during the current combat."
                :tags   #{"survivability"}
@@ -144,7 +144,7 @@
   :start     [{:effect      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."
                :upgradeable false
                :tags        #{"damage"}}]
-  :mods      [{:effect "At the end of a turn of yours where you have dealt elemental damage, you gain +1 resistance to elemental damage until the end of the combat, to a maximum of [5:1] from this modifier."
+  :mods      [{:effect "At the end of a turn of yours where you have dealt elemental damage, you gain +[2:2] maximum elemental barrier until the end of the combat, to a maximum of [10:2] from this modifier."
                :tags   #{"survivability"}}
               {:effect      "Acid damage from attacks that have critically hit is always rolled at its maximum value."
                :upgradeable false
@@ -185,7 +185,7 @@
                :tags   #{"utility"}}
               {:effect "+[1] Dexterity, -[1] Charisma."
                :tags   #{"utility"}}
-              {:effect "+2 resistance to damage from non-magical terrain/area effects."
+              {:effect "+[4:2] maximum barrier to damage from non-magical terrain/area effects."
                :tags   #{"survivability"}}
               {:effect      "Your maximum hit points are increased by an amount equal to your level if your Strength is at least 20."
                :upgradeable false
@@ -225,7 +225,7 @@
  {:name      "Essence of Bara"
   :found     false
   :base-type "armour"
-  :start     [{:effect "+[2:1] damage resistance while you have an active stance."
+  :start     [{:effect "+[4:2] maximum barrier while you have an active stance."
                :points 20
                :tags   #{"survivability"}}]
   :mods      [{:effect      "You have proficiency in Strength saving throws."
@@ -274,7 +274,7 @@
               {:effect      "If you move at least 20 feet straight toward a target and then hits it with a melee attack on the same turn, they must make a Strength saving throw or be knocked prone."
                :upgradeable false
                :tags        #{"control"}}
-              {:effect "+[1] resistance to fire damage. Your resistance to fire damage also applies to physical damage if you have at least 2 resistance to fire damage."
+              {:effect "+[2:2] maximum fire barrier. Your fire barrier can also apply to physical damage if you have at least 4 maximum fire barrier."
                :points 20
                :tags   #{"survivability"}}
               {:effect      "You gain advantage on saving throws made to resist the effects of hot weather as though you were wearing hot weather gear, but without the disadvantages in cold weather. This allows you to ignore the penalties of hot weather on your journey activities."
@@ -285,7 +285,7 @@
  {:name      "Ouroboros"
   :found     false
   :base-type "armour"
-  :start     [{:effect "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."
+  :start     [{:effect "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[4:2] maximum barrier to that damage type."
                :tags   #{"survivability"}}]
   :mods      [{:effect      "While you have an amulet effect active, you gain access to any Recharge abilities by the monster in the amulet. These use your DCs/ABs, and you can use them at will (with the regular action cost)."
                :upgradeable false
@@ -326,7 +326,7 @@
               {:effect      "You have advantage on concentration saving throws triggered by magical effects."
                :upgradeable false
                :tags        #{"magic"}}
-              {:effect "+1 damage resistance if you have cast a spell since the start of your last turn."
+              {:effect "+2 maximum barrier resistance if you have cast a spell since the start of your last turn."
                :tags   #{"magic" "survivability"}}
               {:effect "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."
                :tags   #{"magic" "critical"}}
