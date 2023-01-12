@@ -73,7 +73,7 @@
              :tags   #{"utility"}}
             {:effect "Your critical hit range is 13-20 while you are not mad."
              :tags   #{"critical"}}
-            {:effect "+6 barrier while mad."
+            {:effect "+6 maximum barrier while mad."
              :tags   #{"survivability"}}
             {:effect "+3 incoming healing while mad."
              :tags   #{"survivability"}}
@@ -174,7 +174,7 @@
             {:effect "You are vulnerable to lightning damage."}]}
  {:name    "Dominion"
   :base    "any gloves"
-  :effects [{:effect "+2 physical damage barrier per minion you control, to a maximum 3."
+  :effects [{:effect "+2 maximum physical barrier per minion you control, to a maximum 3."
              :tags   #{"survivability"}}
             {:effect "No more than once per combat, when you have at least one minion at the end of your turn, gain temporary hit points equal to your level."
              :tags   #{"survivability"}}
@@ -248,7 +248,7 @@
             {:effect "You cannot critically hit blinded enemies."}]}
  {:name    "The Sentinel"
   :base    "any shield or shield weapon"
-  :effects [{:effect "+2 physical barrier."
+  :effects [{:effect "+2 maximum physical barrier."
              :tags   #{"survivability"}}
             {:effect "Regenerate 1 hit point when you block an attack."
              :tags   #{"survivability"}}

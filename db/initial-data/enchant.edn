@@ -52,7 +52,7 @@
   :points         15
   :upgrade-points 10
   :tags           #{"damage"}}
- {:effect  "+[2:2] %s barrier."
+ {:effect  "+[2:2] maximum %s barrier."
   :tags    #{"survivability"}
   :randoms [{:preset :damage-types
              :type   :non-physical}]}
@@ -101,7 +101,7 @@
   :tags   #{"critical"}}
  {:effect "You can use your reaction to change any damage you deal into a damage type of your choice. This is visually noticeable."
   :tags   #{"survivability"}}
- {:effect   "+2 %s barrier."
+ {:effect   "+2 maximum %s barrier."
   :tags     #{"survivability"}
   :requires {:base-type "armour"}
   :randoms  [{:preset :damage-types}]}
@@ -273,7 +273,7 @@
   :requires {:base-type "weapon"}}
  {:effect "When you deliver a Killing Blow, gain +2 global damage for [1] minute."
   :tags   #{"damage"}}
- {:effect "+[4:4] physical barrier while taking Damage Over Time."
+ {:effect "+[4:4] maximum physical barrier while taking Damage Over Time."
   :tags   #{"survivability"}}
  {:effect "+1 to damage with dual-wielding weapons."
   :tags   #{"damage"}}
@@ -394,11 +394,11 @@
   :upgradeable false
   :requires    {:base-type "weapon"
                 :traits    #{"Thrown"}}}
- {:effect   "+[2:2] physical barrier."
+ {:effect   "+[2:2] maximum physical barrier."
   :requires {:base-type "armour"
              :type      #{"Heavy"}}
   :tags     #{"survivability"}}
- {:effect      "+[2:2] non-physical barrier."
+ {:effect      "+[2:2] maxiumum non-physical barrier."
   :upgradeable false
   :requires    {:base-type "armour"
                 :type      #{"Medium"}}
