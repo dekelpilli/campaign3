@@ -42,21 +42,13 @@
    "Resilient" "Ritual Caster" "Sentinel" "Sharpshooter" "Shield Master" "Skilled" "Skulker" "Specialist"
    "Spell Touched" "Summoner" "Survivor" "Tactician" "Telekinetic" "Telepathic" "War Caster" "Warlord"])
 
-(defmethod randoms-factor :skills [{:keys [type]
-                                    :or   {type :all}}]
-  (case type
-    :common 2
-    :uncommon 3
-    :all 5))
+(defmethod randoms-factor :skills [_]
+  5)
 (defmethod randoms-preset :skills [{:keys [type]
                                     :or   {type :all}}]
-  (case type
-    :common ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"]
-    :uncommon ["arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
-               "nature" "religion" "animal handling" "intimidation" "performance"]
-    :all ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"
-          "arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
-          "nature" "religion" "animal handling" "intimidation" "performance"]))
+  ["perception" "medicine" "deception" "persuasion" "investigation" "insight" "survival"
+   "arcana" "athletics" "acrobatics" "sleight of hand" "stealth" "history"
+   "nature" "religion" "animal handling" "intimidation" "performance" "engineering"])
 
 (defmethod randoms-factor :damage-types [{:keys [type]
                                           :or   {type :all}}]

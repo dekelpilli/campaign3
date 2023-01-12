@@ -213,8 +213,7 @@
   :requires {:base-type "weapon"}}
  {:effect  "+1 expertise die with %s."
   :tags    #{"utility"}
-  :randoms [{:preset :skills
-             :type   :common}]}
+  :randoms [{:preset :skills}]}
  {:effect   "+20 feet to both range options on ranged weapons."
   :tags     #{"utility"}
   :points   20
