@@ -1466,4 +1466,47 @@
       :effect "Your ranged weapon attacks have +1 AB."}],
     :progressed [],
     :level 5}],
+  :sold false}
+ {:name "Essence of Thetia",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:tags ["utility"],
+    :effect
+    "You and one of your allies in combat have +[1] initiative."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["wealth"],
+    :effect
+    "Gold you gain from loot rolls from encounters (incl. creature parts) is rolled with advantage."}
+   {:tags ["damage"],
+    :effect "+[3:1] global damage against surprised enemies."}
+   {:upgradeable false,
+    :tags ["wealth"],
+    :effect
+    "Your investigation and survival checks for finding loot are made with advantage after combats where you have gone down."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "When you know a lie is told in a conversation, you may make a contested d20 check against anyone involved in the conversation. On a success, you learn the target's total Insight modifier."}
+   {:tags ["damage"], :effect "+[1] die size with all damage."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "If you have landed a killing blow during your last turn, refill your barriers at the end of each turn in combat."}
+   {:tags ["critical"],
+    :effect
+    "Attacks you have advantage with have +1 critical hit range."}
+   {:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "Being prone does not impose disadvantage on your attacks."}
+   {:tags ["utility"],
+    :effect
+    "You gain [1] point of experience when at the end of a day where you have had an encounter."}
+   {:tags ["utility"],
+    :effect
+    "+[10:5] feet of speed while bloodied, and while an ally is down."}],
+  :levels nil,
   :sold false}]

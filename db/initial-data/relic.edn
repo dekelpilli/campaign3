@@ -337,4 +337,34 @@
                :upgradeable false
                :tags        #{"magic" "utility"}}
               {:effect "You and your minions have +[2:1] global damage while you are concentrating on a spell."
-               :tags   #{"magic"}}]}]
+               :tags   #{"magic"}}]}
+ {:name      "Essence of Thetia"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect "You and one of your allies in combat have +[1] initiative."
+               :tags   #{"utility"}}]
+  :mods      [{:effect      "Gold you gain from loot rolls from encounters (incl. creature parts) is rolled with advantage."
+               :upgradeable false
+               :tags        #{"wealth"}}
+              {:effect "+[3:1] global damage against surprised enemies."
+               :tags   #{"damage"}}
+              {:effect      "Your investigation and survival checks for finding loot are made with advantage after combats where you have gone down."
+               :upgradeable false
+               :tags        #{"wealth"}}
+              {:effect      "When you know a lie is told in a conversation, you may make a contested d20 check against anyone involved in the conversation. On a success, you learn the target's total Insight modifier."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "+[1] die size with all damage."
+               :tags   #{"damage"}}
+              {:effect      "If you have landed a killing blow during your last turn, refill your barriers at the end of each turn in combat."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "Attacks you have advantage with have +1 critical hit range."
+               :tags   #{"critical"}}
+              {:effect      "Being prone does not impose disadvantage on your attacks."
+               :upgradeable false
+               :tags        #{"accuracy"}}
+              {:effect "You gain [1] point of experience when at the end of a day where you have had an encounter."
+               :tags   #{"utility"}}
+              {:effect "+[10:5] feet of speed while bloodied, and while an ally is down."
+               :tags   #{"utility"}}]}]
