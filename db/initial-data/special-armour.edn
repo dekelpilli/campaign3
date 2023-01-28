@@ -8,8 +8,8 @@
   :effect "+15 feet to each of your speeds (0+) while this item has at least one modifier that relates to jumping."
   :slot   "boots"}
  {:name   "Hardy"
-  :effect "+1 damage resistance while this item has at least one modifier that grants AC to the wearer, including conditional modifiers regardless of if they apply."
-  :slot   "boots"}
+  :effect "+2 maximum barrier while this item has at least one modifier that grants AC to the wearer, including conditional modifiers regardless of if they apply."
+  :slot   "body"}
  {:name   "Hale"
   :effect "+1 to the values of all modifiers on this item that relate to healing, regeneration, and temporary hit points."
   :slot   "boots"}
@@ -17,31 +17,22 @@
   :effect "Outgoing healing modifiers on this item are converted to incoming healing. Incoming healing modifiers on this item, including converted modifiers, have +1 to their values."
   :slot   "boots"}
  {:name   "Egalitarian"
-  :effect "Modifiers on this item that grant resistances apply to all damage types and damage source types, and are no longer conditional if they were originally."
+  :effect "Modifiers on this item that grant maximum barrier apply to all damage types and damage source types, and are no longer conditional if they were originally."
   :slot   "boots"}
  {:name   "Defensive"
   :effect "If this item only has 'survivability' tagged modifiers on it, +1 global damage for each 'survivability' tagged mod on this item."
   :slot   "boots"}
  {:name   "Bramblejack"
-  :effect "Modifiers on this item that grant flat resistances also grant equivalent piercing damage thorns that triggers when that resistance applies."
+  :effect "Modifiers on this item that grant maximum barrier also grant equivalent piercing damage thorns that triggers when that barrier applies."
   :slot   "body"}
- {:name   "Bellmarian"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both radiant and necrotic damage types (separately)."
+ {:name   "Journeyman"
+  :effect "You are considered to be proficient in all skills for the purpose of journey activities while this item has a modifier that grants proficiency or expertise die with any skill."
   :slot   "body"}
- {:name   "Intangible"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both psychic and force damage types (separately)."
+ {:name   "Wreckless"
+  :effect "Modifiers that grant maximum barrier on this item instead grant half that much damage, including types and conditions (e.g. +2 maximum cold barrier while bloodied -> +1 cold damage while bloodied)."
   :slot   "body"}
- {:name   "Stormweaver"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both lightning and thunder damage types (separately)."
-  :slot   "body"}
- {:name   "Apocalyptic"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both cold and fire damage types (separately)."
-  :slot   "body"}
- {:name   "Impactful"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to physical damage types."
-  :slot   "body"}
- {:name   "Apothecary"
-  :effect "Modifiers on this item that relate to a specific damage type instead apply to both acid and poison damage types (separately)."
+ {:name   "Maleficarum"
+  :effect "Creatures affected by your marks or curses have take +1 damage while this item has at least one modifier that relates to marks or curses."
   :slot   "body"}
  {:name   "Abundant"
   :effect "'Wealth' tagged modifiers on this item have no effect. +1 to your %s for each wealth modifier on this item."
@@ -56,9 +47,6 @@
  {:name   "Multi-talented"
   :effect "Modifiers to skills on this item also apply to %1$s (this has no effect on modifiers that already apply to %1$s)."
   :randoms [{:preset :skills}]
-  :slot   "gloves"}
- {:name   "Maleficarum"
-  :effect "Creatures affected by your marks or curses have -1 to damage resistance while this item has at least one modifier that relates to marks or curses."
   :slot   "gloves"}
  {:name   "Aggressive"
   :effect "Your AC is always exactly 14 while this item only has 'damage' tagged modifiers on it, and has at least 2 modifiers."
