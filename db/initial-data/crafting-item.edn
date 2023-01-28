@@ -5,6 +5,9 @@
   :effect "Remove a mod from a magical item and replace it with new random mods at least equal in point value."}
  {:name   "Orb(s) of Perfection"
   :effect "Replace a random value, or grouping of values, from a chosen modifier on an item with any possible random value of your choice."}
+ {:name "Orb(s) of Alteration"
+  :effect "Change all references on an item to a specific damage type of your choice, to another damage type of your choice (e.g. +1 cold and thunder damage -> +1 <player's choice> and thunder damage, or +1 cold and <player's choice> damage)."
+  :amount [:disadvantaged [:default]]}
  {:name   "Ancient Orb(s)"
   :effect "Transform a unique item into another random unique item on a random base."
   :amount [:advantaged [:default]]}
