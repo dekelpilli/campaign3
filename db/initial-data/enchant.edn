@@ -27,7 +27,7 @@
   :tags           #{"damage"}
   :requires       {:base-type "weapon"}
   :randoms        [{:preset :damage-types}]}
- {:effect "+1 spell save and special feature DCs."
+ {:effect "+1 to your DCs."
   :tags   #{"accuracy"}
   :points 35}
  {:effect    "+1 AC while unarmoured and not using a Shield or Targe weapons."
@@ -397,7 +397,7 @@
   :requires {:base-type "armour"
              :type      #{"Heavy"}}
   :tags     #{"survivability"}}
- {:effect      "+[2:2] maxiumum non-physical barrier."
+ {:effect      "+[2:2] maximum non-physical barrier."
   :upgradeable false
   :requires    {:base-type "armour"
                 :type      #{"Medium"}}

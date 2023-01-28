@@ -98,8 +98,39 @@
     :tags ["damage"],
     :effect
     "Modifiers to your slashing damage apply to your fire damage instead."}],
-  :levels nil,
-  :sold false}
+  :levels
+  [{:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[2:1] fire and radiant damage with melee attacks."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+[2:1] fire and radiant damage with melee attacks."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["survivability" "utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may redirect healing targeted at you to a creature of your choice. This counts as your outgoing healing."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+[2:1] fire and radiant damage with melee attacks."}],
+    :progressed [],
+    :level 3}],
+  :sold true}
  {:name "Essence of Esher",
   :found true,
   :base-type "armour",
@@ -297,7 +328,102 @@
     :effect "+1 to damage with light weapons."}],
   :mods [],
   :levels nil,
-  :sold false}
+  :sold true}
+ {:name "Essence of Eion",
+  :found true,
+  :base-type "weapon",
+  :base "Ring Blade",
+  :start
+  [{:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
+  :mods
+  [{:tags ["magic" "control" "accuracy" "damage"],
+    :effect
+    "You learn the Ensnaring Strike spell and may cast it [once] per short rest."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "You have +1AB with weapon attacks if you have cast a Conjuration spell in the last 18 seconds."}
+   {:tags ["accuracy"],
+    :effect
+    "+[3:1] weapon damage while under the effect of a Conjuration spell."}
+   {:tags ["magic" "critical"],
+    :effect
+    "When you land a critical hit while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."}
+   {:tags ["control"],
+    :effect
+    "Enemies you have teleported in the last [6] seconds are rattled."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "You may immediately teleport to a location you can see within 30 feet of you and within 5 feet of an enemy upon rolling for initiative when not surprised."}
+   {:tags ["utility"],
+    :effect
+    "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, even if the attack kills the enemy."}
+   {:tags ["damage"],
+    :points 20,
+    :effect
+    "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."}],
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "When you deliver a Killing Blow, heal 5 hit points.",
+      :prohibits nil}],
+    :progressed [],
+    :level 3}],
+  :sold true}
  {:name "Blazing Glory",
   :found true,
   :base-type "weapon",
@@ -413,103 +539,113 @@
       :level 2,
       :effect "+[2:1] fire damage."}],
     :progressed [],
-    :level 3}],
-  :sold false}
- {:name "Essence of Eion",
-  :found true,
-  :base-type "weapon",
-  :base "Ring Blade",
-  :start
-  [{:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
-  :mods
-  [{:tags ["magic" "control" "accuracy" "damage"],
-    :effect
-    "You learn the Ensnaring Strike spell and may cast it [once] per short rest."}
-   {:tags ["accuracy"],
-    :points 20,
-    :effect
-    "You have +1AB with weapon attacks if you have cast a Conjuration spell in the last 18 seconds."}
-   {:tags ["accuracy"],
-    :effect
-    "+[3:1] weapon damage while under the effect of a Conjuration spell."}
-   {:tags ["magic" "critical"],
-    :effect
-    "When you land a critical hit while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."}
-   {:tags ["control"],
-    :effect
-    "Enemies you have teleported in the last [6] seconds are rattled."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "You may immediately teleport to a location you can see within 30 feet of you and within 5 feet of an enemy upon rolling for initiative when not surprised."}
-   {:tags ["utility"],
-    :effect
-    "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, even if the attack kills the enemy."}
-   {:tags ["damage"],
-    :points 20,
-    :effect
-    "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."}],
-  :levels
-  [{:existing
-    [{:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
-    :progressed [],
-    :level 1}
+    :level 3}
    {:existing
-    [{:upgradeable false,
-      :tags ["utility"],
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
       :points 10,
       :upgrade-points 10,
       :level 1,
-      :effect
-      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
-     {:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
-    :progressed [],
-    :level 2}
-   {:existing
-    [{:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
-     {:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}
+      :effect "+1 to journey activity checks."}
      {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
       :tags ["survivability"],
       :points 10,
       :upgrade-points 10,
       :level 1,
-      :requires nil,
-      :effect "When you deliver a Killing Blow, heal 5 hit points.",
-      :prohibits nil}],
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect "+[2:1] fire damage."}],
     :progressed [],
-    :level 3}],
-  :sold true}
+    :level 4}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 4,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 6}],
+  :sold false}
  {:name "Essence of Ketis",
   :found true,
   :base-type "weapon",
@@ -1053,49 +1189,10 @@
     :progressed [],
     :level 5}],
   :sold false}
- {:name "Brass Antler",
-  :found false,
-  :base-type "weapon",
-  :base nil,
-  :start
-  [{:tags ["damage"],
-    :points 20,
-    :effect
-    "+1d[4] melee fire damage thorns, no more than once per turn."}],
-  :mods
-  [{:tags ["damage"], :effect "+1d[4] fire damage with melee attacks."}
-   {:tags ["utility"],
-    :effect
-    "+[10:10] feet to each of your speeds during the first round of combat."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "Your movement does not provoke opportunity attacks with movement types where your speed is at last 50 feet."}
-   {:tags ["damage"],
-    :points 20,
-    :effect
-    "If you move at least 20 feet straight toward a target and then hits it with a melee attack on the same turn, +[2]d6 fire damage."}
-   {:tags ["damage"],
-    :effect "+1d[4] bludgeoning damage against prone creatures."}
-   {:upgradeable false,
-    :tags ["control"],
-    :effect
-    "If you move at least 20 feet straight toward a target and then hits it with a melee attack on the same turn, they must make a Strength saving throw or be knocked prone."}
-   {:tags ["survivability"],
-    :points 20,
-    :effect
-    "+[1] resistance to fire damage. Your resistance to fire damage also applies to physical damage if you have at least 2 resistance to fire damage."}
-   {:upgradeable false,
-    :tags ["utility" "wealth"],
-    :effect
-    "You gain advantage on saving throws made to resist the effects of hot weather as though you were wearing hot weather gear, but without the disadvantages in cold weather. This allows you to ignore the penalties of hot weather on your journey activities."}
-   {:tags ["utility"], :effect "+[5:5] feet walking speed."}],
-  :levels nil,
-  :sold false}
  {:name "Ouroboros",
-  :found false,
+  :found true,
   :base-type "armour",
-  :base nil,
+  :base "Unarmoured boots",
   :start
   [{:tags ["survivability"],
     :effect
@@ -1133,49 +1230,84 @@
    {:tags ["utility"],
     :effect
     "You gain [two] expertise dice on knowledge checks regarding snakes and dragons."}],
-  :levels nil,
-  :sold false}
- {:name "Essence of Qhanas",
-  :found false,
-  :base-type "weapon",
-  :base nil,
-  :start
-  [{:tags ["damage"],
-    :effect "+[2:1] damage with spells and magical weapon attacks."}],
-  :mods
-  [{:tags ["magic"],
-    :effect
-    "When you fail a concentration saving throw, you may immediately attempt another concentration saving throw against a DC [10:-1] higher than the one you failed. On a successful save, you regain the spell slot used to cast the spell in which concentration was lost."}
-   {:tags ["magic" "accuracy"],
-    :effect
-    "No more than once per turn, when you cast a spell that had no effect (e.g. it missed, was saved, the enemy was immune to its damage, etc), gain +[1] to your spell AB and spell save DC until the end of your next turn."}
-   {:tags ["damage"],
-    :effect "+[2:1] damage with spells and magical weapon attacks."}
-   {:tags ["magic"],
-    :effect
-    "Regain a [1st] level spell slot when you roll for initiative."}
-   {:upgradeable false,
-    :tags ["magic"],
-    :effect
-    "You have advantage on concentration saving throws triggered by magical effects."}
-   {:tags ["survivability" "magic"],
-    :effect
-    "+1 damage resistance if you have cast a spell since the start of your last turn."}
-   {:tags ["magic" "critical"],
-    :effect
-    "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."}
-   {:tags ["magic"],
-    :points 20,
-    :effect
-    "When you upcast a spell, you may cast it at a level [one] above the spell slot consumed."}
-   {:upgradeable false,
-    :tags ["magic" "utility"],
-    :effect
-    "Your movement does not provoke opportunity attacks from opponents under the effect of one of your spells."}
-   {:tags ["magic"],
-    :effect
-    "You and your minions have +[2:1] global damage while you are concentrating on a spell."}],
-  :levels nil,
+  :levels
+  [{:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:tags ["magic" "control" "damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may cast the Blinding Smite spell as a free action [once] per long rest."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable false,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Whenever you find rings with a loot roll, you may replace one ring you find with a new (random) ring."}
+     {:tags ["magic" "control" "damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may cast the Blinding Smite spell as a free action [once] per long rest."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable false,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Whenever you find rings with a loot roll, you may replace one ring you find with a new (random) ring."}
+     {:tags ["magic" "control" "damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may cast the Blinding Smite spell as a free action [once] per long rest."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect
+      "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
+    :progressed [],
+    :level 5}],
   :sold false}
  {:name "Carl's Partnership",
   :found true,
@@ -1467,10 +1599,84 @@
     :progressed [],
     :level 5}],
   :sold false}
- {:name "Essence of Thetia",
-  :found false,
+ {:name "Brass Antler",
+  :found true,
   :base-type "weapon",
-  :base nil,
+  :base "Gauntlet",
+  :start
+  [{:tags ["damage"],
+    :points 20,
+    :effect
+    "+1d[4] melee fire damage thorns, no more than once per turn."}],
+  :mods
+  [{:tags ["damage"], :effect "+1d[4] fire damage with melee attacks."}
+   {:tags ["utility"],
+    :effect
+    "+[10:10] feet to each of your speeds during the first round of combat."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your movement does not provoke opportunity attacks with movement types where your speed is at last 50 feet."}
+   {:tags ["damage"],
+    :points 20,
+    :effect
+    "If you move at least 20 feet straight toward a target and then hits it with a melee attack on the same turn, +[2]d6 fire damage."}
+   {:tags ["damage"],
+    :effect "+1d[4] bludgeoning damage against prone creatures."}
+   {:upgradeable false,
+    :tags ["control"],
+    :effect
+    "If you move at least 20 feet straight toward a target and then hits it with a melee attack on the same turn, they must make a Strength saving throw or be knocked prone."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "+[1] resistance to fire damage. Your resistance to fire damage also applies to physical damage if you have at least 2 resistance to fire damage."}
+   {:upgradeable false,
+    :tags ["utility" "wealth"],
+    :effect
+    "You gain advantage on saving throws made to resist the effects of hot weather as though you were wearing hot weather gear, but without the disadvantages in cold weather. This allows you to ignore the penalties of hot weather on your journey activities."}
+   {:tags ["utility"], :effect "+[5:5] feet walking speed."}],
+  :levels
+  [{:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+1d[4] melee fire damage thorns, no more than once per turn."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+1d[4] melee fire damage thorns, no more than once per turn."}],
+    :progressed
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect
+      "+1d[4] melee fire damage thorns, no more than once per turn."}],
+    :level 2}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+1d[4] melee fire damage thorns, no more than once per turn."}],
+    :progressed [],
+    :level 3}],
+  :sold true}
+ {:name "Essence of Thetia",
+  :found true,
+  :base-type "weapon",
+  :base "Rapier",
   :start
   [{:tags ["utility"],
     :effect
@@ -1508,5 +1714,230 @@
    {:tags ["utility"],
     :effect
     "+[10:5] feet of speed while bloodied, and while an ally is down."}],
-  :levels nil,
+  :levels
+  [{:existing
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You and one of your allies in combat have +[1] initiative."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "You and one of your allies in combat have +[1] initiative."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable true,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 35,
+      :level 1,
+      :requires nil,
+      :effect "+1 spell save and special feature DCs.",
+      :prohibits nil}
+     {:tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "You and one of your allies in combat have +[1] initiative."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Being prone does not impose disadvantage on your attacks."}
+     {:upgradeable true,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 35,
+      :level 1,
+      :requires nil,
+      :effect "+1 spell save and special feature DCs.",
+      :prohibits nil}
+     {:tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "You and one of your allies in combat have +[1] initiative."}],
+    :progressed [],
+    :level 4}],
+  :sold false}
+ {:name "Essence of Qhanas",
+  :found true,
+  :base-type "weapon",
+  :base "Gauntlet",
+  :start
+  [{:tags ["damage"],
+    :effect "+[2:1] damage with spells and magical weapon attacks."}],
+  :mods
+  [{:tags ["magic"],
+    :effect
+    "When you fail a concentration saving throw, you may immediately attempt another concentration saving throw against a DC [10:-1] higher than the one you failed. On a successful save, you regain the spell slot used to cast the spell in which concentration was lost."}
+   {:tags ["magic" "accuracy"],
+    :effect
+    "No more than once per turn, when you cast a spell that had no effect (e.g. it missed, was saved, the enemy was immune to its damage, etc), gain +[1] to your spell AB and spell save DC until the end of your next turn."}
+   {:tags ["damage"],
+    :effect "+[2:1] damage with spells and magical weapon attacks."}
+   {:tags ["magic"],
+    :effect
+    "Regain a [1st] level spell slot when you roll for initiative."}
+   {:upgradeable false,
+    :tags ["magic"],
+    :effect
+    "You have advantage on concentration saving throws triggered by magical effects."}
+   {:tags ["survivability" "magic"],
+    :effect
+    "+1 damage resistance if you have cast a spell since the start of your last turn."}
+   {:tags ["magic" "critical"],
+    :effect
+    "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."}
+   {:tags ["magic"],
+    :points 20,
+    :effect
+    "When you upcast a spell, you may cast it at a level [one] above the spell slot consumed."}
+   {:upgradeable false,
+    :tags ["magic" "utility"],
+    :effect
+    "Your movement does not provoke opportunity attacks from opponents under the effect of one of your spells."}
+   {:tags ["magic"],
+    :effect
+    "You and your minions have +[2:1] global damage while you are concentrating on a spell."}],
+  :levels
+  [{:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[2:1] damage with spells and magical weapon attacks."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["magic" "critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[2:1] damage with spells and magical weapon attacks."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:tags ["magic"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "When you upcast a spell, you may cast it at a level [one] above the spell slot consumed."}
+     {:tags ["magic" "critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[2:1] damage with spells and magical weapon attacks."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:tags ["magic"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "When you upcast a spell, you may cast it at a level [one] above the spell slot consumed."}
+     {:tags ["magic" "critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[2:1] damage with spells and magical weapon attacks."}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "weapon"},
+      :effect "+[1d4] cold damage with weapon attacks.",
+      :prohibits nil}
+     {:tags ["magic"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "When you upcast a spell, you may cast it at a level [one] above the spell slot consumed."}
+     {:tags ["magic" "critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[2:1] damage with spells and magical weapon attacks."}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :requires {:base-type "weapon"},
+      :effect "+[1d4] cold damage with weapon attacks.",
+      :prohibits nil}
+     {:tags ["magic"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "When you upcast a spell, you may cast it at a level [one] above the spell slot consumed."}
+     {:tags ["magic" "critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "+[1] critical hit range with spell attacks, and minions from your spells have +[1] critical hit range."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[2:1] damage with spells and magical weapon attacks."}],
+    :progressed [],
+    :level 6}],
   :sold false}]

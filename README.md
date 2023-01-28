@@ -102,5 +102,5 @@ You can use divinity dust to progress your progress in a divinity path you have 
 
 ### Barrier
 - Whenever you take damage, if it matches a barrier you have, it depletes the barrier before depleting your hit points. If it matches multiple barriers, you can choose which barrier is depleted first.
-- Your barrier values are set to their maximums at the end of your turn.
+- Your barrier values are set to their maximums at the end of your turn and when you roll for initiative.
 - Whenever you gain/lose maximum barrier, you gain/lose an equal amount of barrier (min 0).

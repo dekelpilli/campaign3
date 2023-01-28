@@ -9,6 +9,7 @@
  {:type "loot:3", :session 2, :amount 2}
  {:type "loot:6", :session 2, :amount 2}
  {:type "loot:2", :session 3, :amount 1}
+ {:type "days:travel", :session 13, :amount 2}
  {:type "days:travel", :session 3, :amount 13}
  {:type "loot:7", :session 4, :amount 1}
  {:type "loot:10", :session 4, :amount 1}
@@ -18,7 +19,9 @@
  {:type "loot:1", :session 4, :amount 2}
  {:type "loot:4", :session 4, :amount 1}
  {:type "days:other", :session 4, :amount 1}
+ {:type "loot:3", :session 14, :amount 1}
  {:type "loot:3", :session 4, :amount 1}
+ {:type "loot:9", :session 14, :amount 1}
  {:type "encounter:positive", :session 5, :amount 1}
  {:type "loot:1", :session 5, :amount 1}
  {:type "loot:2", :session 5, :amount 1}
@@ -62,9 +65,11 @@
  {:type "loot:5", :session 9, :amount 2}
  {:type "loot:7", :session 9, :amount 1}
  {:type "days:other", :session 10, :amount 1}
+ {:type "loot:5", :session 14, :amount 2}
  {:type "loot:1", :session 10, :amount 2}
  {:type "loot:3", :session 10, :amount 2}
  {:type "loot:4", :session 10, :amount 1}
+ {:type "days:travel", :session 14, :amount 2}
  {:type "loot:6", :session 10, :amount 2}
  {:type "loot:7", :session 10, :amount 6}
  {:type "loot:9", :session 10, :amount 2}
@@ -75,8 +80,15 @@
  {:type "encounter:positive", :session 11, :amount 1}
  {:type "loot:7", :session 11, :amount 1}
  {:type "loot:6", :session 11, :amount 1}
+ {:type "encounter:random", :session 14, :amount 2}
  {:type "loot:1", :session 11, :amount 1}
+ {:type "loot:2", :session 14, :amount 2}
+ {:type "loot:4", :session 14, :amount 1}
+ {:type "loot:10", :session 14, :amount 2}
+ {:type "loot:8", :session 14, :amount 2}
+ {:type "loot:11", :session 14, :amount 2}
  {:type "days:travel", :session 11, :amount 6}
+ {:type "loot:12", :session 14, :amount 2}
  {:type "encounter:random", :session 11, :amount 2}
  {:type "loot:2", :session 11, :amount 1}
  {:type "loot:4", :session 11, :amount 2}
