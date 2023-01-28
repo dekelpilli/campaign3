@@ -367,4 +367,88 @@
               {:effect "You gain [1] point of experience when at the end of a day where you have had an encounter."
                :tags   #{"utility"}}
               {:effect "+[10:5] feet of speed while bloodied, and while an ally is down."
-               :tags   #{"utility"}}]}]
+               :tags   #{"utility"}}]}
+ {:name      "Tanyll's Ascension"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."
+               :tags   #{"magic"}}]
+  :mods      [{:effect      "You are immune to diseases and poisons."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect      "Modifies to your incoming healing also apply to any regeneration you have."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "Regenerate [1] hit point at the end of a turn where you have dealt Necrotic damage."
+               :tags   #{"survivability"}}
+              {:effect "+[10:10]% chance to remove a failed death save when you recover from going down."
+               :tags   #{"survivability"}}
+              {:effect "+[2:1] maximum Constitution."
+               :points 20
+               :tags   #{"utility"}}
+              {:effect      "Increases to your Strength score beyond its base value also apply to your Constitution score."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "You learn the Banishment spell and may cast it once per long rest. When cast in this way, the creature sent to a realm where it takes [1]d6 Necrotic damage per turn."
+               :tags   #{"magic"}}
+              {:effect "No more than once per round, when you hit with an unarmed attack, gain +[1] AC until the start of your next turn."
+               :points 20
+               :tags   #{"survivability"}}
+              {:effect "+1d[4] necrotic damage with spells and attacks."
+               :tags   #{"damage"}}]}
+ {:name      "Tanyll's Ascension"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."
+               :tags   #{"magic"}}]
+  :mods      [{:effect      "You are immune to diseases and poisons."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect      "Modifies to your incoming healing also apply to any regeneration you have."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "Regenerate [1] hit point at the end of a turn where you have dealt Necrotic damage."
+               :tags   #{"survivability"}}
+              {:effect "+[10:10]% chance to remove a failed death save when you recover from going down."
+               :tags   #{"survivability"}}
+              {:effect "+[2:1] maximum Constitution."
+               :points 20
+               :tags   #{"utility"}}
+              {:effect      "Increases to your Strength score beyond its base value also apply to your Constitution score."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "You learn the Banishment spell and may cast it once per long rest. When cast in this way, the creature sent to a realm where it takes [1]d6 Necrotic damage per turn."
+               :tags   #{"magic"}}
+              {:effect "No more than once per round, when you hit with an unarmed attack, gain +[1] AC until the start of your next turn."
+               :points 20
+               :tags   #{"survivability"}}
+              {:effect "+1d[4] necrotic damage with spells and attacks."
+               :tags   #{"damage"}}]}
+ {:name      "Dayuzh's Leadership"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect      "Your ranged and thrown weapons gain the Parry trait."
+               :upgradeable false
+               :tags        #{"utility"}}]
+  :mods      [{:effect      "Your thrown and ranged attacks do not suffer disadvantage due to targeting prone creatures."
+               :upgradeable false
+               :tags        #{"accuracy"}}
+              {:effect      "No more than once per round, when you make a thrown attack, you may attempt to also knock the creatue down, as per the Knockdown maneuver."
+               :upgradeable false
+               :tags        #{"control"}}
+              {:effect      "You learn the Druidcraft cantrip and may cast it at will."
+               :upgradeable false
+               :tags        #{"magic"}}
+              {:effect "+[1] expertise die with Survival checks."
+               :tags   #{"utility"}}
+              {:effect "Choose [1] creature you are familiar with. You can cast the Sending spell at will when targeting this creature."
+               :tags   #{"magic"}}
+              {:effect "+1d[6] poison damage with attacks against creatures at least 15 feet away from you."
+               :tags   #{"damage"}}
+              {:effect "When you deal poison damage with a critical weapon attack, use the maximum poison damage possible instead of rolling damage dice."
+               :tags   #{"critical"}}
+              {:effect      "Modifiers on this item also apply to your Beast and Fey minions."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "+1d[4] poison damage against restrained creatures."
+               :tags   #{"damage"}}]}]
