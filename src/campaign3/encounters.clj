@@ -107,8 +107,8 @@
       (update-vals r/alias-method-sampler)))
 
 (def ^:private generate-travel-event (r/alias-method-sampler
-                                       {nil       94
-                                        :positive 1
+                                       {nil       93.5
+                                        :positive 1.5
                                         :random   5}))
 
 (def ^:private positive-encounters (db/load-all :positive-encounters))
@@ -143,9 +143,9 @@
     (loop [acc (sorted-map)
            previous-weather-fn initial-weather-fn
            [day & days] (range 1 (inc days))]
-      (let [encounters (repeatedly 5 generate-travel-event)
-            encounters (cond-> (into [] (comp (filter #{:random}) (take 2)) encounters)
-                               (some #{:positive} encounters) (conj :positive))
+      (let [{:keys [positive random]} (->> (repeatedly 5 generate-travel-event)
+                                           (group-by identity))
+            encounters (into positive (take 2) random)
             weather (previous-weather-fn)
             acc (assoc acc day {:weather weather
                                 :order   (->> (keys helmets/character-enchants)

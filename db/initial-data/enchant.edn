@@ -313,7 +313,7 @@
  {:effect "+5 feet range for applying stabilising Medicine checks."
   :tags   #{"utility"}
   :points 20}
- {:effect  "+1 to your %s maximum."
+ {:effect  "+1 maximum %s."
   :tags    #{"utility"}
   :points  20
   :randoms [{:preset :ability-scores}]}
