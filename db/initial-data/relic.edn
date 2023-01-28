@@ -451,4 +451,34 @@
                :upgradeable false
                :tags        #{"utility"}}
               {:effect "+1d[4] poison damage against restrained creatures."
-               :tags   #{"damage"}}]}]
+               :tags   #{"damage"}}]}
+ {:name      "Wrath of the Stormbringer"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect      "All physical damage you deal is converted to thunder damage."
+               :upgradeable false
+               :tags        #{"damage"}}]
+  :mods      [{:effect "+1d[6] lightning damage against creatures that have taken thunder damage since the end of your last turn."
+               :tags   #{"damage"}}
+              {:effect "+[6:3] maximum lightning and thunder barrier."
+               :tags   #{"survivability"}}
+              {:effect "+[1] damage with spells and attacks that deal both thunder and lightning damage."
+               :tags   #{"damage"}}
+              {:effect "Creatures deafened by you have -[1] to all saving throws, and -1 AB."
+               :points 20
+               :tags   #{"control" "accuracy"}}
+              {:effect      "Creatures that fail a saving throw against an effect of yours that deals thunder damage are deafened until the end of your next turn."
+               :upgradeable false
+               :tags        #{"control"}}
+              {:effect      "You learn the Booming Blade cantrip and may cast it at will. When cast in this way, any movement triggers the additional thunder damage, rather than just willful movement."
+               :upgradeable false
+               :tags        #{"magic"}}
+              {:effect "+[10]% chance to recover the spell slot used for a spell if it deals lightning damage."
+               :points 20
+               :tags   #{"magic"}}
+              {:effect "Treat penalties to journey activities during 'rain' and 'thunderstorm' days as bonuses instead."
+               :upgradeable false
+               :tags   #{"utility" "wealth"}}
+              {:effect      "All non-physical, non-thunder damage you deal is converted to lightning damage."
+               :upgradeable false
+               :tags        #{"damage"}}]}]

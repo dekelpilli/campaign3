@@ -55,14 +55,12 @@
   (case type
     :physical 1
     :non-physical 2
-    :elemental 1
     :all 3))
 (defmethod randoms-preset :damage-types [{:keys [type]
                                           :or   {type :all}}]
   (case type
     :physical ["bludgeoning" "piercing" "slashing"]
     :non-physical ["acid" "cold" "fire" "force" "lightning" "necrotic" "poison" "psychic" "radiant" "thunder"]
-    :elemental ["cold" "fire" "lightning"]
     :all ["acid" "bludgeoning" "cold" "fire" "force" "lightning" "necrotic" "piercing" "poison" "psychic" "radiant" "slashing" "thunder"]))
 
 (defmethod randoms-factor :ability-scores [{:keys [type]

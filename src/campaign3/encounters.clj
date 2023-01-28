@@ -18,83 +18,6 @@
 
 (def ^:private activities [:befriend-creature :busk :chronicle :entertain :force-march :gather-components
                            :gossip :harvest :pray :rob :scout :seek-shelter])
-(def ^:private weather-dc-mods
-  {:rain         {:busk              1
-                  :seek-shelter      2
-                  :befriend-creature -2
-                  :gather-components -1
-                  :harvest           -1
-                  :rob               -1
-                  :gossip            1}
-   :clear        {:chronicle         -2
-                  :gossip            -2
-                  :seek-shelter      -1
-                  :rob               2
-                  :befriend-creature 1
-                  :scout             -1
-                  :busk              -2
-                  :entertain         -2
-                  :force-march       -2
-                  :gather-components -1
-                  :harvest           -1}
-   :frigid       {:befriend-creature -1
-                  :seek-shelter      -1
-                  :scout             1
-                  :busk              1
-                  :rob               2
-                  :entertain         1
-                  :gather-components 1
-                  :harvest           1}
-   :sweltering   {:befriend-creature 1
-                  :seek-shelter      1
-                  :rob               2
-                  :gossip            2
-                  :entertain         1
-                  :force-march       1
-                  :gather-components 1
-                  :harvest           1}
-   :snow         {:chronicle         1
-                  :rob               -4
-                  :seek-shelter      3
-                  :gossip            2
-                  :force-march       3
-                  :gather-components 2
-                  :harvest           2}
-   :hail         {:befriend-creature 1
-                  :scout             -1
-                  :seek-shelter      1
-                  :rob               -1
-                  :gossip            2
-                  :gather-components 2
-                  :harvest           2
-                  :force-march       1
-                  :busk              2}
-   :fog          {:befriend-creature 1
-                  :rob               -3
-                  :force-march       1
-                  :chronicle         2}
-   :overcast     {:busk         -1
-                  :seek-shelter -1
-                  :gossip       -2}
-   :sandstorm    {:all               3
-                  :scout             1
-                  :force-march       2
-                  :befriend-creature -1
-                  :pray              0
-                  :rob               -1}
-   :acid-rain    {:all               4
-                  :rob               0
-                  :gather-components 5
-                  :harvest           5
-                  :pray              0
-                  :befriend-creature -2
-                  :force-march       2}
-   :thunderstorm {:all       2
-                  :scout     1
-                  :rob       0
-                  :pray      0
-                  :entertain 0
-                  :busk      1}})
 (def ^:private weather-fns
   (-> {:rain         {:rain         12
                       :frigid       10
@@ -205,15 +128,6 @@
                  (get weather-fns weather)
                  (dec n)))
         freqs))))
-
-(defn activity-mod []
-  (u/when-let* [mods (p/>>item "What's the weather?" weather-dc-mods)
-                chosen-activities (p/>>distinct-items "What are activities are being performed?" (conj activities :all))]
-    (reduce (fn [acc activity] (assoc acc activity (get mods activity (get mods :all 0))))
-            {}
-            (if (chosen-activities :all)
-              activities
-              chosen-activities))))
 
 (defn pass-time [days]
   (when-let [initial-weather (p/>>item "What was the weather yesterday?" (keys weather-fns))]
