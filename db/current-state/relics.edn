@@ -1940,4 +1940,128 @@
       "+[2:1] damage with spells and magical weapon attacks."}],
     :progressed [],
     :level 6}],
+  :sold false}
+ {:name "Tanyll's Ascension",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:tags ["magic"],
+    :effect
+    "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["survivability"],
+    :effect "You are immune to diseases and poisons."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Modifies to your incoming healing also apply to any regeneration you have."}
+   {:tags ["survivability"],
+    :effect
+    "Regenerate [1] hit point at the end of a turn where you have dealt Necrotic damage."}
+   {:tags ["survivability"],
+    :effect
+    "+[10:10]% chance to remove a failed death save when you recover from going down."}
+   {:tags ["utility"],
+    :points 20,
+    :effect "+[2:1] maximum Constitution."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "Increases to your Strength score beyond its base value also apply to your Constitution score."}
+   {:tags ["magic"],
+    :effect
+    "You learn the Banishment spell and may cast it once per long rest. When cast in this way, the creature sent to a realm where it takes [1]d6 Necrotic damage per turn."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "No more than once per round, when you hit with an unarmed attack, gain +[1] AC until the start of your next turn."}
+   {:tags ["damage"],
+    :effect "+1d[4] necrotic damage with spells and attacks."}],
+  :levels nil,
+  :sold false}
+ {:name "Dayuzh's Leadership",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["utility"],
+    :effect "Your ranged and thrown weapons gain the Parry trait."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "Your thrown and ranged attacks do not suffer disadvantage due to targeting prone creatures."}
+   {:upgradeable false,
+    :tags ["control"],
+    :effect
+    "No more than once per round, when you make a thrown attack, you may attempt to also knock the creatue down, as per the Knockdown maneuver."}
+   {:upgradeable false,
+    :tags ["magic"],
+    :effect
+    "You learn the Druidcraft cantrip and may cast it at will."}
+   {:tags ["utility"],
+    :effect "+[1] expertise die with Survival checks."}
+   {:tags ["magic"],
+    :effect
+    "Choose [1] creature you are familiar with. You can cast the Sending spell at will when targeting this creature."}
+   {:tags ["damage"],
+    :effect
+    "+1d[6] poison damage with attacks against creatures at least 15 feet away from you."}
+   {:tags ["critical"],
+    :effect
+    "When you deal poison damage with a critical weapon attack, use the maximum poison damage possible instead of rolling damage dice."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "Modifiers on this item also apply to your Beast and Fey minions."}
+   {:tags ["damage"],
+    :effect "+1d[4] poison damage against restrained creatures."}],
+  :levels nil,
+  :sold false}
+ {:name "Wrath of the Stormbringer",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "All physical damage you deal is converted to thunder damage."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "+1d[6] lightning damage against creatures that have taken thunder damage since the end of your last turn."}
+   {:tags ["survivability"],
+    :effect "+[6:3] maximum lightning and thunder barrier."}
+   {:tags ["damage"],
+    :effect
+    "+[1] damage with spells and attacks that deal both thunder and lightning damage."}
+   {:tags ["control" "accuracy"],
+    :points 20,
+    :effect
+    "Creatures deafened by you have -[1] to all saving throws, and -1 AB."}
+   {:upgradeable false,
+    :tags ["control"],
+    :effect
+    "Creatures that fail a saving throw against an effect of yours that deals thunder damage are deafened until the end of your next turn."}
+   {:upgradeable false,
+    :tags ["magic"],
+    :effect
+    "You learn the Booming Blade cantrip and may cast it at will. When cast in this way, any movement triggers the additional thunder damage, rather than just willful movement."}
+   {:tags ["magic"],
+    :points 20,
+    :effect
+    "+[10]% chance to recover the spell slot used for a spell if it deals lightning damage."}
+   {:upgradeable false,
+    :tags ["utility" "wealth"],
+    :effect
+    "Treat penalties to journey activities during 'rain' and 'thunderstorm' days as bonuses instead."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "All non-physical, non-thunder damage you deal is converted to lightning damage."}],
+  :levels nil,
   :sold false}]
