@@ -297,7 +297,53 @@
       :effect
       "You have +[1]AC if you have been down during the current combat."}],
     :progressed [],
-    :level 5}],
+    :level 5}
+   {:existing
+    [{:upgradeable false,
+      :tags ["critical" "utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You may take an additional action the end of an action where you landed a killing blow with a critical hit.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "Your gain maximum hit points equal to the [number of modifiers] on this item."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You regenerate [2:1] hit points at the end of your turn while bloodied."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "You have +[1]AC if you have been down during the current combat."}],
+    :progressed
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect
+      "Your gain maximum hit points equal to the [number of modifiers] on this item."}],
+    :level 6}],
   :sold false}
  {:name "Wandslinger's Grips",
   :found true,
@@ -328,6 +374,129 @@
     :effect "+1 to damage with light weapons."}],
   :mods [],
   :levels nil,
+  :sold true}
+ {:name "Dayuzh's Leadership",
+  :found true,
+  :base-type "weapon",
+  :base "Trident",
+  :start
+  [{:upgradeable false,
+    :tags ["utility"],
+    :effect "Your ranged and thrown weapons gain the Parry trait."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "Your thrown and ranged attacks do not suffer disadvantage due to targeting prone creatures."}
+   {:upgradeable false,
+    :tags ["control"],
+    :effect
+    "No more than once per round, when you make a thrown attack, you may attempt to also knock the creatue down, as per the Knockdown maneuver."}
+   {:upgradeable false,
+    :tags ["magic"],
+    :effect
+    "You learn the Druidcraft cantrip and may cast it at will."}
+   {:tags ["utility"],
+    :effect "+[1] expertise die with Survival checks."}
+   {:tags ["magic"],
+    :effect
+    "Choose [1] creature you are familiar with. You can cast the Sending spell at will when targeting this creature."}
+   {:tags ["damage"],
+    :effect
+    "+1d[6] poison damage with attacks against creatures at least 15 feet away from you."}
+   {:tags ["critical"],
+    :effect
+    "When you deal poison damage with a critical weapon attack, use the maximum poison damage possible instead of rolling damage dice."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "Modifiers on this item also apply to your Beast and Fey minions."}
+   {:tags ["damage"],
+    :effect "+1d[4] poison damage against restrained creatures."}],
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "Your ranged and thrown weapons gain the Parry trait."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 expertise die with intimidation.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "Your ranged and thrown weapons gain the Parry trait."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You can use your reaction to change any damage you deal into a damage type of your choice. This is visually noticeable.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 expertise die with intimidation.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "Your ranged and thrown weapons gain the Parry trait."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1d[4] poison damage against restrained creatures."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You can use your reaction to change any damage you deal into a damage type of your choice. This is visually noticeable.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 expertise die with intimidation.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "Your ranged and thrown weapons gain the Parry trait."}],
+    :progressed [],
+    :level 4}],
   :sold true}
  {:name "Essence of Eion",
   :found true,
@@ -424,228 +593,6 @@
     :progressed [],
     :level 3}],
   :sold true}
- {:name "Blazing Glory",
-  :found true,
-  :base-type "weapon",
-  :base "Gauntlet",
-  :start
-  [{:upgradeable true,
-    :tags ["utility" "wealth"],
-    :points 10,
-    :upgrade-points 10,
-    :effect "+1 to journey activity checks."}
-   {:upgradeable true,
-    :tags ["utility"],
-    :points 10,
-    :upgrade-points 10,
-    :effect
-    "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :points 10,
-    :upgrade-points 10,
-    :effect
-    "You have resistance to all damage while affeced by the benefits of the Dodge action."}
-   {:upgradeable true,
-    :tags ["damage"],
-    :points 15,
-    :upgrade-points 10,
-    :effect "+[2:1] fire damage."}],
-  :mods [],
-  :levels
-  [{:existing
-    [{:upgradeable true,
-      :tags ["utility" "wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+1 to journey activity checks."}
-     {:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
-     {:upgradeable false,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
-     {:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+[2:1] fire damage."}],
-    :progressed [],
-    :level 1}
-   {:existing
-    [{:upgradeable true,
-      :tags ["utility" "wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+1 to journey activity checks."}
-     {:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
-     {:upgradeable false,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
-     {:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+[2:1] fire damage."}],
-    :progressed [],
-    :level 2}
-   {:existing
-    [{:upgradeable true,
-      :tags ["utility" "wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+1 to journey activity checks."}
-     {:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
-     {:upgradeable false,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
-     {:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 2,
-      :effect "+[2:1] fire damage."}],
-    :progressed [],
-    :level 3}
-   {:existing
-    [{:upgradeable true,
-      :tags ["utility" "wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+1 to journey activity checks."}
-     {:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
-     {:upgradeable false,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
-     {:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 3,
-      :effect "+[2:1] fire damage."}],
-    :progressed [],
-    :level 4}
-   {:existing
-    [{:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["utility" "wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+1 to journey activity checks."}
-     {:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
-     {:upgradeable false,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
-     {:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 3,
-      :effect "+[2:1] fire damage."}],
-    :progressed [],
-    :level 5}
-   {:existing
-    [{:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["utility" "wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+1 to journey activity checks."}
-     {:upgradeable true,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
-     {:upgradeable false,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
-     {:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 4,
-      :effect "+[2:1] fire damage."}],
-    :progressed [],
-    :level 6}],
-  :sold false}
  {:name "Essence of Ketis",
   :found true,
   :base-type "weapon",
@@ -974,6 +921,228 @@
     :progressed [],
     :level 6}],
   :sold false}
+ {:name "Blazing Glory",
+  :found true,
+  :base-type "weapon",
+  :base "Gauntlet",
+  :start
+  [{:upgradeable true,
+    :tags ["utility" "wealth"],
+    :points 10,
+    :upgrade-points 10,
+    :effect "+1 to journey activity checks."}
+   {:upgradeable true,
+    :tags ["utility"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+   {:upgradeable true,
+    :tags ["damage"],
+    :points 15,
+    :upgrade-points 10,
+    :effect "+[2:1] fire damage."}],
+  :mods [],
+  :levels
+  [{:existing
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["utility" "wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1 to journey activity checks."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+10 feet speed in all of your available speed types on your turn if you have not used your action yet."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have resistance to all damage while affeced by the benefits of the Dodge action."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 4,
+      :effect "+[2:1] fire damage."}],
+    :progressed [],
+    :level 6}],
+  :sold true}
  {:name "Essence of Ateus",
   :found true,
   :base-type "armour",
@@ -1074,120 +1243,6 @@
       "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
     :progressed [],
     :level 4}],
-  :sold false}
- {:name "Essence of Bara",
-  :found true,
-  :base-type "armour",
-  :base "Unarmoured gloves",
-  :start
-  [{:tags ["survivability"],
-    :points 20,
-    :effect
-    "+[2:1] damage resistance while you have an active stance."}],
-  :mods
-  [{:upgradeable false,
-    :tags ["survivability"],
-    :effect "You have proficiency in Strength saving throws."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "At the end of your turn, gain physical damage resistance equal to the number of different physical damage types you dealt during your turn, until the end of your next turn."}
-   {:tags ["accuracy"], :points 20, :effect "+1 to your maneuver DCs."}
-   {:tags ["damage"],
-    :effect
-    "Your weapon attacks have +1 bludgeoning damage, even if they normally deal no bludgeoning damage."}
-   {:tags ["utility"],
-    :points 30,
-    :effect
-    "Your Strength and Dexterity become equal to the highest of your [Strength, Dexterity:, and Constitution]."}
-   {:upgradeable false,
-    :tags ["damage"],
-    :effect
-    "Gain weapon damage equal to the number of exertion points you have used since the start of your last turn."}
-   {:upgradeable false,
-    :tags ["accuracy"],
-    :effect
-    "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "The Staggered, Poisoned, Prone, and Restrained conditions do not grant advantage to weapon attacks made against you."}
-   {:tags ["utility"],
-    :effect
-    "When you make a Strength or Athletics check, you can replace the number you roll with a [12:+1]"}],
-  :levels
-  [{:existing
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 1}
-   {:existing
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :level 2}
-   {:existing
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 2,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 3}
-   {:existing
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect "+1 to your maneuver DCs."}
-     {:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 2,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 4}
-   {:existing
-    [{:upgradeable false,
-      :tags ["accuracy"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
-     {:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect "+1 to your maneuver DCs."}
-     {:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 2,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 5}],
   :sold false}
  {:name "Ouroboros",
   :found true,
@@ -1306,6 +1361,239 @@
       :level 3,
       :effect
       "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
+    :progressed [],
+    :level 5}],
+  :sold false}
+ {:name "Essence of Bara",
+  :found true,
+  :base-type "armour",
+  :base "Unarmoured gloves",
+  :start
+  [{:tags ["survivability"],
+    :points 20,
+    :effect
+    "+[2:1] damage resistance while you have an active stance."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["survivability"],
+    :effect "You have proficiency in Strength saving throws."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "At the end of your turn, gain physical damage resistance equal to the number of different physical damage types you dealt during your turn, until the end of your next turn."}
+   {:tags ["accuracy"], :points 20, :effect "+1 to your maneuver DCs."}
+   {:tags ["damage"],
+    :effect
+    "Your weapon attacks have +1 bludgeoning damage, even if they normally deal no bludgeoning damage."}
+   {:tags ["utility"],
+    :points 30,
+    :effect
+    "Your Strength and Dexterity become equal to the highest of your [Strength, Dexterity:, and Constitution]."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "Gain weapon damage equal to the number of exertion points you have used since the start of your last turn."}
+   {:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "The Staggered, Poisoned, Prone, and Restrained conditions do not grant advantage to weapon attacks made against you."}
+   {:tags ["utility"],
+    :effect
+    "When you make a Strength or Athletics check, you can replace the number you roll with a [12:+1]"}],
+  :levels
+  [{:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :level 2}
+   {:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+1 to your maneuver DCs."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+1 to your maneuver DCs."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+1 to your maneuver DCs."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect "+1 to your maneuver DCs."}],
+    :level 6}],
+  :sold false}
+ {:name "Desmond's Madness",
+  :found true,
+  :base-type "armour",
+  :base "Unarmoured gloves",
+  :start
+  [{:tags ["accuracy"],
+    :points 30,
+    :effect "Your ranged weapon attacks have +1 AB."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."}
+   {:tags ["utility"], :effect "+[10:5] feet to your walking speed."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect "Your improvised weapons gain the Finesse tag."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect "You are immune to charms and frightens from spells."}
+   {:tags ["utility"], :effect "+[1] Strength, -[1] Wisdom."}
+   {:tags ["utility"], :effect "+[1] Dexterity, -[1] Charisma."}
+   {:tags ["survivability"],
+    :effect
+    "+2 resistance to damage from non-magical terrain/area effects."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your maximum hit points are increased by an amount equal to your level if your Strength is at least 20."}
+   {:tags ["damage"],
+    :effect "+[2:1] damage with ranged weapon attacks."}],
+  :levels
+  [{:existing
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :effect "Your ranged weapon attacks have +1 AB."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :effect "Your ranged weapon attacks have +1 AB."}],
+    :progressed
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :committed 10,
+      :effect "Your ranged weapon attacks have +1 AB."}],
+    :level 2}
+   {:existing
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :effect "Your ranged weapon attacks have +1 AB."}],
+    :progressed
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :committed 20,
+      :effect "Your ranged weapon attacks have +1 AB."}],
+    :level 3}
+   {:existing
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 30,
+      :level 2,
+      :committed 20,
+      :effect "Your ranged weapon attacks have +1 AB."}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[2:1] damage with ranged weapon attacks."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 30,
+      :level 2,
+      :committed 20,
+      :effect "Your ranged weapon attacks have +1 AB."}],
     :progressed [],
     :level 5}],
   :sold false}
@@ -1506,98 +1794,49 @@
       :effect "+1 damage to melee and touch attacks.",
       :prohibits nil}],
     :progressed [],
-    :level 6}],
-  :sold false}
- {:name "Desmond's Madness",
-  :found true,
-  :base-type "armour",
-  :base "Unarmoured gloves",
-  :start
-  [{:tags ["accuracy"],
-    :points 30,
-    :effect "Your ranged weapon attacks have +1 AB."}],
-  :mods
-  [{:tags ["damage"],
-    :effect
-    "+[4:1] bludgeoning damage with melee attacks with improvised weapons where the weapon is a ranged weapon."}
-   {:tags ["utility"], :effect "+[10:5] feet to your walking speed."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect "Your improvised weapons gain the Finesse tag."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect "You are immune to charms and frightens from spells."}
-   {:tags ["utility"], :effect "+[1] Strength, -[1] Wisdom."}
-   {:tags ["utility"], :effect "+[1] Dexterity, -[1] Charisma."}
-   {:tags ["survivability"],
-    :effect
-    "+2 resistance to damage from non-magical terrain/area effects."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "Your maximum hit points are increased by an amount equal to your level if your Strength is at least 20."}
-   {:tags ["damage"],
-    :effect "+[2:1] damage with ranged weapon attacks."}],
-  :levels
-  [{:existing
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 30,
-      :level 1,
-      :effect "Your ranged weapon attacks have +1 AB."}],
-    :progressed [],
-    :level 1}
+    :level 6}
    {:existing
-    [{:tags ["accuracy"],
+    [{:upgradeable true,
+      :tags ["critical"],
       :points 10,
-      :upgrade-points 30,
-      :level 1,
-      :effect "Your ranged weapon attacks have +1 AB."}],
-    :progressed
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 30,
-      :level 1,
-      :committed 10,
-      :effect "Your ranged weapon attacks have +1 AB."}],
-    :level 2}
-   {:existing
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 30,
-      :level 1,
-      :effect "Your ranged weapon attacks have +1 AB."}],
-    :progressed
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 30,
-      :level 1,
-      :committed 20,
-      :effect "Your ranged weapon attacks have +1 AB."}],
-    :level 3}
-   {:existing
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 30,
-      :level 2,
-      :committed 20,
-      :effect "Your ranged weapon attacks have +1 AB."}],
-    :progressed [],
-    :level 4}
-   {:existing
-    [{:tags ["damage"],
+      :upgrade-points 10,
+      :level 3,
+      :requires nil,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["utility"],
       :points 10,
       :upgrade-points 10,
       :level 1,
-      :effect "+[2:1] damage with ranged weapon attacks."}
-     {:tags ["accuracy"],
+      :effect
+      "Critical hits from your weapon attacks do not override non-lethal."}
+     {:upgradeable false,
+      :tags ["damage"],
       :points 10,
-      :upgrade-points 30,
-      :level 2,
-      :committed 20,
-      :effect "Your ranged weapon attacks have +1 AB."}],
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Physical damage from attacks made during your bonus action is converted to fire damage."}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+5 to gold found.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 damage to melee and touch attacks.",
+      :prohibits nil}],
     :progressed [],
-    :level 5}],
+    :level 7}],
   :sold false}
  {:name "Brass Antler",
   :found true,
@@ -1774,7 +2013,7 @@
       "You and one of your allies in combat have +[1] initiative."}],
     :progressed [],
     :level 4}],
-  :sold false}
+  :sold true}
  {:name "Essence of Qhanas",
   :found true,
   :base-type "weapon",
@@ -1979,46 +2218,6 @@
     "No more than once per round, when you hit with an unarmed attack, gain +[1] AC until the start of your next turn."}
    {:tags ["damage"],
     :effect "+1d[4] necrotic damage with spells and attacks."}],
-  :levels nil,
-  :sold false}
- {:name "Dayuzh's Leadership",
-  :found false,
-  :base-type "weapon",
-  :base nil,
-  :start
-  [{:upgradeable false,
-    :tags ["utility"],
-    :effect "Your ranged and thrown weapons gain the Parry trait."}],
-  :mods
-  [{:upgradeable false,
-    :tags ["accuracy"],
-    :effect
-    "Your thrown and ranged attacks do not suffer disadvantage due to targeting prone creatures."}
-   {:upgradeable false,
-    :tags ["control"],
-    :effect
-    "No more than once per round, when you make a thrown attack, you may attempt to also knock the creatue down, as per the Knockdown maneuver."}
-   {:upgradeable false,
-    :tags ["magic"],
-    :effect
-    "You learn the Druidcraft cantrip and may cast it at will."}
-   {:tags ["utility"],
-    :effect "+[1] expertise die with Survival checks."}
-   {:tags ["magic"],
-    :effect
-    "Choose [1] creature you are familiar with. You can cast the Sending spell at will when targeting this creature."}
-   {:tags ["damage"],
-    :effect
-    "+1d[6] poison damage with attacks against creatures at least 15 feet away from you."}
-   {:tags ["critical"],
-    :effect
-    "When you deal poison damage with a critical weapon attack, use the maximum poison damage possible instead of rolling damage dice."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "Modifiers on this item also apply to your Beast and Fey minions."}
-   {:tags ["damage"],
-    :effect "+1d[4] poison damage against restrained creatures."}],
   :levels nil,
   :sold false}
  {:name "Wrath of the Stormbringer",
