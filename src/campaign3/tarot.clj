@@ -62,7 +62,7 @@
           (do
             (-> relic
                 (update :start into mods)
-                (update :levels #(map (fn inject-relic-mods [level]
+                (update :levels #(mapv (fn inject-relic-mods [level]
                                         (update level :existing into mods))
                                       %))
                 relics/update-relic!)

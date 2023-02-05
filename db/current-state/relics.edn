@@ -1,4 +1,67 @@
-[{:name "Essence of Cerasil",
+[{:name "Singular Power",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "No more than once per turn, when you hit an enemy with a one-handed weapon, deal +1d[6] necrotic damage."}
+   {:tags ["damage"],
+    :effect
+    "Whenever an enemy that is debilitated by you takes damage, it also takes [1] necrotic damage."}
+   {:tags ["damage"],
+    :effect
+    "You have +[1] thorns matching the highest damage type received when your barrier completely nullifies the damage."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Gain maximum poison barriers equal to your maximum generic damage barriers."}
+   {:tags ["damage"],
+    :effect
+    "At the end of each of your turns where you have an amulet active, a creature of your choice must make a Dexterity saving throw or take [2:1]d4 fire damage (half on success)."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect "Your two-handed weapons gain the 'Reach' trait."}
+   {:upgradeable false,
+    :tags ["control"],
+    :effect
+    "No more than once per long rest, when a creature you have damaged lands a killing blow, you may force them to make a CHA save or be debilitated (repeat on turn ends)."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "+1 to your DCs with effects that would blind the target on a failed save."}
+   {:tags ["damage"],
+    :effect
+    "+[2:1] damage with weapons while dual-wielding weapons with different base damage types."}],
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."}
+     {:upgradeable true,
+      :tags ["magic"],
+      :points 10,
+      :level 1,
+      :effect
+      "The number of spells you can prepare is increased by 1."}
+     {:upgradeable true,
+      :tags ["survivability" "utility"],
+      :points 10,
+      :level 1,
+      :effect "Your of Lay of Hands pool increases by [5:5]."}],
+    :progressed [],
+    :level 1}],
+  :sold false}
+ {:name "Essence of Cerasil",
   :found true,
   :base-type "armour",
   :base "Unarmoured gloves",
@@ -1243,7 +1306,7 @@
       "Whenever you roll for loot, you may choose to increase or decrease your loot roll by 1."}],
     :progressed [],
     :level 4}],
-  :sold false}
+  :sold true}
  {:name "Ouroboros",
   :found true,
   :base-type "armour",
@@ -2262,47 +2325,5 @@
     :tags ["damage"],
     :effect
     "All non-physical, non-thunder damage you deal is converted to lightning damage."}],
-  :levels nil,
-  :sold false}
- {:name "Singular Power",
-  :found false,
-  :base-type "weapon",
-  :base nil,
-  :start
-  [{:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."}],
-  :mods
-  [{:tags ["damage"],
-    :effect
-    "No more than once per turn, when you hit an enemy with a one-handed weapon, deal +1d[6] necrotic damage."}
-   {:tags ["damage"],
-    :effect
-    "Whenever an enemy that is debilitated by you takes damage, it also takes [1] necrotic damage."}
-   {:tags ["damage"],
-    :effect
-    "You have +[1] thorns matching the highest damage type received when your barrier completely nullifies the damage."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "Gain maximum poison barriers equal to your maximum generic damage barriers."}
-   {:tags ["damage"],
-    :effect
-    "At the end of each of your turns where you have an amulet active, a creature of your choice must make a Dexterity saving throw or take [2:1]d4 fire damage (half on success)."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect "Your two-handed weapons gain the 'Reach' trait."}
-   {:upgradeable false,
-    :tags ["control"],
-    :effect
-    "No more than once per long rest, when a creature you have damaged lands a killing blow, you may force them to make a CHA save or be debilitated (repeat on turn ends)."}
-   {:tags ["accuracy"],
-    :points 20,
-    :effect
-    "+1 to your DCs with effects that would blind the target on a failed save."}
-   {:tags ["damage"],
-    :effect
-    "+[2:1] damage with weapons while dual-wielding weapons with different base damage types."}],
   :levels nil,
   :sold false}]

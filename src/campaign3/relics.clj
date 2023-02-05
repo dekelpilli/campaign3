@@ -127,13 +127,9 @@
           (update :level inc)))))
 
 (defn set-relic-level! []
-  (u/when-let* [{:keys [levels base-type base start] :as relic} (choose-found-relic)
+  (u/when-let* [{:keys [levels base-type base] :as relic} (choose-found-relic)
                 target-level (p/>>item "What is the relic's new level?" (range 2 11))]
-    (let [levels (or (not-empty levels)
-                     [{:level      1
-                       :existing   (map prep-new-mod start)
-                       :progressed []}])
-          current-max-level (-> levels peek :level)
+    (let [current-max-level (-> levels peek :level)
           additional-levels (- target-level current-max-level)]
       (if (pos? additional-levels)
         (let [base (mundanes/name->base base-type base)
@@ -152,9 +148,15 @@
     (update-relic!
       (update relic :levels (comp u/jsonb-lift vector first)))))
 
-(defn find-relic! [{:keys [base-type] :as relic}]
+(defn- find-relic! [{:keys [base-type start] :as relic}]
   (when-let [{:keys [name]} (mundanes/choose-base base-type)]
-    (-> relic (assoc :found true :base name) update-relic!)))
+    (-> (assoc relic
+          :levels [{:level 1
+                    :existing (map prep-new-mod start)
+                    :progressed []}]
+          :found true
+          :base name)
+        update-relic!)))
 
 (defn new-relic! []
   (let [relic (-> (db/execute! {:select [:*]
