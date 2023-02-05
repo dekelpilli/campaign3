@@ -476,9 +476,37 @@
               {:effect "+[10]% chance to recover the spell slot used for a spell if it deals lightning damage."
                :points 20
                :tags   #{"magic"}}
-              {:effect "Treat penalties to journey activities during 'rain' and 'thunderstorm' days as bonuses instead."
+              {:effect      "Treat penalties to journey activities during 'rain' and 'thunderstorm' days as bonuses instead."
                :upgradeable false
-               :tags   #{"utility" "wealth"}}
+               :tags        #{"utility" "wealth"}}
               {:effect      "All non-physical, non-thunder damage you deal is converted to lightning damage."
                :upgradeable false
-               :tags        #{"damage"}}]}]
+               :tags        #{"damage"}}]}
+ {:name      "Singular Power"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect      "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."
+               :upgradeable false
+               :tags        #{"utility"}}]
+  :mods      [{:effect "No more than once per turn, when you hit an enemy with a one-handed weapon, deal +1d[6] necrotic damage."
+               :tags   #{"damage"}}
+              {:effect "Whenever an enemy that is debilitated by you takes damage, it also takes [1] necrotic damage."
+               :tags   #{"damage"}}
+              {:effect "You have +[1] thorns matching the highest damage type received when your barrier completely nullifies the damage."
+               :tags   #{"damage"}}
+              {:effect      "Gain maximum poison barriers equal to your maximum generic damage barriers."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "At the end of each of your turns where you have an amulet active, a creature of your choice must make a Dexterity saving throw or take [2:1]d4 fire damage (half on success)."
+               :tags   #{"damage"}}
+              {:effect      "Your two-handed weapons gain the 'Reach' trait."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect      "No more than once per long rest, when a creature you have damaged lands a killing blow, you may force them to make a CHA save or be debilitated (repeat on turn ends)."
+               :upgradeable false
+               :tags        #{"control"}}
+              {:effect  "+1 to your DCs with effects that would blind the target on a failed save."
+               :points 20
+               :tags    #{"accuracy"}}
+              {:effect "+[2:1] damage with weapons while dual-wielding weapons with different base damage types."
+               :tags   #{"damage"}}]}]
