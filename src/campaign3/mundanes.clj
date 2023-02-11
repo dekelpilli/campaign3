@@ -8,9 +8,9 @@
 
 (def ^:private weapons (db/load-all :weapons))
 (def ^:private armours (db/load-all :armours))
-(def ^:private special-armour-by-slot (->> (db/load-all :special-armours)
-                                           (map #(update % :randoms randoms/randoms->fn))
-                                           (group-by :slot)))
+(def ^:private special-armours (->> (db/load-all :special-armours)
+                                    (mapv #(update % :randoms randoms/randoms->fn))))
+(def ^:private special-armour-by-slot (group-by :slot special-armours))
 (def ^:private armours-by-slot (group-by :slot armours))
 
 (def ^:private base-types {"weapon" weapons "armour" armours})
@@ -53,3 +53,10 @@
 (defn new-special-of-slot []
   (when-let [slot (p/>>item ["body" "boots" "gloves"])]
     (-> slot special-armour-by-slot r/sample u/fill-randoms)))
+
+(defn sample-special-armours []
+  (when-let [amount (some-> (p/>>input "How many bases?")
+                            parse-long
+                            (min (count special-armours)))]
+    (->> (r/sample-without-replacement amount special-armours)
+         (map u/fill-randoms))))

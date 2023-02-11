@@ -1,8 +1,8 @@
 (ns campaign3.encounters
   (:require (campaign3
               [db :as db]
-              [prompting :as p]
               [helmets :as helmets]
+              [prompting :as p]
               [util :as u])
             [clojure.string :as str]
             [randy.core :as r]
@@ -106,10 +106,11 @@
                       :thunderstorm 10}}
       (update-vals r/alias-method-sampler)))
 
-(def ^:private generate-travel-event (r/alias-method-sampler
-                                       {nil       93.5
-                                        :positive 1.5
-                                        :random   5}))
+(def ^:private generate-random-encounters
+  (r/alias-method-sampler
+    {[]                90
+     [:random]         2
+     [:random :random] 8}))
 
 (def ^:private positive-encounters (db/load-all :positive-encounters))
 
@@ -143,9 +144,8 @@
     (loop [acc (sorted-map)
            previous-weather-fn initial-weather-fn
            [day & days] (range 1 (inc days))]
-      (let [{:keys [positive random]} (->> (repeatedly 5 generate-travel-event)
-                                           (group-by identity))
-            encounters (into positive (take 2) random)
+      (let [encounters (cond-> (generate-random-encounters)
+                               (u/occurred? 0.1) (conj :positive))
             weather (previous-weather-fn)
             acc (assoc acc day {:weather weather
                                 :order   (->> (keys helmets/character-enchants)

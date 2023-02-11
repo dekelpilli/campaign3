@@ -7,9 +7,9 @@
  {:cost         "30g (each)"
   :participants "any"
   :rules        "Roll 1d4: 1. Advantage 1d12 loot roll. 2. 1d12 loot roll with advantaged result. 3. 4x Orbs of Personality 4. Divine Dust."}
- {:cost         "60g (party)"
+ {:cost         "10g (party)"
   :participants "everyone"
-  :rules        "Give all crafting items in the party. For each item, the party gains a Crafting Item loot roll result."}
+  :rules        "Each player rolls a d4 and the total is summed. The players are given that many distinct special base options, allowing them to buy any amount of these bases for 25 gold each. A base cannot be bought more than once."}
  {:cost         "25g (each)"
   :participants "any"
   :rules        "Choose a word and roll d100 and feed into Cheiro sum algorithm. Get a magic item on a regular base of player's choice with that many enchant points."}
