@@ -61,6 +61,45 @@
     :progressed [],
     :level 1}],
   :sold false}
+ {:name "Kartha-Kaya's Recklessness",
+  :found false,
+  :base-type "weapon",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."}],
+  :mods
+  [{:tags ["accuracy"],
+    :effect
+    "You have +[1] AB with attacks you make without advantage."}
+   {:tags ["critical"],
+    :effect
+    "You have +[1] critical hit range with attacks you make without advantage."}
+   {:tags ["utility"], :effect "You have +[2:1] to initiative rolls."}
+   {:tags ["utility"],
+    :effect
+    "You may dash as a free action no more than [once] per combat."}
+   {:tags ["damage"],
+    :effect
+    "No more than once per target per combat, +[6:3] damage with weapon attacks made on turns where you have moved at least 30 feet."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "No more than once per round, when you deal non-physical damage with a weapon attack, gain maximum barrier of that damage type equal to your level."}
+   {:tags ["survivability"],
+    :points 30,
+    :effect
+    "+[1] crit die with each non-physical damage type you deal with weapon attacks."}
+   {:tags ["damage"],
+    :effect "+1d[4] fire damage with weapon attacks."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "+[1] AB with weapon attacks against unarmoured (or naturally armoured) creatures."}],
+  :levels nil,
+  :sold false}
  {:name "Essence of Cerasil",
   :found true,
   :base-type "armour",

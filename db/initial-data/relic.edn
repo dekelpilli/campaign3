@@ -505,8 +505,35 @@
               {:effect      "No more than once per long rest, when a creature you have damaged lands a killing blow, you may force them to make a CHA save or be debilitated (repeat on turn ends)."
                :upgradeable false
                :tags        #{"control"}}
-              {:effect  "+1 to your DCs with effects that would blind the target on a failed save."
+              {:effect "+1 to your DCs with effects that would blind the target on a failed save."
                :points 20
-               :tags    #{"accuracy"}}
+               :tags   #{"accuracy"}}
               {:effect "+[2:1] damage with weapons while dual-wielding weapons with different base damage types."
-               :tags   #{"damage"}}]}]
+               :tags   #{"damage"}}]}
+ {:name      "Kartha-Kaya's Recklessness"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect      "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."
+               :upgradeable false
+               :tags        #{"accuracy"}}]
+  :mods      [{:effect "You have +[1] AB with attacks you make without advantage."
+               :tags   #{"accuracy"}}
+              {:effect "You have +[1] critical hit range with attacks you make without advantage."
+               :tags   #{"critical"}}
+              {:effect "You have +[2:1] to initiative rolls."
+               :tags   #{"utility"}}
+              {:effect "You may dash as a free action no more than [once] per combat."
+               :tags   #{"utility"}}
+              {:effect "No more than once per target per combat, +[6:3] damage with weapon attacks made on turns where you have moved at least 30 feet."
+               :tags   #{"damage"}}
+              {:effect      "No more than once per round, when you deal non-physical damage with a weapon attack, gain maximum barrier of that damage type equal to your level."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "+[1] crit die with each non-physical damage type you deal with weapon attacks."
+               :points 30
+               :tags   #{"survivability"}}
+              {:effect "+1d[4] fire damage with weapon attacks."
+               :tags   #{"damage"}}
+              {:effect "+[1] AB with weapon attacks against unarmoured (or naturally armoured) creatures."
+               :points 20
+               :tags   #{"accuracy"}}]}]

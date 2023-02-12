@@ -43,7 +43,7 @@
                "weapon" (r/sample weapons)
                "armour" (->> (new-armour-slot)
                              (get armours-by-slot)
-                             (r/sample)))]
+                             r/sample))]
     {:base base
      :type type}))
 
