@@ -1,7 +1,7 @@
 [{:name "Singular Power",
-  :found false,
+  :found true,
   :base-type "weapon",
-  :base nil,
+  :base "Bastard Sword",
   :start
   [{:upgradeable false,
     :tags ["utility"],
@@ -59,7 +59,117 @@
       :level 1,
       :effect "Your of Lay of Hands pool increases by [5:5]."}],
     :progressed [],
-    :level 1}],
+    :level 1}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."}
+     {:upgradeable true,
+      :tags ["magic"],
+      :points 10,
+      :level 1,
+      :effect
+      "The number of spells you can prepare is increased by 1."}
+     {:upgradeable true,
+      :tags ["survivability" "utility"],
+      :points 10,
+      :level 1,
+      :effect "Your of Lay of Hands pool increases by [5:5]."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn.",
+      :prohibits nil}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."}
+     {:upgradeable true,
+      :tags ["magic"],
+      :points 10,
+      :level 1,
+      :effect
+      "The number of spells you can prepare is increased by 1."}
+     {:upgradeable true,
+      :tags ["survivability" "utility"],
+      :points 10,
+      :level 1,
+      :effect "Your of Lay of Hands pool increases by [5:5]."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "No more than once per long rest, when a creature you have damaged lands a killing blow, you may force them to make a CHA save or be debilitated (repeat on turn ends)."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."}
+     {:upgradeable true,
+      :tags ["magic"],
+      :points 10,
+      :level 1,
+      :effect
+      "The number of spells you can prepare is increased by 1."}
+     {:upgradeable true,
+      :tags ["survivability" "utility"],
+      :points 10,
+      :level 1,
+      :effect "Your of Lay of Hands pool increases by [5:5]."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "No more than once per long rest, when a creature you have damaged lands a killing blow, you may force them to make a CHA save or be debilitated (repeat on turn ends)."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+1 to your DCs with effects that would blind the target on a failed save."}],
+    :progressed [],
+    :level 4}],
   :sold false}
  {:name "Kartha-Kaya's Recklessness",
   :found false,
@@ -99,6 +209,195 @@
     :effect
     "+[1] AB with weapon attacks against unarmoured (or naturally armoured) creatures."}],
   :levels nil,
+  :sold false}
+ {:name "Wrath of the Stormbringer",
+  :found true,
+  :base-type "armour",
+  :base "Plate Body Armour",
+  :start
+  [{:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "All physical damage you deal is converted to thunder damage."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "+1d[6] lightning damage against creatures that have taken thunder damage since the end of your last turn."}
+   {:tags ["survivability"],
+    :effect "+[6:3] maximum lightning and thunder barrier."}
+   {:tags ["damage"],
+    :effect
+    "+[1] damage with spells and attacks that deal both thunder and lightning damage."}
+   {:tags ["control" "accuracy"],
+    :points 20,
+    :effect
+    "Creatures deafened by you have -[1] to all saving throws, and -1 AB."}
+   {:upgradeable false,
+    :tags ["control"],
+    :effect
+    "Creatures that fail a saving throw against an effect of yours that deals thunder damage are deafened until the end of your next turn."}
+   {:upgradeable false,
+    :tags ["magic"],
+    :effect
+    "You learn the Booming Blade cantrip and may cast it at will. When cast in this way, any movement triggers the additional thunder damage, rather than just willful movement."}
+   {:tags ["magic"],
+    :points 20,
+    :effect
+    "+[10]% chance to recover the spell slot used for a spell if it deals lightning damage."}
+   {:upgradeable false,
+    :tags ["utility" "wealth"],
+    :effect
+    "Treat penalties to journey activities during 'rain' and 'thunderstorm' days as bonuses instead."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "All non-physical, non-thunder damage you deal is converted to lightning damage."}],
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All physical damage you deal is converted to thunder damage."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All physical damage you deal is converted to thunder damage."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All non-physical, non-thunder damage you deal is converted to lightning damage."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All physical damage you deal is converted to thunder damage."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All non-physical, non-thunder damage you deal is converted to lightning damage."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All physical damage you deal is converted to thunder damage."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All non-physical, non-thunder damage you deal is converted to lightning damage."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You have resistance to all damage while affected by the benefits of the Dodge action.",
+      :prohibits nil}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All physical damage you deal is converted to thunder damage."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All non-physical, non-thunder damage you deal is converted to lightning damage."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You have resistance to all damage while affected by the benefits of the Dodge action.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "Gain 10 temporary hit points when you deliver a Killing Blow.",
+      :prohibits nil}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All physical damage you deal is converted to thunder damage."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "All non-physical, non-thunder damage you deal is converted to lightning damage."}
+     {:upgradeable false,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You have resistance to all damage while affected by the benefits of the Dodge action.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "Gain 10 temporary hit points when you deliver a Killing Blow.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[6:3] maximum lightning and thunder barrier."}],
+    :progressed [],
+    :level 6}],
   :sold false}
  {:name "Essence of Cerasil",
   :found true,
@@ -2320,49 +2619,5 @@
     "No more than once per round, when you hit with an unarmed attack, gain +[1] AC until the start of your next turn."}
    {:tags ["damage"],
     :effect "+1d[4] necrotic damage with spells and attacks."}],
-  :levels nil,
-  :sold false}
- {:name "Wrath of the Stormbringer",
-  :found false,
-  :base-type "armour",
-  :base nil,
-  :start
-  [{:upgradeable false,
-    :tags ["damage"],
-    :effect
-    "All physical damage you deal is converted to thunder damage."}],
-  :mods
-  [{:tags ["damage"],
-    :effect
-    "+1d[6] lightning damage against creatures that have taken thunder damage since the end of your last turn."}
-   {:tags ["survivability"],
-    :effect "+[6:3] maximum lightning and thunder barrier."}
-   {:tags ["damage"],
-    :effect
-    "+[1] damage with spells and attacks that deal both thunder and lightning damage."}
-   {:tags ["control" "accuracy"],
-    :points 20,
-    :effect
-    "Creatures deafened by you have -[1] to all saving throws, and -1 AB."}
-   {:upgradeable false,
-    :tags ["control"],
-    :effect
-    "Creatures that fail a saving throw against an effect of yours that deals thunder damage are deafened until the end of your next turn."}
-   {:upgradeable false,
-    :tags ["magic"],
-    :effect
-    "You learn the Booming Blade cantrip and may cast it at will. When cast in this way, any movement triggers the additional thunder damage, rather than just willful movement."}
-   {:tags ["magic"],
-    :points 20,
-    :effect
-    "+[10]% chance to recover the spell slot used for a spell if it deals lightning damage."}
-   {:upgradeable false,
-    :tags ["utility" "wealth"],
-    :effect
-    "Treat penalties to journey activities during 'rain' and 'thunderstorm' days as bonuses instead."}
-   {:upgradeable false,
-    :tags ["damage"],
-    :effect
-    "All non-physical, non-thunder damage you deal is converted to lightning damage."}],
   :levels nil,
   :sold false}]

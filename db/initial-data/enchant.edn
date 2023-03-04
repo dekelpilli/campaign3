@@ -375,8 +375,9 @@
              :traits    #{"Dual-wielding"}}}
  {:effect "You and your minions have +3 damage with critical hits."
   :tags   #{"critical"}}
- {:effect "Damage from your critical hits ignores barriers, resistances, and immunities."
-  :tags   #{"critical"}}
+ {:effect      "Damage from your critical hits ignores barriers, resistances, and immunities."
+  :upgradeable false
+  :tags        #{"critical"}}
  {:effect "5% chance to refund the spell slots used for spells cast outside of your turn."
   :tags   #{"magic"}}
  {:effect "Regain 2 hits points when you, or allies within [5] feet of you, take a critical hit and remain conscious."

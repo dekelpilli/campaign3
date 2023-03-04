@@ -24,7 +24,7 @@
             :tags   #{"magic"}}]}
  {:name   "Eternal Vigour"
   :info   "Improves your longevity in combat through various avenues."
-  :levels [{:effect "+1 resistance to damage, and +1 resistance to damage for each previous time you've been hit per round."
+  :levels [{:effect "+2 maximum barrier, and +2 maximum barrier for each previous time you've been hit per round."
             :tags   #{"survivability"}}
            {:effect "You have +3 to maximum hit points, and you have +1 maximum hit points per armour relic level."
             :tags   #{"survivability"}}
