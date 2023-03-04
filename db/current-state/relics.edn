@@ -399,6 +399,45 @@
     :progressed [],
     :level 6}],
   :sold false}
+ {:name "Sathaqian Hide",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:tags ["control"],
+    :effect
+    "No more than [once] per short rest, when you are hit by a melee or touch attack, the attacker must make a CON save or be poisoned (1min, repeat at turn starts)."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your barriers replenish at both the start and end of your turn."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Critical hits you receive do not deplete your barriers, although their damage is still reduced by any barriers that apply."}
+   {:tags ["damage"],
+    :effect "+[1d6] acid damage against poisoned enemies."}
+   {:tags ["accuracy"],
+    :effect "You have advantaged offence against Constructs."}
+   {:tags ["control"],
+    :effect
+    "When you knock an enemy prone, you may make a contested strength check. On a success, you may also knock them back up to 20 feet."}
+   {:tags ["survivability"],
+    :effect "You are resistant to damage from blinded enemies."}
+   {:upgradeable false,
+    :tags ["control"],
+    :effect
+    "Poisoned enemies you critically hit become blinded while they are poisoned."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "+[1] AC if you have poisoned or blinded an enemy in the last minute."}
+   {:tags ["control" "accuracy"],
+    :effect
+    "+1 DC against restrained enemies with effects that poison or blind."}],
+  :levels nil,
+  :sold false}
  {:name "Essence of Cerasil",
   :found true,
   :base-type "armour",

@@ -536,4 +536,31 @@
                :tags   #{"damage"}}
               {:effect "+[1] AB with weapon attacks against unarmoured (or naturally armoured) creatures."
                :points 20
-               :tags   #{"accuracy"}}]}]
+               :tags   #{"accuracy"}}]}
+ {:name      "Sathaqian Hide"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect "No more than [once] per short rest, when you are hit by a melee or touch attack, the attacker must make a CON save or be poisoned (1min, repeat at turn starts)."
+               :tags   #{"control"}}]
+  :mods      [{:effect      "Your barriers replenish at both the start and end of your turn."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect      "Critical hits you receive do not deplete your barriers, although their damage is still reduced by any barriers that apply."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "+[1d6] acid damage against poisoned enemies."
+               :tags   #{"damage"}}
+              {:effect "You have advantaged offence against Constructs."
+               :tags   #{"accuracy"}}
+              {:effect "When you knock an enemy prone, you may make a contested strength check. On a success, you may also knock them back up to 20 feet."
+               :tags   #{"control"}}
+              {:effect "You are resistant to damage from blinded enemies."
+               :tags   #{"survivability"}}
+              {:effect      "Poisoned enemies you critically hit become blinded while they are poisoned."
+               :upgradeable false
+               :tags        #{"control"}}
+              {:effect "+[1] AC if you have poisoned or blinded an enemy in the last minute."
+               :points 20
+               :tags   #{"survivability"}}
+              {:effect "+1 DC against restrained enemies with effects that poison or blind."
+               :tags   #{"control" "accuracy"}}]}]
