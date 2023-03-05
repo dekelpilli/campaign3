@@ -169,46 +169,50 @@
       :effect
       "+1 to your DCs with effects that would blind the target on a failed save."}],
     :progressed [],
-    :level 4}],
-  :sold false}
- {:name "Kartha-Kaya's Recklessness",
-  :found false,
-  :base-type "weapon",
-  :base nil,
-  :start
-  [{:upgradeable false,
-    :tags ["accuracy"],
-    :effect
-    "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."}],
-  :mods
-  [{:tags ["accuracy"],
-    :effect
-    "You have +[1] AB with attacks you make without advantage."}
-   {:tags ["critical"],
-    :effect
-    "You have +[1] critical hit range with attacks you make without advantage."}
-   {:tags ["utility"], :effect "You have +[2:1] to initiative rolls."}
-   {:tags ["utility"],
-    :effect
-    "You may dash as a free action no more than [once] per combat."}
-   {:tags ["damage"],
-    :effect
-    "No more than once per target per combat, +[6:3] damage with weapon attacks made on turns where you have moved at least 30 feet."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "No more than once per round, when you deal non-physical damage with a weapon attack, gain maximum barrier of that damage type equal to your level."}
-   {:tags ["survivability"],
-    :points 30,
-    :effect
-    "+[1] crit die with each non-physical damage type you deal with weapon attacks."}
-   {:tags ["damage"],
-    :effect "+1d[4] fire damage with weapon attacks."}
-   {:tags ["accuracy"],
-    :points 20,
-    :effect
-    "+[1] AB with weapon attacks against unarmoured (or naturally armoured) creatures."}],
-  :levels nil,
+    :level 4}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may wield one two-handed weapon with one hand instead. This weapon is still limited to one enchantment slot."}
+     {:upgradeable true,
+      :tags ["magic"],
+      :points 10,
+      :level 1,
+      :effect
+      "The number of spells you can prepare is increased by 1."}
+     {:upgradeable true,
+      :tags ["survivability" "utility"],
+      :points 10,
+      :level 1,
+      :effect "Your of Lay of Hands pool increases by [5:5]."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "No more than once per long rest, when a creature you have damaged lands a killing blow, you may force them to make a CHA save or be debilitated (repeat on turn ends)."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+1 to your DCs with effects that would blind the target on a failed save."}],
+    :progressed [],
+    :level 5}],
   :sold false}
  {:name "Wrath of the Stormbringer",
   :found true,
@@ -438,6 +442,115 @@
     "+1 DC against restrained enemies with effects that poison or blind."}],
   :levels nil,
   :sold false}
+ {:name "Kartha-Kaya's Recklessness",
+  :found true,
+  :base-type "weapon",
+  :base "Rapier",
+  :start
+  [{:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."}],
+  :mods
+  [{:tags ["accuracy"],
+    :effect
+    "You have +[1] AB with attacks you make without advantage."}
+   {:tags ["critical"],
+    :effect
+    "You have +[1] critical hit range with attacks you make without advantage."}
+   {:tags ["utility"], :effect "You have +[2:1] to initiative rolls."}
+   {:tags ["utility"],
+    :effect
+    "You may dash as a free action no more than [once] per combat."}
+   {:tags ["damage"],
+    :effect
+    "No more than once per target per combat, +[6:3] damage with weapon attacks made on turns where you have moved at least 30 feet."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "No more than once per round, when you deal non-physical damage with a weapon attack, gain maximum barrier of that damage type equal to your level."}
+   {:tags ["survivability"],
+    :points 30,
+    :effect
+    "+[1] crit die with each non-physical damage type you deal with weapon attacks."}
+   {:tags ["damage"],
+    :effect "+1d[4] fire damage with weapon attacks."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "+[1] AB with weapon attacks against unarmoured (or naturally armoured) creatures."}],
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[1] AB with weapon attacks against unarmoured (or naturally armoured) creatures."}
+     {:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You have advantaged offence with weapon attacks and maneuvers. You have disadvantaged defence."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}],
+    :progressed [],
+    :level 4}],
+  :sold true}
  {:name "Essence of Cerasil",
   :found true,
   :base-type "armour",
@@ -783,7 +896,47 @@
       :committed 10,
       :effect
       "Your gain maximum hit points equal to the [number of modifiers] on this item."}],
-    :level 6}],
+    :level 6}
+   {:existing
+    [{:upgradeable false,
+      :tags ["critical" "utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "You may take an additional action the end of an action where you landed a killing blow with a critical hit.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "Your gain maximum hit points equal to the [number of modifiers] on this item."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You regenerate [2:1] hit points at the end of your turn while bloodied."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn.",
+      :prohibits nil}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "You have +[1]AC if you have been down during the current combat."}],
+    :progressed [],
+    :level 7}],
   :sold false}
  {:name "Wandslinger's Grips",
   :found true,
@@ -937,101 +1090,6 @@
       :effect "Your ranged and thrown weapons gain the Parry trait."}],
     :progressed [],
     :level 4}],
-  :sold true}
- {:name "Essence of Eion",
-  :found true,
-  :base-type "weapon",
-  :base "Ring Blade",
-  :start
-  [{:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
-  :mods
-  [{:tags ["magic" "control" "accuracy" "damage"],
-    :effect
-    "You learn the Ensnaring Strike spell and may cast it [once] per short rest."}
-   {:tags ["accuracy"],
-    :points 20,
-    :effect
-    "You have +1AB with weapon attacks if you have cast a Conjuration spell in the last 18 seconds."}
-   {:tags ["accuracy"],
-    :effect
-    "+[3:1] weapon damage while under the effect of a Conjuration spell."}
-   {:tags ["magic" "critical"],
-    :effect
-    "When you land a critical hit while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."}
-   {:tags ["control"],
-    :effect
-    "Enemies you have teleported in the last [6] seconds are rattled."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "You may immediately teleport to a location you can see within 30 feet of you and within 5 feet of an enemy upon rolling for initiative when not surprised."}
-   {:tags ["utility"],
-    :effect
-    "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, even if the attack kills the enemy."}
-   {:tags ["damage"],
-    :points 20,
-    :effect
-    "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."}],
-  :levels
-  [{:existing
-    [{:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
-    :progressed [],
-    :level 1}
-   {:existing
-    [{:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
-     {:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
-    :progressed [],
-    :level 2}
-   {:existing
-    [{:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
-     {:upgradeable false,
-      :tags ["utility"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "When you deliver a Killing Blow, heal 5 hit points.",
-      :prohibits nil}],
-    :progressed [],
-    :level 3}],
   :sold true}
  {:name "Essence of Ketis",
   :found true,
@@ -1359,8 +1417,163 @@
       :effect "+1 incoming healing.",
       :prohibits nil}],
     :progressed [],
-    :level 6}],
+    :level 6}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[1d4] fire damage with weapons and spells."}],
+    :progressed [],
+    :level 7}],
   :sold false}
+ {:name "Essence of Eion",
+  :found true,
+  :base-type "weapon",
+  :base "Ring Blade",
+  :start
+  [{:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
+  :mods
+  [{:tags ["magic" "control" "accuracy" "damage"],
+    :effect
+    "You learn the Ensnaring Strike spell and may cast it [once] per short rest."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "You have +1AB with weapon attacks if you have cast a Conjuration spell in the last 18 seconds."}
+   {:tags ["accuracy"],
+    :effect
+    "+[3:1] weapon damage while under the effect of a Conjuration spell."}
+   {:tags ["magic" "critical"],
+    :effect
+    "When you land a critical hit while under the effect of a Conjuration spell you cast, you have a [50:10]% chance to regain the resources used for casting that spell."}
+   {:tags ["control"],
+    :effect
+    "Enemies you have teleported in the last [6] seconds are rattled."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "You may immediately teleport to a location you can see within 30 feet of you and within 5 feet of an enemy upon rolling for initiative when not surprised."}
+   {:tags ["utility"],
+    :effect
+    "No more than [once] per combat, when hitting an enemy with a weapon attack, you may teleport to any space within 5 feet of that enemy, even if the attack kills the enemy."}
+   {:tags ["damage"],
+    :points 20,
+    :effect
+    "No more than [once] per long rest, as an action, you may conjure a copy of your weapons. During your next two turns, the weapons follow you and mimic any attacks you make (rolling separately)."}],
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you land a killing blow, you may immediately teleport to a location you can see within 30 feet of you."}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "When you hit with an opportunity attack with this weapon, you may forego dealing any damage to instead teleport the enemy to a random space within 5 feet of you at the end of their turn."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "When you deliver a Killing Blow, heal 5 hit points.",
+      :prohibits nil}],
+    :progressed [],
+    :level 3}],
+  :sold true}
  {:name "Blazing Glory",
   :found true,
   :base-type "weapon",
@@ -2036,7 +2249,7 @@
       :effect "Your ranged weapon attacks have +1 AB."}],
     :progressed [],
     :level 5}],
-  :sold false}
+  :sold true}
  {:name "Carl's Partnership",
   :found true,
   :base-type "weapon",
