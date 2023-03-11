@@ -551,6 +551,50 @@
     :progressed [],
     :level 4}],
   :sold true}
+ {:name "Essence of Vuneta",
+  :found false,
+  :base-type "armour",
+  :base nil,
+  :start
+  [{:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Your barriers are twice as effective against damage from enemies you haven't damaged before."}],
+  :mods
+  [{:tags ["control" "accuracy"],
+    :effect "+1 to your DC with effects that can charm."}
+   {:tags ["survivability"],
+    :effect
+    "While conscious, regain [2:1] hit points at the end of your turn if you dealt no damage during that turn."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "+[2:1] AC if you have not dealt damage since your last initiative roll."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "When you use a non-damaging maneuver, regain hit points equal to [1x] the maneuver degree."}
+   {:tags ["control"],
+    :effect
+    "Critical hits by creatures in combat you can see but haven't damaged have a [50:25]% chance to do regular damage."}
+   {:tags ["utility"],
+    :points 30,
+    :effect
+    "Creatures of your choice that have been within 5 feet of your consecutively for 12 seconds gain +[1] to all rolls until this condition is broken."}
+   {:tags ["utility"],
+    :points 20,
+    :effect
+    "Gain +[1] to all rolls while you are within 5 feet of an allied creature you have been within 5 feet of for at least 12 seconds."}
+   {:tags ["control"],
+    :upgradeable? false,
+    :effect
+    "Creatures you have healed in the last hour have disadvantage on saves against your charms and charm-like effects."}
+   {:tags ["control" "accuracy"],
+    :points 20,
+    :effect
+    "Non-damaging conditions you inflict require +[1] DC to escape. The DC returns to normal if the creature is damaged."}],
+  :levels nil,
+  :sold false}
  {:name "Essence of Cerasil",
   :found true,
   :base-type "armour",
