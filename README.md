@@ -81,6 +81,7 @@ You can use divinity dust to progress your progress in a divinity path you have 
 ### Sales and services
 - Orbs of Flux: 5
 - Orbs of Disavowment: 10
+- Orb of Alteration: 15
 - Mundanes: 10
 
 ### Tags
