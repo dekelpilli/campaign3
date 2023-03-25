@@ -593,4 +593,30 @@
                :upgradeable? false}
               {:effect "Non-damaging conditions you inflict require +[1] DC to escape. The DC returns to normal if the creature is damaged."
                :points 20
-               :tags   #{"accuracy" "control"}}]}]
+               :tags   #{"accuracy" "control"}}]}
+ {:name      "Ygdrassil's Evolution"
+  :found     false
+  :base-type "weapon"
+  :start     [{:effect "+1d4 acid damage with attacks."
+               :tags   #{"damage"}}]
+  :mods      [{:effect "No more than once per turn, when you hit an enemy with an attack that deals acid damage, you may cause other enemies within 5 feet of it to take [1] acid damage."
+               :tags   #{"damage"}}
+              {:effect "+[3:2] physical damage with attacks whose acid damage dice deal more average then any other element's damage dice."
+               :tags   #{"damage"}}
+              {:effect      "No more than once per creature, when you are hit by a creature you have critically hit with acid damage, that creature must make a Wisdom saving throw or be frightened (1min, repeating)."
+               :tags        #{"control" "critical"}
+               :upgradeable false}
+              {:effect "You gain Flyby. Gain +[5] feet flying speed for a minute at the end of a round where you have dealt acid damage."
+               :tags   #{"utility"}}
+              {:effect      "At the end of a turn where you have damage multiple creatures with acid damage, gain temporary hit points equal to the amount of creatures damaged in this way."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "+1 expertise die with checks made to identify, cure, or create acids and poisons."
+               :tags   #{"utility"}}
+              {:effect "+1d4 acid damage against enemies whose maximum hit points have been lowered."
+               :tags   #{"damage"}}
+              {:effect      "Acid damage you deal reduces enemy hit points by half of the amount of damage dealt."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "+[4:2] maximum acid barrier."
+               :tags   #{"survivability"}}]}]
