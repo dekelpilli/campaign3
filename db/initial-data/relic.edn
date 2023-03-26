@@ -619,4 +619,36 @@
                :upgradeable false
                :tags        #{"utility"}}
               {:effect "+[4:2] maximum acid barrier."
-               :tags   #{"survivability"}}]}]
+               :tags   #{"survivability"}}]}
+ {:name      "Brute's Ascension"
+  :found     false
+  :base-type "armour"
+  :start     [{:effect      "Non-physical damage from your spells is converted to bludgeoning damage."
+               :upgradeable false
+               :tags        #{"damage"}}]
+  :mods      [{:effect      "Non-physical spell damage you take is converted to bludgeoning damage."
+               :upgradeable false
+               :tags        #{"survivability"}}
+              {:effect "You cannot deal non-physical damage. +[2:2] bludgeoning damage with weapon attacks that would otherwise deal non-physical damage."
+               :tags   #{"damage"}}
+              {:effect "+[1] to all saving throws if you have taken bludgeoning damage in the last minute."
+               :tags   #{"survivability"}
+               :points 20}
+              {:effect      "Your staves, and your shield, sling, and brawling type weapons gain the Deadly trait. Your club and hammer type weapons gain the forceful trait."
+               :upgradeable false
+               :tags        #{"utility"}}
+              {:effect "+[1] to your spell AB and spell save DCs while you have at least 20 strength."
+               :points 20
+               :tags   #{"accuracy"}}
+              {:effect "+[1] Strength."
+               :points 20
+               :tags   #{"utility"}}
+              {:effect "+[1] to your Intelligence, Wisdom, and Charisma scores."
+               :points 40
+               :tags   #{"utility"}}
+              {:effect "+[3:1] damage with spells you cast that naturally deal physical damage."
+               :tags   #{"damage"}
+               :points 10}
+              {:effect      "All of your specific single-damage type barriers are converted to bludgeoning."
+               :upgradeable false
+               :tags        #{"survivability"}}]}]
