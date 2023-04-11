@@ -147,4 +147,8 @@
  {:type "loot:12", :session 19, :amount 1}
  {:type "loot:9", :session 19, :amount 2}
  {:type "loot:11", :session 19, :amount 2}
- {:type "loot:2", :session 19, :amount 2}]
+ {:type "loot:2", :session 19, :amount 2}
+ {:type "days:other", :session 21, :amount 8}
+ {:type "days:travel", :session 21, :amount 1}
+ {:type "encounter:positive", :session 21, :amount 1}
+ {:type "loot:5", :session 21, :amount 1}]

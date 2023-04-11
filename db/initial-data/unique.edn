@@ -64,7 +64,7 @@
             {:effect "You have +3 physical damage with melee attacks."
              :tags   #{"survivability"}}
             {:effect "+2 to your Strength maximum."
-             :tags   #{"survivability"}}
+             :tags   #{"utility"}}
             {:effect "You cannot cast spells."}
             {:effect "You can wear a maximum of 1 relic."}]}
  {:name    "Garb of the Unhinged"

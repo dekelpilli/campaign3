@@ -2132,6 +2132,182 @@
     :progressed [],
     :level 6}],
   :sold true}
+ {:name "Essence of Bara",
+  :found true,
+  :base-type "armour",
+  :base "Unarmoured gloves",
+  :start
+  [{:tags ["survivability"],
+    :points 20,
+    :effect
+    "+[2:1] damage resistance while you have an active stance."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["survivability"],
+    :effect "You have proficiency in Strength saving throws."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "At the end of your turn, gain physical damage resistance equal to the number of different physical damage types you dealt during your turn, until the end of your next turn."}
+   {:tags ["accuracy"], :points 20, :effect "+1 to your maneuver DCs."}
+   {:tags ["damage"],
+    :effect
+    "Your weapon attacks have +1 bludgeoning damage, even if they normally deal no bludgeoning damage."}
+   {:tags ["utility"],
+    :points 30,
+    :effect
+    "Your Strength and Dexterity become equal to the highest of your [Strength, Dexterity:, and Constitution]."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "Gain weapon damage equal to the number of exertion points you have used since the start of your last turn."}
+   {:upgradeable false,
+    :tags ["accuracy"],
+    :effect
+    "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "The Staggered, Poisoned, Prone, and Restrained conditions do not grant advantage to weapon attacks made against you."}
+   {:tags ["utility"],
+    :effect
+    "When you make a Strength or Athletics check, you can replace the number you roll with a [12:+1]"}],
+  :levels
+  [{:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :level 2}
+   {:existing
+    [{:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+1 to your maneuver DCs."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+1 to your maneuver DCs."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+1 to your maneuver DCs."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}],
+    :progressed
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect "+1 to your maneuver DCs."}],
+    :level 6}
+   {:existing
+    [{:upgradeable false,
+      :tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+1 to your maneuver DCs."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 2,
+      :committed 10,
+      :effect
+      "+[2:1] damage resistance while you have an active stance."}
+     {:tags ["utility"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :effect
+      "Your Strength and Dexterity become equal to the highest of your [Strength, Dexterity:, and Constitution]."}],
+    :progressed
+    [{:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :effect "+1 to your maneuver DCs."}],
+    :level 7}],
+  :sold false}
  {:name "Essence of Ateus",
   :found true,
   :base-type "armour",
@@ -2352,148 +2528,6 @@
       "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
     :progressed [],
     :level 5}],
-  :sold false}
- {:name "Essence of Bara",
-  :found true,
-  :base-type "armour",
-  :base "Unarmoured gloves",
-  :start
-  [{:tags ["survivability"],
-    :points 20,
-    :effect
-    "+[2:1] damage resistance while you have an active stance."}],
-  :mods
-  [{:upgradeable false,
-    :tags ["survivability"],
-    :effect "You have proficiency in Strength saving throws."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "At the end of your turn, gain physical damage resistance equal to the number of different physical damage types you dealt during your turn, until the end of your next turn."}
-   {:tags ["accuracy"], :points 20, :effect "+1 to your maneuver DCs."}
-   {:tags ["damage"],
-    :effect
-    "Your weapon attacks have +1 bludgeoning damage, even if they normally deal no bludgeoning damage."}
-   {:tags ["utility"],
-    :points 30,
-    :effect
-    "Your Strength and Dexterity become equal to the highest of your [Strength, Dexterity:, and Constitution]."}
-   {:upgradeable false,
-    :tags ["damage"],
-    :effect
-    "Gain weapon damage equal to the number of exertion points you have used since the start of your last turn."}
-   {:upgradeable false,
-    :tags ["accuracy"],
-    :effect
-    "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "The Staggered, Poisoned, Prone, and Restrained conditions do not grant advantage to weapon attacks made against you."}
-   {:tags ["utility"],
-    :effect
-    "When you make a Strength or Athletics check, you can replace the number you roll with a [12:+1]"}],
-  :levels
-  [{:existing
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 1}
-   {:existing
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :level 2}
-   {:existing
-    [{:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 2,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 3}
-   {:existing
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect "+1 to your maneuver DCs."}
-     {:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 2,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 4}
-   {:existing
-    [{:upgradeable false,
-      :tags ["accuracy"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
-     {:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect "+1 to your maneuver DCs."}
-     {:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 2,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed [],
-    :level 5}
-   {:existing
-    [{:upgradeable false,
-      :tags ["accuracy"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "The Debilitated, Prone, and Restrained conditions do not impose disadvantage on your weapon attacks."}
-     {:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :effect "+1 to your maneuver DCs."}
-     {:tags ["survivability"],
-      :points 10,
-      :upgrade-points 20,
-      :level 2,
-      :committed 10,
-      :effect
-      "+[2:1] damage resistance while you have an active stance."}],
-    :progressed
-    [{:tags ["accuracy"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :committed 10,
-      :effect "+1 to your maneuver DCs."}],
-    :level 6}],
   :sold false}
  {:name "Desmond's Madness",
   :found true,
