@@ -641,7 +641,39 @@
       :effect
       "+[1] AC if you have poisoned or blinded an enemy in the last minute."}],
     :progressed [],
-    :level 5}],
+    :level 5}
+   {:existing
+    [{:tags ["control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "No more than [once] per short rest, when you are hit by a melee or touch attack, the attacker must make a CON save or be poisoned (1min, repeat at turn starts)."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "You are resistant to damage from blinded enemies."}
+     {:upgradeable false,
+      :tags ["control"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Poisoned enemies you critically hit become blinded while they are poisoned."}
+     {:tags ["survivability"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[1] AC if you have poisoned or blinded an enemy in the last minute."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "You have advantaged offence against Constructs."}],
+    :progressed [],
+    :level 6}],
   :sold false}
  {:name "Essence of Vuneta",
   :found true,
