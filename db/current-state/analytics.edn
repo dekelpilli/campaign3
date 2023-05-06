@@ -158,4 +158,11 @@
  {:type "loot:2", :session 22, :amount 1}
  {:type "loot:4", :session 22, :amount 2}
  {:type "loot:5", :session 22, :amount 1}
- {:type "loot:7", :session 22, :amount 1}]
+ {:type "loot:7", :session 22, :amount 1}
+ {:type "days:other", :session 23, :amount 1}
+ {:type "loot:4", :session 23, :amount 2}
+ {:type "loot:5", :session 23, :amount 1}
+ {:type "loot:6", :session 23, :amount 1}
+ {:type "loot:7", :session 23, :amount 1}
+ {:type "loot:8", :session 23, :amount 2}
+ {:type "loot:12", :session 23, :amount 1}]
