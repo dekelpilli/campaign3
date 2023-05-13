@@ -165,4 +165,10 @@
  {:type "loot:6", :session 23, :amount 1}
  {:type "loot:7", :session 23, :amount 1}
  {:type "loot:8", :session 23, :amount 2}
- {:type "loot:12", :session 23, :amount 1}]
+ {:type "loot:12", :session 23, :amount 1}
+ {:type "loot:2", :session 24, :amount 1}
+ {:type "loot:3", :session 24, :amount 1}
+ {:type "days:travel", :session 24, :amount 10}
+ {:type "encounter:random", :session 24, :amount 2}
+ {:type "loot:7", :session 24, :amount 1}
+ {:type "days:other", :session 24, :amount 1}]

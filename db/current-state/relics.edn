@@ -674,7 +674,7 @@
       :effect "You have advantaged offence against Constructs."}],
     :progressed [],
     :level 6}],
-  :sold false}
+  :sold true}
  {:name "Essence of Vuneta",
   :found true,
   :base-type "armour",
@@ -918,6 +918,463 @@
     :effect
     "All of your specific single-damage type barriers are converted to bludgeoning."}],
   :levels nil,
+  :sold false}
+ {:name "Essence of Ketis",
+  :found true,
+  :base-type "weapon",
+  :base "Warhammer",
+  :start
+  [{:upgradeable true,
+    :tags ["wealth"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "You find loot as if your Investigation and Survival check results are 1 point higher."}
+   {:upgradeable true,
+    :tags ["survivability"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "While up, regenerate 1 hit point at the start of each round of combat."}
+   {:upgradeable true,
+    :tags ["critical"],
+    :points 10,
+    :upgrade-points 10,
+    :effect
+    "Damage from your critical hits ignores resistances and immunities."}
+   {:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
+  :mods
+  [{:tags ["survivability"],
+    :effect
+    "At the end of a turn of yours where you have dealt elemental damage, you gain +1 resistance to elemental damage until the end of the combat, to a maximum of [5:1] from this modifier."}
+   {:upgradeable false,
+    :tags ["critical"],
+    :effect
+    "Acid damage from attacks that have critically hit is always rolled at its maximum value."}
+   {:tags ["damage"], :effect "+[2:1] die size with cold damage."}
+   {:tags ["damage"],
+    :effect "+[1d4] fire damage with weapons and spells."}
+   {:tags ["damage"],
+    :effect
+    "Your spells and weapon attacks always deal a minimum of [3:1] thunder damage."}
+   {:tags ["damage"], :effect "+[2:1] acid block thorns."}
+   {:tags ["damage"],
+    :points 20,
+    :effect
+    "Creatures of your choice within [5] feet of creature you deal lightning damage to also take 1 lightning damage from the same source (i.e. would benefit from the same damage bonuses as the original damage dealer). This does not chain."}
+   {:tags ["damage"],
+    :effect
+    "+[2:1] damage with spells and attacks that only deal elemental damage."}
+   {:tags ["accuracy"],
+    :points 30,
+    :effect "+[1] AB with attacks that would deal elemental damage."}],
+  :levels
+  [{:existing
+    [{:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}],
+    :progressed [],
+    :level 6}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[1d4] fire damage with weapons and spells."}],
+    :progressed [],
+    :level 7}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+[2:1] damage against enemies you are flanking.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You find loot as if your Investigation and Survival check results are 1 point higher."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect
+      "While up, regenerate 1 hit point at the start of each round of combat."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Damage from your critical hits ignores resistances and immunities."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 incoming healing.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+[1d4] fire damage with weapons and spells."}],
+    :progressed
+    [{:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :committed 10,
+      :requires nil,
+      :effect "+1 critical hit range with attacks.",
+      :prohibits nil}],
+    :level 8}],
   :sold false}
  {:name "Essence of Cerasil",
   :found true,
@@ -1459,394 +1916,6 @@
     :progressed [],
     :level 4}],
   :sold true}
- {:name "Essence of Ketis",
-  :found true,
-  :base-type "weapon",
-  :base "Warhammer",
-  :start
-  [{:upgradeable true,
-    :tags ["wealth"],
-    :points 10,
-    :upgrade-points 10,
-    :effect
-    "You find loot as if your Investigation and Survival check results are 1 point higher."}
-   {:upgradeable true,
-    :tags ["survivability"],
-    :points 10,
-    :upgrade-points 10,
-    :effect
-    "While up, regenerate 1 hit point at the start of each round of combat."}
-   {:upgradeable true,
-    :tags ["critical"],
-    :points 10,
-    :upgrade-points 10,
-    :effect
-    "Damage from your critical hits ignores resistances and immunities."}
-   {:upgradeable false,
-    :tags ["damage"],
-    :effect
-    "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
-  :mods
-  [{:tags ["survivability"],
-    :effect
-    "At the end of a turn of yours where you have dealt elemental damage, you gain +1 resistance to elemental damage until the end of the combat, to a maximum of [5:1] from this modifier."}
-   {:upgradeable false,
-    :tags ["critical"],
-    :effect
-    "Acid damage from attacks that have critically hit is always rolled at its maximum value."}
-   {:tags ["damage"], :effect "+[2:1] die size with cold damage."}
-   {:tags ["damage"],
-    :effect "+[1d4] fire damage with weapons and spells."}
-   {:tags ["damage"],
-    :effect
-    "Your spells and weapon attacks always deal a minimum of [3:1] thunder damage."}
-   {:tags ["damage"], :effect "+[2:1] acid block thorns."}
-   {:tags ["damage"],
-    :points 20,
-    :effect
-    "Creatures of your choice within [5] feet of creature you deal lightning damage to also take 1 lightning damage from the same source (i.e. would benefit from the same damage bonuses as the original damage dealer). This does not chain."}
-   {:tags ["damage"],
-    :effect
-    "+[2:1] damage with spells and attacks that only deal elemental damage."}
-   {:tags ["accuracy"],
-    :points 30,
-    :effect "+[1] AB with attacks that would deal elemental damage."}],
-  :levels
-  [{:existing
-    [{:upgradeable true,
-      :tags ["wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You find loot as if your Investigation and Survival check results are 1 point higher."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "While up, regenerate 1 hit point at the start of each round of combat."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "Damage from your critical hits ignores resistances and immunities."}
-     {:upgradeable false,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
-    :progressed [],
-    :level 1}
-   {:existing
-    [{:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+[2:1] damage against enemies you are flanking.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You find loot as if your Investigation and Survival check results are 1 point higher."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "While up, regenerate 1 hit point at the start of each round of combat."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "Damage from your critical hits ignores resistances and immunities."}
-     {:upgradeable false,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}],
-    :progressed [],
-    :level 2}
-   {:existing
-    [{:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+[2:1] damage against enemies you are flanking.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You find loot as if your Investigation and Survival check results are 1 point higher."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "While up, regenerate 1 hit point at the start of each round of combat."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "Damage from your critical hits ignores resistances and immunities."}
-     {:upgradeable false,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :requires nil,
-      :effect "+1 critical hit range with attacks.",
-      :prohibits nil}],
-    :progressed [],
-    :level 3}
-   {:existing
-    [{:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+[2:1] damage against enemies you are flanking.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You find loot as if your Investigation and Survival check results are 1 point higher."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 2,
-      :effect
-      "While up, regenerate 1 hit point at the start of each round of combat."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "Damage from your critical hits ignores resistances and immunities."}
-     {:upgradeable false,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :requires nil,
-      :effect "+1 critical hit range with attacks.",
-      :prohibits nil}],
-    :progressed [],
-    :level 4}
-   {:existing
-    [{:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+[2:1] damage against enemies you are flanking.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You find loot as if your Investigation and Survival check results are 1 point higher."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 2,
-      :effect
-      "While up, regenerate 1 hit point at the start of each round of combat."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "Damage from your critical hits ignores resistances and immunities."}
-     {:upgradeable false,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :requires nil,
-      :effect "+1 critical hit range with attacks.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+1 incoming healing.",
-      :prohibits nil}],
-    :progressed [],
-    :level 5}
-   {:existing
-    [{:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+[2:1] damage against enemies you are flanking.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You find loot as if your Investigation and Survival check results are 1 point higher."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 3,
-      :effect
-      "While up, regenerate 1 hit point at the start of each round of combat."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "Damage from your critical hits ignores resistances and immunities."}
-     {:upgradeable false,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :requires nil,
-      :effect "+1 critical hit range with attacks.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+1 incoming healing.",
-      :prohibits nil}],
-    :progressed [],
-    :level 6}
-   {:existing
-    [{:upgradeable true,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+[2:1] damage against enemies you are flanking.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["wealth"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You find loot as if your Investigation and Survival check results are 1 point higher."}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 3,
-      :effect
-      "While up, regenerate 1 hit point at the start of each round of combat."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "Damage from your critical hits ignores resistances and immunities."}
-     {:upgradeable false,
-      :tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect
-      "You may convert any non-physical, non-elemental damage you would deal to acid, cold, fire, lightning, or thunder damage."}
-     {:upgradeable true,
-      :tags ["critical"],
-      :points 10,
-      :upgrade-points 20,
-      :level 1,
-      :requires nil,
-      :effect "+1 critical hit range with attacks.",
-      :prohibits nil}
-     {:upgradeable true,
-      :tags ["survivability"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :requires nil,
-      :effect "+1 incoming healing.",
-      :prohibits nil}
-     {:tags ["damage"],
-      :points 10,
-      :upgrade-points 10,
-      :level 1,
-      :effect "+[1d4] fire damage with weapons and spells."}],
-    :progressed [],
-    :level 7}],
-  :sold false}
  {:name "Essence of Eion",
   :found true,
   :base-type "weapon",
@@ -2891,7 +2960,49 @@
       :effect "+1 damage to melee and touch attacks.",
       :prohibits nil}],
     :progressed [],
-    :level 7}],
+    :level 7}
+   {:existing
+    [{:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :requires nil,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage.",
+      :prohibits nil}
+     {:upgradeable false,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Critical hits from your weapon attacks do not override non-lethal."}
+     {:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Physical damage from attacks made during your bonus action is converted to fire damage."}
+     {:upgradeable true,
+      :tags ["wealth"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+5 to gold found.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect "+1 damage to melee and touch attacks.",
+      :prohibits nil}],
+    :progressed [],
+    :level 8}],
   :sold false}
  {:name "Brass Antler",
   :found true,
