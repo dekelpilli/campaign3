@@ -171,4 +171,8 @@
  {:type "days:travel", :session 24, :amount 10}
  {:type "encounter:random", :session 24, :amount 2}
  {:type "loot:7", :session 24, :amount 1}
- {:type "days:other", :session 24, :amount 1}]
+ {:type "days:other", :session 24, :amount 1}
+ {:type "loot:1", :session 25, :amount 1}
+ {:type "loot:2", :session 25, :amount 1}
+ {:type "loot:4", :session 25, :amount 2}
+ {:type "loot:10", :session 25, :amount 2}]

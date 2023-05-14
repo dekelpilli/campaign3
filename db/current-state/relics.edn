@@ -876,49 +876,6 @@
    {:tags ["survivability"], :effect "+[4:2] maximum acid barrier."}],
   :levels nil,
   :sold false}
- {:name "Brute's Ascension",
-  :found false,
-  :base-type "armour",
-  :base nil,
-  :start
-  [{:upgradeable false,
-    :tags ["damage"],
-    :effect
-    "Non-physical damage from your spells is converted to bludgeoning damage."}],
-  :mods
-  [{:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "Non-physical spell damage you take is converted to bludgeoning damage."}
-   {:tags ["damage"],
-    :effect
-    "You cannot deal non-physical damage. +[2:2] bludgeoning damage with weapon attacks that would otherwise deal non-physical damage."}
-   {:tags ["survivability"],
-    :points 20,
-    :effect
-    "+[1] to all saving throws if you have taken bludgeoning damage in the last minute."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "Your staves, and your shield, sling, and brawling type weapons gain the Deadly trait. Your club and hammer type weapons gain the forceful trait."}
-   {:tags ["accuracy"],
-    :points 20,
-    :effect
-    "+[1] to your spell AB and spell save DCs while you have at least 20 strength."}
-   {:tags ["utility"], :points 20, :effect "+[1] Strength."}
-   {:tags ["utility"],
-    :points 40,
-    :effect "+[1] to your Intelligence, Wisdom, and Charisma scores."}
-   {:tags ["damage"],
-    :points 10,
-    :effect
-    "+[3:1] damage with spells you cast that naturally deal physical damage."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "All of your specific single-damage type barriers are converted to bludgeoning."}],
-  :levels nil,
-  :sold false}
  {:name "Essence of Ketis",
   :found true,
   :base-type "weapon",
@@ -1438,6 +1395,477 @@
       "You have [1] additional use of your amulet per long rest if the contained creature is a Beast or Plant type creature."}],
     :level 2}],
   :sold true}
+ {:name "Brute's Ascension",
+  :found true,
+  :base-type "armour",
+  :base "Unarmoured gloves",
+  :start
+  [{:upgradeable false,
+    :tags ["damage"],
+    :effect
+    "Non-physical damage from your spells is converted to bludgeoning damage."}],
+  :mods
+  [{:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "Non-physical spell damage you take is converted to bludgeoning damage."}
+   {:tags ["damage"],
+    :effect
+    "You cannot deal non-physical damage. +[2:2] bludgeoning damage with weapon attacks that would otherwise deal non-physical damage."}
+   {:tags ["survivability"],
+    :points 20,
+    :effect
+    "+[1] to all saving throws if you have taken bludgeoning damage in the last minute."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "Your staves, and your shield, sling, and brawling type weapons gain the Deadly trait. Your club and hammer type weapons gain the forceful trait."}
+   {:tags ["accuracy"],
+    :points 20,
+    :effect
+    "+[1] to your spell AB and spell save DCs while you have at least 20 strength."}
+   {:tags ["utility"], :points 20, :effect "+[1] Strength."}
+   {:tags ["utility"],
+    :points 40,
+    :effect "+[1] to your Intelligence, Wisdom, and Charisma scores."}
+   {:tags ["damage"],
+    :points 10,
+    :effect
+    "+[3:1] damage with spells you cast that naturally deal physical damage."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "All of your specific single-damage type barriers are converted to bludgeoning."}],
+  :levels
+  [{:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Non-physical damage from your spells is converted to bludgeoning damage."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :effect "+10ft swimming speed, and you can breath under water."}
+     {:upgradeable true,
+      :tags ["magic" "control" "accuracy"],
+      :points 30,
+      :upgrade-points 30,
+      :effect
+      "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage."}
+     {:upgradeable true,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Non-physical damage from your spells is converted to bludgeoning damage."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :effect "+10ft swimming speed, and you can breath under water."}
+     {:upgradeable true,
+      :tags ["magic" "control" "accuracy"],
+      :points 30,
+      :upgrade-points 30,
+      :effect
+      "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage."}
+     {:upgradeable true,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 maximum Strength.",
+      :prohibits nil}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Non-physical damage from your spells is converted to bludgeoning damage."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :effect "+10ft swimming speed, and you can breath under water."}
+     {:upgradeable true,
+      :tags ["magic" "control" "accuracy"],
+      :points 30,
+      :upgrade-points 30,
+      :effect
+      "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage."}
+     {:upgradeable true,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 maximum Strength.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 25,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC while using a Shield or a Targe weapon.",
+      :prohibits nil}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Non-physical damage from your spells is converted to bludgeoning damage."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :effect "+10ft swimming speed, and you can breath under water."}
+     {:upgradeable true,
+      :tags ["magic" "control" "accuracy"],
+      :points 30,
+      :upgrade-points 30,
+      :effect
+      "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage."}
+     {:upgradeable true,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 maximum Strength.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 25,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC while using a Shield or a Targe weapon.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "armour"},
+      :effect "+2 maximum poison barrier.",
+      :prohibits nil}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Non-physical damage from your spells is converted to bludgeoning damage."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :effect "+10ft swimming speed, and you can breath under water."}
+     {:upgradeable true,
+      :tags ["magic" "control" "accuracy"],
+      :points 30,
+      :upgrade-points 30,
+      :effect
+      "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage."}
+     {:upgradeable true,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 maximum Strength.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 25,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC while using a Shield or a Targe weapon.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "armour"},
+      :effect "+2 maximum poison barrier.",
+      :prohibits nil}
+     {:tags ["utility"],
+      :points 10,
+      :upgrade-points 40,
+      :level 1,
+      :effect
+      "+[1] to your Intelligence, Wisdom, and Charisma scores."}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Non-physical damage from your spells is converted to bludgeoning damage."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :effect "+10ft swimming speed, and you can breath under water."}
+     {:upgradeable true,
+      :tags ["magic" "control" "accuracy"],
+      :points 30,
+      :upgrade-points 30,
+      :effect
+      "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage."}
+     {:upgradeable true,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 maximum Strength.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 25,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC while using a Shield or a Targe weapon.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "armour"},
+      :effect "+2 maximum poison barrier.",
+      :prohibits nil}
+     {:tags ["utility"],
+      :points 10,
+      :upgrade-points 40,
+      :level 1,
+      :effect
+      "+[1] to your Intelligence, Wisdom, and Charisma scores."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[1] to your spell AB and spell save DCs while you have at least 20 strength."}],
+    :progressed [],
+    :level 6}
+   {:existing
+    [{:upgradeable false,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "Non-physical damage from your spells is converted to bludgeoning damage."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :effect "+10ft swimming speed, and you can breath under water."}
+     {:upgradeable true,
+      :tags ["magic" "control" "accuracy"],
+      :points 30,
+      :upgrade-points 30,
+      :effect
+      "Creatures of your choice under the effect of a spell of yours or a condition you caused have -[1] to saving throws against spells and conditions."}
+     {:upgradeable false,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a critical hit with an attack of opportunity, the target is debilitated until the end of their turn."}
+     {:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "Your critical hits add 1 additional damage die from the source's base damage."}
+     {:upgradeable true,
+      :tags ["critical" "control"],
+      :points 10,
+      :upgrade-points 10,
+      :effect
+      "When you score a natural critical hit against an enemy with at least one condition, including a condition caused by the critical hit, you may lock [1] condition on that creature until the start of your next turn. A locked condition cannot expire and cannot be saved out of."}
+     {:upgradeable true,
+      :tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :requires nil,
+      :effect "+1 maximum Strength.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 25,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC while using a Shield or a Targe weapon.",
+      :prohibits nil}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "armour"},
+      :effect "+2 maximum poison barrier.",
+      :prohibits nil}
+     {:tags ["utility"],
+      :points 10,
+      :upgrade-points 40,
+      :level 1,
+      :effect
+      "+[1] to your Intelligence, Wisdom, and Charisma scores."}
+     {:tags ["accuracy"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect
+      "+[1] to your spell AB and spell save DCs while you have at least 20 strength."}
+     {:tags ["utility"],
+      :points 10,
+      :upgrade-points 20,
+      :level 1,
+      :effect "+[1] Strength."}],
+    :progressed [],
+    :level 7}],
+  :sold false}
  {:name "Solarmane's Legacy",
   :found true,
   :base-type "weapon",

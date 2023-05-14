@@ -90,8 +90,9 @@
 
 (defn mend-helmet []
   (when-let [present-enchants (get-present-enchants-levels)]
-    {:enchants (keep (fn [enchant]
+    {:enchants (keep (fn [{:keys [upgradeable] :as enchant}]
                        (case (mod-mending-result)
-                         :upgrade (update enchant :level inc)
+                         :upgrade (cond-> enchant
+                                          upgradeable (update :level inc))
                          :nothing enchant
                          :remove nil)) present-enchants)}))
