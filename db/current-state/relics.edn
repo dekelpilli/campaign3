@@ -213,7 +213,7 @@
       "+1 to your DCs with effects that would blind the target on a failed save."}],
     :progressed [],
     :level 5}],
-  :sold false}
+  :sold true}
  {:name "Wrath of the Stormbringer",
   :found true,
   :base-type "armour",
@@ -839,43 +839,6 @@
     :progressed [],
     :level 5}],
   :sold false}
- {:name "Ygdrassil's Evolution",
-  :found false,
-  :base-type "weapon",
-  :base nil,
-  :start
-  [{:tags ["damage"], :effect "+1d4 acid damage with attacks."}],
-  :mods
-  [{:tags ["damage"],
-    :effect
-    "No more than once per turn, when you hit an enemy with an attack that deals acid damage, you may cause other enemies within 5 feet of it to take [1] acid damage."}
-   {:tags ["damage"],
-    :effect
-    "+[3:2] physical damage with attacks whose acid damage dice deal more average then any other element's damage dice."}
-   {:upgradeable false,
-    :tags ["critical" "control"],
-    :effect
-    "No more than once per creature, when you are hit by a creature you have critically hit with acid damage, that creature must make a Wisdom saving throw or be frightened (1min, repeating)."}
-   {:tags ["utility"],
-    :effect
-    "You gain Flyby. Gain +[5] feet flying speed for a minute at the end of a round where you have dealt acid damage."}
-   {:upgradeable false,
-    :tags ["survivability"],
-    :effect
-    "At the end of a turn where you have damage multiple creatures with acid damage, gain temporary hit points equal to the amount of creatures damaged in this way."}
-   {:tags ["utility"],
-    :effect
-    "+1 expertise die with checks made to identify, cure, or create acids and poisons."}
-   {:tags ["damage"],
-    :effect
-    "+1d4 acid damage against enemies whose maximum hit points have been lowered."}
-   {:upgradeable false,
-    :tags ["utility"],
-    :effect
-    "Acid damage you deal reduces enemy hit points by half of the amount of damage dealt."}
-   {:tags ["survivability"], :effect "+[4:2] maximum acid barrier."}],
-  :levels nil,
-  :sold false}
  {:name "Essence of Ketis",
   :found true,
   :base-type "weapon",
@@ -1331,6 +1294,245 @@
       :requires nil,
       :effect "+1 critical hit range with attacks.",
       :prohibits nil}],
+    :level 8}],
+  :sold false}
+ {:name "Ygdrassil's Evolution",
+  :found true,
+  :base-type "weapon",
+  :base "Ring Blade",
+  :start
+  [{:tags ["damage"], :effect "+1d4 acid damage with attacks."}],
+  :mods
+  [{:tags ["damage"],
+    :effect
+    "No more than once per turn, when you hit an enemy with an attack that deals acid damage, you may cause other enemies within 5 feet of it to take [1] acid damage."}
+   {:tags ["damage"],
+    :effect
+    "+[3:2] physical damage with attacks whose acid damage dice deal more average then any other element's damage dice."}
+   {:upgradeable false,
+    :tags ["critical" "control"],
+    :effect
+    "No more than once per creature, when you are hit by a creature you have critically hit with acid damage, that creature must make a Wisdom saving throw or be frightened (1min, repeating)."}
+   {:tags ["utility"],
+    :effect
+    "You gain Flyby. Gain +[5] feet flying speed for a minute at the end of a round where you have dealt acid damage."}
+   {:upgradeable false,
+    :tags ["survivability"],
+    :effect
+    "At the end of a turn where you have damage multiple creatures with acid damage, gain temporary hit points equal to the amount of creatures damaged in this way."}
+   {:tags ["utility"],
+    :effect
+    "+1 expertise die with checks made to identify, cure, or create acids and poisons."}
+   {:tags ["damage"],
+    :effect
+    "+1d4 acid damage against enemies whose maximum hit points have been lowered."}
+   {:upgradeable false,
+    :tags ["utility"],
+    :effect
+    "Acid damage you deal reduces enemy hit points by half of the amount of damage dealt."}
+   {:tags ["survivability"], :effect "+[4:2] maximum acid barrier."}],
+  :levels
+  [{:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1d4 acid damage with attacks."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect "+1d4 acid damage with attacks."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC.",
+      :prohibits nil}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+1d4 acid damage with attacks."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC.",
+      :prohibits nil}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "weapon"},
+      :effect "+[1d4] radiant damage with weapon attacks.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+1d4 acid damage with attacks."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC.",
+      :prohibits nil}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[3:2] physical damage with attacks whose acid damage dice deal more average then any other element's damage dice."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "weapon"},
+      :effect "+[1d4] radiant damage with weapon attacks.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+1d4 acid damage with attacks."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC.",
+      :prohibits nil}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You gain Flyby. Gain +[5] feet flying speed for a minute at the end of a round where you have dealt acid damage."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[3:2] physical damage with attacks whose acid damage dice deal more average then any other element's damage dice."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "weapon"},
+      :effect "+[1d4] radiant damage with weapon attacks.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+1d4 acid damage with attacks."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC.",
+      :prohibits nil}],
+    :progressed [],
+    :level 6}
+   {:existing
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "You gain Flyby. Gain +[5] feet flying speed for a minute at the end of a round where you have dealt acid damage."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[3:2] physical damage with attacks whose acid damage dice deal more average then any other element's damage dice."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "weapon"},
+      :effect "+[1d4] radiant damage with weapon attacks.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+1d4 acid damage with attacks."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC.",
+      :prohibits nil}],
+    :progressed [],
+    :level 7}
+   {:existing
+    [{:tags ["utility"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "You gain Flyby. Gain +[5] feet flying speed for a minute at the end of a round where you have dealt acid damage."}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[3:2] physical damage with attacks whose acid damage dice deal more average then any other element's damage dice."}
+     {:upgradeable true,
+      :tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires {:base-type "weapon"},
+      :effect "+[1d4] radiant damage with weapon attacks.",
+      :prohibits nil}
+     {:tags ["damage"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect "+1d4 acid damage with attacks."}
+     {:upgradeable true,
+      :tags ["survivability"],
+      :points 10,
+      :upgrade-points 30,
+      :level 1,
+      :requires nil,
+      :effect "+1 AC.",
+      :prohibits nil}],
+    :progressed [],
     :level 8}],
   :sold false}
  {:name "Essence of Cerasil",
@@ -3057,7 +3259,7 @@
       "At the start of your turn, you must choose one damage type in which you have taken damage in the last 6 seconds, if at all. You have +[2:1] resistance to that damage type."}],
     :progressed [],
     :level 5}],
-  :sold false}
+  :sold true}
  {:name "Desmond's Madness",
   :found true,
   :base-type "armour",
@@ -3775,9 +3977,9 @@
     :level 6}],
   :sold false}
  {:name "Tanyll's Ascension",
-  :found false,
+  :found true,
   :base-type "armour",
-  :base nil,
+  :base "Unarmoured gloves",
   :start
   [{:tags ["magic"],
     :effect
@@ -3812,5 +4014,86 @@
     "No more than once per round, when you hit with an unarmed attack, gain +[1] AC until the start of your next turn."}
    {:tags ["damage"],
     :effect "+1d[4] necrotic damage with spells and attacks."}],
-  :levels nil,
+  :levels
+  [{:existing
+    [{:tags ["magic"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :effect
+      "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+    :progressed [],
+    :level 1}
+   {:existing
+    [{:tags ["magic"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :effect
+      "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+    :progressed [],
+    :level 2}
+   {:existing
+    [{:tags ["magic"],
+      :points 10,
+      :upgrade-points 10,
+      :level 3,
+      :effect
+      "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+    :progressed [],
+    :level 3}
+   {:existing
+    [{:tags ["magic"],
+      :points 10,
+      :upgrade-points 10,
+      :level 4,
+      :effect
+      "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+    :progressed [],
+    :level 4}
+   {:existing
+    [{:tags ["magic"],
+      :points 10,
+      :upgrade-points 10,
+      :level 5,
+      :effect
+      "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+    :progressed [],
+    :level 5}
+   {:existing
+    [{:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 1,
+      :requires nil,
+      :effect
+      "+1 critical hit range with your first attack on your turn.",
+      :prohibits nil}
+     {:tags ["magic"],
+      :points 10,
+      :upgrade-points 10,
+      :level 5,
+      :effect
+      "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+    :progressed [],
+    :level 6}
+   {:existing
+    [{:upgradeable true,
+      :tags ["critical"],
+      :points 10,
+      :upgrade-points 10,
+      :level 2,
+      :requires nil,
+      :effect
+      "+1 critical hit range with your first attack on your turn.",
+      :prohibits nil}
+     {:tags ["magic"],
+      :points 10,
+      :upgrade-points 10,
+      :level 5,
+      :effect
+      "+[10:5]% chance to cast Wither and Bloom as a free action at the start of your turn."}],
+    :progressed [],
+    :level 7}],
   :sold false}]
