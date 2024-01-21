@@ -2,8 +2,8 @@
 
 ### Amulets
 - Amulets contain a random trait from a random monster from a given CR.
-- As a free action at the start or end of a turn in combat, once per long rest, you can activate the trait contained by the amulet for a duration, granting you its effects.
-- The duration of amulet equal to the amulet CR (not monster CR), to a minimum of 1.
+- As a free action at any time, once per long rest, you can activate the trait contained by the amulet for a duration, granting you its effects.
+- The duration of amulet effects is a number of rounds equal to the amulet CR (not monster CR), to a minimum of 1.
 - Upgrading: Feed an amulet other amulets totalling at least its current CR capacity + 1 to get +1 CR tier.
 - When upgrading amulets, or rerolling with crafting items, you may choose to keep the existing effect instead of the new one.
 - The trait is standardised to not be tied to the creature or its specific actions/items. For example, "If the derro hits a target within 30 feet of it with a ranged attack with its aklys, it can use its bonus action to retrieve the aklys and make another attack against the same target" -> "If you hit a target within 30 feet of you with a ranged attack, you can use your bonus action to make another attack against the same target"
